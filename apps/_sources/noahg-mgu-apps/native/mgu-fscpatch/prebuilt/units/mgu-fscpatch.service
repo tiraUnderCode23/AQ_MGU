@@ -1,0 +1,23 @@
+[Unit]
+Description=FSC patch inspection and support service
+RequiresMountsFor=/var/opt
+After=oapcontroller.service
+BindsTo=oapcontroller.service
+PartOf=oapcontroller.service
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+ExecStart=/var/opt/mgu-fscpatch/current/mgu-fscpatch --app-gid 12202
+Restart=on-failure
+RestartSec=3
+RuntimeDirectory=mgu-fscpatch
+RuntimeDirectoryMode=0750
+UMask=0022
+NoNewPrivileges=yes
+KillMode=mixed
+TimeoutStartSec=15
+TimeoutStopSec=90
+
+[Install]
+WantedBy=oapcontroller.service

@@ -1,0 +1,14 @@
+{
+  "cluster-render": {
+    "title": "Izris na armaturi",
+    "description": "Izriše plasti vseh aplikacij na armaturni plošči in HUD ter si deli mesta prikaza in en skupni proračun prenosa"
+  },
+  "waze-on-cluster": {
+    "title": "Zemljevidi na armaturi",
+    "description": "V ozadju poganja zemljevid na armaturi. Namesti se skupaj z aplikacijo Zemljevidi na armaturi, v kateri ga upravljate."
+  },
+  "robertn_waze_cluster": {
+    "title": "Zemljevidi na armaturi",
+    "description": "Prikaže zemljevid CarPlay ali Android Auto na armaturi in po želji na HUD. Na podprtih avtomobilih se vklopi sam po namestitvi in ponovnem zagonu enote."
+  }
+}

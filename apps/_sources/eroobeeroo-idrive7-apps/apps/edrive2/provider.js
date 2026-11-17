@@ -1,0 +1,90 @@
+'use strict';
+/**
+ * provider.js - eDrive Live's values for Cluster Info's panel over the Waze map (apps/cluster_info,
+ * providers.js there has the folder's format): the battery's power (kW, the bar's ends from the battery's
+ * limits), the battery's charge (%) and the battery and engine oil temperatures.
+ *
+ * Cluster Info writes wanted.json in the folder while its panel is up; only then does eDrive Live read fast
+ * (keepFast) and write its file: at once on each new power reading (kick(), so the cluster's kW is a read behind,
+ * not a quarter second), and 4 times a second for the rest, so the car can sleep otherwise.
+ */
+const fs = require('fs');
+const path = require('path');
+
+const DIR = process.env.CLUSTER_INFO_DIR || '/dev/shm/cluster-info';   // (the variable: tests)
+const FILE = 'edrive2.json';
+const TICK_MS = 250;
+const WANTED_FRESH_MS = 3000;
+
+/**
+ * src: { power() -> { kw, old } | null, limits() -> { out, in } | null, battery() -> deg C | null,
+ *        oil() -> deg C | null, soc() -> % | null, keepFast(), on() -> whether to provide (setting) }.
+ * opts (tests): dir, now, setInterval.
+ */
+function startProvider(log, src, opts) {
+    opts = opts || {};
+    const dir = opts.dir || DIR, now = opts.now || Date.now;
+    let wanted = null, wantedRead = 0, writing = false, failed = false;
+    const status = { wanted: false, written: 0, error: null };
+    /*
+     * What the apps showing these want: wanted.json (Cluster Info's) and wanted-<id>.json (Cluster Layouts', Cluster
+     * Centre's: each its own file, since the folder is sticky and one app can't replace another's), the fresh ones
+     * merged. (A wanted.json left behind by an app no longer showing stopped the others asking: one file each.)
+     */
+    function readWanted() {
+        if (now() - wantedRead < 1000) return wanted;
+        wantedRead = now();
+        let names = [];
+        try { names = fs.readdirSync(dir).filter((n) => /^wanted(-[\w.-]+)?\.json$/.test(n)); } catch (e) { names = []; }
+        let merged = null;
+        names.forEach((n) => {
+            try {
+                const w = JSON.parse(fs.readFileSync(path.join(dir, n), 'utf8'));
+                if (!w || typeof w.t !== 'number' || now() - w.t >= WANTED_FRESH_MS) return;
+                merged = merged || { t: w.t, power: false, values: [] };
+                merged.t = Math.max(merged.t, w.t);
+                merged.power = merged.power || !!w.power;
+                (Array.isArray(w.values) ? w.values : []).forEach((v) => { if (merged.values.indexOf(v) < 0) merged.values.push(v); });
+            } catch (e) { /* half written: the next read */ }
+        });
+        wanted = merged;
+        return wanted;
+    }
+    let lastWrite = 0;
+    function tick() {
+        const w = src.on() ? readWanted() : null;
+        status.wanted = !!w;
+        if (!w) { if (writing) { writing = false; try { fs.unlinkSync(path.join(dir, FILE)); } catch (e) { /* gone */ } } return; }
+        src.keepFast();
+        const out = { v: 1, t: now(), app: 'eDrive Live', values: {} };
+        const p = w.power ? src.power() : null;
+        if (p && typeof p.kw === 'number') {
+            const lim = src.limits();
+            // the gauge's ends, as eDrive Live's own power bar: the battery's discharge and charge (regen) limits
+            // now, until they are read the "Power gauge up to" setting (and half of it for regen)
+            out.power = { kw: Math.round(p.kw * 100) / 100, old: !!p.old,
+                outMax: Math.max(20, lim && typeof lim.out === 'number' ? Math.round(lim.out) : src.gaugeKw()),
+                inMax: Math.max(10, lim && lim.in >= 15 ? Math.round(lim.in) : src.gaugeKw() * 0.5),
+                limits: !!(lim && typeof lim.out === 'number') };
+        }
+        const b = src.battery(), o = src.oil(), soc = src.soc ? src.soc() : null;
+        if (typeof soc === 'number') out.values.soc = { pct: Math.round(soc * 10) / 10 };
+        if (typeof b === 'number') out.values.battery = { c: Math.round(b * 10) / 10 };
+        if (typeof o === 'number') out.values.oil = { c: Math.round(o) };
+        const f = path.join(dir, FILE), tmp = f + '.tmp';
+        try {
+            fs.writeFileSync(tmp, JSON.stringify(out), { mode: 0o644 });
+            fs.renameSync(tmp, f);
+            writing = true; lastWrite = status.written = now(); status.error = null; failed = false;
+        } catch (e) {
+            status.error = e.message;
+            if (!failed) { failed = true; log.warn('cluster info: ' + e.message); }
+        }
+    }
+    (opts.setInterval || setInterval)(tick, TICK_MS);
+    /** A new power reading: written now (at most every 8 ms; only while wanted, as tick()). */
+    const kick = () => { if (writing && now() - lastWrite >= 8) tick(); };
+    return { status: () => Object.assign({}, status), wanted: () => readWanted(), kick, _tick: tick };
+}
+
+module.exports = { startProvider };

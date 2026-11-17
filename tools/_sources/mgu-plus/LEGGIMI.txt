@@ -1,0 +1,105 @@
+﻿MGU Plus  -  versione 1.4.1
+===========================
+
+Root SSH e App Store (mgu-store) sulle head unit BMW MGU iDrive 7, da un PC Windows.
+NON funziona sulle NBT / NBT EVO (iDrive 6): il programma le riconosce e si ferma.
+iDrive 8 (tipo MGU "ID8 ... sperimentale"): il root SSH è supportato, ma lo Store è
+provato dai suoi autori solo in emulatore. Usalo solo se sai cosa fai.
+
+
+COSA SERVE
+----------
+- PC Windows 10/11 con il client OpenSSH
+  (Impostazioni > App > Funzionalità facoltative > "Client OpenSSH").
+- Cavo ENET collegato alla presa OBD dell'auto e alla porta di rete del PC.
+- Internet sul PC (va benissimo il Wi-Fi: il cavo ENET resta per l'auto).
+- Auto parcheggiata, alimentazione stabile (motore acceso o caricabatterie).
+- BimmerCode o E-Sys per ripristinare la codifica dopo il flash.
+
+
+LA FINESTRA
+-----------
+In alto le pastiglie di stato: vettura, SSH, codifica, Store, batteria e, durante
+un'operazione, cosa sta facendo il programma. A sinistra le pagine:
+1 Collegamento   Gateway, VIN, IP, tipo, seriale e hardware della MGU.
+                 Il tipo di MGU viene riconosciuto da solo quando e' certo
+                 (ID7); per ID8 conferma tu BDC3 o BCP. "Diagnostica
+                 completa" legge tutto e salva un report in data\diagnostica.
+                 Il file Diagnostica-e-Cattura-ESys.bat fa due cose: legge la
+                 vettura e, se vuoi, registra il traffico ENET mentre ricodifichi
+                 con E-Sys (per studiare la sequenza). Solo lettura + registrazione.
+2 Accesso SSH    Flash, apertura, correzione della chiave e chiusura di SSH.
+3 Codifica       Backup e ripristino della codifica.
+4 App Store      Versioni installate e ultime pubblicate, installazione,
+                 aggiornamento, rimozione dello Store, riavvio della MGU.
+In basso il log di tutte le operazioni (completo, in inglese, in data\logs).
+La tensione della batteria (12 V) viene letta dalla centralina motore (sola
+lettura) e mostrata nella pastiglia; sotto i 13 V il programma avvisa prima di
+flash/ripristino/Store di collegare un caricabatterie (ti lascia procedere).
+In alto a destra "English" / "Italiano" cambia la lingua della finestra; la
+scelta resta anche ai prossimi avvii (data\settings.json).
+
+
+PRIMA VOLTA SU UN'AUTO (non ancora rootata)
+--------------------------------------------
+1. Avvia MGU-Plus.exe con tasto destro > "Esegui come amministratore".
+2. Collega il cavo ENET e metti il quadro in modalità diagnosi: premi 3 volte
+   velocemente Start/Stop, finché il quadro mostra "Modalità diagnosi attiva".
+3. Premi "Connetti vettura": compaiono VIN, IP, seriale e hardware della MGU.
+4. Scegli il "Tipo MGU" (ID7 = software 030.xxx). Se non sei sicuro, FERMATI.
+5. Premi "Flash + Apri SSH". Se per quel VIN non c'è un backup della codifica,
+   il programma lo fa prima da solo (sola lettura, in data\preflight).
+   Copialo anche fuori dal PC. Un backup con BimmerCode in più non guasta.
+   Non scollegare nulla fino alla fine: il flash cancella la codifica e gli
+   abbinamenti Digital Key.
+6. Alla fine il programma propone di ripristinare la codifica dal backup
+   (SPERIMENTALE, anche con "Ripristina" nella pagina 3 Codifica). Se si ferma o la MGU
+   non riporta la sua CAFD, ripristina con BimmerCode o E-Sys e conserva il
+   registro in data\logs.
+7. Riavviata la MGU, controlla lingua, retrocamera e menu.
+8. Premi "Installa / Aggiorna" e, alla domanda, rispondi Sì al riavvio della MGU.
+   L'icona dello Store compare tra le app dell'auto.
+
+
+AUTO GIÀ ROOTATA
+----------------
+"Connetti vettura", poi "Installa / Aggiorna". La tabella mostra per ogni
+componente la versione installata, l'ultima pubblicata e cosa va aggiornato.
+Se SSH non risponde: "Apri SSH" (non rifà il flash).
+Senza cavo ENET: collega il PC all'hotspot Wi-Fi dell'auto e premi "Connetti
+vettura"; il programma la trova da solo (172.16.222.97). Con l'hotspot si
+possono fare solo le operazioni su SSH già attivo (Store, riavvio, verifica).
+
+
+SE QUALCOSA NON VA
+------------------
+- "Manca la codifica della head unit": ripristinala con BimmerCode / E-Sys,
+  riavvia la head unit e premi di nuovo "Installa / Aggiorna".
+  L'installer si ferma PRIMA di toccare qualsiasi cosa.
+- "Nessun gateway ENET ha risposto": cavo, modalità diagnosi, avvio come
+  amministratore.
+- "Chiave rifiutata": prova "Apri SSH", poi "Correggi chiave" (rifà il flash).
+- La chiave SSH di root la gestisce il programma da solo: è quella contenuta
+  nell'immagine di debug (data\assets) e dopo il flash viene salvata anche in
+  data\enrollments\<VIN>\. Non va scelta né copiata.
+- "Controlla aggiornamenti GitHub" (pagina 4 App Store) legge le ultime versioni di
+  mgu-store pubblicate su GitHub e le confronta con quelle lette dalla MGU
+  all'ultimo collegamento. Non serve l'auto, basta internet sul PC.
+
+
+SICUREZZA
+---------
+La chiave root di serie è la stessa per tutte le auto flashate con questo
+metodo ed è pubblica. Usa una password robusta per l'hotspot Wi-Fi dell'auto.
+"Disattiva SSH" toglie la persistenza e spegne SSH.
+
+
+CREDITI E LICENZE
+-----------------
+- Root SSH: github.com/cauliflowermossgrape/idrive7-8-ssh-root
+  (pubblico dominio, The Unlicense - vedi LICENSE).
+- mgu-store: github.com/robertnisipeanu/mgu-store (GPL-3.0). NON è incluso:
+  il suo installer ufficiale viene scaricato dalla sua release e verificato
+  con lo SHA256SUMS pubblicato, ogni volta.
+- MGU Plus: DeathWalkeR.
+Uso a tuo rischio, solo su auto tue o con il consenso del proprietario.

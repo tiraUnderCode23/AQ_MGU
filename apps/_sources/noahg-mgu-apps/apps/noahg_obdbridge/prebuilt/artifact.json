@@ -1,0 +1,10 @@
+{
+  "schema": 1,
+  "id": "noahg_obdbridge",
+  "version": "1.0.0",
+  "mguHmi": [
+    "ID7"
+  ],
+  "sha256": "ec2f6a4d2eaab992589a5dde9191bd350e6ef6b01a7a0f91d14a265fd8efadc7",
+  "sourceSha256": "a3120b7d5ea7ca815f1f377a7de0ea18a632e2ee89a1e6af4099ac51104c675f"
+}

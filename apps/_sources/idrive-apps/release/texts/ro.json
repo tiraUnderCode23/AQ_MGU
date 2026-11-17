@@ -1,0 +1,14 @@
+{
+  "cluster-render": {
+    "title": "Randare bord",
+    "description": "Desenează straturile tuturor aplicațiilor pe bordul digital și pe HUD, împărțind pozițiile de afișare și un singur buget de transfer"
+  },
+  "waze-on-cluster": {
+    "title": "Hărți pe bord",
+    "description": "Rulează în fundal harta de pe bord. Se instalează odată cu aplicația Hărți pe bord, din care îl controlați."
+  },
+  "robertn_waze_cluster": {
+    "title": "Hărți pe bord",
+    "description": "Afișează harta CarPlay sau Android Auto pe bord și, dacă alegeți, pe HUD. Pe mașinile compatibile pornește singură după instalare și repornirea unității."
+  }
+}

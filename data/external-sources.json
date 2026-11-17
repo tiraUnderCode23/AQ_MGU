@@ -1,0 +1,38 @@
+[
+  {
+    "repo": "IterioDev/car-apps",
+    "url": "https://github.com/IterioDev/car-apps",
+    "latest": "1.1.74 (tag; 2026-11-16)",
+    "reason": "PolyForm Strict: do not copy, modify, bundle or republish original apps; add the upstream source directly in Store only if its terms allow your intended use. ID7 compatibility is app-specific."
+  },
+  {
+    "repo": "aurelmarius/bmw-apps",
+    "url": "https://github.com/aurelmarius/bmw-apps",
+    "latest": "v1.5.16 (2026-11-14)",
+    "reason": "No explicit open-source license found in the audit; source, packages and images are not bundled. Obtain permission first."
+  },
+  {
+    "repo": "aurelmarius/bmw-games",
+    "url": "https://github.com/aurelmarius/bmw-games",
+    "latest": "v1.1.11",
+    "reason": "No clear redistribution license found; source and assets are not bundled. Obtain permission first."
+  },
+  {
+    "repo": "alexpereap/pereaperformance-idrive7-apps",
+    "url": "https://github.com/alexpereap/pereaperformance-idrive7-apps",
+    "latest": "Not audited in detail",
+    "reason": "Additional candidate discovered; verify current release, license and compatibility before including."
+  },
+  {
+    "repo": "hexlay/idrive7-custom-apps",
+    "url": "https://github.com/hexlay/idrive7-custom-apps",
+    "latest": "Not audited in detail",
+    "reason": "Additional candidate discovered; verify current release, license and compatibility before including."
+  },
+  {
+    "repo": "FidelisClayton/awesome-bmw-mgu",
+    "url": "https://github.com/FidelisClayton/awesome-bmw-mgu",
+    "latest": "Community directory; not an app source",
+    "reason": "Keep as discovery/reference index, not a Store component."
+  }
+]

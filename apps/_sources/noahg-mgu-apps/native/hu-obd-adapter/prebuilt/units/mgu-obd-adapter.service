@@ -1,0 +1,25 @@
+[Unit]
+Description=OBD Bridge service
+RequiresMountsFor=/var/opt
+After=oapcontroller.service
+BindsTo=oapcontroller.service
+PartOf=oapcontroller.service
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+ExecStart=/var/opt/mgu-obd-adapter/current/hu-obd-adapter --app-gid 12202
+ExecStopPost=/var/opt/mgu-obd-adapter/current/hu-obd-adapter --cleanup-firewall
+Restart=on-failure
+RestartSec=3
+RuntimeDirectory=mgu-obd-adapter
+RuntimeDirectoryMode=0750
+UMask=0027
+NoNewPrivileges=yes
+TimeoutStartSec=15s
+TimeoutStopSec=15s
+KillMode=control-group
+SendSIGKILL=yes
+
+[Install]
+WantedBy=oapcontroller.service

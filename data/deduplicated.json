@@ -1,0 +1,7 @@
+[
+  {
+    "id": "cluster_info",
+    "source": "eroobeeroo/idrive7-apps",
+    "reason": "same app already represented by the linked cluster-apps source; deduplicated in Store index"
+  }
+]

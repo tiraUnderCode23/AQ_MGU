@@ -1,0 +1,122 @@
+[
+  {
+    "repository": "cauliflowermossgrape/idrive7-apps",
+    "url": "https://github.com/cauliflowermossgrape/idrive7-apps",
+    "commit": "422957a85461826c1e8654d37c8ec66a94849f9c",
+    "snapshot_path": "apps/_sources/idrive7-apps",
+    "license_summary": "MIT project license; preserve separate GPL-3.0-or-later, GPL-2.0, BSD, and OFL notices; BMW SDK excluded.",
+    "release_status": "No GitHub Releases/Tags observed; app.json versions are from the pinned main snapshot.",
+    "included_files": 703,
+    "scope": "source snapshot; generated packages, SDKs, credentials and vehicle enrollment data excluded"
+  },
+  {
+    "repository": "bimmer-lab/apps",
+    "url": "https://github.com/bimmer-lab/apps",
+    "commit": "ab81cee4d77859b531b21a118772c6b031455b78",
+    "snapshot_path": "apps/_sources/bimmer-lab-apps",
+    "license_summary": "MIT project license; preserve separate third-party notices and SIL OFL font terms.",
+    "release_status": "No GitHub Releases/Tags observed; app.json versions are from the pinned main snapshot.",
+    "included_files": 280,
+    "scope": "source snapshot; generated packages, SDKs, credentials and vehicle enrollment data excluded"
+  },
+  {
+    "repository": "tiraUnderCode23/idrive7-cluster-info",
+    "url": "https://github.com/tiraUnderCode23/idrive7-cluster-info",
+    "commit": "10cefda018e59a4b21b4aa8026fc9116f0f4bd9e",
+    "snapshot_path": "apps/_sources/cluster-apps",
+    "license_summary": "PolyForm Noncommercial 1.0.0 for current fork additions; preserve source notices and historical licensing distinctions. Non-commercial use only.",
+    "release_status": "No GitHub Release/Tag observed; app.json versions are from the pinned main snapshot.",
+    "included_files": 224,
+    "scope": "source snapshot; generated packages, SDKs, credentials and vehicle enrollment data excluded"
+  },
+  {
+    "repository": "eroobeeroo/idrive7-apps",
+    "url": "https://github.com/eroobeeroo/idrive7-apps",
+    "commit": "c719804e28df27c25283afad6b1cfa8a49fe2c7d",
+    "snapshot_path": "apps/_sources/eroobeeroo-idrive7-apps",
+    "license_summary": "PolyForm Noncommercial 1.0.0 for current fork additions; preserve original MIT/GPL/third-party notices and historical licensing distinctions. Non-commercial use only.",
+    "release_status": "No GitHub Releases/Tags observed; app.json versions are from the pinned main snapshot.",
+    "included_files": 501,
+    "scope": "source snapshot; generated packages, SDKs, credentials and vehicle enrollment data excluded"
+  },
+  {
+    "repository": "robertnisipeanu/idrive-apps",
+    "url": "https://github.com/robertnisipeanu/idrive-apps",
+    "commit": "beffe76911bcf83df00a4b29332dc313bd574a65",
+    "snapshot_path": "apps/_sources/idrive-apps",
+    "license_summary": "GPL-3.0-or-later with separately licensed MPL-2.0/MIT components; preserve all notices.",
+    "release_status": "Current main manifests are newer than the latest confirmed app Release; pinned source versions are shown per component.",
+    "included_files": 563,
+    "scope": "source snapshot; generated packages, SDKs, credentials and vehicle enrollment data excluded"
+  },
+  {
+    "repository": "Noahbg/mgu-apps",
+    "url": "https://github.com/Noahbg/mgu-apps",
+    "commit": "3853c99c99c1e610ae0dee3547a1429b0c097300",
+    "snapshot_path": "apps/_sources/noahg-mgu-apps",
+    "license_summary": "MIT; preserve third-party notices. Includes diagnostic/system-level functionality; review warnings before use.",
+    "release_status": "No GitHub Releases/Tags observed; app manifests say 1.0.0.",
+    "included_files": 161,
+    "scope": "source snapshot; generated packages, SDKs, credentials and vehicle enrollment data excluded"
+  },
+  {
+    "repository": "ALMSTRA/idv7lol",
+    "url": "https://github.com/ALMSTRA/idv7lol",
+    "commit": "ff54c2cabd465eea1521770573701f26c36f880b",
+    "snapshot_path": "apps/_sources/idv7lol",
+    "license_summary": "GPL-3.0-or-later with third-party notices/licenses; preserve them. Experimental, ID7 only per manifest.",
+    "release_status": "Latest discovered GitHub app release v0.2.0-beta.7; current main manifest/catalog package is 0.2.14. Treat them as different release channels.",
+    "included_files": 410,
+    "scope": "source snapshot; generated packages, SDKs, credentials and vehicle enrollment data excluded"
+  },
+  {
+    "repository": "HasMan/turnkey-ethanol-blend",
+    "url": "https://github.com/HasMan/turnkey-ethanol-blend",
+    "commit": "a378719e9c858ef4693949c3a7bca68bd5f9cafb",
+    "snapshot_path": "apps/_sources/turnkey-ethanol-blend",
+    "license_summary": "MIT with bundled third-party notices; preserve them. Current stable manifest is v0.1.5, only tested on documented calibration.",
+    "release_status": "Current stable main manifest is 0.1.5; later 0.1.6/0.1.7 builds were withdrawn per project notes.",
+    "included_files": 139,
+    "scope": "source snapshot; generated packages, SDKs, credentials and vehicle enrollment data excluded"
+  },
+  {
+    "repository": "Impossible43/vlad-mgu-apps",
+    "url": "https://github.com/Impossible43/vlad-mgu-apps",
+    "commit": "c3e18eb45969122a377ec93e728d6a1d11eeaa7b",
+    "snapshot_path": "apps/_sources/vlad-mgu-apps",
+    "license_summary": "Mixed MIT/MPL-2.0/GPL-3.0-or-later per THIRD_PARTY.md and LICENSES; preserve all notices. Experimental map alternative.",
+    "release_status": "No GitHub Release/Tag observed; app manifest says 0.1.3.",
+    "included_files": 36,
+    "scope": "source snapshot; generated packages, SDKs, credentials and vehicle enrollment data excluded"
+  },
+  {
+    "repository": "robertnisipeanu/mgu-store",
+    "url": "https://github.com/robertnisipeanu/mgu-store",
+    "commit": "6e80c4d1e891926b723ea7e284fc20ac44e432dd",
+    "snapshot_path": "tools/_sources/mgu-store",
+    "license_summary": "GPL-3.0-or-later plus third-party licenses; source reference only, not listed as an app component.",
+    "release_status": "Store app source manifest is 0.9.40 on pinned main; official Releases are component-specific.",
+    "included_files": 484,
+    "scope": "source snapshot; generated packages, SDKs, credentials and vehicle enrollment data excluded"
+  },
+  {
+    "repository": "cauliflowermossgrape/idrive7-8-ssh-root",
+    "url": "https://github.com/cauliflowermossgrape/idrive7-8-ssh-root",
+    "commit": "6d4928e6dca9812e7882318afdd7cba9840c2d62",
+    "snapshot_path": "tools/_sources/idrive7-8-ssh-root",
+    "license_summary": "The Unlicense; source reference only, not a Store app. Hardware/vehicle actions are not run by this assembly.",
+    "release_status": "Latest confirmed GitHub Release v1.4.0.",
+    "included_files": 35,
+    "scope": "source snapshot; generated packages, SDKs, credentials and vehicle enrollment data excluded"
+  },
+  {
+    "repository": "deathwalker80/mgu-plus",
+    "url": "https://github.com/deathwalker80/mgu-plus",
+    "commit": "0f75e9abdc7702c9c134a39f62e462f45e060592",
+    "snapshot_path": "tools/_sources/mgu-plus",
+    "license_summary": "The Unlicense; desktop wrapper/source only, not a Store app. Its upstream lock currently trails the latest SSH-root release; verify before using.",
+    "release_status": "Current README/release notes identify v1.4.1 beta; verify its pinned upstream before use.",
+    "included_files": 53,
+    "scope": "source snapshot; generated packages, SDKs, credentials and vehicle enrollment data excluded"
+  }
+]

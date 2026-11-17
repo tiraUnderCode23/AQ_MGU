@@ -1,0 +1,314 @@
+# Updater changelog
+
+## Unreleased
+
+## 0.8.47
+
+- An app installed again from its kept package goes to the deploy tool with `--repair`: the deploy tool then installs it again once, and holds it after a failure or a second loss until it is installed from the Store.
+
+## 0.8.46
+
+- An app built by its repository's script installs from a stick that holds more than the checkout: when the stick holds more than 200 MB or 20000 files, the build gets the app's folder, its shared files and the script. A folder too big to read says which folder, and whether bytes or files are over the limit.
+
+## 0.8.45
+
+- An app built by its repository's script has its SDK donor looked up while its files download, and the build uid's processes are killed with the system's `kill` (with Node where there is none, or something of that uid is still running): its build starts and ends sooner.
+
+## 0.8.44
+
+- Only an install asked for (the Store, the phone page) leaves the deploy tool's safe mode. The updater's own repairs (a lost app installed again, a stale tool laid again, updated or installed again, and the rollback of a Store such a repair updated that did not start) keep it.
+
+## 0.8.43
+
+- Installing or updating from a public repository's branch downloads the component's files over a few connections kept open, six at a time, instead of starting a new download for each file. The progress moves as the bytes come.
+
+## 0.8.42
+
+- The deploy tool's safe mode shows in the state (`safeMode`), and the Store's Leave safe mode (`safe-mode-off`) leaves it. The updater runs in safe mode.
+- A tool installed from a repository's tree keeps its units' `runsInSafeMode`.
+- Before it asks for a restart of the head unit, the updater records it for the deploy tool, so the restart never counts against safe mode.
+
+## 0.8.41
+
+- The phone page's Logs list the Renderer's journals (`mgu-render`, `mgu-render-hmi`) and the deploy tool's check after a restart (`mgu-deploy-verify`).
+
+## 0.8.40
+
+- Installing or updating an app or tool from a public repository's branch downloads only its own files and the shared files its build needs, instead of the whole repository. Update all downloads each shared file once.
+- Downloads resume where they stopped on a weak connection and keep trying while they make progress, instead of starting over and giving up after a few cuts.
+
+## 0.8.39
+
+- The deploy tool's own update goes first among queued requests, so Update all installs every other component through the new deploy tool.
+
+## 0.8.38
+
+- A tool stays while an installed app or tool still requires it, also when no source lists that app any more (its USB stick is out, or its source was removed): Remove all neither offers nor takes it along, and it can't be removed on its own. The updater records what each component requires when it installs it, and for components installed earlier when their source lists the installed version.
+
+## 0.8.37
+
+- The tools the Store's setup installs (Internet uplink, Renderer, App privacy, Python, the deploy tool and the updater) can't be removed from the Store: not on their own page, and not with an app's Remove all.
+
+## 0.8.36
+
+- An installed app's icon from its source is fetched too, so a removed app keeps its icon in the Store.
+
+## 0.8.35
+
+- Lost apps are installed again only while the app manager runs on a data folder of its own: not while it has not started or created its home after a factory reset. The updater looks again when it comes up.
+
+## 0.8.34
+
+No changes.
+
+## 0.8.33
+
+- On a branch, a new commit of the same version is an update only when it changes the component: its folder (without other components' folders or files inside it) or its `mgu-repo.json` entry; a service or preload tool's one file; for an app a build script makes, also the paths its `build.shared` names and the script, or, without `build.shared`, anything but the other apps' folders. The updater compares the git ids in each commit's tree: one GitHub API request for each new head commit while something is installed from the branch, and one for each older commit an install is recorded with alone. While a content cannot be read, a new commit is an update.
+
+## 0.8.32
+
+- `{"op":"usb-phone","on":true|false}` (privileged) is relayed to the uplink as it is: phones over USB used or left alone (mgu-uplink 0.7.7).
+- The state's `uplink` has `usbPhone` while the uplink's `status.json` says it.
+
+## 0.8.31
+
+- A tool a firmware update left not working, or whose install step waits (the deploy tool's `needs_setup`), is updated from its source at the first check that finds the source listing a newer version while the unit is online, each newer version once while the updater runs. Otherwise, or when that update fails, a tool the deploy tool keeps a copy of has its files laid again (`relay`), once for each reason.
+- A setup that fails is the row's `error`. A newer version the updater cannot queue (a requirement no source has) leaves a stale tool to its files laid again.
+- A row has `needsSetup`: why the tool's install step waits. `{"op":"setup","id"}` (privileged) runs the deploy tool's `setup`, which lays the tool again from its kept copy with its step.
+- The updater requires mgu-deploy 0.8.4.
+
+## 0.8.30
+
+- An app of ours MainApp's registry no longer has while the deploy tool keeps its package (its `status --json` `lost_apps`, as oapcontroller's wipe leaves them) is installed again from that package, the Store first, once per start of the head unit (`state/boot.json`, by the new `boot_id` setting), and not while the deploy tool's MainApp guard holds app changes back. Our installed apps are looked at every 15 s. An app removed through the Store, the deploy tool's uninstall or its restore has no kept package and stays removed.
+- After an install that restarted the app manager (the deploy tool's `last_bounce_at` moved), an installed app of ours whose tile does not show (`tile_visible` false, and not hidden by provisioning's own flags, `tile_withheld`) has `tileHidden` in its row until the next start of the head unit.
+- The state has `mainappGuard`: why app changes wait for the next start of the head unit (the deploy tool's `mainapp_guard`), else null.
+- A deploy tool run its MainApp guard stopped (exit 3) is neither an error nor checked, rolled back or tried again: what it changed stays for the next start, and a Store update's trial ends. Going back the guard stopped says which version comes back at the next start.
+- The updater requires mgu-deploy 0.8.3.
+
+## 0.8.29
+
+- Downloads work on Node 8.9.4 (2019 MGU, firmware `D_19w31.3`): a download whose answer came whole is kept when that Node reports it aborted, as it does when the server closes the connection while the file is still being written.
+
+## 0.8.28
+
+- `{"op":"wifi-5ghz","on":true|false}` (privileged) is relayed to the uplink as it is: Allow 5 GHz for the Store's Wi-Fi (mgu-uplink 0.7.6).
+
+## 0.8.27
+
+- An optional proxy for every download: `proxy = http://host:port` or `proxy = socks5://host:port` (a user name and password as `user:pass@`) in `updater.local.conf`, or set from the Store or the phone page. GitHub, catalogs, packages, pictures and every redirect go through it, as do the downloads of a build on the unit. TLS stays end to end with the same certificate checks; the proxy gets only its own user name and password, never a token. The proxy looks up the names of what is downloaded.
+- A proxy that is down or refuses shows as `proxy <host:port>: <why>` in the source's or the download's error.
+
+## 0.8.26
+
+- The Store's own install runs after every other queued request, the updater's own update and what waits for it included: it closes the Store, which shows the rest of the queue until then.
+- The service runs at `Nice=10` (from the next start of the head unit), so downloads, builds and installs give way to the HMI.
+
+## 0.8.25
+
+- An install that fails with the new version left current (its activate and deactivate both failed) says `<version> stays current`, one that leaves none installed `nothing is installed`, otherwise `the previous version was kept`.
+- Installing a tool another source installed (its origin in `origins.json` is another source) passes `--other-source` to the deploy tool, which runs the deactivate of the version it replaces first. The updater requires mgu-deploy 0.7.17.
+- An installed app's row has `requiredAlone`: the installed tools only it requires, itself or through one another, that its removal may take along (each one its row may remove, and nothing else installed requires or needs as the last provider of a capability).
+- `{"op":"uninstall","id","tools":[...]}` removes the app, then each of those tools (a subset of `requiredAlone`), each through the deploy tool's uninstall, a tool before the tools it requires. Anything else in `tools` refuses the request, and nothing is queued. A tool whose turn comes while something installed still requires it, as when the app's removal failed, stays; an app whose removal waits for the next start (iDrive 8) requires none.
+
+## 0.8.24
+
+- A component installed without a recorded origin (by an installer, a stick, the deploy tool), or whose origin lists it no more, that more than one source lists under its title is updated by the built-in source, so the Store shows one row for it, installed, with its update. For one without a recorded origin the other sources' listings are beside it, blocked: `<id> is already installed; its updates come from <source>`. Of two such sources neither built in, it has no update.
+
+## 0.8.23
+
+- A component's title and description in other languages (a catalog entry's, an `mgu-repo.json` entry's or an `mgu-store.json` app's `texts`) reach the Store, which shows them in the head unit's language.
+
+## 0.8.22
+
+- A build with internet carries on after the uplink moves to another network (a Wi-Fi switch, a new lease): its proxy resolves each new connection's host name through the servers of the lease it finds then, and refuses one without a lease as having no internet. The name lookup and the TCP connection together take at most 15 s (`<host>: no connection in 15 s`).
+
+## 0.8.21
+
+- A download carries on after the uplink moves to another network (a Wi-Fi switch, a new lease): each try resolves names through the servers of the lease it finds then, and a try without a lease fails as having no internet, to be tried again. A connection that gets neither data nor a reset gives up within its bound: 15 s for the name lookup, TCP and TLS together, 30 s for the answer's headers and 30 s for each part of its body (`<host>: no connection in 15 s`, `<host>: no data for 30 s`). A download that fails is reported as soon as its last try ends.
+
+## 0.8.20
+
+- A component the deploy tool says does not work (its `stale` in `status --json`: a firmware update took what it set up outside `/var/opt`) and cannot set up again from a copy it keeps is installed again from its source (the version the source has, which may be newer), once for each reason while the updater runs: one that did not help, or did not get through, is asked for again after the next start. Not the updater itself, which first-install installs, nor an app on iDrive 8, whose deploy tool installs no current app afresh. Its row has `repair` (the reason) and `problem` (`Not working: <reason>`) until then.
+
+## 0.8.19
+
+- The Store's Restart head unit (sent with the secret) restarts the head unit at once: it is not held to the restart limits, nor recorded against them. A restart asked for without the secret (a Store before 0.9.16) keeps the limits.
+
+## 0.8.18
+
+- A download whose connection breaks is tried again: one cut mid-transfer, reset, without data for 30 s or without a connection, or answered with a 500, 502, 503 or 504, after 1, 2, 4 and 8 s, up to 4 times in a row without getting further (200 tries in all). Where the server takes byte ranges, as GitHub's release downloads do, the next try asks for the rest of the file and adds it to what came; otherwise the file starts over. The size and sha256 the source states are still checked on the whole file. The log says each try and why (`fetch: <file>: <reason>; trying again in <n> s from byte <n>`).
+- A download that fails says why: the first error of its last try (`<host>: ECONNRESET`, `<host>: no data for 30 s`, `connection closed mid-download`), with the number of tries, rather than whichever error came last.
+
+## 0.8.17
+
+- A Python build's downloads work on a head unit whose clock is off: Python's TLS (urllib, pip, requests) is given `py/sitecustomize.py`, which sets OpenSSL's `X509_V_FLAG_NO_CHECK_TIME` on every SSL context. The chain to a trusted root, every signature in it, CA constraints, key usages and the host name are still checked.
+
+## 0.8.16
+
+- An app whose requirement failed to install says where from and why: "needs mgu-inputgate 1.0.0 or newer, which did not install from <source>: <the requirement's own error>".
+
+## 0.8.15
+
+- Downloads work on a head unit whose clock is off: a certificate's validity dates are not held against it. The chain up to a trusted root (Node's bundled roots, or `ca_file`), every signature in it, CA constraints, key usages and the host name are still checked, and nothing is sent before they pass. The log names each host whose dates were let go, once.
+
+## 0.8.14
+
+- A restart of the head unit is the Store's request only: it carries the secret, once Store 0.9.16 or newer is installed (it sends it); with an older Store, a restart is asked for without it, within the same limits.
+- Restarts are limited, so nothing can restart the unit in a loop: none before the unit has been up 4 minutes, none within 10 minutes of the last one, and at most 3 an hour. Each is recorded on disk (`state/reboots.json`) before the unit restarts, so the limits hold across restarts. A refused request says why and when a restart is possible (`rebootError`).
+
+## 0.8.13
+
+- A version 1 App Manager index keeps only the newest package of each id, as version 2 does, and remembers what each listed package is (`state/index/<source id>/index.json`), so a check downloads only packages it has not read; the packages kept, every source's together, come to at most 128 MiB, and one not kept is downloaded again for its install or icon.
+- Each start removes the checked artifacts an install cut short left in `state/verified/`, and every build folder an earlier run left, root's included (a build that failed before root handed the repo copy over); a build that fails that way leaves no folder.
+- A build's output in the log is at most 256 KiB (and 2000 lines), its proxy's lines included, then one line says the rest is left out.
+
+## 0.8.12
+
+- A build whose `output` names its package installs when the build also leaves a file of that name in `MGU_OUT`: the declared output replaces it.
+
+## 0.8.11
+
+- Default source: IterioDev/car-apps on its tags channel (the newest x.y.z tag, as its README asks), added once at the first start of this version (and seeded by the installers, `deploy/sources.json`), unless a source of that repo is there already. A component whose `mguHmi` names only other head units is not offered, and its install is refused. Like any source it can be removed; once removed it is not added again.
+
+## 0.8.10
+
+- A public GitHub repo read without a token makes no GitHub API request in a check or an install (README.md, "GitHub without a token"): a catalog release's `catalog.json` comes from `github.com`'s release download (asked for again with its ETag, which goes along the redirect to the asset storage), a branch's or tag's commit and the default branch from the refs `github.com` advertises to git, files from `raw.githubusercontent.com`, a commit's tarball from `codeload.github.com`, and an artifact from the release download its catalog names. The API remains for an `apps` pattern's folders (once per new commit), a repo without a `catalog` release on the releases channel, adding a source, and a repo those hosts do not reach. New keys `github_raw` and `github_codeload`.
+- A request GitHub's rate limit refuses, in a check or a download, fails with `GitHub limit reached. Try later or sign in.`
+- A token GitHub refuses for a repo (a 401, or a 403 that is no rate limit, as a GitHub App's sign-in gets from a repo the App is not installed on) anywhere in a read leaves the repo to the next token, else none; an artifact, icon or tarball download refused that way is downloaded again without the token.
+- Each check's log line ends with the GitHub API requests it made.
+- The phone page's add form says `GitHub limit reached. Try later or sign in.` for a rate-limited repo.
+
+## 0.8.9
+
+- Default source: robertnisipeanu/idrive-apps, from its catalog release, added once at the first start of this version (and seeded by the installers, `deploy/sources.json`). Like any source it can be removed; once removed it is not added again.
+
+## 0.8.8
+
+- A new version of the updater installed from a USB stick or a folder reads the sticks mounted before it takes up the queue the version before left, so a queued install from a stick (one that needed the new updater first) goes ahead instead of failing with `no longer in its source`.
+
+## 0.8.7
+
+- `rollback {id}` (with the secret): Undo update, the component back to the version the deploy tool keeps from before (its rollback). Each row's `previous` names that version where it is offered: never for the updater, the deploy tool, the Store or what the updater requires, nor below what an installed component requires. Needs mgu-deploy 0.6.9.
+- A Store update stands once the new Store says `hello` (`{op: "hello", id, version}`, the Store 0.9.14 and newer at each connection). When a process of that Store runs and it has not said hello within 2 minutes, the Store goes back to its version before, and its row says `<version> did not start; <previous> is back`; so does one whose tile showed before the update and does not show 2 minutes after it (`<version>'s tile does not show; <previous> is back`). Kept across restarts in `state/store-trial.json`.
+- A tool the deploy tool's check at the start of the head unit found not working shows on its row: `<version> did not work after the restart (<why>); <previous> is back`.
+
+## 0.8.6
+
+- Every installed app can be removed, whatever its source's listing says (`uninstallable`): an app a repository or catalog lists without it (the idrive7-apps apps) shows Remove in the Store as an imported one does. The Store, the updater, the deploy tool and what the updater requires are never removable, whichever source lists them; a tool still needs `uninstallable: true`.
+
+## 0.8.2
+
+- A component's `pendingReboot` is true whenever the deploy tool reports its id pending, also before it is installed: an iDrive 8 app install the deploy tool queued for the next start (`installs at the next start`), which the car's app list does not have until then, and an app this start put in place (`last_apply`) that MainApp does not list yet, for 5 minutes; after that it shows as a failed install (`put in place at the last start but not registered`), and the state goes out again when MainApp lists it. An id that is not installed is pending only on the row of the origin that queued it. Before, the row of a first install showed `available` with no pending restart, and the Store offered Install again.
+- A component's `nextStart`: `install` or `remove` for such an iDrive 8 app change (the deploy tool's `pending_reboot` reasons), else null.
+- A queued first install can be removed: `uninstall` takes an id whose install is queued for the next start, from the row of the origin that queued it (by the id it is queued as, also another source's row of that id), and the deploy tool drops it from its queue. A removal is decided by the row of the origin that installed or queued the id: another origin's row of it cannot remove it.
+- A change the last start failed to apply (the deploy tool's `last_apply`, read with its status) shows on its row's `error`: `the install at the start of the head unit failed: <why>` (or `the removal`), with `applyFailed` `install` or `remove`, until an install or removal of that id is asked for or a newer start applies; that is kept in `state/apply-seen.json` across restarts. Removing an app not installed whose change failed puts the failure aside. Before, a failed install or removal at boot showed the app as available or installed again, with no reason.
+
+## 0.8.1
+
+- A component's `problem`: what an installed tool says is wrong, the `problem` line of its `/var/opt/<id>/status.json` (mgu-render 0.4.1: `In-page drawing unavailable: <reason>`), else null.
+
+## 0.8.0
+
+- The uplink's Wi-Fi and preferred connection for the Store (from IterioDev App Manager 2.0.6 Wi-Fi pages): the privileged requests `uplink-prefer`, `wifi-enable`, `wifi-scan`, `wifi-connect` and `wifi-forget` are checked and relayed to mgu-uplink's root-only `/run/mgu-uplink/ctl.sock` (mgu-uplink 0.7.0) with only their own fields; the answer is the state, or the uplink's refusal. A Wi-Fi password goes to the uplink only: no log line or reply names it. Without the uplink's socket the request is refused with `needs mgu-uplink 0.7.0 or newer, running`; nothing else depends on it.
+- The state's `uplink`: the uplink's `status.json` (device, state, error, `preferred`, `wifi`), read every 2 s (`uplink_status`, `uplink_poll_s`), null while the uplink does not run.
+
+## 0.7.6
+
+- `deploy_timeout_s` is 5400 (90 min): longer than the deploy tool's 60-minute wait for another run's lock plus its longest run, so a queued run is never stopped mid-change.
+
+## 0.7.5
+
+- A deploy tool run still going after `deploy_timeout_s` (3600) is stopped together with everything it started, and the install fails with `the deploy tool did not finish within 60 min and was stopped`. No `mgu-deploy` process is left running.
+
+## 0.7.4
+
+- Requires `mgu-python` 1.0.2, and so does every app that builds with Python: `mgu-python` 1.0.1 and older cannot start on the head unit, so an updater update, or the install of such an app, updates it first.
+- A Python build whose interpreter cannot start fails with `Python (<path>) cannot start (<reason>): update mgu-python`.
+
+## 0.7.3
+
+- An installed app's `icon` is the icon its installed package shows on the car's app list (its rhmiData's first entry point's, read through no link), kept in `state/icons/`; the row of the installed app has its source's icon fetched only once it has none, other sources' rows of that id show their own.
+- A repo tree's apps have icons: a build-script app's `icon.png` in its folder (or the file its `mgu-repo.json` entry's `icon` names there), a source package's entry-point icon (each variant group's `resourcesPath` looked in, then `resources/`). Each is read from the listed commit once per version, in the background.
+- A package without `icon.png` beside `package.json` gives its entry point's icon.
+- An icon that is missing, larger than 128 KiB, not a PNG or not its sha256 is not asked for again for that version of the component and that icon, across restarts too (`state/icon-failures.json`); one that could not be fetched for another reason is asked for again a day later.
+
+## 0.7.2
+
+- Builds, downloads and the phone page run as uids the updater picks on the unit (README.md, "Its own uids"): free numbers above the app uid ranges of the running MainApp's config, kept in `state/uids.json` and picked again, once no download or build runs, when something else takes one; what the old uid left is removed as it, downloads wait for the uplink to read the new fetch uid, and the phone page restarts. Without MainApp's config nothing is picked. `build_uid`, `fetch_uid`, `web_uid` and their gids are overrides; `updater.conf` ships none. The fetch uid reaches the uplink as `uids.d/mgu-updater` (`component.json` `"internet": true`, `"uids": "state/internet-uids"`); while an uplink older than 0.4.0 runs, downloads run as 12990.
+- A queued component that needs a newer updater waits for the updater's own update, queued with it; what is still queued when the updater restarts into its new version is installed by that version once it is kept.
+- Requires `mgu-deploy` 0.5.3.
+
+## 0.7.1
+
+- GitHub sources and the add-source check are read with a stored token when there is one, public repos too, and without one only where every token is refused; a source that hits GitHub's rate limit with no usable token says `GitHub rate limit reached`.
+- A check asks GitHub only what can have changed and reads the rest only when it did, so unchanged sources cost far fewer requests and a new version is still found in the same check.
+
+## 0.7.0
+
+- IterioDev's App Manager on the unit (the deploy tool's `status --json` `appmanager`) is adopted once through `mgu-deploy.sh appmanager adopt`. Each app it installed gets as origin the source that reads its public repository's index (added as an https source named after the repository when none does), the repository it recorded, else its default one when that listed the app; any other is `imported`: no origin, so the source listing it updates it ("Ids"); one no source lists has a row of source `imported`, installed and removable.
+- `oap-appmanager` is listed as `Replaced by Store` and `ipheth-tether` as `Replaced by mgu-uplink` from every source (`blocked`), never installed; the App Manager's app keeps its row while it or the App Manager's service is on the unit, and its Remove is the deploy tool's `uninstall oap-appmanager`, which removes the App Manager. An App Manager installed again after its removal is adopted again.
+- Default sources (`default_sources`, `cauliflowermossgrape/idrive7-apps:branch`): each is added to `sources.json` once, at the first start of an updater that names it, unless a source of that repo is there; `state/default-sources.json` records it, so one the owner removes stays removed.
+- Apps idrive7-apps' own installer put on the unit (the deploy tool's `status --json` `idrive7.apps`) get an origin once: the source reading `cauliflowermossgrape/idrive7-apps` (the default source) when it lists the app, once it has been read; else `imported`, and so while no source reads that repository (one the owner removed is not added again). They are shown installed from that source and updated from it.
+- `source-probe` (privileged): what a GitHub repo can be added on, read with each token in turn, then without one: its name as GitHub spells it, whether it has a release and an x.y.z tag, its default branch, and its branches (100 a page, at most 300; main, master, the default branch, then the rest). Answers `{"type":"probe", status}`: `ok`, `auth-needed` (a 403 that is no rate limit counts as no reach, and the next token is tried), `offline`, `rate-limited` (a 429, or a 403 with `x-ratelimit-remaining: 0` or `retry-after`) or `error`; a repo that is already a source is refused. A branch name no channel takes, the default one included, is left out.
+- Phone page: after a GitHub repository is typed (asked about once the box is left, or on the first Add, which then waits for the answer), its channel list shows only what the repo has (Releases, Tags, its branches in that order), and it is added under the name GitHub spells it with; the free-text branch box is gone. A `/tree/<branch>` address adds that branch; a repo that could not be listed is added without a channel. `source-add` from the page takes no channel.
+- Requires `mgu-deploy` 0.5.0, and `mgu-python` 1.0.0 (`requires`): an updater update installs it first, and it cannot be removed.
+- Sources are listed apart: each origin's component of an id is a row of its own, and an installed component is updated only from its origin; another source's newer version of its id is beside it, not an update. With nothing of an id installed, the first origin listing one that cannot install under another id (a package built elsewhere, a tool) has the id; the others are beside it. Rows carry `installAs` (the id a row keyed `<id>@<source>` installs as); requests and `busy` name the row's `id`.
+- An app the updater builds goes beside another origin's under `<id>2`, `<id>3`, … whether or not that one is installed yet, so both install; a package built elsewhere and a tool are blocked while another origin's component has the id.
+- A stick folder that `mgu-install.js usb-repo` marked as a copy of a stored source (`mgu-copy.json` `copyOf`) has that source as its origin: it updates what the source installed, and what installs from it has the source as its origin.
+- An installed component without an origin (installed from outside the updater, `imported`) or whose origin lists it no more is updated by the origin whose listing has its title, or, without a recorded origin, by the only origin listing its id; an origin holding another id for it (`doom2`) does not count; else it has no update: a row of its own that nothing installs over. Every installed tool and local app no source lists has a row for its Remove, removable only when its `component.json` says so (an app: always), and never for the updater, the deploy tool, the Store or what the updater requires. A removed source's origins are kept; added again, it updates them. A stick folder `mgu-repo/<name>` without `mgu-copy.json` stands for the stored source `<name>`; `usb-repo` names the GitHub repository of a checkout too.
+- A requirement is installed through its row: an installed one from its origin only, one without an origin not at all.
+
+## 0.6.0
+
+- Providers of one capability install side by side: a second renderer installs beside the first, with no Replace. `allProviders` lists every installed provider of each capability (`{"renderer": [{id, version}, ...]}`), and `providers` keeps one of them each (`{"renderer": {id, version}}`) for the Store 0.7; components carry no `replaces`; `install` takes no `replace`, and the phone page installs nothing (it showed only Replace) and shows a component's capability.
+- Every installed provider counts, so a requirement that provides a capability counts as met when another installed tool provides it, whichever it is.
+- Renderer and tether service packages, and a repo tool that provides a capability, require `mgu-deploy` 0.4.0; a repo service tool providing `renderer` carries `keepRunning`, so an update leaves it running.
+
+## 0.5.3
+
+- An app whose id an installed app of another origin holds: built here (a repo tree's build script, or source package), it installs as `<id>2`, `<id>3`, … (the first id free on the unit and in every source), from a copy of its folder made over to that id; `state/aliases.json` keeps that id for its source, so its updates land there, until it is removed. A package built elsewhere is listed as blocked (`<id> is already installed from <source>`) and not installed. State rows carry `listedId` and `blocked`.
+
+## 0.5.2
+
+- `mgu-repo.json` `apps`: every subfolder of a folder holding the manifest (`app.json`) is an app, its id the subfolder's name.
+- Build scripts in Python (`build.python`), under the `mgu-python` tool, which such an app requires; `build.sdk` puts the oap-sdk module generated from the donor in the repo copy first (needs `mgu-deploy` 0.3.2); `build.output` names the package the build leaves in the repo; `{id}`, `{version}` and `{dir}` are filled in.
+- `build.network` (true, or app ids): the build downloads through an HTTP proxy run as the fetch uid for it alone, serving the build uid with a per-build password, public addresses on ports 443 (CONNECT) and 80 only; without the uplink the build fails, saying it needs internet.
+- `tools` with `service`: a committed program installed as a tool whose systemd unit the updater writes from the entry, with its recmgr entry and `mguProvides`.
+- `tools` with `preload`: a committed library a stock unit's process loads from the next head-unit start, behind a boot guard (after idrive7-apps' controller gate installer): the guard, its check and the unit's drop-in are written by the updater; it needs `mgu-deploy` 0.3.2.
+- `needs` / `mguNeeds` (capabilities): an install is refused until an installed tool provides each, naming the ones the sources list; the last installed provider of a capability an installed component needs cannot be removed. State rows carry `needs`.
+
+## 0.5.1
+
+- `github_app_url`, shipped as the mgu-store GitHub App's page: the state's `signinApp.installUrl` is the App's install page (null without it), which the Store shows for a private source a sign-in does not reach.
+- A requirement that provides a capability another installed tool provides counts as met: a component requiring the renderer installs beside another renderer.
+
+## 0.5.0
+
+- An https source answering IterioDev's App Manager index version 2 (`{"version": 2, "packages": [{url, sha256, size, id, kind, version, title, author, description, icon, iconSha256, …}]}`) is listed from the index alone, without downloading a package. `kind` `app` is an app (for iDrive 8 unless the entry names `mguHmi`); `renderer` and `tether` are tools providing that kind, installed by `mgu-deploy` 0.3.0 or newer; another kind is left out. An install downloads the package and refuses one whose `package.json` is not the id, version and service the index names. Version 1 indexes are read as before.
+- Icons: an index version 2 entry's `icon`, a catalog entry's `icon` and an `mgu-store.json` entry's `icon` (a release asset), each with an optional `iconSha256`, are fetched after a check (PNG, at most 128 KiB) and kept in `state/icons/` for the Store to read. Components in the state carry `icon` (that file, or null), `author` and `description`.
+- A package read for what it is (a stick's `oap/`, a version 1 index) gives its `icon.png`, `author` (or `author.name`) and `store.description` (over `description`), as App Manager 2 packages carry them.
+
+## 0.4.0
+
+- The state names the head unit the deploy tool reports, `unit` (`hmi` `ID7`/`ID8`, `firmware`). Components carry `mguHmi` (catalog schema 2, `mgu-repo.json`, a component's manifest; an app package without it, from a stick or an index: the HMIs its rhmiData has a UI for) and `compat` (`yes`, `no`, `unknown`); installing one that is not for this unit, or needs one, is refused with the reason.
+- A stick's `oap/` lists IterioDev's root-service packages (`mguService` `renderer`, `tether`) as tools, which the deploy tool installs as such (they need `mgu-deploy` 0.3.0 or newer); another `mguService` is left out.
+- An https source answering an App Manager index (`{"packages": [{url, sha256}]}`) is read in index mode: each package downloaded once, checked against its sha256, kept by it while listed, and read for what it is.
+- Capabilities: a tool's `mguProvides` (a service package: its kind). The state's `providers` names the installed provider of each, and a component providing the same one names it in `replaces`. Its install is refused unless the privileged `{"op":"install","id","replace":true}` asks for it, which installs it with the deploy tool's `--replace`. The phone page shows a component's capability and that it is not for this unit, and offers Replace.
+
+## 0.3.0
+
+- Tokens are the updater's own, not a source's: `credentials/tokens.json` and `credentials/token-<id>`. A GitHub source is read with the token that read it last, else each stored token until one reaches the repo (a repo known to be public without one first), so one token serves every repo it can read and a source added later needs none. `auth-needed` only when no stored token reaches the repo.
+- `token-add` (checked with `api.github.com/user`: account and a classic token's scopes; one GitHub rejects is refused) and `token-remove` replace `token-set` and `token-clear`; `login-start` takes no source and its sign-in adds a token. The state has `tokens` (id, label, account, the sources each reads; never the text) and each source's `auth` names its token.
+- Token files the deploy tool writes are picked up within `usb_poll_s`, without a restart.
+- The per-source token files of 0.2.x become tokens at start, one per distinct text, and are removed once this version is committed.
+- An https source is read without a token.
+- The phone page has a Tokens section (paste, Sign in with GitHub, Remove); adding a source asks for no token.
+
+## 0.2.2
+
+- An installed component shows an update when any source, a USB stick included, lists a higher version. Among equal versions the source that installed it is preferred, then a stick, then `sources.json` order; the installing source becomes its origin.
+- An updater or uplink installed from a stick while the unit is offline is kept: its check passes when the deploy tool answers, without the catalog.
+
+## 0.2.1
+
+- Without `sources.json` the updater reads the built-in source alone and writes nothing, so the installers' `updater-sources` seeds the file whichever starts first. The first-start conversion of an earlier updater's `updater.local.conf` `catalog` and `github-token` into sources is removed: units carry `sources.json` from the installers or from updater 0.2.0.

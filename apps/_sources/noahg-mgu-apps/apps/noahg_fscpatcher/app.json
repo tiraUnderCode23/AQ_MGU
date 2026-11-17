@@ -1,0 +1,67 @@
+{
+  "id": "noahg_fscpatcher",
+  "title": "FSC Patch",
+  "description": "Patch or restore the FSC verifier.",
+  "version": "1.0.0",
+  "vendor": "noahg",
+  "loggingId": "NFSC",
+  "iconGlyph": "security",
+  "mguHmi": [
+    "ID7"
+  ],
+  "requires": {
+    "mgu-fscpatch": "1.0.0"
+  },
+  "screens": [
+    {
+      "name": "MAIN",
+      "title": "FSC Patch",
+      "kind": "menu",
+      "items": [
+        [
+          "text",
+          "STATUS",
+          "Loading..."
+        ],
+        [
+          "button",
+          "BTN_REFRESH",
+          "Refresh"
+        ],
+        [
+          "button",
+          "BTN_PATCH",
+          "Patch"
+        ],
+        [
+          "button",
+          "BTN_RESTORE",
+          "Restore backup"
+        ],
+        [
+          "button",
+          "BTN_RESTART",
+          "Restart iDrive"
+        ],
+        [
+          "button",
+          "BTN_DETAILS",
+          "Details"
+        ]
+      ]
+    },
+    {
+      "name": "DETAILS",
+      "title": "Details",
+      "kind": "menu",
+      "items": [
+        [
+          "scroll",
+          "DETAIL_TEXT",
+          "Loading..."
+        ]
+      ]
+    }
+  ],
+  "settings": []
+}

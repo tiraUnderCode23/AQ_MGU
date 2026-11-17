@@ -1,0 +1,238 @@
+import { CircleHelp, Cpu, Download, Usb } from 'lucide-react';
+import { create } from 'zustand';
+import {
+  buildThemePackage,
+  encodeThemePackage,
+  packageFileName,
+  type CompileResult,
+} from '@idv7lol/theme-compiler';
+import type { Theme } from '@idv7lol/theme-schema';
+import { gzip } from '../lib/gzip.js';
+import { RENDERER_LIMITS } from '@idv7lol/theme-engine';
+import { useProjectStore } from '../store/project.js';
+import { useUiStore } from '../store/ui.js';
+import { useT } from '../i18n/index.js';
+import { useValidation } from '../lib/useValidation.js';
+import { compileForCar } from '../lib/carCompile.js';
+import {
+  isTauri,
+  openExternal,
+  pickFolder,
+  saveThemePackage,
+  writeBundleFiles,
+} from '../host/files.js';
+
+interface BuildState {
+  result: CompileResult | null;
+  /** The theme object that was compiled; edits replace it, so a different one means stale. */
+  source: Theme | null;
+  exportedTo: string | null;
+  busy: boolean;
+}
+
+const useBuildStore = create<BuildState>(() => ({
+  result: null,
+  source: null,
+  exportedTo: null,
+  busy: false,
+}));
+
+export function BuildPanel(): JSX.Element {
+  const t = useT();
+  const theme = useProjectStore((s) => s.theme);
+  const report = useValidation();
+  const log = useUiStore((s) => s.logMessage);
+  // Kept outside the panel, so switching bottom tabs doesn't lose the compile.
+  const state = useBuildStore();
+  const setState = (u: BuildState | ((s: BuildState) => BuildState)) =>
+    useBuildStore.setState(typeof u === 'function' ? u(useBuildStore.getState()) : u, true);
+  const stale = state.result !== null && state.source !== theme;
+  const blocked = stale || !report || !report.ok;
+
+  const compile = async () => {
+    setState((s) => ({ ...s, busy: true }));
+    try {
+      const result = await compileForCar(theme);
+      setState({ result, source: theme, exportedTo: null, busy: false });
+      if (result.compiled)
+        log(
+          'info',
+          `Compiled "${theme.name}": ${result.compiled.layers} layers, ${result.files.length} files, ${result.report.warnings.length} warnings`,
+        );
+      else log('error', `Compilation failed: ${result.report.errors.length} error(s)`);
+    } catch (e) {
+      log('error', `Compilation crashed: ${(e as Error).message}`);
+      setState((s) => ({ ...s, busy: false }));
+    }
+  };
+
+  const exportBundle = async () => {
+    if (!state.result?.compiled || blocked) return;
+    try {
+      const folder = isTauri ? await pickFolder(t('build.exportBundle')) : null;
+      if (isTauri && !folder) return;
+      const path = await writeBundleFiles(folder, state.result.compiled.id, state.result.files);
+      setState((s) => ({ ...s, exportedTo: path }));
+      const message = t(isTauri ? 'build.exportedTo' : 'build.exportDownloaded', { path });
+      log('info', message);
+      useUiStore.getState().showToast(message);
+    } catch (e) {
+      const message = t('build.exportFailed', { error: (e as Error).message });
+      log('error', message);
+      useUiStore.getState().showToast(message);
+    }
+  };
+
+  const saveForCar = async () => {
+    if (!state.result?.compiled || blocked) return;
+    try {
+      const pkg = buildThemePackage(state.result);
+      const data = await gzip(encodeThemePackage(pkg));
+      const where = await saveThemePackage(data, packageFileName(pkg.id), t('build.saveUsb'));
+      if (!where) return;
+      setState((s) => ({ ...s, exportedTo: where }));
+      const message = t(isTauri ? 'build.savedUsb' : 'build.downloadedUsb', { path: where });
+      log('info', message);
+      useUiStore.getState().showToast(message);
+    } catch (e) {
+      const message = `${t('build.saveUsb')}: ${(e as Error).message}`;
+      log('error', message);
+      useUiStore.getState().showToast(message);
+    }
+  };
+
+  const c = state.result?.compiled;
+  const steps = [
+    { key: 'preview', state: 'done' },
+    { key: 'tests', state: !report ? '' : report.ok ? 'done' : 'fail' },
+    { key: 'compiled', state: c && !stale ? 'done' : state.result && !c ? 'fail' : '' },
+    { key: 'exported', state: state.exportedTo ? 'done' : '' },
+    { key: 'installed', state: '' },
+  ] as const;
+
+  return (
+    <div className="build-grid">
+      <div className="sim-card">
+        <h4>{t('build.status')}</h4>
+        <div className="status-steps">
+          {steps.map((s) => (
+            <div key={s.key} className={`status-step ${s.state}`}>
+              <span className="dot" />
+              <span>{t(`build.steps.${s.key}`)}</span>
+              {s.key === 'installed' && <span className="hint">— {t('build.installedNote')}</span>}
+            </div>
+          ))}
+        </div>
+        <div className="sim-buttons" style={{ marginTop: 6 }}>
+          <button
+            className="primary"
+            onClick={compile}
+            disabled={state.busy || !report || !report.ok}
+          >
+            <Cpu size={14} /> {t('build.compile')}
+          </button>
+          <button className="primary" onClick={saveForCar} disabled={!c || blocked}>
+            <Usb size={14} /> {t('build.saveUsb')}
+          </button>
+          <button onClick={exportBundle} disabled={!c || blocked}>
+            <Download size={14} /> {t('build.exportBundle')}
+          </button>
+          <button
+            onClick={() =>
+              openExternal('https://github.com/ALMSTRA/idv7lol/blob/main/docs/user/DEPLOYMENT.md')
+            }
+          >
+            <CircleHelp size={14} /> {t('build.howToInstall')}
+          </button>
+        </div>
+        {c && stale && <div className="hint warning">{t('build.stale')}</div>}
+        <div className="hint">{t(isTauri ? 'build.usbHint' : 'build.usbHintBrowser')}</div>
+        {!isTauri && <div className="hint">{t('build.noTauri')}</div>}
+        {state.exportedTo && (
+          <div className="hint">{t('build.exportedTo', { path: state.exportedTo })}</div>
+        )}
+        <h4 style={{ marginTop: 8 }}>{t('build.deps')}</h4>
+        <div className="hint">{t('build.depsNote')}</div>
+        <table className="plain">
+          <tbody>
+            <tr>
+              <td>cluster-render</td>
+              <td>≥ 0.6.6</td>
+              <td>robertnisipeanu/idrive-apps</td>
+            </tr>
+            <tr>
+              <td>mgu-deploy</td>
+              <td>≥ 0.8.21</td>
+              <td>robertnisipeanu/mgu-store</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div className="sim-card">
+        <h4>{t('menu.build')}</h4>
+        {!c && !state.result && <div className="hint">—</div>}
+        {state.result && !c && (
+          <div className="log">
+            {state.result.report.errors.map((e, i) => (
+              <div key={i} className="error">
+                {e.code}: {e.message}
+              </div>
+            ))}
+          </div>
+        )}
+        {c && (
+          <>
+            <table className="plain">
+              <tbody>
+                <tr>
+                  <th>{t('build.layers')}</th>
+                  <td>
+                    {c.layers} / {RENDERER_LIMITS.layersPerApp}
+                  </td>
+                </tr>
+                <tr>
+                  <th>{t('build.pieces')}</th>
+                  <td>
+                    {c.pieces.length} effect, {c.images.length} image
+                  </td>
+                </tr>
+                <tr>
+                  <th>{t('build.shaders')}</th>
+                  <td>{Object.keys(c.shaders).join(', ')}</td>
+                </tr>
+                <tr>
+                  <th>{t('build.signals')}</th>
+                  <td>{c.signals.length}</td>
+                </tr>
+                <tr>
+                  <th>{t('build.fonts')}</th>
+                  <td>
+                    {!c.fonts.length
+                      ? '—'
+                      : state.result!.files.filter((f) => f.path.startsWith('fonts/')).length
+                        ? c.fonts.join(', ')
+                        : `${c.fonts.join(', ')} (atlas missing)`}
+                  </td>
+                </tr>
+                <tr>
+                  <th>{t('build.warnings')}</th>
+                  <td>{c.warnings.length}</td>
+                </tr>
+              </tbody>
+            </table>
+            {c.warnings.length > 0 && (
+              <div className="log">
+                {c.warnings.map((w, i) => (
+                  <div key={i} className="warning">
+                    {w.componentId ? `[${w.componentId}] ` : ''}
+                    {w.message}
+                  </div>
+                ))}
+              </div>
+            )}
+          </>
+        )}
+      </div>
+    </div>
+  );
+}

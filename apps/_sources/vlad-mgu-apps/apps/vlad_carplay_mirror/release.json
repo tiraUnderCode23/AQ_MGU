@@ -1,0 +1,7 @@
+{
+  "build": "unit",
+  "uninstallable": true,
+  "mguHmi": [
+    "ID7"
+  ]
+}

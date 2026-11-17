@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "components": [
+    {
+      "id": "mgu-fscpatch",
+      "kind": "tool",
+      "path": "native/mgu-fscpatch/prebuilt",
+      "requires": {
+        "mgu-deploy": "0.3.2"
+      }
+    },
+    {
+      "id": "noahg_fscpatcher",
+      "kind": "app",
+      "path": "apps/noahg_fscpatcher",
+      "manifest": "app.json",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-fscpatch": "1.0.0"
+      },
+      "build": {
+        "node": "tools/prebuilt.js",
+        "args": [
+          "{dir}",
+          "{id}",
+          "{version}"
+        ],
+        "output": "{dir}/prebuilt/{id}@{version}.tgz"
+      }
+    },
+    {
+      "id": "mgu-obd-adapter",
+      "kind": "tool",
+      "path": "native/hu-obd-adapter/prebuilt",
+      "requires": {
+        "mgu-deploy": "0.4.0"
+      }
+    },
+    {
+      "id": "noahg_obdbridge",
+      "kind": "app",
+      "path": "apps/noahg_obdbridge",
+      "manifest": "app.json",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-obd-adapter": "1.0.0"
+      },
+      "build": {
+        "node": "tools/prebuilt.js",
+        "args": [
+          "{dir}",
+          "{id}",
+          "{version}"
+        ],
+        "output": "{dir}/prebuilt/{id}@{version}.tgz"
+      }
+    }
+  ]
+}

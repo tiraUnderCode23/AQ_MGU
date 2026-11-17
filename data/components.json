@@ -1,0 +1,972 @@
+[
+  {
+    "id": "ambient_config",
+    "kind": "app",
+    "title": "Ambient config",
+    "version": "2.6.2",
+    "mguHmi": [
+      "ID7"
+    ],
+    "build": {
+      "python": "apps/_sources/idrive7-apps/kit/tools/build.py",
+      "args": [
+        "{id}"
+      ],
+      "sdk": "oap-sdk",
+      "output": "apps/_sources/idrive7-apps/dist/{id}@{version}.tgz",
+      "network": [
+        "doom"
+      ],
+      "shared": [
+        "apps/_sources/idrive7-apps/kit/runtime",
+        "apps/_sources/idrive7-apps/kit/platform",
+        "apps/_sources/idrive7-apps/kit/localization",
+        "apps/_sources/idrive7-apps/kit/tools/build.py",
+        "apps/_sources/idrive7-apps/kit/tools/pack_data.py",
+        "apps/_sources/idrive7-apps/kit/tools/localize.py",
+        "apps/_sources/idrive7-apps/kit/tools/locale-revisions.json",
+        "apps/_sources/idrive7-apps/kit/tools/oapgen",
+        "apps/_sources/idrive7-apps/oap-sdk"
+      ]
+    },
+    "path": "apps/_sources/idrive7-apps/apps/ambient_config",
+    "manifest": "app.json",
+    "description": "Any colour on the ambient light, animations, and a look for each driving mode",
+    "requires": {
+      "idrive7-renderd": "2.1.18",
+      "mgu-inputgate": "1.1.0"
+    }
+  },
+  {
+    "id": "brake_test",
+    "kind": "app",
+    "title": "Brake Test",
+    "version": "1.5.21",
+    "mguHmi": [
+      "ID7"
+    ],
+    "build": {
+      "python": "apps/_sources/idrive7-apps/kit/tools/build.py",
+      "args": [
+        "{id}"
+      ],
+      "sdk": "oap-sdk",
+      "output": "apps/_sources/idrive7-apps/dist/{id}@{version}.tgz",
+      "network": [
+        "doom"
+      ],
+      "shared": [
+        "apps/_sources/idrive7-apps/kit/runtime",
+        "apps/_sources/idrive7-apps/kit/platform",
+        "apps/_sources/idrive7-apps/kit/localization",
+        "apps/_sources/idrive7-apps/kit/tools/build.py",
+        "apps/_sources/idrive7-apps/kit/tools/pack_data.py",
+        "apps/_sources/idrive7-apps/kit/tools/localize.py",
+        "apps/_sources/idrive7-apps/kit/tools/locale-revisions.json",
+        "apps/_sources/idrive7-apps/kit/tools/oapgen",
+        "apps/_sources/idrive7-apps/oap-sdk"
+      ]
+    },
+    "path": "apps/_sources/idrive7-apps/apps/brake_test",
+    "manifest": "app.json",
+    "description": "100-0 and 200-0 braking distance, peak decel and brake-fade tracking",
+    "requires": {
+      "idrive7-renderd": "2.1.18",
+      "mgu-inputgate": "1.1.0"
+    }
+  },
+  {
+    "id": "car_vitals",
+    "kind": "app",
+    "title": "M Vitals",
+    "version": "2.27.6",
+    "mguHmi": [
+      "ID7"
+    ],
+    "build": {
+      "python": "apps/_sources/idrive7-apps/kit/tools/build.py",
+      "args": [
+        "{id}"
+      ],
+      "sdk": "oap-sdk",
+      "output": "apps/_sources/idrive7-apps/dist/{id}@{version}.tgz",
+      "network": [
+        "doom"
+      ],
+      "shared": [
+        "apps/_sources/idrive7-apps/kit/runtime",
+        "apps/_sources/idrive7-apps/kit/platform",
+        "apps/_sources/idrive7-apps/kit/localization",
+        "apps/_sources/idrive7-apps/kit/tools/build.py",
+        "apps/_sources/idrive7-apps/kit/tools/pack_data.py",
+        "apps/_sources/idrive7-apps/kit/tools/localize.py",
+        "apps/_sources/idrive7-apps/kit/tools/locale-revisions.json",
+        "apps/_sources/idrive7-apps/kit/tools/oapgen",
+        "apps/_sources/idrive7-apps/oap-sdk"
+      ]
+    },
+    "path": "apps/_sources/idrive7-apps/apps/car_vitals",
+    "manifest": "app.json",
+    "description": "Live engine, thermal, intake / fuel / ignition, tyre and chassis gauges",
+    "requires": {
+      "idrive7-renderd": "2.1.18",
+      "mgu-inputgate": "1.1.0"
+    }
+  },
+  {
+    "id": "doom",
+    "kind": "app",
+    "title": "Doom",
+    "version": "1.7.22",
+    "mguHmi": [
+      "ID7"
+    ],
+    "build": {
+      "python": "apps/_sources/idrive7-apps/kit/tools/build.py",
+      "args": [
+        "{id}"
+      ],
+      "sdk": "oap-sdk",
+      "output": "apps/_sources/idrive7-apps/dist/{id}@{version}.tgz",
+      "network": [
+        "doom"
+      ],
+      "shared": [
+        "apps/_sources/idrive7-apps/kit/runtime",
+        "apps/_sources/idrive7-apps/kit/platform",
+        "apps/_sources/idrive7-apps/kit/localization",
+        "apps/_sources/idrive7-apps/kit/tools/build.py",
+        "apps/_sources/idrive7-apps/kit/tools/pack_data.py",
+        "apps/_sources/idrive7-apps/kit/tools/localize.py",
+        "apps/_sources/idrive7-apps/kit/tools/locale-revisions.json",
+        "apps/_sources/idrive7-apps/kit/tools/oapgen",
+        "apps/_sources/idrive7-apps/oap-sdk"
+      ]
+    },
+    "path": "apps/_sources/idrive7-apps/apps/doom",
+    "manifest": "app.json",
+    "description": "Doom (Freedoom: Phase 1) on the iDrive. Main menu with all settings; the game drawn in full resolution across the whole screen, on the controller; BACK returns to the menu and saves",
+    "requires": {
+      "idrive7-renderd": "2.1.18",
+      "mgu-inputgate": "1.1.0"
+    }
+  },
+  {
+    "id": "draggy",
+    "kind": "app",
+    "title": "Drag Timer",
+    "version": "2.6.0",
+    "mguHmi": [
+      "ID7"
+    ],
+    "build": {
+      "python": "apps/_sources/idrive7-apps/kit/tools/build.py",
+      "args": [
+        "{id}"
+      ],
+      "sdk": "oap-sdk",
+      "output": "apps/_sources/idrive7-apps/dist/{id}@{version}.tgz",
+      "network": [
+        "doom"
+      ],
+      "shared": [
+        "apps/_sources/idrive7-apps/kit/runtime",
+        "apps/_sources/idrive7-apps/kit/platform",
+        "apps/_sources/idrive7-apps/kit/localization",
+        "apps/_sources/idrive7-apps/kit/tools/build.py",
+        "apps/_sources/idrive7-apps/kit/tools/pack_data.py",
+        "apps/_sources/idrive7-apps/kit/tools/localize.py",
+        "apps/_sources/idrive7-apps/kit/tools/locale-revisions.json",
+        "apps/_sources/idrive7-apps/kit/tools/oapgen",
+        "apps/_sources/idrive7-apps/oap-sdk"
+      ]
+    },
+    "path": "apps/_sources/idrive7-apps/apps/draggy",
+    "manifest": "app.json",
+    "description": "0-100, 100-200 and 1/4 mile timer with best times",
+    "requires": {
+      "idrive7-renderd": "2.1.18",
+      "mgu-inputgate": "1.1.0"
+    }
+  },
+  {
+    "id": "dtc_scanner",
+    "kind": "app",
+    "title": "Fault Scanner",
+    "version": "2.9.8",
+    "mguHmi": [
+      "ID7"
+    ],
+    "build": {
+      "python": "apps/_sources/idrive7-apps/kit/tools/build.py",
+      "args": [
+        "{id}"
+      ],
+      "sdk": "oap-sdk",
+      "output": "apps/_sources/idrive7-apps/dist/{id}@{version}.tgz",
+      "network": [
+        "doom"
+      ],
+      "shared": [
+        "apps/_sources/idrive7-apps/kit/runtime",
+        "apps/_sources/idrive7-apps/kit/platform",
+        "apps/_sources/idrive7-apps/kit/localization",
+        "apps/_sources/idrive7-apps/kit/tools/build.py",
+        "apps/_sources/idrive7-apps/kit/tools/pack_data.py",
+        "apps/_sources/idrive7-apps/kit/tools/localize.py",
+        "apps/_sources/idrive7-apps/kit/tools/locale-revisions.json",
+        "apps/_sources/idrive7-apps/kit/tools/oapgen",
+        "apps/_sources/idrive7-apps/oap-sdk"
+      ]
+    },
+    "path": "apps/_sources/idrive7-apps/apps/dtc_scanner",
+    "manifest": "app.json",
+    "description": "Read and clear fault memory of every control unit, plus active Check Control messages",
+    "requires": {
+      "idrive7-renderd": "2.1.18",
+      "mgu-inputgate": "1.1.0"
+    }
+  },
+  {
+    "id": "dyno",
+    "kind": "app",
+    "title": "Virtual Dyno",
+    "version": "1.6.3",
+    "mguHmi": [
+      "ID7"
+    ],
+    "build": {
+      "python": "apps/_sources/idrive7-apps/kit/tools/build.py",
+      "args": [
+        "{id}"
+      ],
+      "sdk": "oap-sdk",
+      "output": "apps/_sources/idrive7-apps/dist/{id}@{version}.tgz",
+      "network": [
+        "doom"
+      ],
+      "shared": [
+        "apps/_sources/idrive7-apps/kit/runtime",
+        "apps/_sources/idrive7-apps/kit/platform",
+        "apps/_sources/idrive7-apps/kit/localization",
+        "apps/_sources/idrive7-apps/kit/tools/build.py",
+        "apps/_sources/idrive7-apps/kit/tools/pack_data.py",
+        "apps/_sources/idrive7-apps/kit/tools/localize.py",
+        "apps/_sources/idrive7-apps/kit/tools/locale-revisions.json",
+        "apps/_sources/idrive7-apps/kit/tools/oapgen",
+        "apps/_sources/idrive7-apps/oap-sdk"
+      ]
+    },
+    "path": "apps/_sources/idrive7-apps/apps/dyno",
+    "manifest": "app.json",
+    "description": "Power and torque curves from a full-throttle pull, saved and compared",
+    "requires": {
+      "idrive7-renderd": "2.1.15"
+    }
+  },
+  {
+    "id": "edrive",
+    "kind": "app",
+    "title": "eDrive",
+    "version": "2.10.1",
+    "mguHmi": [
+      "ID7"
+    ],
+    "build": {
+      "python": "apps/_sources/idrive7-apps/kit/tools/build.py",
+      "args": [
+        "{id}"
+      ],
+      "sdk": "oap-sdk",
+      "output": "apps/_sources/idrive7-apps/dist/{id}@{version}.tgz",
+      "network": [
+        "doom"
+      ],
+      "shared": [
+        "apps/_sources/idrive7-apps/kit/runtime",
+        "apps/_sources/idrive7-apps/kit/platform",
+        "apps/_sources/idrive7-apps/kit/localization",
+        "apps/_sources/idrive7-apps/kit/tools/build.py",
+        "apps/_sources/idrive7-apps/kit/tools/pack_data.py",
+        "apps/_sources/idrive7-apps/kit/tools/localize.py",
+        "apps/_sources/idrive7-apps/kit/tools/locale-revisions.json",
+        "apps/_sources/idrive7-apps/kit/tools/oapgen",
+        "apps/_sources/idrive7-apps/oap-sdk"
+      ]
+    },
+    "path": "apps/_sources/idrive7-apps/apps/edrive",
+    "manifest": "app.json",
+    "description": "Real electric range (plug-in hybrids and fully electric cars such as the iX3), live battery power, cells and climate power, HV battery health (SOH) and energy, last charge, charge log, the 12 V battery (charge, voltage, what it does, regen, history) and a home-screen widget; on a 48 V mild hybrid its 48 V battery and DC/DC converter",
+    "requires": {
+      "idrive7-renderd": "2.1.15"
+    }
+  },
+  {
+    "id": "gforce",
+    "kind": "app",
+    "title": "G-Force",
+    "version": "1.6.22",
+    "mguHmi": [
+      "ID7"
+    ],
+    "build": {
+      "python": "apps/_sources/idrive7-apps/kit/tools/build.py",
+      "args": [
+        "{id}"
+      ],
+      "sdk": "oap-sdk",
+      "output": "apps/_sources/idrive7-apps/dist/{id}@{version}.tgz",
+      "network": [
+        "doom"
+      ],
+      "shared": [
+        "apps/_sources/idrive7-apps/kit/runtime",
+        "apps/_sources/idrive7-apps/kit/platform",
+        "apps/_sources/idrive7-apps/kit/localization",
+        "apps/_sources/idrive7-apps/kit/tools/build.py",
+        "apps/_sources/idrive7-apps/kit/tools/pack_data.py",
+        "apps/_sources/idrive7-apps/kit/tools/localize.py",
+        "apps/_sources/idrive7-apps/kit/tools/locale-revisions.json",
+        "apps/_sources/idrive7-apps/kit/tools/oapgen",
+        "apps/_sources/idrive7-apps/oap-sdk"
+      ]
+    },
+    "path": "apps/_sources/idrive7-apps/apps/gforce",
+    "manifest": "app.json",
+    "description": "Friction circle with grip envelope, peak g per direction and session records",
+    "requires": {
+      "idrive7-renderd": "2.1.15"
+    }
+  },
+  {
+    "id": "live_adjustments",
+    "kind": "app",
+    "title": "Engine Config",
+    "version": "0.9.8",
+    "mguHmi": [
+      "ID7"
+    ],
+    "build": {
+      "python": "apps/_sources/idrive7-apps/kit/tools/build.py",
+      "args": [
+        "{id}"
+      ],
+      "sdk": "oap-sdk",
+      "output": "apps/_sources/idrive7-apps/dist/{id}@{version}.tgz",
+      "network": [
+        "doom"
+      ],
+      "shared": [
+        "apps/_sources/idrive7-apps/kit/runtime",
+        "apps/_sources/idrive7-apps/kit/platform",
+        "apps/_sources/idrive7-apps/kit/localization",
+        "apps/_sources/idrive7-apps/kit/tools/build.py",
+        "apps/_sources/idrive7-apps/kit/tools/pack_data.py",
+        "apps/_sources/idrive7-apps/kit/tools/localize.py",
+        "apps/_sources/idrive7-apps/kit/tools/locale-revisions.json",
+        "apps/_sources/idrive7-apps/kit/tools/oapgen",
+        "apps/_sources/idrive7-apps/oap-sdk"
+      ]
+    },
+    "path": "apps/_sources/idrive7-apps/apps/live_adjustments",
+    "manifest": "app.json",
+    "description": "Engine Config for BMW MGU ID7. Exhaust Flap: OEM, OPEN and CLOSE over the car's own diagnostic link, or following the driving mode (Sport open, Eco Pro closed); held against the DME's timeout, Close handed back above a set engine speed. With BM3 or MHD picked in Settings: engine map switching, burbles, ASD and Max Cooling. Experimental: xDrive off until the ignition cycle (DSC LMV_FUNKTION), behind its own setting",
+    "requires": {
+      "idrive7-renderd": "2.1.18",
+      "mgu-inputgate": "1.1.0"
+    }
+  },
+  {
+    "id": "live_data",
+    "kind": "app",
+    "title": "Live Data",
+    "version": "1.0.16",
+    "mguHmi": [
+      "ID7"
+    ],
+    "build": {
+      "python": "apps/_sources/idrive7-apps/kit/tools/build.py",
+      "args": [
+        "{id}"
+      ],
+      "sdk": "oap-sdk",
+      "output": "apps/_sources/idrive7-apps/dist/{id}@{version}.tgz",
+      "network": [
+        "doom"
+      ],
+      "shared": [
+        "apps/_sources/idrive7-apps/kit/runtime",
+        "apps/_sources/idrive7-apps/kit/platform",
+        "apps/_sources/idrive7-apps/kit/localization",
+        "apps/_sources/idrive7-apps/kit/tools/build.py",
+        "apps/_sources/idrive7-apps/kit/tools/pack_data.py",
+        "apps/_sources/idrive7-apps/kit/tools/localize.py",
+        "apps/_sources/idrive7-apps/kit/tools/locale-revisions.json",
+        "apps/_sources/idrive7-apps/kit/tools/oapgen",
+        "apps/_sources/idrive7-apps/oap-sdk"
+      ]
+    },
+    "path": "apps/_sources/idrive7-apps/apps/live_data",
+    "manifest": "app.json",
+    "description": "Read-only live values from the car and its control units, a trip computer with fuel cost, and gauge screens of your own, one of them as the home-screen widget",
+    "requires": {
+      "idrive7-renderd": "2.1.18",
+      "mgu-inputgate": "1.1.0"
+    }
+  },
+  {
+    "id": "redline",
+    "kind": "app",
+    "title": "Redline",
+    "version": "2.0.44",
+    "mguHmi": [
+      "ID7"
+    ],
+    "build": {
+      "python": "apps/_sources/idrive7-apps/kit/tools/build.py",
+      "args": [
+        "{id}"
+      ],
+      "sdk": "oap-sdk",
+      "output": "apps/_sources/idrive7-apps/dist/{id}@{version}.tgz",
+      "network": [
+        "doom"
+      ],
+      "shared": [
+        "apps/_sources/idrive7-apps/kit/runtime",
+        "apps/_sources/idrive7-apps/kit/platform",
+        "apps/_sources/idrive7-apps/kit/localization",
+        "apps/_sources/idrive7-apps/kit/tools/build.py",
+        "apps/_sources/idrive7-apps/kit/tools/pack_data.py",
+        "apps/_sources/idrive7-apps/kit/tools/localize.py",
+        "apps/_sources/idrive7-apps/kit/tools/locale-revisions.json",
+        "apps/_sources/idrive7-apps/kit/tools/oapgen",
+        "apps/_sources/idrive7-apps/oap-sdk"
+      ]
+    },
+    "path": "apps/_sources/idrive7-apps/apps/redline",
+    "manifest": "app.json",
+    "description": "Full-screen rev tach with shift lights, gear, shift scoring and cold-engine rev guard; HUD by @biscotit",
+    "requires": {
+      "idrive7-renderd": "2.1.15"
+    }
+  },
+  {
+    "id": "service",
+    "kind": "app",
+    "title": "Service",
+    "version": "1.6.2",
+    "mguHmi": [
+      "ID7"
+    ],
+    "build": {
+      "python": "apps/_sources/idrive7-apps/kit/tools/build.py",
+      "args": [
+        "{id}"
+      ],
+      "sdk": "oap-sdk",
+      "output": "apps/_sources/idrive7-apps/dist/{id}@{version}.tgz",
+      "network": [
+        "doom"
+      ],
+      "shared": [
+        "apps/_sources/idrive7-apps/kit/runtime",
+        "apps/_sources/idrive7-apps/kit/platform",
+        "apps/_sources/idrive7-apps/kit/localization",
+        "apps/_sources/idrive7-apps/kit/tools/build.py",
+        "apps/_sources/idrive7-apps/kit/tools/pack_data.py",
+        "apps/_sources/idrive7-apps/kit/tools/localize.py",
+        "apps/_sources/idrive7-apps/kit/tools/locale-revisions.json",
+        "apps/_sources/idrive7-apps/kit/tools/oapgen",
+        "apps/_sources/idrive7-apps/oap-sdk"
+      ]
+    },
+    "path": "apps/_sources/idrive7-apps/apps/service",
+    "manifest": "app.json",
+    "description": "Service requirements from the instrument cluster: oil, brakes, brake fluid, vehicle check, inspection - distance, date, details; brake fluid and vehicle check reset",
+    "requires": {
+      "idrive7-renderd": "2.1.15"
+    }
+  },
+  {
+    "id": "warmup",
+    "kind": "app",
+    "title": "Warm-Up",
+    "version": "1.9.0",
+    "mguHmi": [
+      "ID7"
+    ],
+    "build": {
+      "python": "apps/_sources/idrive7-apps/kit/tools/build.py",
+      "args": [
+        "{id}"
+      ],
+      "sdk": "oap-sdk",
+      "output": "apps/_sources/idrive7-apps/dist/{id}@{version}.tgz",
+      "network": [
+        "doom"
+      ],
+      "shared": [
+        "apps/_sources/idrive7-apps/kit/runtime",
+        "apps/_sources/idrive7-apps/kit/platform",
+        "apps/_sources/idrive7-apps/kit/localization",
+        "apps/_sources/idrive7-apps/kit/tools/build.py",
+        "apps/_sources/idrive7-apps/kit/tools/pack_data.py",
+        "apps/_sources/idrive7-apps/kit/tools/localize.py",
+        "apps/_sources/idrive7-apps/kit/tools/locale-revisions.json",
+        "apps/_sources/idrive7-apps/kit/tools/oapgen",
+        "apps/_sources/idrive7-apps/oap-sdk"
+      ]
+    },
+    "path": "apps/_sources/idrive7-apps/apps/warmup",
+    "manifest": "app.json",
+    "description": "Oil and coolant warm-up calculator (time to ready), safe rev limit, turbo cool-down and a cold start counter",
+    "requires": {
+      "idrive7-renderd": "2.1.15"
+    }
+  },
+  {
+    "id": "zf8hp",
+    "kind": "app",
+    "title": "Transmission Config",
+    "version": "1.5.7",
+    "mguHmi": [
+      "ID7"
+    ],
+    "build": {
+      "python": "apps/_sources/idrive7-apps/kit/tools/build.py",
+      "args": [
+        "{id}"
+      ],
+      "sdk": "oap-sdk",
+      "output": "apps/_sources/idrive7-apps/dist/{id}@{version}.tgz",
+      "network": [
+        "doom"
+      ],
+      "shared": [
+        "apps/_sources/idrive7-apps/kit/runtime",
+        "apps/_sources/idrive7-apps/kit/platform",
+        "apps/_sources/idrive7-apps/kit/localization",
+        "apps/_sources/idrive7-apps/kit/tools/build.py",
+        "apps/_sources/idrive7-apps/kit/tools/pack_data.py",
+        "apps/_sources/idrive7-apps/kit/tools/localize.py",
+        "apps/_sources/idrive7-apps/kit/tools/locale-revisions.json",
+        "apps/_sources/idrive7-apps/kit/tools/oapgen",
+        "apps/_sources/idrive7-apps/oap-sdk"
+      ]
+    },
+    "path": "apps/_sources/idrive7-apps/apps/zf8hp",
+    "manifest": "app.json",
+    "description": "Transmission Config, experimental ZF 8HP monitor: live data, clutch fill adaptations, shift maps and temperature history",
+    "requires": {
+      "idrive7-renderd": "2.1.18",
+      "mgu-inputgate": "1.1.0"
+    }
+  },
+  {
+    "id": "cluster_themes",
+    "kind": "app",
+    "title": "Cluster Themes",
+    "version": "0.19.0",
+    "mguHmi": [
+      "ID7"
+    ],
+    "build": {
+      "python": "apps/_sources/bimmer-lab-apps/kit/tools/build.py",
+      "args": [
+        "{id}"
+      ],
+      "sdk": "oap-sdk",
+      "output": "apps/_sources/bimmer-lab-apps/dist/{id}@{version}.tgz"
+    },
+    "path": "apps/_sources/bimmer-lab-apps/apps/cluster_themes",
+    "manifest": "app.json",
+    "description": "Redraws the instrument cluster: GT3 race dash, M-style, M view, Vector (with a music panel), Sport, Minimal, Track, Drag, Rally, Retro 80s, Cruise, Dyno (BMW-coloured readout tiles) or Ribbon (with holiday editions), with shift lights, boost, temps, tyres, a G-meter and a 0-60 timer"
+  },
+  {
+    "id": "idrive_hud_widgets",
+    "kind": "app",
+    "title": "HUD Widgets",
+    "version": "0.15.0",
+    "mguHmi": [
+      "ID7"
+    ],
+    "build": {
+      "python": "apps/_sources/bimmer-lab-apps/kit/tools/build.py",
+      "args": [
+        "{id}"
+      ],
+      "sdk": "oap-sdk",
+      "output": "apps/_sources/bimmer-lab-apps/dist/{id}@{version}.tgz"
+    },
+    "path": "apps/_sources/bimmer-lab-apps/apps/idrive_hud_widgets",
+    "manifest": "app.json",
+    "description": "Gear, shift lights, boost, oil, coolant and intake temperatures, a G-meter, trip figures and the song playing on the windshield HUD, in Classic, M or Night themes"
+  },
+  {
+    "id": "cluster_centre",
+    "kind": "app",
+    "title": "Cluster Centre",
+    "version": "0.9.0",
+    "mguHmi": [
+      "ID7"
+    ],
+    "build": {
+      "python": "apps/_sources/cluster-apps/kit/tools/build.py",
+      "args": [
+        "{id}"
+      ],
+      "sdk": "oap-sdk",
+      "output": "apps/_sources/cluster-apps/dist/{id}@{version}.tgz",
+      "network": []
+    },
+    "path": "apps/_sources/cluster-apps/apps/cluster_centre",
+    "manifest": "app.json",
+    "description": "Pages of engine, gearbox and eDrive data, warm-up, turbo cool-down, a shift light and a 0-60 timer in the centre of the factory cluster, drawn by the cluster itself",
+    "requires": {
+      "idrive7-renderd": "2.1.7",
+      "mgu-inputgate": "1.0.0",
+      "cluster-render": "0.4.2"
+    }
+  },
+  {
+    "id": "cluster_info",
+    "kind": "app",
+    "title": "Cluster Info",
+    "version": "1.6.8",
+    "mguHmi": [
+      "ID7"
+    ],
+    "build": {
+      "python": "apps/_sources/cluster-apps/kit/tools/build.py",
+      "args": [
+        "{id}"
+      ],
+      "sdk": "oap-sdk",
+      "output": "apps/_sources/cluster-apps/dist/{id}@{version}.tgz",
+      "network": []
+    },
+    "path": "apps/_sources/cluster-apps/apps/cluster_info",
+    "manifest": "app.json",
+    "description": "A small panel of up to three live values (battery power from eDrive Live, battery charge, battery, oil and coolant temperature) over the Waze map in the cluster or on the HUD, and turn signal arrows on the HUD",
+    "requires": {
+      "idrive7-renderd": "2.1.7",
+      "mgu-inputgate": "1.0.0"
+    }
+  },
+  {
+    "id": "cluster_layouts",
+    "kind": "app",
+    "title": "Cluster Layouts",
+    "version": "0.28.1",
+    "mguHmi": [
+      "ID7"
+    ],
+    "build": {
+      "python": "apps/_sources/cluster-apps/kit/tools/build.py",
+      "args": [
+        "{id}"
+      ],
+      "sdk": "oap-sdk",
+      "output": "apps/_sources/cluster-apps/dist/{id}@{version}.tgz",
+      "network": []
+    },
+    "path": "apps/_sources/cluster-apps/apps/cluster_layouts",
+    "manifest": "app.json",
+    "description": "Your own layout on the whole instrument cluster (round dials, gear, temperatures), drawn by the cluster itself",
+    "requires": {
+      "idrive7-renderd": "2.1.7",
+      "mgu-inputgate": "1.0.0",
+      "cluster-render": "0.4.2"
+    }
+  },
+  {
+    "id": "edrive2",
+    "kind": "app",
+    "title": "eDrive Live",
+    "version": "1.10.1",
+    "mguHmi": [
+      "ID7"
+    ],
+    "requires": {
+      "idrive7-renderd": "2.1.7",
+      "mgu-inputgate": "1.0.0"
+    },
+    "build": {
+      "python": "apps/_sources/eroobeeroo-idrive7-apps/kit/tools/build.py",
+      "args": [
+        "{id}"
+      ],
+      "sdk": "oap-sdk",
+      "output": "apps/_sources/eroobeeroo-idrive7-apps/dist/{id}@{version}.tgz",
+      "network": []
+    },
+    "path": "apps/_sources/eroobeeroo-idrive7-apps/apps/edrive2",
+    "manifest": "app.json",
+    "description": "Live HV battery power (kW), cell temperatures and voltages, power limits, and climate / HVAC power use - set up for the X5 xDrive45e (G05 PHEV)"
+  },
+  {
+    "id": "light_show",
+    "kind": "app",
+    "title": "Light Show",
+    "version": "0.5.2",
+    "mguHmi": [
+      "ID7"
+    ],
+    "requires": {
+      "idrive7-renderd": "2.1.7",
+      "mgu-inputgate": "1.0.0"
+    },
+    "build": {
+      "python": "apps/_sources/eroobeeroo-idrive7-apps/kit/tools/build.py",
+      "args": [
+        "{id}"
+      ],
+      "sdk": "oap-sdk",
+      "output": "apps/_sources/eroobeeroo-idrive7-apps/dist/{id}@{version}.tgz",
+      "network": []
+    },
+    "path": "apps/_sources/eroobeeroo-idrive7-apps/apps/light_show",
+    "manifest": "app.json",
+    "description": "Flash the exterior lamps in patterns through the body controller's lamp test functions: emergency patterns (wig-wag and more, on lamps that are normally off while driving) and light shows. A lamp check finds which lamps the car lets the app switch."
+  },
+  {
+    "id": "mgu-fscpatch",
+    "kind": "tool",
+    "path": "apps/_sources/noahg-mgu-apps/native/mgu-fscpatch/prebuilt",
+    "requires": {
+      "mgu-deploy": "0.3.2"
+    },
+    "title": "FSC patch service",
+    "description": "FSC verifier patch service.",
+    "version": "1.0.0"
+  },
+  {
+    "id": "noahg_fscpatcher",
+    "kind": "app",
+    "path": "apps/_sources/noahg-mgu-apps/apps/noahg_fscpatcher",
+    "manifest": "app.json",
+    "mguHmi": [
+      "ID7"
+    ],
+    "requires": {
+      "mgu-fscpatch": "1.0.0"
+    },
+    "build": {
+      "node": "apps/_sources/noahg-mgu-apps/tools/prebuilt.js",
+      "args": [
+        "{dir}",
+        "{id}",
+        "{version}"
+      ],
+      "output": "{dir}/prebuilt/{id}@{version}.tgz"
+    },
+    "title": "FSC Patch",
+    "description": "Patch or restore the FSC verifier.",
+    "version": "1.0.0"
+  },
+  {
+    "id": "mgu-obd-adapter",
+    "kind": "tool",
+    "path": "apps/_sources/noahg-mgu-apps/native/hu-obd-adapter/prebuilt",
+    "requires": {
+      "mgu-deploy": "0.4.0"
+    },
+    "title": "OBD Bridge service",
+    "description": "BM3 diagnostic protocol bridge on the existing car hotspot.",
+    "version": "1.0.0"
+  },
+  {
+    "id": "noahg_obdbridge",
+    "kind": "app",
+    "path": "apps/_sources/noahg-mgu-apps/apps/noahg_obdbridge",
+    "manifest": "app.json",
+    "mguHmi": [
+      "ID7"
+    ],
+    "requires": {
+      "mgu-obd-adapter": "1.0.0"
+    },
+    "build": {
+      "node": "apps/_sources/noahg-mgu-apps/tools/prebuilt.js",
+      "args": [
+        "{dir}",
+        "{id}",
+        "{version}"
+      ],
+      "output": "{dir}/prebuilt/{id}@{version}.tgz"
+    },
+    "title": "OBD Bridge",
+    "description": "BM3 diagnostic protocol bridge over the car hotspot.",
+    "version": "1.0.0"
+  },
+  {
+    "id": "idv7lol",
+    "kind": "app",
+    "path": "apps/_sources/idv7lol/apps/idv7lol",
+    "title": "idv7lol",
+    "description": "Your own layout on the whole instrument cluster: themes made with idv7lol Studio, drawn by the cluster itself",
+    "mguHmi": [
+      "ID7"
+    ],
+    "requires": {
+      "cluster-render": "0.6.6",
+      "mgu-deploy": "0.8.21"
+    },
+    "build": {
+      "python": "apps/_sources/idv7lol/kit/tools/build.py",
+      "args": [
+        "idv7lol"
+      ],
+      "sdk": "oap-sdk",
+      "shared": [
+        "apps/_sources/idv7lol/kit",
+        "apps/_sources/idv7lol/oap-sdk"
+      ],
+      "output": "apps/_sources/idv7lol/dist/idv7lol@{version}.tgz",
+      "network": []
+    },
+    "version": "0.2.14"
+  },
+  {
+    "id": "ethanol_mix",
+    "kind": "app",
+    "title": "TurnKey E Blend",
+    "description": "Original v0.1.5 interface; live ethanol/fuel readouts and blend-to-full calculator. Tested only on the original 2023 X3M calibration.",
+    "version": "0.1.5",
+    "path": "apps/_sources/turnkey-ethanol-blend/apps/ethanol_mix",
+    "mguHmi": [
+      "ID7"
+    ],
+    "build": {
+      "python": "apps/_sources/turnkey-ethanol-blend/tools/build_store.py",
+      "args": [
+        "{id}"
+      ]
+    }
+  },
+  {
+    "id": "vlad_carplay_mirror",
+    "kind": "app",
+    "path": "apps/_sources/vlad-mgu-apps/apps/vlad_carplay_mirror",
+    "build": "unit",
+    "title": "CarPlay Map Mirror",
+    "description": "Waze / Apple Maps / Google Maps from CarPlay Dashboard to the cluster. Experimental on X3.",
+    "mguHmi": [
+      "ID7"
+    ],
+    "uninstallable": true,
+    "requires": {
+      "vlad-carplay-mirror": "0.1.3",
+      "app-privacy": "0.1.0"
+    },
+    "version": "0.1.3"
+  },
+  {
+    "id": "vlad-carplay-mirror",
+    "kind": "tool",
+    "path": "apps/_sources/vlad-mgu-apps/tools/vlad-carplay-mirror",
+    "optional": true,
+    "mguHmi": [
+      "ID7"
+    ],
+    "title": "CarPlay Map Mirror service",
+    "description": "Mirrors the CarPlay Dashboard map; no CarPlay firmware patch. Enable from its companion app.",
+    "version": "0.1.3",
+    "requires": {
+      "mgu-deploy": "0.7.0",
+      "cluster-render": "0.3.7"
+    }
+  },
+  {
+    "id": "idrive7-renderd",
+    "kind": "tool",
+    "version": "2.1.19",
+    "title": "GPU renderer",
+    "description": "The apps' own GPU renderer (mgu-render): draws them at 60 fps, beside the MGU Store's Renderer; installed with the apps (iDrive 7 and iDrive 8)",
+    "requires": {
+      "mgu-deploy": "0.6.1"
+    },
+    "optional": true,
+    "uninstallable": true,
+    "mguHmi": [
+      "ID7",
+      "ID8"
+    ],
+    "path": "apps/_sources/idrive7-apps/kit/renderd/prebuilt"
+  },
+  {
+    "id": "mgu-inputgate",
+    "kind": "tool",
+    "version": "1.2.0",
+    "title": "Controller gate",
+    "description": "Lets the apps have the iDrive controller (tabs, page buttons, settings, Doom); loads into the HMI at the next start (iDrive 7 and iDrive 8)",
+    "mguHmi": [
+      "ID7",
+      "ID8"
+    ],
+    "path": "apps/_sources/idrive7-apps/kit/renderd/inputgate/tool"
+  },
+  {
+    "id": "cluster-render",
+    "kind": "tool",
+    "version": "0.6.6",
+    "title": "Cluster renderer",
+    "description": "Draws every app's layers on the instrument cluster and the HUD, sharing the display slots and one upload budget",
+    "requires": {
+      "mgu-deploy": "0.4.0"
+    },
+    "uninstallable": true,
+    "mguHmi": [
+      "ID7",
+      "ID8"
+    ],
+    "path": "apps/_sources/idrive-apps/native/cluster-render"
+  },
+  {
+    "id": "waze-on-cluster",
+    "kind": "tool",
+    "version": "0.10.7",
+    "title": "Maps on cluster",
+    "description": "Runs the cluster map in the background. It is installed with the Maps on cluster app, which you use to control it.",
+    "requires": {
+      "mgu-deploy": "0.7.17",
+      "cluster-render": "0.5.3"
+    },
+    "uninstallable": true,
+    "mguHmi": [
+      "ID7"
+    ],
+    "path": "apps/_sources/idrive-apps/native/waze-on-cluster"
+  },
+  {
+    "id": "app-privacy",
+    "kind": "tool",
+    "version": "1.7.2",
+    "title": "App privacy",
+    "description": "Keeps our apps out of the head unit's backend app reporting and restarts them after a crash",
+    "requires": {
+      "mgu-deploy": "0.6.3"
+    },
+    "mguHmi": [
+      "ID7",
+      "ID8"
+    ],
+    "path": "tools/_sources/mgu-store/native/app-privacy"
+  },
+  {
+    "id": "robertn_waze_cluster",
+    "kind": "app",
+    "path": "apps/_sources/idrive-apps/apps/robertn_waze_cluster",
+    "build": "unit",
+    "title": "Waze on cluster",
+    "version": "0.6.12",
+    "mguHmi": [
+      "ID7"
+    ],
+    "requires": {
+      "waze-on-cluster": "0.10.7"
+    },
+    "manifest": "mgu-app.json"
+  }
+]

@@ -1,0 +1,28 @@
+# Dependencies and local tooling
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.*
+!.env.example
+
+# Generated output and proprietary donor material
+dist/
+build/
+coverage/
+preview/
+donors/
+oap-sdk/
+*.mgu
+**/javascript/app.js
+**/javascript/build.json
+
+# Python output
+__pycache__/
+*.pyc
+scripts/fsc_generator/output/
+
+# App packages are generated, except the audited release artifact.
+*.tgz
+!apps/*/prebuilt/*.tgz
