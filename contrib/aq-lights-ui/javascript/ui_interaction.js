@@ -4,8 +4,9 @@
 // All helpers in this file are pure UI state and coordinate handling.
 const LIST = Object.freeze({ x: 32, y: 98, width: 1536, rowHeight: 54, cardHeight: 46, rows: 6 });
 const HEADER = Object.freeze({
-    previous: { x: 1100, y: 15, width: 86, height: 60 },
-    next: { x: 1482, y: 15, width: 86, height: 60 },
+    // Stay inside the renderer's FULL.src (y=38..520) touch claim.
+    previous: { x: 1100, y: 40, width: 86, height: 34 },
+    next: { x: 1482, y: 40, width: 86, height: 34 },
 });
 
 function listWindow(length, selection) {
