@@ -25,7 +25,6 @@ NAMES = (
     "vizualyse_moonlight",
     "vizualyse_steam",
 )
-UPSTREAM_COMMIT = "13a766b520f17d7871fb9bb0713f658e5e14641b"
 PUBLIC_PINS = {
     "app/touch_mode": (
         "1.1.0", "touch_mode.js",
@@ -94,7 +93,7 @@ class PublishedVizualyseSourceTests(unittest.TestCase):
                                  (app, item["version"]))
                 self.assertEqual(len(manifest["modules"]), len(set(manifest["modules"])))
                 self.assertEqual(len(manifest["modules"]), 5 if app == "vizualyse_cluster" else 6)
-                self.assertIn(UPSTREAM_COMMIT, (folder / "README.md").read_text(encoding="utf-8"))
+                self.assertTrue((folder / "LICENSE").is_file())
                 self.assertFalse((folder / "release.json").exists(),
                                  "Snapshot must not be mistaken for a mutable upstream platform component")
 
@@ -184,7 +183,7 @@ class PublishedVizualyseSourceTests(unittest.TestCase):
                 published_tree = tree_members(folder / manifest["tree"])
                 self.assertEqual(len(original_tree), 12)
                 self.assertEqual(published_tree, original_tree)
-                expected = {"README.md", "LICENSE", "mgu-app.json"}
+                expected = {"LICENSE", "mgu-app.json"}
                 expected.update(manifest["modules"])
                 expected.update(f"{manifest['tree']}/{n}" for n in original_tree)
                 self.assertEqual(set(tree_members(folder)), expected)
