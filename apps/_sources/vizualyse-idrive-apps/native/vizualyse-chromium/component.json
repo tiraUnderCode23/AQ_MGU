@@ -1,0 +1,93 @@
+{
+  "id": "vizualyse-chromium",
+  "kind": "tool",
+  "version": "0.3.1",
+  "license": "GPL-3.0-or-later",
+  "title": "Browser",
+  "description": "EXPERIMENTAL. A web browser (Chromium 156) running on the car, with WebGL 2, WebGPU (on the CPU; WebGL on the car's own GPU driver in an experimental GPU mode) and WebAssembly JSPI, shown on the central screen while parked and driven by touch, with its controls on a touch screen, parked or driving (Show on the screen, Back, Reload, Home, the resolution, GPU and game mode). Type addresses on the phone page: scan the QR code on the Browser app's touch screen or iDrive page. About 181 MB to download, 420 MB on the unit.",
+  "requires": {
+    "mgu-deploy": "0.7.0",
+    "mgu-python": "1.0.0",
+    "mgu-render": "0.6.11",
+    "vizualyse-bus": "0.1.0"
+  },
+  "uninstallable": true,
+  "mguHmi": [
+    "ID7"
+  ],
+  "internet": true,
+  "uids": [
+    12997
+  ],
+  "deactivate": [
+    "node",
+    "firewall.js",
+    "remove"
+  ],
+  "build": [
+    "sh",
+    "build.sh"
+  ],
+  "platform": {
+    "common/qrcode": { "version": "1.0.0", "files": { "src/qrcode.js": "qrcode.js" } },
+    "tool/touch_ui": { "version": "1.0.0", "files": { "src/ui_canvas.js": "ui_canvas.js", "src/ui_kit.js": "ui_kit.js", "src/ui_host.js": "ui_host.js", "src/ui_png.js": "ui_png.js", "src/touch_reader.py": "touch_reader.py", "src/ui.fonts.json": "ui.fonts.json", "src/ui.f20.font.gz": "ui.f20.font.gz", "src/ui.f24.font.gz": "ui.f24.font.gz", "src/ui.f32.font.gz": "ui.f32.font.gz", "src/ui.f44.font.gz": "ui.f44.font.gz" } },
+    "tool/mqtt_bus": { "version": "1.0.0", "files": { "src/mqtt_bus.js": "mqtt_bus.js" } },
+    "native/frame_out": { "version": "1.0.0", "files": { "sink/frame_out.c": "frame_out.c", "sink/frame_out.h": "frame_out.h" } },
+    "native/touch": { "version": "1.0.0", "files": { "sink/touch.c": "touch.c", "sink/touch.h": "touch.h" } },
+    "native/wayland_drm": { "version": "1.0.0", "files": { "sink/protocol/wayland-drm.xml": "wayland-drm.xml" } },
+    "native/winston_out": { "version": "1.0.0", "files": { "sink/winston_out.c": "winston_out.c", "sink/winston_out.h": "winston_out.h", "sink/protocol/ivi-application.xml": "ivi-application.xml", "sink/protocol/ivi-controller.xml": "ivi-controller.xml", "sink/protocol/linux-dmabuf-unstable-v1.xml": "linux-dmabuf-unstable-v1.xml" } }
+  },
+  "files": [
+    { "path": "server.js", "from": "src/server.js", "mode": "0644" },
+    { "path": "env.js", "from": "src/env.js", "mode": "0644" },
+    { "path": "unpack.js", "from": "src/unpack.js", "mode": "0644" },
+    { "path": "browser.js", "from": "src/browser.js", "mode": "0644" },
+    { "path": "screen.js", "from": "src/screen.js", "mode": "0644" },
+    { "path": "firewall.js", "from": "src/firewall.js", "mode": "0644" },
+    { "path": "control.js", "from": "src/control.js", "mode": "0644" },
+    { "path": "proxy.js", "from": "src/proxy.js", "mode": "0644" },
+    { "path": "mqtt_bus.js", "from": "src/mqtt_bus.js", "mode": "0644" },
+    { "path": "touch_screen.js", "from": "src/touch_screen.js", "mode": "0644" },
+    { "path": "touch_view.js", "from": "src/touch_view.js", "mode": "0644" },
+    { "path": "qrcode.js", "from": "src/qrcode.js", "mode": "0644" },
+    { "path": "ui_canvas.js", "from": "src/ui_canvas.js", "mode": "0644" },
+    { "path": "ui_kit.js", "from": "src/ui_kit.js", "mode": "0644" },
+    { "path": "ui_host.js", "from": "src/ui_host.js", "mode": "0644" },
+    { "path": "ui_png.js", "from": "src/ui_png.js", "mode": "0644" },
+    { "path": "touch_reader.py", "from": "src/touch_reader.py", "mode": "0644" },
+    { "path": "ui.fonts.json", "from": "src/ui.fonts.json", "mode": "0644" },
+    { "path": "ui.f20.font.gz", "from": "src/ui.f20.font.gz", "mode": "0644" },
+    { "path": "ui.f24.font.gz", "from": "src/ui.f24.font.gz", "mode": "0644" },
+    { "path": "ui.f32.font.gz", "from": "src/ui.f32.font.gz", "mode": "0644" },
+    { "path": "ui.f44.font.gz", "from": "src/ui.f44.font.gz", "mode": "0644" },
+    { "path": "page.html", "from": "src/page.html", "mode": "0644" },
+    { "path": "chromium.tgz", "from": "build/chromium.tgz", "mode": "0644" },
+    { "path": "bundle-VERSION.txt", "from": "build/bundle-VERSION.txt", "mode": "0644" },
+    { "path": "THIRD-PARTY.md", "from": "THIRD-PARTY.md", "mode": "0644" },
+    { "path": "LICENSE", "from": "LICENSE", "mode": "0644" }
+  ],
+  "units": [
+    {
+      "name": "vizualyse-chromium.service",
+      "from": "systemd/vizualyse-chromium.service"
+    }
+  ],
+  "enable": [
+    {
+      "unit": "vizualyse-chromium.service",
+      "target": "multi-user.target"
+    }
+  ],
+  "recmgr": [
+    "vizualyse-chromium"
+  ],
+  "crashNames": [
+    "chromium",
+    "chrome_crashpad_handler",
+    "chromium-wl",
+    "chromium-touch"
+  ],
+  "restart": [
+    "vizualyse-chromium.service"
+  ]
+}

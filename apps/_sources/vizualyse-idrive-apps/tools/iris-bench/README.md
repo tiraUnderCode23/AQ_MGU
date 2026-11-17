@@ -1,0 +1,84 @@
+# iris-bench: Mesa's iris and Gallium Nine for the unit, off the car
+
+Bench only: nothing here goes to the car. Mesa 19.3.5's **iris** (the
+Gallium driver for Gen8+, the last release before 20.0 made iris refuse a
+kernel without context isolation) built for the unit (glibc 2.27), patched
+for the unit's 4.14 kernel, run on [tools/gpu-bench](../gpu-bench)'s stub
+(the unit's HD 505 faked by Mesa's no-op DRM shim) behind
+[tools/vk-trial](../vk-trial)'s `kernel414.c` (the unit's IOTG 4.14
+answers). Background: [knowledge/browser.md](../../knowledge/browser.md)
+("Vulkan on this kernel"), [knowledge/games.md](../../knowledge/games.md)
+("iris / Gallium Nine (bench)").
+
+```sh
+sh tools/iris-bench/build.sh      # the image (~10 min once) and build/
+sh tools/iris-bench/run_test.sh   # the checks below, on the stub
+IRIS=1 sh native/vizualyse-steam/test/run_unit_test.sh stub   # the Steam bench's Wine (and wl-sink) on iris
+IRIS=sink-unit sh native/vizualyse-steam/test/run_unit_test.sh stub   # wl-sink on the unit's i965, as on the car
+```
+
+## What it builds (`image/Dockerfile`)
+
+| `build/` | what |
+|---|---|
+| `lib/libEGL.so.1`, `libgbm.so.1`, `libglapi.so.0`, `libGLESv2.so.2` | iris's own EGL / GBM / GLES set (drm, wayland, surfaceless) |
+| `lib/dri/iris_dri.so`, `swrast_dri.so` | iris; softpipe (Nine insists on it) |
+| `lib/d3d/d3dadapter9.so.1` | Gallium Nine's native side |
+| `bench/kernel414.so` | vk-trial's 4.14 stand-in, built here |
+| `bench/ninetest` | Nine's adapter on the render node |
+
+## The patch (`image/iris_no_isolation.py`)
+
+Only when GETPARAM `I915_PARAM_HAS_CONTEXT_ISOLATION` fails (kernels before
+4.16, the unit's); a newer kernel gets stock iris:
+
+- **CS_DEBUG_MODE2 not written; constant buffer 0 relative.** Without
+  isolation the register isn't the context's own, and the HMI's i965 on
+  this kernel keeps buffer 0 relative (it writes the bit only with
+  isolation). `constant_buffer_0_is_relative` makes the compiler push at
+  most 3 UBO ranges, which iris puts in buffers 3..1: buffer 0 unused.
+- **CS_CHICKEN1 (object-level preemption) not written**: neither the unit's
+  i965 nor ANV 19.0.6 ever write it.
+- **No `I915_QUERY` (ioctl 0x39)**: GEM_GVTBUFFER on the unit's kernel.
+  Device info's topology query (Gen9 falls back to the 4.13 getparams) and
+  gen_perf's config query are skipped.
+- **No context param after `PRIORITY` (6)**: the unit's kernel has its own
+  there (it answered ANV 22.3.7's `GETPARAM 0x7`, then restarted: 2026-11-09,
+  [knowledge/browser.md](../../knowledge/browser.md)). iris's `RECOVERABLE`
+  (0x8, on every context, through libdrm) isn't sent, and `gen_ioctl`
+  refuses any other (kernel414 names them a HAZARD).
+
+What iris then writes on its own (`INTEL_DEBUG=bat`): CACHE_MODE_1
+0x00120012 and GT_MODE 0x03000100, the values the unit's i965 writes on
+Gen9 LP, and L3CNTLREG (L3 partitioning, which i965 and ANV program too).
+
+## Not shown here
+
+The kernel and the GPU themselves (a hang, a leak into the HMI's
+contexts), speed. A car try is a vk-trial-style gated run (below).
+
+## On the car (`car/`)
+
+Through [tools/vk-trial](../vk-trial)'s gate: one start, armed by hand
+over SSH, uid 12990, the display nodes hidden (GBM on the render node,
+offscreen), a timeout, every DRM call in `crumbs.log`, disarmed by any
+restart. `car/run.sh` runs gltest on iris (pixels checked), the registers
+iris writes (`INTEL_DEBUG=bat`), Nine's adapter, then gltest on the unit's
+own Mesa (i965, as the HMI) to see it still draws right.
+
+```sh
+sh tools/iris-bench/car/car_test.sh   # off the car: the same steps in the unit's rootfs, stub GPU behind kernel414
+```
+
+On the car (each step asked first), with vk-trial installed:
+
+```sh
+scp tools/iris-bench/car/build/iris-trial.tgz root@169.254.224.142:/tmp/
+tar xzf /tmp/iris-trial.tgz -C /var/opt/vk-trial && rm /tmp/iris-trial.tgz
+G=/var/opt/vk-trial/bin/vk-trial
+$G arm command --timeout 120 -- /bin/sh /var/opt/vk-trial/iris/run.sh && $G run
+cat $(cat /var/opt/vk-trial/state/last)/{result,out.log}; dmesg | tail -30
+```
+
+Watch the HMI while it runs and after (drawing right, no flicker or wrong
+colours: a register leaking into its contexts would show there).

@@ -1,0 +1,71 @@
+# Cast to cluster
+
+Cast to cluster for the BMW iDrive 7 head unit (MGU): a stream URL from your
+phone on the instrument cluster, the HUD or the media console, with its
+sound through the speakers; or CarPlay's own cluster map (its second screen,
+through hook111) on the cluster or the HUD. Installed from the [mgu Store](https://github.com/robertnisipeanu/mgu-store).
+
+A tech demo, built and tested on a bench head unit.
+
+| Path | |
+|---|---|
+| [`native/vizualyse-cast`](native/vizualyse-cast) | **Cast to cluster**, the tool: the phone page, a static ffmpeg, the CarPlay second screen (from hook111), the uplink proxy, the cluster and HUD through cluster-render, the media console through mgu-render, sound through SmartXbar |
+| [`apps/vizualyse_cast`](apps/vizualyse_cast) | **Cast**, its iDrive app: the phone link and QR code, on/off, Stop, CarPlay map on the cluster or the HUD, Play last on the cluster, the HUD or this screen |
+| [`samples`](samples) | cluster-render samples: a CPU gauge and clock, raw video and sound from files |
+| [`release`](release) | builds and publishes the Store catalog |
+| `tools` | `oap_pack.js`, `oap_link.js`: pack the app |
+| [`native/vizualyse-moonlight`](native/vizualyse-moonlight) | **Moonlight**, a tool: games from a PC running Sunshine on the central screen, with sound and game controllers, controlled from the phone. Experimental, tested off the car |
+| [`apps/vizualyse_moonlight`](apps/vizualyse_moonlight) | **Moonlight**, its iDrive app: the phone link and QR code, on/off, Stop, Quit game, Resume last |
+| [`native/hook111`](native/hook111) | **CarPlay cluster map (stream 111)**, a tool: a hook preloaded into the stock 2020 `carplay` that adds CarPlay's second screen and hands it to Cast to cluster. Experimental |
+| [`native/vizualyse-cluster`](native/vizualyse-cluster) | **Cluster themes**, a tool: 16 whole-cluster themes (eight families, Sport and Comfort, switched by the drive mode) drawn through cluster-render's panel by small shaders, under the car's own warning lights ([how](native/vizualyse-cluster/THEMES.md)), and a touch picker of them on the central screen. Experimental, not yet on a car |
+| [`apps/vizualyse_cluster`](apps/vizualyse_cluster) | **Cluster themes**, its iDrive app: Choose with previews (the touch picker: a preview of each theme, Use, a 10 s Try on the cluster while parked), a row per theme, Sport or Comfort, on/off |
+| [`re`](re) | the off-car reverse engineering and harnesses behind hook111 ([status](re/STATUS.md)) |
+| [`platform`](platform) | **The platform**: the code the tools and apps share (the audio player, the cluster-render client, the frame file writer, the passive touch reader, the QR code, the car's speed), versioned; each component pins the version it builds with |
+
+What's next: [`TODO.md`](TODO.md). What we learned about the unit: [`knowledge/`](knowledge/index.md).
+
+## Install
+
+In the Store, add the GitHub source `Vizualyse/idrive-apps` on the
+**Releases** channel and install **Cast**; the Store installs **Cast to
+cluster** first. It requires, from their own sources: `mgu-deploy`,
+`mgu-python` and `mgu-uplink` (mgu-store) and `cluster-render`
+([robertnisipeanu/idrive-apps](https://github.com/robertnisipeanu/idrive-apps));
+the media console needs `mgu-render` (mgu-store).
+
+For **Moonlight**, install **Moonlight** the same way; it needs `mgu-python`
+and `mgu-render`.
+
+## Build and test
+
+```sh
+node platform/platform.js sync                # after a checkout: each component's copies of its platform modules
+node platform/test/platform_test.js
+node apps/vizualyse_cast/tools/test_page.js   # the page against a fake HMI and the tool's real control socket
+node apps/vizualyse_moonlight/tools/test_page.js
+sh native/vizualyse-moonlight/build.sh                 # moonlight-core (Docker), its mapping test, ffmpeg
+sh native/vizualyse-moonlight/test/run_sunshine_test.sh # against a real Sunshine, Node 8 (Docker)
+node release/test/release_test.js
+node release/release.js check                 # two clean builds, compared byte for byte
+```
+
+Each folder's README has the details; [`release/README.md`](release/README.md)
+covers versions, the catalog and publishing. To make a new app, start with
+[`platform/BUILDING-APPS.md`](platform/BUILDING-APPS.md).
+
+## Credits
+
+The release tooling (`release/`, `tools/`, `.github/workflows/release.yml`)
+and the structure of the iDrive app come from Robert Nisipeanu's
+[idrive-apps](https://github.com/robertnisipeanu/idrive-apps) (GPL-3.0-or-later),
+where this repository started as a fork. Cast to cluster draws through his
+cluster-render, whose client `platform/tool/cluster_render_client/<version>/cluster_render_client.js`
+is copied here.
+
+## License
+
+GPL-3.0-or-later ([`LICENSE`](LICENSE)), unless a file's SPDX header says
+otherwise: `cluster_render_client.js` is MPL-2.0
+([`LICENSES/MPL-2.0.txt`](LICENSES/MPL-2.0.txt)); `qrcode.js` is Kazuhiko
+Arase's QR Code Generator (MIT); the bundled ffmpeg is John Van Sickle's
+static build (GPLv3, its licence ships beside it).

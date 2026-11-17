@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "sources": [
+    {
+      "id": "aq-mgu-apps",
+      "type": "github",
+      "repo": "tiraUnderCode23/AQ_MGU",
+      "channel": "branch"
+    },
+    {
+      "id": "aq-mgu-catalog",
+      "type": "github",
+      "repo": "tiraUnderCode23/AQ_MGU",
+      "channel": "releases"
+    }
+  ]
+}

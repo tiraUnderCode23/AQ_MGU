@@ -1,38 +1,63 @@
-[
-  {
-    "repo": "IterioDev/car-apps",
-    "url": "https://github.com/IterioDev/car-apps",
-    "latest": "1.1.74 (tag; 2026-11-16)",
-    "reason": "PolyForm Strict: do not copy, modify, bundle or republish original apps; add the upstream source directly in Store only if its terms allow your intended use. ID7 compatibility is app-specific."
-  },
-  {
-    "repo": "aurelmarius/bmw-apps",
-    "url": "https://github.com/aurelmarius/bmw-apps",
-    "latest": "v1.5.16 (2026-11-14)",
-    "reason": "No explicit open-source license found in the audit; source, packages and images are not bundled. Obtain permission first."
-  },
-  {
-    "repo": "aurelmarius/bmw-games",
-    "url": "https://github.com/aurelmarius/bmw-games",
-    "latest": "v1.1.11",
-    "reason": "No clear redistribution license found; source and assets are not bundled. Obtain permission first."
-  },
-  {
-    "repo": "alexpereap/pereaperformance-idrive7-apps",
-    "url": "https://github.com/alexpereap/pereaperformance-idrive7-apps",
-    "latest": "Not audited in detail",
-    "reason": "Additional candidate discovered; verify current release, license and compatibility before including."
-  },
-  {
-    "repo": "hexlay/idrive7-custom-apps",
-    "url": "https://github.com/hexlay/idrive7-custom-apps",
-    "latest": "Not audited in detail",
-    "reason": "Additional candidate discovered; verify current release, license and compatibility before including."
-  },
-  {
-    "repo": "FidelisClayton/awesome-bmw-mgu",
-    "url": "https://github.com/FidelisClayton/awesome-bmw-mgu",
-    "latest": "Community directory; not an app source",
-    "reason": "Keep as discovery/reference index, not a Store component."
-  }
-]
+{
+  "as_of": "2026-11-17",
+  "coverage_note": "Best-effort review of MGU Store default sources, the connected GitHub repository list, 20 candidate repositories, and public GitLab search results. This is not proof that every unindexed or later-published project has been found.",
+  "store_defaults_checked": [
+    "cauliflowermossgrape/idrive7-apps",
+    "robertnisipeanu/idrive-apps",
+    "IterioDev/car-apps",
+    "robertnisipeanu/mgu-store"
+  ],
+  "account_scan_note": "The connected GitHub account repository list and MGU-related repository paths were reviewed. No additional eligible Store source was identified in that pass.",
+  "gitlab_note": "Public GitLab searches for BMW MGU and iDrive 7 app sources returned no additional eligible source in this review.",
+  "excluded": [
+    {
+      "repository": "IterioDev/car-apps",
+      "reason": "PolyForm Strict license; redistribution and republishing are not permitted."
+    },
+    {
+      "repository": "aurelmarius/bmw-apps",
+      "reason": "No clear explicit redistribution license was found."
+    },
+    {
+      "repository": "aurelmarius/bmw-games",
+      "reason": "No clear explicit redistribution license was found."
+    },
+    {
+      "repository": "tiraUnderCode23/idrive7-cluster-info",
+      "reason": "The project-owned content uses noncommercial/restricted terms; no unrestricted open-source grant for redistribution."
+    },
+    {
+      "repository": "eroobeeroo/idrive7-apps",
+      "reason": "The reviewed project content is not licensed for unrestricted redistribution and overlaps other sources."
+    },
+    {
+      "repository": "kxrxh/bmw-clusters-mgu",
+      "reason": "No accessible license evidence was found."
+    },
+    {
+      "repository": "PenguinDukeYDAuto/idrive7-EVAHUD",
+      "reason": "The repository excludes marks, assets, or generated materials from public redistribution."
+    },
+    {
+      "repository": "cruzen991/Cluster",
+      "reason": "The repository-wide license does not cover the complete app set."
+    },
+    {
+      "repository": "sergshamiryan/mgu-gear-cluster",
+      "reason": "No clear license was found for the app-authored source."
+    },
+    {
+      "repository": "mlurker/bmw-idrive7-releases",
+      "reason": "Permission and source licensing were not established."
+    },
+    {
+      "repository": "FidelisClayton/awesome-bmw-mgu",
+      "reason": "Discovery list only; not an app source repository."
+    }
+  ],
+  "version_notes": [
+    "ALMSTRA/idv7lol uses the current pinned main-branch manifest version 0.2.14; its separate beta release channel is recorded in the source audit.",
+    "HasMan/turnkey-ethanol-blend uses stable version 0.1.5; later 0.1.6/0.1.7 builds were withdrawn by the publisher.",
+    "The BMW OAP SDK and any private signing keys or vehicle data are not included."
+  ]
+}

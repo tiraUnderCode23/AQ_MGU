@@ -1,5 +1,3 @@
-# Application Catalog
+# Apps and games
 
-See the [main README](../README.md) for the complete app list, descriptions, versions, icons and screenshots.
-
-The source index consumed by compatible MGU Store versions is [`mgu-repo.json`](../mgu-repo.json). Source licensing, pinned revisions and image provenance are documented in [`data/`](../data/).
+The complete app-and-game catalog, including icons, published screenshots, versions, supported HMI and source/license links, is maintained in the [AQ_MGU root README](../README.md#apps). The current machine-readable index is [`data/components.json`](../data/components.json); copied images are cataloged in [`data/app-images.json`](../data/app-images.json).

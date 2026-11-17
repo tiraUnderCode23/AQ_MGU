@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src https://ntfy.sh https://accounts.spotify.com; manifest-src 'self'; base-uri 'none'; form-action 'none'">
+    <meta name="referrer" content="no-referrer">
+    <meta name="theme-color" content="#04060a">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="apple-touch-icon" href="icons/icon-180.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" href="icons/icon-192.png">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>Spotify pairing - iDrive 7 Custom Apps (unofficial)</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: #04060a;
+            color: #f4f7fb;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            padding: 24px 16px 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .nav-back { text-align: left; margin: -6px 0 12px; }
+        .nav-back a { display: inline-block; color: #00a3e0; font-size: 15px; font-weight: 700; text-decoration: none; padding: 6px 10px 6px 0; }
+        .header {
+            width: 100%;
+            max-width: 440px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .badge-m {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(0, 78, 140, 0.25);
+            border: 1px solid #00a3e0;
+            color: #00f0ff;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            padding: 4px 12px;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+        .badge-m .m-logo {
+            display: inline-flex;
+            gap: 2px;
+            height: 10px;
+            align-items: center;
+        }
+        .badge-m .m-logo span {
+            width: 3px;
+            height: 10px;
+            display: inline-block;
+            transform: skewX(-20deg);
+        }
+        .m-light { background: #00a3e0; }
+        .m-dark { background: #004e8c; }
+        .m-red { background: #e1001a; }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 6px;
+            letter-spacing: -0.5px;
+        }
+        p.subtitle {
+            font-size: 13px;
+            color: #8a95a6;
+            line-height: 1.4;
+        }
+        .card {
+            background: #0a0d14;
+            border: 1px solid #1a2333;
+            border-radius: 12px;
+            padding: 22px 20px 24px;
+            width: 100%;
+            max-width: 440px;
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6), 0 0 1px rgba(0, 163, 224, 0.2);
+            margin-bottom: 16px;
+            position: relative;
+        }
+        /* BMW OEM M-Stripes Header */
+        .card-m-header {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            margin-bottom: 16px;
+        }
+        .card-m-header .st-light { width: 24px; height: 4px; background: #00a3e0; border-radius: 1px 0 0 1px; }
+        .card-m-header .st-dark { width: 24px; height: 4px; background: #004e8c; }
+        .card-m-header .st-red {
+            width: 28px;
+            height: 4px;
+            background: #e1001a;
+            clip-path: polygon(0 0, 100% 0, calc(100% - 6px) 100%, 0 100%);
+        }
+        .card-m-header .line {
+            flex: 1;
+            height: 1.5px;
+            background: rgba(255, 255, 255, 0.3);
+            margin-left: 2px;
+        }
+
+        .pair-code {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #06080e;
+            border: 1px solid #16202f;
+            padding: 12px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            margin-bottom: 12px;
+            color: #8a95a6;
+            font-weight: 600;
+        }
+        .pair-code strong {
+            color: #1ed760;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 16px;
+            letter-spacing: 2px;
+        }
+        .pulse-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #1ed760;
+            box-shadow: 0 0 8px #1ed760;
+            margin-right: 6px;
+        }
+        .privacy-pill {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(30, 215, 96, 0.08);
+            border: 1px solid rgba(30, 215, 96, 0.25);
+            padding: 7px 12px;
+            border-radius: 6px;
+            font-size: 11px;
+            color: #1ed760;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+        label {
+            display: block;
+            font-size: 12px;
+            color: #cbd5e1;
+            margin-bottom: 6px;
+            margin-top: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            background: #06080e;
+            border: 1px solid #1a2333;
+            border-radius: 8px;
+            padding: 12px 14px;
+            color: #ffffff;
+            font-size: 14px;
+            outline: none;
+            transition: border 0.2s;
+        }
+        input[type="text"]:focus {
+            border-color: #1ed760;
+            box-shadow: 0 0 8px rgba(30, 215, 96, 0.25);
+        }
+        .btn-spotify {
+            display: block;
+            width: 100%;
+            background: #1ed760;
+            border: 1px solid #1ed760;
+            color: #000000;
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 14px 0;
+            border-radius: 8px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.1s ease, background 0.2s ease;
+            margin-top: 18px;
+            margin-bottom: 10px;
+        }
+        .btn-spotify:active {
+            transform: scale(0.98);
+            background: #1ab250;
+        }
+        .btn-secondary {
+            display: block;
+            width: 100%;
+            background: #141a24;
+            border: 1px solid #242c39;
+            color: #8a95a6;
+            font-size: 13px;
+            font-weight: 700;
+            text-align: center;
+            padding: 11px 0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-top: 10px;
+        }
+        .btn-secondary:hover {
+            color: #ffffff;
+            border-color: #00a3e0;
+        }
+        .btn-unpair {
+            display: block;
+            width: 100%;
+            background: rgba(225, 0, 26, 0.12);
+            border: 1.5px solid #e1001a;
+            color: #ff6b6b;
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 13px 0;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.2s;
+        }
+        .btn-unpair:active {
+            transform: scale(0.98);
+            background: rgba(225, 0, 26, 0.25);
+        }
+        .success-box {
+            display: none;
+            text-align: center;
+            padding: 24px 16px;
+        }
+        .icon-check {
+            width: 64px;
+            height: 64px;
+            background: rgba(30, 215, 96, 0.15);
+            border: 2px solid #1ed760;
+            color: #1ed760;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: bold;
+            margin: 0 auto 16px;
+            box-shadow: 0 0 20px rgba(30, 215, 96, 0.25);
+        }
+        .status-pill {
+            display: inline-block;
+            background: #06080e;
+            border: 1px solid #16202f;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: #1ed760;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+        .car-badge {
+            background: #141a24;
+            border: 1px solid #242c39;
+            color: #1ed760;
+            font-family: ui-monospace, monospace;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-left: 4px;
+        }
+        details {
+            margin-top: 18px;
+            border-top: 1px solid #16202f;
+            padding-top: 14px;
+        }
+        summary {
+            font-size: 12px;
+            color: #00a3e0;
+            cursor: pointer;
+            font-weight: 700;
+            outline: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .howto {
+            margin-top: 12px;
+            border-top: none;
+            padding-top: 0;
+            background: #06080e;
+            border: 1px solid #16202f;
+            border-radius: 8px;
+            padding: 12px 14px;
+        }
+        .howto summary { text-transform: none; letter-spacing: 0; font-size: 13px; }
+        .howto ol {
+            margin: 12px 0 0 18px;
+            font-size: 13px;
+            color: #cbd5e1;
+            line-height: 1.5;
+        }
+        .howto li { margin-bottom: 10px; padding-left: 2px; }
+        .howto li b { color: #ffffff; }
+        .howto a { color: #1ed760; }
+        .howto .note {
+            font-size: 12px;
+            color: #8a95a6;
+            line-height: 1.5;
+            border-top: 1px solid #16202f;
+            padding-top: 10px;
+        }
+        .copy-row {
+            display: flex;
+            gap: 6px;
+            margin-top: 6px;
+        }
+        .copy-row code {
+            flex: 1;
+            min-width: 0;
+            background: #0a0d14;
+            border: 1px solid #242c39;
+            border-radius: 6px;
+            padding: 8px 10px;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 11.5px;
+            color: #ffffff;
+            word-break: break-all;
+            user-select: all;
+        }
+        .copy-row button {
+            flex: none;
+            background: #141a24;
+            border: 1px solid #242c39;
+            border-radius: 6px;
+            color: #00a3e0;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 0 12px;
+            cursor: pointer;
+        }
+        .alert-box {
+            background: rgba(225, 0, 26, 0.12);
+            border: 1px solid #e1001a;
+            color: #ff8080;
+            padding: 12px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            line-height: 1.4;
+            margin-bottom: 16px;
+            display: none;
+            text-align: center;
+        }
+        .footer-nav {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #64748b;
+            text-align: center;
+        }
+        .footer-nav a {
+            color: #8a95a6;
+            text-decoration: none;
+            margin: 0 6px;
+            transition: color 0.2s;
+        }
+        .footer-nav a:hover {
+            color: #00f0ff;
+        }
+        .no-vehicle-box {
+            display: none;
+            text-align: center;
+            padding: 26px 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <nav class="nav-back"><a href="index.html">&lsaquo; My cars</a></nav>
+        <div class="badge-m">
+            <span class="m-logo">
+                <span class="m-light"></span>
+                <span class="m-dark"></span>
+                <span class="m-red"></span>
+            </span>
+            iDrive 7 Custom Apps &middot; Unofficial
+        </div>
+        <h1>Pair Spotify with your car</h1>
+        <p class="subtitle">Lets the Spotify app on your car's screen use your Spotify account</p>
+    </div>
+
+    <div class="card alert-box" id="statusAlert"></div>
+
+    <!-- Card: No Vehicle Detected (When visiting directly without QR scan) -->
+    <div class="card no-vehicle-box" id="cardNoVehicle">
+        <div class="card-m-header">
+            <div class="st-light"></div>
+            <div class="st-dark"></div>
+            <div class="st-red"></div>
+            <div class="line"></div>
+        </div>
+        <div style="font-size: 44px; margin-bottom: 14px;">📷</div>
+        <h2 style="font-size: 18px; font-weight: 800; color: #ffffff; margin-bottom: 8px;">VEHICLE SCAN REQUIRED</h2>
+        <p style="font-size: 13px; color: #8a95a6; line-height: 1.5; margin-bottom: 18px;">
+            To ensure complete privacy and prevent mixing accounts across different cars, each BMW generates its own encrypted pairing QR code.
+        </p>
+        <div style="background: #06080e; border: 1px solid #1a2333; padding: 14px; border-radius: 8px; font-size: 13px; color: #cbd5e1; margin-bottom: 18px; text-align: left;">
+            <strong style="color: #1ed760; display: block; margin-bottom: 4px;">How to pair:</strong>
+            1. Open <strong>Spotify</strong> on your BMW iDrive screen.<br>
+            2. Go to the <strong>Connect</strong> tab.<br>
+            3. Point your smartphone camera at the displayed QR code.
+        </div>
+        <a class="btn-secondary" href="index.html" style="text-decoration: none;">My cars &amp; QR scanner</a>
+        <details style="text-align: left; margin-top: 10px;">
+            <summary style="font-size: 12px; color: #00a3e0; cursor: pointer; font-weight: 700;">Car paired on this phone before? ▾</summary>
+            <div style="margin-top: 12px;">
+                <label for="inputManualCode">Code shown on the car</label>
+                <input type="text" id="inputManualCode" placeholder="e.g. 7F8A-9E2D" style="text-transform: uppercase;" autocomplete="off" autocapitalize="characters" spellcheck="false">
+                <button class="btn-secondary" style="margin-top: 12px;" onclick="applyManualCode()">Open this car</button>
+                <p style="font-size: 11px; color: #64748b; margin-top: 6px; line-height: 1.5;">The code only finds a car this phone already has: the car's key is only in its QR code, so a code someone glimpses on your screen is no use to them.</p>
+            </div>
+        </details>
+    </div>
+
+    <!-- Active Pairing Card -->
+    <div class="card" id="cardPairing" style="display: none;">
+        <div class="card-m-header">
+            <div class="st-light"></div>
+            <div class="st-dark"></div>
+            <div class="st-red"></div>
+            <div class="line"></div>
+        </div>
+
+        <div class="pair-code">
+            <span><span class="pulse-dot"></span>YOUR CAR</span>
+            <strong id="spanCode">--------</strong>
+        </div>
+
+        <div class="privacy-pill" id="privacyIndicator">
+            🔒 Encrypted for this car only.
+        </div>
+        <p id="browserNote" style="display: none; font-size: 12px; color: #cbd5e1; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 6px; padding: 8px 12px; margin: -6px 0 16px; line-height: 1.45;"></p>
+
+        <p style="font-size: 13px; color: #8a95a6; text-align: center; margin-bottom: 14px; line-height: 1.5;">
+            You sign in on Spotify's own page (accounts.spotify.com). This page never sees your Spotify password; only an access token is sent to your car, encrypted with your car's key.
+        </p>
+
+        <label for="inputClientId">Your Spotify Client ID</label>
+        <input type="text" id="inputClientId" placeholder="Paste your Client ID (32 letters and digits)" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false">
+        <p style="font-size: 11px; color: #64748b; margin-top: 4px;">
+            Only needed once: your browser and your car remember it. <span id="savedIndicator" style="color: #1ed760; display: none;">✓ Saved</span>
+        </p>
+
+        <details class="howto" id="howtoClientId">
+            <summary>How do I get a Client ID? ▾</summary>
+            <ol>
+                <li>Open <a href="https://developer.spotify.com/dashboard" target="_blank" rel="noopener">developer.spotify.com/dashboard</a> and log in with your Spotify <b>Premium</b> account. Accept the developer terms if asked.</li>
+                <li>Tap <b>Create app</b>. Any app name and description work, for example "My BMW".</li>
+                <li>Under <b>Redirect URIs</b>, add exactly this address, then tap <b>Add</b>:
+                    <div class="copy-row">
+                        <code id="redirectUriText">https://hexlay.github.io/idrive7-custom-apps/pair.html</code>
+                        <button type="button" id="btnCopyRedirect" onclick="copyRedirectUri()">Copy</button>
+                    </div>
+                </li>
+                <li>Under <b>Which API/SDKs are you planning to use?</b>, tick <b>Web API</b>. Accept the terms and tap <b>Save</b>.</li>
+                <li>On your new app's page, open <b>Settings</b>, copy the <b>Client ID</b> and paste it above. You don't need the Client secret.</li>
+                <li>Tap <b>Connect with Spotify</b> below.</li>
+            </ol>
+            <p class="note">
+                Every driver makes their own app. It's free and takes about two minutes, and nobody else can use your app without your approval.
+                To let family members connect with the same app, add their Spotify email under <b>Settings → User Management</b> (Spotify allows up to 5 people per app).
+            </p>
+        </details>
+
+        <button class="btn-spotify" id="btnConnect" onclick="startAuth()">Connect with Spotify</button>
+    </div>
+
+    <!-- Success Card -->
+    <div class="card success-box" id="cardSuccess">
+        <div class="card-m-header">
+            <div class="st-light"></div>
+            <div class="st-dark"></div>
+            <div class="st-red"></div>
+            <div class="line"></div>
+        </div>
+
+        <div class="icon-check">&#10003;</div>
+        <h2 style="font-size: 20px; font-weight: 800; color: #ffffff; margin-bottom: 8px;">CONNECTED TO YOUR CAR</h2>
+        <div class="status-pill">
+            ● Paired With Vehicle <span class="car-badge" id="successCarId">car</span>
+        </div>
+        <p style="font-size: 13px; color: #8a95a6; line-height: 1.5; margin-bottom: 16px;">
+            Your car received Spotify access (encrypted for this car only).<br>
+            Your playlists, saved songs and playback now show on the car's screen.
+        </p>
+        <p style="font-size: 12px; color: #64748b; margin-bottom: 18px;">
+            You can safely close this browser window.
+        </p>
+        <button class="btn-unpair" id="btnDisconnect" onclick="disconnectCar()">DISCONNECT THIS CAR</button>
+    </div>
+
+    <script src="carlink.js"></script>
+
+    <div class="footer-nav">
+        <span>iDrive 7 Custom Apps</span>
+        &middot;
+        <a href="index.html">Apps Hub</a>
+        &middot;
+        <a href="copilot.html">M-Copilot AI</a>
+    </div>
+    <p class="disclaimer" style="max-width: 440px; margin: 10px auto 0; font-size: 11px; color: #64748b; line-height: 1.5; text-align: center;">Unofficial open-source hobby project. Not affiliated with or endorsed by BMW AG, Spotify AB or Google. Source code: <a href="https://github.com/hexlay/idrive7-custom-apps" style="color: #8a95a6;">github.com/hexlay/idrive7-custom-apps</a></p>
+
+    <script>
+        const DEFAULT_CLIENT_ID = ''; // placeholder: put your Spotify Client ID here, or enter it on the page
+        const SCOPES = [
+            'user-read-playback-state',
+            'user-modify-playback-state',
+            'user-read-currently-playing',
+            'playlist-read-private',
+            'playlist-read-collaborative',
+            'user-library-read'
+        ].join(' ');
+
+        const urlParams = new URLSearchParams(window.location.search);
+        // Spotify's OAuth redirect comes back as ?code=...&state=<channel>.<nonce> without ?channel=
+        const stateParam = urlParams.get('state') || '';
+        const stateChannel = stateParam.split('.')[0];
+        let channel = urlParams.get('channel') || stateChannel;
+        if (!CarLink.validChannel(channel, 'spotify')) channel = '';
+        let clientId = urlParams.get('client_id') || localStorage.getItem('bmw_spot_client_id') || DEFAULT_CLIENT_ID;
+        if (!/^[0-9a-f]{32}$/i.test(clientId)) clientId = '';
+        let car = null;          // this car's link (non-extractable keys), from carlink.js
+        let stopListening = null;
+
+        const show = (id, on) => { document.getElementById(id).style.display = on ? 'block' : 'none'; };
+
+        function initVehicleContext() {
+            const shortCode = CarLink.shortCode(channel);
+            document.getElementById('spanCode').innerText = shortCode;
+            document.getElementById('successCarId').innerText = shortCode;
+
+            const isPaired = localStorage.getItem('bmw_spot_paired_' + channel) === 'true';
+            show('cardNoVehicle', false);
+            show('cardPairing', !isPaired);
+            show('cardSuccess', isPaired);
+
+            const pill = document.getElementById('privacyIndicator');
+            pill.textContent = '';
+            const strong = document.createElement('strong');
+            strong.textContent = car ? 'Private:' : 'Not on this phone yet:';
+            pill.append(car ? '🔒 ' : '⚠️ ', strong, car
+                ? ' encrypted for car ' + shortCode + ' only.'
+                : ' scan the QR code on the car screen to pair.');
+
+            if (stopListening) stopListening();
+            stopListening = car ? CarLink.listen(car, (m) => {
+                if (m.type === 'unpaired') handleCarDisconnected();
+                else if (m.type === 'pair_ack' || (m.type === 'car_hello' && m.paired === true)) handleCarConnected();
+                else if (m.type === 'car_hello' && m.paired === false && !sentThisVisit) {
+                    // the car says it is not signed in: no "Connected" from an old flag
+                    localStorage.removeItem('bmw_spot_paired_' + channel);
+                    show('cardSuccess', false);
+                    show('cardPairing', true);
+                }
+            }) : null;
+            // the car disconnected while this page was closed (the relay keeps 12 hours)
+            if (car) CarLink.recent(car).then((msgs) => { if (CarLink.lastWord(msgs) === 'unpaired') handleCarDisconnected(); }).catch(() => {});
+            // ask the car whether it is paired (it answers encrypted, within seconds while the app runs);
+            // not on the way back from the Spotify login, which sends the token next
+            if (car && !urlParams.get('code')) CarLink.sendToCar(car, { type: 'hello_request' }).catch(() => {});
+        }
+        let sentThisVisit = false;
+
+        // the code shown on the car finds a car this phone already has (the key is only in the QR code)
+        async function applyManualCode() {
+            const code = document.getElementById('inputManualCode').value.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+            if (code.length !== 8) { showStatus('The code has 8 letters and digits, like 7F8A-9E2D.', true); return; }
+            const found = (await CarLink.listCars()).find((c) => c.app === 'spotify' && c.channel.slice(CarLink.APPS.spotify.prefix.length, CarLink.APPS.spotify.prefix.length + 8) === code);
+            if (!found) { showStatus('This phone has no car with that code. Scan the QR code on the car screen to pair it.', true); return; }
+            window.location.href = 'pair.html?channel=' + encodeURIComponent(found.channel);
+        }
+
+        if (clientId) {
+            document.getElementById('inputClientId').value = clientId;
+        } else {
+            // no Client ID yet: show how to get one
+            document.getElementById('howtoClientId').open = true;
+        }
+
+        // the redirect URI Spotify has to know is this page's own address
+        const pageRedirectUri = window.location.origin + window.location.pathname;
+        if (/^https?:/.test(pageRedirectUri)) document.getElementById('redirectUriText').textContent = pageRedirectUri;
+
+        function copyRedirectUri() {
+            const text = document.getElementById('redirectUriText').textContent;
+            const btn = document.getElementById('btnCopyRedirect');
+            const done = () => { btn.textContent = 'Copied'; setTimeout(() => { btn.textContent = 'Copy'; }, 2000); };
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text).then(done, () => selectRedirectUri());
+            } else {
+                selectRedirectUri();
+            }
+        }
+
+        function selectRedirectUri() {
+            const range = document.createRange();
+            range.selectNodeContents(document.getElementById('redirectUriText'));
+            const sel = window.getSelection();
+            sel.removeAllRanges();
+            sel.addRange(range);
+        }
+
+        function showStatus(msg, isError) {
+            const el = document.getElementById('statusAlert');
+            el.innerText = msg;
+            el.style.display = 'block';
+            el.style.borderColor = isError ? '#e1001a' : '#1ed760';
+            el.style.color = isError ? '#ff8080' : '#1ed760';
+        }
+
+        // The car disconnected (or Disconnect here): this phone forgets it completely - its entry in My cars,
+        // its key and what was saved for it. Connecting again is a new pairing (the car's new QR code).
+        function handleCarDisconnected(text) {
+            if (!channel) return;
+            const code = CarLink.shortCode(channel);
+            if (stopListening) { stopListening(); stopListening = null; }
+            if (car) CarLink.forget(car, false).catch(() => {});
+            else { CarLink.clearPageState(channel); CarLink.forgetCar(channel).catch(() => {}); }
+            car = null;
+            show('cardSuccess', false);
+            show('cardPairing', false);
+            show('cardNoVehicle', true);
+            showStatus(text || ('Car ' + code + ' was disconnected and removed from this phone. To connect again, open the Connect tab in Spotify on the car and scan its QR code.'), false);
+            channel = '';
+        }
+
+        function handleCarConnected() {
+            CarLink.confirmCar(channel);       // now it belongs in My cars
+            localStorage.setItem('bmw_spot_paired_' + channel, 'true');
+            show('cardPairing', false);
+            show('cardSuccess', true);
+            document.getElementById('statusAlert').style.display = 'none';
+        }
+
+        /**
+         * Disconnect: the car is told to unpair (it logs out of Spotify and shows a new QR code), and this
+         * phone forgets it completely. The second tap within 5 s does it.
+         */
+        let disconnectAsked = 0;
+        async function disconnectCar() {
+            const btn = document.getElementById('btnDisconnect');
+            if (Date.now() - disconnectAsked > 5000) {
+                disconnectAsked = Date.now();
+                btn.innerText = 'TAP AGAIN TO DISCONNECT';
+                setTimeout(() => { if (Date.now() - disconnectAsked >= 5000) btn.innerText = 'DISCONNECT THIS CAR'; }, 5100);
+                return;
+            }
+            disconnectAsked = 0;
+            btn.disabled = true;
+            const code = CarLink.shortCode(channel);
+            const r = car ? await CarLink.forget(car, true).catch(() => ({ told: false })) : { told: false };
+            car = null;
+            btn.disabled = false;
+            btn.innerText = 'DISCONNECT THIS CAR';
+            handleCarDisconnected(r.told
+                ? 'Car ' + code + ' is disconnected: it logs out of Spotify and shows a new QR code. This phone forgot it.'
+                : 'This phone forgot car ' + code + ', but the car could not be told (no internet?). To try again: on the car, Spotify, Connect tab, tap Show QR for the phone page, scan it, then Disconnect.');
+        }
+
+        // PKCE verifier and OAuth state from the CSPRNG (RFC 7636: 43-128 unreserved characters)
+        function randomVerifier() {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._~';
+            const bytes = crypto.getRandomValues(new Uint8Array(64));
+            return Array.from(bytes, (b) => chars[b % 64]).join('');
+        }
+
+        async function generateCodeChallenge(codeVerifier) {
+            const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(codeVerifier));
+            return btoa(String.fromCharCode(...new Uint8Array(digest)))
+                .replace(/=/g, '')
+                .replace(/\+/g, '-')
+                .replace(/\//g, '_');
+        }
+
+        async function sendTokensToCar(tokenData) {
+            if (!car) {
+                showStatus('This phone has no key for car ' + CarLink.shortCode(channel) + '. Scan the QR code on the car screen again, and tap Connect in the page that opens.', true);
+                return;
+            }
+            let ok = false;
+            sentThisVisit = true;
+            try { ok = await CarLink.sendToCar(car, tokenData, 'BMW Spotify Secure Pairing'); } catch (e) { ok = false; }
+            if (!ok) { showStatus(CarLink.RELAY_DOWN + ' Your Spotify login was not used: tap Connect with Spotify again.', true); return; }
+            handleCarConnected();
+        }
+
+        async function checkOAuthReturn() {
+            const code = urlParams.get('code');
+            if (!code) {
+                if (urlParams.get('error')) showStatus('Spotify login was cancelled or refused: ' + urlParams.get('error'), true);
+                return;
+            }
+            const storedVerifier = localStorage.getItem('bmw_code_verifier');
+            const storedState = localStorage.getItem('bmw_spot_oauth_state');
+            const activeId = localStorage.getItem('bmw_spot_client_id') || clientId;
+            const redirectUri = window.location.origin + window.location.pathname;
+            // the code and the login it came from are used once
+            localStorage.removeItem('bmw_code_verifier');
+            localStorage.removeItem('bmw_spot_oauth_state');
+            window.history.replaceState({}, document.title, window.location.pathname + (channel ? ('?channel=' + channel) : ''));
+
+            // a login this page didn't start (or started for another car) is not sent anywhere
+            if (!storedVerifier || !storedState || storedState !== stateParam || !channel) {
+                showStatus('This Spotify login was not started from this page, so it was not used. Tap Connect with Spotify to start again.', true);
+                return;
+            }
+
+            showStatus('Exchanging Spotify code for vehicle credentials...', false);
+            try {
+                const tokenResponse = await fetch('https://accounts.spotify.com/api/token', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams({
+                        client_id: activeId,
+                        grant_type: 'authorization_code',
+                        code: code,
+                        redirect_uri: redirectUri,
+                        code_verifier: storedVerifier
+                    })
+                });
+                const data = await tokenResponse.json();
+                if (data.access_token) {
+                    await sendTokensToCar({
+                        token: data.access_token,
+                        refreshToken: data.refresh_token || null,
+                        expiresAt: Date.now() + (parseInt(data.expires_in, 10) * 1000),
+                        clientId: activeId
+                    });
+                } else {
+                    showStatus('Spotify Token Exchange Failed: ' + (data.error_description || data.error || 'unknown error'), true);
+                }
+            } catch (e) {
+                showStatus('Network error while exchanging Spotify token: ' + e.message, true);
+            }
+        }
+
+        async function startAuth() {
+            const customId = document.getElementById('inputClientId').value.trim();
+            const activeId = customId || clientId || localStorage.getItem('bmw_spot_client_id');
+
+            if (!channel) {
+                showStatus('No vehicle connected. Please scan the QR code on your car display.', true);
+                return;
+            }
+            // without the car's key the token could not be sent: stop before the Spotify login
+            if (!car) {
+                showStatus('This phone has no key for this car. Scan the QR code on the car screen again, and tap Connect in the page that opens.', true);
+                return;
+            }
+
+            if (!activeId || !/^[0-9a-f]{32}$/i.test(activeId)) {
+                showStatus(activeId
+                    ? 'That doesn\'t look like a Client ID. It is 32 letters and digits, shown under Settings in your Spotify app. Don\'t paste the Client secret.'
+                    : 'Please paste your Spotify Client ID above. Tap "How do I get a Client ID?" for the steps.', true);
+                document.getElementById('howtoClientId').open = true;
+                document.getElementById('inputClientId').focus();
+                document.getElementById('inputClientId').style.borderColor = '#e1001a';
+                return;
+            }
+
+            localStorage.setItem('bmw_spot_client_id', activeId);
+            const ind = document.getElementById('savedIndicator');
+            if (ind) ind.style.display = 'inline';
+
+            const codeVerifier = randomVerifier();
+            const state = channel + '.' + CarLink.randomHex(16);
+            localStorage.setItem('bmw_code_verifier', codeVerifier);
+            localStorage.setItem('bmw_spot_oauth_state', state);
+            const codeChallenge = await generateCodeChallenge(codeVerifier);
+
+            const authParams = new URLSearchParams({
+                client_id: activeId,
+                response_type: 'code',
+                redirect_uri: window.location.origin + window.location.pathname,
+                code_challenge_method: 'S256',
+                code_challenge: codeChallenge,
+                scope: SCOPES,
+                state: state,
+                show_dialog: 'true'
+            });
+
+            window.location.href = 'https://accounts.spotify.com/authorize?' + authParams.toString();
+        }
+
+        (async function init() {
+            // leftovers of older versions: the plain-text key copies and the unused pairing channel
+            try { localStorage.removeItem('bmw_spot_channel'); } catch (e) {}
+            car = await CarLink.carFromAddress('spotify', channel);
+            // from a QR code scanned with the iPhone camera: the Home Screen app doesn't have this car;
+            // else, in a phone's browser: install the app
+            CarLink.fillPageNote(document.getElementById('browserNote'), !!car);
+            if (channel && !car) {
+                // forgotten here, or paired in another browser: no "Connected" without the car's key
+                CarLink.clearPageState(channel);
+                show('cardNoVehicle', true);
+                show('cardPairing', false);
+                show('cardSuccess', false);
+                showStatus('This phone no longer has car ' + CarLink.shortCode(channel) + ' (it was forgotten here, or paired in another browser). Scan the QR code on the car screen to add it again.', true);
+                channel = '';
+            } else if (!channel) {
+                await CarLink.migrateLegacy();
+                show('cardNoVehicle', true);
+                show('cardPairing', false);
+                show('cardSuccess', false);
+            } else {
+                initVehicleContext();
+            }
+            checkOAuthReturn();
+        })();
+    </script>
+</body>
+</html>

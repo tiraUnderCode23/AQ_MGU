@@ -1,0 +1,16 @@
+# platform: copies of platform/<side>/<module>/<version>/ files, pinned in
+# this component's component.json or release.json; written by `node platform/platform.js sync`.
+# Edit the originals in platform/, never these.
+/mqtt_bus.js
+/qrcode.js
+/touch_reader.py
+/ui.f20.font.gz
+/ui.f24.font.gz
+/ui.f32.font.gz
+/ui.f44.font.gz
+/ui.fonts.json
+/ui_canvas.js
+/ui_host.js
+/ui_kit.js
+/ui_png.js
+# end platform

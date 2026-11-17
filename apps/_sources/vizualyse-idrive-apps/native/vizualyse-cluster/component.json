@@ -1,0 +1,1311 @@
+{
+  "id": "vizualyse-cluster",
+  "kind": "tool",
+  "version": "0.4.1",
+  "license": "GPL-3.0-or-later",
+  "title": "Cluster themes",
+  "description": "EXPERIMENTAL, NOT YET TRIED ON A CAR. Whole-cluster themes drawn over the instrument cluster through cluster-render's panel target, under the car's own warning lights: eight families (G20 inspired 1 and 2, LCI inspired 1 and 2, Three-dial 1 and 2, Performance 1 and 2), each a Sport and a Comfort theme switched by the drive mode. Drawn by small shaders on the cluster with textures sent once (about 1.7-3.1 MB at start), so only a few KB/s of numbers cross the link while driving. Readings the car does not give show as --. Chosen on the central screen by touch, with a preview of each theme and a 10 s try on the cluster while parked (the Cluster themes iDrive app). About 12 MB.",
+  "requires": {
+    "mgu-deploy": "0.7.0",
+    "mgu-python": "1.0.0",
+    "mgu-render": "0.6.11",
+    "cluster-render": "0.5.4"
+  },
+  "uninstallable": true,
+  "mguHmi": [
+    "ID7"
+  ],
+  "platform": {
+    "tool/cluster_render_client": {
+      "version": "1.0.0",
+      "files": {
+        "src/cluster_render_client.js": "cluster_render_client.js"
+      }
+    },
+    "tool/touch_ui": {
+      "version": "1.0.0",
+      "files": {
+        "src/ui_canvas.js": "ui_canvas.js",
+        "src/ui_kit.js": "ui_kit.js",
+        "src/ui_host.js": "ui_host.js",
+        "src/ui_png.js": "ui_png.js",
+        "src/touch_reader.py": "touch_reader.py",
+        "src/ui.fonts.json": "ui.fonts.json",
+        "src/ui.f20.font.gz": "ui.f20.font.gz",
+        "src/ui.f24.font.gz": "ui.f24.font.gz",
+        "src/ui.f32.font.gz": "ui.f32.font.gz",
+        "src/ui.f44.font.gz": "ui.f44.font.gz"
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "server.js",
+      "from": "src/server.js",
+      "mode": "0644"
+    },
+    {
+      "path": "control.js",
+      "from": "src/control.js",
+      "mode": "0644"
+    },
+    {
+      "path": "theme_runtime.js",
+      "from": "src/theme_runtime.js",
+      "mode": "0644"
+    },
+    {
+      "path": "theme_core.js",
+      "from": "src/theme_core.js",
+      "mode": "0644"
+    },
+    {
+      "path": "sim.js",
+      "from": "src/sim.js",
+      "mode": "0644"
+    },
+    {
+      "path": "picker.js",
+      "from": "src/picker.js",
+      "mode": "0644"
+    },
+    {
+      "path": "picker_view.js",
+      "from": "src/picker_view.js",
+      "mode": "0644"
+    },
+    {
+      "path": "touch_reader.py",
+      "from": "src/touch_reader.py",
+      "mode": "0644"
+    },
+    {
+      "path": "ui_canvas.js",
+      "from": "src/ui_canvas.js",
+      "mode": "0644"
+    },
+    {
+      "path": "ui_kit.js",
+      "from": "src/ui_kit.js",
+      "mode": "0644"
+    },
+    {
+      "path": "ui_host.js",
+      "from": "src/ui_host.js",
+      "mode": "0644"
+    },
+    {
+      "path": "ui_png.js",
+      "from": "src/ui_png.js",
+      "mode": "0644"
+    },
+    {
+      "path": "ui.fonts.json",
+      "from": "src/ui.fonts.json",
+      "mode": "0644"
+    },
+    {
+      "path": "ui.f20.font.gz",
+      "from": "src/ui.f20.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "ui.f24.font.gz",
+      "from": "src/ui.f24.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "ui.f32.font.gz",
+      "from": "src/ui.f32.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "ui.f44.font.gz",
+      "from": "src/ui.f44.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "cluster_render_client.js",
+      "from": "src/cluster_render_client.js",
+      "mode": "0644"
+    },
+    {
+      "path": "THIRD-PARTY.md",
+      "from": "THIRD-PARTY.md",
+      "mode": "0644"
+    },
+    {
+      "path": "LICENSE",
+      "from": "LICENSE",
+      "mode": "0644"
+    },
+    {
+      "path": "fs_art.frag",
+      "from": "src/shaders/art.frag",
+      "mode": "0644"
+    },
+    {
+      "path": "fs_gauge.frag",
+      "from": "src/shaders/gauge.frag",
+      "mode": "0644"
+    },
+    {
+      "path": "fs_text.frag",
+      "from": "src/shaders/text.frag",
+      "mode": "0644"
+    },
+    {
+      "path": "fs_leds.frag",
+      "from": "src/shaders/leds.frag",
+      "mode": "0644"
+    },
+    {
+      "path": "fs_rect.frag",
+      "from": "src/shaders/rect.frag",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i1.art.tiles.gz",
+      "from": "themes/built/g20i1.art.tiles.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i1.chev.sprite.gz",
+      "from": "themes/built/g20i1.chev.sprite.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i1.engine.field.gz",
+      "from": "themes/built/g20i1.engine.field.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i1.f184w500.font.gz",
+      "from": "themes/built/g20i1.f184w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i1.f22w500.font.gz",
+      "from": "themes/built/g20i1.f22w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i1.f24w500.font.gz",
+      "from": "themes/built/g20i1.f24w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i1.f30w500.font.gz",
+      "from": "themes/built/g20i1.f30w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i1.f33w500.font.gz",
+      "from": "themes/built/g20i1.f33w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i1.f76w400.font.gz",
+      "from": "themes/built/g20i1.f76w400.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i1.fuel.field.gz",
+      "from": "themes/built/g20i1.fuel.field.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i1.logic.js",
+      "from": "themes/built/g20i1.logic.js",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i1.speed.field.gz",
+      "from": "themes/built/g20i1.speed.field.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i1.theme.json",
+      "from": "themes/built/g20i1.theme.json",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i1c.art.tiles.gz",
+      "from": "themes/built/g20i1c.art.tiles.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i1c.f26w500.font.gz",
+      "from": "themes/built/g20i1c.f26w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i1c.f30w500.font.gz",
+      "from": "themes/built/g20i1c.f30w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i1c.f33w500.font.gz",
+      "from": "themes/built/g20i1c.f33w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i1c.f36w600.font.gz",
+      "from": "themes/built/g20i1c.f36w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i1c.logic.js",
+      "from": "themes/built/g20i1c.logic.js",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i1c.setPointer.field.gz",
+      "from": "themes/built/g20i1c.setPointer.field.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i1c.theme.json",
+      "from": "themes/built/g20i1c.theme.json",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i2.art.tiles.gz",
+      "from": "themes/built/g20i2.art.tiles.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i2.eng.field.gz",
+      "from": "themes/built/g20i2.eng.field.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i2.f16w600.font.gz",
+      "from": "themes/built/g20i2.f16w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i2.f180w500.font.gz",
+      "from": "themes/built/g20i2.f180w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i2.f19w500.font.gz",
+      "from": "themes/built/g20i2.f19w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i2.f214w500.font.gz",
+      "from": "themes/built/g20i2.f214w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i2.f26w500.font.gz",
+      "from": "themes/built/g20i2.f26w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i2.f30w500.font.gz",
+      "from": "themes/built/g20i2.f30w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i2.f44w500.font.gz",
+      "from": "themes/built/g20i2.f44w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i2.fuel.field.gz",
+      "from": "themes/built/g20i2.fuel.field.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i2.lampsA.field.gz",
+      "from": "themes/built/g20i2.lampsA.field.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i2.logic.js",
+      "from": "themes/built/g20i2.logic.js",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i2.speed.field.gz",
+      "from": "themes/built/g20i2.speed.field.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i2.theme.json",
+      "from": "themes/built/g20i2.theme.json",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i2c.arrowR.field.gz",
+      "from": "themes/built/g20i2c.arrowR.field.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i2c.art.tiles.gz",
+      "from": "themes/built/g20i2c.art.tiles.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i2c.f140w500.font.gz",
+      "from": "themes/built/g20i2c.f140w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i2c.f16w600.font.gz",
+      "from": "themes/built/g20i2c.f16w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i2c.f19w500.font.gz",
+      "from": "themes/built/g20i2c.f19w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i2c.f26w500.font.gz",
+      "from": "themes/built/g20i2c.f26w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i2c.f30w600.font.gz",
+      "from": "themes/built/g20i2c.f30w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i2c.f35w500.font.gz",
+      "from": "themes/built/g20i2c.f35w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i2c.logic.js",
+      "from": "themes/built/g20i2c.logic.js",
+      "mode": "0644"
+    },
+    {
+      "path": "g20i2c.theme.json",
+      "from": "themes/built/g20i2c.theme.json",
+      "mode": "0644"
+    },
+    {
+      "path": "lci1.art.tiles.gz",
+      "from": "themes/built/lci1.art.tiles.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci1.f112w600.font.gz",
+      "from": "themes/built/lci1.f112w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci1.f18w600.font.gz",
+      "from": "themes/built/lci1.f18w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci1.f22w500.font.gz",
+      "from": "themes/built/lci1.f22w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci1.f24w500.font.gz",
+      "from": "themes/built/lci1.f24w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci1.f24w600.font.gz",
+      "from": "themes/built/lci1.f24w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci1.f36w600.font.gz",
+      "from": "themes/built/lci1.f36w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci1.f40w500.font.gz",
+      "from": "themes/built/lci1.f40w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci1.f44w600.font.gz",
+      "from": "themes/built/lci1.f44w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci1.fuelBar.field.gz",
+      "from": "themes/built/lci1.fuelBar.field.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci1.gearOutline.field.gz",
+      "from": "themes/built/lci1.gearOutline.field.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci1.logic.js",
+      "from": "themes/built/lci1.logic.js",
+      "mode": "0644"
+    },
+    {
+      "path": "lci1.speedNum.field.gz",
+      "from": "themes/built/lci1.speedNum.field.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci1.theme.json",
+      "from": "themes/built/lci1.theme.json",
+      "mode": "0644"
+    },
+    {
+      "path": "lci1c.art.tiles.gz",
+      "from": "themes/built/lci1c.art.tiles.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci1c.f112w600.font.gz",
+      "from": "themes/built/lci1c.f112w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci1c.f14w600.font.gz",
+      "from": "themes/built/lci1c.f14w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci1c.f18w600.font.gz",
+      "from": "themes/built/lci1c.f18w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci1c.f22w500.font.gz",
+      "from": "themes/built/lci1c.f22w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci1c.f24w500.font.gz",
+      "from": "themes/built/lci1c.f24w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci1c.f24w600.font.gz",
+      "from": "themes/built/lci1c.f24w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci1c.f34w700.font.gz",
+      "from": "themes/built/lci1c.f34w700.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci1c.f44w600.font.gz",
+      "from": "themes/built/lci1c.f44w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci1c.logic.js",
+      "from": "themes/built/lci1c.logic.js",
+      "mode": "0644"
+    },
+    {
+      "path": "lci1c.theme.json",
+      "from": "themes/built/lci1c.theme.json",
+      "mode": "0644"
+    },
+    {
+      "path": "lci2.art.tiles.gz",
+      "from": "themes/built/lci2.art.tiles.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci2.f14w500.font.gz",
+      "from": "themes/built/lci2.f14w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci2.f16w400.font.gz",
+      "from": "themes/built/lci2.f16w400.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci2.f180w600.font.gz",
+      "from": "themes/built/lci2.f180w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci2.f200w600.font.gz",
+      "from": "themes/built/lci2.f200w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci2.f20w700.font.gz",
+      "from": "themes/built/lci2.f20w700.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci2.f22w500.font.gz",
+      "from": "themes/built/lci2.f22w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci2.f30w500.font.gz",
+      "from": "themes/built/lci2.f30w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci2.f48w500.font.gz",
+      "from": "themes/built/lci2.f48w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci2.logic.js",
+      "from": "themes/built/lci2.logic.js",
+      "mode": "0644"
+    },
+    {
+      "path": "lci2.speed.field.gz",
+      "from": "themes/built/lci2.speed.field.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci2.theme.json",
+      "from": "themes/built/lci2.theme.json",
+      "mode": "0644"
+    },
+    {
+      "path": "lci2c.arrowR.field.gz",
+      "from": "themes/built/lci2c.arrowR.field.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci2c.art.tiles.gz",
+      "from": "themes/built/lci2c.art.tiles.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci2c.f14w500.font.gz",
+      "from": "themes/built/lci2c.f14w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci2c.f16w400.font.gz",
+      "from": "themes/built/lci2c.f16w400.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci2c.f18w500.font.gz",
+      "from": "themes/built/lci2c.f18w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci2c.f22w500.font.gz",
+      "from": "themes/built/lci2c.f22w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci2c.f25w500.font.gz",
+      "from": "themes/built/lci2c.f25w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci2c.f30w500.font.gz",
+      "from": "themes/built/lci2c.f30w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci2c.f48w500.font.gz",
+      "from": "themes/built/lci2c.f48w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci2c.f80w600.font.gz",
+      "from": "themes/built/lci2c.f80w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "lci2c.logic.js",
+      "from": "themes/built/lci2c.logic.js",
+      "mode": "0644"
+    },
+    {
+      "path": "lci2c.theme.json",
+      "from": "themes/built/lci2c.theme.json",
+      "mode": "0644"
+    },
+    {
+      "path": "perf1.art.tiles.gz",
+      "from": "themes/built/perf1.art.tiles.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf1.engBar.field.gz",
+      "from": "themes/built/perf1.engBar.field.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf1.f136w600.font.gz",
+      "from": "themes/built/perf1.f136w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf1.f144w600.font.gz",
+      "from": "themes/built/perf1.f144w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf1.f20w500.font.gz",
+      "from": "themes/built/perf1.f20w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf1.f22w600.font.gz",
+      "from": "themes/built/perf1.f22w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf1.f26w600.font.gz",
+      "from": "themes/built/perf1.f26w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf1.f30w600.font.gz",
+      "from": "themes/built/perf1.f30w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf1.f40w600.font.gz",
+      "from": "themes/built/perf1.f40w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf1.f88w600.font.gz",
+      "from": "themes/built/perf1.f88w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf1.logic.js",
+      "from": "themes/built/perf1.logic.js",
+      "mode": "0644"
+    },
+    {
+      "path": "perf1.speedDial.field.gz",
+      "from": "themes/built/perf1.speedDial.field.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf1.theme.json",
+      "from": "themes/built/perf1.theme.json",
+      "mode": "0644"
+    },
+    {
+      "path": "perf1c.arrowR.field.gz",
+      "from": "themes/built/perf1c.arrowR.field.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf1c.art.tiles.gz",
+      "from": "themes/built/perf1c.art.tiles.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf1c.f112w600.font.gz",
+      "from": "themes/built/perf1c.f112w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf1c.f20w500.font.gz",
+      "from": "themes/built/perf1c.f20w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf1c.f24w600.font.gz",
+      "from": "themes/built/perf1c.f24w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf1c.f30w600.font.gz",
+      "from": "themes/built/perf1c.f30w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf1c.f40w600.font.gz",
+      "from": "themes/built/perf1c.f40w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf1c.f88w600.font.gz",
+      "from": "themes/built/perf1c.f88w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf1c.logic.js",
+      "from": "themes/built/perf1c.logic.js",
+      "mode": "0644"
+    },
+    {
+      "path": "perf1c.speedDial.field.gz",
+      "from": "themes/built/perf1c.speedDial.field.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf1c.theme.json",
+      "from": "themes/built/perf1c.theme.json",
+      "mode": "0644"
+    },
+    {
+      "path": "perf2.art.tiles.gz",
+      "from": "themes/built/perf2.art.tiles.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf2.cue.sprite.gz",
+      "from": "themes/built/perf2.cue.sprite.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf2.f156w600.font.gz",
+      "from": "themes/built/perf2.f156w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf2.f16w700.font.gz",
+      "from": "themes/built/perf2.f16w700.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf2.f176w600.font.gz",
+      "from": "themes/built/perf2.f176w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf2.f24w600.font.gz",
+      "from": "themes/built/perf2.f24w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf2.f30w600.font.gz",
+      "from": "themes/built/perf2.f30w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf2.f34w600.font.gz",
+      "from": "themes/built/perf2.f34w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf2.f44w600.font.gz",
+      "from": "themes/built/perf2.f44w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf2.f66w600.font.gz",
+      "from": "themes/built/perf2.f66w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf2.logic.js",
+      "from": "themes/built/perf2.logic.js",
+      "mode": "0644"
+    },
+    {
+      "path": "perf2.power.field.gz",
+      "from": "themes/built/perf2.power.field.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf2.speed.field.gz",
+      "from": "themes/built/perf2.speed.field.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf2.theme.json",
+      "from": "themes/built/perf2.theme.json",
+      "mode": "0644"
+    },
+    {
+      "path": "perf2c.arrowTurn.field.gz",
+      "from": "themes/built/perf2c.arrowTurn.field.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf2c.art.tiles.gz",
+      "from": "themes/built/perf2c.art.tiles.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf2c.f124w600.font.gz",
+      "from": "themes/built/perf2c.f124w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf2c.f16w700.font.gz",
+      "from": "themes/built/perf2c.f16w700.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf2c.f20w600.font.gz",
+      "from": "themes/built/perf2c.f20w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf2c.f30w600.font.gz",
+      "from": "themes/built/perf2c.f30w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf2c.f44w600.font.gz",
+      "from": "themes/built/perf2c.f44w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf2c.f48w600.font.gz",
+      "from": "themes/built/perf2c.f48w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf2c.f66w600.font.gz",
+      "from": "themes/built/perf2c.f66w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "perf2c.logic.js",
+      "from": "themes/built/perf2c.logic.js",
+      "mode": "0644"
+    },
+    {
+      "path": "perf2c.theme.json",
+      "from": "themes/built/perf2c.theme.json",
+      "mode": "0644"
+    },
+    {
+      "path": "tri1.art.tiles.gz",
+      "from": "themes/built/tri1.art.tiles.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri1.eng.field.gz",
+      "from": "themes/built/tri1.eng.field.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri1.f106w600.font.gz",
+      "from": "themes/built/tri1.f106w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri1.f186w500.font.gz",
+      "from": "themes/built/tri1.f186w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri1.f24w400.font.gz",
+      "from": "themes/built/tri1.f24w400.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri1.f24w500.font.gz",
+      "from": "themes/built/tri1.f24w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri1.f32w500.font.gz",
+      "from": "themes/built/tri1.f32w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri1.f34w600.font.gz",
+      "from": "themes/built/tri1.f34w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri1.f40w600.font.gz",
+      "from": "themes/built/tri1.f40w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri1.f50w500.font.gz",
+      "from": "themes/built/tri1.f50w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri1.f76w600.font.gz",
+      "from": "themes/built/tri1.f76w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri1.logic.js",
+      "from": "themes/built/tri1.logic.js",
+      "mode": "0644"
+    },
+    {
+      "path": "tri1.ribsL.field.gz",
+      "from": "themes/built/tri1.ribsL.field.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri1.theme.json",
+      "from": "themes/built/tri1.theme.json",
+      "mode": "0644"
+    },
+    {
+      "path": "tri1c.art.tiles.gz",
+      "from": "themes/built/tri1c.art.tiles.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri1c.f24w400.font.gz",
+      "from": "themes/built/tri1c.f24w400.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri1c.f32w500.font.gz",
+      "from": "themes/built/tri1c.f32w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri1c.f34w600.font.gz",
+      "from": "themes/built/tri1c.f34w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri1c.f40w600.font.gz",
+      "from": "themes/built/tri1c.f40w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri1c.f41w500.font.gz",
+      "from": "themes/built/tri1c.f41w500.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri1c.f76w600.font.gz",
+      "from": "themes/built/tri1c.f76w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri1c.f91w600.font.gz",
+      "from": "themes/built/tri1c.f91w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri1c.logic.js",
+      "from": "themes/built/tri1c.logic.js",
+      "mode": "0644"
+    },
+    {
+      "path": "tri1c.theme.json",
+      "from": "themes/built/tri1c.theme.json",
+      "mode": "0644"
+    },
+    {
+      "path": "tri2.art.tiles.gz",
+      "from": "themes/built/tri2.art.tiles.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri2.f13w600.font.gz",
+      "from": "themes/built/tri2.f13w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri2.f17w460.font.gz",
+      "from": "themes/built/tri2.f17w460.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri2.f26w560.font.gz",
+      "from": "themes/built/tri2.f26w560.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri2.f274w600.font.gz",
+      "from": "themes/built/tri2.f274w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri2.f274w600x.font.gz",
+      "from": "themes/built/tri2.f274w600x.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri2.f36w560.font.gz",
+      "from": "themes/built/tri2.f36w560.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri2.f69w560.font.gz",
+      "from": "themes/built/tri2.f69w560.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri2.fuel.field.gz",
+      "from": "themes/built/tri2.fuel.field.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri2.ladder.field.gz",
+      "from": "themes/built/tri2.ladder.field.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri2.logic.js",
+      "from": "themes/built/tri2.logic.js",
+      "mode": "0644"
+    },
+    {
+      "path": "tri2.pw.field.gz",
+      "from": "themes/built/tri2.pw.field.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri2.tach.field.gz",
+      "from": "themes/built/tri2.tach.field.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri2.theme.json",
+      "from": "themes/built/tri2.theme.json",
+      "mode": "0644"
+    },
+    {
+      "path": "tri2c.arrow.field.gz",
+      "from": "themes/built/tri2c.arrow.field.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri2c.art.tiles.gz",
+      "from": "themes/built/tri2c.art.tiles.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri2c.f14w600.font.gz",
+      "from": "themes/built/tri2c.f14w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri2c.f17w460.font.gz",
+      "from": "themes/built/tri2c.f17w460.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri2c.f206w600.font.gz",
+      "from": "themes/built/tri2c.f206w600.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri2c.f26w560.font.gz",
+      "from": "themes/built/tri2c.f26w560.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri2c.f31w700.font.gz",
+      "from": "themes/built/tri2c.f31w700.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri2c.f34w560.font.gz",
+      "from": "themes/built/tri2c.f34w560.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri2c.f54w560.font.gz",
+      "from": "themes/built/tri2c.f54w560.font.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri2c.logic.js",
+      "from": "themes/built/tri2c.logic.js",
+      "mode": "0644"
+    },
+    {
+      "path": "tri2c.pwTint.field.gz",
+      "from": "themes/built/tri2c.pwTint.field.gz",
+      "mode": "0644"
+    },
+    {
+      "path": "tri2c.theme.json",
+      "from": "themes/built/tri2c.theme.json",
+      "mode": "0644"
+    },
+    {
+      "path": "picker.g20i1.png",
+      "from": "picker/g20i1.png",
+      "mode": "0644"
+    },
+    {
+      "path": "picker.g20i1.thumb.png",
+      "from": "picker/g20i1.thumb.png",
+      "mode": "0644"
+    },
+    {
+      "path": "picker.g20i1c.png",
+      "from": "picker/g20i1c.png",
+      "mode": "0644"
+    },
+    {
+      "path": "picker.g20i1c.thumb.png",
+      "from": "picker/g20i1c.thumb.png",
+      "mode": "0644"
+    },
+    {
+      "path": "picker.g20i2.png",
+      "from": "picker/g20i2.png",
+      "mode": "0644"
+    },
+    {
+      "path": "picker.g20i2.thumb.png",
+      "from": "picker/g20i2.thumb.png",
+      "mode": "0644"
+    },
+    {
+      "path": "picker.g20i2c.png",
+      "from": "picker/g20i2c.png",
+      "mode": "0644"
+    },
+    {
+      "path": "picker.g20i2c.thumb.png",
+      "from": "picker/g20i2c.thumb.png",
+      "mode": "0644"
+    },
+    {
+      "path": "picker.lci1.png",
+      "from": "picker/lci1.png",
+      "mode": "0644"
+    },
+    {
+      "path": "picker.lci1.thumb.png",
+      "from": "picker/lci1.thumb.png",
+      "mode": "0644"
+    },
+    {
+      "path": "picker.lci1c.png",
+      "from": "picker/lci1c.png",
+      "mode": "0644"
+    },
+    {
+      "path": "picker.lci1c.thumb.png",
+      "from": "picker/lci1c.thumb.png",
+      "mode": "0644"
+    },
+    {
+      "path": "picker.lci2.png",
+      "from": "picker/lci2.png",
+      "mode": "0644"
+    },
+    {
+      "path": "picker.lci2.thumb.png",
+      "from": "picker/lci2.thumb.png",
+      "mode": "0644"
+    },
+    {
+      "path": "picker.lci2c.png",
+      "from": "picker/lci2c.png",
+      "mode": "0644"
+    },
+    {
+      "path": "picker.lci2c.thumb.png",
+      "from": "picker/lci2c.thumb.png",
+      "mode": "0644"
+    },
+    {
+      "path": "picker.perf1.png",
+      "from": "picker/perf1.png",
+      "mode": "0644"
+    },
+    {
+      "path": "picker.perf1.thumb.png",
+      "from": "picker/perf1.thumb.png",
+      "mode": "0644"
+    },
+    {
+      "path": "picker.perf1c.png",
+      "from": "picker/perf1c.png",
+      "mode": "0644"
+    },
+    {
+      "path": "picker.perf1c.thumb.png",
+      "from": "picker/perf1c.thumb.png",
+      "mode": "0644"
+    },
+    {
+      "path": "picker.perf2.png",
+      "from": "picker/perf2.png",
+      "mode": "0644"
+    },
+    {
+      "path": "picker.perf2.thumb.png",
+      "from": "picker/perf2.thumb.png",
+      "mode": "0644"
+    },
+    {
+      "path": "picker.perf2c.png",
+      "from": "picker/perf2c.png",
+      "mode": "0644"
+    },
+    {
+      "path": "picker.perf2c.thumb.png",
+      "from": "picker/perf2c.thumb.png",
+      "mode": "0644"
+    },
+    {
+      "path": "picker.tri1.png",
+      "from": "picker/tri1.png",
+      "mode": "0644"
+    },
+    {
+      "path": "picker.tri1.thumb.png",
+      "from": "picker/tri1.thumb.png",
+      "mode": "0644"
+    },
+    {
+      "path": "picker.tri1c.png",
+      "from": "picker/tri1c.png",
+      "mode": "0644"
+    },
+    {
+      "path": "picker.tri1c.thumb.png",
+      "from": "picker/tri1c.thumb.png",
+      "mode": "0644"
+    },
+    {
+      "path": "picker.tri2.png",
+      "from": "picker/tri2.png",
+      "mode": "0644"
+    },
+    {
+      "path": "picker.tri2.thumb.png",
+      "from": "picker/tri2.thumb.png",
+      "mode": "0644"
+    },
+    {
+      "path": "picker.tri2c.png",
+      "from": "picker/tri2c.png",
+      "mode": "0644"
+    },
+    {
+      "path": "picker.tri2c.thumb.png",
+      "from": "picker/tri2c.thumb.png",
+      "mode": "0644"
+    }
+  ],
+  "units": [
+    {
+      "name": "vizualyse-cluster.service",
+      "from": "systemd/vizualyse-cluster.service"
+    }
+  ],
+  "enable": [
+    {
+      "unit": "vizualyse-cluster.service",
+      "target": "multi-user.target"
+    }
+  ],
+  "recmgr": [
+    "vizualyse-cluster"
+  ],
+  "restart": [
+    "vizualyse-cluster.service"
+  ]
+}

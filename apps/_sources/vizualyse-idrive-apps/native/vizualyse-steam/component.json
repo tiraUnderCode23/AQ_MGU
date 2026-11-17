@@ -1,0 +1,128 @@
+{
+  "id": "vizualyse-steam",
+  "kind": "tool",
+  "version": "0.3.2",
+  "license": "GPL-3.0-or-later",
+  "title": "Steam",
+  "description": "EXPERIMENTAL. Windows games from your Steam library running on the car through Proton (Wine), on the car's own graphics drivers (64-bit Direct3D 9-11 games on Vulkan through DXVK by default, the rest on OpenGL), shown on the central screen while parked, with sound. Sign in to Steam and install games on the phone page (scan the QR code on the iDrive Steam page); play them from the iDrive or the phone. Touch is the mouse (a tap clicks); wired Xbox 360-style (XInput) USB controllers, up to four; no keyboard yet. Games that need the Steam client get an optional Run without Steam (gbe_fork). About 440 MB to download, 1.35 GB on the unit, plus the games.",
+  "requires": {
+    "mgu-deploy": "0.7.0",
+    "mgu-python": "1.0.0",
+    "mgu-render": "0.6.11",
+    "vizualyse-bus": "0.1.0"
+  },
+  "uninstallable": true,
+  "mguHmi": [
+    "ID7"
+  ],
+  "internet": true,
+  "uids": [
+    12996
+  ],
+  "deactivate": [
+    "node",
+    "deactivate.js"
+  ],
+  "build": [
+    "sh",
+    "build.sh"
+  ],
+  "platform": {
+    "native/frame_out": { "version": "1.0.0", "files": { "src/frame_out.c": "frame_out.c", "src/frame_out.h": "frame_out.h" } },
+    "native/pads": { "version": "1.0.0", "files": { "src/pads.c": "pads.c", "src/pads.h": "pads.h", "src/pad_flags.h": "pad_flags.h", "test/pads_test.c": "test/pads_test.c" } },
+    "native/touch": { "version": "1.0.0", "files": { "src/touch.c": "touch.c", "src/touch.h": "touch.h" } },
+    "native/usb_pads": { "version": "1.0.0", "files": { "src/usb_pads.c": "usb_pads.c", "src/usb_pads.h": "usb_pads.h" } },
+    "native/usbip_pad": { "version": "1.0.0", "files": { "test/usbip_pad.c": "usbip_pad.c" } },
+    "native/wayland_drm": { "version": "1.0.0", "files": { "src/protocol/wayland-drm.xml": "wayland-drm.xml" } },
+    "native/winston_out": { "version": "1.1.0", "files": { "src/winston_out.c": "winston_out.c", "src/winston_out.h": "winston_out.h", "src/protocol/ivi-application.xml": "ivi-application.xml", "src/protocol/ivi-controller.xml": "ivi-controller.xml", "src/protocol/linux-dmabuf-unstable-v1.xml": "linux-dmabuf-unstable-v1.xml" } },
+    "tool/mqtt_bus": { "version": "1.0.0", "files": { "src/mqtt_bus.js": "mqtt_bus.js" } },
+    "tool/pcm_play": { "version": "1.0.1", "files": { "src/pcm_play.py": "pcm_play.py" } },
+    "tool/speakers": { "version": "1.0.0", "files": { "src/speakers.js": "speakers.js" } },
+    "common/qrcode": { "version": "1.0.0", "files": { "src/qrcode.js": "qrcode.js" } },
+    "tool/touch_ui": { "version": "1.0.0", "files": { "src/ui_canvas.js": "ui_canvas.js", "src/ui_kit.js": "ui_kit.js", "src/ui_host.js": "ui_host.js", "src/ui_png.js": "ui_png.js", "src/touch_reader.py": "touch_reader.py", "src/ui.fonts.json": "ui.fonts.json", "src/ui.f20.font.gz": "ui.f20.font.gz", "src/ui.f24.font.gz": "ui.f24.font.gz", "src/ui.f32.font.gz": "ui.f32.font.gz", "src/ui.f44.font.gz": "ui.f44.font.gz" } }
+  },
+  "files": [
+    { "path": "server.js", "from": "src/server.js", "mode": "0644" },
+    { "path": "mqtt_bus.js", "from": "src/mqtt_bus.js", "mode": "0644" },
+    { "path": "env.js", "from": "src/env.js", "mode": "0644" },
+    { "path": "unpack.js", "from": "src/unpack.js", "mode": "0644" },
+    { "path": "usb.js", "from": "src/usb.js", "mode": "0644" },
+    { "path": "steam.js", "from": "src/steam.js", "mode": "0644" },
+    { "path": "steamstub.js", "from": "src/steamstub.js", "mode": "0644" },
+    { "path": "client.js", "from": "src/client.js", "mode": "0644" },
+    { "path": "art.js", "from": "src/art.js", "mode": "0644" },
+    { "path": "jpeg.js", "from": "src/jpeg.js", "mode": "0644" },
+    { "path": "ico.js", "from": "src/ico.js", "mode": "0644" },
+    { "path": "game.js", "from": "src/game.js", "mode": "0644" },
+    { "path": "perf.js", "from": "src/perf.js", "mode": "0644" },
+    { "path": "wine_log.js", "from": "src/wine_log.js", "mode": "0644" },
+    { "path": "screen.js", "from": "src/screen.js", "mode": "0644" },
+    { "path": "firewall.js", "from": "src/firewall.js", "mode": "0644" },
+    { "path": "swap.js", "from": "src/swap.js", "mode": "0644" },
+    { "path": "tap.js", "from": "src/tap.js", "mode": "0644" },
+    { "path": "deactivate.js", "from": "src/deactivate.js", "mode": "0644" },
+    { "path": "control.js", "from": "src/control.js", "mode": "0644" },
+    { "path": "touch_screen.js", "from": "src/touch_screen.js", "mode": "0644" },
+    { "path": "touch_view.js", "from": "src/touch_view.js", "mode": "0644" },
+    { "path": "qrcode.js", "from": "src/qrcode.js", "mode": "0644" },
+    { "path": "ui_canvas.js", "from": "src/ui_canvas.js", "mode": "0644" },
+    { "path": "ui_kit.js", "from": "src/ui_kit.js", "mode": "0644" },
+    { "path": "ui_host.js", "from": "src/ui_host.js", "mode": "0644" },
+    { "path": "ui_png.js", "from": "src/ui_png.js", "mode": "0644" },
+    { "path": "touch_reader.py", "from": "src/touch_reader.py", "mode": "0644" },
+    { "path": "ui.fonts.json", "from": "src/ui.fonts.json", "mode": "0644" },
+    { "path": "ui.f20.font.gz", "from": "src/ui.f20.font.gz", "mode": "0644" },
+    { "path": "ui.f24.font.gz", "from": "src/ui.f24.font.gz", "mode": "0644" },
+    { "path": "ui.f32.font.gz", "from": "src/ui.f32.font.gz", "mode": "0644" },
+    { "path": "ui.f44.font.gz", "from": "src/ui.f44.font.gz", "mode": "0644" },
+    { "path": "pcm_play.py", "from": "src/pcm_play.py", "mode": "0644" },
+    { "path": "speakers.js", "from": "src/speakers.js", "mode": "0644" },
+    { "path": "page.html", "from": "src/page.html", "mode": "0644" },
+    { "path": "launch.json", "from": "build/launch.json", "mode": "0644" },
+    { "path": "runtime.tgz", "from": "build/runtime.tgz", "mode": "0644" },
+    { "path": "proton.tgz", "from": "build/proton.tgz", "mode": "0644" },
+    { "path": "prefix.tgz", "from": "build/prefix.tgz", "mode": "0644" },
+    { "path": "vulkan.tgz", "from": "build/vulkan.tgz", "mode": "0644" },
+    { "path": "iris.tgz", "from": "build/iris.tgz", "mode": "0644" },
+    { "path": "bundle-VERSION.txt", "from": "build/bundle-VERSION.txt", "mode": "0644" },
+    { "path": "THIRD-PARTY.md", "from": "THIRD-PARTY.md", "mode": "0644" },
+    { "path": "LICENSE", "from": "LICENSE", "mode": "0644" }
+  ],
+  "units": [
+    {
+      "name": "vizualyse-steam.service",
+      "from": "systemd/vizualyse-steam.service"
+    }
+  ],
+  "enable": [
+    {
+      "unit": "vizualyse-steam.service",
+      "target": "multi-user.target"
+    }
+  ],
+  "recmgr": [
+    "vizualyse-steam"
+  ],
+  "crashNames": [
+    "wl-sink",
+    "steam-touch",
+    "steam-pads",
+    "wine",
+    "wine-preloader",
+    "wineserver",
+    "dotnet",
+    "steam.exe",
+    "explorer.exe",
+    "services.exe",
+    "winedevice.exe",
+    "plugplay.exe",
+    "svchost.exe",
+    "rpcss.exe",
+    "conhost.exe",
+    "start.exe",
+    "wineboot.exe"
+  ],
+  "restart": [
+    "vizualyse-steam.service"
+  ]
+}

@@ -1,0 +1,1451 @@
+{
+  "schema": 2,
+  "components": [
+    {
+      "id": "airplay-rx",
+      "kind": "tool",
+      "title": "AirPlay receiver",
+      "description": "Needed by the AirPlay app: receives the iPhone's screen (AirPlay screen mirroring).",
+      "author": "h4m4d",
+      "version": "1.0.0",
+      "artifact": {
+        "name": "airplay-rx@1.0.0.tgz",
+        "size": 3313575,
+        "sha256": "b4ada38b813ee1e4f489583eb569d540db294ae2f466b30142136717aab5b36c",
+        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/airplay-rx%401.0.0.tgz"
+      },
+      "requires": {
+        "mgu-deploy": "0.7.0"
+      },
+      "uninstallable": true,
+      "mguHmi": [
+        "ID7"
+      ],
+      "optional": true
+    },
+    {
+      "id": "apm_airplay",
+      "kind": "app",
+      "title": "AirPlay",
+      "description": "Your iPhone's screen on the central display by AirPlay screen mirroring, parked only. Sound stays on Bluetooth. In Apps and Communication.",
+      "author": "h4m4d",
+      "version": "1.0.6",
+      "artifact": {
+        "name": "apm_airplay@1.0.6.tgz",
+        "size": 802852,
+        "sha256": "75a8f310aa5a62bc6bc64c6ced6cc5be6c8324f551284f3068119ef718a9402b",
+        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/apm_airplay%401.0.6.tgz"
+      },
+      "requires": {
+        "mgu-deploy": "0.7.0",
+        "airplay-rx": "1.0.0"
+      },
+      "uninstallable": true,
+      "mguHmi": [
+        "ID7"
+      ],
+      "icon": "apm_airplay.png",
+      "iconSha256": "a3d1714eb267dfdaa8eafeee8be77374fbe3f302f6d22ea8198c4c2cb77a539c"
+    },
+    {
+      "id": "app-privacy",
+      "kind": "tool",
+      "title": "App privacy",
+      "description": "Keeps our apps out of the head unit's backend app reporting and restarts them after a crash",
+      "version": "1.7.2",
+      "artifact": {
+        "name": "app-privacy@1.7.2.tgz",
+        "size": 19586,
+        "sha256": "eea01214be305cec03a9cb8abeefa2ab543693376ab16a8d9639eb55e5191c5b",
+        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/app-privacy%401.7.2.tgz"
+      },
+      "requires": {
+        "mgu-deploy": "0.6.3"
+      },
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "texts": {
+        "cs": {
+          "title": "Soukromí aplikací",
+          "description": "Vyřazuje naše aplikace z hlášení aplikací hlavní jednotky na server a po pádu je znovu spouští"
+        },
+        "da": {
+          "title": "App-privatliv",
+          "description": "Holder vores apps ude af hovedenhedens app-rapportering til backend og genstarter dem efter et nedbrud"
+        },
+        "de": {
+          "title": "App-Datenschutz",
+          "description": "Hält unsere Apps aus der App-Meldung der Headunit an das Backend heraus und startet sie nach einem Absturz neu"
+        },
+        "el": {
+          "title": "Απόρρητο εφαρμογών",
+          "description": "Κρατά τις εφαρμογές μας εκτός της αναφοράς εφαρμογών της κεντρικής μονάδας προς το backend και τις επανεκκινεί μετά από σφάλμα"
+        },
+        "es-US": {
+          "title": "Privacidad de apps",
+          "description": "Mantiene nuestras apps fuera de los reportes de apps del backend de la unidad principal y las reinicia después de un fallo"
+        },
+        "es": {
+          "title": "Privacidad de apps",
+          "description": "Mantiene nuestras apps fuera de los informes de apps del backend de la unidad principal y las reinicia tras un fallo"
+        },
+        "fi": {
+          "title": "Sovellusten yksityisyys",
+          "description": "Pitää sovelluksemme poissa pääyksikön taustajärjestelmän sovellusraportoinnista ja käynnistää ne uudelleen kaatumisen jälkeen"
+        },
+        "fr-CA": {
+          "title": "Confidentialité des applis",
+          "description": "Exclut nos applis des signalements d'applis que le système envoie au serveur et les redémarre après un plantage"
+        },
+        "fr": {
+          "title": "Confidentialité des apps",
+          "description": "Exclut nos apps des signalements d'apps que le système envoie au serveur et les redémarre après un plantage"
+        },
+        "he": {
+          "title": "פרטיות אפליקציות",
+          "description": "מוציא את האפליקציות שלנו מדיווח האפליקציות של המערכת לשרת ומפעיל אותן מחדש לאחר קריסה"
+        },
+        "hu": {
+          "title": "Alkalmazás-adatvédelem",
+          "description": "Kizárja alkalmazásainkat a fejegység háttérrendszer felé küldött alkalmazásjelentéseiből, és összeomlás után újraindítja őket"
+        },
+        "id": {
+          "title": "Privasi aplikasi",
+          "description": "Menjauhkan aplikasi kami dari pelaporan aplikasi head unit ke backend dan memulai ulang aplikasi setelah crash"
+        },
+        "it": {
+          "title": "Privacy app",
+          "description": "Esclude le nostre app dalle segnalazioni che il sistema invia al backend e le riavvia dopo un arresto anomalo"
+        },
+        "ja": {
+          "title": "アプリのプライバシー",
+          "description": "当方のアプリをヘッドユニットのバックエンドへのアプリ報告から除外し、クラッシュ後に再起動します"
+        },
+        "ko": {
+          "title": "앱 개인정보 보호",
+          "description": "자체 앱을 헤드 유닛의 백엔드 앱 보고에서 제외하고 충돌 후 다시 시작합니다"
+        },
+        "nb": {
+          "title": "Personvern for apper",
+          "description": "Holder appene våre utenfor hovedenhetens apprapportering til serveren og starter dem på nytt etter et krasj"
+        },
+        "nl": {
+          "title": "App-privacy",
+          "description": "Houdt onze apps buiten de apprapportage van de headunit naar de backend en herstart ze na een crash"
+        },
+        "pl": {
+          "title": "Prywatność aplikacji",
+          "description": "Wyłącza nasze aplikacje z raportowania aplikacji przez jednostkę główną do serwera i uruchamia je ponownie po awarii"
+        },
+        "pt-BR": {
+          "title": "Privacidade de apps",
+          "description": "Mantém nossos apps fora dos relatórios de apps do backend da unidade principal e os reinicia após uma falha"
+        },
+        "pt": {
+          "title": "Privacidade de apps",
+          "description": "Mantém as nossas apps fora dos relatórios de apps do backend da unidade principal e reinicia-as após uma falha"
+        },
+        "ro": {
+          "title": "Confidențialitate aplicații",
+          "description": "Exclude aplicațiile noastre din raportarea aplicațiilor către backendul unității principale și le repornește după o blocare"
+        },
+        "ru": {
+          "title": "Приватность приложений",
+          "description": "Исключает наши приложения из отчётов головного устройства о приложениях на сервер и перезапускает их после сбоя"
+        },
+        "sk": {
+          "title": "Súkromie aplikácií",
+          "description": "Vylučuje naše aplikácie z hlásení aplikácií do backendu hlavnej jednotky a po páde ich reštartuje"
+        },
+        "sl": {
+          "title": "Zasebnost aplikacij",
+          "description": "Naše aplikacije izključi iz poročanja o aplikacijah v zaledje glavne enote in jih po zrušitvi znova zažene"
+        },
+        "sv": {
+          "title": "App-integritet",
+          "description": "Håller våra appar utanför huvudenhetens apprapportering till backend och startar om dem efter en krasch"
+        },
+        "th": {
+          "title": "ความเป็นส่วนตัวของแอป",
+          "description": "ไม่ให้แอปของเราถูกรายงานไปยังระบบหลังบ้านของเฮดยูนิต และรีสตาร์ทแอปเหล่านั้นหลังจากแครช"
+        },
+        "tr": {
+          "title": "Uygulama gizliliği",
+          "description": "Uygulamalarımızı ana ünitenin arka uca yaptığı uygulama raporlamasının dışında tutar ve çöktüklerinde yeniden başlatır"
+        },
+        "uk": {
+          "title": "Приватність програм",
+          "description": "Виключає наші програми зі звітів головного пристрою про програми на сервер і перезапускає їх після збою"
+        },
+        "vi": {
+          "title": "Quyền riêng tư ứng dụng",
+          "description": "Giữ các ứng dụng của chúng tôi ngoài báo cáo ứng dụng gửi về máy chủ của hệ thống và khởi động lại chúng sau khi gặp sự cố"
+        },
+        "zh-CN": {
+          "title": "应用隐私",
+          "description": "让我们的应用不被主机上报给后台，并在崩溃后重新启动它们"
+        },
+        "zh-TW": {
+          "title": "應用程式隱私",
+          "description": "讓我們的應用程式不被主機回報給後端，並在當機後重新啟動它們"
+        }
+      }
+    },
+    {
+      "id": "carplay-map",
+      "kind": "tool",
+      "title": "CarPlay Map Producer",
+      "description": "Captures the CarPlay map stream and sends it to cluster-render for display on a compatible instrument cluster.",
+      "version": "0.2.0",
+      "artifact": {
+        "name": "carplay-map@0.2.0.tgz",
+        "size": 32499,
+        "sha256": "d41df09a99c28aa3cec9f273b1c0e5ad289207930ae6e300c45aa00afedcd400",
+        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/carplay-map%400.2.0.tgz"
+      },
+      "requires": {
+        "mgu-deploy": "0.6.3",
+        "cluster-render": "0.2.0"
+      },
+      "mguHmi": [
+        "ID7"
+      ],
+      "uninstallable": true
+    },
+    {
+      "id": "cluster-render",
+      "kind": "tool",
+      "title": "Cluster renderer",
+      "description": "Draws every app's layers on the instrument cluster and the HUD, sharing the display slots and one upload budget",
+      "version": "0.6.7",
+      "artifact": {
+        "name": "cluster-render@0.6.7.tgz",
+        "size": 10422485,
+        "sha256": "7a93d0898f4d3f816cac6ecdc213ba9de6ca3c2266bef9d888515e5ab2e9e413",
+        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/cluster-render%400.6.7.tgz"
+      },
+      "requires": {
+        "mgu-deploy": "0.4.0"
+      },
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "uninstallable": true,
+      "texts": {
+        "cs": {
+          "title": "Renderer přístrojového štítu",
+          "description": "Kreslí vrstvy všech aplikací na přístrojový štít a HUD a sdílí přitom pozice na displeji a jeden společný rozpočet nahrávání"
+        },
+        "da": {
+          "title": "Instrumentpanel-renderer",
+          "description": "Tegner alle apps' lag på instrumentpanelet og HUD'en og deler visningspladserne og ét fælles uploadbudget"
+        },
+        "de": {
+          "title": "Kombi-Renderer",
+          "description": "Zeichnet die Ebenen aller Apps im Kombiinstrument und im HUD und teilt dabei die Anzeigeplätze und ein gemeinsames Upload-Budget auf"
+        },
+        "el": {
+          "title": "Μηχανή απόδοσης πίνακα οργάνων",
+          "description": "Σχεδιάζει τα επίπεδα όλων των εφαρμογών στον πίνακα οργάνων και στο HUD, μοιράζοντας τις θέσεις της οθόνης και ένα κοινό όριο μεταφόρτωσης"
+        },
+        "es-US": {
+          "title": "Renderizador del tablero",
+          "description": "Dibuja las capas de todas las apps en el tablero de instrumentos y el HUD, compartiendo los espacios de pantalla y un único presupuesto de carga"
+        },
+        "es": {
+          "title": "Renderizador del cuadro",
+          "description": "Dibuja las capas de todas las apps en el cuadro de instrumentos y el HUD, compartiendo los espacios de pantalla y un único presupuesto de carga"
+        },
+        "fi": {
+          "title": "Mittariston piirtäjä",
+          "description": "Piirtää kaikkien sovellusten tasot mittaristoon ja HUD-näyttöön ja jakaa näyttöpaikat ja yhteisen latausbudjetin"
+        },
+        "fr-CA": {
+          "title": "Rendu du combiné",
+          "description": "Dessine les calques de toutes les apps sur le combiné d'instruments et le HUD, en partageant les emplacements d'affichage et un budget de transfert commun"
+        },
+        "fr": {
+          "title": "Rendu du combiné",
+          "description": "Dessine les calques de toutes les apps sur le combiné d'instruments et le HUD, en partageant les emplacements d'affichage et un budget de transfert commun"
+        },
+        "he": {
+          "title": "מנוע התצוגה של לוח המחוונים",
+          "description": "מצייר את השכבות של כל האפליקציות בלוח המחוונים וב-HUD, תוך שיתוף משבצות התצוגה ומכסת העלאה אחת"
+        },
+        "hu": {
+          "title": "Műszerfal-megjelenítő",
+          "description": "Minden alkalmazás rétegeit megjeleníti a műszerfalon és a HUD-on, közösen használva a megjelenítési helyeket és egyetlen feltöltési keretet"
+        },
+        "id": {
+          "title": "Perender panel instrumen",
+          "description": "Menggambar lapisan setiap aplikasi di panel instrumen dan HUD, berbagi slot layar dan satu kuota unggahan"
+        },
+        "it": {
+          "title": "Renderer del quadro",
+          "description": "Disegna i livelli di tutte le app sul quadro strumenti e sull'HUD, condividendo gli slot di visualizzazione e un unico budget di trasferimento"
+        },
+        "ja": {
+          "title": "メーターレンダラー",
+          "description": "すべてのアプリのレイヤーをメーターとHUDに描画し、表示スロットと共通のアップロード枠を共有します"
+        },
+        "ko": {
+          "title": "계기판 렌더러",
+          "description": "모든 앱의 레이어를 계기판과 HUD에 그리며, 디스플레이 슬롯과 하나의 업로드 예산을 공유합니다"
+        },
+        "nb": {
+          "title": "Instrumentpanel-renderer",
+          "description": "Tegner alle appers lag i instrumentpanelet og på HUD-en og deler visningsplassene og ett felles opplastingsbudsjett"
+        },
+        "nl": {
+          "title": "Instrumentpaneel-renderer",
+          "description": "Tekent de lagen van alle apps op het instrumentpaneel en de HUD en verdeelt de weergaveplaatsen en één gedeeld uploadbudget"
+        },
+        "pl": {
+          "title": "Renderer zestawu wskaźników",
+          "description": "Rysuje warstwy wszystkich aplikacji na zestawie wskaźników i wyświetlaczu HUD, dzieląc miejsca na ekranie i jeden wspólny budżet przesyłania"
+        },
+        "pt-BR": {
+          "title": "Renderizador do painel",
+          "description": "Desenha as camadas de todos os apps no painel de instrumentos e no HUD, compartilhando as posições da tela e um único orçamento de envio"
+        },
+        "pt": {
+          "title": "Renderizador do quadrante",
+          "description": "Desenha as camadas de todas as apps no quadrante de instrumentos e no HUD, partilhando as posições do ecrã e um único orçamento de carregamento"
+        },
+        "ro": {
+          "title": "Randare bord",
+          "description": "Desenează straturile tuturor aplicațiilor pe bordul digital și pe HUD, împărțind pozițiile de afișare și un singur buget de transfer"
+        },
+        "ru": {
+          "title": "Рендерер приборной панели",
+          "description": "Отрисовывает слои всех приложений на приборной панели и HUD, распределяя места на экране и общий лимит загрузки"
+        },
+        "sk": {
+          "title": "Vykresľovanie prístrojovej dosky",
+          "description": "Vykresľuje vrstvy všetkých aplikácií na prístrojovej doske a HUD, so spoločnými zobrazovacími pozíciami a jedným spoločným limitom prenosu"
+        },
+        "sl": {
+          "title": "Izris na armaturi",
+          "description": "Izriše plasti vseh aplikacij na armaturni plošči in HUD ter si deli mesta prikaza in en skupni proračun prenosa"
+        },
+        "sv": {
+          "title": "Kombiinstrumentets renderare",
+          "description": "Ritar alla appars lager i kombiinstrumentet och på HUD:en och delar på visningsplatserna och en gemensam uppladdningsbudget"
+        },
+        "th": {
+          "title": "ตัวเรนเดอร์หน้าปัด",
+          "description": "วาดเลเยอร์ของทุกแอปบนหน้าปัดและ HUD โดยใช้ช่องแสดงผลและโควตาการอัปโหลดร่วมกัน"
+        },
+        "tr": {
+          "title": "Gösterge oluşturucu",
+          "description": "Tüm uygulamaların katmanlarını gösterge panelinde ve HUD'da çizer; ekran yuvalarını ve tek bir aktarım bütçesini paylaşır"
+        },
+        "uk": {
+          "title": "Рендерер панелі приладів",
+          "description": "Відображає шари всіх програм на панелі приладів і HUD, розподіляючи місця на екрані та спільний ліміт завантаження"
+        },
+        "vi": {
+          "title": "Trình hiển thị bảng đồng hồ",
+          "description": "Vẽ các lớp của mọi ứng dụng trên bảng đồng hồ và HUD, dùng chung các vị trí hiển thị và một hạn mức tải lên"
+        },
+        "zh-CN": {
+          "title": "仪表盘渲染器",
+          "description": "在仪表盘和 HUD 上绘制所有应用的图层，共享显示槽位和同一上传额度"
+        },
+        "zh-TW": {
+          "title": "儀表板繪製器",
+          "description": "在儀表板與 HUD 上繪製所有應用程式的圖層，共用顯示欄位與同一份上傳額度"
+        }
+      }
+    },
+    {
+      "id": "hook111",
+      "kind": "tool",
+      "title": "CarPlay cluster map (stream 111)",
+      "description": "EXPERIMENTAL. Preloads a hook into carplay 20.40.2 that adds CarPlay's second screen (stream 111, the phone's cluster map) and hands it out as H.264 on 127.0.0.1:6111, for Cast to cluster. Installs in mode off (answers as stock); hook111-arm.sh mode alt turns the second screen on. Armed per start; carplay starts stock after two failed starts. Streamed on one car by hand (0.0.6); this install from the Store is new.",
+      "version": "0.1.6",
+      "artifact": {
+        "name": "hook111@0.1.6.tgz",
+        "size": 43298,
+        "sha256": "3f5ec443495340f1d9c518b7657832fec347f1cb0a7e3bcbd58abf976474d2dd",
+        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/hook111%400.1.6.tgz"
+      },
+      "requires": {
+        "mgu-deploy": "0.7.0"
+      },
+      "mguHmi": [
+        "ID7"
+      ],
+      "uninstallable": true
+    },
+    {
+      "id": "jap-waze-on-cluster",
+      "kind": "tool",
+      "title": "Waze HUD on cluster",
+      "description": "Shows the CarPlay or Android Auto map on the instrument cluster and Waze's next turn on BMW's own HUD arrows: a root helper applies the reversible carplay and aapd patches where each is supported, and the capture, running from boot, decodes the map's H.264 and draws it through the cluster renderer whenever the stream flows. Stays off while robertnisipeanu's Waze on cluster is installed",
+      "version": "1.2.0",
+      "artifact": {
+        "name": "jap-waze-on-cluster@1.2.0.tgz",
+        "size": 2590020,
+        "sha256": "4dcf84662057a4b137427b5bbfd8f437faf715c270562113b03effb61fe7cfb6",
+        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/jap-waze-on-cluster%401.2.0.tgz"
+      },
+      "requires": {
+        "mgu-deploy": "0.7.11",
+        "cluster-render": "0.3.7"
+      },
+      "mguHmi": [
+        "ID7"
+      ],
+      "uninstallable": true
+    },
+    {
+      "id": "mgu-deploy",
+      "kind": "tool",
+      "title": "Deploy tool",
+      "description": "Installs, updates, rolls back and removes our tools and apps on the head unit, with a snapshot before every change",
+      "version": "0.8.22",
+      "artifact": {
+        "name": "mgu-deploy@0.8.22.tgz",
+        "size": 163282,
+        "sha256": "9b1d5f082873f9f16709b8896dc2363ebe3bb5f53b5adf5fb7f1627d29eee997",
+        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/mgu-deploy%400.8.22.tgz"
+      },
+      "texts": {
+        "cs": {
+          "title": "Nástroj nasazení",
+          "description": "Instaluje, aktualizuje, vrací zpět a odebírá naše nástroje a aplikace na hlavní jednotce a před každou změnou pořizuje snímek"
+        },
+        "da": {
+          "title": "Installationsværktøj",
+          "description": "Installerer, opdaterer, ruller tilbage og fjerner vores værktøjer og apps på hovedenheden, med et snapshot før hver ændring"
+        },
+        "de": {
+          "title": "Deploy-Tool",
+          "description": "Installiert, aktualisiert, setzt zurück und entfernt unsere Tools und Apps auf der Headunit, mit einem Snapshot vor jeder Änderung"
+        },
+        "el": {
+          "title": "Εργαλείο εγκατάστασης",
+          "description": "Εγκαθιστά, ενημερώνει, επαναφέρει και καταργεί τα εργαλεία και τις εφαρμογές μας στην κεντρική μονάδα, με στιγμιότυπο πριν από κάθε αλλαγή"
+        },
+        "es-US": {
+          "title": "Herramienta de implementación",
+          "description": "Instala, actualiza, revierte y elimina nuestras herramientas y apps en la unidad principal, con una instantánea antes de cada cambio"
+        },
+        "es": {
+          "title": "Herramienta de despliegue",
+          "description": "Instala, actualiza, revierte y elimina nuestras herramientas y apps en la unidad principal, con una instantánea antes de cada cambio"
+        },
+        "fi": {
+          "title": "Asennustyökalu",
+          "description": "Asentaa, päivittää, palauttaa ja poistaa työkalumme ja sovelluksemme pääyksikössä ja ottaa tilannevedoksen ennen jokaista muutosta"
+        },
+        "fr-CA": {
+          "title": "Outil de déploiement",
+          "description": "Installe, met à jour, restaure et supprime nos outils et applis sur le système, avec un instantané avant chaque modification"
+        },
+        "fr": {
+          "title": "Outil de déploiement",
+          "description": "Installe, met à jour, restaure et supprime nos outils et apps sur le système, avec un instantané avant chaque modification"
+        },
+        "he": {
+          "title": "כלי הפריסה",
+          "description": "מתקין, מעדכן, משחזר גרסה קודמת ומסיר את הכלים והאפליקציות שלנו במערכת, עם תמונת מצב לפני כל שינוי"
+        },
+        "hu": {
+          "title": "Telepítőeszköz",
+          "description": "Telepíti, frissíti, visszaállítja és eltávolítja eszközeinket és alkalmazásainkat a fejegységen, minden változtatás előtt pillanatképet készítve"
+        },
+        "id": {
+          "title": "Alat deploy",
+          "description": "Menginstal, memperbarui, mengembalikan, dan menghapus alat serta aplikasi kami di head unit, dengan snapshot sebelum setiap perubahan"
+        },
+        "it": {
+          "title": "Strumento di distribuzione",
+          "description": "Installa, aggiorna, ripristina e rimuove i nostri strumenti e app sul sistema, con uno snapshot prima di ogni modifica"
+        },
+        "ja": {
+          "title": "デプロイツール",
+          "description": "ヘッドユニット上の当方のツールとアプリをインストール、アップデート、ロールバック、削除し、変更のたびに事前にスナップショットを作成します"
+        },
+        "ko": {
+          "title": "배포 도구",
+          "description": "헤드 유닛에서 자체 도구와 앱을 설치, 업데이트, 롤백, 제거하며 변경할 때마다 먼저 스냅샷을 만듭니다"
+        },
+        "nb": {
+          "title": "Installasjonsverktøy",
+          "description": "Installerer, oppdaterer, ruller tilbake og fjerner verktøyene og appene våre på hovedenheten, med et øyeblikksbilde før hver endring"
+        },
+        "nl": {
+          "title": "Deploy-tool",
+          "description": "Installeert, werkt bij, zet terug en verwijdert onze tools en apps op de headunit, met een snapshot vóór elke wijziging"
+        },
+        "pl": {
+          "title": "Narzędzie wdrażania",
+          "description": "Instaluje, aktualizuje, przywraca i usuwa nasze narzędzia i aplikacje na jednostce głównej, tworząc migawkę przed każdą zmianą"
+        },
+        "pt-BR": {
+          "title": "Ferramenta de implantação",
+          "description": "Instala, atualiza, reverte e remove nossas ferramentas e apps na unidade principal, com um snapshot antes de cada alteração"
+        },
+        "pt": {
+          "title": "Ferramenta de implementação",
+          "description": "Instala, atualiza, reverte e remove as nossas ferramentas e apps na unidade principal, com um instantâneo antes de cada alteração"
+        },
+        "ro": {
+          "title": "Instrument de implementare",
+          "description": "Instalează, actualizează, readuce la versiunea anterioară și elimină instrumentele și aplicațiile noastre de pe unitatea principală, cu un snapshot înaintea fiecărei modificări"
+        },
+        "ru": {
+          "title": "Инструмент установки",
+          "description": "Устанавливает, обновляет, откатывает и удаляет наши утилиты и приложения на головном устройстве, создавая снимок перед каждым изменением"
+        },
+        "sk": {
+          "title": "Nástroj nasadenia",
+          "description": "Inštaluje, aktualizuje, vracia späť a odstraňuje naše nástroje a aplikácie na hlavnej jednotke, pred každou zmenou so snímkou stavu"
+        },
+        "sl": {
+          "title": "Orodje za namestitev",
+          "description": "Namešča, posodablja, povrača in odstranjuje naša orodja in aplikacije na glavni enoti, pred vsako spremembo s posnetkom stanja"
+        },
+        "sv": {
+          "title": "Installationsverktyg",
+          "description": "Installerar, uppdaterar, återställer och tar bort våra verktyg och appar på huvudenheten, med en ögonblicksbild före varje ändring"
+        },
+        "th": {
+          "title": "เครื่องมือติดตั้ง",
+          "description": "ติดตั้ง อัปเดต ย้อนกลับ และลบเครื่องมือและแอปของเราบนเฮดยูนิต พร้อมสแนปช็อตก่อนทุกการเปลี่ยนแปลง"
+        },
+        "tr": {
+          "title": "Dağıtım aracı",
+          "description": "Araçlarımızı ve uygulamalarımızı ana ünitede yükler, günceller, geri alır ve kaldırır; her değişiklikten önce anlık görüntü alır"
+        },
+        "uk": {
+          "title": "Інструмент встановлення",
+          "description": "Встановлює, оновлює, відкочує та видаляє наші утиліти й програми на головному пристрої, створюючи знімок перед кожною зміною"
+        },
+        "vi": {
+          "title": "Công cụ triển khai",
+          "description": "Cài đặt, cập nhật, khôi phục bản trước và gỡ bỏ các công cụ và ứng dụng của chúng tôi trên hệ thống, kèm bản chụp nhanh trước mỗi thay đổi"
+        },
+        "zh-CN": {
+          "title": "部署工具",
+          "description": "在主机上安装、更新、回滚和移除我们的工具和应用，每次更改前都会创建快照"
+        },
+        "zh-TW": {
+          "title": "部署工具",
+          "description": "在主機上安裝、更新、回復及移除我們的工具與應用程式，每次變更前都會建立快照"
+        }
+      }
+    },
+    {
+      "id": "mgu-python",
+      "kind": "tool",
+      "title": "Python",
+      "description": "Python 3.12 for apps that build on the head unit with Python",
+      "version": "1.0.3",
+      "artifact": {
+        "name": "mgu-python@1.0.3.tgz",
+        "size": 14441404,
+        "sha256": "98ce27bcee265ba6846446ad7867193fbdc9e0447195dbf22bcfaabf7e2f2533",
+        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/mgu-python%401.0.3.tgz"
+      },
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "texts": {
+        "cs": {
+          "title": "Python",
+          "description": "Python 3.12 pro aplikace, které se na hlavní jednotce sestavují v Pythonu"
+        },
+        "da": {
+          "title": "Python",
+          "description": "Python 3.12 til apps, der bygges på hovedenheden med Python"
+        },
+        "de": {
+          "title": "Python",
+          "description": "Python 3.12 für Apps, die auf der Headunit mit Python gebaut werden"
+        },
+        "el": {
+          "title": "Python",
+          "description": "Python 3.12 για εφαρμογές που μεταγλωττίζονται στην κεντρική μονάδα με Python"
+        },
+        "es-US": {
+          "title": "Python",
+          "description": "Python 3.12 para apps que se compilan en la unidad principal con Python"
+        },
+        "es": {
+          "title": "Python",
+          "description": "Python 3.12 para apps que se compilan en la unidad principal con Python"
+        },
+        "fi": {
+          "title": "Python",
+          "description": "Python 3.12 sovelluksille, jotka koostetaan pääyksikössä Pythonilla"
+        },
+        "fr-CA": {
+          "title": "Python",
+          "description": "Python 3.12 pour les applis compilées sur le système avec Python"
+        },
+        "fr": {
+          "title": "Python",
+          "description": "Python 3.12 pour les apps compilées sur le système avec Python"
+        },
+        "he": {
+          "title": "Python",
+          "description": "Python 3.12 לאפליקציות שנבנות במערכת באמצעות Python"
+        },
+        "hu": {
+          "title": "Python",
+          "description": "Python 3.12 azokhoz az alkalmazásokhoz, amelyek Pythonnal épülnek a fejegységen"
+        },
+        "id": {
+          "title": "Python",
+          "description": "Python 3.12 untuk aplikasi yang dibangun di head unit dengan Python"
+        },
+        "it": {
+          "title": "Python",
+          "description": "Python 3.12 per le app che vengono compilate sul sistema con Python"
+        },
+        "ja": {
+          "title": "Python",
+          "description": "ヘッドユニット上で Python を使ってビルドされるアプリ用の Python 3.12"
+        },
+        "ko": {
+          "title": "Python",
+          "description": "헤드 유닛에서 Python으로 빌드되는 앱을 위한 Python 3.12"
+        },
+        "nb": {
+          "title": "Python",
+          "description": "Python 3.12 for apper som bygges på hovedenheten med Python"
+        },
+        "nl": {
+          "title": "Python",
+          "description": "Python 3.12 voor apps die op de headunit met Python worden gebouwd"
+        },
+        "pl": {
+          "title": "Python",
+          "description": "Python 3.12 dla aplikacji budowanych na jednostce głównej w Pythonie"
+        },
+        "pt-BR": {
+          "title": "Python",
+          "description": "Python 3.12 para apps que são compilados na unidade principal com Python"
+        },
+        "pt": {
+          "title": "Python",
+          "description": "Python 3.12 para apps que são compiladas na unidade principal com Python"
+        },
+        "ro": {
+          "title": "Python",
+          "description": "Python 3.12 pentru aplicațiile care se compilează pe unitatea principală cu Python"
+        },
+        "ru": {
+          "title": "Python",
+          "description": "Python 3.12 для приложений, которые собираются на головном устройстве с помощью Python"
+        },
+        "sk": {
+          "title": "Python",
+          "description": "Python 3.12 pre aplikácie, ktoré sa na hlavnej jednotke zostavujú pomocou Pythonu"
+        },
+        "sl": {
+          "title": "Python",
+          "description": "Python 3.12 za aplikacije, ki se na glavni enoti gradijo s Pythonom"
+        },
+        "sv": {
+          "title": "Python",
+          "description": "Python 3.12 för appar som byggs på huvudenheten med Python"
+        },
+        "th": {
+          "title": "Python",
+          "description": "Python 3.12 สำหรับแอปที่บิลด์บนเฮดยูนิตด้วย Python"
+        },
+        "tr": {
+          "title": "Python",
+          "description": "Ana ünitede Python ile derlenen uygulamalar için Python 3.12"
+        },
+        "uk": {
+          "title": "Python",
+          "description": "Python 3.12 для програм, які збираються на головному пристрої за допомогою Python"
+        },
+        "vi": {
+          "title": "Python",
+          "description": "Python 3.12 cho các ứng dụng được dựng trên hệ thống bằng Python"
+        },
+        "zh-CN": {
+          "title": "Python",
+          "description": "为在主机上用 Python 构建的应用提供 Python 3.12"
+        },
+        "zh-TW": {
+          "title": "Python",
+          "description": "為在主機上以 Python 建置的應用程式提供 Python 3.12"
+        }
+      }
+    },
+    {
+      "id": "mgu-render",
+      "kind": "tool",
+      "title": "Renderer",
+      "description": "Draws apps' screens on the GPU, over the HMI or inside the app's page",
+      "version": "0.6.23",
+      "artifact": {
+        "name": "mgu-render@0.6.23.tgz",
+        "size": 103250,
+        "sha256": "b1b52afbb6f21640e9ebb3932f3dde60ff4a80156f412e4dfc245f6d052e1f98",
+        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/mgu-render%400.6.23.tgz"
+      },
+      "requires": {
+        "mgu-deploy": "0.6.9"
+      },
+      "optional": true,
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "mguProvides": "renderer",
+      "texts": {
+        "cs": {
+          "title": "Renderer",
+          "description": "Vykresluje obrazovky aplikací na GPU, nad HMI nebo uvnitř stránky aplikace"
+        },
+        "da": {
+          "title": "Renderer",
+          "description": "Tegner apps' skærme på GPU'en, oven på HMI'en eller inde på appens side"
+        },
+        "de": {
+          "title": "Renderer",
+          "description": "Zeichnet die Bildschirme von Apps auf der GPU, über dem HMI oder in der Seite der App"
+        },
+        "el": {
+          "title": "Απόδοση γραφικών",
+          "description": "Σχεδιάζει τις οθόνες των εφαρμογών στη GPU, πάνω από το HMI ή μέσα στη σελίδα της εφαρμογής"
+        },
+        "es-US": {
+          "title": "Renderizador",
+          "description": "Dibuja las pantallas de las apps en la GPU, sobre el HMI o dentro de la página de la app"
+        },
+        "es": {
+          "title": "Renderizador",
+          "description": "Dibuja las pantallas de las apps en la GPU, sobre el HMI o dentro de la página de la app"
+        },
+        "fi": {
+          "title": "Renderöijä",
+          "description": "Piirtää sovellusten näkymät GPU:lla HMI:n päälle tai sovelluksen sivulle"
+        },
+        "fr-CA": {
+          "title": "Moteur de rendu",
+          "description": "Dessine les écrans des applis sur le GPU, par-dessus l'IHM ou dans la page de l'appli"
+        },
+        "fr": {
+          "title": "Moteur de rendu",
+          "description": "Dessine les écrans des apps sur le GPU, par-dessus l'IHM ou dans la page de l'app"
+        },
+        "he": {
+          "title": "מנוע רינדור",
+          "description": "מצייר את מסכי האפליקציות במעבד הגרפי, מעל ממשק ה-HMI או בתוך דף האפליקציה"
+        },
+        "hu": {
+          "title": "Renderelő",
+          "description": "Az alkalmazások képernyőit a GPU-n rajzolja, a HMI fölé vagy az alkalmazás oldalán belül"
+        },
+        "id": {
+          "title": "Renderer",
+          "description": "Menggambar layar aplikasi di GPU, di atas HMI atau di dalam halaman aplikasi"
+        },
+        "it": {
+          "title": "Renderer",
+          "description": "Disegna le schermate delle app sulla GPU, sopra l'HMI o nella pagina dell'app"
+        },
+        "ja": {
+          "title": "レンダラー",
+          "description": "アプリの画面を GPU で描画し、HMI の上またはアプリのページ内に表示します"
+        },
+        "ko": {
+          "title": "렌더러",
+          "description": "GPU로 앱 화면을 그려 HMI 위 또는 앱 페이지 안에 표시합니다"
+        },
+        "nb": {
+          "title": "Gjengiver",
+          "description": "Tegner appenes skjermbilder med GPU-en, over HMI-en eller inne på appens side"
+        },
+        "nl": {
+          "title": "Renderer",
+          "description": "Tekent de schermen van apps op de GPU, over de HMI of binnen de pagina van de app"
+        },
+        "pl": {
+          "title": "Renderer",
+          "description": "Rysuje ekrany aplikacji na GPU, nad HMI lub wewnątrz strony aplikacji"
+        },
+        "pt-BR": {
+          "title": "Renderizador",
+          "description": "Desenha as telas dos apps na GPU, sobre o HMI ou dentro da página do app"
+        },
+        "pt": {
+          "title": "Renderizador",
+          "description": "Desenha os ecrãs das apps na GPU, sobre o HMI ou dentro da página da app"
+        },
+        "ro": {
+          "title": "Renderer",
+          "description": "Desenează ecranele aplicațiilor pe GPU, peste HMI sau în pagina aplicației"
+        },
+        "ru": {
+          "title": "Рендерер",
+          "description": "Отрисовывает экраны приложений на GPU поверх HMI или внутри страницы приложения"
+        },
+        "sk": {
+          "title": "Renderer",
+          "description": "Vykresľuje obrazovky aplikácií na GPU, nad HMI alebo vnútri stránky aplikácie"
+        },
+        "sl": {
+          "title": "Renderer",
+          "description": "Riše zaslone aplikacij na GPU, nad HMI ali znotraj strani aplikacije"
+        },
+        "sv": {
+          "title": "Renderare",
+          "description": "Ritar appars skärmar på GPU:n, ovanpå HMI:t eller inuti appens sida"
+        },
+        "th": {
+          "title": "ตัวเรนเดอร์",
+          "description": "วาดหน้าจอของแอปด้วย GPU บน HMI หรือภายในหน้าของแอป"
+        },
+        "tr": {
+          "title": "Oluşturucu",
+          "description": "Uygulama ekranlarını GPU üzerinde, HMI'ın üstünde veya uygulamanın sayfasında çizer"
+        },
+        "uk": {
+          "title": "Рендерер",
+          "description": "Відмальовує екрани програм на GPU поверх HMI або всередині сторінки програми"
+        },
+        "vi": {
+          "title": "Trình kết xuất",
+          "description": "Vẽ màn hình của ứng dụng bằng GPU, đè lên HMI hoặc bên trong trang của ứng dụng"
+        },
+        "zh-CN": {
+          "title": "渲染器",
+          "description": "在 GPU 上绘制应用画面，叠加在 HMI 之上或显示在应用页面内"
+        },
+        "zh-TW": {
+          "title": "渲染器",
+          "description": "在 GPU 上繪製應用程式畫面，疊加於 HMI 之上或顯示在應用程式頁面內"
+        }
+      }
+    },
+    {
+      "id": "mgu-updater",
+      "kind": "tool",
+      "title": "Updater",
+      "description": "Installs, updates and removes apps and head-unit tools from its sources",
+      "version": "0.8.47",
+      "artifact": {
+        "name": "mgu-updater@0.8.47.tgz",
+        "size": 139415,
+        "sha256": "2b52e1b8f9cf058b0377cfbb7079c562449fcd4cebd8befea0e9abae284224fd",
+        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/mgu-updater%400.8.47.tgz"
+      },
+      "requires": {
+        "mgu-deploy": "0.8.4",
+        "mgu-python": "1.0.2"
+      },
+      "texts": {
+        "cs": {
+          "title": "Služba aktualizací",
+          "description": "Instaluje, aktualizuje a odebírá aplikace a nástroje hlavní jednotky ze svých zdrojů"
+        },
+        "da": {
+          "title": "Updater",
+          "description": "Installerer, opdaterer og fjerner apps og hovedenhedsværktøjer fra sine kilder"
+        },
+        "de": {
+          "title": "Updater",
+          "description": "Installiert, aktualisiert und entfernt Apps und Headunit-Tools aus seinen Quellen"
+        },
+        "el": {
+          "title": "Πρόγραμμα ενημέρωσης",
+          "description": "Εγκαθιστά, ενημερώνει και καταργεί εφαρμογές και εργαλεία της κεντρικής μονάδας από τις πηγές του"
+        },
+        "es-US": {
+          "title": "Actualizador",
+          "description": "Instala, actualiza y elimina apps y herramientas de la unidad principal desde sus fuentes"
+        },
+        "es": {
+          "title": "Actualizador",
+          "description": "Instala, actualiza y elimina apps y herramientas de la unidad principal desde sus fuentes"
+        },
+        "fi": {
+          "title": "Päivityspalvelu",
+          "description": "Asentaa, päivittää ja poistaa sovelluksia ja pääyksikön työkaluja lähteistään"
+        },
+        "fr-CA": {
+          "title": "Service de mise à jour",
+          "description": "Installe, met à jour et supprime les applis et outils système depuis ses sources"
+        },
+        "fr": {
+          "title": "Service de mise à jour",
+          "description": "Installe, met à jour et supprime les apps et outils système depuis ses sources"
+        },
+        "he": {
+          "title": "שירות העדכון",
+          "description": "מתקין, מעדכן ומסיר אפליקציות וכלי מערכת מהמקורות שלו"
+        },
+        "hu": {
+          "title": "Frissítő",
+          "description": "Forrásaiból telepíti, frissíti és eltávolítja az alkalmazásokat és a fejegység-eszközöket"
+        },
+        "id": {
+          "title": "Updater",
+          "description": "Menginstal, memperbarui, dan menghapus aplikasi serta alat head unit dari sumbernya"
+        },
+        "it": {
+          "title": "Servizio aggiornamenti",
+          "description": "Installa, aggiorna e rimuove app e strumenti di sistema dalle sue fonti"
+        },
+        "ja": {
+          "title": "アップデーター",
+          "description": "ソースからアプリとヘッドユニットツールをインストール、アップデート、削除します"
+        },
+        "ko": {
+          "title": "업데이터",
+          "description": "소스에서 앱과 헤드 유닛 도구를 설치, 업데이트, 제거합니다"
+        },
+        "nb": {
+          "title": "Oppdateringstjeneste",
+          "description": "Installerer, oppdaterer og fjerner apper og hovedenhetsverktøy fra kildene sine"
+        },
+        "nl": {
+          "title": "Updater",
+          "description": "Installeert, werkt bij en verwijdert apps en headunit-tools uit zijn bronnen"
+        },
+        "pl": {
+          "title": "Usługa aktualizacji",
+          "description": "Instaluje, aktualizuje i usuwa aplikacje oraz narzędzia jednostki głównej ze swoich źródeł"
+        },
+        "pt-BR": {
+          "title": "Atualizador",
+          "description": "Instala, atualiza e remove apps e ferramentas da unidade principal a partir das suas fontes"
+        },
+        "pt": {
+          "title": "Atualizador",
+          "description": "Instala, atualiza e remove apps e ferramentas da unidade principal a partir das suas fontes"
+        },
+        "ro": {
+          "title": "Actualizator",
+          "description": "Instalează, actualizează și elimină aplicații și instrumente ale unității principale din sursele sale"
+        },
+        "ru": {
+          "title": "Сервис обновлений",
+          "description": "Устанавливает, обновляет и удаляет приложения и системные утилиты головного устройства из своих источников"
+        },
+        "sk": {
+          "title": "Aktualizátor",
+          "description": "Inštaluje, aktualizuje a odstraňuje aplikácie a nástroje hlavnej jednotky zo svojich zdrojov"
+        },
+        "sl": {
+          "title": "Posodobilnik",
+          "description": "Iz svojih virov namešča, posodablja in odstranjuje aplikacije in orodja glavne enote"
+        },
+        "sv": {
+          "title": "Updater",
+          "description": "Installerar, uppdaterar och tar bort appar och huvudenhetsverktyg från sina källor"
+        },
+        "th": {
+          "title": "ตัวอัปเดต",
+          "description": "ติดตั้ง อัปเดต และลบแอปและเครื่องมือเฮดยูนิตจากแหล่งที่มา"
+        },
+        "tr": {
+          "title": "Güncelleyici",
+          "description": "Uygulamaları ve ana ünite araçlarını kaynaklarından yükler, günceller ve kaldırır"
+        },
+        "uk": {
+          "title": "Служба оновлень",
+          "description": "Встановлює, оновлює та видаляє програми й системні утиліти головного пристрою зі своїх джерел"
+        },
+        "vi": {
+          "title": "Trình cập nhật",
+          "description": "Cài đặt, cập nhật và gỡ bỏ ứng dụng và công cụ hệ thống từ các nguồn của nó"
+        },
+        "zh-CN": {
+          "title": "更新服务",
+          "description": "从其来源安装、更新和移除应用及主机工具"
+        },
+        "zh-TW": {
+          "title": "更新服務",
+          "description": "從其來源安裝、更新及移除應用程式與主機工具"
+        }
+      }
+    },
+    {
+      "id": "mgu-uplink",
+      "kind": "tool",
+      "title": "Internet uplink",
+      "description": "Internet for selected apps through a USB network adapter, an LTE stick, a USB-tethered phone or Wi-Fi",
+      "version": "0.7.12",
+      "artifact": {
+        "name": "mgu-uplink@0.7.12.tgz",
+        "size": 3604053,
+        "sha256": "21ed6dad1b0e413572dedc67f05a9f44a3a4ee4eb7cc40d31d93d9b076a5082a",
+        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/mgu-uplink%400.7.12.tgz"
+      },
+      "requires": {
+        "mgu-updater": "0.7.2"
+      },
+      "optional": true,
+      "texts": {
+        "cs": {
+          "title": "Připojení k internetu",
+          "description": "Internet pro vybrané aplikace přes síťový adaptér USB, LTE modem, telefon sdílející internet přes USB nebo Wi-Fi"
+        },
+        "da": {
+          "title": "Internetforbindelse",
+          "description": "Internet til udvalgte apps via en USB-netværksadapter, en LTE-nøgle, en telefon med USB-tethering eller Wi-Fi"
+        },
+        "de": {
+          "title": "Internet-Uplink",
+          "description": "Internet für ausgewählte Apps über einen USB-Netzwerkadapter, einen LTE-Stick, ein per USB-Tethering verbundenes Telefon oder Wi-Fi"
+        },
+        "el": {
+          "title": "Σύνδεση Internet",
+          "description": "Internet για επιλεγμένες εφαρμογές μέσω προσαρμογέα δικτύου USB, USB stick LTE, τηλεφώνου που μοιράζεται τη σύνδεσή του μέσω USB ή δικτύου Wi-Fi"
+        },
+        "es-US": {
+          "title": "Conexión a Internet",
+          "description": "Internet para las apps seleccionadas mediante un adaptador de red USB, un módem LTE, un teléfono con conexión compartida por USB o una red Wi-Fi"
+        },
+        "es": {
+          "title": "Conexión a Internet",
+          "description": "Internet para las apps seleccionadas mediante un adaptador de red USB, un módem LTE, un móvil con conexión compartida por USB o una red Wi-Fi"
+        },
+        "fi": {
+          "title": "Internet-yhteys",
+          "description": "Internet valituille sovelluksille USB-verkkosovittimen, LTE-tikun, USB:llä internetyhteyttä jakavan puhelimen tai Wi-Fin kautta"
+        },
+        "fr-CA": {
+          "title": "Accès Internet",
+          "description": "Internet pour certaines applis via un adaptateur réseau USB, une clé LTE, un cellulaire en partage de connexion USB ou le Wi-Fi"
+        },
+        "fr": {
+          "title": "Accès Internet",
+          "description": "Internet pour certaines apps via un adaptateur réseau USB, une clé LTE, un téléphone en partage de connexion USB ou le Wi-Fi"
+        },
+        "he": {
+          "title": "חיבור לאינטרנט",
+          "description": "אינטרנט לאפליקציות נבחרות דרך מתאם רשת USB, מודם LTE, טלפון בשיתוף USB או Wi-Fi"
+        },
+        "hu": {
+          "title": "Internetkapcsolat",
+          "description": "Internet a kiválasztott alkalmazásoknak USB-hálózati adapteren, LTE-modemen, USB-n csatlakoztatott telefonon vagy Wi-Fi-n keresztül"
+        },
+        "id": {
+          "title": "Koneksi internet",
+          "description": "Internet untuk aplikasi terpilih melalui adaptor jaringan USB, modem LTE, ponsel dengan tethering USB, atau Wi-Fi"
+        },
+        "it": {
+          "title": "Connessione Internet",
+          "description": "Internet per le app selezionate tramite un adattatore di rete USB, una chiavetta LTE, un telefono in tethering USB o il Wi-Fi"
+        },
+        "ja": {
+          "title": "インターネット接続",
+          "description": "USB ネットワークアダプター、LTE スティック、USB テザリングしたスマートフォン、または Wi-Fi を通じて、選択したアプリにインターネットを提供します"
+        },
+        "ko": {
+          "title": "인터넷 연결",
+          "description": "USB 네트워크 어댑터, LTE 동글, USB 테더링 휴대폰 또는 Wi-Fi를 통해 선택한 앱에 인터넷을 제공합니다"
+        },
+        "nb": {
+          "title": "Internettilkobling",
+          "description": "Internett for utvalgte apper via en USB-nettverksadapter, en LTE-pinne, en telefon som deler internett via USB, eller Wi-Fi"
+        },
+        "nl": {
+          "title": "Internet-uplink",
+          "description": "Internet voor geselecteerde apps via een USB-netwerkadapter, een LTE-stick, een via USB-tethering verbonden telefoon of Wi-Fi"
+        },
+        "pl": {
+          "title": "Łącze internetowe",
+          "description": "Internet dla wybranych aplikacji przez kartę sieciową USB, modem LTE, telefon udostępniający internet przez USB lub Wi-Fi"
+        },
+        "pt-BR": {
+          "title": "Conexão à Internet",
+          "description": "Internet para os apps selecionados por meio de um adaptador de rede USB, um modem LTE, um celular com compartilhamento de Internet via USB ou uma rede Wi-Fi"
+        },
+        "pt": {
+          "title": "Ligação à Internet",
+          "description": "Internet para as apps selecionadas através de um adaptador de rede USB, uma pen LTE, um telemóvel com partilha de Internet por USB ou uma rede Wi-Fi"
+        },
+        "ro": {
+          "title": "Conexiune la internet",
+          "description": "Internet pentru aplicațiile selectate printr-un adaptor de rețea USB, un stick LTE, un telefon conectat prin USB sau Wi-Fi"
+        },
+        "ru": {
+          "title": "Интернет-канал",
+          "description": "Интернет для выбранных приложений через сетевой USB-адаптер, LTE-модем, телефон в режиме USB-модема или Wi-Fi"
+        },
+        "sk": {
+          "title": "Internetové pripojenie",
+          "description": "Internet pre vybrané aplikácie cez sieťový USB adaptér, LTE modem, telefón pripojený cez USB alebo Wi-Fi"
+        },
+        "sl": {
+          "title": "Internetna povezava",
+          "description": "Internet za izbrane aplikacije prek omrežnega adapterja USB, ključka LTE, telefona, povezanega prek USB, ali Wi-Fi"
+        },
+        "sv": {
+          "title": "Internetanslutning",
+          "description": "Internet för valda appar via en USB-nätverksadapter, ett LTE-modem, en telefon med USB-delning eller Wi-Fi"
+        },
+        "th": {
+          "title": "อินเทอร์เน็ต",
+          "description": "อินเทอร์เน็ตสำหรับแอปที่เลือก ผ่านอะแดปเตอร์เครือข่าย USB, ดองเกิล LTE, โทรศัพท์ที่แชร์เน็ตผ่าน USB หรือ Wi-Fi"
+        },
+        "tr": {
+          "title": "İnternet bağlantısı",
+          "description": "Seçili uygulamalara USB ağ adaptörü, LTE modem, USB ile internet paylaşan telefon veya Wi-Fi üzerinden internet sağlar"
+        },
+        "uk": {
+          "title": "Інтернет-канал",
+          "description": "Інтернет для вибраних програм через мережевий USB-адаптер, LTE-модем, телефон у режимі USB-модема або Wi-Fi"
+        },
+        "vi": {
+          "title": "Kết nối Internet",
+          "description": "Internet cho các ứng dụng được chọn qua bộ chuyển đổi mạng USB, USB LTE, điện thoại chia sẻ mạng qua USB hoặc Wi-Fi"
+        },
+        "zh-CN": {
+          "title": "互联网连接",
+          "description": "通过 USB 网卡、LTE 上网卡、USB 共享网络的手机或 Wi-Fi，为选定的应用提供互联网连接"
+        },
+        "zh-TW": {
+          "title": "網際網路連線",
+          "description": "透過 USB 網路卡、LTE 網卡、以 USB 網路共用的手機或 Wi-Fi，為選定的應用程式提供網際網路"
+        }
+      }
+    },
+    {
+      "id": "vizualyse-bus",
+      "kind": "tool",
+      "title": "Vizualyse bus",
+      "description": "EXPERIMENTAL. The shared bus the Vizualyse tools use to ask each other to switch things off while they need the car's resources (Steam pauses Cast's cluster and HUD video while a game runs). Mosquitto 2.0.21 (MQTT) on a Unix socket only root's tools can reach; no network listener. Installed with the tools that use it; about 0.2 MB.",
+      "version": "0.1.0",
+      "artifact": {
+        "name": "vizualyse-bus@0.1.0.tgz",
+        "size": 122314,
+        "sha256": "37c0ea1f62d208f08f8c12cce310596f8809f4bda926f2d5d5321ad85f0ebb4a",
+        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/vizualyse-bus%400.1.0.tgz"
+      },
+      "requires": {
+        "mgu-deploy": "0.7.0"
+      },
+      "mguHmi": [
+        "ID7"
+      ],
+      "uninstallable": true
+    },
+    {
+      "id": "vizualyse-cast",
+      "kind": "tool",
+      "title": "Cast to cluster",
+      "description": "Plays a stream URL from your phone on the instrument cluster, the HUD or the media console, with its sound through the speakers: scan the QR code, paste a URL, pick where it goes. With hook111 armed, also CarPlay's own second screen (its cluster map) on the cluster or the HUD. Controlled by touch on the central screen too, parked or driving, where mgu-render is installed",
+      "version": "0.4.1",
+      "artifact": {
+        "name": "vizualyse-cast@0.4.1.tgz",
+        "size": 30059154,
+        "sha256": "cc08afd33d7ea50210a022cf0001be9a088331c0d3ce59ee12023a349eee500a",
+        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/vizualyse-cast%400.4.1.tgz"
+      },
+      "requires": {
+        "mgu-deploy": "0.7.0",
+        "cluster-render": "0.4.2",
+        "mgu-python": "1.0.0",
+        "mgu-uplink": "0.7.0",
+        "vizualyse-bus": "0.1.0"
+      },
+      "mguHmi": [
+        "ID7"
+      ],
+      "uninstallable": true
+    },
+    {
+      "id": "vizualyse-chromium",
+      "kind": "tool",
+      "title": "Browser",
+      "description": "EXPERIMENTAL. A web browser (Chromium 156) running on the car, with WebGL 2, WebGPU (on the CPU; WebGL on the car's own GPU driver in an experimental GPU mode) and WebAssembly JSPI, shown on the central screen while parked and driven by touch, with its controls on a touch screen, parked or driving (Show on the screen, Back, Reload, Home, the resolution, GPU and game mode). Type addresses on the phone page: scan the QR code on the Browser app's touch screen or iDrive page. About 181 MB to download, 420 MB on the unit.",
+      "version": "0.3.1",
+      "artifact": {
+        "name": "vizualyse-chromium@0.3.1.tgz",
+        "size": 188979233,
+        "sha256": "0a5cc143c962357203271ddc938f7311bf4eda8cf584ce363839e56c3992279e",
+        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/vizualyse-chromium%400.3.1.tgz"
+      },
+      "requires": {
+        "mgu-deploy": "0.7.0",
+        "mgu-python": "1.0.0",
+        "mgu-render": "0.6.11",
+        "vizualyse-bus": "0.1.0"
+      },
+      "mguHmi": [
+        "ID7"
+      ],
+      "uninstallable": true
+    },
+    {
+      "id": "vizualyse-cluster",
+      "kind": "tool",
+      "title": "Cluster themes",
+      "description": "EXPERIMENTAL, NOT YET TRIED ON A CAR. Whole-cluster themes drawn over the instrument cluster through cluster-render's panel target, under the car's own warning lights: eight families (G20 inspired 1 and 2, LCI inspired 1 and 2, Three-dial 1 and 2, Performance 1 and 2), each a Sport and a Comfort theme switched by the drive mode. Drawn by small shaders on the cluster with textures sent once (about 1.7-3.1 MB at start), so only a few KB/s of numbers cross the link while driving. Readings the car does not give show as --. Chosen on the central screen by touch, with a preview of each theme and a 10 s try on the cluster while parked (the Cluster themes iDrive app). About 12 MB.",
+      "version": "0.4.1",
+      "artifact": {
+        "name": "vizualyse-cluster@0.4.1.tgz",
+        "size": 10991905,
+        "sha256": "44516f46fdd41d6bd743d69e8087c7756b52981dc47538b1cc680c90124d10b1",
+        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/vizualyse-cluster%400.4.1.tgz"
+      },
+      "requires": {
+        "mgu-deploy": "0.7.0",
+        "mgu-python": "1.0.0",
+        "mgu-render": "0.6.11",
+        "cluster-render": "0.5.4"
+      },
+      "mguHmi": [
+        "ID7"
+      ],
+      "uninstallable": true
+    },
+    {
+      "id": "vizualyse-moonlight",
+      "kind": "tool",
+      "title": "Moonlight",
+      "description": "EXPERIMENTAL. Streams games from a PC running Sunshine (GameStream) to the central screen (or the cluster or the HUD) while parked, decoded on the car's GPU, with the sound through the speakers and game controllers (a wired Xbox 360-style USB pad, or the phone as a pad; no Bluetooth pads). Pair the PC and pick a game on the phone page: scan the QR code on the iDrive Moonlight page.",
+      "version": "0.3.1",
+      "artifact": {
+        "name": "vizualyse-moonlight@0.3.1.tgz",
+        "size": 943274,
+        "sha256": "46f8ea10449243586f2285eca6b108550a9cfbac4daa6d6a7f5597399cd69ee0",
+        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/vizualyse-moonlight%400.3.1.tgz"
+      },
+      "requires": {
+        "mgu-deploy": "0.7.0",
+        "cluster-render": "0.4.2",
+        "mgu-python": "1.0.0",
+        "mgu-render": "0.6.11"
+      },
+      "mguHmi": [
+        "ID7"
+      ],
+      "uninstallable": true
+    },
+    {
+      "id": "vizualyse-steam",
+      "kind": "tool",
+      "title": "Steam",
+      "description": "EXPERIMENTAL. Windows games from your Steam library running on the car through Proton (Wine), on the car's own graphics drivers (64-bit Direct3D 9-11 games on Vulkan through DXVK by default, the rest on OpenGL), shown on the central screen while parked, with sound. Sign in to Steam and install games on the phone page (scan the QR code on the iDrive Steam page); play them from the iDrive or the phone. Touch is the mouse (a tap clicks); wired Xbox 360-style (XInput) USB controllers, up to four; no keyboard yet. Games that need the Steam client get an optional Run without Steam (gbe_fork). About 440 MB to download, 1.35 GB on the unit, plus the games.",
+      "version": "0.3.2",
+      "artifact": {
+        "name": "vizualyse-steam@0.3.2.tgz",
+        "size": 531208182,
+        "sha256": "13e359eecf539d6f99e7a563dbfc5a0c4ca0f8d3d02b51f782c6054cd94a318f",
+        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/vizualyse-steam%400.3.2.tgz"
+      },
+      "requires": {
+        "mgu-deploy": "0.7.0",
+        "mgu-python": "1.0.0",
+        "mgu-render": "0.6.11",
+        "vizualyse-bus": "0.1.0"
+      },
+      "mguHmi": [
+        "ID7"
+      ],
+      "uninstallable": true
+    },
+    {
+      "id": "waze-on-cluster",
+      "kind": "tool",
+      "title": "Maps on cluster",
+      "description": "Runs the cluster map in the background. It is installed with the Maps on cluster app, which you use to control it.",
+      "version": "0.10.8",
+      "artifact": {
+        "name": "waze-on-cluster@0.10.8.tgz",
+        "size": 2539325,
+        "sha256": "3369a2cf1b6fbbe217f86d946e8833f6144fc68e4a4d0f2707d8e5bfce8d788e",
+        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/waze-on-cluster%400.10.8.tgz"
+      },
+      "requires": {
+        "mgu-deploy": "0.7.17",
+        "cluster-render": "0.5.3"
+      },
+      "mguHmi": [
+        "ID7"
+      ],
+      "uninstallable": true,
+      "texts": {
+        "cs": {
+          "title": "Mapy na přístrojovém štítu",
+          "description": "Na pozadí spouští mapu na přístrojovém štítu. Instaluje se s aplikací Mapy na přístrojovém štítu, ve které ho ovládáte."
+        },
+        "da": {
+          "title": "Kort i instrumentpanelet",
+          "description": "Kører kortet i instrumentpanelet i baggrunden. Det installeres sammen med appen Kort i instrumentpanelet, som du styrer det fra."
+        },
+        "de": {
+          "title": "Karten im Kombiinstrument",
+          "description": "Betreibt die Karte im Kombiinstrument im Hintergrund. Wird mit der App Karten im Kombiinstrument installiert, über die Sie es steuern."
+        },
+        "el": {
+          "title": "Χάρτες στα όργανα",
+          "description": "Εκτελεί στο παρασκήνιο τον χάρτη στα όργανα. Εγκαθίσταται μαζί με την εφαρμογή Χάρτες στα όργανα, από την οποία το ελέγχετε."
+        },
+        "es-US": {
+          "title": "Mapas en el tablero",
+          "description": "Ejecuta en segundo plano el mapa en el tablero. Se instala con la aplicación Mapas en el tablero, desde la que lo controlas."
+        },
+        "es": {
+          "title": "Mapas en el cuadro",
+          "description": "Ejecuta en segundo plano el mapa en el cuadro. Se instala con la app Mapas en el cuadro, desde la que lo controlas."
+        },
+        "fi": {
+          "title": "Kartat mittaristossa",
+          "description": "Ajaa mittariston karttaa taustalla. Asentuu Kartat mittaristossa -sovelluksen mukana, ja sitä ohjataan sovelluksesta."
+        },
+        "fr-CA": {
+          "title": "Cartes au combiné",
+          "description": "Fait fonctionner en arrière-plan la carte au combiné. Installé avec l'application Cartes au combiné, depuis laquelle vous le contrôlez."
+        },
+        "fr": {
+          "title": "Cartes au combiné",
+          "description": "Fait fonctionner en arrière-plan la carte au combiné. Installé avec l'app Cartes au combiné, depuis laquelle vous le contrôlez."
+        },
+        "he": {
+          "title": "מפות בלוח המחוונים",
+          "description": "מפעיל ברקע את המפה בלוח המחוונים. מותקן יחד עם האפליקציה מפות בלוח המחוונים, שממנה שולטים בו."
+        },
+        "hu": {
+          "title": "Térkép a műszerfalon",
+          "description": "A háttérben futtatja a műszerfal térképét. A Térkép a műszerfalon alkalmazással együtt települ, abból vezérelhető."
+        },
+        "id": {
+          "title": "Peta di panel instrumen",
+          "description": "Menjalankan peta di panel instrumen di latar belakang. Terpasang bersama aplikasi Peta di panel instrumen, tempat Anda mengendalikannya."
+        },
+        "it": {
+          "title": "Mappe sul quadro",
+          "description": "Esegue in background la mappa sul quadro. Si installa con l'app Mappe sul quadro, da cui lo controlli."
+        },
+        "ja": {
+          "title": "地図 メーター表示",
+          "description": "メーターの地図をバックグラウンドで動かします。地図 メーター表示アプリと一緒にインストールされ、アプリから操作します。"
+        },
+        "ko": {
+          "title": "지도 계기판 표시",
+          "description": "계기판 지도를 백그라운드에서 실행합니다. 지도 계기판 표시 앱과 함께 설치되며, 앱에서 제어합니다."
+        },
+        "nb": {
+          "title": "Kart i instrumentpanelet",
+          "description": "Kjører kartet i instrumentpanelet i bakgrunnen. Installeres sammen med appen Kart i instrumentpanelet, som du styrer det fra."
+        },
+        "nl": {
+          "title": "Kaarten in instrumentpaneel",
+          "description": "Laat de kaart in het instrumentpaneel op de achtergrond draaien. Wordt geïnstalleerd met de app Kaarten in instrumentpaneel, waarmee je het bedient."
+        },
+        "pl": {
+          "title": "Mapy na zegarach",
+          "description": "Obsługuje w tle mapę na zegarach. Instaluje się razem z aplikacją Mapy na zegarach, z której nim sterujesz."
+        },
+        "pt-BR": {
+          "title": "Mapas no painel",
+          "description": "Executa em segundo plano o mapa no painel. É instalado com o app Mapas no painel, de onde você o controla."
+        },
+        "pt": {
+          "title": "Mapas no quadrante",
+          "description": "Executa em segundo plano o mapa no quadrante. É instalado com a app Mapas no quadrante, a partir da qual o controla."
+        },
+        "ro": {
+          "title": "Hărți pe bord",
+          "description": "Rulează în fundal harta de pe bord. Se instalează odată cu aplicația Hărți pe bord, din care îl controlați."
+        },
+        "ru": {
+          "title": "Карты на приборах",
+          "description": "Работает в фоне и выводит карту на приборы. Устанавливается вместе с приложением Карты на приборах, через которое им и управляют."
+        },
+        "sk": {
+          "title": "Mapy na prístrojovke",
+          "description": "Na pozadí spúšťa mapu na prístrojovke. Inštaluje sa s aplikáciou Mapy na prístrojovke, v ktorej ho ovládate."
+        },
+        "sl": {
+          "title": "Zemljevidi na armaturi",
+          "description": "V ozadju poganja zemljevid na armaturi. Namesti se skupaj z aplikacijo Zemljevidi na armaturi, v kateri ga upravljate."
+        },
+        "sv": {
+          "title": "Kartor i kombiinstrumentet",
+          "description": "Kör kartan i kombiinstrumentet i bakgrunden. Installeras med appen Kartor i kombiinstrumentet, som du styr den från."
+        },
+        "th": {
+          "title": "แผนที่บนหน้าปัด",
+          "description": "ทำงานเบื้องหลังเพื่อแสดงแผนที่บนหน้าปัด ติดตั้งมาพร้อมแอป แผนที่บนหน้าปัด ซึ่งใช้ควบคุมการทำงาน"
+        },
+        "tr": {
+          "title": "Haritalar göstergede",
+          "description": "Gösterge haritasını arka planda çalıştırır. Haritalar göstergede uygulamasıyla birlikte kurulur ve o uygulamadan kontrol edilir."
+        },
+        "uk": {
+          "title": "Карти на приладах",
+          "description": "Працює у фоні й виводить карту на прилади. Встановлюється разом із застосунком Карти на приладах, через який ним і керують."
+        },
+        "vi": {
+          "title": "Bản đồ trên bảng đồng hồ",
+          "description": "Chạy bản đồ trên bảng đồng hồ ở chế độ nền. Được cài cùng ứng dụng Bản đồ trên bảng đồng hồ, nơi bạn điều khiển nó."
+        },
+        "zh-CN": {
+          "title": "地图仪表盘显示",
+          "description": "在后台运行仪表盘地图。随“地图仪表盘显示”应用一起安装，在应用中进行控制。"
+        },
+        "zh-TW": {
+          "title": "地圖儀表板顯示",
+          "description": "在背景執行儀表板地圖。隨「地圖儀表板顯示」App 一起安裝，並在 App 中控制。"
+        }
+      }
+    },
+    {
+      "id": "wazecard",
+      "kind": "tool",
+      "title": "Waze Cards service",
+      "description": "Needed by the Waze Cards app: draws Waze's cards or map on the instrument cluster.",
+      "author": "h4m4d",
+      "version": "1.0.0",
+      "artifact": {
+        "name": "wazecard@1.0.0.tgz",
+        "size": 12552,
+        "sha256": "c424d80f4103a2973d41f6bff08fbe7979f1cc528cfcfcf69f7aa52e6d7a028d",
+        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/wazecard%401.0.0.tgz"
+      },
+      "requires": {
+        "mgu-deploy": "0.7.0"
+      },
+      "uninstallable": true,
+      "mguHmi": [
+        "ID7"
+      ],
+      "optional": true
+    },
+    {
+      "id": "wzc_wazecards",
+      "kind": "app",
+      "title": "Waze Cards",
+      "description": "Waze's turn and arrival cards, or Waze's map, on the instrument cluster while Waze guides in CarPlay.",
+      "author": "h4m4d",
+      "version": "1.0.1",
+      "artifact": {
+        "name": "wzc_wazecards@1.0.1.tgz",
+        "size": 801428,
+        "sha256": "88c2db9b826fa0cdfe75db67708fef18a78e658e70f422ae69aaeff05f3440d5",
+        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/wzc_wazecards%401.0.1.tgz"
+      },
+      "requires": {
+        "mgu-deploy": "0.7.0",
+        "wazecard": "1.0.0"
+      },
+      "uninstallable": true,
+      "mguHmi": [
+        "ID7"
+      ],
+      "icon": "wzc_wazecards.png",
+      "iconSha256": "c588cb54d16397e778750c3e3c268b508cb2aef59a417c6d114fc02d3f33bf69"
+    }
+  ]
+}
