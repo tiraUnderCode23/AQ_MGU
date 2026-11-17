@@ -1,3 +1,5 @@
-# ملاحظات الترخيص
+# Licensing
 
-هذا المستودع مجموعة مصادر متعددة، وليس لها ترخيص إجمالي واحد. راجع `LICENSE`, `LICENSES/`, `NOTICE`, `THIRD_PARTY_NOTICES.md` وSPDX لكل مشروع داخل `apps/_sources/<project>` و`tools/_sources/<project>`. يظل ترخيص كل مشروع/ملف هو الحاكم. أي إدراج في الفهرس لا يمنح حقوقاً إضافية. تم استبعاد المصادر التي لا تسمح أو لا توضح إعادة التوزيع؛ التفاصيل في `data/external-sources.json`. لا يحتوي المستودع على BMW oap-sdk أو حزم MGU مبنية.
+This is a collection of projects with different licences; it does not have one combined licence. Each source snapshot retains its upstream licence, notices and third-party attributions. Review the relevant files under `apps/_sources/` or `tools/_sources/` before copying or redistributing any component. Inclusion in this catalog does not grant additional rights.
+
+Projects whose terms do not clearly permit redistribution are listed as external links in [`data/external-sources.json`](../data/external-sources.json) and are not copied here.

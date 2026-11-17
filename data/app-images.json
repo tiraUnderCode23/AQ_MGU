@@ -1,0 +1,1374 @@
+{
+  "ambient_config": {
+    "title": "Ambient config",
+    "version": "2.6.2",
+    "source_repo": "cauliflowermossgrape/idrive7-apps",
+    "source_url": "https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/ambient_config",
+    "component_path": "apps/_sources/idrive7-apps/apps/ambient_config",
+    "icon": "docs/assets/apps/ambient_config/icon.png",
+    "previews": [
+      "docs/assets/apps/ambient_config/preview-01.png"
+    ],
+    "assets": [
+      {
+        "role": "icon",
+        "source": "apps/_sources/idrive7-apps/apps/ambient_config/icon.png",
+        "path": "docs/assets/apps/ambient_config/icon.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/screens/ambient_config.png",
+        "path": "docs/assets/apps/ambient_config/preview-01.png"
+      }
+    ],
+    "official_icon_available": true,
+    "image_count": 2
+  },
+  "brake_test": {
+    "title": "Brake Test",
+    "version": "1.5.21",
+    "source_repo": "cauliflowermossgrape/idrive7-apps",
+    "source_url": "https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/brake_test",
+    "component_path": "apps/_sources/idrive7-apps/apps/brake_test",
+    "icon": "docs/assets/apps/brake_test/icon.png",
+    "previews": [
+      "docs/assets/apps/brake_test/preview-01.png",
+      "docs/assets/apps/brake_test/preview-02.gif"
+    ],
+    "assets": [
+      {
+        "role": "icon",
+        "source": "apps/_sources/idrive7-apps/apps/brake_test/icon.png",
+        "path": "docs/assets/apps/brake_test/icon.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/screens/brake_test.png",
+        "path": "docs/assets/apps/brake_test/preview-01.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/media/brake_test.gif",
+        "path": "docs/assets/apps/brake_test/preview-02.gif"
+      }
+    ],
+    "official_icon_available": true,
+    "image_count": 3
+  },
+  "car_vitals": {
+    "title": "M Vitals",
+    "version": "2.27.6",
+    "source_repo": "cauliflowermossgrape/idrive7-apps",
+    "source_url": "https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/car_vitals",
+    "component_path": "apps/_sources/idrive7-apps/apps/car_vitals",
+    "icon": "docs/assets/apps/car_vitals/icon.png",
+    "previews": [
+      "docs/assets/apps/car_vitals/preview-01.png",
+      "docs/assets/apps/car_vitals/preview-02.png",
+      "docs/assets/apps/car_vitals/preview-03.png",
+      "docs/assets/apps/car_vitals/preview-04.gif",
+      "docs/assets/apps/car_vitals/preview-05.gif"
+    ],
+    "assets": [
+      {
+        "role": "icon",
+        "source": "apps/_sources/idrive7-apps/apps/car_vitals/icon.png",
+        "path": "docs/assets/apps/car_vitals/icon.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/screens/m_vitals_engine.png",
+        "path": "docs/assets/apps/car_vitals/preview-01.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/screens/m_vitals_chassis.png",
+        "path": "docs/assets/apps/car_vitals/preview-02.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/screens/m_vitals_fuel.png",
+        "path": "docs/assets/apps/car_vitals/preview-03.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/media/m_vitals.gif",
+        "path": "docs/assets/apps/car_vitals/preview-04.gif"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/media/m_vitals_chassis.gif",
+        "path": "docs/assets/apps/car_vitals/preview-05.gif"
+      }
+    ],
+    "official_icon_available": true,
+    "image_count": 6
+  },
+  "doom": {
+    "title": "Doom",
+    "version": "1.7.22",
+    "source_repo": "cauliflowermossgrape/idrive7-apps",
+    "source_url": "https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/doom",
+    "component_path": "apps/_sources/idrive7-apps/apps/doom",
+    "icon": "docs/assets/apps/doom/icon.png",
+    "previews": [
+      "docs/assets/apps/doom/preview-01.png"
+    ],
+    "assets": [
+      {
+        "role": "icon",
+        "source": "apps/_sources/idrive7-apps/apps/doom/icon.png",
+        "path": "docs/assets/apps/doom/icon.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/screens/doom.png",
+        "path": "docs/assets/apps/doom/preview-01.png"
+      }
+    ],
+    "official_icon_available": true,
+    "image_count": 2
+  },
+  "draggy": {
+    "title": "Drag Timer",
+    "version": "2.6.0",
+    "source_repo": "cauliflowermossgrape/idrive7-apps",
+    "source_url": "https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/draggy",
+    "component_path": "apps/_sources/idrive7-apps/apps/draggy",
+    "icon": "docs/assets/apps/draggy/icon.png",
+    "previews": [
+      "docs/assets/apps/draggy/preview-01.png",
+      "docs/assets/apps/draggy/preview-02.gif"
+    ],
+    "assets": [
+      {
+        "role": "icon",
+        "source": "apps/_sources/idrive7-apps/apps/draggy/icon.png",
+        "path": "docs/assets/apps/draggy/icon.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/screens/draggy.png",
+        "path": "docs/assets/apps/draggy/preview-01.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/media/draggy.gif",
+        "path": "docs/assets/apps/draggy/preview-02.gif"
+      }
+    ],
+    "official_icon_available": true,
+    "image_count": 3
+  },
+  "dtc_scanner": {
+    "title": "Fault Scanner",
+    "version": "2.9.8",
+    "source_repo": "cauliflowermossgrape/idrive7-apps",
+    "source_url": "https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/dtc_scanner",
+    "component_path": "apps/_sources/idrive7-apps/apps/dtc_scanner",
+    "icon": "docs/assets/apps/dtc_scanner/icon.png",
+    "previews": [
+      "docs/assets/apps/dtc_scanner/preview-01.png"
+    ],
+    "assets": [
+      {
+        "role": "icon",
+        "source": "apps/_sources/idrive7-apps/apps/dtc_scanner/icon.png",
+        "path": "docs/assets/apps/dtc_scanner/icon.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/screens/dtc_scanner.png",
+        "path": "docs/assets/apps/dtc_scanner/preview-01.png"
+      }
+    ],
+    "official_icon_available": true,
+    "image_count": 2
+  },
+  "dyno": {
+    "title": "Virtual Dyno",
+    "version": "1.6.3",
+    "source_repo": "cauliflowermossgrape/idrive7-apps",
+    "source_url": "https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/dyno",
+    "component_path": "apps/_sources/idrive7-apps/apps/dyno",
+    "icon": "docs/assets/apps/dyno/icon.png",
+    "previews": [
+      "docs/assets/apps/dyno/preview-01.png"
+    ],
+    "assets": [
+      {
+        "role": "icon",
+        "source": "apps/_sources/idrive7-apps/apps/dyno/icon.png",
+        "path": "docs/assets/apps/dyno/icon.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/screens/dyno.png",
+        "path": "docs/assets/apps/dyno/preview-01.png"
+      }
+    ],
+    "official_icon_available": true,
+    "image_count": 2
+  },
+  "edrive": {
+    "title": "eDrive",
+    "version": "2.10.1",
+    "source_repo": "cauliflowermossgrape/idrive7-apps",
+    "source_url": "https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/edrive",
+    "component_path": "apps/_sources/idrive7-apps/apps/edrive",
+    "icon": "docs/assets/apps/edrive/icon.png",
+    "previews": [
+      "docs/assets/apps/edrive/preview-01.png",
+      "docs/assets/apps/edrive/preview-02.png",
+      "docs/assets/apps/edrive/preview-03.png",
+      "docs/assets/apps/edrive/preview-04.png",
+      "docs/assets/apps/edrive/preview-05.png",
+      "docs/assets/apps/edrive/preview-06.png",
+      "docs/assets/apps/edrive/preview-07.png"
+    ],
+    "assets": [
+      {
+        "role": "icon",
+        "source": "apps/_sources/idrive7-apps/apps/edrive/icon.png",
+        "path": "docs/assets/apps/edrive/icon.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/screens/edrive.png",
+        "path": "docs/assets/apps/edrive/preview-01.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/screens/edrive_12v.png",
+        "path": "docs/assets/apps/edrive/preview-02.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/screens/edrive_48v.png",
+        "path": "docs/assets/apps/edrive/preview-03.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/screens/edrive_log.png",
+        "path": "docs/assets/apps/edrive/preview-04.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/screens/edrive2.png",
+        "path": "docs/assets/apps/edrive/preview-05.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/screens/edrive2_battery.png",
+        "path": "docs/assets/apps/edrive/preview-06.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/screens/edrive_12v_history.png",
+        "path": "docs/assets/apps/edrive/preview-07.png"
+      }
+    ],
+    "official_icon_available": true,
+    "image_count": 8
+  },
+  "gforce": {
+    "title": "G-Force",
+    "version": "1.6.22",
+    "source_repo": "cauliflowermossgrape/idrive7-apps",
+    "source_url": "https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/gforce",
+    "component_path": "apps/_sources/idrive7-apps/apps/gforce",
+    "icon": "docs/assets/apps/gforce/icon.png",
+    "previews": [
+      "docs/assets/apps/gforce/preview-01.png",
+      "docs/assets/apps/gforce/preview-02.gif"
+    ],
+    "assets": [
+      {
+        "role": "icon",
+        "source": "apps/_sources/idrive7-apps/apps/gforce/icon.png",
+        "path": "docs/assets/apps/gforce/icon.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/screens/gforce.png",
+        "path": "docs/assets/apps/gforce/preview-01.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/media/gforce.gif",
+        "path": "docs/assets/apps/gforce/preview-02.gif"
+      }
+    ],
+    "official_icon_available": true,
+    "image_count": 3
+  },
+  "live_adjustments": {
+    "title": "Engine Config",
+    "version": "0.9.8",
+    "source_repo": "cauliflowermossgrape/idrive7-apps",
+    "source_url": "https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/live_adjustments",
+    "component_path": "apps/_sources/idrive7-apps/apps/live_adjustments",
+    "icon": "docs/assets/apps/live_adjustments/icon.png",
+    "previews": [
+      "docs/assets/apps/live_adjustments/preview-01.png",
+      "docs/assets/apps/live_adjustments/preview-02.png",
+      "docs/assets/apps/live_adjustments/preview-03.png",
+      "docs/assets/apps/live_adjustments/preview-04.png",
+      "docs/assets/apps/live_adjustments/preview-05.png",
+      "docs/assets/apps/live_adjustments/preview-06.png"
+    ],
+    "assets": [
+      {
+        "role": "icon",
+        "source": "apps/_sources/idrive7-apps/apps/live_adjustments/icon.png",
+        "path": "docs/assets/apps/live_adjustments/icon.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/screens/live_adjustments.png",
+        "path": "docs/assets/apps/live_adjustments/preview-01.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/screens/live_adjustments_burbles.png",
+        "path": "docs/assets/apps/live_adjustments/preview-02.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/screens/live_adjustments_cooling.png",
+        "path": "docs/assets/apps/live_adjustments/preview-03.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/screens/live_adjustments_map.png",
+        "path": "docs/assets/apps/live_adjustments/preview-04.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/screens/live_adjustments_closed.png",
+        "path": "docs/assets/apps/live_adjustments/preview-05.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/screens/live_adjustments_map_readback.png",
+        "path": "docs/assets/apps/live_adjustments/preview-06.png"
+      }
+    ],
+    "official_icon_available": true,
+    "image_count": 7
+  },
+  "live_data": {
+    "title": "Live Data",
+    "version": "1.0.16",
+    "source_repo": "cauliflowermossgrape/idrive7-apps",
+    "source_url": "https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/live_data",
+    "component_path": "apps/_sources/idrive7-apps/apps/live_data",
+    "icon": "docs/assets/apps/live_data/icon.png",
+    "previews": [
+      "docs/assets/apps/live_data/preview-01.png",
+      "docs/assets/apps/live_data/preview-02.png",
+      "docs/assets/apps/live_data/preview-03.png",
+      "docs/assets/apps/live_data/preview-04.png",
+      "docs/assets/apps/live_data/preview-05.png",
+      "docs/assets/apps/live_data/preview-06.png"
+    ],
+    "assets": [
+      {
+        "role": "icon",
+        "source": "apps/_sources/idrive7-apps/apps/live_data/icon.png",
+        "path": "docs/assets/apps/live_data/icon.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/screens/live_data.png",
+        "path": "docs/assets/apps/live_data/preview-01.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/screens/live_data_engine.png",
+        "path": "docs/assets/apps/live_data/preview-02.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/screens/live_data_pick.png",
+        "path": "docs/assets/apps/live_data/preview-03.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/screens/live_data_trips.png",
+        "path": "docs/assets/apps/live_data/preview-04.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/screens/live_data_dial.png",
+        "path": "docs/assets/apps/live_data/preview-05.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/screens/live_data_signals.png",
+        "path": "docs/assets/apps/live_data/preview-06.png"
+      }
+    ],
+    "official_icon_available": true,
+    "image_count": 7
+  },
+  "redline": {
+    "title": "Redline",
+    "version": "2.0.44",
+    "source_repo": "cauliflowermossgrape/idrive7-apps",
+    "source_url": "https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/redline",
+    "component_path": "apps/_sources/idrive7-apps/apps/redline",
+    "icon": "docs/assets/apps/redline/icon.png",
+    "previews": [
+      "docs/assets/apps/redline/preview-01.png",
+      "docs/assets/apps/redline/preview-02.png",
+      "docs/assets/apps/redline/preview-03.gif",
+      "docs/assets/apps/redline/preview-04.gif",
+      "docs/assets/apps/redline/preview-05.webp"
+    ],
+    "assets": [
+      {
+        "role": "icon",
+        "source": "apps/_sources/idrive7-apps/apps/redline/icon.png",
+        "path": "docs/assets/apps/redline/icon.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/screens/redline.png",
+        "path": "docs/assets/apps/redline/preview-01.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/screens/redline_hud.png",
+        "path": "docs/assets/apps/redline/preview-02.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/media/redline.gif",
+        "path": "docs/assets/apps/redline/preview-03.gif"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/media/redline_hud.gif",
+        "path": "docs/assets/apps/redline/preview-04.gif"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/media/redline-hud.webp",
+        "path": "docs/assets/apps/redline/preview-05.webp"
+      }
+    ],
+    "official_icon_available": true,
+    "image_count": 6
+  },
+  "service": {
+    "title": "Service",
+    "version": "1.6.2",
+    "source_repo": "cauliflowermossgrape/idrive7-apps",
+    "source_url": "https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/service",
+    "component_path": "apps/_sources/idrive7-apps/apps/service",
+    "icon": "docs/assets/apps/service/icon.png",
+    "previews": [
+      "docs/assets/apps/service/preview-01.png"
+    ],
+    "assets": [
+      {
+        "role": "icon",
+        "source": "apps/_sources/idrive7-apps/apps/service/icon.png",
+        "path": "docs/assets/apps/service/icon.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/screens/service.png",
+        "path": "docs/assets/apps/service/preview-01.png"
+      }
+    ],
+    "official_icon_available": true,
+    "image_count": 2
+  },
+  "warmup": {
+    "title": "Warm-Up",
+    "version": "1.9.0",
+    "source_repo": "cauliflowermossgrape/idrive7-apps",
+    "source_url": "https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/warmup",
+    "component_path": "apps/_sources/idrive7-apps/apps/warmup",
+    "icon": "docs/assets/apps/warmup/icon.png",
+    "previews": [
+      "docs/assets/apps/warmup/preview-01.png",
+      "docs/assets/apps/warmup/preview-02.gif"
+    ],
+    "assets": [
+      {
+        "role": "icon",
+        "source": "apps/_sources/idrive7-apps/apps/warmup/icon.png",
+        "path": "docs/assets/apps/warmup/icon.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/screens/warmup.png",
+        "path": "docs/assets/apps/warmup/preview-01.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/media/warmup.gif",
+        "path": "docs/assets/apps/warmup/preview-02.gif"
+      }
+    ],
+    "official_icon_available": true,
+    "image_count": 3
+  },
+  "zf8hp": {
+    "title": "Transmission Config",
+    "version": "1.5.7",
+    "source_repo": "cauliflowermossgrape/idrive7-apps",
+    "source_url": "https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/zf8hp",
+    "component_path": "apps/_sources/idrive7-apps/apps/zf8hp",
+    "icon": "docs/assets/apps/zf8hp/icon.png",
+    "previews": [
+      "docs/assets/apps/zf8hp/preview-01.png",
+      "docs/assets/apps/zf8hp/preview-02.png"
+    ],
+    "assets": [
+      {
+        "role": "icon",
+        "source": "apps/_sources/idrive7-apps/apps/zf8hp/icon.png",
+        "path": "docs/assets/apps/zf8hp/icon.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/screens/zf8hp.png",
+        "path": "docs/assets/apps/zf8hp/preview-01.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive7-apps/docs/screens/zf8hp_clutches.png",
+        "path": "docs/assets/apps/zf8hp/preview-02.png"
+      }
+    ],
+    "official_icon_available": true,
+    "image_count": 3
+  },
+  "cluster_themes": {
+    "title": "Cluster Themes",
+    "version": "0.19.0",
+    "source_repo": "bimmer-lab/apps",
+    "source_url": "https://github.com/bimmer-lab/apps/tree/ab81cee4d77859b531b21a118772c6b031455b78/apps/cluster_themes",
+    "component_path": "apps/_sources/bimmer-lab-apps/apps/cluster_themes",
+    "icon": "docs/assets/apps/cluster_themes/icon.png",
+    "previews": [
+      "docs/assets/apps/cluster_themes/preview-01.png",
+      "docs/assets/apps/cluster_themes/preview-02.png",
+      "docs/assets/apps/cluster_themes/preview-03.png",
+      "docs/assets/apps/cluster_themes/preview-04.png",
+      "docs/assets/apps/cluster_themes/preview-05.png",
+      "docs/assets/apps/cluster_themes/preview-06.png",
+      "docs/assets/apps/cluster_themes/preview-07.png",
+      "docs/assets/apps/cluster_themes/preview-08.png",
+      "docs/assets/apps/cluster_themes/preview-09.png",
+      "docs/assets/apps/cluster_themes/preview-10.png",
+      "docs/assets/apps/cluster_themes/preview-11.png",
+      "docs/assets/apps/cluster_themes/preview-12.png",
+      "docs/assets/apps/cluster_themes/preview-13.png",
+      "docs/assets/apps/cluster_themes/preview-14.png",
+      "docs/assets/apps/cluster_themes/preview-15.png",
+      "docs/assets/apps/cluster_themes/preview-16.png",
+      "docs/assets/apps/cluster_themes/preview-17.png",
+      "docs/assets/apps/cluster_themes/preview-18.gif"
+    ],
+    "assets": [
+      {
+        "role": "icon",
+        "source": "apps/_sources/bimmer-lab-apps/apps/cluster_themes/icon.png",
+        "path": "docs/assets/apps/cluster_themes/icon.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/bimmer-lab-apps/docs/images/page-cluster-themes.png",
+        "path": "docs/assets/apps/cluster_themes/preview-01.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/bimmer-lab-apps/docs/images/cluster-cruise.png",
+        "path": "docs/assets/apps/cluster_themes/preview-02.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/bimmer-lab-apps/docs/images/cluster-drag.png",
+        "path": "docs/assets/apps/cluster_themes/preview-03.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/bimmer-lab-apps/docs/images/cluster-dyno.png",
+        "path": "docs/assets/apps/cluster_themes/preview-04.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/bimmer-lab-apps/docs/images/cluster-gt3-map.png",
+        "path": "docs/assets/apps/cluster_themes/preview-05.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/bimmer-lab-apps/docs/images/cluster-gt3-shift.png",
+        "path": "docs/assets/apps/cluster_themes/preview-06.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/bimmer-lab-apps/docs/images/cluster-gt3.png",
+        "path": "docs/assets/apps/cluster_themes/preview-07.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/bimmer-lab-apps/docs/images/cluster-m.png",
+        "path": "docs/assets/apps/cluster_themes/preview-08.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/bimmer-lab-apps/docs/images/cluster-minimal.png",
+        "path": "docs/assets/apps/cluster_themes/preview-09.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/bimmer-lab-apps/docs/images/cluster-mview.png",
+        "path": "docs/assets/apps/cluster_themes/preview-10.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/bimmer-lab-apps/docs/images/cluster-rally.png",
+        "path": "docs/assets/apps/cluster_themes/preview-11.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/bimmer-lab-apps/docs/images/cluster-retro80s.png",
+        "path": "docs/assets/apps/cluster_themes/preview-12.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/bimmer-lab-apps/docs/images/cluster-ribbon-christmas.png",
+        "path": "docs/assets/apps/cluster_themes/preview-13.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/bimmer-lab-apps/docs/images/cluster-ribbon.png",
+        "path": "docs/assets/apps/cluster_themes/preview-14.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/bimmer-lab-apps/docs/images/cluster-sport.png",
+        "path": "docs/assets/apps/cluster_themes/preview-15.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/bimmer-lab-apps/docs/images/cluster-track.png",
+        "path": "docs/assets/apps/cluster_themes/preview-16.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/bimmer-lab-apps/docs/images/cluster-vector.png",
+        "path": "docs/assets/apps/cluster_themes/preview-17.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/bimmer-lab-apps/docs/images/cluster-gt3.gif",
+        "path": "docs/assets/apps/cluster_themes/preview-18.gif"
+      }
+    ],
+    "official_icon_available": true,
+    "image_count": 19
+  },
+  "idrive_hud_widgets": {
+    "title": "HUD Widgets",
+    "version": "0.15.0",
+    "source_repo": "bimmer-lab/apps",
+    "source_url": "https://github.com/bimmer-lab/apps/tree/ab81cee4d77859b531b21a118772c6b031455b78/apps/idrive_hud_widgets",
+    "component_path": "apps/_sources/bimmer-lab-apps/apps/idrive_hud_widgets",
+    "icon": "docs/assets/apps/idrive_hud_widgets/icon.png",
+    "previews": [
+      "docs/assets/apps/idrive_hud_widgets/preview-01.png",
+      "docs/assets/apps/idrive_hud_widgets/preview-02.png",
+      "docs/assets/apps/idrive_hud_widgets/preview-03.png",
+      "docs/assets/apps/idrive_hud_widgets/preview-04.png",
+      "docs/assets/apps/idrive_hud_widgets/preview-05.png",
+      "docs/assets/apps/idrive_hud_widgets/preview-06.png",
+      "docs/assets/apps/idrive_hud_widgets/preview-07.png",
+      "docs/assets/apps/idrive_hud_widgets/preview-08.png",
+      "docs/assets/apps/idrive_hud_widgets/preview-09.png",
+      "docs/assets/apps/idrive_hud_widgets/preview-10.png",
+      "docs/assets/apps/idrive_hud_widgets/preview-11.png",
+      "docs/assets/apps/idrive_hud_widgets/preview-12.png",
+      "docs/assets/apps/idrive_hud_widgets/preview-13.png",
+      "docs/assets/apps/idrive_hud_widgets/preview-14.png",
+      "docs/assets/apps/idrive_hud_widgets/preview-15.png",
+      "docs/assets/apps/idrive_hud_widgets/preview-16.png",
+      "docs/assets/apps/idrive_hud_widgets/preview-17.gif"
+    ],
+    "assets": [
+      {
+        "role": "icon",
+        "source": "apps/_sources/bimmer-lab-apps/apps/idrive_hud_widgets/icon.png",
+        "path": "docs/assets/apps/idrive_hud_widgets/icon.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/bimmer-lab-apps/docs/images/page-hud-layouts.png",
+        "path": "docs/assets/apps/idrive_hud_widgets/preview-01.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/bimmer-lab-apps/docs/images/hud-boost.png",
+        "path": "docs/assets/apps/idrive_hud_widgets/preview-02.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/bimmer-lab-apps/docs/images/hud-cruise.png",
+        "path": "docs/assets/apps/idrive_hud_widgets/preview-03.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/bimmer-lab-apps/docs/images/hud-daily.png",
+        "path": "docs/assets/apps/idrive_hud_widgets/preview-04.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/bimmer-lab-apps/docs/images/hud-minimal.png",
+        "path": "docs/assets/apps/idrive_hud_widgets/preview-05.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/bimmer-lab-apps/docs/images/hud-mview.png",
+        "path": "docs/assets/apps/idrive_hud_widgets/preview-06.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/bimmer-lab-apps/docs/images/hud-redline.png",
+        "path": "docs/assets/apps/idrive_hud_widgets/preview-07.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/bimmer-lab-apps/docs/images/hud-retro.png",
+        "path": "docs/assets/apps/idrive_hud_widgets/preview-08.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/bimmer-lab-apps/docs/images/hud-shiftonly.png",
+        "path": "docs/assets/apps/idrive_hud_widgets/preview-09.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/bimmer-lab-apps/docs/images/hud-sport.png",
+        "path": "docs/assets/apps/idrive_hud_widgets/preview-10.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/bimmer-lab-apps/docs/images/hud-theme-classic.png",
+        "path": "docs/assets/apps/idrive_hud_widgets/preview-11.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/bimmer-lab-apps/docs/images/hud-theme-m.png",
+        "path": "docs/assets/apps/idrive_hud_widgets/preview-12.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/bimmer-lab-apps/docs/images/hud-theme-night.png",
+        "path": "docs/assets/apps/idrive_hud_widgets/preview-13.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/bimmer-lab-apps/docs/images/hud-track.png",
+        "path": "docs/assets/apps/idrive_hud_widgets/preview-14.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/bimmer-lab-apps/docs/images/hud-vector.png",
+        "path": "docs/assets/apps/idrive_hud_widgets/preview-15.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/bimmer-lab-apps/docs/images/hud-warmup.png",
+        "path": "docs/assets/apps/idrive_hud_widgets/preview-16.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/bimmer-lab-apps/docs/images/hud-redline.gif",
+        "path": "docs/assets/apps/idrive_hud_widgets/preview-17.gif"
+      }
+    ],
+    "official_icon_available": true,
+    "image_count": 18
+  },
+  "cluster_centre": {
+    "title": "Cluster Centre",
+    "version": "0.9.0",
+    "source_repo": "tiraUnderCode23/idrive7-cluster-info",
+    "source_url": "https://github.com/tiraUnderCode23/idrive7-cluster-info/tree/10cefda018e59a4b21b4aa8026fc9116f0f4bd9e/apps/cluster_centre",
+    "component_path": "apps/_sources/cluster-apps/apps/cluster_centre",
+    "icon": null,
+    "previews": [
+      "docs/assets/apps/cluster_centre/preview-01.png",
+      "docs/assets/apps/cluster_centre/preview-02.png",
+      "docs/assets/apps/cluster_centre/preview-03.png",
+      "docs/assets/apps/cluster_centre/preview-04.png",
+      "docs/assets/apps/cluster_centre/preview-05.png",
+      "docs/assets/apps/cluster_centre/preview-06.png",
+      "docs/assets/apps/cluster_centre/preview-07.png",
+      "docs/assets/apps/cluster_centre/preview-08.png",
+      "docs/assets/apps/cluster_centre/preview-09.png",
+      "docs/assets/apps/cluster_centre/preview-10.png",
+      "docs/assets/apps/cluster_centre/preview-11.png",
+      "docs/assets/apps/cluster_centre/preview-12.png"
+    ],
+    "assets": [
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/centre/app-screen.png",
+        "path": "docs/assets/apps/cluster_centre/preview-01.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/centre/engine.png",
+        "path": "docs/assets/apps/cluster_centre/preview-02.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/centre/fuel.png",
+        "path": "docs/assets/apps/cluster_centre/preview-03.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/centre/cooldown.png",
+        "path": "docs/assets/apps/cluster_centre/preview-04.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/centre/custom1.png",
+        "path": "docs/assets/apps/cluster_centre/preview-05.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/centre/custom2.png",
+        "path": "docs/assets/apps/cluster_centre/preview-06.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/centre/edrive.png",
+        "path": "docs/assets/apps/cluster_centre/preview-07.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/centre/steering.png",
+        "path": "docs/assets/apps/cluster_centre/preview-08.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/centre/temps-arc-metric.png",
+        "path": "docs/assets/apps/cluster_centre/preview-09.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/centre/temps.png",
+        "path": "docs/assets/apps/cluster_centre/preview-10.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/centre/timer.png",
+        "path": "docs/assets/apps/cluster_centre/preview-11.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/centre/warmup.png",
+        "path": "docs/assets/apps/cluster_centre/preview-12.png"
+      }
+    ],
+    "official_icon_available": false,
+    "image_count": 12
+  },
+  "cluster_info": {
+    "title": "Cluster Info",
+    "version": "1.6.8",
+    "source_repo": "tiraUnderCode23/idrive7-cluster-info",
+    "source_url": "https://github.com/tiraUnderCode23/idrive7-cluster-info/tree/10cefda018e59a4b21b4aa8026fc9116f0f4bd9e/apps/cluster_info",
+    "component_path": "apps/_sources/cluster-apps/apps/cluster_info",
+    "icon": null,
+    "previews": [
+      "docs/assets/apps/cluster_info/preview-01.jpg",
+      "docs/assets/apps/cluster_info/preview-02.jpg"
+    ],
+    "assets": [
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/cluster.jpg",
+        "path": "docs/assets/apps/cluster_info/preview-01.jpg"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/hud.jpg",
+        "path": "docs/assets/apps/cluster_info/preview-02.jpg"
+      }
+    ],
+    "official_icon_available": false,
+    "image_count": 2
+  },
+  "cluster_layouts": {
+    "title": "Cluster Layouts",
+    "version": "0.28.1",
+    "source_repo": "tiraUnderCode23/idrive7-cluster-info",
+    "source_url": "https://github.com/tiraUnderCode23/idrive7-cluster-info/tree/10cefda018e59a4b21b4aa8026fc9116f0f4bd9e/apps/cluster_layouts",
+    "component_path": "apps/_sources/cluster-apps/apps/cluster_layouts",
+    "icon": null,
+    "previews": [
+      "docs/assets/apps/cluster_layouts/preview-01.png",
+      "docs/assets/apps/cluster_layouts/preview-02.png",
+      "docs/assets/apps/cluster_layouts/preview-03.png",
+      "docs/assets/apps/cluster_layouts/preview-04.png",
+      "docs/assets/apps/cluster_layouts/preview-05.png",
+      "docs/assets/apps/cluster_layouts/preview-06.png",
+      "docs/assets/apps/cluster_layouts/preview-07.png",
+      "docs/assets/apps/cluster_layouts/preview-08.png",
+      "docs/assets/apps/cluster_layouts/preview-09.png",
+      "docs/assets/apps/cluster_layouts/preview-10.png",
+      "docs/assets/apps/cluster_layouts/preview-11.png",
+      "docs/assets/apps/cluster_layouts/preview-12.png",
+      "docs/assets/apps/cluster_layouts/preview-13.png",
+      "docs/assets/apps/cluster_layouts/preview-14.png",
+      "docs/assets/apps/cluster_layouts/preview-15.png",
+      "docs/assets/apps/cluster_layouts/preview-16.png",
+      "docs/assets/apps/cluster_layouts/preview-17.png",
+      "docs/assets/apps/cluster_layouts/preview-18.png",
+      "docs/assets/apps/cluster_layouts/preview-19.png",
+      "docs/assets/apps/cluster_layouts/preview-20.png",
+      "docs/assets/apps/cluster_layouts/preview-21.png",
+      "docs/assets/apps/cluster_layouts/preview-22.png",
+      "docs/assets/apps/cluster_layouts/preview-23.png",
+      "docs/assets/apps/cluster_layouts/preview-24.png",
+      "docs/assets/apps/cluster_layouts/preview-25.png",
+      "docs/assets/apps/cluster_layouts/preview-26.png",
+      "docs/assets/apps/cluster_layouts/preview-27.png",
+      "docs/assets/apps/cluster_layouts/preview-28.png",
+      "docs/assets/apps/cluster_layouts/preview-29.png",
+      "docs/assets/apps/cluster_layouts/preview-30.png",
+      "docs/assets/apps/cluster_layouts/preview-31.jpg",
+      "docs/assets/apps/cluster_layouts/preview-32.jpg"
+    ],
+    "assets": [
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/analog_sport.png",
+        "path": "docs/assets/apps/cluster_layouts/preview-01.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/analog_sport_map.png",
+        "path": "docs/assets/apps/cluster_layouts/preview-02.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/analog_sport_sport.png",
+        "path": "docs/assets/apps/cluster_layouts/preview-03.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/classic.png",
+        "path": "docs/assets/apps/cluster_layouts/preview-04.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/digital_dash.png",
+        "path": "docs/assets/apps/cluster_layouts/preview-05.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/digital_dash_map.png",
+        "path": "docs/assets/apps/cluster_layouts/preview-06.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/digital_dash_sport.png",
+        "path": "docs/assets/apps/cluster_layouts/preview-07.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/digital_round.png",
+        "path": "docs/assets/apps/cluster_layouts/preview-08.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/digital_round_efficient.png",
+        "path": "docs/assets/apps/cluster_layouts/preview-09.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/digital_round_map.png",
+        "path": "docs/assets/apps/cluster_layouts/preview-10.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/freedom.png",
+        "path": "docs/assets/apps/cluster_layouts/preview-11.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/gt3.png",
+        "path": "docs/assets/apps/cluster_layouts/preview-12.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/gt3_sport.png",
+        "path": "docs/assets/apps/cluster_layouts/preview-13.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/m.png",
+        "path": "docs/assets/apps/cluster_layouts/preview-14.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/m_map.png",
+        "path": "docs/assets/apps/cluster_layouts/preview-15.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/modern_wide.png",
+        "path": "docs/assets/apps/cluster_layouts/preview-16.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/modern_wide_map.png",
+        "path": "docs/assets/apps/cluster_layouts/preview-17.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/modern_wide_sport.png",
+        "path": "docs/assets/apps/cluster_layouts/preview-18.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/panels.png",
+        "path": "docs/assets/apps/cluster_layouts/preview-19.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/pulse.png",
+        "path": "docs/assets/apps/cluster_layouts/preview-20.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/pulse_map.png",
+        "path": "docs/assets/apps/cluster_layouts/preview-21.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/pulse_sport.png",
+        "path": "docs/assets/apps/cluster_layouts/preview-22.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/retro.png",
+        "path": "docs/assets/apps/cluster_layouts/preview-23.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/retro_efficient.png",
+        "path": "docs/assets/apps/cluster_layouts/preview-24.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/retro_map.png",
+        "path": "docs/assets/apps/cluster_layouts/preview-25.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/retro_sport.png",
+        "path": "docs/assets/apps/cluster_layouts/preview-26.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/sport.png",
+        "path": "docs/assets/apps/cluster_layouts/preview-27.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/sport_map.png",
+        "path": "docs/assets/apps/cluster_layouts/preview-28.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/track.png",
+        "path": "docs/assets/apps/cluster_layouts/preview-29.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/track_sport.png",
+        "path": "docs/assets/apps/cluster_layouts/preview-30.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/cluster.jpg",
+        "path": "docs/assets/apps/cluster_layouts/preview-31.jpg"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/cluster-apps/docs/hud.jpg",
+        "path": "docs/assets/apps/cluster_layouts/preview-32.jpg"
+      }
+    ],
+    "official_icon_available": false,
+    "image_count": 32
+  },
+  "edrive2": {
+    "title": "eDrive Live",
+    "version": "1.10.1",
+    "source_repo": "eroobeeroo/idrive7-apps",
+    "source_url": "https://github.com/eroobeeroo/idrive7-apps/tree/c719804e28df27c25283afad6b1cfa8a49fe2c7d/apps/edrive2",
+    "component_path": "apps/_sources/eroobeeroo-idrive7-apps/apps/edrive2",
+    "icon": null,
+    "previews": [
+      "docs/assets/apps/edrive2/preview-01.png",
+      "docs/assets/apps/edrive2/preview-02.png"
+    ],
+    "assets": [
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/eroobeeroo-idrive7-apps/docs/screens/edrive2.png",
+        "path": "docs/assets/apps/edrive2/preview-01.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/eroobeeroo-idrive7-apps/docs/screens/edrive2_battery.png",
+        "path": "docs/assets/apps/edrive2/preview-02.png"
+      }
+    ],
+    "official_icon_available": false,
+    "image_count": 2
+  },
+  "light_show": {
+    "title": "Light Show",
+    "version": "0.5.2",
+    "source_repo": "eroobeeroo/idrive7-apps",
+    "source_url": "https://github.com/eroobeeroo/idrive7-apps/tree/c719804e28df27c25283afad6b1cfa8a49fe2c7d/apps/light_show",
+    "component_path": "apps/_sources/eroobeeroo-idrive7-apps/apps/light_show",
+    "icon": null,
+    "previews": [],
+    "assets": [],
+    "official_icon_available": false,
+    "image_count": 0
+  },
+  "noahg_fscpatcher": {
+    "title": "FSC Patch",
+    "version": "1.0.0",
+    "source_repo": "Noahbg/mgu-apps",
+    "source_url": "https://github.com/Noahbg/mgu-apps/tree/3853c99c99c1e610ae0dee3547a1429b0c097300/apps/noahg_fscpatcher",
+    "component_path": "apps/_sources/noahg-mgu-apps/apps/noahg_fscpatcher",
+    "icon": "docs/assets/apps/noahg_fscpatcher/icon.png",
+    "previews": [],
+    "assets": [
+      {
+        "role": "icon",
+        "source": "apps/_sources/noahg-mgu-apps/apps/noahg_fscpatcher/icon.png",
+        "path": "docs/assets/apps/noahg_fscpatcher/icon.png"
+      }
+    ],
+    "official_icon_available": true,
+    "image_count": 1
+  },
+  "noahg_obdbridge": {
+    "title": "OBD Bridge",
+    "version": "1.0.0",
+    "source_repo": "Noahbg/mgu-apps",
+    "source_url": "https://github.com/Noahbg/mgu-apps/tree/3853c99c99c1e610ae0dee3547a1429b0c097300/apps/noahg_obdbridge",
+    "component_path": "apps/_sources/noahg-mgu-apps/apps/noahg_obdbridge",
+    "icon": "docs/assets/apps/noahg_obdbridge/icon.png",
+    "previews": [],
+    "assets": [
+      {
+        "role": "icon",
+        "source": "apps/_sources/noahg-mgu-apps/apps/noahg_obdbridge/icon.png",
+        "path": "docs/assets/apps/noahg_obdbridge/icon.png"
+      }
+    ],
+    "official_icon_available": true,
+    "image_count": 1
+  },
+  "idv7lol": {
+    "title": "idv7lol",
+    "version": "0.2.14",
+    "source_repo": "ALMSTRA/idv7lol",
+    "source_url": "https://github.com/ALMSTRA/idv7lol/tree/ff54c2cabd465eea1521770573701f26c36f880b/apps/idv7lol",
+    "component_path": "apps/_sources/idv7lol/apps/idv7lol",
+    "icon": "docs/assets/apps/idv7lol/icon.png",
+    "previews": [
+      "docs/assets/apps/idv7lol/preview-01.jpg",
+      "docs/assets/apps/idv7lol/preview-02.jpg",
+      "docs/assets/apps/idv7lol/preview-03.jpg",
+      "docs/assets/apps/idv7lol/preview-04.jpg",
+      "docs/assets/apps/idv7lol/preview-05.jpg",
+      "docs/assets/apps/idv7lol/preview-06.jpg",
+      "docs/assets/apps/idv7lol/preview-07.jpg",
+      "docs/assets/apps/idv7lol/preview-08.jpg",
+      "docs/assets/apps/idv7lol/preview-09.jpg",
+      "docs/assets/apps/idv7lol/preview-10.jpg",
+      "docs/assets/apps/idv7lol/preview-11.jpg"
+    ],
+    "assets": [
+      {
+        "role": "icon",
+        "source": "apps/_sources/idv7lol/apps/idv7lol/icon.png",
+        "path": "docs/assets/apps/idv7lol/icon.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idv7lol/docs/assets/screenshots/car-preview.jpg",
+        "path": "docs/assets/apps/idv7lol/preview-01.jpg"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idv7lol/docs/assets/screenshots/rally-dash.jpg",
+        "path": "docs/assets/apps/idv7lol/preview-02.jpg"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idv7lol/docs/assets/screenshots/night-minimal.jpg",
+        "path": "docs/assets/apps/idv7lol/preview-03.jpg"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idv7lol/docs/assets/screenshots/build-deploy.jpg",
+        "path": "docs/assets/apps/idv7lol/preview-04.jpg"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idv7lol/docs/assets/screenshots/community-template.jpg",
+        "path": "docs/assets/apps/idv7lol/preview-05.jpg"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idv7lol/docs/assets/screenshots/editor.jpg",
+        "path": "docs/assets/apps/idv7lol/preview-06.jpg"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idv7lol/docs/assets/screenshots/image-editor.jpg",
+        "path": "docs/assets/apps/idv7lol/preview-07.jpg"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idv7lol/docs/assets/screenshots/library-blocks.jpg",
+        "path": "docs/assets/apps/idv7lol/preview-08.jpg"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idv7lol/docs/assets/screenshots/light-theme.jpg",
+        "path": "docs/assets/apps/idv7lol/preview-09.jpg"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idv7lol/docs/assets/screenshots/theme-details-share.jpg",
+        "path": "docs/assets/apps/idv7lol/preview-10.jpg"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idv7lol/docs/assets/screenshots/welcome.jpg",
+        "path": "docs/assets/apps/idv7lol/preview-11.jpg"
+      }
+    ],
+    "official_icon_available": true,
+    "image_count": 12
+  },
+  "ethanol_mix": {
+    "title": "TurnKey E Blend",
+    "version": "0.1.5",
+    "source_repo": "HasMan/turnkey-ethanol-blend",
+    "source_url": "https://github.com/HasMan/turnkey-ethanol-blend/tree/a378719e9c858ef4693949c3a7bca68bd5f9cafb/apps/ethanol_mix",
+    "component_path": "apps/_sources/turnkey-ethanol-blend/apps/ethanol_mix",
+    "icon": "docs/assets/apps/ethanol_mix/icon.png",
+    "previews": [
+      "docs/assets/apps/ethanol_mix/preview-01.png",
+      "docs/assets/apps/ethanol_mix/preview-02.png",
+      "docs/assets/apps/ethanol_mix/preview-03.png"
+    ],
+    "assets": [
+      {
+        "role": "icon",
+        "source": "apps/_sources/turnkey-ethanol-blend/apps/ethanol_mix/icon.png",
+        "path": "docs/assets/apps/ethanol_mix/icon.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/turnkey-ethanol-blend/assets/screenshots/blend.png",
+        "path": "docs/assets/apps/ethanol_mix/preview-01.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/turnkey-ethanol-blend/assets/screenshots/editor.png",
+        "path": "docs/assets/apps/ethanol_mix/preview-02.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/turnkey-ethanol-blend/assets/screenshots/field-selection.png",
+        "path": "docs/assets/apps/ethanol_mix/preview-03.png"
+      }
+    ],
+    "official_icon_available": true,
+    "image_count": 4
+  },
+  "vlad_carplay_mirror": {
+    "title": "CarPlay Map Mirror",
+    "version": "0.1.3",
+    "source_repo": "Impossible43/vlad-mgu-apps",
+    "source_url": "https://github.com/Impossible43/vlad-mgu-apps/tree/c3e18eb45969122a377ec93e728d6a1d11eeaa7b/apps/vlad_carplay_mirror",
+    "component_path": "apps/_sources/vlad-mgu-apps/apps/vlad_carplay_mirror",
+    "icon": "docs/assets/apps/vlad_carplay_mirror/icon.png",
+    "previews": [],
+    "assets": [
+      {
+        "role": "icon",
+        "source": "apps/_sources/vlad-mgu-apps/apps/vlad_carplay_mirror/vlad_carplay_mirror@0.1.3/rhmiData/variantGroups/Common/images/vlad_carplay_mirror_icon.png",
+        "path": "docs/assets/apps/vlad_carplay_mirror/icon.png"
+      }
+    ],
+    "official_icon_available": true,
+    "image_count": 1
+  },
+  "robertn_waze_cluster": {
+    "title": "Waze on cluster",
+    "version": "0.6.12",
+    "source_repo": "robertnisipeanu/idrive-apps",
+    "source_url": "https://github.com/robertnisipeanu/idrive-apps/tree/beffe76911bcf83df00a4b29332dc313bd574a65/apps/robertn_waze_cluster",
+    "component_path": "apps/_sources/idrive-apps/apps/robertn_waze_cluster",
+    "icon": "docs/assets/apps/robertn_waze_cluster/icon.png",
+    "previews": [
+      "docs/assets/apps/robertn_waze_cluster/preview-01.jpg",
+      "docs/assets/apps/robertn_waze_cluster/preview-02.jpg",
+      "docs/assets/apps/robertn_waze_cluster/preview-03.jpg",
+      "docs/assets/apps/robertn_waze_cluster/preview-04.jpg"
+    ],
+    "assets": [
+      {
+        "role": "icon",
+        "source": "apps/_sources/idrive-apps/apps/robertn_waze_cluster/package/rhmiData/variantGroups/Common/images/robertn_waze_cluster_icon.png",
+        "path": "docs/assets/apps/robertn_waze_cluster/icon.png"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive-apps/docs/hud/cluster-map.jpg",
+        "path": "docs/assets/apps/robertn_waze_cluster/preview-01.jpg"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive-apps/docs/hud/hud-on-the-road.jpg",
+        "path": "docs/assets/apps/robertn_waze_cluster/preview-02.jpg"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive-apps/docs/hud/hud-night.jpg",
+        "path": "docs/assets/apps/robertn_waze_cluster/preview-03.jpg"
+      },
+      {
+        "role": "screenshot_or_app_image",
+        "source": "apps/_sources/idrive-apps/docs/hud/hud-before-black-background.jpg",
+        "path": "docs/assets/apps/robertn_waze_cluster/preview-04.jpg"
+      }
+    ],
+    "official_icon_available": true,
+    "image_count": 5
+  }
+}

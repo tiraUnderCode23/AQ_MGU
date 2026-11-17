@@ -1,0 +1,198 @@
+[
+  {
+    "id": "ambient_config",
+    "title": "Ambient config",
+    "official_icon": true,
+    "images": 2,
+    "folder": "docs/assets/apps/ambient_config/"
+  },
+  {
+    "id": "brake_test",
+    "title": "Brake Test",
+    "official_icon": true,
+    "images": 3,
+    "folder": "docs/assets/apps/brake_test/"
+  },
+  {
+    "id": "car_vitals",
+    "title": "M Vitals",
+    "official_icon": true,
+    "images": 6,
+    "folder": "docs/assets/apps/car_vitals/"
+  },
+  {
+    "id": "doom",
+    "title": "Doom",
+    "official_icon": true,
+    "images": 2,
+    "folder": "docs/assets/apps/doom/"
+  },
+  {
+    "id": "draggy",
+    "title": "Drag Timer",
+    "official_icon": true,
+    "images": 3,
+    "folder": "docs/assets/apps/draggy/"
+  },
+  {
+    "id": "dtc_scanner",
+    "title": "Fault Scanner",
+    "official_icon": true,
+    "images": 2,
+    "folder": "docs/assets/apps/dtc_scanner/"
+  },
+  {
+    "id": "dyno",
+    "title": "Virtual Dyno",
+    "official_icon": true,
+    "images": 2,
+    "folder": "docs/assets/apps/dyno/"
+  },
+  {
+    "id": "edrive",
+    "title": "eDrive",
+    "official_icon": true,
+    "images": 8,
+    "folder": "docs/assets/apps/edrive/"
+  },
+  {
+    "id": "gforce",
+    "title": "G-Force",
+    "official_icon": true,
+    "images": 3,
+    "folder": "docs/assets/apps/gforce/"
+  },
+  {
+    "id": "live_adjustments",
+    "title": "Engine Config",
+    "official_icon": true,
+    "images": 7,
+    "folder": "docs/assets/apps/live_adjustments/"
+  },
+  {
+    "id": "live_data",
+    "title": "Live Data",
+    "official_icon": true,
+    "images": 7,
+    "folder": "docs/assets/apps/live_data/"
+  },
+  {
+    "id": "redline",
+    "title": "Redline",
+    "official_icon": true,
+    "images": 6,
+    "folder": "docs/assets/apps/redline/"
+  },
+  {
+    "id": "service",
+    "title": "Service",
+    "official_icon": true,
+    "images": 2,
+    "folder": "docs/assets/apps/service/"
+  },
+  {
+    "id": "warmup",
+    "title": "Warm-Up",
+    "official_icon": true,
+    "images": 3,
+    "folder": "docs/assets/apps/warmup/"
+  },
+  {
+    "id": "zf8hp",
+    "title": "Transmission Config",
+    "official_icon": true,
+    "images": 3,
+    "folder": "docs/assets/apps/zf8hp/"
+  },
+  {
+    "id": "cluster_themes",
+    "title": "Cluster Themes",
+    "official_icon": true,
+    "images": 19,
+    "folder": "docs/assets/apps/cluster_themes/"
+  },
+  {
+    "id": "idrive_hud_widgets",
+    "title": "HUD Widgets",
+    "official_icon": true,
+    "images": 18,
+    "folder": "docs/assets/apps/idrive_hud_widgets/"
+  },
+  {
+    "id": "cluster_centre",
+    "title": "Cluster Centre",
+    "official_icon": false,
+    "images": 12,
+    "folder": "docs/assets/apps/cluster_centre/"
+  },
+  {
+    "id": "cluster_info",
+    "title": "Cluster Info",
+    "official_icon": false,
+    "images": 2,
+    "folder": "docs/assets/apps/cluster_info/"
+  },
+  {
+    "id": "cluster_layouts",
+    "title": "Cluster Layouts",
+    "official_icon": false,
+    "images": 32,
+    "folder": "docs/assets/apps/cluster_layouts/"
+  },
+  {
+    "id": "edrive2",
+    "title": "eDrive Live",
+    "official_icon": false,
+    "images": 2,
+    "folder": "docs/assets/apps/edrive2/"
+  },
+  {
+    "id": "light_show",
+    "title": "Light Show",
+    "official_icon": false,
+    "images": 0,
+    "folder": "docs/assets/apps/light_show/"
+  },
+  {
+    "id": "noahg_fscpatcher",
+    "title": "FSC Patch",
+    "official_icon": true,
+    "images": 1,
+    "folder": "docs/assets/apps/noahg_fscpatcher/"
+  },
+  {
+    "id": "noahg_obdbridge",
+    "title": "OBD Bridge",
+    "official_icon": true,
+    "images": 1,
+    "folder": "docs/assets/apps/noahg_obdbridge/"
+  },
+  {
+    "id": "idv7lol",
+    "title": "idv7lol",
+    "official_icon": true,
+    "images": 12,
+    "folder": "docs/assets/apps/idv7lol/"
+  },
+  {
+    "id": "ethanol_mix",
+    "title": "TurnKey E Blend",
+    "official_icon": true,
+    "images": 4,
+    "folder": "docs/assets/apps/ethanol_mix/"
+  },
+  {
+    "id": "vlad_carplay_mirror",
+    "title": "CarPlay Map Mirror",
+    "official_icon": true,
+    "images": 1,
+    "folder": "docs/assets/apps/vlad_carplay_mirror/"
+  },
+  {
+    "id": "robertn_waze_cluster",
+    "title": "Waze on cluster",
+    "official_icon": true,
+    "images": 5,
+    "folder": "docs/assets/apps/robertn_waze_cluster/"
+  }
+]
