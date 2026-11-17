@@ -5,13 +5,12 @@
       "id": "aq-mgu-apps",
       "type": "github",
       "repo": "tiraUnderCode23/AQ_MGU",
-      "channel": "branch"
+      "channel": "branch:main"
     },
     {
       "id": "aq-mgu-catalog",
-      "type": "github",
-      "repo": "tiraUnderCode23/AQ_MGU",
-      "channel": "releases"
+      "type": "https",
+      "url": "https://raw.githubusercontent.com/tiraUnderCode23/AQ_MGU/main/release/catalog.json"
     }
   ]
 }

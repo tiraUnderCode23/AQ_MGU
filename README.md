@@ -7,23 +7,29 @@ Last source and release review: 2026-11-17.
 
 ## Use AQ_MGU with MGU Store
 
-Add the same GitHub repository twice in the Store's source settings: once for source-built apps and once for the release packages. This matches the Store's native repository-tree and `catalog` release channels.
+Add **two different source types** in the original MGU Store: one GitHub branch source for source-built components, and one HTTPS catalog source for published packages. The original Store rejects adding the same GitHub repository twice, even with different channels. Both source URLs below are public and can be read without a GitHub sign-in when network access is available.
 
 ```json
 {
   "schema": 1,
   "sources": [
-    { "id": "aq-mgu-apps", "type": "github", "repo": "tiraUnderCode23/AQ_MGU", "channel": "branch" },
-    { "id": "aq-mgu-catalog", "type": "github", "repo": "tiraUnderCode23/AQ_MGU", "channel": "releases" }
+    { "id": "aq-mgu-apps", "type": "github", "repo": "tiraUnderCode23/AQ_MGU", "channel": "branch:main" },
+    { "id": "aq-mgu-catalog", "type": "https", "url": "https://raw.githubusercontent.com/tiraUnderCode23/AQ_MGU/main/release/catalog.json" }
   ]
 }
 ```
 
-The branch feed is [`mgu-repo.json`](mgu-repo.json). The release feed is [`release/catalog.json`](release/catalog.json), published with the package assets under the GitHub Release named `catalog`. The ready-to-copy source settings are in [`data/store-sources.json`](data/store-sources.json).
+In the Store's **Add source** text field, enter `https://github.com/tiraUnderCode23/AQ_MGU/tree/main` for the branch source, then separately enter `https://raw.githubusercontent.com/tiraUnderCode23/AQ_MGU/main/release/catalog.json` as an HTTPS catalog. The first URL selects the branch without the GitHub channel-picker API probe; the second URL is accepted by the original Store's HTTPS-source parser. Do not paste the `github.com/.../releases/download/catalog/catalog.json` URL in the original Store's on-screen Add source field: that parser rejects GitHub URLs other than repositories and branch URLs.
+
+The branch feed is [`mgu-repo.json`](mgu-repo.json). The HTTPS catalog feed reads [`release/catalog.json`](release/catalog.json), whose artifact URLs point to files attached to the GitHub Release named `catalog`. The ready-to-copy source settings are in [`data/store-sources.json`](data/store-sources.json). If Store still prompts for sign-in, distinguish a GitHub API probe failure, rate limit, offline connection, and private-source authorization rather than disabling its security checks. The local Store updater must be reachable for adding sources; this is separate from GitHub login.
 
 The two feeds are not interchangeable: `branch` entries require the original MGU Store to fetch their pinned source files, prepare dependencies, and build where declared. `releases` entries download finished compressed `.tgz` artifacts. An item appearing in this catalog does not alone confirm it has been installed or can run on a specific head unit. Only the Store's installer and subsequent unit status can establish that.
 
+Before selecting a component, consult the [original README and installation eligibility matrix for all 61 apps and tools](docs/COMPONENT_README_INSTALL_MATRIX.md). It identifies each pinned version, source-building or released-package route, documented HMI and dependencies, and the most specific tracked upstream README available. It does **not** claim that any of the 61 components passed an installation test on a vehicle.
+
 When Store reports `more than the expected N bytes`, do not replace a published SHA-256 or enlarge an artifact's declared size without checking the exact downloaded file. The Store compares transfer bytes against the compressed package's `artifact.size`, and later checks both exact size and SHA-256 before installation. If the failure occurs while fetching source files, inspect the source-build paths and their authorized donor SDK placement separately from the released packages.
+
+Feed checks run **manually**, without GitHub Actions: `python -B verify_store_feeds.py` and `python -B -m unittest discover -s tests -p 'test_*.py' -v`. These checks validate metadata and README coverage offline; they do not install packages or prove the head unit accepts them.
 
 ## Apps
 
@@ -36,7 +42,7 @@ Each entry shows its upstream title, current pinned version, a short description
 
 Your iPhone&#x27;s screen on the central display by AirPlay screen mirroring, parked only. Sound stays on Bluetooth. In Apps and Communication.
 
-**Supported:** ID7 · **License:** Mixed GPL/MIT by component · **Source:** [noth4m4d/mgu-hamadstools](https://github.com/noth4m4d/mgu-hamadstools/tree/e327b30e48019eab79ace5fb7d610610d0e96d92/apps/_sources/noth4m4d-mgu-hamadstools) · No upstream image files found in the pinned source.
+**Supported:** ID7 · **License:** Mixed GPL/MIT by component · **Source:** [noth4m4d/mgu-hamadstools](https://github.com/noth4m4d/mgu-hamadstools/tree/e327b30e48019eab79ace5fb7d610610d0e96d92) · No upstream image files found in the pinned source.
 </details>
 
 <details>
@@ -46,7 +52,7 @@ Your iPhone&#x27;s screen on the central display by AirPlay screen mirroring, pa
 
 Any colour on the ambient light, animations, and a look for each driving mode
 
-**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/_sources/idrive7-apps/apps/ambient_config) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/ambient_config">All 2 published images</a>
+**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/ambient_config) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/ambient_config">All 2 published images</a>
 </details>
 
 <details>
@@ -56,7 +62,7 @@ Any colour on the ambient light, animations, and a look for each driving mode
 
 100-0 and 200-0 braking distance, peak decel and brake-fade tracking
 
-**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/_sources/idrive7-apps/apps/brake_test) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/brake_test">All 3 published images</a>
+**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/brake_test) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/brake_test">All 3 published images</a>
 </details>
 
 <details>
@@ -66,7 +72,7 @@ Any colour on the ambient light, animations, and a look for each driving mode
 
 Browser: shows the phone link and QR code for the vizualyse-chromium web browser, what its GPU offers (WebGPU, WebGL 2, JSPI), and shows or hides the browser on the central screen
 
-**Supported:** ID7 · **License:** GPL-3.0-or-later with third-party notices · **Source:** [Vizualyse/idrive-apps](https://github.com/Vizualyse/idrive-apps/tree/13a766b520f17d7871fb9bb0713f658e5e14641b/apps/_sources/vizualyse-idrive-apps/apps/vizualyse_chromium) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/vizualyse_chromium">All 1 published images</a>
+**Supported:** ID7 · **License:** GPL-3.0-or-later with third-party notices · **Source:** [Vizualyse/idrive-apps](https://github.com/Vizualyse/idrive-apps/tree/13a766b520f17d7871fb9bb0713f658e5e14641b/apps/vizualyse_chromium) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/vizualyse_chromium">All 1 published images</a>
 </details>
 
 <details>
@@ -76,7 +82,7 @@ Browser: shows the phone link and QR code for the vizualyse-chromium web browser
 
 Waze / Apple Maps / Google Maps from CarPlay Dashboard to the cluster. Experimental on X3.
 
-**Supported:** ID7 · **License:** Mixed GPL/MPL/MIT; see component files · **Source:** [Impossible43/vlad-mgu-apps](https://github.com/Impossible43/vlad-mgu-apps/tree/c3e18eb45969122a377ec93e728d6a1d11eeaa7b/apps/_sources/vlad-mgu-apps/apps/vlad_carplay_mirror) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/vlad_carplay_mirror">All 1 published images</a>
+**Supported:** ID7 · **License:** Mixed GPL/MPL/MIT; see component files · **Source:** [Impossible43/vlad-mgu-apps](https://github.com/Impossible43/vlad-mgu-apps/tree/c3e18eb45969122a377ec93e728d6a1d11eeaa7b/apps/vlad_carplay_mirror) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/vlad_carplay_mirror">All 1 published images</a>
 </details>
 
 <details>
@@ -86,7 +92,7 @@ Waze / Apple Maps / Google Maps from CarPlay Dashboard to the cluster. Experimen
 
 Enables or disables the CarPlay map stream on the instrument cluster for compatible ID7 systems.
 
-**Supported:** ID7 · **License:** MPL-2.0; component file notices retained · **Source:** [isaakbruno2/carplay-map-cluster](https://github.com/isaakbruno2/carplay-map-cluster/tree/2ab4318d6fcc981ffc647597ae91c7d6405de4ec/apps/_sources/isaak-carplay-map-cluster/app/carplay_map_toggle) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/carplay_map_toggle">All 2 published images</a>
+**Supported:** ID7 · **License:** MPL-2.0; component file notices retained · **Source:** [isaakbruno2/carplay-map-cluster](https://github.com/isaakbruno2/carplay-map-cluster/tree/2ab4318d6fcc981ffc647597ae91c7d6405de4ec/app/carplay_map_toggle) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/carplay_map_toggle">All 2 published images</a>
 </details>
 
 <details>
@@ -96,7 +102,7 @@ Enables or disables the CarPlay map stream on the instrument cluster for compati
 
 Cast to cluster: shows the phone link and QR code for the cast service, its status, and replays the last stream on the cluster, the HUD or the media console
 
-**Supported:** ID7 · **License:** GPL-3.0-or-later with third-party notices · **Source:** [Vizualyse/idrive-apps](https://github.com/Vizualyse/idrive-apps/tree/13a766b520f17d7871fb9bb0713f658e5e14641b/apps/_sources/vizualyse-idrive-apps/apps/vizualyse_cast) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/vizualyse_cast">All 1 published images</a>
+**Supported:** ID7 · **License:** GPL-3.0-or-later with third-party notices · **Source:** [Vizualyse/idrive-apps](https://github.com/Vizualyse/idrive-apps/tree/13a766b520f17d7871fb9bb0713f658e5e14641b/apps/vizualyse_cast) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/vizualyse_cast">All 1 published images</a>
 </details>
 
 <details>
@@ -106,7 +112,7 @@ Cast to cluster: shows the phone link and QR code for the cast service, its stat
 
 Redraws the instrument cluster: GT3 race dash, M-style, M view, Vector (with a music panel), Sport, Minimal, Track, Drag, Rally, Retro 80s, Cruise, Dyno (BMW-coloured readout tiles) or Ribbon (with holiday editions), with shift lights, boost, temps, tyres, a G-meter and a 0-60 timer
 
-**Supported:** ID7 · **License:** MIT; retain component notices · **Source:** [bimmer-lab/apps](https://github.com/bimmer-lab/apps/tree/ab81cee4d77859b531b21a118772c6b031455b78/apps/_sources/bimmer-lab-apps/apps/cluster_themes) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/cluster_themes">All 20 published images</a>
+**Supported:** ID7 · **License:** MIT; retain component notices · **Source:** [bimmer-lab/apps](https://github.com/bimmer-lab/apps/tree/ab81cee4d77859b531b21a118772c6b031455b78/apps/cluster_themes) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/cluster_themes">All 20 published images</a>
 </details>
 
 <details>
@@ -116,7 +122,7 @@ Redraws the instrument cluster: GT3 race dash, M-style, M view, Vector (with a m
 
 Cluster themes: chooses the instrument cluster theme (the vizualyse-cluster tool): a picker on the central screen with a preview of every theme, touched, a Try on the cluster while parked, Sport or Comfort, on or off
 
-**Supported:** ID7 · **License:** GPL-3.0-or-later with third-party notices · **Source:** [Vizualyse/idrive-apps](https://github.com/Vizualyse/idrive-apps/tree/13a766b520f17d7871fb9bb0713f658e5e14641b/apps/_sources/vizualyse-idrive-apps/apps/vizualyse_cluster) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/vizualyse_cluster">All 1 published images</a>
+**Supported:** ID7 · **License:** GPL-3.0-or-later with third-party notices · **Source:** [Vizualyse/idrive-apps](https://github.com/Vizualyse/idrive-apps/tree/13a766b520f17d7871fb9bb0713f658e5e14641b/apps/vizualyse_cluster) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/vizualyse_cluster">All 1 published images</a>
 </details>
 
 <details>
@@ -126,7 +132,7 @@ Cluster themes: chooses the instrument cluster theme (the vizualyse-cluster tool
 
 0-100, 100-200 and 1/4 mile timer with best times
 
-**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/_sources/idrive7-apps/apps/draggy) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/draggy">All 3 published images</a>
+**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/draggy) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/draggy">All 3 published images</a>
 </details>
 
 <details>
@@ -136,7 +142,7 @@ Cluster themes: chooses the instrument cluster theme (the vizualyse-cluster tool
 
 Real electric range (plug-in hybrids and fully electric cars such as the iX3), live battery power, cells and climate power, HV battery health (SOH) and energy, last charge, charge log, the 12 V battery (charge, voltage, what it does, regen, history) and a home-screen widget; on a 48 V mild hybrid its 48 V battery and DC/DC converter
 
-**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/_sources/idrive7-apps/apps/edrive) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/edrive">All 8 published images</a>
+**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/edrive) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/edrive">All 8 published images</a>
 </details>
 
 <details>
@@ -146,7 +152,7 @@ Real electric range (plug-in hybrids and fully electric cars such as the iX3), l
 
 Engine Config for BMW MGU ID7. Exhaust Flap: OEM, OPEN and CLOSE over the car&#x27;s own diagnostic link, or following the driving mode (Sport open, Eco Pro closed); held against the DME&#x27;s timeout, Close handed back above a set engine speed. With BM3 or MHD picked in Settings: engine map switching, burbles, ASD and Max Cooling. Experimental: xDrive off until the ignition cycle (DSC LMV_FUNKTION), behind its own setting
 
-**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/_sources/idrive7-apps/apps/live_adjustments) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/live_adjustments">All 15 published images</a>
+**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/live_adjustments) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/live_adjustments">All 15 published images</a>
 </details>
 
 <details>
@@ -156,7 +162,7 @@ Engine Config for BMW MGU ID7. Exhaust Flap: OEM, OPEN and CLOSE over the car&#x
 
 Read and clear fault memory of every control unit, plus active Check Control messages
 
-**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/_sources/idrive7-apps/apps/dtc_scanner) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/dtc_scanner">All 3 published images</a>
+**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/dtc_scanner) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/dtc_scanner">All 3 published images</a>
 </details>
 
 <details>
@@ -166,7 +172,7 @@ Read and clear fault memory of every control unit, plus active Check Control mes
 
 Ethanol content (Active and CAN) read from an MHD-flashed DME over the car&#x27;s own diagnostic link, the fuel in the tank (the DME&#x27;s tank halves or the cluster), and how much ethanol to add to reach a target blend; the Active dial can also show the DME&#x27;s own alcohol percentage (22 550D). Read-only; the addresses come from a profile per DME program family
 
-**Supported:** ID7, ID8 · **License:** MIT · **Source:** [alexpereap/pereaperformance-idrive7-apps](https://github.com/alexpereap/pereaperformance-idrive7-apps/tree/5b758fad17761b8696989e2a4ffbfbfab4926b6f/apps/_sources/alexpereap-idrive7-apps/apps/perea_mhd_flex) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/perea_mhd_flex">All 3 published images</a>
+**Supported:** ID7, ID8 · **License:** MIT · **Source:** [alexpereap/pereaperformance-idrive7-apps](https://github.com/alexpereap/pereaperformance-idrive7-apps/tree/5b758fad17761b8696989e2a4ffbfbfab4926b6f/apps/perea_mhd_flex) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/perea_mhd_flex">All 3 published images</a>
 </details>
 
 <details>
@@ -176,7 +182,7 @@ Ethanol content (Active and CAN) read from an MHD-flashed DME over the car&#x27;
 
 Patch or restore the FSC verifier.
 
-**Supported:** ID7 · **License:** MIT · **Source:** [Noahbg/mgu-apps](https://github.com/Noahbg/mgu-apps/tree/3853c99c99c1e610ae0dee3547a1429b0c097300/apps/_sources/noahg-mgu-apps/apps/noahg_fscpatcher) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/noahg_fscpatcher">All 1 published images</a>
+**Supported:** ID7 · **License:** MIT · **Source:** [Noahbg/mgu-apps](https://github.com/Noahbg/mgu-apps/tree/3853c99c99c1e610ae0dee3547a1429b0c097300/apps/noahg_fscpatcher) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/noahg_fscpatcher">All 1 published images</a>
 </details>
 
 <details>
@@ -186,7 +192,7 @@ Patch or restore the FSC verifier.
 
 Friction circle with grip envelope, peak g per direction and session records
 
-**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/_sources/idrive7-apps/apps/gforce) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/gforce">All 3 published images</a>
+**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/gforce) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/gforce">All 3 published images</a>
 </details>
 
 <details>
@@ -196,7 +202,7 @@ Friction circle with grip envelope, peak g per direction and session records
 
 Gear, shift lights, boost, oil, coolant and intake temperatures, a G-meter, trip figures and the song playing on the windshield HUD, in Classic, M or Night themes
 
-**Supported:** ID7 · **License:** MIT; retain component notices · **Source:** [bimmer-lab/apps](https://github.com/bimmer-lab/apps/tree/ab81cee4d77859b531b21a118772c6b031455b78/apps/_sources/bimmer-lab-apps/apps/idrive_hud_widgets) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/idrive_hud_widgets">All 18 published images</a>
+**Supported:** ID7 · **License:** MIT; retain component notices · **Source:** [bimmer-lab/apps](https://github.com/bimmer-lab/apps/tree/ab81cee4d77859b531b21a118772c6b031455b78/apps/idrive_hud_widgets) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/idrive_hud_widgets">All 18 published images</a>
 </details>
 
 <details>
@@ -206,7 +212,7 @@ Gear, shift lights, boost, oil, coolant and intake temperatures, a G-meter, trip
 
 Your own layout on the whole instrument cluster: themes made with idv7lol Studio, drawn by the cluster itself
 
-**Supported:** ID7 · **License:** GPL-3.0-or-later with third-party notices · **Source:** [ALMSTRA/idv7lol](https://github.com/ALMSTRA/idv7lol/tree/ff54c2cabd465eea1521770573701f26c36f880b/apps/_sources/idv7lol/apps/idv7lol) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/idv7lol">All 12 published images</a>
+**Supported:** ID7 · **License:** GPL-3.0-or-later with third-party notices · **Source:** [ALMSTRA/idv7lol](https://github.com/ALMSTRA/idv7lol/tree/ff54c2cabd465eea1521770573701f26c36f880b/apps/idv7lol) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/idv7lol">All 12 published images</a>
 </details>
 
 <details>
@@ -216,7 +222,7 @@ Your own layout on the whole instrument cluster: themes made with idv7lol Studio
 
 Read-only live values from the car and its control units, a trip computer with fuel cost, and gauge screens of your own, one of them as the home-screen widget
 
-**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/_sources/idrive7-apps/apps/live_data) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/live_data">All 13 published images</a>
+**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/live_data) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/live_data">All 13 published images</a>
 </details>
 
 <details>
@@ -226,7 +232,7 @@ Read-only live values from the car and its control units, a trip computer with f
 
 Live engine, thermal, intake / fuel / ignition, tyre and chassis gauges
 
-**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/_sources/idrive7-apps/apps/car_vitals) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/car_vitals">All 7 published images</a>
+**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/car_vitals) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/car_vitals">All 7 published images</a>
 </details>
 
 <details>
@@ -236,7 +242,7 @@ Live engine, thermal, intake / fuel / ignition, tyre and chassis gauges
 
 Displays vehicle readings, service information, fault memory and vehicle details alongside tune and modification notes.
 
-**Supported:** ID7 · **License:** GPL-3.0-or-later; retain third-party notices · **Source:** [hexlay/idrive7-custom-apps](https://github.com/hexlay/idrive7-custom-apps/tree/04a42559a6d94d52d5a17bb2a7231e2142b26079/apps/_sources/hexlay-idrive7-apps/apps/m_copilot) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/m_copilot">All 6 published images</a>
+**Supported:** ID7 · **License:** GPL-3.0-or-later; retain third-party notices · **Source:** [hexlay/idrive7-custom-apps](https://github.com/hexlay/idrive7-custom-apps/tree/04a42559a6d94d52d5a17bb2a7231e2142b26079/apps/m_copilot) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/m_copilot">All 6 published images</a>
 </details>
 
 <details>
@@ -246,7 +252,7 @@ Displays vehicle readings, service information, fault memory and vehicle details
 
 Moonlight: shows the phone link and QR code for the Moonlight game streaming service, its status, and stops, quits or resumes the game streamed from a PC running Sunshine
 
-**Supported:** ID7 · **License:** GPL-3.0-or-later with third-party notices · **Source:** [Vizualyse/idrive-apps](https://github.com/Vizualyse/idrive-apps/tree/13a766b520f17d7871fb9bb0713f658e5e14641b/apps/_sources/vizualyse-idrive-apps/apps/vizualyse_moonlight) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/vizualyse_moonlight">All 1 published images</a>
+**Supported:** ID7 · **License:** GPL-3.0-or-later with third-party notices · **Source:** [Vizualyse/idrive-apps](https://github.com/Vizualyse/idrive-apps/tree/13a766b520f17d7871fb9bb0713f658e5e14641b/apps/vizualyse_moonlight) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/vizualyse_moonlight">All 1 published images</a>
 </details>
 
 <details>
@@ -256,7 +262,7 @@ Moonlight: shows the phone link and QR code for the Moonlight game streaming ser
 
 BM3 diagnostic protocol bridge over the car hotspot.
 
-**Supported:** ID7 · **License:** MIT · **Source:** [Noahbg/mgu-apps](https://github.com/Noahbg/mgu-apps/tree/3853c99c99c1e610ae0dee3547a1429b0c097300/apps/_sources/noahg-mgu-apps/apps/noahg_obdbridge) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/noahg_obdbridge">All 1 published images</a>
+**Supported:** ID7 · **License:** MIT · **Source:** [Noahbg/mgu-apps](https://github.com/Noahbg/mgu-apps/tree/3853c99c99c1e610ae0dee3547a1429b0c097300/apps/noahg_obdbridge) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/noahg_obdbridge">All 1 published images</a>
 </details>
 
 <details>
@@ -266,7 +272,7 @@ BM3 diagnostic protocol bridge over the car hotspot.
 
 Full-screen rev tach with shift lights, gear, shift scoring and cold-engine rev guard; HUD by @biscotit
 
-**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/_sources/idrive7-apps/apps/redline) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/redline">All 7 published images</a>
+**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/redline) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/redline">All 7 published images</a>
 </details>
 
 <details>
@@ -276,7 +282,7 @@ Full-screen rev tach with shift lights, gear, shift scoring and cold-engine rev 
 
 Service requirements from the instrument cluster: oil, brakes, brake fluid, vehicle check, inspection - distance, date, details; brake fluid and vehicle check reset
 
-**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/_sources/idrive7-apps/apps/service) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/service">All 2 published images</a>
+**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/service) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/service">All 2 published images</a>
 </details>
 
 <details>
@@ -286,7 +292,7 @@ Service requirements from the instrument cluster: oil, brakes, brake fluid, vehi
 
 Spotify Connect cockpit player and library browser for BMW iDrive 7
 
-**Supported:** ID7 · **License:** GPL-3.0-or-later; retain third-party notices · **Source:** [hexlay/idrive7-custom-apps](https://github.com/hexlay/idrive7-custom-apps/tree/04a42559a6d94d52d5a17bb2a7231e2142b26079/apps/_sources/hexlay-idrive7-apps/apps/spotify) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/spotify">All 7 published images</a>
+**Supported:** ID7 · **License:** GPL-3.0-or-later; retain third-party notices · **Source:** [hexlay/idrive7-custom-apps](https://github.com/hexlay/idrive7-custom-apps/tree/04a42559a6d94d52d5a17bb2a7231e2142b26079/apps/spotify) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/spotify">All 7 published images</a>
 </details>
 
 <details>
@@ -296,7 +302,7 @@ Spotify Connect cockpit player and library browser for BMW iDrive 7
 
 Steam: plays Windows games from your Steam library on the car (the vizualyse-steam tool), shows the phone link and QR code for signing in and installing, and shows or hides the game on the central screen
 
-**Supported:** ID7 · **License:** GPL-3.0-or-later with third-party notices · **Source:** [Vizualyse/idrive-apps](https://github.com/Vizualyse/idrive-apps/tree/13a766b520f17d7871fb9bb0713f658e5e14641b/apps/_sources/vizualyse-idrive-apps/apps/vizualyse_steam) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/vizualyse_steam">All 1 published images</a>
+**Supported:** ID7 · **License:** GPL-3.0-or-later with third-party notices · **Source:** [Vizualyse/idrive-apps](https://github.com/Vizualyse/idrive-apps/tree/13a766b520f17d7871fb9bb0713f658e5e14641b/apps/vizualyse_steam) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/vizualyse_steam">All 1 published images</a>
 </details>
 
 <details>
@@ -306,7 +312,7 @@ Steam: plays Windows games from your Steam library on the car (the vizualyse-ste
 
 MGU Store app for browsing, installing and updating compatible MGU apps and components.
 
-**Supported:** ID7, ID8 · **License:** GPL-3.0-or-later · **Source:** [robertnisipeanu/mgu-store](https://github.com/robertnisipeanu/mgu-store/tree/7956321fd40bceafffa8842719155e6176652720/tools/_sources/mgu-store/apps/robertn_store) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/robertn_store">All 2 published images</a>
+**Supported:** ID7, ID8 · **License:** GPL-3.0-or-later · **Source:** [robertnisipeanu/mgu-store](https://github.com/robertnisipeanu/mgu-store/tree/7956321fd40bceafffa8842719155e6176652720/apps/robertn_store) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/robertn_store">All 2 published images</a>
 </details>
 
 <details>
@@ -316,7 +322,7 @@ MGU Store app for browsing, installing and updating compatible MGU apps and comp
 
 What uses the head unit&#x27;s memory and processor: free RAM, a live history, and every app and program with the memory it takes. Read only.
 
-**Supported:** ID7 · **License:** GPL-3.0-or-later; retain third-party notices · **Source:** [hexlay/idrive7-custom-apps](https://github.com/hexlay/idrive7-custom-apps/tree/04a42559a6d94d52d5a17bb2a7231e2142b26079/apps/_sources/hexlay-idrive7-apps/apps/sys_monitor) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/sys_monitor">All 4 published images</a>
+**Supported:** ID7 · **License:** GPL-3.0-or-later; retain third-party notices · **Source:** [hexlay/idrive7-custom-apps](https://github.com/hexlay/idrive7-custom-apps/tree/04a42559a6d94d52d5a17bb2a7231e2142b26079/apps/sys_monitor) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/sys_monitor">All 4 published images</a>
 </details>
 
 <details>
@@ -326,7 +332,7 @@ What uses the head unit&#x27;s memory and processor: free RAM, a live history, a
 
 Transmission Config, experimental ZF 8HP monitor: live data, clutch fill adaptations, shift maps and temperature history
 
-**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/_sources/idrive7-apps/apps/zf8hp) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/zf8hp">All 4 published images</a>
+**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/zf8hp) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/zf8hp">All 4 published images</a>
 </details>
 
 <details>
@@ -336,7 +342,7 @@ Transmission Config, experimental ZF 8HP monitor: live data, clutch fill adaptat
 
 Original v0.1.5 interface; live ethanol/fuel readouts and blend-to-full calculator. Tested only on the original 2023 X3M calibration.
 
-**Supported:** ID7 · **License:** MIT with included notices · **Source:** [HasMan/turnkey-ethanol-blend](https://github.com/HasMan/turnkey-ethanol-blend/tree/a378719e9c858ef4693949c3a7bca68bd5f9cafb/apps/_sources/turnkey-ethanol-blend/apps/ethanol_mix) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/ethanol_mix">All 4 published images</a>
+**Supported:** ID7 · **License:** MIT with included notices · **Source:** [HasMan/turnkey-ethanol-blend](https://github.com/HasMan/turnkey-ethanol-blend/tree/a378719e9c858ef4693949c3a7bca68bd5f9cafb/apps/ethanol_mix) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/ethanol_mix">All 4 published images</a>
 </details>
 
 <details>
@@ -346,7 +352,7 @@ Original v0.1.5 interface; live ethanol/fuel readouts and blend-to-full calculat
 
 Power and torque curves from a full-throttle pull, saved and compared
 
-**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/_sources/idrive7-apps/apps/dyno) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/dyno">All 2 published images</a>
+**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/dyno) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/dyno">All 2 published images</a>
 </details>
 
 <details>
@@ -356,7 +362,7 @@ Power and torque curves from a full-throttle pull, saved and compared
 
 Oil and coolant warm-up calculator (time to ready), safe rev limit, turbo cool-down and a cold start counter
 
-**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/_sources/idrive7-apps/apps/warmup) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/warmup">All 4 published images</a>
+**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/warmup) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/warmup">All 4 published images</a>
 </details>
 
 <details>
@@ -366,7 +372,7 @@ Oil and coolant warm-up calculator (time to ready), safe rev limit, turbo cool-d
 
 Waze&#x27;s turn and arrival cards, or Waze&#x27;s map, on the instrument cluster while Waze guides in CarPlay.
 
-**Supported:** ID7 · **License:** Mixed GPL/MIT by component · **Source:** [noth4m4d/mgu-hamadstools](https://github.com/noth4m4d/mgu-hamadstools/tree/e327b30e48019eab79ace5fb7d610610d0e96d92/apps/_sources/noth4m4d-mgu-hamadstools) · No upstream image files found in the pinned source.
+**Supported:** ID7 · **License:** Mixed GPL/MIT by component · **Source:** [noth4m4d/mgu-hamadstools](https://github.com/noth4m4d/mgu-hamadstools/tree/e327b30e48019eab79ace5fb7d610610d0e96d92) · No upstream image files found in the pinned source.
 </details>
 
 <details>
@@ -376,7 +382,7 @@ Waze&#x27;s turn and arrival cards, or Waze&#x27;s map, on the instrument cluste
 
 Puts the CarPlay Waze map on the instrument cluster and Waze&#x27;s turns on BMW&#x27;s HUD: enable the patch from the HMI and the map follows CarPlay
 
-**Supported:** ID7 · **License:** GPL-3.0-or-later · **Source:** [JustAnotherPU/waze-hud](https://github.com/JustAnotherPU/waze-hud/tree/6e9046f7f3de493f826896a0a6c17f1d335ca472/apps/_sources/waze-hud/apps/jap_waze_cluster) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/jap_waze_cluster">All 1 published images</a>
+**Supported:** ID7 · **License:** GPL-3.0-or-later · **Source:** [JustAnotherPU/waze-hud](https://github.com/JustAnotherPU/waze-hud/tree/6e9046f7f3de493f826896a0a6c17f1d335ca472/apps/jap_waze_cluster) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/jap_waze_cluster">All 1 published images</a>
 </details>
 
 <details>
@@ -386,7 +392,7 @@ Puts the CarPlay Waze map on the instrument cluster and Waze&#x27;s turns on BMW
 
 
 
-**Supported:** ID7 · **License:** GPL-3.0-or-later with per-file/component notices · **Source:** [robertnisipeanu/idrive-apps](https://github.com/robertnisipeanu/idrive-apps/tree/59140a978e3d5e2c8c183bdd2fbb9a4682be466a/apps/_sources/idrive-apps/apps/robertn_waze_cluster) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/robertn_waze_cluster">All 23 published images</a>
+**Supported:** ID7 · **License:** GPL-3.0-or-later with per-file/component notices · **Source:** [robertnisipeanu/idrive-apps](https://github.com/robertnisipeanu/idrive-apps/tree/59140a978e3d5e2c8c183bdd2fbb9a4682be466a/apps/robertn_waze_cluster) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/robertn_waze_cluster">All 23 published images</a>
 </details>
 
 
@@ -399,7 +405,7 @@ Puts the CarPlay Waze map on the instrument cluster and Waze&#x27;s turns on BMW
 
 Doom (Freedoom: Phase 1) on the iDrive. Main menu with all settings; the game drawn in full resolution across the whole screen, on the controller; BACK returns to the menu and saves
 
-**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/_sources/idrive7-apps/apps/doom) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/doom">All 2 published images</a>
+**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/doom) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/doom">All 2 published images</a>
 </details>
 
 

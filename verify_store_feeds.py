@@ -21,6 +21,12 @@ SHA256 = re.compile(r"^[0-9a-f]{64}$")
 MAX_MANAGER_PACKAGE = 200 * 1024 * 1024
 MANIFESTS = ("mgu-repo.json", "release/catalog.json",
              "data/components.json", "data/catalog-provenance.json")
+STORE_SOURCES = "data/store-sources.json"
+PUBLIC_REPO = "tiraUnderCode23/AQ_MGU"
+PUBLIC_RELEASE_INDEX = (
+    "https://raw.githubusercontent.com/tiraUnderCode23/AQ_MGU/"
+    "main/release/catalog.json"
+)
 
 
 def git(*args):
@@ -64,6 +70,39 @@ def version_tuple(value):
     if not isinstance(value, str) or not SEMVER.fullmatch(value):
         return None
     return tuple(map(int, value.split(".")))
+
+
+def check_store_sources(audit, doc):
+    """Check source types supported by the *original Store add-source UI*.
+
+    It cannot add the same GitHub repository twice, even with two channels.
+    An ordinary HTTPS source, on the other hand, reads the schema-2 catalog
+    with the Store's native size and SHA-256 checks. No authentication tokens
+    or private repository permissions are bypassed.
+    """
+    where = STORE_SOURCES
+    if not isinstance(doc, dict) or doc.get("schema") != 1:
+        audit.fail(where, "expected schema 1")
+        return
+    sources = doc.get("sources")
+    if not isinstance(sources, list) or len(sources) != 2:
+        audit.fail(where, "expected one GitHub branch and one HTTPS catalog")
+        return
+    ids = [item.get("id") for item in sources if isinstance(item, dict)]
+    if len(ids) != 2 or len(set(ids)) != 2:
+        audit.fail(where, "source ids must be distinct")
+        return
+    branch = [s for s in sources if isinstance(s, dict) and s.get("type") == "github"]
+    catalog = [s for s in sources if isinstance(s, dict) and s.get("type") == "https"]
+    if len(branch) != 1 or len(catalog) != 1:
+        audit.fail(where, "original Store rejects two GitHub sources for the same repo")
+        return
+    if branch[0].get("repo") != PUBLIC_REPO or branch[0].get("channel") != "branch:main":
+        audit.fail(where, "GitHub source must explicitly select the public main branch")
+    url = catalog[0].get("url")
+    if not isinstance(url, str) or url != PUBLIC_RELEASE_INDEX:
+        audit.fail(where, "HTTPS catalog must point to the public main release/catalog.json")
+    audit.counts["store_sources"] = 2
 
 
 class Audit:
@@ -336,11 +375,11 @@ def main(argv=None):
         source, catalog, components, provenance = [
             load_json(path, args.ref, args.head_manifests) for path in MANIFESTS
         ]
+        store_sources = load_json(STORE_SOURCES, args.ref, args.head_manifests)
+        check_store_sources(audit, store_sources)
         branch = check_source(audit, source, files)
         release = check_release(audit, catalog)
         check_index(audit, branch, release, components, provenance)
-        if not any(path.startswith(".github/workflows/") for path in files):
-            audit.warn("CI", "no first-party root GitHub Actions workflow in Git HEAD")
     except (OSError, ValueError, RuntimeError) as exc:
         audit.fail("validator", str(exc))
     summary = {"status": "FAIL" if audit.errors else "PASS",

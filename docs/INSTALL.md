@@ -1,11 +1,12 @@
 # Adding AQ_MGU to MGU Store
 
 1. Open MGU Store source settings.
-2. Add the GitHub repository `tiraUnderCode23/AQ_MGU` with channel `branch`. This feed serves `mgu-repo.json`.
-3. Add the same repository again with channel `releases`. This feed reads the release named `catalog` and its binary package assets.
-4. Refresh sources. Apps and tools will appear from the two feeds; install only components compatible with the vehicle's MGU generation and software.
+2. Add `https://github.com/tiraUnderCode23/AQ_MGU/tree/main` as a GitHub branch source. This serves `mgu-repo.json` and its 40 source-build components.
+3. Add `https://raw.githubusercontent.com/tiraUnderCode23/AQ_MGU/main/release/catalog.json` as a separate **HTTPS** source. This serves the 21 published `.tgz` packages and their verified artifact URLs.
+4. Refresh sources. The original Store does **not** allow two GitHub sources for the same repository, even when their channels differ. It also rejects a `github.com/.../releases/download/...` URL when entered directly in its Add source field. The two URLs above use the accepted source types without requiring a GitHub token for public content.
+5. Check each component's HMI compatibility, minimum dependencies, available disk space, and its original README before selecting any install. Treat a successful download separately from completed installation and unit status verification. Do not install every component automatically; some provide diagnostic, coding, or security-sensitive operations and require specific vehicle conditions and authorization.
 
-The exact source entries are in [`data/store-sources.json`](../data/store-sources.json). The branch and release feeds intentionally use different channel modes so Store can build source packages and fetch checksum-verified packages in the format it already supports.
+The exact source entries are in [`data/store-sources.json`](../data/store-sources.json). The branch and HTTPS catalog feeds intentionally use different source types so Store can build source packages and fetch checksum-verified packages in the format it already supports.
 
 ## Repository layout
 
