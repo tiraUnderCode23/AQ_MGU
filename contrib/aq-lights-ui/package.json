@@ -1,0 +1,13 @@
+{
+  "name": "@aq-mgu/aq-lights-ui",
+  "version": "4.6.2",
+  "private": true,
+  "description": "Pure UI navigation and touch helpers for AQ Lights MGU (review component, not an installable app)",
+  "main": "javascript/ui_interaction.js",
+  "scripts": {
+    "test": "node --test test/ui_interaction.test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
