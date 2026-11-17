@@ -136,6 +136,9 @@
       "mguHmi": [
         "ID7"
       ],
+      "requires": {
+        "cluster-render": "0.5.1"
+      },
       "build": {
         "python": "apps/_sources/bimmer-lab-apps/kit/tools/build.py",
         "args": [
@@ -144,7 +147,8 @@
         "sdk": "apps/_sources/bimmer-lab-apps/oap-sdk",
         "output": "apps/_sources/bimmer-lab-apps/dist/{id}@{version}.tgz",
         "shared": [
-          "apps/_sources/bimmer-lab-apps/kit"
+          "apps/_sources/bimmer-lab-apps/kit",
+          "apps/_sources/bimmer-lab-apps/shared"
         ]
       },
       "path": "apps/_sources/bimmer-lab-apps/apps/cluster_themes",
@@ -413,6 +417,9 @@
       "mguHmi": [
         "ID7"
       ],
+      "requires": {
+        "cluster-render": "0.5.1"
+      },
       "build": {
         "python": "apps/_sources/bimmer-lab-apps/kit/tools/build.py",
         "args": [
@@ -421,7 +428,8 @@
         "sdk": "apps/_sources/bimmer-lab-apps/oap-sdk",
         "output": "apps/_sources/bimmer-lab-apps/dist/{id}@{version}.tgz",
         "shared": [
-          "apps/_sources/bimmer-lab-apps/kit"
+          "apps/_sources/bimmer-lab-apps/kit",
+          "apps/_sources/bimmer-lab-apps/shared"
         ]
       },
       "path": "apps/_sources/bimmer-lab-apps/apps/idrive_hud_widgets",

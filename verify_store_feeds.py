@@ -158,6 +158,105 @@ def check_shared(audit, cid, build, files):
             audit.fail("source/" + cid, "missing build.shared " + path + suffix)
 
 
+def check_source_inputs(audit, components, files, read_manifest):
+    """Check the files the original Store will actually give to a build.
+
+    A shared folder existing in Git is not enough: a partial source download
+    includes only the component path, build.shared and the build script.
+    No app script or proprietary SDK is executed by this validation.
+    """
+    unit_modules = 0
+    shared_modules = 0
+    manifests = 0
+    for cid, entry in components.items():
+        if entry.get("kind") != "app" or not safe_path(entry.get("path")):
+            continue
+        where = "source/" + cid
+        folder = entry["path"]
+        build = entry.get("build")
+        if build == "unit":
+            names = ["mgu-app.json"]
+        elif isinstance(build, dict):
+            declared = entry.get("manifest")
+            names = [declared] if declared is not None else ["app.json", "package.json"]
+        else:
+            continue
+        candidates = [folder + "/" + name for name in names if safe_path(name)]
+        selected = next((name for name in candidates if name in files), None)
+        if selected is None:
+            continue  # check_source already reports a missing manifest.
+        try:
+            manifest = read_manifest(selected)
+        except (ValueError, RuntimeError, OSError) as exc:
+            audit.fail(where, "cannot read source manifest: " + str(exc))
+            continue
+        if not isinstance(manifest, dict):
+            audit.fail(where, "source manifest must be an object")
+            continue
+        manifests += 1
+        declared_id = manifest.get("id", manifest.get("name"))
+        if declared_id is not None and declared_id != cid:
+            audit.fail(where, "source manifest identity does not match catalog")
+        if manifest.get("version") != entry.get("version"):
+            audit.fail(where, "source manifest version does not match catalog")
+
+        if build == "unit":
+            audit.require(manifest.get("schema") == 1, where, "unit source schema is not 1")
+            modules = manifest.get("modules")
+            if not isinstance(modules, list) or not modules:
+                audit.fail(where, "unit source modules must be a nonempty list")
+                continue
+            for module in modules:
+                unit_modules += 1
+                if not safe_path(module) or not module.endswith(".js"):
+                    audit.fail(where, "invalid unit source module " + repr(module))
+                elif folder + "/" + module not in files:
+                    audit.fail(where, "missing unit source module " + module)
+            tree = manifest.get("tree")
+            if not safe_path(tree) or folder + "/" + tree + "/package.json" not in files:
+                audit.fail(where, "unit source tree has no package.json")
+            else:
+                try:
+                    package = read_manifest(folder + "/" + tree + "/package.json")
+                    if (not isinstance(package, dict) or package.get("name") != cid or
+                            package.get("version") != entry.get("version")):
+                        audit.fail(where, "unit package identity/version does not match catalog")
+                except (ValueError, RuntimeError, OSError) as exc:
+                    audit.fail(where, "cannot read unit package manifest: " + str(exc))
+            sdk = manifest.get("sdk")
+            if not isinstance(sdk, list) or not sdk or any(not isinstance(name, str) or not name for name in sdk):
+                audit.fail(where, "unit source must declare its donor SDK require names")
+            continue
+
+        script = build.get("python", "")
+        if not isinstance(script, str) or not script.endswith("/kit/tools/build.py"):
+            continue
+        shared = manifest.get("shared", [])
+        if not isinstance(shared, list):
+            audit.fail(where, "app.json shared must be a list")
+            continue
+        selected_shared = build.get("shared", [])
+        if not isinstance(selected_shared, list) or any(not safe_path(p) for p in selected_shared):
+            continue  # Invalid build.shared is reported by check_source.
+        family = script[:-len("/kit/tools/build.py")]
+        roots = [folder, script] + selected_shared
+        for module in shared:
+            shared_modules += 1
+            if not safe_path(module) or "/" in module or not module.endswith(".js"):
+                audit.fail(where, "invalid app.json shared module " + repr(module))
+                continue
+            original = family + "/shared/" + module
+            if original not in files:
+                audit.fail(where, "missing original shared module " + original)
+            elif selected_shared and not any(
+                    original == root or original.startswith(root.rstrip("/") + "/")
+                    for root in roots):
+                audit.fail(where, "build.shared omits required module " + original)
+    audit.counts["app_manifests"] = manifests
+    audit.counts["unit_modules"] = unit_modules
+    audit.counts["shared_modules"] = shared_modules
+
+
 def check_source(audit, manifest, files):
     if not isinstance(manifest, dict) or manifest.get("schema") != 1:
         audit.fail("mgu-repo.json", "expected schema 1")
@@ -319,6 +418,8 @@ def check_index(audit, sources, releases, components, provenance):
         for cid in sorted(set(meta) & set(known)):
             if meta[cid].get("version") != known[cid].get("version"):
                 audit.fail("data/components.json", cid + " version mismatch")
+            if (meta[cid].get("requires") or {}) != (known[cid].get("requires") or {}):
+                audit.fail("data/components.json", cid + " requirements mismatch")
             expected = meta[cid].get("supported_hmi")
             actual = known[cid].get("mguHmi")
             if expected is not None and actual is not None and expected != actual:
@@ -378,6 +479,10 @@ def main(argv=None):
         store_sources = load_json(STORE_SOURCES, args.ref, args.head_manifests)
         check_store_sources(audit, store_sources)
         branch = check_source(audit, source, files)
+        check_source_inputs(
+            audit, branch, files,
+            lambda path: load_json(path, args.ref, args.head_manifests),
+        )
         release = check_release(audit, catalog)
         check_index(audit, branch, release, components, provenance)
     except (OSError, ValueError, RuntimeError) as exc:
