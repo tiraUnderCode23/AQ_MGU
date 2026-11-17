@@ -1,4 +1,4 @@
-# AQ Lights touch UI review
+# AQ Lights 4.6.2 — standalone UI component
 
 This directory is an independently authored, offline-testable UI helper for the AQ Lights application. It covers visible-list geometry, row selection, rotary-control press edge handling, and a gated touch callback. It contains **no ECU write commands, OEM payloads, extracted Android APK contents, credentials, or deployable MGU package**.
 
@@ -12,7 +12,7 @@ The original packaged AQ Lights app is not present as source in this repository'
 Run offline tests from this folder:
 
 ```sh
-node --test test/ui_interaction.test.js
+npm test
 ```
 
-This branch is a **reviewable UI component**, not a released app or a tested repair of KOMBI/FLM/BDC fault behavior. A proper app update must verify touch-capable renderer integration, ID7/ID8 compatibility, application lifecycle and response correlation, then build and publish a signed/verified artifact through the original deployment workflow. Existing DTCs and vehicle warnings must remain visible during fault diagnosis.
+This directory is a **reviewable UI component**, not a released app or a tested repair of KOMBI/FLM/BDC fault behavior. A proper app update must verify touch-capable renderer integration, ID7/ID8 compatibility, application lifecycle and response correlation, then build and publish a signed/verified artifact through the original deployment workflow. Existing DTCs and vehicle warnings must remain visible during fault diagnosis.
