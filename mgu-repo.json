@@ -14,7 +14,7 @@
         "args": [
           "{id}"
         ],
-        "sdk": "oap-sdk",
+        "sdk": "apps/_sources/idrive7-apps/oap-sdk",
         "output": "apps/_sources/idrive7-apps/dist/{id}@{version}.tgz",
         "network": [
           "doom"
@@ -27,8 +27,7 @@
           "apps/_sources/idrive7-apps/kit/tools/pack_data.py",
           "apps/_sources/idrive7-apps/kit/tools/localize.py",
           "apps/_sources/idrive7-apps/kit/tools/locale-revisions.json",
-          "apps/_sources/idrive7-apps/kit/tools/oapgen",
-          "apps/_sources/idrive7-apps/oap-sdk"
+          "apps/_sources/idrive7-apps/kit/tools/oapgen"
         ]
       },
       "path": "apps/_sources/idrive7-apps/apps/ambient_config",
@@ -52,7 +51,7 @@
         "args": [
           "{id}"
         ],
-        "sdk": "oap-sdk",
+        "sdk": "apps/_sources/idrive7-apps/oap-sdk",
         "output": "apps/_sources/idrive7-apps/dist/{id}@{version}.tgz",
         "network": [
           "doom"
@@ -65,8 +64,7 @@
           "apps/_sources/idrive7-apps/kit/tools/pack_data.py",
           "apps/_sources/idrive7-apps/kit/tools/localize.py",
           "apps/_sources/idrive7-apps/kit/tools/locale-revisions.json",
-          "apps/_sources/idrive7-apps/kit/tools/oapgen",
-          "apps/_sources/idrive7-apps/oap-sdk"
+          "apps/_sources/idrive7-apps/kit/tools/oapgen"
         ]
       },
       "path": "apps/_sources/idrive7-apps/apps/brake_test",
@@ -90,7 +88,7 @@
         "args": [
           "{id}"
         ],
-        "sdk": "oap-sdk",
+        "sdk": "apps/_sources/idrive7-apps/oap-sdk",
         "output": "apps/_sources/idrive7-apps/dist/{id}@{version}.tgz",
         "network": [
           "doom"
@@ -103,8 +101,7 @@
           "apps/_sources/idrive7-apps/kit/tools/pack_data.py",
           "apps/_sources/idrive7-apps/kit/tools/localize.py",
           "apps/_sources/idrive7-apps/kit/tools/locale-revisions.json",
-          "apps/_sources/idrive7-apps/kit/tools/oapgen",
-          "apps/_sources/idrive7-apps/oap-sdk"
+          "apps/_sources/idrive7-apps/kit/tools/oapgen"
         ]
       },
       "path": "apps/_sources/idrive7-apps/apps/car_vitals",
@@ -144,8 +141,11 @@
         "args": [
           "{id}"
         ],
-        "sdk": "oap-sdk",
-        "output": "apps/_sources/bimmer-lab-apps/dist/{id}@{version}.tgz"
+        "sdk": "apps/_sources/bimmer-lab-apps/oap-sdk",
+        "output": "apps/_sources/bimmer-lab-apps/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/bimmer-lab-apps/kit"
+        ]
       },
       "path": "apps/_sources/bimmer-lab-apps/apps/cluster_themes",
       "manifest": "app.json",
@@ -164,7 +164,7 @@
         "args": [
           "{id}"
         ],
-        "sdk": "oap-sdk",
+        "sdk": "apps/_sources/idrive7-apps/oap-sdk",
         "output": "apps/_sources/idrive7-apps/dist/{id}@{version}.tgz",
         "network": [
           "doom"
@@ -177,8 +177,7 @@
           "apps/_sources/idrive7-apps/kit/tools/pack_data.py",
           "apps/_sources/idrive7-apps/kit/tools/localize.py",
           "apps/_sources/idrive7-apps/kit/tools/locale-revisions.json",
-          "apps/_sources/idrive7-apps/kit/tools/oapgen",
-          "apps/_sources/idrive7-apps/oap-sdk"
+          "apps/_sources/idrive7-apps/kit/tools/oapgen"
         ]
       },
       "path": "apps/_sources/idrive7-apps/apps/doom",
@@ -202,7 +201,7 @@
         "args": [
           "{id}"
         ],
-        "sdk": "oap-sdk",
+        "sdk": "apps/_sources/idrive7-apps/oap-sdk",
         "output": "apps/_sources/idrive7-apps/dist/{id}@{version}.tgz",
         "network": [
           "doom"
@@ -215,8 +214,7 @@
           "apps/_sources/idrive7-apps/kit/tools/pack_data.py",
           "apps/_sources/idrive7-apps/kit/tools/localize.py",
           "apps/_sources/idrive7-apps/kit/tools/locale-revisions.json",
-          "apps/_sources/idrive7-apps/kit/tools/oapgen",
-          "apps/_sources/idrive7-apps/oap-sdk"
+          "apps/_sources/idrive7-apps/kit/tools/oapgen"
         ]
       },
       "path": "apps/_sources/idrive7-apps/apps/draggy",
@@ -240,7 +238,7 @@
         "args": [
           "{id}"
         ],
-        "sdk": "oap-sdk",
+        "sdk": "apps/_sources/idrive7-apps/oap-sdk",
         "output": "apps/_sources/idrive7-apps/dist/{id}@{version}.tgz",
         "network": [
           "doom"
@@ -253,8 +251,7 @@
           "apps/_sources/idrive7-apps/kit/tools/pack_data.py",
           "apps/_sources/idrive7-apps/kit/tools/localize.py",
           "apps/_sources/idrive7-apps/kit/tools/locale-revisions.json",
-          "apps/_sources/idrive7-apps/kit/tools/oapgen",
-          "apps/_sources/idrive7-apps/oap-sdk"
+          "apps/_sources/idrive7-apps/kit/tools/oapgen"
         ]
       },
       "path": "apps/_sources/idrive7-apps/apps/dtc_scanner",
@@ -278,7 +275,7 @@
         "args": [
           "{id}"
         ],
-        "sdk": "oap-sdk",
+        "sdk": "apps/_sources/idrive7-apps/oap-sdk",
         "output": "apps/_sources/idrive7-apps/dist/{id}@{version}.tgz",
         "network": [
           "doom"
@@ -291,8 +288,7 @@
           "apps/_sources/idrive7-apps/kit/tools/pack_data.py",
           "apps/_sources/idrive7-apps/kit/tools/localize.py",
           "apps/_sources/idrive7-apps/kit/tools/locale-revisions.json",
-          "apps/_sources/idrive7-apps/kit/tools/oapgen",
-          "apps/_sources/idrive7-apps/oap-sdk"
+          "apps/_sources/idrive7-apps/kit/tools/oapgen"
         ]
       },
       "path": "apps/_sources/idrive7-apps/apps/dyno",
@@ -315,7 +311,7 @@
         "args": [
           "{id}"
         ],
-        "sdk": "oap-sdk",
+        "sdk": "apps/_sources/idrive7-apps/oap-sdk",
         "output": "apps/_sources/idrive7-apps/dist/{id}@{version}.tgz",
         "network": [
           "doom"
@@ -328,8 +324,7 @@
           "apps/_sources/idrive7-apps/kit/tools/pack_data.py",
           "apps/_sources/idrive7-apps/kit/tools/localize.py",
           "apps/_sources/idrive7-apps/kit/tools/locale-revisions.json",
-          "apps/_sources/idrive7-apps/kit/tools/oapgen",
-          "apps/_sources/idrive7-apps/oap-sdk"
+          "apps/_sources/idrive7-apps/kit/tools/oapgen"
         ]
       },
       "path": "apps/_sources/idrive7-apps/apps/edrive",
@@ -369,7 +364,7 @@
         "args": [
           "{id}"
         ],
-        "sdk": "oap-sdk",
+        "sdk": "apps/_sources/idrive7-apps/oap-sdk",
         "output": "apps/_sources/idrive7-apps/dist/{id}@{version}.tgz",
         "network": [
           "doom"
@@ -382,8 +377,7 @@
           "apps/_sources/idrive7-apps/kit/tools/pack_data.py",
           "apps/_sources/idrive7-apps/kit/tools/localize.py",
           "apps/_sources/idrive7-apps/kit/tools/locale-revisions.json",
-          "apps/_sources/idrive7-apps/kit/tools/oapgen",
-          "apps/_sources/idrive7-apps/oap-sdk"
+          "apps/_sources/idrive7-apps/kit/tools/oapgen"
         ]
       },
       "path": "apps/_sources/idrive7-apps/apps/gforce",
@@ -424,8 +418,11 @@
         "args": [
           "{id}"
         ],
-        "sdk": "oap-sdk",
-        "output": "apps/_sources/bimmer-lab-apps/dist/{id}@{version}.tgz"
+        "sdk": "apps/_sources/bimmer-lab-apps/oap-sdk",
+        "output": "apps/_sources/bimmer-lab-apps/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/bimmer-lab-apps/kit"
+        ]
       },
       "path": "apps/_sources/bimmer-lab-apps/apps/idrive_hud_widgets",
       "manifest": "app.json",
@@ -449,10 +446,9 @@
         "args": [
           "idv7lol"
         ],
-        "sdk": "oap-sdk",
+        "sdk": "apps/_sources/idv7lol/oap-sdk",
         "shared": [
-          "apps/_sources/idv7lol/kit",
-          "apps/_sources/idv7lol/oap-sdk"
+          "apps/_sources/idv7lol/kit"
         ],
         "output": "apps/_sources/idv7lol/dist/idv7lol@{version}.tgz",
         "network": []
@@ -488,7 +484,7 @@
         "args": [
           "{id}"
         ],
-        "sdk": "oap-sdk",
+        "sdk": "apps/_sources/idrive7-apps/oap-sdk",
         "output": "apps/_sources/idrive7-apps/dist/{id}@{version}.tgz",
         "network": [
           "doom"
@@ -501,8 +497,7 @@
           "apps/_sources/idrive7-apps/kit/tools/pack_data.py",
           "apps/_sources/idrive7-apps/kit/tools/localize.py",
           "apps/_sources/idrive7-apps/kit/tools/locale-revisions.json",
-          "apps/_sources/idrive7-apps/kit/tools/oapgen",
-          "apps/_sources/idrive7-apps/oap-sdk"
+          "apps/_sources/idrive7-apps/kit/tools/oapgen"
         ]
       },
       "path": "apps/_sources/idrive7-apps/apps/live_adjustments",
@@ -526,7 +521,7 @@
         "args": [
           "{id}"
         ],
-        "sdk": "oap-sdk",
+        "sdk": "apps/_sources/idrive7-apps/oap-sdk",
         "output": "apps/_sources/idrive7-apps/dist/{id}@{version}.tgz",
         "network": [
           "doom"
@@ -539,8 +534,7 @@
           "apps/_sources/idrive7-apps/kit/tools/pack_data.py",
           "apps/_sources/idrive7-apps/kit/tools/localize.py",
           "apps/_sources/idrive7-apps/kit/tools/locale-revisions.json",
-          "apps/_sources/idrive7-apps/kit/tools/oapgen",
-          "apps/_sources/idrive7-apps/oap-sdk"
+          "apps/_sources/idrive7-apps/kit/tools/oapgen"
         ]
       },
       "path": "apps/_sources/idrive7-apps/apps/live_data",
@@ -568,7 +562,7 @@
         "args": [
           "{id}"
         ],
-        "sdk": "oap-sdk",
+        "sdk": "apps/_sources/hexlay-idrive7-apps/oap-sdk",
         "output": "apps/_sources/hexlay-idrive7-apps/dist/{id}@{version}.tgz",
         "shared": [
           "apps/_sources/hexlay-idrive7-apps/LICENSE",
@@ -580,8 +574,7 @@
           "apps/_sources/hexlay-idrive7-apps/kit/tools/pack_data.py",
           "apps/_sources/hexlay-idrive7-apps/kit/tools/localize.py",
           "apps/_sources/hexlay-idrive7-apps/kit/tools/locale-revisions.json",
-          "apps/_sources/hexlay-idrive7-apps/kit/tools/oapgen",
-          "oap-sdk"
+          "apps/_sources/hexlay-idrive7-apps/kit/tools/oapgen"
         ]
       },
       "requires": {
@@ -661,11 +654,14 @@
       "build": {
         "node": "apps/_sources/noahg-mgu-apps/tools/prebuilt.js",
         "args": [
-          "{dir}",
+          "apps/{id}",
           "{id}",
           "{version}"
         ],
-        "output": "{dir}/prebuilt/{id}@{version}.tgz"
+        "output": "{dir}/prebuilt/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/noahg-mgu-apps/tools/prebuilt.js"
+        ]
       },
       "title": "OBD Bridge",
       "description": "BM3 diagnostic protocol bridge over the car hotspot.",
@@ -689,8 +685,11 @@
         "args": [
           "{id}"
         ],
-        "sdk": "oap-sdk",
-        "output": "apps/_sources/alexpereap-idrive7-apps/dist/{id}@{version}.tgz"
+        "sdk": "apps/_sources/alexpereap-idrive7-apps/oap-sdk",
+        "output": "apps/_sources/alexpereap-idrive7-apps/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/alexpereap-idrive7-apps/kit"
+        ]
       },
       "mguNeeds": [
         "renderer"
@@ -709,7 +708,7 @@
         "args": [
           "{id}"
         ],
-        "sdk": "oap-sdk",
+        "sdk": "apps/_sources/idrive7-apps/oap-sdk",
         "output": "apps/_sources/idrive7-apps/dist/{id}@{version}.tgz",
         "network": [
           "doom"
@@ -722,8 +721,7 @@
           "apps/_sources/idrive7-apps/kit/tools/pack_data.py",
           "apps/_sources/idrive7-apps/kit/tools/localize.py",
           "apps/_sources/idrive7-apps/kit/tools/locale-revisions.json",
-          "apps/_sources/idrive7-apps/kit/tools/oapgen",
-          "apps/_sources/idrive7-apps/oap-sdk"
+          "apps/_sources/idrive7-apps/kit/tools/oapgen"
         ]
       },
       "path": "apps/_sources/idrive7-apps/apps/redline",
@@ -779,7 +777,7 @@
         "args": [
           "{id}"
         ],
-        "sdk": "oap-sdk",
+        "sdk": "apps/_sources/idrive7-apps/oap-sdk",
         "output": "apps/_sources/idrive7-apps/dist/{id}@{version}.tgz",
         "network": [
           "doom"
@@ -792,8 +790,7 @@
           "apps/_sources/idrive7-apps/kit/tools/pack_data.py",
           "apps/_sources/idrive7-apps/kit/tools/localize.py",
           "apps/_sources/idrive7-apps/kit/tools/locale-revisions.json",
-          "apps/_sources/idrive7-apps/kit/tools/oapgen",
-          "apps/_sources/idrive7-apps/oap-sdk"
+          "apps/_sources/idrive7-apps/kit/tools/oapgen"
         ]
       },
       "path": "apps/_sources/idrive7-apps/apps/service",
@@ -820,7 +817,7 @@
         "args": [
           "{id}"
         ],
-        "sdk": "oap-sdk",
+        "sdk": "apps/_sources/hexlay-idrive7-apps/oap-sdk",
         "output": "apps/_sources/hexlay-idrive7-apps/dist/{id}@{version}.tgz",
         "shared": [
           "apps/_sources/hexlay-idrive7-apps/LICENSE",
@@ -832,8 +829,7 @@
           "apps/_sources/hexlay-idrive7-apps/kit/tools/pack_data.py",
           "apps/_sources/hexlay-idrive7-apps/kit/tools/localize.py",
           "apps/_sources/hexlay-idrive7-apps/kit/tools/locale-revisions.json",
-          "apps/_sources/hexlay-idrive7-apps/kit/tools/oapgen",
-          "oap-sdk"
+          "apps/_sources/hexlay-idrive7-apps/kit/tools/oapgen"
         ]
       },
       "requires": {
@@ -858,7 +854,7 @@
         "args": [
           "{id}"
         ],
-        "sdk": "oap-sdk",
+        "sdk": "apps/_sources/hexlay-idrive7-apps/oap-sdk",
         "output": "apps/_sources/hexlay-idrive7-apps/dist/{id}@{version}.tgz",
         "shared": [
           "apps/_sources/hexlay-idrive7-apps/LICENSE",
@@ -870,8 +866,7 @@
           "apps/_sources/hexlay-idrive7-apps/kit/tools/pack_data.py",
           "apps/_sources/hexlay-idrive7-apps/kit/tools/localize.py",
           "apps/_sources/hexlay-idrive7-apps/kit/tools/locale-revisions.json",
-          "apps/_sources/hexlay-idrive7-apps/kit/tools/oapgen",
-          "oap-sdk"
+          "apps/_sources/hexlay-idrive7-apps/kit/tools/oapgen"
         ]
       },
       "requires": {
@@ -1005,7 +1000,7 @@
         "args": [
           "{id}"
         ],
-        "sdk": "oap-sdk",
+        "sdk": "apps/_sources/idrive7-apps/oap-sdk",
         "output": "apps/_sources/idrive7-apps/dist/{id}@{version}.tgz",
         "network": [
           "doom"
@@ -1018,8 +1013,7 @@
           "apps/_sources/idrive7-apps/kit/tools/pack_data.py",
           "apps/_sources/idrive7-apps/kit/tools/localize.py",
           "apps/_sources/idrive7-apps/kit/tools/locale-revisions.json",
-          "apps/_sources/idrive7-apps/kit/tools/oapgen",
-          "apps/_sources/idrive7-apps/oap-sdk"
+          "apps/_sources/idrive7-apps/kit/tools/oapgen"
         ]
       },
       "path": "apps/_sources/idrive7-apps/apps/warmup",
@@ -1042,7 +1036,7 @@
         "args": [
           "{id}"
         ],
-        "sdk": "oap-sdk",
+        "sdk": "apps/_sources/idrive7-apps/oap-sdk",
         "output": "apps/_sources/idrive7-apps/dist/{id}@{version}.tgz",
         "network": [
           "doom"
@@ -1055,8 +1049,7 @@
           "apps/_sources/idrive7-apps/kit/tools/pack_data.py",
           "apps/_sources/idrive7-apps/kit/tools/localize.py",
           "apps/_sources/idrive7-apps/kit/tools/locale-revisions.json",
-          "apps/_sources/idrive7-apps/kit/tools/oapgen",
-          "apps/_sources/idrive7-apps/oap-sdk"
+          "apps/_sources/idrive7-apps/kit/tools/oapgen"
         ]
       },
       "path": "apps/_sources/idrive7-apps/apps/zf8hp",

@@ -2,7 +2,7 @@
 
 A single, source-attributed catalog of open-source BMW iDrive 7/8 MGU applications, games and Store components. Application images are copied from the pinned upstream repositories and organized by app.
 
-**36 apps · 1 game · 24 Store tools · 61 installable components**<br>
+**36 apps · 1 game · 24 Store tools · 61 catalog entries (40 source-build entries, 21 ready release packages)**<br>
 Last source and release review: 2026-11-17.
 
 ## Use AQ_MGU with MGU Store
@@ -20,6 +20,10 @@ Add the same GitHub repository twice in the Store's source settings: once for so
 ```
 
 The branch feed is [`mgu-repo.json`](mgu-repo.json). The release feed is [`release/catalog.json`](release/catalog.json), published with the package assets under the GitHub Release named `catalog`. The ready-to-copy source settings are in [`data/store-sources.json`](data/store-sources.json).
+
+The two feeds are not interchangeable: `branch` entries require the original MGU Store to fetch their pinned source files, prepare dependencies, and build where declared. `releases` entries download finished compressed `.tgz` artifacts. An item appearing in this catalog does not alone confirm it has been installed or can run on a specific head unit. Only the Store's installer and subsequent unit status can establish that.
+
+When Store reports `more than the expected N bytes`, do not replace a published SHA-256 or enlarge an artifact's declared size without checking the exact downloaded file. The Store compares transfer bytes against the compressed package's `artifact.size`, and later checks both exact size and SHA-256 before installation. If the failure occurs while fetching source files, inspect the source-build paths and their authorized donor SDK placement separately from the released packages.
 
 ## Apps
 
