@@ -14,8 +14,9 @@ test('painted selection window and hit test share exact geometry', () => {
     assert.equal(ui.hitTest(100, 98 + 46, 10, 8), null, 'card gap is not clickable');
     assert.equal(ui.hitTest(20, 100, 10, 8), null, 'outside visible list bounds');
     assert.equal(ui.hitTest(200, 98, 0, 0), null, 'empty page has no row target');
-    assert.deepEqual(ui.hitTest(1101, 17, 0, 0), { type: 'previous' });
-    assert.deepEqual(ui.hitTest(1550, 17, 0, 0), { type: 'next' });
+    assert.deepEqual(ui.hitTest(1101, 43, 0, 0), { type: 'previous' });
+    assert.deepEqual(ui.hitTest(1550, 43, 0, 0), { type: 'next' });
+    assert.equal(ui.hitTest(1101, 17, 0, 0), null, 'outside renderer claim');
     assert.equal(ui.hitTest(NaN, 98, 10, 8), null);
 });
 
