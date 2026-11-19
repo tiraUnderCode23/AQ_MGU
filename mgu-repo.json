@@ -82,40 +82,44 @@
     {
       "id": "adam_vitals",
       "kind": "app",
-      "path": "apps/_sources/pinguinooo-idrive7-apps/apps/adam_vitals",
+      "path": "apps/_ports/pinguinooo-idrive8/apps/adam_vitals",
       "manifest": "app.json",
       "icon": "icon.png",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
-        "idrive7-renderd": "2.1.7",
-        "mgu-inputgate": "1.0.0"
+        "mgu-render": "0.6.24"
       },
       "build": {
-        "python": "apps/_sources/pinguinooo-idrive7-apps/kit/tools/build.py",
+        "python": "apps/_ports/pinguinooo-idrive8/kit/tools/build.py",
         "args": [
           "{id}"
         ],
-        "sdk": "apps/_sources/pinguinooo-idrive7-apps/oap-sdk",
-        "output": "apps/_sources/pinguinooo-idrive7-apps/dist/{id}@{version}.tgz",
+        "sdk": "apps/_ports/pinguinooo-idrive8/oap-sdk",
+        "output": "apps/_ports/pinguinooo-idrive8/dist/{id}@{version}.tgz",
         "shared": [
-          "apps/_sources/pinguinooo-idrive7-apps/kit/runtime",
-          "apps/_sources/pinguinooo-idrive7-apps/kit/platform",
-          "apps/_sources/pinguinooo-idrive7-apps/kit/tools/build.py",
-          "apps/_sources/pinguinooo-idrive7-apps/kit/tools/pack_data.py",
-          "apps/_sources/pinguinooo-idrive7-apps/kit/tools/localize.py",
-          "apps/_sources/pinguinooo-idrive7-apps/kit/tools/locale-revisions.json",
-          "apps/_sources/pinguinooo-idrive7-apps/kit/tools/oapgen",
-          "apps/_sources/pinguinooo-idrive7-apps/LICENSE",
-          "apps/_sources/pinguinooo-idrive7-apps/kit/LICENSE",
-          "apps/_sources/pinguinooo-idrive7-apps/kit/NOTICE",
-          "apps/_sources/pinguinooo-idrive7-apps/kit/NOTICE.zh-CN.md"
+          "apps/_ports/pinguinooo-idrive8/kit/runtime",
+          "apps/_ports/pinguinooo-idrive8/kit/platform",
+          "apps/_ports/pinguinooo-idrive8/kit/tools/build.py",
+          "apps/_ports/pinguinooo-idrive8/kit/tools/pack_data.py",
+          "apps/_ports/pinguinooo-idrive8/kit/tools/localize.py",
+          "apps/_ports/pinguinooo-idrive8/kit/tools/locale-revisions.json",
+          "apps/_ports/pinguinooo-idrive8/kit/tools/oapgen",
+          "apps/_ports/pinguinooo-idrive8/LICENSE",
+          "apps/_ports/pinguinooo-idrive8/kit/LICENSE",
+          "apps/_ports/pinguinooo-idrive8/kit/NOTICE",
+          "apps/_ports/pinguinooo-idrive8/kit/NOTICE.zh-CN.md",
+          "apps/_ports/pinguinooo-idrive8/AQ_PORT.json"
         ]
       },
       "version": "0.2.0",
       "title": "Engine Vitals",
-      "description": "Boost, power, torque, gear, oil, coolant and transmission temperatures, with a warm-up guide and turbo cool-down"
+      "description": "Boost, power, torque, gear, oil, coolant and transmission temperatures, with a warm-up guide and turbo cool-down",
+      "mguNeeds": [
+        "renderer"
+      ]
     },
     {
       "id": "ambient_config",
@@ -123,7 +127,8 @@
       "title": "Ambient config",
       "version": "2.6.2",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "build": {
         "python": "apps/_sources/idrive7-apps/kit/tools/build.py",
@@ -328,35 +333,45 @@
     {
       "id": "aref_explorer",
       "kind": "app",
-      "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_explorer",
+      "path": "apps/_ports/arefahmad-idrive8/apps/aref_explorer",
       "manifest": "app.json",
       "icon": "icon.png",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "build": {
-        "python": "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
+        "python": "apps/_ports/arefahmad-idrive8/kit/tools/build.py",
         "args": [
           "{id}"
         ],
-        "sdk": "apps/_sources/arefahmad-idrive7-apps/oap-sdk",
-        "output": "apps/_sources/arefahmad-idrive7-apps/dist/{id}@{version}.tgz",
+        "sdk": "apps/_ports/arefahmad-idrive8/oap-sdk",
+        "output": "apps/_ports/arefahmad-idrive8/dist/{id}@{version}.tgz",
         "shared": [
-          "apps/_sources/arefahmad-idrive7-apps/kit/runtime",
-          "apps/_sources/arefahmad-idrive7-apps/kit/platform",
-          "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
-          "apps/_sources/arefahmad-idrive7-apps/kit/tools/pack_data.py",
-          "apps/_sources/arefahmad-idrive7-apps/kit/tools/localize.py",
-          "apps/_sources/arefahmad-idrive7-apps/kit/tools/locale-revisions.json",
-          "apps/_sources/arefahmad-idrive7-apps/kit/tools/oapgen",
-          "apps/_sources/arefahmad-idrive7-apps/LICENSE",
-          "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.idrive7-apps",
-          "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.nickgcode"
+          "apps/_ports/arefahmad-idrive8/kit/runtime",
+          "apps/_ports/arefahmad-idrive8/kit/platform",
+          "apps/_ports/arefahmad-idrive8/kit/tools/build.py",
+          "apps/_ports/arefahmad-idrive8/kit/tools/pack_data.py",
+          "apps/_ports/arefahmad-idrive8/kit/tools/localize.py",
+          "apps/_ports/arefahmad-idrive8/kit/tools/locale-revisions.json",
+          "apps/_ports/arefahmad-idrive8/kit/tools/oapgen",
+          "apps/_ports/arefahmad-idrive8/LICENSE",
+          "apps/_ports/arefahmad-idrive8/kit/LICENSE.idrive7-apps",
+          "apps/_ports/arefahmad-idrive8/kit/LICENSE.nickgcode",
+          "apps/_ports/arefahmad-idrive8/kit/LICENSE.alexpereap",
+          "apps/_ports/arefahmad-idrive8/kit/NOTICE.AQ-ID8",
+          "apps/_ports/arefahmad-idrive8/PORT.json"
         ]
       },
       "version": "0.2.3",
       "title": "Car Explorer",
-      "description": "Finds the head unit's services behind a car feature (ambient light, route guidance and ETA, GPS position, now playing, climate, lights, doors, fuel) in its interface catalog and shows what each offers. Writes everything to explorer-report.txt, which new apps are designed from. Read-only: it reads two platform files and sends nothing to the car. For developers and curious owners."
+      "description": "Finds the head unit's services behind a car feature (ambient light, route guidance and ETA, GPS position, now playing, climate, lights, doors, fuel) in its interface catalog and shows what each offers. Writes everything to explorer-report.txt, which new apps are designed from. Read-only: it reads two platform files and sends nothing to the car. For developers and curious owners.",
+      "requires": {
+        "mgu-render": "0.6.24"
+      },
+      "mguNeeds": [
+        "renderer"
+      ]
     },
     {
       "id": "aref_faultwatch",
@@ -463,7 +478,8 @@
       "title": "Brake Test",
       "version": "1.5.21",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "build": {
         "python": "apps/_sources/idrive7-apps/kit/tools/build.py",
@@ -500,7 +516,8 @@
       "title": "M Vitals",
       "version": "2.27.6",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "build": {
         "python": "apps/_sources/idrive7-apps/kit/tools/build.py",
@@ -604,7 +621,8 @@
       "title": "Doom",
       "version": "1.7.22",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "build": {
         "python": "apps/_sources/idrive7-apps/kit/tools/build.py",
@@ -641,7 +659,8 @@
       "title": "Drag Timer",
       "version": "2.6.0",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "build": {
         "python": "apps/_sources/idrive7-apps/kit/tools/build.py",
@@ -678,7 +697,8 @@
       "title": "Fault Scanner",
       "version": "2.9.8",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "build": {
         "python": "apps/_sources/idrive7-apps/kit/tools/build.py",
@@ -715,7 +735,8 @@
       "title": "Virtual Dyno",
       "version": "1.6.3",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "build": {
         "python": "apps/_sources/idrive7-apps/kit/tools/build.py",
@@ -751,7 +772,8 @@
       "title": "eDrive",
       "version": "2.10.1",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "build": {
         "python": "apps/_sources/idrive7-apps/kit/tools/build.py",
@@ -809,7 +831,8 @@
       "title": "G-Force",
       "version": "1.6.22",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "build": {
         "python": "apps/_sources/idrive7-apps/kit/tools/build.py",
@@ -949,7 +972,8 @@
       "title": "Engine Config",
       "version": "0.9.8",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "build": {
         "python": "apps/_sources/idrive7-apps/kit/tools/build.py",
@@ -986,7 +1010,8 @@
       "title": "Live Data",
       "version": "1.0.16",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "build": {
         "python": "apps/_sources/idrive7-apps/kit/tools/build.py",
@@ -1023,36 +1048,42 @@
       "title": "M-Copilot",
       "description": "AI co-driver that answers with your car's own data: live readings, service list, fault memory, model and engine from the car, plus your tune and mods. Read-only.",
       "version": "1.0.31",
-      "path": "apps/_sources/hexlay-idrive7-apps/apps/m_copilot",
+      "path": "apps/_ports/hexlay-idrive8/apps/m_copilot",
       "manifest": "app.json",
       "icon": "icon.png",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "build": {
-        "python": "apps/_sources/hexlay-idrive7-apps/kit/tools/build.py",
+        "python": "apps/_ports/hexlay-idrive8/kit/tools/build.py",
         "args": [
           "{id}"
         ],
-        "sdk": "apps/_sources/hexlay-idrive7-apps/oap-sdk",
-        "output": "apps/_sources/hexlay-idrive7-apps/dist/{id}@{version}.tgz",
+        "sdk": "apps/_ports/hexlay-idrive8/oap-sdk",
+        "output": "apps/_ports/hexlay-idrive8/dist/{id}@{version}.tgz",
         "shared": [
-          "apps/_sources/hexlay-idrive7-apps/LICENSE",
-          "apps/_sources/hexlay-idrive7-apps/LICENSE.MIT",
-          "apps/_sources/hexlay-idrive7-apps/kit/runtime",
-          "apps/_sources/hexlay-idrive7-apps/kit/platform",
-          "apps/_sources/hexlay-idrive7-apps/kit/localization",
-          "apps/_sources/hexlay-idrive7-apps/kit/tools/build.py",
-          "apps/_sources/hexlay-idrive7-apps/kit/tools/pack_data.py",
-          "apps/_sources/hexlay-idrive7-apps/kit/tools/localize.py",
-          "apps/_sources/hexlay-idrive7-apps/kit/tools/locale-revisions.json",
-          "apps/_sources/hexlay-idrive7-apps/kit/tools/oapgen"
+          "apps/_ports/hexlay-idrive8/LICENSE",
+          "apps/_ports/hexlay-idrive8/LICENSE.MIT",
+          "apps/_ports/hexlay-idrive8/kit/runtime",
+          "apps/_ports/hexlay-idrive8/kit/platform",
+          "apps/_ports/hexlay-idrive8/kit/localization",
+          "apps/_ports/hexlay-idrive8/kit/tools/build.py",
+          "apps/_ports/hexlay-idrive8/kit/tools/pack_data.py",
+          "apps/_ports/hexlay-idrive8/kit/tools/localize.py",
+          "apps/_ports/hexlay-idrive8/kit/tools/locale-revisions.json",
+          "apps/_ports/hexlay-idrive8/kit/tools/oapgen",
+          "apps/_ports/hexlay-idrive8/LICENSE.PEREA",
+          "apps/_ports/hexlay-idrive8/PORT.json"
         ]
       },
       "requires": {
-        "idrive7-renderd": "2.1.7",
+        "mgu-render": "0.6.24",
         "mgu-inputgate": "1.0.0"
-      }
+      },
+      "mguNeeds": [
+        "renderer"
+      ]
     },
     {
       "id": "mgu-fscpatch",
@@ -1086,7 +1117,10 @@
       },
       "title": "OBD Bridge service",
       "description": "BM3 diagnostic protocol bridge on the existing car hotspot.",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "mguHmi": [
+        "ID7"
+      ]
     },
     {
       "id": "noahg_fscpatcher",
@@ -1173,7 +1207,8 @@
       "title": "Redline",
       "version": "2.0.44",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "build": {
         "python": "apps/_sources/idrive7-apps/kit/tools/build.py",
@@ -1242,7 +1277,8 @@
       "title": "Service",
       "version": "1.6.2",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "build": {
         "python": "apps/_sources/idrive7-apps/kit/tools/build.py",
@@ -1278,36 +1314,42 @@
       "title": "Spotify",
       "description": "Spotify Connect cockpit player and library browser for BMW iDrive 7",
       "version": "1.0.30",
-      "path": "apps/_sources/hexlay-idrive7-apps/apps/spotify",
+      "path": "apps/_ports/hexlay-idrive8/apps/spotify",
       "manifest": "app.json",
       "icon": "icon.png",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "build": {
-        "python": "apps/_sources/hexlay-idrive7-apps/kit/tools/build.py",
+        "python": "apps/_ports/hexlay-idrive8/kit/tools/build.py",
         "args": [
           "{id}"
         ],
-        "sdk": "apps/_sources/hexlay-idrive7-apps/oap-sdk",
-        "output": "apps/_sources/hexlay-idrive7-apps/dist/{id}@{version}.tgz",
+        "sdk": "apps/_ports/hexlay-idrive8/oap-sdk",
+        "output": "apps/_ports/hexlay-idrive8/dist/{id}@{version}.tgz",
         "shared": [
-          "apps/_sources/hexlay-idrive7-apps/LICENSE",
-          "apps/_sources/hexlay-idrive7-apps/LICENSE.MIT",
-          "apps/_sources/hexlay-idrive7-apps/kit/runtime",
-          "apps/_sources/hexlay-idrive7-apps/kit/platform",
-          "apps/_sources/hexlay-idrive7-apps/kit/localization",
-          "apps/_sources/hexlay-idrive7-apps/kit/tools/build.py",
-          "apps/_sources/hexlay-idrive7-apps/kit/tools/pack_data.py",
-          "apps/_sources/hexlay-idrive7-apps/kit/tools/localize.py",
-          "apps/_sources/hexlay-idrive7-apps/kit/tools/locale-revisions.json",
-          "apps/_sources/hexlay-idrive7-apps/kit/tools/oapgen"
+          "apps/_ports/hexlay-idrive8/LICENSE",
+          "apps/_ports/hexlay-idrive8/LICENSE.MIT",
+          "apps/_ports/hexlay-idrive8/kit/runtime",
+          "apps/_ports/hexlay-idrive8/kit/platform",
+          "apps/_ports/hexlay-idrive8/kit/localization",
+          "apps/_ports/hexlay-idrive8/kit/tools/build.py",
+          "apps/_ports/hexlay-idrive8/kit/tools/pack_data.py",
+          "apps/_ports/hexlay-idrive8/kit/tools/localize.py",
+          "apps/_ports/hexlay-idrive8/kit/tools/locale-revisions.json",
+          "apps/_ports/hexlay-idrive8/kit/tools/oapgen",
+          "apps/_ports/hexlay-idrive8/LICENSE.PEREA",
+          "apps/_ports/hexlay-idrive8/PORT.json"
         ]
       },
       "requires": {
-        "idrive7-renderd": "2.1.7",
+        "mgu-render": "0.6.24",
         "mgu-inputgate": "1.0.0"
-      }
+      },
+      "mguNeeds": [
+        "renderer"
+      ]
     },
     {
       "id": "sys_monitor",
@@ -1315,37 +1357,43 @@
       "title": "System Monitor",
       "description": "What uses the head unit's memory and processor: free RAM, a live history, and every app and program with the memory it takes. Read only.",
       "version": "1.0.4",
-      "path": "apps/_sources/hexlay-idrive7-apps/apps/sys_monitor",
+      "path": "apps/_ports/hexlay-idrive8/apps/sys_monitor",
       "manifest": "app.json",
       "icon": "icon.png",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "build": {
-        "python": "apps/_sources/hexlay-idrive7-apps/kit/tools/build.py",
+        "python": "apps/_ports/hexlay-idrive8/kit/tools/build.py",
         "args": [
           "{id}"
         ],
-        "sdk": "apps/_sources/hexlay-idrive7-apps/oap-sdk",
-        "output": "apps/_sources/hexlay-idrive7-apps/dist/{id}@{version}.tgz",
+        "sdk": "apps/_ports/hexlay-idrive8/oap-sdk",
+        "output": "apps/_ports/hexlay-idrive8/dist/{id}@{version}.tgz",
         "shared": [
-          "apps/_sources/hexlay-idrive7-apps/LICENSE",
-          "apps/_sources/hexlay-idrive7-apps/LICENSE.MIT",
-          "apps/_sources/hexlay-idrive7-apps/kit/runtime",
-          "apps/_sources/hexlay-idrive7-apps/kit/platform",
-          "apps/_sources/hexlay-idrive7-apps/kit/localization",
-          "apps/_sources/hexlay-idrive7-apps/kit/tools/build.py",
-          "apps/_sources/hexlay-idrive7-apps/kit/tools/pack_data.py",
-          "apps/_sources/hexlay-idrive7-apps/kit/tools/localize.py",
-          "apps/_sources/hexlay-idrive7-apps/kit/tools/locale-revisions.json",
-          "apps/_sources/hexlay-idrive7-apps/kit/tools/oapgen",
-          "apps/_sources/hexlay-idrive7-apps/kit/tools/make_icon.js"
+          "apps/_ports/hexlay-idrive8/LICENSE",
+          "apps/_ports/hexlay-idrive8/LICENSE.MIT",
+          "apps/_ports/hexlay-idrive8/kit/runtime",
+          "apps/_ports/hexlay-idrive8/kit/platform",
+          "apps/_ports/hexlay-idrive8/kit/localization",
+          "apps/_ports/hexlay-idrive8/kit/tools/build.py",
+          "apps/_ports/hexlay-idrive8/kit/tools/pack_data.py",
+          "apps/_ports/hexlay-idrive8/kit/tools/localize.py",
+          "apps/_ports/hexlay-idrive8/kit/tools/locale-revisions.json",
+          "apps/_ports/hexlay-idrive8/kit/tools/oapgen",
+          "apps/_ports/hexlay-idrive8/kit/tools/make_icon.js",
+          "apps/_ports/hexlay-idrive8/LICENSE.PEREA",
+          "apps/_ports/hexlay-idrive8/PORT.json"
         ]
       },
       "requires": {
-        "idrive7-renderd": "2.1.7",
+        "mgu-render": "0.6.24",
         "mgu-inputgate": "1.0.0"
-      }
+      },
+      "mguNeeds": [
+        "renderer"
+      ]
     },
     {
       "id": "vizualyse_cast",
@@ -1466,7 +1514,8 @@
       "title": "Warm-Up",
       "version": "1.9.0",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "build": {
         "python": "apps/_sources/idrive7-apps/kit/tools/build.py",
@@ -1502,7 +1551,8 @@
       "title": "Transmission Config",
       "version": "1.5.7",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "build": {
         "python": "apps/_sources/idrive7-apps/kit/tools/build.py",

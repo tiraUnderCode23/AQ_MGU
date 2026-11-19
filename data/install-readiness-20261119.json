@@ -1,8 +1,8 @@
 {
   "schema": "aq-mgu.install-readiness/1",
   "as_of": "2026-11-19",
-  "baseline_commit": "f424cf4e0e1844b23e5f5bcf9ce40b22b8ed6cfe",
-  "scope": "Per-component evidence for the repository repair; this is not an executable feed or proof of installation. Download, source input, build, registration, UI and functional evidence are distinct.",
+  "baseline_commit": "42dd429486219dea6a96f99bd02cea7d55b47ce9",
+  "scope": "Current repository readiness after ID8 source adaptations. Static, synthetic package, upstream archive and user-reported install evidence remain distinct; no target SDK or HU runtime was directly observed.",
   "summary": {
     "metadata_components": 140,
     "aq_feed_components": 134,
@@ -12,25 +12,35 @@
     "artifact_bytes_and_archive_pass": 79,
     "positive_source_input_evidence": 54,
     "known_source_input_blockers": 1,
-    "live_installation_observed": 0
+    "live_installation_observed": 0,
+    "id8_apps": 34,
+    "previous_id8_apps": 14,
+    "derived_id8_source_apps": 5,
+    "native_id8_declarations_corrected": 15,
+    "source_apps_without_id8": 28,
+    "original_catalog_apps_without_id8": 33,
+    "user_reported_installed": 1,
+    "user_reported_unconfirmed": 1
   },
   "hmi_counts": {
-    "ID7_only": 109,
+    "ID7_only": 90,
     "ID8_only": 8,
-    "both": 21,
-    "unknown": 2
+    "both": 41,
+    "unknown": 1
   },
   "required_sources": "data/store-sources.json",
   "evidence_contract": {
     "null_install_errors": "No live installation was attempted or observed; null is not a successful-install receipt.",
     "source_validation": "Static selected-input evidence; not full SDK builds.",
-    "artifact_validation": "Full compressed byte count and SHA256, identity and archive structure; source packages still need their native build.",
+    "artifact_validation": "Prior full byte/SHA/archive checks reused for unchanged catalog artifacts; no blanket live-install inference.",
     "external_validation": "Pinned original metadata and offline planning only; tools must be fetched through the explicit original Store source.",
     "unresolved_platform": "Unknown HMI remains unknown, even if the original parser permits such a tool.",
-    "capabilities": "mguNeeds is an installed capability gate, not an instruction to auto-install a provider."
+    "capabilities": "mguNeeds is an installed capability gate, not an instruction to auto-install a provider.",
+    "user_reports": "MTrack confirmed by the supplied client log only; Shiftlights transport reset remains unresolved. No target identity/HMI/runtime is inferred.",
+    "derived_source": "AQ source recipe identity is distinct from the unchanged upstream app version; synthetic SDK fixtures verify assembly only."
   },
   "catalog_fingerprints": {
-    "mgu-repo.json": "d620866c33b2ed7a0d901aa94cf4885a5f47b8d15bc0bb6d781bc773a338191a",
+    "mgu-repo.json": "f8322d1d0b0b982723aec95f0feba8395a18b7692f06bd6765f008bfb15f9c3c",
     "release/catalog.json": "44c60702f982aae7e6e539382ca322e5d8444038276aa23adca7fc0501433aa3",
     "data/external-store-components.json": "cfa1f6edf44924df610dace078757214aceccfd433202be7b403bbc678833a75",
     "data/store-sources.json": "688079ab48eb1b1e06dddd030ae0dfcf12abd10153efc4b16c0a99727d1746fc"
@@ -66,8 +76,14 @@
       "observed_error": null,
       "observed_install_error": null,
       "local_findings": [],
-      "live_install_result": "NOT OBSERVED",
-      "hardware_evidence": null,
+      "live_install_result": "USER_REPORTED_INSTALLED",
+      "hardware_evidence": {
+        "source": "data/install-observations-20261119.json",
+        "reported_time": "12:57:34",
+        "hmi": null,
+        "independent_readback": "NOT_OBSERVED",
+        "runtime": "NOT_OBSERVED"
+      },
       "store_source_id": "aq-mgu-apps",
       "local_verification": {
         "original_store_parser": "PASS",
@@ -106,7 +122,10 @@
         "mgu-inputgate": "1.0.0",
         "cluster-render": "0.6.7"
       },
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_status": "ID8_PORT_NOT_IMPLEMENTED",
+      "id8_blocker": "The main ID7 UI and the app-specific cluster/HUD display target behavior have not been ported to ID8. A dual-HMI cluster-render tool alone is insufficient.",
+      "id8_evidence": "data/id8-source-blockers-20261119.json"
     },
     {
       "id": "adam_shiftlights",
@@ -134,12 +153,18 @@
       "package_size": null,
       "package_sha256": null,
       "source_path": "apps/_sources/pinguinooo-idrive7-apps/apps/adam_shiftlights",
-      "failure_stage": null,
-      "observed_error": null,
-      "observed_install_error": null,
+      "failure_stage": "updater_client_transport",
+      "observed_error": "read ECONNRESET",
+      "observed_install_error": "updater not reachable at /dev/shm/mgu-updater/updater.sock: read ECONNRESET; AQ_SOURCE_INSTALL_EXIT=1",
       "local_findings": [],
-      "live_install_result": "NOT OBSERVED",
-      "hardware_evidence": null,
+      "live_install_result": "UNCONFIRMED_TRANSPORT_RESET",
+      "hardware_evidence": {
+        "source": "data/install-observations-20261119.json",
+        "reported_time": "12:58:44",
+        "request_acceptance": "UNKNOWN",
+        "final_install_state": "UNKNOWN",
+        "hmi": null
+      },
       "store_source_id": "aq-mgu-apps",
       "local_verification": {
         "original_store_parser": "PASS",
@@ -178,7 +203,10 @@
         "mgu-inputgate": "1.0.0",
         "cluster-render": "0.6.7"
       },
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_status": "ID8_PORT_NOT_IMPLEMENTED",
+      "id8_blocker": "The main ID7 UI and the app-specific cluster/HUD display target behavior have not been ported to ID8. A dual-HMI cluster-render tool alone is insufficient.",
+      "id8_evidence": "data/id8-source-blockers-20261119.json"
     },
     {
       "id": "adam_vitals",
@@ -188,23 +216,25 @@
       "upstream_repository": "pinguinooo/idrive7-apps",
       "delivery": "branch source",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
         "mgu-python": "1.0.2",
         "mgu-deploy": "0.3.2",
-        "idrive7-renderd": "2.1.7",
-        "mgu-inputgate": "1.0.0"
+        "mgu-render": "0.6.24"
       },
       "build_requires": {
         "mgu-python": "1.0.2",
         "mgu-deploy": "0.3.2"
       },
-      "requires_installed_capabilities": [],
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
       "package_url": null,
       "package_size": null,
       "package_sha256": null,
-      "source_path": "apps/_sources/pinguinooo-idrive7-apps/apps/adam_vitals",
+      "source_path": "apps/_ports/pinguinooo-idrive8/apps/adam_vitals",
       "failure_stage": null,
       "observed_error": null,
       "observed_install_error": null,
@@ -215,40 +245,52 @@
       "local_verification": {
         "original_store_parser": "PASS",
         "selected_source_inputs": "POSITIVE_FOR_REVIEWED_INPUTS",
-        "selected_file_count": 58,
-        "selected_bytes": 1780658,
+        "selected_file_count": 61,
+        "selected_bytes": 1816949,
         "input_byte_budget": "PASS",
         "partial_file_budget": "PASS",
-        "evidence": "data/source-build-readiness.json"
+        "evidence": "data/source-build-readiness.json",
+        "synthetic_complete_package_assembly": "PASS",
+        "id8_runtime_contract": "PASS_WITH_INERT_MOCKS"
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": {
-        "python": "apps/_sources/pinguinooo-idrive7-apps/kit/tools/build.py",
+        "python": "apps/_ports/pinguinooo-idrive8/kit/tools/build.py",
         "args": [
           "{id}"
         ],
-        "sdk": "apps/_sources/pinguinooo-idrive7-apps/oap-sdk",
-        "output": "apps/_sources/pinguinooo-idrive7-apps/dist/{id}@{version}.tgz",
+        "sdk": "apps/_ports/pinguinooo-idrive8/oap-sdk",
+        "output": "apps/_ports/pinguinooo-idrive8/dist/{id}@{version}.tgz",
         "shared": [
-          "apps/_sources/pinguinooo-idrive7-apps/kit/runtime",
-          "apps/_sources/pinguinooo-idrive7-apps/kit/platform",
-          "apps/_sources/pinguinooo-idrive7-apps/kit/tools/build.py",
-          "apps/_sources/pinguinooo-idrive7-apps/kit/tools/pack_data.py",
-          "apps/_sources/pinguinooo-idrive7-apps/kit/tools/localize.py",
-          "apps/_sources/pinguinooo-idrive7-apps/kit/tools/locale-revisions.json",
-          "apps/_sources/pinguinooo-idrive7-apps/kit/tools/oapgen",
-          "apps/_sources/pinguinooo-idrive7-apps/LICENSE",
-          "apps/_sources/pinguinooo-idrive7-apps/kit/LICENSE",
-          "apps/_sources/pinguinooo-idrive7-apps/kit/NOTICE",
-          "apps/_sources/pinguinooo-idrive7-apps/kit/NOTICE.zh-CN.md"
+          "apps/_ports/pinguinooo-idrive8/kit/runtime",
+          "apps/_ports/pinguinooo-idrive8/kit/platform",
+          "apps/_ports/pinguinooo-idrive8/kit/tools/build.py",
+          "apps/_ports/pinguinooo-idrive8/kit/tools/pack_data.py",
+          "apps/_ports/pinguinooo-idrive8/kit/tools/localize.py",
+          "apps/_ports/pinguinooo-idrive8/kit/tools/locale-revisions.json",
+          "apps/_ports/pinguinooo-idrive8/kit/tools/oapgen",
+          "apps/_ports/pinguinooo-idrive8/LICENSE",
+          "apps/_ports/pinguinooo-idrive8/kit/LICENSE",
+          "apps/_ports/pinguinooo-idrive8/kit/NOTICE",
+          "apps/_ports/pinguinooo-idrive8/kit/NOTICE.zh-CN.md",
+          "apps/_ports/pinguinooo-idrive8/AQ_PORT.json"
         ]
       },
       "build_method": "python",
       "declared_requires": {
-        "idrive7-renderd": "2.1.7",
-        "mgu-inputgate": "1.0.0"
+        "mgu-render": "0.6.24"
       },
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "source_port": {
+        "id": "pinguinooo-idrive8",
+        "revision": "1",
+        "path": "apps/_ports/pinguinooo-idrive8",
+        "provenance": "apps/_ports/pinguinooo-idrive8/AQ_PORT.json",
+        "source_metadata": "apps/_ports/pinguinooo-idrive8/AQ_PORT.json"
+      },
+      "source_origin_path": "apps/_sources/pinguinooo-idrive7-apps/apps/adam_vitals",
+      "id8_evidence": "data/id8-ports.json",
+      "id8_status": "SOURCE_CONTRACT_VERIFIED; TARGET_SDK_AND_LIVE_NOT_OBSERVED"
     },
     {
       "id": "airplay-rx",
@@ -298,7 +340,10 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "mgu-deploy": "0.7.0"
+      }
     },
     {
       "id": "ambient_config",
@@ -308,7 +353,8 @@
       "upstream_repository": "cauliflowermossgrape/idrive7-apps",
       "delivery": "branch source",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
         "mgu-python": "1.0.2",
@@ -368,7 +414,9 @@
         "idrive7-renderd": "2.1.18",
         "mgu-inputgate": "1.1.0"
       },
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_evidence": "data/id8-native-app-evidence.json",
+      "id8_status": "ORIGINAL_DUAL_SOURCE_VERIFIED; TARGET_SDK_AND_LIVE_NOT_OBSERVED"
     },
     {
       "id": "apm_airplay",
@@ -417,7 +465,11 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "mgu-deploy": "0.7.0",
+        "airplay-rx": "1.0.0"
+      }
     },
     {
       "id": "app-privacy",
@@ -463,7 +515,10 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "mgu-deploy": "0.6.3"
+      }
     },
     {
       "id": "aref_carcare",
@@ -527,7 +582,10 @@
       },
       "build_method": "python",
       "declared_requires": {},
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_status": "ID8_PORT_NOT_IMPLEMENTED",
+      "id8_blocker": "The selected original app still uses the ID7-only Aref builder and raw signal layer.",
+      "id8_evidence": "data/id8-source-blockers-20261119.json"
     },
     {
       "id": "aref_carlyrics",
@@ -591,7 +649,10 @@
       },
       "build_method": "python",
       "declared_requires": {},
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_status": "ID8_PORT_NOT_IMPLEMENTED",
+      "id8_blocker": "The selected original app still uses the ID7-only Aref builder and raw signal layer.",
+      "id8_evidence": "data/id8-source-blockers-20261119.json"
     },
     {
       "id": "aref_carwatch",
@@ -655,7 +716,10 @@
       },
       "build_method": "python",
       "declared_requires": {},
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_status": "ID8_PORT_NOT_IMPLEMENTED",
+      "id8_blocker": "The selected original app still uses the ID7-only Aref builder and raw signal layer. Background recording/read behavior has not been adapted and tested for ID8.",
+      "id8_evidence": "data/id8-source-blockers-20261119.json"
     },
     {
       "id": "aref_drivelog",
@@ -719,7 +783,10 @@
       },
       "build_method": "python",
       "declared_requires": {},
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_status": "ID8_PORT_NOT_IMPLEMENTED",
+      "id8_blocker": "The selected original app still uses the ID7-only Aref builder and raw signal layer. Background recording/read behavior has not been adapted and tested for ID8.",
+      "id8_evidence": "data/id8-source-blockers-20261119.json"
     },
     {
       "id": "aref_eta",
@@ -789,7 +856,10 @@
       },
       "build_method": "python",
       "declared_requires": {},
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_status": "ID8_PORT_NOT_IMPLEMENTED",
+      "id8_blocker": "The selected original app still uses the ID7-only Aref builder and raw signal layer.",
+      "id8_evidence": "data/id8-source-blockers-20261119.json"
     },
     {
       "id": "aref_explorer",
@@ -799,21 +869,25 @@
       "upstream_repository": "arefahmad/idrive7-apps",
       "delivery": "branch source",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
         "mgu-python": "1.0.2",
-        "mgu-deploy": "0.3.2"
+        "mgu-deploy": "0.3.2",
+        "mgu-render": "0.6.24"
       },
       "build_requires": {
         "mgu-python": "1.0.2",
         "mgu-deploy": "0.3.2"
       },
-      "requires_installed_capabilities": [],
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
       "package_url": null,
       "package_size": null,
       "package_sha256": null,
-      "source_path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_explorer",
+      "source_path": "apps/_ports/arefahmad-idrive8/apps/aref_explorer",
       "failure_stage": null,
       "observed_error": null,
       "observed_install_error": null,
@@ -824,36 +898,53 @@
       "local_verification": {
         "original_store_parser": "PASS",
         "selected_source_inputs": "POSITIVE_FOR_REVIEWED_INPUTS",
-        "selected_file_count": 62,
-        "selected_bytes": 1949751,
+        "selected_file_count": 67,
+        "selected_bytes": 1969323,
         "input_byte_budget": "PASS",
         "partial_file_budget": "PASS",
-        "evidence": "data/source-build-readiness.json"
+        "evidence": "data/source-build-readiness.json",
+        "synthetic_complete_package_assembly": "PASS",
+        "id8_runtime_contract": "PASS_WITH_INERT_MOCKS"
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": {
-        "python": "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
+        "python": "apps/_ports/arefahmad-idrive8/kit/tools/build.py",
         "args": [
           "{id}"
         ],
-        "sdk": "apps/_sources/arefahmad-idrive7-apps/oap-sdk",
-        "output": "apps/_sources/arefahmad-idrive7-apps/dist/{id}@{version}.tgz",
+        "sdk": "apps/_ports/arefahmad-idrive8/oap-sdk",
+        "output": "apps/_ports/arefahmad-idrive8/dist/{id}@{version}.tgz",
         "shared": [
-          "apps/_sources/arefahmad-idrive7-apps/kit/runtime",
-          "apps/_sources/arefahmad-idrive7-apps/kit/platform",
-          "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
-          "apps/_sources/arefahmad-idrive7-apps/kit/tools/pack_data.py",
-          "apps/_sources/arefahmad-idrive7-apps/kit/tools/localize.py",
-          "apps/_sources/arefahmad-idrive7-apps/kit/tools/locale-revisions.json",
-          "apps/_sources/arefahmad-idrive7-apps/kit/tools/oapgen",
-          "apps/_sources/arefahmad-idrive7-apps/LICENSE",
-          "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.idrive7-apps",
-          "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.nickgcode"
+          "apps/_ports/arefahmad-idrive8/kit/runtime",
+          "apps/_ports/arefahmad-idrive8/kit/platform",
+          "apps/_ports/arefahmad-idrive8/kit/tools/build.py",
+          "apps/_ports/arefahmad-idrive8/kit/tools/pack_data.py",
+          "apps/_ports/arefahmad-idrive8/kit/tools/localize.py",
+          "apps/_ports/arefahmad-idrive8/kit/tools/locale-revisions.json",
+          "apps/_ports/arefahmad-idrive8/kit/tools/oapgen",
+          "apps/_ports/arefahmad-idrive8/LICENSE",
+          "apps/_ports/arefahmad-idrive8/kit/LICENSE.idrive7-apps",
+          "apps/_ports/arefahmad-idrive8/kit/LICENSE.nickgcode",
+          "apps/_ports/arefahmad-idrive8/kit/LICENSE.alexpereap",
+          "apps/_ports/arefahmad-idrive8/kit/NOTICE.AQ-ID8",
+          "apps/_ports/arefahmad-idrive8/PORT.json"
         ]
       },
       "build_method": "python",
-      "declared_requires": {},
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "declared_requires": {
+        "mgu-render": "0.6.24"
+      },
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "source_port": {
+        "id": "arefahmad-idrive8",
+        "revision": "aq-aref-id8-1",
+        "path": "apps/_ports/arefahmad-idrive8",
+        "provenance": "apps/_ports/arefahmad-idrive8/PROVENANCE.json",
+        "source_metadata": "apps/_ports/arefahmad-idrive8/PORT.json"
+      },
+      "source_origin_path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_explorer",
+      "id8_evidence": "data/id8-ports.json",
+      "id8_status": "SOURCE_CONTRACT_VERIFIED; TARGET_SDK_AND_LIVE_NOT_OBSERVED"
     },
     {
       "id": "aref_faultwatch",
@@ -917,7 +1008,10 @@
       },
       "build_method": "python",
       "declared_requires": {},
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_status": "ID8_PORT_NOT_IMPLEMENTED",
+      "id8_blocker": "The selected original app still uses the ID7-only Aref builder and raw signal layer. Background recording/read behavior has not been adapted and tested for ID8.",
+      "id8_evidence": "data/id8-source-blockers-20261119.json"
     },
     {
       "id": "aref_misfire",
@@ -981,7 +1075,10 @@
       },
       "build_method": "python",
       "declared_requires": {},
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_status": "ID8_PORT_NOT_IMPLEMENTED",
+      "id8_blocker": "The selected original app still uses the ID7-only Aref builder and raw signal layer. Background recording/read behavior has not been adapted and tested for ID8.",
+      "id8_evidence": "data/id8-source-blockers-20261119.json"
     },
     {
       "id": "aref_tires",
@@ -1045,7 +1142,10 @@
       },
       "build_method": "python",
       "declared_requires": {},
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_status": "ID8_PORT_NOT_IMPLEMENTED",
+      "id8_blocker": "Existing write guards use cached speed/DSC values without checking their ages or current provider availability; ID8 typed proxy availability must not make those cached values sufficient.",
+      "id8_evidence": "data/id8-source-blockers-20261119.json"
     },
     {
       "id": "aurelm-myairplay",
@@ -1089,7 +1189,11 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "mgu-deploy": "0.7.0",
+        "mgu-uplink": "0.7.0"
+      }
     },
     {
       "id": "aurelm-tvhplayer",
@@ -1133,7 +1237,11 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "mgu-deploy": "0.7.0",
+        "mgu-uplink": "0.7.0"
+      }
     },
     {
       "id": "aurelm_apex_chase",
@@ -1174,7 +1282,8 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {}
     },
     {
       "id": "aurelm_blackjack",
@@ -1215,7 +1324,8 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {}
     },
     {
       "id": "aurelm_engine_care",
@@ -1256,7 +1366,8 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {}
     },
     {
       "id": "aurelm_hybrid_cost",
@@ -1297,7 +1408,8 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {}
     },
     {
       "id": "aurelm_lap_record",
@@ -1338,7 +1450,8 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {}
     },
     {
       "id": "aurelm_lucky_sevens",
@@ -1379,7 +1492,8 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {}
     },
     {
       "id": "aurelm_myairplay",
@@ -1422,7 +1536,10 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "aurelm-myairplay": "1.0.0"
+      }
     },
     {
       "id": "aurelm_pinball",
@@ -1463,7 +1580,8 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {}
     },
     {
       "id": "aurelm_pit_wall",
@@ -1504,7 +1622,8 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {}
     },
     {
       "id": "aurelm_ridge_duel",
@@ -1545,7 +1664,8 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {}
     },
     {
       "id": "aurelm_snake",
@@ -1586,7 +1706,8 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {}
     },
     {
       "id": "aurelm_solitaire",
@@ -1627,7 +1748,8 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {}
     },
     {
       "id": "aurelm_street_siege",
@@ -1668,7 +1790,8 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {}
     },
     {
       "id": "aurelm_track_defender",
@@ -1709,7 +1832,8 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {}
     },
     {
       "id": "aurelm_tvhplayer",
@@ -1752,7 +1876,10 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "aurelm-tvhplayer": "1.0.2"
+      }
     },
     {
       "id": "aurelm_wheel_heat",
@@ -1793,7 +1920,8 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {}
     },
     {
       "id": "brake_test",
@@ -1803,7 +1931,8 @@
       "upstream_repository": "cauliflowermossgrape/idrive7-apps",
       "delivery": "branch source",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
         "mgu-python": "1.0.2",
@@ -1863,7 +1992,9 @@
         "idrive7-renderd": "2.1.18",
         "mgu-inputgate": "1.1.0"
       },
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_evidence": "data/id8-native-app-evidence.json",
+      "id8_status": "ORIGINAL_DUAL_SOURCE_VERIFIED; TARGET_SDK_AND_LIVE_NOT_OBSERVED"
     },
     {
       "id": "camera-inspect",
@@ -1906,7 +2037,10 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "mgu-deploy": "0.4.0"
+      }
     },
     {
       "id": "car_vitals",
@@ -1916,7 +2050,8 @@
       "upstream_repository": "cauliflowermossgrape/idrive7-apps",
       "delivery": "branch source",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
         "mgu-python": "1.0.2",
@@ -1976,7 +2111,9 @@
         "idrive7-renderd": "2.1.18",
         "mgu-inputgate": "1.1.0"
       },
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_evidence": "data/id8-native-app-evidence.json",
+      "id8_status": "ORIGINAL_DUAL_SOURCE_VERIFIED; TARGET_SDK_AND_LIVE_NOT_OBSERVED"
     },
     {
       "id": "carplay-map",
@@ -2020,7 +2157,11 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "mgu-deploy": "0.6.3",
+        "cluster-render": "0.2.0"
+      }
     },
     {
       "id": "carplay_map_toggle",
@@ -2063,7 +2204,10 @@
       "declared_requires": {
         "carplay-map": "0.2.0"
       },
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_status": "ID8_PORT_NOT_IMPLEMENTED",
+      "id8_blocker": "The frontend packages only ID7 RHMI resources and its carplay-map native tool explicitly declares ID7.",
+      "id8_evidence": "data/id8-source-blockers-20261119.json"
     },
     {
       "id": "cluster-render",
@@ -2109,7 +2253,10 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "mgu-deploy": "0.4.0"
+      }
     },
     {
       "id": "cluster_themes",
@@ -2168,7 +2315,10 @@
       "declared_requires": {
         "cluster-render": "0.5.1"
       },
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_status": "ID8_PORT_NOT_IMPLEMENTED",
+      "id8_blocker": "The shared fork still generates an ID7 main UI; app-specific cluster/HUD targets and shared modules have no qualified ID8 adaptation in the selected recipe.",
+      "id8_evidence": "data/id8-source-blockers-20261119.json"
     },
     {
       "id": "dk_backgammon",
@@ -2207,7 +2357,10 @@
       "build_recipe": "unit",
       "build_method": "unit_linker",
       "declared_requires": {},
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_status": "ID8_PORT_NOT_IMPLEMENTED",
+      "id8_blocker": "The board/game frame is pushed to an ID7 Graphic RHMI component and the packaged UI names ID7 templates; these are not an ID8 renderer bridge.",
+      "id8_evidence": "data/id8-source-blockers-20261119.json"
     },
     {
       "id": "dk_tetris",
@@ -2246,7 +2399,10 @@
       "build_recipe": "unit",
       "build_method": "unit_linker",
       "declared_requires": {},
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_status": "ID8_PORT_NOT_IMPLEMENTED",
+      "id8_blocker": "The board/game frame is pushed to an ID7 Graphic RHMI component and the packaged UI names ID7 templates; these are not an ID8 renderer bridge.",
+      "id8_evidence": "data/id8-source-blockers-20261119.json"
     },
     {
       "id": "doodle-gpu",
@@ -2289,7 +2445,10 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "mgu-render": "0.6.23"
+      }
     },
     {
       "id": "doom",
@@ -2299,7 +2458,8 @@
       "upstream_repository": "cauliflowermossgrape/idrive7-apps",
       "delivery": "branch source",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
         "mgu-python": "1.0.2",
@@ -2359,7 +2519,9 @@
         "idrive7-renderd": "2.1.18",
         "mgu-inputgate": "1.1.0"
       },
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_evidence": "data/id8-native-app-evidence.json",
+      "id8_status": "ORIGINAL_DUAL_SOURCE_VERIFIED; TARGET_SDK_AND_LIVE_NOT_OBSERVED"
     },
     {
       "id": "draggy",
@@ -2369,7 +2531,8 @@
       "upstream_repository": "cauliflowermossgrape/idrive7-apps",
       "delivery": "branch source",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
         "mgu-python": "1.0.2",
@@ -2429,7 +2592,9 @@
         "idrive7-renderd": "2.1.18",
         "mgu-inputgate": "1.1.0"
       },
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_evidence": "data/id8-native-app-evidence.json",
+      "id8_status": "ORIGINAL_DUAL_SOURCE_VERIFIED; TARGET_SDK_AND_LIVE_NOT_OBSERVED"
     },
     {
       "id": "drake1804-checks",
@@ -2472,7 +2637,10 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "mgu-deploy": "0.7.0"
+      }
     },
     {
       "id": "drake1804-ytplay",
@@ -2518,7 +2686,13 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "mgu-deploy": "0.7.0",
+        "mgu-render": "0.4.0",
+        "mgu-python": "1.0.0",
+        "mgu-uplink": "0.7.0"
+      }
     },
     {
       "id": "drake1804_checks",
@@ -2562,7 +2736,11 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": "unit",
-      "build_method": "unit_source_package"
+      "build_method": "unit_source_package",
+      "declared_requires": {
+        "mgu-deploy": "0.7.0",
+        "drake1804-checks": "0.1.0"
+      }
     },
     {
       "id": "drake1804_youtube",
@@ -2607,7 +2785,12 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": "unit",
-      "build_method": "unit_source_package"
+      "build_method": "unit_source_package",
+      "declared_requires": {
+        "mgu-deploy": "0.7.0",
+        "mgu-render": "0.4.0",
+        "drake1804-ytplay": "0.1.16"
+      }
     },
     {
       "id": "dtc_scanner",
@@ -2617,7 +2800,8 @@
       "upstream_repository": "cauliflowermossgrape/idrive7-apps",
       "delivery": "branch source",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
         "mgu-python": "1.0.2",
@@ -2677,7 +2861,9 @@
         "idrive7-renderd": "2.1.18",
         "mgu-inputgate": "1.1.0"
       },
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_evidence": "data/id8-native-app-evidence.json",
+      "id8_status": "ORIGINAL_DUAL_SOURCE_VERIFIED; TARGET_SDK_AND_LIVE_NOT_OBSERVED"
     },
     {
       "id": "dyno",
@@ -2687,7 +2873,8 @@
       "upstream_repository": "cauliflowermossgrape/idrive7-apps",
       "delivery": "branch source",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
         "mgu-python": "1.0.2",
@@ -2745,7 +2932,9 @@
       "declared_requires": {
         "idrive7-renderd": "2.1.15"
       },
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_evidence": "data/id8-native-app-evidence.json",
+      "id8_status": "ORIGINAL_DUAL_SOURCE_VERIFIED; TARGET_SDK_AND_LIVE_NOT_OBSERVED"
     },
     {
       "id": "edrive",
@@ -2755,7 +2944,8 @@
       "upstream_repository": "cauliflowermossgrape/idrive7-apps",
       "delivery": "branch source",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
         "mgu-python": "1.0.2",
@@ -2813,7 +3003,9 @@
       "declared_requires": {
         "idrive7-renderd": "2.1.15"
       },
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_evidence": "data/id8-native-app-evidence.json",
+      "id8_status": "ORIGINAL_DUAL_SOURCE_VERIFIED; TARGET_SDK_AND_LIVE_NOT_OBSERVED"
     },
     {
       "id": "ethanol_mix",
@@ -2867,7 +3059,10 @@
       },
       "build_method": "python",
       "declared_requires": {},
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_status": "ID8_PORT_NOT_IMPLEMENTED",
+      "id8_blocker": "The Store recipe reproduces a hash-pinned original v0.1.5 package without regenerating UI resources; that frozen package has ID7 resources only.",
+      "id8_evidence": "data/id8-source-blockers-20261119.json"
     },
     {
       "id": "gforce",
@@ -2877,7 +3072,8 @@
       "upstream_repository": "cauliflowermossgrape/idrive7-apps",
       "delivery": "branch source",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
         "mgu-python": "1.0.2",
@@ -2935,7 +3131,9 @@
       "declared_requires": {
         "idrive7-renderd": "2.1.15"
       },
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_evidence": "data/id8-native-app-evidence.json",
+      "id8_status": "ORIGINAL_DUAL_SOURCE_VERIFIED; TARGET_SDK_AND_LIVE_NOT_OBSERVED"
     },
     {
       "id": "hook111",
@@ -2978,7 +3176,10 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "mgu-deploy": "0.7.0"
+      }
     },
     {
       "id": "iabadia_m_arcade",
@@ -3021,7 +3222,10 @@
       "declared_requires": {
         "mgu-render": "0.6.9"
       },
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_status": "ID8_PORT_NOT_IMPLEMENTED",
+      "id8_blocker": "The selected arcade payload declares only ID7 RHMI resources and currently requires renderer controller+embed capabilities. Existing embedBox scaling and lifecycle are useful but do not supply an ID8 multi-state UI/input contract.",
+      "id8_evidence": "data/id8-source-blockers-20261119.json"
     },
     {
       "id": "idrive7-renderd",
@@ -3124,7 +3328,10 @@
       "declared_requires": {
         "cluster-render": "0.5.1"
       },
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_status": "ID8_PORT_NOT_IMPLEMENTED",
+      "id8_blocker": "The shared fork still generates an ID7 main UI; app-specific cluster/HUD targets and shared modules have no qualified ID8 adaptation in the selected recipe.",
+      "id8_evidence": "data/id8-source-blockers-20261119.json"
     },
     {
       "id": "idv7lol",
@@ -3183,7 +3390,10 @@
         "cluster-render": "0.6.7",
         "mgu-deploy": "0.8.21"
       },
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_status": "ID8_PORT_NOT_IMPLEMENTED",
+      "id8_blocker": "The application and theme engine target a whole ID7 instrument cluster; its original builder and widgets declare only ID7.",
+      "id8_evidence": "data/id8-source-blockers-20261119.json"
     },
     {
       "id": "iteriodev-comfort",
@@ -3228,7 +3438,10 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "original_source_tool_recipe"
+      "build_method": "original_source_tool_recipe",
+      "declared_requires": {
+        "mgu-deploy": "0.7.11"
+      }
     },
     {
       "id": "iteriodev-drplay",
@@ -3271,7 +3484,8 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "original_source_tool_recipe"
+      "build_method": "original_source_tool_recipe",
+      "declared_requires": {}
     },
     {
       "id": "iteriodev-overlays",
@@ -3316,7 +3530,11 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "original_source_tool_recipe"
+      "build_method": "original_source_tool_recipe",
+      "declared_requires": {
+        "mgu-render": "0.6.10",
+        "mgu-deploy": "0.7.11"
+      }
     },
     {
       "id": "iteriodev-screencast",
@@ -3361,7 +3579,10 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "original_source_tool_recipe"
+      "build_method": "original_source_tool_recipe",
+      "declared_requires": {
+        "iteriodev-tailscale": "1.104.4"
+      }
     },
     {
       "id": "iteriodev-tailscale",
@@ -3406,7 +3627,10 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "original_source_tool_recipe"
+      "build_method": "original_source_tool_recipe",
+      "declared_requires": {
+        "mgu-uplink": "0.4.0"
+      }
     },
     {
       "id": "iteriodev-turnview",
@@ -3452,7 +3676,11 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "original_source_tool_recipe"
+      "build_method": "original_source_tool_recipe",
+      "declared_requires": {
+        "cluster-render": "0.5.10",
+        "mgu-deploy": "0.7.11"
+      }
     },
     {
       "id": "iteriodev_ambient",
@@ -3501,7 +3729,11 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": "unit",
-      "build_method": "unit_source_package"
+      "build_method": "unit_source_package",
+      "declared_requires": {
+        "iteriodev-comfort": "0.6.1",
+        "mgu-deploy": "0.7.5"
+      }
     },
     {
       "id": "iteriodev_cardash",
@@ -3546,7 +3778,10 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": "unit",
-      "build_method": "unit_source_package"
+      "build_method": "unit_source_package",
+      "declared_requires": {
+        "mgu-deploy": "0.7.5"
+      }
     },
     {
       "id": "iteriodev_draggy",
@@ -3591,7 +3826,10 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": "unit",
-      "build_method": "unit_source_package"
+      "build_method": "unit_source_package",
+      "declared_requires": {
+        "mgu-deploy": "0.7.5"
+      }
     },
     {
       "id": "iteriodev_dtcscan",
@@ -3636,7 +3874,10 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": "unit",
-      "build_method": "unit_source_package"
+      "build_method": "unit_source_package",
+      "declared_requires": {
+        "mgu-deploy": "0.7.5"
+      }
     },
     {
       "id": "iteriodev_edrive",
@@ -3681,7 +3922,10 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": "unit",
-      "build_method": "unit_source_package"
+      "build_method": "unit_source_package",
+      "declared_requires": {
+        "mgu-deploy": "0.7.5"
+      }
     },
     {
       "id": "iteriodev_liveadjust",
@@ -3726,7 +3970,10 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": "unit",
-      "build_method": "unit_source_package"
+      "build_method": "unit_source_package",
+      "declared_requires": {
+        "mgu-deploy": "0.7.5"
+      }
     },
     {
       "id": "iteriodev_overlays",
@@ -3772,7 +4019,11 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": "unit",
-      "build_method": "unit_source_package"
+      "build_method": "unit_source_package",
+      "declared_requires": {
+        "iteriodev-overlays": "0.5.0",
+        "mgu-deploy": "0.7.5"
+      }
     },
     {
       "id": "iteriodev_seats",
@@ -3821,7 +4072,11 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": "unit",
-      "build_method": "unit_source_package"
+      "build_method": "unit_source_package",
+      "declared_requires": {
+        "iteriodev-comfort": "0.6.1",
+        "mgu-deploy": "0.7.5"
+      }
     },
     {
       "id": "iteriodev_service",
@@ -3866,7 +4121,10 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": "unit",
-      "build_method": "unit_source_package"
+      "build_method": "unit_source_package",
+      "declared_requires": {
+        "mgu-deploy": "0.7.5"
+      }
     },
     {
       "id": "iteriodev_tailscale",
@@ -3915,7 +4173,11 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": "unit",
-      "build_method": "unit_source_package"
+      "build_method": "unit_source_package",
+      "declared_requires": {
+        "iteriodev-tailscale": "1.104.4",
+        "mgu-deploy": "0.7.5"
+      }
     },
     {
       "id": "iteriodev_turnview",
@@ -3964,7 +4226,11 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": "unit",
-      "build_method": "unit_source_package"
+      "build_method": "unit_source_package",
+      "declared_requires": {
+        "iteriodev-turnview": "0.8.0",
+        "mgu-deploy": "0.7.5"
+      }
     },
     {
       "id": "jap-moonride",
@@ -4008,7 +4274,11 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "mgu-deploy": "0.7.0",
+        "jap-node22": "22.23.4"
+      }
     },
     {
       "id": "jap-node22",
@@ -4051,7 +4321,10 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "mgu-deploy": "0.7.0"
+      }
     },
     {
       "id": "jap-ridetube-d",
@@ -4097,7 +4370,13 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "mgu-deploy": "0.7.0",
+        "mgu-python": "1.0.2",
+        "jap-node22": "22.23.4",
+        "mgu-render": "0.6.11"
+      }
     },
     {
       "id": "jap-ridewatch",
@@ -4141,7 +4420,11 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "mgu-deploy": "0.7.0",
+        "jap-node22": "22.23.4"
+      }
     },
     {
       "id": "jap-waze-on-cluster",
@@ -4185,7 +4468,11 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "mgu-deploy": "0.7.11",
+        "cluster-render": "0.3.7"
+      }
     },
     {
       "id": "jap-wireproxy",
@@ -4228,7 +4515,10 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "mgu-deploy": "0.7.0"
+      }
     },
     {
       "id": "jap_moonride",
@@ -4270,7 +4560,11 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "jap-moonride": "0.3.4",
+        "mgu-render": "0.6.8"
+      }
     },
     {
       "id": "jap_ridetube",
@@ -4313,7 +4607,12 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "jap-ridetube-d": "0.3.12",
+        "mgu-render": "0.6.11",
+        "mgu-inputgate": "1.0.0"
+      }
     },
     {
       "id": "jap_ridewatch",
@@ -4355,7 +4654,11 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "jap-ridewatch": "0.3.2",
+        "mgu-render": "0.6.8"
+      }
     },
     {
       "id": "jap_sysmon",
@@ -4397,7 +4700,11 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "mgu-render": "0.6.11",
+        "mgu-inputgate": "1.0.0"
+      }
     },
     {
       "id": "jap_waze_cluster",
@@ -4440,7 +4747,10 @@
       "declared_requires": {
         "jap-waze-on-cluster": "1.1.1"
       },
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_status": "ID8_PORT_NOT_IMPLEMENTED",
+      "id8_blocker": "The original frontend and its required native map backend both explicitly declare ID7; the backend is not qualified by a dual-HMI renderer dependency.",
+      "id8_evidence": "data/id8-source-blockers-20261119.json"
     },
     {
       "id": "kxrxh_doodle_jump",
@@ -4483,7 +4793,12 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "mgu-render": "0.6.23",
+        "mgu-python": "1.0.3",
+        "doodle-gpu": "1.0.0"
+      }
     },
     {
       "id": "live_adjustments",
@@ -4493,7 +4808,8 @@
       "upstream_repository": "cauliflowermossgrape/idrive7-apps",
       "delivery": "branch source",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
         "mgu-python": "1.0.2",
@@ -4553,7 +4869,9 @@
         "idrive7-renderd": "2.1.18",
         "mgu-inputgate": "1.1.0"
       },
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_evidence": "data/id8-native-app-evidence.json",
+      "id8_status": "ORIGINAL_DUAL_SOURCE_VERIFIED; TARGET_SDK_AND_LIVE_NOT_OBSERVED"
     },
     {
       "id": "live_data",
@@ -4563,7 +4881,8 @@
       "upstream_repository": "cauliflowermossgrape/idrive7-apps",
       "delivery": "branch source",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
         "mgu-python": "1.0.2",
@@ -4623,7 +4942,9 @@
         "idrive7-renderd": "2.1.18",
         "mgu-inputgate": "1.1.0"
       },
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_evidence": "data/id8-native-app-evidence.json",
+      "id8_status": "ORIGINAL_DUAL_SOURCE_VERIFIED; TARGET_SDK_AND_LIVE_NOT_OBSERVED"
     },
     {
       "id": "m_copilot",
@@ -4633,23 +4954,26 @@
       "upstream_repository": "hexlay/idrive7-custom-apps",
       "delivery": "branch source",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
         "mgu-python": "1.0.2",
         "mgu-deploy": "0.3.2",
-        "idrive7-renderd": "2.1.7",
+        "mgu-render": "0.6.24",
         "mgu-inputgate": "1.0.0"
       },
       "build_requires": {
         "mgu-python": "1.0.2",
         "mgu-deploy": "0.3.2"
       },
-      "requires_installed_capabilities": [],
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
       "package_url": null,
       "package_size": null,
       "package_sha256": null,
-      "source_path": "apps/_sources/hexlay-idrive7-apps/apps/m_copilot",
+      "source_path": "apps/_ports/hexlay-idrive8/apps/m_copilot",
       "failure_stage": null,
       "observed_error": null,
       "observed_install_error": null,
@@ -4660,39 +4984,53 @@
       "local_verification": {
         "original_store_parser": "PASS",
         "selected_source_inputs": "POSITIVE_FOR_REVIEWED_INPUTS",
-        "selected_file_count": 61,
-        "selected_bytes": 5503262,
+        "selected_file_count": 65,
+        "selected_bytes": 5530445,
         "input_byte_budget": "PASS",
         "partial_file_budget": "PASS",
-        "evidence": "data/source-build-readiness.json"
+        "evidence": "data/source-build-readiness.json",
+        "synthetic_complete_package_assembly": "PASS",
+        "id8_runtime_contract": "PASS_WITH_INERT_MOCKS"
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": {
-        "python": "apps/_sources/hexlay-idrive7-apps/kit/tools/build.py",
+        "python": "apps/_ports/hexlay-idrive8/kit/tools/build.py",
         "args": [
           "{id}"
         ],
-        "sdk": "apps/_sources/hexlay-idrive7-apps/oap-sdk",
-        "output": "apps/_sources/hexlay-idrive7-apps/dist/{id}@{version}.tgz",
+        "sdk": "apps/_ports/hexlay-idrive8/oap-sdk",
+        "output": "apps/_ports/hexlay-idrive8/dist/{id}@{version}.tgz",
         "shared": [
-          "apps/_sources/hexlay-idrive7-apps/LICENSE",
-          "apps/_sources/hexlay-idrive7-apps/LICENSE.MIT",
-          "apps/_sources/hexlay-idrive7-apps/kit/runtime",
-          "apps/_sources/hexlay-idrive7-apps/kit/platform",
-          "apps/_sources/hexlay-idrive7-apps/kit/localization",
-          "apps/_sources/hexlay-idrive7-apps/kit/tools/build.py",
-          "apps/_sources/hexlay-idrive7-apps/kit/tools/pack_data.py",
-          "apps/_sources/hexlay-idrive7-apps/kit/tools/localize.py",
-          "apps/_sources/hexlay-idrive7-apps/kit/tools/locale-revisions.json",
-          "apps/_sources/hexlay-idrive7-apps/kit/tools/oapgen"
+          "apps/_ports/hexlay-idrive8/LICENSE",
+          "apps/_ports/hexlay-idrive8/LICENSE.MIT",
+          "apps/_ports/hexlay-idrive8/kit/runtime",
+          "apps/_ports/hexlay-idrive8/kit/platform",
+          "apps/_ports/hexlay-idrive8/kit/localization",
+          "apps/_ports/hexlay-idrive8/kit/tools/build.py",
+          "apps/_ports/hexlay-idrive8/kit/tools/pack_data.py",
+          "apps/_ports/hexlay-idrive8/kit/tools/localize.py",
+          "apps/_ports/hexlay-idrive8/kit/tools/locale-revisions.json",
+          "apps/_ports/hexlay-idrive8/kit/tools/oapgen",
+          "apps/_ports/hexlay-idrive8/LICENSE.PEREA",
+          "apps/_ports/hexlay-idrive8/PORT.json"
         ]
       },
       "build_method": "python",
       "declared_requires": {
-        "idrive7-renderd": "2.1.7",
+        "mgu-render": "0.6.24",
         "mgu-inputgate": "1.0.0"
       },
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "source_port": {
+        "id": "hexlay-idrive8",
+        "revision": "aq-hexlay-id8-1",
+        "path": "apps/_ports/hexlay-idrive8",
+        "provenance": "apps/_ports/hexlay-idrive8/PROVENANCE.json",
+        "source_metadata": "apps/_ports/hexlay-idrive8/PORT.json"
+      },
+      "source_origin_path": "apps/_sources/hexlay-idrive7-apps/apps/m_copilot",
+      "id8_evidence": "data/id8-ports.json",
+      "id8_status": "SOURCE_CONTRACT_VERIFIED; TARGET_SDK_AND_LIVE_NOT_OBSERVED"
     },
     {
       "id": "marku-home-bridge",
@@ -4737,7 +5075,12 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "jap-node22": "22.23.4",
+        "mgu-deploy": "0.7.11",
+        "mgu-uplink": "0.7.3"
+      }
     },
     {
       "id": "marku-kaluga-cameras",
@@ -4780,7 +5123,10 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "cluster-render": "0.4.0"
+      }
     },
     {
       "id": "marku_daily_hud",
@@ -4824,7 +5170,11 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "cluster-render": "0.4.0",
+        "mgu-deploy": "0.7.11"
+      }
     },
     {
       "id": "marku_kaluga_cameras",
@@ -4869,7 +5219,12 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": "unit",
-      "build_method": "unit_source_package"
+      "build_method": "unit_source_package",
+      "declared_requires": {
+        "waze-on-cluster": "0.9.0",
+        "marku-kaluga-cameras": "0.8.0",
+        "mgu-deploy": "0.7.11"
+      }
     },
     {
       "id": "marku_x3_coding",
@@ -4912,7 +5267,10 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "mgu-deploy": "0.7.11"
+      }
     },
     {
       "id": "marku_x3_health",
@@ -4955,7 +5313,10 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "mgu-deploy": "0.7.11"
+      }
     },
     {
       "id": "marku_x3_home",
@@ -4999,7 +5360,11 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "marku-home-bridge": "0.1.0",
+        "mgu-deploy": "0.7.11"
+      }
     },
     {
       "id": "marku_x3_trips",
@@ -5042,7 +5407,10 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "mgu-deploy": "0.7.11"
+      }
     },
     {
       "id": "marku_x3_warm",
@@ -5085,7 +5453,10 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "mgu-deploy": "0.7.11"
+      }
     },
     {
       "id": "mgu-browser",
@@ -5130,7 +5501,12 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "mgu-browser-engine": "0.1.0",
+        "mgu-uplink": "0.7.3",
+        "mgu-deploy": "0.7.17"
+      }
     },
     {
       "id": "mgu-browser-engine",
@@ -5173,7 +5549,10 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "mgu-deploy": "0.7.17"
+      }
     },
     {
       "id": "mgu-deploy",
@@ -5211,7 +5590,8 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {}
     },
     {
       "id": "mgu-fscpatch",
@@ -5310,7 +5690,9 @@
       "category": "tool",
       "upstream_repository": "Noahbg/mgu-apps",
       "delivery": "branch source",
-      "mguHmi": null,
+      "mguHmi": [
+        "ID7"
+      ],
       "requires": {
         "mgu-deploy": "0.4.0"
       },
@@ -5327,7 +5709,8 @@
         {
           "stage": "hmi_qualification",
           "status": "UNKNOWN; no invented platform declaration"
-        }
+        },
+        "Outer HMI declaration restricted to the ID7 family explicitly declared in the original tool payload."
       ],
       "live_install_result": "NOT OBSERVED",
       "hardware_evidence": null,
@@ -5391,7 +5774,8 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {}
     },
     {
       "id": "mgu-render",
@@ -5437,7 +5821,10 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "mgu-deploy": "0.6.9"
+      }
     },
     {
       "id": "mgu-updater",
@@ -5478,7 +5865,11 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "mgu-deploy": "0.8.4",
+        "mgu-python": "1.0.2"
+      }
     },
     {
       "id": "mgu-uplink",
@@ -5518,7 +5909,10 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "mgu-updater": "0.7.2"
+      }
     },
     {
       "id": "mgu_browser",
@@ -5565,7 +5959,14 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "mgu-browser": "0.16.1",
+        "mgu-browser-engine": "0.1.0",
+        "mgu-uplink": "0.7.3",
+        "mgu-render": "0.6.11",
+        "mgu-deploy": "0.7.17"
+      }
     },
     {
       "id": "noahg_fscpatcher",
@@ -5598,8 +5999,8 @@
       "local_verification": {
         "original_store_parser": "PASS",
         "selected_source_inputs": "BLOCKED",
-        "selected_file_count": 5611,
-        "selected_bytes": 231435762,
+        "selected_file_count": 5848,
+        "selected_bytes": 242076818,
         "input_byte_budget": "EXCEEDED",
         "partial_file_budget": "NOT_APPLICABLE",
         "evidence": "data/source-build-readiness.json"
@@ -5618,7 +6019,10 @@
       "declared_requires": {
         "mgu-fscpatch": "1.0.0"
       },
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_status": "ID8_PORT_NOT_IMPLEMENTED",
+      "id8_blocker": "This existing protection-related source workflow is outside application UI compatibility work and was not inspected, repaired or executed.",
+      "id8_evidence": "data/id8-source-blockers-20261119.json"
     },
     {
       "id": "noahg_obdbridge",
@@ -5672,7 +6076,10 @@
       "declared_requires": {
         "mgu-obd-adapter": "1.0.0"
       },
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_status": "ID8_PORT_NOT_IMPLEMENTED",
+      "id8_blocker": "The original frontend and prebuilt native service declare ID7. No ID8-native backend qualification is evidenced by this source recipe.",
+      "id8_evidence": "data/id8-source-blockers-20261119.json"
     },
     {
       "id": "oap-driverecorder-next",
@@ -5721,7 +6128,11 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": "unit",
-      "build_method": "unit_source_package"
+      "build_method": "unit_source_package",
+      "declared_requires": {
+        "mgu-deploy": "0.7.5",
+        "iteriodev-drplay": "1.2.0"
+      }
     },
     {
       "id": "perea_mhd_flex",
@@ -5789,7 +6200,8 @@
       "upstream_repository": "cauliflowermossgrape/idrive7-apps",
       "delivery": "branch source",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
         "mgu-python": "1.0.2",
@@ -5847,7 +6259,9 @@
       "declared_requires": {
         "idrive7-renderd": "2.1.15"
       },
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_evidence": "data/id8-native-app-evidence.json",
+      "id8_status": "ORIGINAL_DUAL_SOURCE_VERIFIED; TARGET_SDK_AND_LIVE_NOT_OBSERVED"
     },
     {
       "id": "robertn_store",
@@ -5938,7 +6352,10 @@
       "declared_requires": {
         "waze-on-cluster": "0.10.8"
       },
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_status": "ID8_PORT_NOT_IMPLEMENTED",
+      "id8_blocker": "The original frontend and its required native map backend both explicitly declare ID7; the backend is not qualified by a dual-HMI renderer dependency.",
+      "id8_evidence": "data/id8-source-blockers-20261119.json"
     },
     {
       "id": "service",
@@ -5948,7 +6365,8 @@
       "upstream_repository": "cauliflowermossgrape/idrive7-apps",
       "delivery": "branch source",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
         "mgu-python": "1.0.2",
@@ -6006,7 +6424,9 @@
       "declared_requires": {
         "idrive7-renderd": "2.1.15"
       },
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_evidence": "data/id8-native-app-evidence.json",
+      "id8_status": "ORIGINAL_DUAL_SOURCE_VERIFIED; TARGET_SDK_AND_LIVE_NOT_OBSERVED"
     },
     {
       "id": "spotify",
@@ -6016,23 +6436,26 @@
       "upstream_repository": "hexlay/idrive7-custom-apps",
       "delivery": "branch source",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
         "mgu-python": "1.0.2",
         "mgu-deploy": "0.3.2",
-        "idrive7-renderd": "2.1.7",
+        "mgu-render": "0.6.24",
         "mgu-inputgate": "1.0.0"
       },
       "build_requires": {
         "mgu-python": "1.0.2",
         "mgu-deploy": "0.3.2"
       },
-      "requires_installed_capabilities": [],
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
       "package_url": null,
       "package_size": null,
       "package_sha256": null,
-      "source_path": "apps/_sources/hexlay-idrive7-apps/apps/spotify",
+      "source_path": "apps/_ports/hexlay-idrive8/apps/spotify",
       "failure_stage": null,
       "observed_error": null,
       "observed_install_error": null,
@@ -6043,39 +6466,53 @@
       "local_verification": {
         "original_store_parser": "PASS",
         "selected_source_inputs": "POSITIVE_FOR_REVIEWED_INPUTS",
-        "selected_file_count": 57,
-        "selected_bytes": 2025416,
+        "selected_file_count": 60,
+        "selected_bytes": 2050963,
         "input_byte_budget": "PASS",
         "partial_file_budget": "PASS",
-        "evidence": "data/source-build-readiness.json"
+        "evidence": "data/source-build-readiness.json",
+        "synthetic_complete_package_assembly": "PASS",
+        "id8_runtime_contract": "PASS_WITH_INERT_MOCKS"
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": {
-        "python": "apps/_sources/hexlay-idrive7-apps/kit/tools/build.py",
+        "python": "apps/_ports/hexlay-idrive8/kit/tools/build.py",
         "args": [
           "{id}"
         ],
-        "sdk": "apps/_sources/hexlay-idrive7-apps/oap-sdk",
-        "output": "apps/_sources/hexlay-idrive7-apps/dist/{id}@{version}.tgz",
+        "sdk": "apps/_ports/hexlay-idrive8/oap-sdk",
+        "output": "apps/_ports/hexlay-idrive8/dist/{id}@{version}.tgz",
         "shared": [
-          "apps/_sources/hexlay-idrive7-apps/LICENSE",
-          "apps/_sources/hexlay-idrive7-apps/LICENSE.MIT",
-          "apps/_sources/hexlay-idrive7-apps/kit/runtime",
-          "apps/_sources/hexlay-idrive7-apps/kit/platform",
-          "apps/_sources/hexlay-idrive7-apps/kit/localization",
-          "apps/_sources/hexlay-idrive7-apps/kit/tools/build.py",
-          "apps/_sources/hexlay-idrive7-apps/kit/tools/pack_data.py",
-          "apps/_sources/hexlay-idrive7-apps/kit/tools/localize.py",
-          "apps/_sources/hexlay-idrive7-apps/kit/tools/locale-revisions.json",
-          "apps/_sources/hexlay-idrive7-apps/kit/tools/oapgen"
+          "apps/_ports/hexlay-idrive8/LICENSE",
+          "apps/_ports/hexlay-idrive8/LICENSE.MIT",
+          "apps/_ports/hexlay-idrive8/kit/runtime",
+          "apps/_ports/hexlay-idrive8/kit/platform",
+          "apps/_ports/hexlay-idrive8/kit/localization",
+          "apps/_ports/hexlay-idrive8/kit/tools/build.py",
+          "apps/_ports/hexlay-idrive8/kit/tools/pack_data.py",
+          "apps/_ports/hexlay-idrive8/kit/tools/localize.py",
+          "apps/_ports/hexlay-idrive8/kit/tools/locale-revisions.json",
+          "apps/_ports/hexlay-idrive8/kit/tools/oapgen",
+          "apps/_ports/hexlay-idrive8/LICENSE.PEREA",
+          "apps/_ports/hexlay-idrive8/PORT.json"
         ]
       },
       "build_method": "python",
       "declared_requires": {
-        "idrive7-renderd": "2.1.7",
+        "mgu-render": "0.6.24",
         "mgu-inputgate": "1.0.0"
       },
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "source_port": {
+        "id": "hexlay-idrive8",
+        "revision": "aq-hexlay-id8-1",
+        "path": "apps/_ports/hexlay-idrive8",
+        "provenance": "apps/_ports/hexlay-idrive8/PROVENANCE.json",
+        "source_metadata": "apps/_ports/hexlay-idrive8/PORT.json"
+      },
+      "source_origin_path": "apps/_sources/hexlay-idrive7-apps/apps/spotify",
+      "id8_evidence": "data/id8-ports.json",
+      "id8_status": "SOURCE_CONTRACT_VERIFIED; TARGET_SDK_AND_LIVE_NOT_OBSERVED"
     },
     {
       "id": "sys_monitor",
@@ -6085,23 +6522,26 @@
       "upstream_repository": "hexlay/idrive7-custom-apps",
       "delivery": "branch source",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
         "mgu-python": "1.0.2",
         "mgu-deploy": "0.3.2",
-        "idrive7-renderd": "2.1.7",
+        "mgu-render": "0.6.24",
         "mgu-inputgate": "1.0.0"
       },
       "build_requires": {
         "mgu-python": "1.0.2",
         "mgu-deploy": "0.3.2"
       },
-      "requires_installed_capabilities": [],
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
       "package_url": null,
       "package_size": null,
       "package_sha256": null,
-      "source_path": "apps/_sources/hexlay-idrive7-apps/apps/sys_monitor",
+      "source_path": "apps/_ports/hexlay-idrive8/apps/sys_monitor",
       "failure_stage": null,
       "observed_error": null,
       "observed_install_error": null,
@@ -6117,40 +6557,54 @@
       "local_verification": {
         "original_store_parser": "PASS",
         "selected_source_inputs": "POSITIVE_FOR_REVIEWED_INPUTS",
-        "selected_file_count": 55,
-        "selected_bytes": 1898857,
+        "selected_file_count": 58,
+        "selected_bytes": 1923888,
         "input_byte_budget": "PASS",
         "partial_file_budget": "PASS",
-        "evidence": "data/source-build-readiness.json"
+        "evidence": "data/source-build-readiness.json",
+        "synthetic_complete_package_assembly": "PASS",
+        "id8_runtime_contract": "PASS_WITH_INERT_MOCKS"
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": {
-        "python": "apps/_sources/hexlay-idrive7-apps/kit/tools/build.py",
+        "python": "apps/_ports/hexlay-idrive8/kit/tools/build.py",
         "args": [
           "{id}"
         ],
-        "sdk": "apps/_sources/hexlay-idrive7-apps/oap-sdk",
-        "output": "apps/_sources/hexlay-idrive7-apps/dist/{id}@{version}.tgz",
+        "sdk": "apps/_ports/hexlay-idrive8/oap-sdk",
+        "output": "apps/_ports/hexlay-idrive8/dist/{id}@{version}.tgz",
         "shared": [
-          "apps/_sources/hexlay-idrive7-apps/LICENSE",
-          "apps/_sources/hexlay-idrive7-apps/LICENSE.MIT",
-          "apps/_sources/hexlay-idrive7-apps/kit/runtime",
-          "apps/_sources/hexlay-idrive7-apps/kit/platform",
-          "apps/_sources/hexlay-idrive7-apps/kit/localization",
-          "apps/_sources/hexlay-idrive7-apps/kit/tools/build.py",
-          "apps/_sources/hexlay-idrive7-apps/kit/tools/pack_data.py",
-          "apps/_sources/hexlay-idrive7-apps/kit/tools/localize.py",
-          "apps/_sources/hexlay-idrive7-apps/kit/tools/locale-revisions.json",
-          "apps/_sources/hexlay-idrive7-apps/kit/tools/oapgen",
-          "apps/_sources/hexlay-idrive7-apps/kit/tools/make_icon.js"
+          "apps/_ports/hexlay-idrive8/LICENSE",
+          "apps/_ports/hexlay-idrive8/LICENSE.MIT",
+          "apps/_ports/hexlay-idrive8/kit/runtime",
+          "apps/_ports/hexlay-idrive8/kit/platform",
+          "apps/_ports/hexlay-idrive8/kit/localization",
+          "apps/_ports/hexlay-idrive8/kit/tools/build.py",
+          "apps/_ports/hexlay-idrive8/kit/tools/pack_data.py",
+          "apps/_ports/hexlay-idrive8/kit/tools/localize.py",
+          "apps/_ports/hexlay-idrive8/kit/tools/locale-revisions.json",
+          "apps/_ports/hexlay-idrive8/kit/tools/oapgen",
+          "apps/_ports/hexlay-idrive8/kit/tools/make_icon.js",
+          "apps/_ports/hexlay-idrive8/LICENSE.PEREA",
+          "apps/_ports/hexlay-idrive8/PORT.json"
         ]
       },
       "build_method": "python",
       "declared_requires": {
-        "idrive7-renderd": "2.1.7",
+        "mgu-render": "0.6.24",
         "mgu-inputgate": "1.0.0"
       },
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "source_port": {
+        "id": "hexlay-idrive8",
+        "revision": "aq-hexlay-id8-1",
+        "path": "apps/_ports/hexlay-idrive8",
+        "provenance": "apps/_ports/hexlay-idrive8/PROVENANCE.json",
+        "source_metadata": "apps/_ports/hexlay-idrive8/PORT.json"
+      },
+      "source_origin_path": "apps/_sources/hexlay-idrive7-apps/apps/sys_monitor",
+      "id8_evidence": "data/id8-ports.json",
+      "id8_status": "SOURCE_CONTRACT_VERIFIED; TARGET_SDK_AND_LIVE_NOT_OBSERVED"
     },
     {
       "id": "vizualyse-bus",
@@ -6193,7 +6647,10 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "mgu-deploy": "0.7.0"
+      }
     },
     {
       "id": "vizualyse-cast",
@@ -6240,7 +6697,14 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "mgu-deploy": "0.7.0",
+        "cluster-render": "0.4.2",
+        "mgu-python": "1.0.0",
+        "mgu-uplink": "0.7.0",
+        "vizualyse-bus": "0.1.0"
+      }
     },
     {
       "id": "vizualyse-chromium",
@@ -6286,7 +6750,13 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "mgu-deploy": "0.7.0",
+        "mgu-python": "1.0.0",
+        "mgu-render": "0.6.11",
+        "vizualyse-bus": "0.1.0"
+      }
     },
     {
       "id": "vizualyse-cluster",
@@ -6332,7 +6802,13 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "mgu-deploy": "0.7.0",
+        "mgu-python": "1.0.0",
+        "mgu-render": "0.6.11",
+        "cluster-render": "0.5.4"
+      }
     },
     {
       "id": "vizualyse-moonlight",
@@ -6378,7 +6854,13 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "mgu-deploy": "0.7.0",
+        "cluster-render": "0.4.2",
+        "mgu-python": "1.0.0",
+        "mgu-render": "0.6.11"
+      }
     },
     {
       "id": "vizualyse-steam",
@@ -6431,7 +6913,13 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "mgu-deploy": "0.7.0",
+        "mgu-python": "1.0.0",
+        "mgu-render": "0.6.11",
+        "vizualyse-bus": "0.1.0"
+      }
     },
     {
       "id": "vizualyse_cast",
@@ -6474,7 +6962,10 @@
       "declared_requires": {
         "vizualyse-cast": "0.4.0"
       },
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_status": "ID8_PORT_NOT_IMPLEMENTED",
+      "id8_blocker": "The published frontend snapshot and its native vizualyse-cast service have no ID8-qualified release in the reviewed publisher metadata.",
+      "id8_evidence": "data/id8-source-blockers-20261119.json"
     },
     {
       "id": "vizualyse_chromium",
@@ -6517,7 +7008,10 @@
       "declared_requires": {
         "vizualyse-chromium": "0.3.0"
       },
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_status": "ID8_PORT_NOT_IMPLEMENTED",
+      "id8_blocker": "The published frontend snapshot and its native vizualyse-chromium service have no ID8-qualified release in the reviewed publisher metadata.",
+      "id8_evidence": "data/id8-source-blockers-20261119.json"
     },
     {
       "id": "vizualyse_cluster",
@@ -6560,7 +7054,10 @@
       "declared_requires": {
         "vizualyse-cluster": "0.4.0"
       },
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_status": "ID8_PORT_NOT_IMPLEMENTED",
+      "id8_blocker": "The published frontend snapshot and its native vizualyse-cluster service have no ID8-qualified release in the reviewed publisher metadata.",
+      "id8_evidence": "data/id8-source-blockers-20261119.json"
     },
     {
       "id": "vizualyse_moonlight",
@@ -6603,7 +7100,10 @@
       "declared_requires": {
         "vizualyse-moonlight": "0.3.0"
       },
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_status": "ID8_PORT_NOT_IMPLEMENTED",
+      "id8_blocker": "The published frontend snapshot and its native vizualyse-moonlight service have no ID8-qualified release in the reviewed publisher metadata.",
+      "id8_evidence": "data/id8-source-blockers-20261119.json"
     },
     {
       "id": "vizualyse_steam",
@@ -6646,7 +7146,10 @@
       "declared_requires": {
         "vizualyse-steam": "0.3.0"
       },
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_status": "ID8_PORT_NOT_IMPLEMENTED",
+      "id8_blocker": "The published frontend snapshot and its native vizualyse-steam service have no ID8-qualified release in the reviewed publisher metadata.",
+      "id8_evidence": "data/id8-source-blockers-20261119.json"
     },
     {
       "id": "vlad-carplay-mirror",
@@ -6736,7 +7239,10 @@
         "vlad-carplay-mirror": "0.1.3",
         "app-privacy": "0.1.0"
       },
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_status": "ID8_PORT_NOT_IMPLEMENTED",
+      "id8_blocker": "Both the mirror frontend and its original native helper explicitly declare ID7.",
+      "id8_evidence": "data/id8-source-blockers-20261119.json"
     },
     {
       "id": "warmup",
@@ -6746,7 +7252,8 @@
       "upstream_repository": "cauliflowermossgrape/idrive7-apps",
       "delivery": "branch source",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
         "mgu-python": "1.0.2",
@@ -6804,7 +7311,9 @@
       "declared_requires": {
         "idrive7-renderd": "2.1.15"
       },
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_evidence": "data/id8-native-app-evidence.json",
+      "id8_status": "ORIGINAL_DUAL_SOURCE_VERIFIED; TARGET_SDK_AND_LIVE_NOT_OBSERVED"
     },
     {
       "id": "waze-on-cluster",
@@ -6848,7 +7357,11 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "mgu-deploy": "0.7.17",
+        "cluster-render": "0.5.3"
+      }
     },
     {
       "id": "wazecard",
@@ -6899,7 +7412,11 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "mgu-deploy": "0.7.0",
+        "cluster-render": "0.3.10"
+      }
     },
     {
       "id": "wzc_wazecards",
@@ -6948,7 +7465,11 @@
       },
       "unit_build_result": "NOT OBSERVED",
       "build_recipe": null,
-      "build_method": "prepared_package"
+      "build_method": "prepared_package",
+      "declared_requires": {
+        "mgu-deploy": "0.7.0",
+        "wazecard": "1.0.0"
+      }
     },
     {
       "id": "zf8hp",
@@ -6958,7 +7479,8 @@
       "upstream_repository": "cauliflowermossgrape/idrive7-apps",
       "delivery": "branch source",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
         "mgu-python": "1.0.2",
@@ -7018,7 +7540,9 @@
         "idrive7-renderd": "2.1.18",
         "mgu-inputgate": "1.1.0"
       },
-      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime"
+      "dependency_source": "Pinned original Store repoCatalog output, including inferred build runtime",
+      "id8_evidence": "data/id8-native-app-evidence.json",
+      "id8_status": "ORIGINAL_DUAL_SOURCE_VERIFIED; TARGET_SDK_AND_LIVE_NOT_OBSERVED"
     }
   ]
 }

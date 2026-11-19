@@ -5,3 +5,5 @@
 /apps/_sources/pinguinooo-idrive7-apps/** -text
 /apps/_sources/arefahmad-idrive7-apps/** -text
 /apps/_sources/turnkey-ethanol-blend/store-v015/** -text
+# Derived ports have separate byte-level provenance and keep stable build inputs.
+/apps/_ports/** -text

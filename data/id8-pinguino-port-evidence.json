@@ -1,0 +1,179 @@
+{
+  "schema": 1,
+  "recipe_revision": 1,
+  "date": "2026-11-19",
+  "component": {
+    "id": "adam_vitals",
+    "version": "0.2.0",
+    "mguHmi": [
+      "ID7",
+      "ID8"
+    ],
+    "requires": {
+      "mgu-render": "0.6.24"
+    },
+    "mguNeeds": [
+      "renderer"
+    ]
+  },
+  "upstream": {
+    "repository": "pinguinooo/idrive7-apps",
+    "commit": "82bea95add762c03d97070d2bd462bfd5fac429c",
+    "license": "MIT; retained component notices"
+  },
+  "donors": [
+    {
+      "repository": "cauliflowermossgrape/idrive7-apps",
+      "commit": "422957a85461826c1e8654d37c8ec66a94849f9c",
+      "license": "MIT",
+      "roles": [
+        "ID8 RHMI templates and cells",
+        "dual-HMI resources",
+        "ID8 renderer app area"
+      ]
+    },
+    {
+      "repository": "alexpereap/pereaperformance-idrive7-apps",
+      "commit": "5b758fad17761b8696989e2a4ffbfbfab4926b6f",
+      "license": "MIT",
+      "roles": [
+        "ID8 entry lifecycle sequence",
+        "public SDK typed-proxy adapter"
+      ]
+    }
+  ],
+  "changed_original_files": [
+    {
+      "path": "kit/runtime/display.js",
+      "original_sha256": "ab9f171c53b4915a466f82bfd42c55b494793b8b58930dd18bb14a33f083da51",
+      "derived_sha256": "f1f864993cd5080bd2991ff6e7769e7ee5f31aa5fd3808b4be1ce0b287edaca3"
+    },
+    {
+      "path": "kit/runtime/mgu.js",
+      "original_sha256": "8b03db1cff4c2d412ff2e838baddf7e6f6b191d2117eba10750705aa402cd33d",
+      "derived_sha256": "76331ad304d5457c8fc112882b72b251b0e190daf4acfda16c814b4576a50496"
+    },
+    {
+      "path": "kit/runtime/renderd.js",
+      "original_sha256": "3eaeb815b8edcf91756077fd654a996d3b7c522b0242bc9f4fae8464f67ca538",
+      "derived_sha256": "61b8c64266f45abc6135a8e17467e8a6926b87c54bd80ed7ceb3eef26625eb4f"
+    },
+    {
+      "path": "kit/runtime/signals.js",
+      "original_sha256": "92e3e397aef9cd44fcef989c3802af7980b7f3340028dba3fd4a1741bc940e23",
+      "derived_sha256": "016fb0517d659a329315ca3cd431f71701c349b2bd558f2abd0fae5d03f28f45"
+    },
+    {
+      "path": "kit/tools/build.py",
+      "original_sha256": "706c7cd7c4b2133d7d9f98dd4dc7334e8eab4bac84ee33931c4abd866b839b08",
+      "derived_sha256": "f06cd569521b686dc080754016b9001ca37f983b70718b31e1d0459ade43333b"
+    },
+    {
+      "path": "kit/tools/localize.py",
+      "original_sha256": "58da3722bf589b3d3d26cb28413253fd6ef321ff9da9a50f3b2592289c5fdf12",
+      "derived_sha256": "fb187fccb176d5ab4e0e007d2dfe7bcdc1c22deaa302de25286e25e88ba4e1c1"
+    }
+  ],
+  "unchanged_original_file_count": 56,
+  "unchanged_app_files": [
+    {
+      "path": "apps/adam_vitals/NOTICE",
+      "original_sha256": "6e66030b7968e2ce912294f9f80241a0b35405f5f800c5e780fe81e1b3f2a5dc",
+      "derived_sha256": "6e66030b7968e2ce912294f9f80241a0b35405f5f800c5e780fe81e1b3f2a5dc"
+    },
+    {
+      "path": "apps/adam_vitals/README.md",
+      "original_sha256": "cd6c534af57aa6ece66df5160a5490c846edae0baa53781ef97887d021c1e62b",
+      "derived_sha256": "cd6c534af57aa6ece66df5160a5490c846edae0baa53781ef97887d021c1e62b"
+    },
+    {
+      "path": "apps/adam_vitals/app.json",
+      "original_sha256": "8a1db59dd94d7bc96a1413af21f49ae3c7a726560535048550462698586aa083",
+      "derived_sha256": "8a1db59dd94d7bc96a1413af21f49ae3c7a726560535048550462698586aa083"
+    },
+    {
+      "path": "apps/adam_vitals/cooldown.js",
+      "original_sha256": "33f08fda8f68a067a73fcca19b6f9db7baffe4ceff9a83286f376f878471b192",
+      "derived_sha256": "33f08fda8f68a067a73fcca19b6f9db7baffe4ceff9a83286f376f878471b192"
+    },
+    {
+      "path": "apps/adam_vitals/demo.js",
+      "original_sha256": "6a07b7e83cd69c5f9a6baefeabd2b82764da3ef11c1952f2700e9625db8af255",
+      "derived_sha256": "6a07b7e83cd69c5f9a6baefeabd2b82764da3ef11c1952f2700e9625db8af255"
+    },
+    {
+      "path": "apps/adam_vitals/icon.png",
+      "original_sha256": "c06845cb5113ee6071e4303461ede61840194c263a1cfebc0c356196c5117242",
+      "derived_sha256": "c06845cb5113ee6071e4303461ede61840194c263a1cfebc0c356196c5117242"
+    },
+    {
+      "path": "apps/adam_vitals/main.js",
+      "original_sha256": "1d71265322959b10cc8c262d42ff663578fc8aa761bb8fcbcb1a721668eb8e7c",
+      "derived_sha256": "1d71265322959b10cc8c262d42ff663578fc8aa761bb8fcbcb1a721668eb8e7c"
+    },
+    {
+      "path": "apps/adam_vitals/pages.js",
+      "original_sha256": "4614b2093b5c71a39aa3a1ff296e04e9732f077e4ceaa52e7123df0acd8683be",
+      "derived_sha256": "4614b2093b5c71a39aa3a1ff296e04e9732f077e4ceaa52e7123df0acd8683be"
+    },
+    {
+      "path": "apps/adam_vitals/safety.js",
+      "original_sha256": "f8bff2d8010252668d414113039f0806ab45299aab038a32ba1c9c12be3716d2",
+      "derived_sha256": "f8bff2d8010252668d414113039f0806ab45299aab038a32ba1c9c12be3716d2"
+    },
+    {
+      "path": "apps/adam_vitals/settings_check.js",
+      "original_sha256": "2bb338ef023b25da9860c778a069f9ec018d0e3130d9e4beb231aaec38f47233",
+      "derived_sha256": "2bb338ef023b25da9860c778a069f9ec018d0e3130d9e4beb231aaec38f47233"
+    },
+    {
+      "path": "apps/adam_vitals/units.js",
+      "original_sha256": "a33e8476b969720f993b35490a99d0a6eaf045296785c67c1aa0588fd8f43355",
+      "derived_sha256": "a33e8476b969720f993b35490a99d0a6eaf045296785c67c1aa0588fd8f43355"
+    },
+    {
+      "path": "apps/adam_vitals/warmup.js",
+      "original_sha256": "1942d6a90c6c5f1793b9475bfa56b6a7023f8c2cfdd10bc5c2a06d5faeb0e42b",
+      "derived_sha256": "1942d6a90c6c5f1793b9475bfa56b6a7023f8c2cfdd10bc5c2a06d5faeb0e42b"
+    }
+  ],
+  "new_runtime_files": [
+    "kit/runtime/id8_lifecycle.js",
+    "kit/runtime/licenses/AQ-ID8-adaptation.txt"
+  ],
+  "validation": {
+    "id7_ui_equivalence": "PASS",
+    "id8_resource_generation": "PASS",
+    "package_resource_tree_without_sdk": "PASS",
+    "sandboxed_runtime_and_signals": "PASS",
+    "original_app_files": "PASS",
+    "installed_notices": "PASS",
+    "sdk_build": "NOT_OBSERVED",
+    "hu_install": "NOT_OBSERVED",
+    "live_vehicle_functions": "NOT_OBSERVED",
+    "complete_synthetic_package_assembly": "PASS; inert SDK-shaped fixture in a deleted temporary directory; no SDK execution",
+    "focused_test_methods": 8,
+    "target_route": "Original Store source build to dual-resource npm .tgz; standalone .mgu staging remains ID7"
+  },
+  "tests": [
+    "python -m unittest discover -s tests -p test_pinguino_id8_port.py -v"
+  ],
+  "limitations": [
+    "Actual target SDK and declared vehicle services must exist; compatibility was exercised only with local test doubles.",
+    "ID8 canvas requires native touch renderer and valid bounded appArea; native RHMI shows text/settings when unavailable.",
+    "Typed initialization is not continuous provider availability. Failures pause cached canvas; only the same field recovering clears its error.",
+    "Freshness expiry uses three intervals only for existing polled fields. Event-only stream silence without availability events is not proven detectable.",
+    "Original app IDs and versions retained. AQ recipe revision does not claim an upstream release.",
+    "MTrack and Shiftlights remain ID7 pending independent cluster/HUD geometry and foreground validation."
+  ],
+  "installed_notices": [
+    "javascript/kit/licenses/Pinguino-LICENSE.txt",
+    "javascript/kit/licenses/Kit-LICENSE.txt",
+    "javascript/kit/licenses/Kit-NOTICE.txt",
+    "javascript/kit/licenses/Kit-NOTICE.zh-CN.txt",
+    "javascript/kit/licenses/AQ-ID8-adaptation.txt"
+  ],
+  "snapshot_path": "apps/_ports/pinguinooo-idrive8",
+  "source_file_count": 67,
+  "source_bytes": 1839238
+}

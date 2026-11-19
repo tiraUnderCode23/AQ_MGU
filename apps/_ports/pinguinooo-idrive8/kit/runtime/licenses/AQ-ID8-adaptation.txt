@@ -1,0 +1,68 @@
+AQ derived ID8 compatibility adaptation, recipe revision 1 (2026-11-19)
+
+Original app and kit base:
+https://github.com/pinguinooo/idrive7-apps
+82bea95add762c03d97070d2bd462bfd5fac429c
+All 12 apps/adam_vitals files and version 0.2.0 remain byte-identical.
+
+Dual-HMI generator, cell mapping and geometry donor:
+https://github.com/cauliflowermossgrape/idrive7-apps
+422957a85461826c1e8654d37c8ec66a94849f9c
+
+Public lifecycle sequence and typed-proxy adapter donor:
+https://github.com/alexpereap/pereaperformance-idrive7-apps
+5b758fad17761b8696989e2a4ffbfbfab4926b6f
+
+AQ adaptations include bounded renderer area, type-based cell mapping,
+no native Graphic fallback on ID8, explicit typed read failures and canvas
+gating. SDK-free contract tests do not establish live vehicle compatibility.
+No proprietary SDK, installer binary or package is included in this source.
+
+--- cauliflowermossgrape/idrive7-apps donor license ---
+
+MIT License
+
+Copyright (c) 2026 cauliflowermossgrape
+Copyright (c) 2026 小白151 (GitHub: JackieZ123430), Chinese translation
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+--- Alex Perea donor license ---
+
+MIT License
+
+Copyright (c) 2026 Alex Perea
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

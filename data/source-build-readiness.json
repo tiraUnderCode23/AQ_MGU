@@ -1,15 +1,15 @@
 {
   "schema": 1,
-  "observed_at_utc": "2026-11-19T09:55:33.710337+00:00",
-  "baseline_git_commit": "f424cf4e0e1844b23e5f5bcf9ce40b22b8ed6cfe",
+  "observed_at_utc": "2026-11-19T11:40:18.063952+00:00",
+  "baseline_git_commit": "42dd429486219dea6a96f99bd02cea7d55b47ce9",
   "store_source_commit": "7956321fd40bceafffa8842719155e6176652720",
-  "catalog_sha256": "d620866c33b2ed7a0d901aa94cf4885a5f47b8d15bc0bb6d781bc773a338191a",
+  "catalog_sha256": "f8322d1d0b0b982723aec95f0feba8395a18b7692f06bd6765f008bfb15f9c3c",
   "scope": "Static source inputs only: original Store repoCatalog and partPaths; filesystem inspection. No builders or components executed for this audit.",
   "working_tree_observation": {
     "file_selection": "git ls-files --cached --others --exclude-standard; existing regular files; Store .git/.DS_Store/._ skips; local Python/test caches and this report excluded",
-    "files": 5611,
-    "bytes": 231435762,
-    "path_size_inventory_sha256": "6701bdb98bab7ca06fc3d54e032f0019d87780b9eb63dd5bcfb73a8de26b5c7d",
+    "files": 5848,
+    "bytes": 242076818,
+    "path_size_inventory_sha256": "8858e250fba6d62f29531ed5676d51670de4bed9dcf0d148518e7090b14e478e",
     "working_tree_changes_included": true
   },
   "original_store_limits": {
@@ -125,26 +125,28 @@
       "kind": "app",
       "version": "0.2.0",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "selected_paths": [
-        "apps/_sources/pinguinooo-idrive7-apps/apps/adam_vitals",
-        "apps/_sources/pinguinooo-idrive7-apps/kit/runtime",
-        "apps/_sources/pinguinooo-idrive7-apps/kit/platform",
-        "apps/_sources/pinguinooo-idrive7-apps/kit/tools/build.py",
-        "apps/_sources/pinguinooo-idrive7-apps/kit/tools/pack_data.py",
-        "apps/_sources/pinguinooo-idrive7-apps/kit/tools/localize.py",
-        "apps/_sources/pinguinooo-idrive7-apps/kit/tools/locale-revisions.json",
-        "apps/_sources/pinguinooo-idrive7-apps/kit/tools/oapgen",
-        "apps/_sources/pinguinooo-idrive7-apps/LICENSE",
-        "apps/_sources/pinguinooo-idrive7-apps/kit/LICENSE",
-        "apps/_sources/pinguinooo-idrive7-apps/kit/NOTICE",
-        "apps/_sources/pinguinooo-idrive7-apps/kit/NOTICE.zh-CN.md",
-        "apps/_sources/pinguinooo-idrive7-apps/kit/tools/build.py"
+        "apps/_ports/pinguinooo-idrive8/apps/adam_vitals",
+        "apps/_ports/pinguinooo-idrive8/kit/runtime",
+        "apps/_ports/pinguinooo-idrive8/kit/platform",
+        "apps/_ports/pinguinooo-idrive8/kit/tools/build.py",
+        "apps/_ports/pinguinooo-idrive8/kit/tools/pack_data.py",
+        "apps/_ports/pinguinooo-idrive8/kit/tools/localize.py",
+        "apps/_ports/pinguinooo-idrive8/kit/tools/locale-revisions.json",
+        "apps/_ports/pinguinooo-idrive8/kit/tools/oapgen",
+        "apps/_ports/pinguinooo-idrive8/LICENSE",
+        "apps/_ports/pinguinooo-idrive8/kit/LICENSE",
+        "apps/_ports/pinguinooo-idrive8/kit/NOTICE",
+        "apps/_ports/pinguinooo-idrive8/kit/NOTICE.zh-CN.md",
+        "apps/_ports/pinguinooo-idrive8/AQ_PORT.json",
+        "apps/_ports/pinguinooo-idrive8/kit/tools/build.py"
       ],
-      "selected_path_count": 13,
-      "selected_file_count": 58,
-      "selected_bytes": 1780658,
+      "selected_path_count": 14,
+      "selected_file_count": 61,
+      "selected_bytes": 1816949,
       "source_fetch_scope": "selected_paths",
       "whole_repository_fallback": false,
       "input_byte_budget": "PASS",
@@ -165,7 +167,8 @@
       "kind": "app",
       "version": "2.6.2",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "selected_paths": [
         "apps/_sources/idrive7-apps/apps/ambient_config",
@@ -403,25 +406,29 @@
       "kind": "app",
       "version": "0.2.3",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "selected_paths": [
-        "apps/_sources/arefahmad-idrive7-apps/apps/aref_explorer",
-        "apps/_sources/arefahmad-idrive7-apps/kit/runtime",
-        "apps/_sources/arefahmad-idrive7-apps/kit/platform",
-        "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
-        "apps/_sources/arefahmad-idrive7-apps/kit/tools/pack_data.py",
-        "apps/_sources/arefahmad-idrive7-apps/kit/tools/localize.py",
-        "apps/_sources/arefahmad-idrive7-apps/kit/tools/locale-revisions.json",
-        "apps/_sources/arefahmad-idrive7-apps/kit/tools/oapgen",
-        "apps/_sources/arefahmad-idrive7-apps/LICENSE",
-        "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.idrive7-apps",
-        "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.nickgcode",
-        "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py"
+        "apps/_ports/arefahmad-idrive8/apps/aref_explorer",
+        "apps/_ports/arefahmad-idrive8/kit/runtime",
+        "apps/_ports/arefahmad-idrive8/kit/platform",
+        "apps/_ports/arefahmad-idrive8/kit/tools/build.py",
+        "apps/_ports/arefahmad-idrive8/kit/tools/pack_data.py",
+        "apps/_ports/arefahmad-idrive8/kit/tools/localize.py",
+        "apps/_ports/arefahmad-idrive8/kit/tools/locale-revisions.json",
+        "apps/_ports/arefahmad-idrive8/kit/tools/oapgen",
+        "apps/_ports/arefahmad-idrive8/LICENSE",
+        "apps/_ports/arefahmad-idrive8/kit/LICENSE.idrive7-apps",
+        "apps/_ports/arefahmad-idrive8/kit/LICENSE.nickgcode",
+        "apps/_ports/arefahmad-idrive8/kit/LICENSE.alexpereap",
+        "apps/_ports/arefahmad-idrive8/kit/NOTICE.AQ-ID8",
+        "apps/_ports/arefahmad-idrive8/PORT.json",
+        "apps/_ports/arefahmad-idrive8/kit/tools/build.py"
       ],
-      "selected_path_count": 12,
-      "selected_file_count": 62,
-      "selected_bytes": 1949751,
+      "selected_path_count": 15,
+      "selected_file_count": 67,
+      "selected_bytes": 1969323,
       "source_fetch_scope": "selected_paths",
       "whole_repository_fallback": false,
       "input_byte_budget": "PASS",
@@ -559,7 +566,8 @@
       "kind": "app",
       "version": "1.5.21",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "selected_paths": [
         "apps/_sources/idrive7-apps/apps/brake_test",
@@ -596,7 +604,8 @@
       "kind": "app",
       "version": "2.27.6",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "selected_paths": [
         "apps/_sources/idrive7-apps/apps/car_vitals",
@@ -754,7 +763,8 @@
       "kind": "app",
       "version": "1.7.22",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "selected_paths": [
         "apps/_sources/idrive7-apps/apps/doom",
@@ -797,7 +807,8 @@
       "kind": "app",
       "version": "2.6.0",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "selected_paths": [
         "apps/_sources/idrive7-apps/apps/draggy",
@@ -834,7 +845,8 @@
       "kind": "app",
       "version": "2.9.8",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "selected_paths": [
         "apps/_sources/idrive7-apps/apps/dtc_scanner",
@@ -871,7 +883,8 @@
       "kind": "app",
       "version": "1.6.3",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "selected_paths": [
         "apps/_sources/idrive7-apps/apps/dyno",
@@ -908,7 +921,8 @@
       "kind": "app",
       "version": "2.10.1",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "selected_paths": [
         "apps/_sources/idrive7-apps/apps/edrive",
@@ -976,7 +990,8 @@
       "kind": "app",
       "version": "1.6.22",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "selected_paths": [
         "apps/_sources/idrive7-apps/apps/gforce",
@@ -1226,7 +1241,8 @@
       "kind": "app",
       "version": "0.9.8",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "selected_paths": [
         "apps/_sources/idrive7-apps/apps/live_adjustments",
@@ -1263,7 +1279,8 @@
       "kind": "app",
       "version": "1.0.16",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "selected_paths": [
         "apps/_sources/idrive7-apps/apps/live_data",
@@ -1300,25 +1317,28 @@
       "kind": "app",
       "version": "1.0.31",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "selected_paths": [
-        "apps/_sources/hexlay-idrive7-apps/apps/m_copilot",
-        "apps/_sources/hexlay-idrive7-apps/LICENSE",
-        "apps/_sources/hexlay-idrive7-apps/LICENSE.MIT",
-        "apps/_sources/hexlay-idrive7-apps/kit/runtime",
-        "apps/_sources/hexlay-idrive7-apps/kit/platform",
-        "apps/_sources/hexlay-idrive7-apps/kit/localization",
-        "apps/_sources/hexlay-idrive7-apps/kit/tools/build.py",
-        "apps/_sources/hexlay-idrive7-apps/kit/tools/pack_data.py",
-        "apps/_sources/hexlay-idrive7-apps/kit/tools/localize.py",
-        "apps/_sources/hexlay-idrive7-apps/kit/tools/locale-revisions.json",
-        "apps/_sources/hexlay-idrive7-apps/kit/tools/oapgen",
-        "apps/_sources/hexlay-idrive7-apps/kit/tools/build.py"
+        "apps/_ports/hexlay-idrive8/apps/m_copilot",
+        "apps/_ports/hexlay-idrive8/LICENSE",
+        "apps/_ports/hexlay-idrive8/LICENSE.MIT",
+        "apps/_ports/hexlay-idrive8/kit/runtime",
+        "apps/_ports/hexlay-idrive8/kit/platform",
+        "apps/_ports/hexlay-idrive8/kit/localization",
+        "apps/_ports/hexlay-idrive8/kit/tools/build.py",
+        "apps/_ports/hexlay-idrive8/kit/tools/pack_data.py",
+        "apps/_ports/hexlay-idrive8/kit/tools/localize.py",
+        "apps/_ports/hexlay-idrive8/kit/tools/locale-revisions.json",
+        "apps/_ports/hexlay-idrive8/kit/tools/oapgen",
+        "apps/_ports/hexlay-idrive8/LICENSE.PEREA",
+        "apps/_ports/hexlay-idrive8/PORT.json",
+        "apps/_ports/hexlay-idrive8/kit/tools/build.py"
       ],
-      "selected_path_count": 12,
-      "selected_file_count": 61,
-      "selected_bytes": 5503262,
+      "selected_path_count": 14,
+      "selected_file_count": 65,
+      "selected_bytes": 5530445,
       "source_fetch_scope": "selected_paths",
       "whole_repository_fallback": false,
       "input_byte_budget": "PASS",
@@ -1487,8 +1507,8 @@
       ],
       "selected_paths": null,
       "selected_path_count": null,
-      "selected_file_count": 5611,
-      "selected_bytes": 231435762,
+      "selected_file_count": 5848,
+      "selected_bytes": 242076818,
       "source_fetch_scope": "whole_repository",
       "whole_repository_fallback": true,
       "input_byte_budget": "EXCEEDED",
@@ -1566,7 +1586,8 @@
       "kind": "app",
       "version": "2.0.44",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "selected_paths": [
         "apps/_sources/idrive7-apps/apps/redline",
@@ -1664,7 +1685,8 @@
       "kind": "app",
       "version": "1.6.2",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "selected_paths": [
         "apps/_sources/idrive7-apps/apps/service",
@@ -1701,25 +1723,28 @@
       "kind": "app",
       "version": "1.0.30",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "selected_paths": [
-        "apps/_sources/hexlay-idrive7-apps/apps/spotify",
-        "apps/_sources/hexlay-idrive7-apps/LICENSE",
-        "apps/_sources/hexlay-idrive7-apps/LICENSE.MIT",
-        "apps/_sources/hexlay-idrive7-apps/kit/runtime",
-        "apps/_sources/hexlay-idrive7-apps/kit/platform",
-        "apps/_sources/hexlay-idrive7-apps/kit/localization",
-        "apps/_sources/hexlay-idrive7-apps/kit/tools/build.py",
-        "apps/_sources/hexlay-idrive7-apps/kit/tools/pack_data.py",
-        "apps/_sources/hexlay-idrive7-apps/kit/tools/localize.py",
-        "apps/_sources/hexlay-idrive7-apps/kit/tools/locale-revisions.json",
-        "apps/_sources/hexlay-idrive7-apps/kit/tools/oapgen",
-        "apps/_sources/hexlay-idrive7-apps/kit/tools/build.py"
+        "apps/_ports/hexlay-idrive8/apps/spotify",
+        "apps/_ports/hexlay-idrive8/LICENSE",
+        "apps/_ports/hexlay-idrive8/LICENSE.MIT",
+        "apps/_ports/hexlay-idrive8/kit/runtime",
+        "apps/_ports/hexlay-idrive8/kit/platform",
+        "apps/_ports/hexlay-idrive8/kit/localization",
+        "apps/_ports/hexlay-idrive8/kit/tools/build.py",
+        "apps/_ports/hexlay-idrive8/kit/tools/pack_data.py",
+        "apps/_ports/hexlay-idrive8/kit/tools/localize.py",
+        "apps/_ports/hexlay-idrive8/kit/tools/locale-revisions.json",
+        "apps/_ports/hexlay-idrive8/kit/tools/oapgen",
+        "apps/_ports/hexlay-idrive8/LICENSE.PEREA",
+        "apps/_ports/hexlay-idrive8/PORT.json",
+        "apps/_ports/hexlay-idrive8/kit/tools/build.py"
       ],
-      "selected_path_count": 12,
-      "selected_file_count": 57,
-      "selected_bytes": 2025416,
+      "selected_path_count": 14,
+      "selected_file_count": 60,
+      "selected_bytes": 2050963,
       "source_fetch_scope": "selected_paths",
       "whole_repository_fallback": false,
       "input_byte_budget": "PASS",
@@ -1740,26 +1765,29 @@
       "kind": "app",
       "version": "1.0.4",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "selected_paths": [
-        "apps/_sources/hexlay-idrive7-apps/apps/sys_monitor",
-        "apps/_sources/hexlay-idrive7-apps/LICENSE",
-        "apps/_sources/hexlay-idrive7-apps/LICENSE.MIT",
-        "apps/_sources/hexlay-idrive7-apps/kit/runtime",
-        "apps/_sources/hexlay-idrive7-apps/kit/platform",
-        "apps/_sources/hexlay-idrive7-apps/kit/localization",
-        "apps/_sources/hexlay-idrive7-apps/kit/tools/build.py",
-        "apps/_sources/hexlay-idrive7-apps/kit/tools/pack_data.py",
-        "apps/_sources/hexlay-idrive7-apps/kit/tools/localize.py",
-        "apps/_sources/hexlay-idrive7-apps/kit/tools/locale-revisions.json",
-        "apps/_sources/hexlay-idrive7-apps/kit/tools/oapgen",
-        "apps/_sources/hexlay-idrive7-apps/kit/tools/make_icon.js",
-        "apps/_sources/hexlay-idrive7-apps/kit/tools/build.py"
+        "apps/_ports/hexlay-idrive8/apps/sys_monitor",
+        "apps/_ports/hexlay-idrive8/LICENSE",
+        "apps/_ports/hexlay-idrive8/LICENSE.MIT",
+        "apps/_ports/hexlay-idrive8/kit/runtime",
+        "apps/_ports/hexlay-idrive8/kit/platform",
+        "apps/_ports/hexlay-idrive8/kit/localization",
+        "apps/_ports/hexlay-idrive8/kit/tools/build.py",
+        "apps/_ports/hexlay-idrive8/kit/tools/pack_data.py",
+        "apps/_ports/hexlay-idrive8/kit/tools/localize.py",
+        "apps/_ports/hexlay-idrive8/kit/tools/locale-revisions.json",
+        "apps/_ports/hexlay-idrive8/kit/tools/oapgen",
+        "apps/_ports/hexlay-idrive8/kit/tools/make_icon.js",
+        "apps/_ports/hexlay-idrive8/LICENSE.PEREA",
+        "apps/_ports/hexlay-idrive8/PORT.json",
+        "apps/_ports/hexlay-idrive8/kit/tools/build.py"
       ],
-      "selected_path_count": 13,
-      "selected_file_count": 55,
-      "selected_bytes": 1898857,
+      "selected_path_count": 15,
+      "selected_file_count": 58,
+      "selected_bytes": 1923888,
       "source_fetch_scope": "selected_paths",
       "whole_repository_fallback": false,
       "input_byte_budget": "PASS",
@@ -1770,7 +1798,7 @@
       "unit_build": "NOT_OBSERVED",
       "live_installation": "NOT_OBSERVED",
       "icon_input": "BUILD_FALLBACK_SELECTED; committed catalog icon is absent",
-      "icon_generator": "apps/_sources/hexlay-idrive7-apps/kit/tools/make_icon.js",
+      "icon_generator": "apps/_ports/hexlay-idrive8/kit/tools/make_icon.js",
       "nested_recipe_paths": "PASS",
       "sdk_resolution": "SUPPLIED_ON_TARGET; extraction and target SDK compatibility not tested",
       "app_shared_input_count": 0,
@@ -2012,7 +2040,8 @@
       "kind": "app",
       "version": "1.9.0",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "selected_paths": [
         "apps/_sources/idrive7-apps/apps/warmup",
@@ -2049,7 +2078,8 @@
       "kind": "app",
       "version": "1.5.7",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "selected_paths": [
         "apps/_sources/idrive7-apps/apps/zf8hp",

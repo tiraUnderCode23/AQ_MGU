@@ -1,0 +1,1816 @@
+{
+  "schema": "aq-mgu.id8-ports/1",
+  "as_of": "2026-11-19",
+  "baseline_commit": "42dd429486219dea6a96f99bd02cea7d55b47ce9",
+  "scope": "AQ derived source recipes, distinct from frozen upstream snapshots; no proprietary SDK or target-generated binaries",
+  "summary": {
+    "port_families": 3,
+    "derived_applications": 5,
+    "original_dual_apps_corrected": 15,
+    "id8_apps_total": 34,
+    "synthetic_complete_package_assemblies": 5,
+    "actual_sdk_or_hu_runs": 0
+  },
+  "native_original_evidence": "data/id8-native-app-evidence.json",
+  "release_review": "data/id8-release-review-20261119.json",
+  "source_blockers": "data/id8-source-blockers-20261119.json",
+  "families": [
+    {
+      "id": "hexlay-idrive8",
+      "revision": "aq-hexlay-id8-1",
+      "path": "apps/_ports/hexlay-idrive8",
+      "upstream_snapshot": "apps/_sources/hexlay-idrive7-apps",
+      "apps": [
+        "m_copilot",
+        "spotify",
+        "sys_monitor"
+      ],
+      "metadata": "apps/_ports/hexlay-idrive8/PORT.json",
+      "test": "tests/test_id8_derived_catalog.py",
+      "files": [
+        {
+          "path": "apps/_ports/hexlay-idrive8/LICENSE",
+          "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+          "bytes": 35149,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/LICENSE",
+          "upstream_sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/LICENSE.MIT",
+          "sha256": "7c813412dcaf1b9d18c28ca6b6199c4349e15e35beca44ab6cab8e4413fe0aa6",
+          "bytes": 1151,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/LICENSE.MIT",
+          "upstream_sha256": "7c813412dcaf1b9d18c28ca6b6199c4349e15e35beca44ab6cab8e4413fe0aa6",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/LICENSE.PEREA",
+          "sha256": "72479db7cc03773b84999663a6917a433fe35438b9a9ad77afe3c8eeca377a44",
+          "bytes": 1067,
+          "upstream_path": null,
+          "upstream_sha256": null,
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/PORT.json",
+          "sha256": "3a3713758ce22f65db04ca26231af558f98f182c3d543762269bad5a1edb60af",
+          "bytes": 2998,
+          "upstream_path": null,
+          "upstream_sha256": null,
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/PROVENANCE.json",
+          "sha256": "7a960ab283f7f1a6d192dd2224e4e789eb4cfa9fad34541baee733e15f7224c1",
+          "bytes": 22296,
+          "upstream_path": null,
+          "upstream_sha256": null,
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/README.md",
+          "sha256": "73081be2663da906e098455a65178e28443e0bb00b40b25e3e57a17afde96f29",
+          "bytes": 6291,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/README.md",
+          "upstream_sha256": "cc03227d73d787e91c0353a9c5f83ecf24b07de9688ccb64d08fda94e3c48bac",
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/apps/m_copilot/ai.js",
+          "sha256": "45e22c6946df2f0567923f3be31b4ee61a1c8a5c55e1eab2db791e5e91b0e10c",
+          "bytes": 44776,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/apps/m_copilot/ai.js",
+          "upstream_sha256": "45e22c6946df2f0567923f3be31b4ee61a1c8a5c55e1eab2db791e5e91b0e10c",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/apps/m_copilot/app.json",
+          "sha256": "9467cf19c0ffad8a74de7468c573c885924d7f3c6cd23cefc4d55e625b611459",
+          "bytes": 15784,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/apps/m_copilot/app.json",
+          "upstream_sha256": "39f051a23b30998c5767f4639ff1ea56d7e93847bf0c19e300edbaeca5f3013f",
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/apps/m_copilot/car_signals.js",
+          "sha256": "a9c025b68b1d00a2b2b836c15cbcde4775ed7476d7bd84a44648bb6667367483",
+          "bytes": 18785,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/apps/m_copilot/car_signals.js",
+          "upstream_sha256": "a9c025b68b1d00a2b2b836c15cbcde4775ed7476d7bd84a44648bb6667367483",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/apps/m_copilot/cloud_pair.js",
+          "sha256": "398ce71baa15850deb30a7658dc475ff7a38348ddef0596ef32be7c213011a15",
+          "bytes": 3788,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/apps/m_copilot/cloud_pair.js",
+          "upstream_sha256": "398ce71baa15850deb30a7658dc475ff7a38348ddef0596ef32be7c213011a15",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/apps/m_copilot/dtc_db.pack",
+          "sha256": "206da522f83c48539eb9ac0ee02d7c859a7080b0b1c50cf76df05451a3930c55",
+          "bytes": 3453973,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/apps/m_copilot/dtc_db.pack",
+          "upstream_sha256": "206da522f83c48539eb9ac0ee02d7c859a7080b0b1c50cf76df05451a3930c55",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/apps/m_copilot/dtc_text.js",
+          "sha256": "0a85399c157493e5f5e50542fa22cb9d8b3c58031e718ccc9af0bf205d87a1b3",
+          "bytes": 3772,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/apps/m_copilot/dtc_text.js",
+          "upstream_sha256": "0a85399c157493e5f5e50542fa22cb9d8b3c58031e718ccc9af0bf205d87a1b3",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/apps/m_copilot/engine_snapshot.js",
+          "sha256": "c337b3640c5507a4ba44fda96e7f257b1865f0b8e89ab5a760bc5400db9ef238",
+          "bytes": 16559,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/apps/m_copilot/engine_snapshot.js",
+          "upstream_sha256": "c337b3640c5507a4ba44fda96e7f257b1865f0b8e89ab5a760bc5400db9ef238",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/apps/m_copilot/icon.png",
+          "sha256": "886356a7110724cae40039e51226177f53c1c37b76bab92e86ac1305db09aa9e",
+          "bytes": 3823,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/apps/m_copilot/icon.png",
+          "upstream_sha256": "886356a7110724cae40039e51226177f53c1c37b76bab92e86ac1305db09aa9e",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/apps/m_copilot/id8_read_guard.js",
+          "sha256": "3ea94e05eba459fbff19d55d3ed3dc5c08f3c6818b736c310dda6d401408265c",
+          "bytes": 1334,
+          "upstream_path": null,
+          "upstream_sha256": null,
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/apps/m_copilot/known_texts.js",
+          "sha256": "c7df2d1905a2b83ca4a98dcc580afd175d515afee08b1e538af53eae5f59e11d",
+          "bytes": 747,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/apps/m_copilot/known_texts.js",
+          "upstream_sha256": "c7df2d1905a2b83ca4a98dcc580afd175d515afee08b1e538af53eae5f59e11d",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/apps/m_copilot/main.js",
+          "sha256": "7f189f908c4e0e8792030c7b5ec590ababec75dd7905bae658fa32e9979ca285",
+          "bytes": 95967,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/apps/m_copilot/main.js",
+          "upstream_sha256": "3d537dba433da5d75b17e0a4d1f3af9bec4da606d70225722e4960a9f8c3fa0c",
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/apps/m_copilot/vehicle.js",
+          "sha256": "5e954104cd4ca2287fc2137b0c555dc7673265b783b8e6b7e67b5543430f8cc1",
+          "bytes": 18755,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/apps/m_copilot/vehicle.js",
+          "upstream_sha256": "5e954104cd4ca2287fc2137b0c555dc7673265b783b8e6b7e67b5543430f8cc1",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/apps/spotify/api.js",
+          "sha256": "f53c75cb6670af3db2d555002efafb81280a1dc484911a18c30b49de5768b695",
+          "bytes": 67917,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/apps/spotify/api.js",
+          "upstream_sha256": "f53c75cb6670af3db2d555002efafb81280a1dc484911a18c30b49de5768b695",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/apps/spotify/app.json",
+          "sha256": "d51e05ea7a559b91c56bfb4f69b307f683ff10efee7b7fe1103d9483fd187b62",
+          "bytes": 2531,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/apps/spotify/app.json",
+          "upstream_sha256": "466bb88d151e225ef7248ef20488dbfbf9d6db413b2af7e47af205aef2db9c8d",
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/apps/spotify/art.js",
+          "sha256": "3e2061572b064215caf6163ab2c20049ac2ac601466bdbdbbef3b1ac546f9043",
+          "bytes": 6675,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/apps/spotify/art.js",
+          "upstream_sha256": "3e2061572b064215caf6163ab2c20049ac2ac601466bdbdbbef3b1ac546f9043",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/apps/spotify/cloud_pair.js",
+          "sha256": "cd21f5ba6abeaaeb2a5c89cf97743785a06cc33adc74c880dd2bd4edf2a6c633",
+          "bytes": 2899,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/apps/spotify/cloud_pair.js",
+          "upstream_sha256": "cd21f5ba6abeaaeb2a5c89cf97743785a06cc33adc74c880dd2bd4edf2a6c633",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/apps/spotify/icon.png",
+          "sha256": "7e7e06848570f5ae181d497ee276a92e636ec4c7129228b52525503a6a2869c9",
+          "bytes": 2255,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/apps/spotify/icon.png",
+          "upstream_sha256": "7e7e06848570f5ae181d497ee276a92e636ec4c7129228b52525503a6a2869c9",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/apps/spotify/jpeg.js",
+          "sha256": "a3f175fd6f62d142aad94d3bd90f3a30be4e076baf9b6a6fa31c8e84d9d4aa9f",
+          "bytes": 40593,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/apps/spotify/jpeg.js",
+          "upstream_sha256": "a3f175fd6f62d142aad94d3bd90f3a30be4e076baf9b6a6fa31c8e84d9d4aa9f",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/apps/spotify/main.js",
+          "sha256": "251aa3cb98e51ce01af43afbdcd818735fe397d5914441cc765e20f6ac56ed59",
+          "bytes": 75711,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/apps/spotify/main.js",
+          "upstream_sha256": "251aa3cb98e51ce01af43afbdcd818735fe397d5914441cc765e20f6ac56ed59",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/apps/sys_monitor/app.json",
+          "sha256": "a49bb580b7a0fc75cd57fe66def0db94c7a85058e5952eeb3f998eec66beda21",
+          "bytes": 1479,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/apps/sys_monitor/app.json",
+          "upstream_sha256": "fa35e19d79ae0050b3d08a93c857ee8a107928368c2be2673cff7fa92db14895",
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/apps/sys_monitor/main.js",
+          "sha256": "074ae059188fa4b12f69f26edeaf5b036a9ae117517f44e93fdbc39265c93ab6",
+          "bytes": 30660,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/apps/sys_monitor/main.js",
+          "upstream_sha256": "074ae059188fa4b12f69f26edeaf5b036a9ae117517f44e93fdbc39265c93ab6",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/apps/sys_monitor/procs.js",
+          "sha256": "6f8891741dec2e46a00ffaa809293baec3e3d5cb46abd4cfc10a971fecf06d04",
+          "bytes": 27209,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/apps/sys_monitor/procs.js",
+          "upstream_sha256": "6f8891741dec2e46a00ffaa809293baec3e3d5cb46abd4cfc10a971fecf06d04",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/apps/sys_monitor/sample.js",
+          "sha256": "cd587abfe68a97016fd1096130c863451e09c0cc98027eca3afca54303b686f6",
+          "bytes": 5207,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/apps/sys_monitor/sample.js",
+          "upstream_sha256": "cd587abfe68a97016fd1096130c863451e09c0cc98027eca3afca54303b686f6",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/localization/credit.zh-CN.json",
+          "sha256": "c15e741d089c95575f0e8c4833489d6530980ced429672c9248ea8b6bc8fbd59",
+          "bytes": 576,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/localization/credit.zh-CN.json",
+          "upstream_sha256": "c15e741d089c95575f0e8c4833489d6530980ced429672c9248ea8b6bc8fbd59",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/platform/permissions.json",
+          "sha256": "a03a2d7be452e89f9ce5361820361dded34ef36aa1e4a5afda95a4a1b1e26b01",
+          "bytes": 9142,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/platform/permissions.json",
+          "upstream_sha256": "a03a2d7be452e89f9ce5361820361dded34ef36aa1e4a5afda95a4a1b1e26b01",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/canvas.js",
+          "sha256": "efa4d890e8f883e092f82907f27913b8ca405a3614f376db26956c2ed00a88e5",
+          "bytes": 30181,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/canvas.js",
+          "upstream_sha256": "efa4d890e8f883e092f82907f27913b8ca405a3614f376db26956c2ed00a88e5",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/car.js",
+          "sha256": "aa1a8c15f83705579d07372ba3688f91022a400b5fac74992bf370594787d789",
+          "bytes": 13167,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/car.js",
+          "upstream_sha256": "e0d0d582eb2c35c2af7f22d0e79aaae4aa67f85e1ba80a88f8951dbd2e81f31b",
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/certs.js",
+          "sha256": "c0c8fb43653fadcf21d4ce9bbd5c09d4271b069ce60f4776f98feaf5090c0f41",
+          "bytes": 12888,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/certs.js",
+          "upstream_sha256": "c0c8fb43653fadcf21d4ce9bbd5c09d4271b069ce60f4776f98feaf5090c0f41",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/cloud_pair.js",
+          "sha256": "e77fb7d38ebc7a1579d0da803be2cf9d99da1ddddc3de490c61acf5cfc59c881",
+          "bytes": 7695,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/cloud_pair.js",
+          "upstream_sha256": "e77fb7d38ebc7a1579d0da803be2cf9d99da1ddddc3de490c61acf5cfc59c881",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/credits.js",
+          "sha256": "74cb6154b98a5476d3147c5083642eac033cfbdf797a7a3f70ed7d7ce0b00e6b",
+          "bytes": 579,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/credits.js",
+          "upstream_sha256": "74cb6154b98a5476d3147c5083642eac033cfbdf797a7a3f70ed7d7ce0b00e6b",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/diag.js",
+          "sha256": "e703ae550dd8e9588f51d55ffb0c958c7e396db25abc41066bc5ca64c2c1ab18",
+          "bytes": 11487,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/diag.js",
+          "upstream_sha256": "e703ae550dd8e9588f51d55ffb0c958c7e396db25abc41066bc5ca64c2c1ab18",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/dids.js",
+          "sha256": "cf6ae106099e64863a7806ad1db36cdd24f161c03a4d97fba1aa2d5b630c73f4",
+          "bytes": 7048,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/dids.js",
+          "upstream_sha256": "cf6ae106099e64863a7806ad1db36cdd24f161c03a4d97fba1aa2d5b630c73f4",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/display.js",
+          "sha256": "12563b37e704b0445aaee9c9ee480ede213abe5fa3d4da5aa938dc390f4ead9d",
+          "bytes": 62399,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/display.js",
+          "upstream_sha256": "bc48cc25151dbb2711878fe7c978ca1f14fbf00927d8d980827a8a967a1312af",
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/ecus.js",
+          "sha256": "f5ec3dbdece067f7eaa0080479dfde0d25b8a882f657df8b6f58f46f8622e149",
+          "bytes": 1257,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/ecus.js",
+          "upstream_sha256": "f5ec3dbdece067f7eaa0080479dfde0d25b8a882f657df8b6f58f46f8622e149",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/fonts/OFL-NotoSansGeorgian.txt",
+          "sha256": "8c02263c5d73d40544f9ed91e30c4e947407057a3cc430d7b786189aeceff6df",
+          "bytes": 4384,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/fonts/OFL-NotoSansGeorgian.txt",
+          "upstream_sha256": "8c02263c5d73d40544f9ed91e30c4e947407057a3cc430d7b786189aeceff6df",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/fonts/OFL-NotoSansSC.txt",
+          "sha256": "babcfe66c8a098b2fa279bc724a3a342f8124f77ce18941fbcc1bbb39823cded",
+          "bytes": 4387,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/fonts/OFL-NotoSansSC.txt",
+          "upstream_sha256": "babcfe66c8a098b2fa279bc724a3a342f8124f77ce18941fbcc1bbb39823cded",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/fonts/bold-ka.json",
+          "sha256": "be2d9faa76007be8f3482fd24aa3055e3ed480e8fc2202a3c8ebb336837461d9",
+          "bytes": 143707,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/fonts/bold-ka.json",
+          "upstream_sha256": "be2d9faa76007be8f3482fd24aa3055e3ed480e8fc2202a3c8ebb336837461d9",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/fonts/bold.json",
+          "sha256": "c8185d6874a4ca1f79ffc2b73434d40426381b4bbf395f6f49733bd7020d7e76",
+          "bytes": 101476,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/fonts/bold.json",
+          "upstream_sha256": "c8185d6874a4ca1f79ffc2b73434d40426381b4bbf395f6f49733bd7020d7e76",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/fonts/cjk.json",
+          "sha256": "c2eb9fad6fa946810f1d5993ed1654fd44b76366d20a4b4cb2fcad7e365ae37f",
+          "bytes": 470342,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/fonts/cjk.json",
+          "upstream_sha256": "c2eb9fad6fa946810f1d5993ed1654fd44b76366d20a4b4cb2fcad7e365ae37f",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/fonts/gear.json",
+          "sha256": "d449f2afa02529e244a2499d294beb6ce20c887a56cb7ce8c9cf296413c6f592",
+          "bytes": 65999,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/fonts/gear.json",
+          "upstream_sha256": "d449f2afa02529e244a2499d294beb6ce20c887a56cb7ce8c9cf296413c6f592",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/fonts/label-ka.json",
+          "sha256": "f9c0d65cf9cfff0be0a0b35ef905305082986c5111b336cbcd3cfd5272f09f94",
+          "bytes": 170300,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/fonts/label-ka.json",
+          "upstream_sha256": "f9c0d65cf9cfff0be0a0b35ef905305082986c5111b336cbcd3cfd5272f09f94",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/fonts/label.json",
+          "sha256": "4dd985232ef36675f30ec855e8c4d5e6db5d44c8a0e04d82d50adc56c9eaf4cf",
+          "bytes": 72561,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/fonts/label.json",
+          "upstream_sha256": "4dd985232ef36675f30ec855e8c4d5e6db5d44c8a0e04d82d50adc56c9eaf4cf",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/fonts/light.json",
+          "sha256": "961ac19e874ed013c4cdfaaf009e85977e47889cbf3d470901f3d33b4bf4e0df",
+          "bytes": 91880,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/fonts/light.json",
+          "upstream_sha256": "961ac19e874ed013c4cdfaaf009e85977e47889cbf3d470901f3d33b4bf4e0df",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/fonts/num.json",
+          "sha256": "02a02e0c8e8da9c7bed35d66fce8c993998adf93080050e47511b602dbbcf9fc",
+          "bytes": 110925,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/fonts/num.json",
+          "upstream_sha256": "02a02e0c8e8da9c7bed35d66fce8c993998adf93080050e47511b602dbbcf9fc",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/fonts.js",
+          "sha256": "4d6f26794d7d0659e86705253e2776b35b111ebe0b245ff594848e3405e94cbe",
+          "bytes": 2059,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/fonts.js",
+          "upstream_sha256": "4d6f26794d7d0659e86705253e2776b35b111ebe0b245ff594848e3405e94cbe",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/gauges.js",
+          "sha256": "707b5edb2310d7c0693d6d502463f1fc2d17585bcaca2ba70473b3aae0a28678",
+          "bytes": 52992,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/gauges.js",
+          "upstream_sha256": "707b5edb2310d7c0693d6d502463f1fc2d17585bcaca2ba70473b3aae0a28678",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/hmi-text.js",
+          "sha256": "74d96fd26ec53f4dc55fd36e079901ed03994794c8b31ae37e93e095092814e0",
+          "bytes": 1163,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/hmi-text.js",
+          "upstream_sha256": "74d96fd26ec53f4dc55fd36e079901ed03994794c8b31ae37e93e095092814e0",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/i18n.js",
+          "sha256": "0d6cb10328ed455b6635c09517093f6c42a2c2f57dd2ca71f3be9fc1c9095be2",
+          "bytes": 2067,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/i18n.js",
+          "upstream_sha256": "0d6cb10328ed455b6635c09517093f6c42a2c2f57dd2ca71f3be9fc1c9095be2",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/id8_lifecycle.js",
+          "sha256": "e8170b7c20b9abe13644e1b942a5e5b0b4ddcb8281cc86c0c90e87ba9e32fc28",
+          "bytes": 3407,
+          "upstream_path": null,
+          "upstream_sha256": null,
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/link_crypto.js",
+          "sha256": "888ca72b0c28fec97ffbfd62274f4676814ca3aa9844f2336e228266244d780b",
+          "bytes": 4765,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/link_crypto.js",
+          "upstream_sha256": "888ca72b0c28fec97ffbfd62274f4676814ca3aa9844f2336e228266244d780b",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/locale.json",
+          "sha256": "c37863ed4336c34a3868d150767644841256ee3ad6fc3dad6e223bcb5913f7e7",
+          "bytes": 31,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/locale.json",
+          "upstream_sha256": "c37863ed4336c34a3868d150767644841256ee3ad6fc3dad6e223bcb5913f7e7",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/locales/zh-CN.json",
+          "sha256": "62527bc2b4dd364c65f850e9f4673467bd99bc8d3240c790d66dfc3e9dd4b66c",
+          "bytes": 59040,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/locales/zh-CN.json",
+          "upstream_sha256": "62527bc2b4dd364c65f850e9f4673467bd99bc8d3240c790d66dfc3e9dd4b66c",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/locales/zh-CN.tsv",
+          "sha256": "90beeec02a7bc17aadcd2fd2b1b4e93f1b0843e6323c277bbd36d7afae2b452d",
+          "bytes": 49946,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/locales/zh-CN.tsv",
+          "upstream_sha256": "90beeec02a7bc17aadcd2fd2b1b4e93f1b0843e6323c277bbd36d7afae2b452d",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/mgu.js",
+          "sha256": "796b51a6887a544e17d1365b009832d7af4e3bcd80d170b33c4d51776dfcaa63",
+          "bytes": 48941,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/mgu.js",
+          "upstream_sha256": "91b3ee08456107d755aaf005d91d2b86d3acaad27ef933861fb53804acac8036",
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/pack.js",
+          "sha256": "25e8270eb6b67045d8d9bbc225f6877dc54f9078036742e5adca687e1cf040c2",
+          "bytes": 3758,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/pack.js",
+          "upstream_sha256": "25e8270eb6b67045d8d9bbc225f6877dc54f9078036742e5adca687e1cf040c2",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/panel.js",
+          "sha256": "e8470ce765f53b9f1d0c8e50cafb021a2786353ef76ea8e57c64c25b9e133a1f",
+          "bytes": 5009,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/panel.js",
+          "upstream_sha256": "e8470ce765f53b9f1d0c8e50cafb021a2786353ef76ea8e57c64c25b9e133a1f",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/qrcodegen.js",
+          "sha256": "68a09ec3aeee8d7115d0cdc615f2006b4fd8636e28442f316ea89b6e626f3916",
+          "bytes": 42504,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/qrcodegen.js",
+          "upstream_sha256": "68a09ec3aeee8d7115d0cdc615f2006b4fd8636e28442f316ea89b6e626f3916",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/record.js",
+          "sha256": "a278a94188ba8a2bab947335610467a40e2b34c776b98164389adcd5009f84d0",
+          "bytes": 19164,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/record.js",
+          "upstream_sha256": "a278a94188ba8a2bab947335610467a40e2b34c776b98164389adcd5009f84d0",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/relay_stream.js",
+          "sha256": "ccd2ac4e010fafd4de637b84ef70e4902fa90975755bebab04842332016b7c1f",
+          "bytes": 6023,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/relay_stream.js",
+          "upstream_sha256": "ccd2ac4e010fafd4de637b84ef70e4902fa90975755bebab04842332016b7c1f",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/renderd.js",
+          "sha256": "5a0508f9dab9e4ae4d521351a6272190a50552a5dbbf0b4173bb8b9947bf30a1",
+          "bytes": 17929,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/renderd.js",
+          "upstream_sha256": "d70bc205f6bb169478ac95ae44e958d743b52ee4838a1e263cb37941da7052b6",
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/sheet.js",
+          "sha256": "39d297a72852df84f8e7f8ba76506f81ba43bb6c000c0938110c069872e01d34",
+          "bytes": 12958,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/sheet.js",
+          "upstream_sha256": "39d297a72852df84f8e7f8ba76506f81ba43bb6c000c0938110c069872e01d34",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/signals.js",
+          "sha256": "55e85140ef29188bb591d351357f01586ceffd5b0d402171f4630d2a57bedeb7",
+          "bytes": 11825,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/signals.js",
+          "upstream_sha256": "8e67117ae7c5994e3650a867fe6829bb2c0f32492eab80815f621e502464a2e6",
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/sim.js",
+          "sha256": "b7d1ee492c017223e1f0726a69af0d8cff1aa44ae10557e2effae1e3249fa2d9",
+          "bytes": 3920,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/sim.js",
+          "upstream_sha256": "b7d1ee492c017223e1f0726a69af0d8cff1aa44ae10557e2effae1e3249fa2d9",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/themes.js",
+          "sha256": "c24c641a0e82c4b9bc1ba91ebc2916044de9e160e40d0cf888943fc12d80fa58",
+          "bytes": 3158,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/themes.js",
+          "upstream_sha256": "c24c641a0e82c4b9bc1ba91ebc2916044de9e160e40d0cf888943fc12d80fa58",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/tls_dates.js",
+          "sha256": "cc806e4715faefa825e5ce255750c50e64f4989d3c51e89b75d622b2a9c471e9",
+          "bytes": 7085,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/tls_dates.js",
+          "upstream_sha256": "cc806e4715faefa825e5ce255750c50e64f4989d3c51e89b75d622b2a9c471e9",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/uplink.js",
+          "sha256": "830d1eabac5d074a6dbf57a2e97644101b6e6dfa400a21bf2d7375a7961ecde0",
+          "bytes": 8800,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/uplink.js",
+          "upstream_sha256": "830d1eabac5d074a6dbf57a2e97644101b6e6dfa400a21bf2d7375a7961ecde0",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/runtime/write_whole.js",
+          "sha256": "839b2314745a826f11969b4dbf4baadbbac8c2096c447b3943c50472bf4fe15f",
+          "bytes": 853,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/write_whole.js",
+          "upstream_sha256": "839b2314745a826f11969b4dbf4baadbbac8c2096c447b3943c50472bf4fe15f",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/tools/build.py",
+          "sha256": "45ba27b0f8105a0442fd84151e46e3256cc98e09d11de6d7a870d88da0b255ad",
+          "bytes": 42516,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/tools/build.py",
+          "upstream_sha256": "89d39a6f90102c66fdfc7bbf0389962a83e8b79ffb557469cb90eb61a2620fec",
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/tools/locale-revisions.json",
+          "sha256": "20ebbfca338321cf3d35877d32ae7fca392cfc6d9d7fea79a04b8403e3381112",
+          "bytes": 13,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/tools/locale-revisions.json",
+          "upstream_sha256": "20ebbfca338321cf3d35877d32ae7fca392cfc6d9d7fea79a04b8403e3381112",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/tools/localize.py",
+          "sha256": "2cfbd74f44353eeed8342c4809952a0c50294bacd988f84597ca617506445754",
+          "bytes": 3465,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/tools/localize.py",
+          "upstream_sha256": "de9c88378ad782d4cffd33206ef448de05876ceb56400b1fb1b86db1d8c4d148",
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/tools/make_icon.js",
+          "sha256": "052861654276d2fad155f84c1557370e73cad83a0e064ccfc2f4f0f9a461c4ea",
+          "bytes": 6951,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/tools/make_icon.js",
+          "upstream_sha256": "052861654276d2fad155f84c1557370e73cad83a0e064ccfc2f4f0f9a461c4ea",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/tools/oapgen/gen.js",
+          "sha256": "03353755765fd356df9b22b5042e5cb2227e057bcc933713b2c16147684bae1a",
+          "bytes": 2966,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/tools/oapgen/gen.js",
+          "upstream_sha256": "03353755765fd356df9b22b5042e5cb2227e057bcc933713b2c16147684bae1a",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/kit/tools/pack_data.py",
+          "sha256": "f0795f6170588a11efb2db504bd6cee6fb58a5aefd689d05d926583eff05e0ce",
+          "bytes": 3280,
+          "upstream_path": "apps/_sources/hexlay-idrive7-apps/kit/tools/pack_data.py",
+          "upstream_sha256": "f0795f6170588a11efb2db504bd6cee6fb58a5aefd689d05d926583eff05e0ce",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/tests/runtime_contract.js",
+          "sha256": "374504458f053f774e1c987a57efe3a8970704220686d2a1b4ab2db993ee128e",
+          "bytes": 20353,
+          "upstream_path": null,
+          "upstream_sha256": null,
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/tests/test_port.py",
+          "sha256": "6a1352a5347b3c3c5a2d619d0584f02e263853a571c393444c315176a0f5ffb2",
+          "bytes": 8459,
+          "upstream_path": null,
+          "upstream_sha256": null,
+          "unchanged_upstream": false
+        }
+      ],
+      "files_count": 81,
+      "source_bytes": 5857931,
+      "real_sdk_execution": "NOT_OBSERVED",
+      "live_id8_run": "NOT_OBSERVED"
+    },
+    {
+      "id": "pinguinooo-idrive8",
+      "revision": "1",
+      "path": "apps/_ports/pinguinooo-idrive8",
+      "upstream_snapshot": "apps/_sources/pinguinooo-idrive7-apps",
+      "apps": [
+        "adam_vitals"
+      ],
+      "metadata": "apps/_ports/pinguinooo-idrive8/AQ_PORT.json",
+      "test": "tests/test_pinguino_id8_port.py",
+      "files": [
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/AQ_PORT.json",
+          "sha256": "fbc93d9118e91e267670db2d04223d3da5e6bca415e053f04828d60f98b21af5",
+          "bytes": 7347,
+          "upstream_path": null,
+          "upstream_sha256": null,
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/LICENSE",
+          "sha256": "34db9858708561a4831bc0430559a6951d78d1fd8e87ab9699d8fdbfe60c2136",
+          "bytes": 1249,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/LICENSE",
+          "upstream_sha256": "34db9858708561a4831bc0430559a6951d78d1fd8e87ab9699d8fdbfe60c2136",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/README.md",
+          "sha256": "a96bc60ce3af17416af1d008f8d7bed852e6b16c40124efd847ce5b59aba80f2",
+          "bytes": 2190,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/README.md",
+          "upstream_sha256": "2e224002839b9ff2a05e91fa3edabaa02d8961d8d2f06b3f091b91a946975e63",
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/README_AQ_ID8.md",
+          "sha256": "85545232d9c9271bde587f198cd15335911e03abfa7db1b392ea2ac88d8c6656",
+          "bytes": 6739,
+          "upstream_path": null,
+          "upstream_sha256": null,
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/apps/adam_vitals/NOTICE",
+          "sha256": "6e66030b7968e2ce912294f9f80241a0b35405f5f800c5e780fe81e1b3f2a5dc",
+          "bytes": 1470,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/apps/adam_vitals/NOTICE",
+          "upstream_sha256": "6e66030b7968e2ce912294f9f80241a0b35405f5f800c5e780fe81e1b3f2a5dc",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/apps/adam_vitals/README.md",
+          "sha256": "cd6c534af57aa6ece66df5160a5490c846edae0baa53781ef97887d021c1e62b",
+          "bytes": 12842,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/apps/adam_vitals/README.md",
+          "upstream_sha256": "cd6c534af57aa6ece66df5160a5490c846edae0baa53781ef97887d021c1e62b",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/apps/adam_vitals/app.json",
+          "sha256": "8a1db59dd94d7bc96a1413af21f49ae3c7a726560535048550462698586aa083",
+          "bytes": 28561,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/apps/adam_vitals/app.json",
+          "upstream_sha256": "8a1db59dd94d7bc96a1413af21f49ae3c7a726560535048550462698586aa083",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/apps/adam_vitals/cooldown.js",
+          "sha256": "33f08fda8f68a067a73fcca19b6f9db7baffe4ceff9a83286f376f878471b192",
+          "bytes": 3971,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/apps/adam_vitals/cooldown.js",
+          "upstream_sha256": "33f08fda8f68a067a73fcca19b6f9db7baffe4ceff9a83286f376f878471b192",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/apps/adam_vitals/demo.js",
+          "sha256": "6a07b7e83cd69c5f9a6baefeabd2b82764da3ef11c1952f2700e9625db8af255",
+          "bytes": 2968,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/apps/adam_vitals/demo.js",
+          "upstream_sha256": "6a07b7e83cd69c5f9a6baefeabd2b82764da3ef11c1952f2700e9625db8af255",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/apps/adam_vitals/icon.png",
+          "sha256": "c06845cb5113ee6071e4303461ede61840194c263a1cfebc0c356196c5117242",
+          "bytes": 23399,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/apps/adam_vitals/icon.png",
+          "upstream_sha256": "c06845cb5113ee6071e4303461ede61840194c263a1cfebc0c356196c5117242",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/apps/adam_vitals/main.js",
+          "sha256": "1d71265322959b10cc8c262d42ff663578fc8aa761bb8fcbcb1a721668eb8e7c",
+          "bytes": 42188,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/apps/adam_vitals/main.js",
+          "upstream_sha256": "1d71265322959b10cc8c262d42ff663578fc8aa761bb8fcbcb1a721668eb8e7c",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/apps/adam_vitals/pages.js",
+          "sha256": "4614b2093b5c71a39aa3a1ff296e04e9732f077e4ceaa52e7123df0acd8683be",
+          "bytes": 38066,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/apps/adam_vitals/pages.js",
+          "upstream_sha256": "4614b2093b5c71a39aa3a1ff296e04e9732f077e4ceaa52e7123df0acd8683be",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/apps/adam_vitals/safety.js",
+          "sha256": "f8bff2d8010252668d414113039f0806ab45299aab038a32ba1c9c12be3716d2",
+          "bytes": 2627,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/apps/adam_vitals/safety.js",
+          "upstream_sha256": "f8bff2d8010252668d414113039f0806ab45299aab038a32ba1c9c12be3716d2",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/apps/adam_vitals/settings_check.js",
+          "sha256": "2bb338ef023b25da9860c778a069f9ec018d0e3130d9e4beb231aaec38f47233",
+          "bytes": 2317,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/apps/adam_vitals/settings_check.js",
+          "upstream_sha256": "2bb338ef023b25da9860c778a069f9ec018d0e3130d9e4beb231aaec38f47233",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/apps/adam_vitals/units.js",
+          "sha256": "a33e8476b969720f993b35490a99d0a6eaf045296785c67c1aa0588fd8f43355",
+          "bytes": 3604,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/apps/adam_vitals/units.js",
+          "upstream_sha256": "a33e8476b969720f993b35490a99d0a6eaf045296785c67c1aa0588fd8f43355",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/apps/adam_vitals/warmup.js",
+          "sha256": "1942d6a90c6c5f1793b9475bfa56b6a7023f8c2cfdd10bc5c2a06d5faeb0e42b",
+          "bytes": 6642,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/apps/adam_vitals/warmup.js",
+          "upstream_sha256": "1942d6a90c6c5f1793b9475bfa56b6a7023f8c2cfdd10bc5c2a06d5faeb0e42b",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/LICENSE",
+          "sha256": "7c813412dcaf1b9d18c28ca6b6199c4349e15e35beca44ab6cab8e4413fe0aa6",
+          "bytes": 1151,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/LICENSE",
+          "upstream_sha256": "7c813412dcaf1b9d18c28ca6b6199c4349e15e35beca44ab6cab8e4413fe0aa6",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/NOTICE",
+          "sha256": "6943bb7a55ffe19a69914005c84ca78b2c251c75588aa97f67161e6fa6583f12",
+          "bytes": 883,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/NOTICE",
+          "upstream_sha256": "6943bb7a55ffe19a69914005c84ca78b2c251c75588aa97f67161e6fa6583f12",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/NOTICE.zh-CN.md",
+          "sha256": "788e04acd7d904d6adff05ac2798f91191173e608d76b820070450e107469bab",
+          "bytes": 1081,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/NOTICE.zh-CN.md",
+          "upstream_sha256": "788e04acd7d904d6adff05ac2798f91191173e608d76b820070450e107469bab",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/icons/adam_mtrack.svg",
+          "sha256": "9071443cf4a4c9121fded9159ad2ed914d21f198feb93805038e244e7c4e2d28",
+          "bytes": 1901,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/icons/adam_mtrack.svg",
+          "upstream_sha256": "9071443cf4a4c9121fded9159ad2ed914d21f198feb93805038e244e7c4e2d28",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/icons/adam_shiftlights.svg",
+          "sha256": "bcc459725ade1ec1f0e55cbfa5285d27f7f48cacc3fd20977f2ed221ef41fb98",
+          "bytes": 1963,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/icons/adam_shiftlights.svg",
+          "upstream_sha256": "bcc459725ade1ec1f0e55cbfa5285d27f7f48cacc3fd20977f2ed221ef41fb98",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/icons/adam_vitals.svg",
+          "sha256": "e30e4344dc2dfdebc044cffd9b033127d561bf0d7f2548f2c1d3f7d7e4eb8a05",
+          "bytes": 3020,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/icons/adam_vitals.svg",
+          "upstream_sha256": "e30e4344dc2dfdebc044cffd9b033127d561bf0d7f2548f2c1d3f7d7e4eb8a05",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/platform/permissions.json",
+          "sha256": "a03a2d7be452e89f9ce5361820361dded34ef36aa1e4a5afda95a4a1b1e26b01",
+          "bytes": 9142,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/platform/permissions.json",
+          "upstream_sha256": "a03a2d7be452e89f9ce5361820361dded34ef36aa1e4a5afda95a4a1b1e26b01",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/runtime/canvas.js",
+          "sha256": "9d9deed0097832ae333a7df5e96f7b91398cc91b5f5135e689b7162c7bb35d30",
+          "bytes": 24352,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/runtime/canvas.js",
+          "upstream_sha256": "9d9deed0097832ae333a7df5e96f7b91398cc91b5f5135e689b7162c7bb35d30",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/runtime/car.js",
+          "sha256": "a2f9cc653518c2c1340c3be894b847bbb091e5eee4a182ea1d136bc770c8c791",
+          "bytes": 11706,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/runtime/car.js",
+          "upstream_sha256": "a2f9cc653518c2c1340c3be894b847bbb091e5eee4a182ea1d136bc770c8c791",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/runtime/credits.js",
+          "sha256": "6074066bc6ae85794db9b844322264ad8aa73b89c850f6b03a3ee57c57d95084",
+          "bytes": 529,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/runtime/credits.js",
+          "upstream_sha256": "6074066bc6ae85794db9b844322264ad8aa73b89c850f6b03a3ee57c57d95084",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/runtime/diag.js",
+          "sha256": "337bec1fed75f5216de2a3ef1fbe5cbb1e183b152a8071142a1009441bcd7cba",
+          "bytes": 10668,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/runtime/diag.js",
+          "upstream_sha256": "337bec1fed75f5216de2a3ef1fbe5cbb1e183b152a8071142a1009441bcd7cba",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/runtime/dids.js",
+          "sha256": "cf6ae106099e64863a7806ad1db36cdd24f161c03a4d97fba1aa2d5b630c73f4",
+          "bytes": 7048,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/runtime/dids.js",
+          "upstream_sha256": "cf6ae106099e64863a7806ad1db36cdd24f161c03a4d97fba1aa2d5b630c73f4",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/runtime/display.js",
+          "sha256": "f1f864993cd5080bd2991ff6e7769e7ee5f31aa5fd3808b4be1ce0b287edaca3",
+          "bytes": 55914,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/runtime/display.js",
+          "upstream_sha256": "ab9f171c53b4915a466f82bfd42c55b494793b8b58930dd18bb14a33f083da51",
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/runtime/ecus.js",
+          "sha256": "f5ec3dbdece067f7eaa0080479dfde0d25b8a882f657df8b6f58f46f8622e149",
+          "bytes": 1257,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/runtime/ecus.js",
+          "upstream_sha256": "f5ec3dbdece067f7eaa0080479dfde0d25b8a882f657df8b6f58f46f8622e149",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/runtime/engine.js",
+          "sha256": "c0b64fbe18029f102f2ae198dddfc402199dd5aabd71c60611e4987d9cc63a00",
+          "bytes": 3740,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/runtime/engine.js",
+          "upstream_sha256": "c0b64fbe18029f102f2ae198dddfc402199dd5aabd71c60611e4987d9cc63a00",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/runtime/fonts/OFL-NotoSansSC.txt",
+          "sha256": "babcfe66c8a098b2fa279bc724a3a342f8124f77ce18941fbcc1bbb39823cded",
+          "bytes": 4387,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/runtime/fonts/OFL-NotoSansSC.txt",
+          "upstream_sha256": "babcfe66c8a098b2fa279bc724a3a342f8124f77ce18941fbcc1bbb39823cded",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/runtime/fonts/bold.json",
+          "sha256": "c8185d6874a4ca1f79ffc2b73434d40426381b4bbf395f6f49733bd7020d7e76",
+          "bytes": 101476,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/runtime/fonts/bold.json",
+          "upstream_sha256": "c8185d6874a4ca1f79ffc2b73434d40426381b4bbf395f6f49733bd7020d7e76",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/runtime/fonts/cjk.json",
+          "sha256": "c2eb9fad6fa946810f1d5993ed1654fd44b76366d20a4b4cb2fcad7e365ae37f",
+          "bytes": 470342,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/runtime/fonts/cjk.json",
+          "upstream_sha256": "c2eb9fad6fa946810f1d5993ed1654fd44b76366d20a4b4cb2fcad7e365ae37f",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/runtime/fonts/gear.json",
+          "sha256": "d449f2afa02529e244a2499d294beb6ce20c887a56cb7ce8c9cf296413c6f592",
+          "bytes": 65999,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/runtime/fonts/gear.json",
+          "upstream_sha256": "d449f2afa02529e244a2499d294beb6ce20c887a56cb7ce8c9cf296413c6f592",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/runtime/fonts/label.json",
+          "sha256": "4dd985232ef36675f30ec855e8c4d5e6db5d44c8a0e04d82d50adc56c9eaf4cf",
+          "bytes": 72561,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/runtime/fonts/label.json",
+          "upstream_sha256": "4dd985232ef36675f30ec855e8c4d5e6db5d44c8a0e04d82d50adc56c9eaf4cf",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/runtime/fonts/light.json",
+          "sha256": "961ac19e874ed013c4cdfaaf009e85977e47889cbf3d470901f3d33b4bf4e0df",
+          "bytes": 91880,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/runtime/fonts/light.json",
+          "upstream_sha256": "961ac19e874ed013c4cdfaaf009e85977e47889cbf3d470901f3d33b4bf4e0df",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/runtime/fonts/num.json",
+          "sha256": "02a02e0c8e8da9c7bed35d66fce8c993998adf93080050e47511b602dbbcf9fc",
+          "bytes": 110925,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/runtime/fonts/num.json",
+          "upstream_sha256": "02a02e0c8e8da9c7bed35d66fce8c993998adf93080050e47511b602dbbcf9fc",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/runtime/fonts.js",
+          "sha256": "ba9d24d5ddc9146daaa825ba16940f2323464e236bb2b413a78d422d5feda47e",
+          "bytes": 1741,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/runtime/fonts.js",
+          "upstream_sha256": "ba9d24d5ddc9146daaa825ba16940f2323464e236bb2b413a78d422d5feda47e",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/runtime/gauges.js",
+          "sha256": "3eb52e936767eae6b881e8a4342e74a09dfb1d5414a31f3bd6a9106dc0556af0",
+          "bytes": 50921,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/runtime/gauges.js",
+          "upstream_sha256": "3eb52e936767eae6b881e8a4342e74a09dfb1d5414a31f3bd6a9106dc0556af0",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/runtime/hmi-text.js",
+          "sha256": "74d96fd26ec53f4dc55fd36e079901ed03994794c8b31ae37e93e095092814e0",
+          "bytes": 1163,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/runtime/hmi-text.js",
+          "upstream_sha256": "74d96fd26ec53f4dc55fd36e079901ed03994794c8b31ae37e93e095092814e0",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/runtime/i18n.js",
+          "sha256": "daf40d71e774d722af5c1cb1007b5bc6cf496aeeadf35a110bc3b0fca1091fdb",
+          "bytes": 3543,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/runtime/i18n.js",
+          "upstream_sha256": "daf40d71e774d722af5c1cb1007b5bc6cf496aeeadf35a110bc3b0fca1091fdb",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/runtime/id8_lifecycle.js",
+          "sha256": "e8170b7c20b9abe13644e1b942a5e5b0b4ddcb8281cc86c0c90e87ba9e32fc28",
+          "bytes": 3407,
+          "upstream_path": null,
+          "upstream_sha256": null,
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/runtime/licenses/AQ-ID8-adaptation.txt",
+          "sha256": "fe4cb2300060bc93590c392b3fcc78010f6a19526feac510cf473f361f7c1fbf",
+          "bytes": 3173,
+          "upstream_path": null,
+          "upstream_sha256": null,
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/runtime/locale.json",
+          "sha256": "c37863ed4336c34a3868d150767644841256ee3ad6fc3dad6e223bcb5913f7e7",
+          "bytes": 31,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/runtime/locale.json",
+          "upstream_sha256": "c37863ed4336c34a3868d150767644841256ee3ad6fc3dad6e223bcb5913f7e7",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/runtime/locales/ru.json",
+          "sha256": "3493b457622595dcb9b2413f4c4e5a5ff867b74a7bb91e3cfed4cc6b9134fada",
+          "bytes": 124207,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/runtime/locales/ru.json",
+          "upstream_sha256": "3493b457622595dcb9b2413f4c4e5a5ff867b74a7bb91e3cfed4cc6b9134fada",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/runtime/locales/ru.tsv",
+          "sha256": "58037e872fb05031d0f6e2a89c58bebe89607415204f71ee92abbf71e322e901",
+          "bytes": 111441,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/runtime/locales/ru.tsv",
+          "upstream_sha256": "58037e872fb05031d0f6e2a89c58bebe89607415204f71ee92abbf71e322e901",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/runtime/locales/zh-CN.json",
+          "sha256": "8aaf3a05f2cdaace157d663beb7a39e06110b99b4bd8dc7f482367147130f73c",
+          "bytes": 59083,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/runtime/locales/zh-CN.json",
+          "upstream_sha256": "8aaf3a05f2cdaace157d663beb7a39e06110b99b4bd8dc7f482367147130f73c",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/runtime/locales/zh-CN.tsv",
+          "sha256": "90beeec02a7bc17aadcd2fd2b1b4e93f1b0843e6323c277bbd36d7afae2b452d",
+          "bytes": 49946,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/runtime/locales/zh-CN.tsv",
+          "upstream_sha256": "90beeec02a7bc17aadcd2fd2b1b4e93f1b0843e6323c277bbd36d7afae2b452d",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/runtime/mgu.js",
+          "sha256": "76331ad304d5457c8fc112882b72b251b0e190daf4acfda16c814b4576a50496",
+          "bytes": 45878,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/runtime/mgu.js",
+          "upstream_sha256": "8b03db1cff4c2d412ff2e838baddf7e6f6b191d2117eba10750705aa402cd33d",
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/runtime/pack.js",
+          "sha256": "25e8270eb6b67045d8d9bbc225f6877dc54f9078036742e5adca687e1cf040c2",
+          "bytes": 3758,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/runtime/pack.js",
+          "upstream_sha256": "25e8270eb6b67045d8d9bbc225f6877dc54f9078036742e5adca687e1cf040c2",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/runtime/parked.js",
+          "sha256": "43f5517ad9badb0d23a11bb59a9c4501482891a23443861e3f5bdd10d1dcab57",
+          "bytes": 1571,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/runtime/parked.js",
+          "upstream_sha256": "43f5517ad9badb0d23a11bb59a9c4501482891a23443861e3f5bdd10d1dcab57",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/runtime/readonly-diag.js",
+          "sha256": "e46d9e54020b7111d38447f8b58dd8af51777f04524d0051893e7e5aa658f733",
+          "bytes": 9183,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/runtime/readonly-diag.js",
+          "upstream_sha256": "e46d9e54020b7111d38447f8b58dd8af51777f04524d0051893e7e5aa658f733",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/runtime/record.js",
+          "sha256": "c0764f55676a99e33a614780ffb972c37371331b69e17e9200e6df627d107b31",
+          "bytes": 18706,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/runtime/record.js",
+          "upstream_sha256": "c0764f55676a99e33a614780ffb972c37371331b69e17e9200e6df627d107b31",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/runtime/renderd.js",
+          "sha256": "61b8c64266f45abc6135a8e17467e8a6926b87c54bd80ed7ceb3eef26625eb4f",
+          "bytes": 17082,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/runtime/renderd.js",
+          "upstream_sha256": "3eaeb815b8edcf91756077fd654a996d3b7c522b0242bc9f4fae8464f67ca538",
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/runtime/sgbd.js",
+          "sha256": "799b35e09d558be20fa4fd6bacab0b6fd102fe49aaf34ae81dbadd7fcabfa37e",
+          "bytes": 5451,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/runtime/sgbd.js",
+          "upstream_sha256": "799b35e09d558be20fa4fd6bacab0b6fd102fe49aaf34ae81dbadd7fcabfa37e",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/runtime/sheet.js",
+          "sha256": "a35a4f01779d7910e0fc76661e839229214eb16d7b82d69fca8f6652ab137fec",
+          "bytes": 12906,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/runtime/sheet.js",
+          "upstream_sha256": "a35a4f01779d7910e0fc76661e839229214eb16d7b82d69fca8f6652ab137fec",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/runtime/signals.js",
+          "sha256": "016fb0517d659a329315ca3cd431f71701c349b2bd558f2abd0fae5d03f28f45",
+          "bytes": 13667,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/runtime/signals.js",
+          "upstream_sha256": "92e3e397aef9cd44fcef989c3802af7980b7f3340028dba3fd4a1741bc940e23",
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/runtime/sim.js",
+          "sha256": "b7d1ee492c017223e1f0726a69af0d8cff1aa44ae10557e2effae1e3249fa2d9",
+          "bytes": 3920,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/runtime/sim.js",
+          "upstream_sha256": "b7d1ee492c017223e1f0726a69af0d8cff1aa44ae10557e2effae1e3249fa2d9",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/runtime/text-layout.js",
+          "sha256": "0a36ff6e5b4d882a28d0689e0c110f007a53babc1fe9198be822823423d534d6",
+          "bytes": 545,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/runtime/text-layout.js",
+          "upstream_sha256": "0a36ff6e5b4d882a28d0689e0c110f007a53babc1fe9198be822823423d534d6",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/runtime/themes.js",
+          "sha256": "c24c641a0e82c4b9bc1ba91ebc2916044de9e160e40d0cf888943fc12d80fa58",
+          "bytes": 3158,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/runtime/themes.js",
+          "upstream_sha256": "c24c641a0e82c4b9bc1ba91ebc2916044de9e160e40d0cf888943fc12d80fa58",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/tools/build.py",
+          "sha256": "f06cd569521b686dc080754016b9001ca37f983b70718b31e1d0459ade43333b",
+          "bytes": 40206,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/tools/build.py",
+          "upstream_sha256": "706c7cd7c4b2133d7d9f98dd4dc7334e8eab4bac84ee33931c4abd866b839b08",
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/tools/locale-revisions.json",
+          "sha256": "065f674ed6a8422eaba97e1c186c5563344ef33d50426ec9e4e2d4ba1b5249e3",
+          "bytes": 22,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/tools/locale-revisions.json",
+          "upstream_sha256": "065f674ed6a8422eaba97e1c186c5563344ef33d50426ec9e4e2d4ba1b5249e3",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/tools/localize.py",
+          "sha256": "fb187fccb176d5ab4e0e007d2dfe7bcdc1c22deaa302de25286e25e88ba4e1c1",
+          "bytes": 3702,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/tools/localize.py",
+          "upstream_sha256": "58da3722bf589b3d3d26cb28413253fd6ef321ff9da9a50f3b2592289c5fdf12",
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/tools/oapgen/gen.js",
+          "sha256": "03353755765fd356df9b22b5042e5cb2227e057bcc933713b2c16147684bae1a",
+          "bytes": 2966,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/tools/oapgen/gen.js",
+          "upstream_sha256": "03353755765fd356df9b22b5042e5cb2227e057bcc933713b2c16147684bae1a",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/tools/pack_data.py",
+          "sha256": "f0795f6170588a11efb2db504bd6cee6fb58a5aefd689d05d926583eff05e0ce",
+          "bytes": 3280,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/tools/pack_data.py",
+          "upstream_sha256": "f0795f6170588a11efb2db504bd6cee6fb58a5aefd689d05d926583eff05e0ce",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/pinguinooo-idrive8/kit/tools/render_icons.py",
+          "sha256": "d99fb83c5a25f5b011c698c917b94dc19f91ba2ecfa4bbbd1d102a535c1e1bc1",
+          "bytes": 6476,
+          "upstream_path": "apps/_sources/pinguinooo-idrive7-apps/kit/tools/render_icons.py",
+          "upstream_sha256": "d99fb83c5a25f5b011c698c917b94dc19f91ba2ecfa4bbbd1d102a535c1e1bc1",
+          "unchanged_upstream": true
+        }
+      ],
+      "files_count": 67,
+      "source_bytes": 1839238,
+      "real_sdk_execution": "NOT_OBSERVED",
+      "live_id8_run": "NOT_OBSERVED"
+    },
+    {
+      "id": "arefahmad-idrive8",
+      "revision": "aq-aref-id8-1",
+      "path": "apps/_ports/arefahmad-idrive8",
+      "upstream_snapshot": "apps/_sources/arefahmad-idrive7-apps",
+      "apps": [
+        "aref_explorer"
+      ],
+      "metadata": "apps/_ports/arefahmad-idrive8/PORT.json",
+      "test": "tests/test_id8_aref_port.py",
+      "files": [
+        {
+          "path": "apps/_ports/arefahmad-idrive8/LICENSE",
+          "sha256": "af0fd0696aa3715b61d36249da00b7c1404d28f3ebb5bbff5b1c0262af765cc3",
+          "bytes": 1061,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/LICENSE",
+          "upstream_sha256": "af0fd0696aa3715b61d36249da00b7c1404d28f3ebb5bbff5b1c0262af765cc3",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/PORT.json",
+          "sha256": "f1e73a68672023e78760eb8a28c5a8507e5792aa3f18bcd7fde2ff0748bb1d26",
+          "bytes": 1868,
+          "upstream_path": null,
+          "upstream_sha256": null,
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/PROVENANCE.json",
+          "sha256": "d5fe939cfa8f866efea7fdbacd5a0e263b9d08dace27fb17457af657db3ff0d8",
+          "bytes": 19282,
+          "upstream_path": null,
+          "upstream_sha256": null,
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/README.md",
+          "sha256": "c4d03c0adb395131c22d12beb796a75ee87371c38315982a09690c83a0266aa7",
+          "bytes": 2735,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/README.md",
+          "upstream_sha256": "1eca724dd9619de2b28a9d357881eb1007b90aeb286e3554efcfdf055c7278ec",
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/apps/aref_explorer/README.md",
+          "sha256": "c5fba9acfd02325913261db44165e2f222f9d14244a6780eec253b083532cefc",
+          "bytes": 2797,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_explorer/README.md",
+          "upstream_sha256": "c5fba9acfd02325913261db44165e2f222f9d14244a6780eec253b083532cefc",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/apps/aref_explorer/app.json",
+          "sha256": "bc53bfe01b46bff40a4678ba3ed89c1b4038f0cbd5067403e442dccdc840803c",
+          "bytes": 1487,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_explorer/app.json",
+          "upstream_sha256": "6961a5a182a3202bde9f5c7ed158aeb3b9eef520b583cee8ca348dd716d8cfc6",
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/apps/aref_explorer/explore/catalog.js",
+          "sha256": "d106def09b3d8f492a420238b9198be8bc8890007cb13c5057fe1d29a8b97006",
+          "bytes": 6806,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_explorer/explore/catalog.js",
+          "upstream_sha256": "d106def09b3d8f492a420238b9198be8bc8890007cb13c5057fe1d29a8b97006",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/apps/aref_explorer/icon.png",
+          "sha256": "d11046b1300c438c040fa052b54c9cb4d9997086f3f9d1346ee31c080ea9edb3",
+          "bytes": 6647,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_explorer/icon.png",
+          "upstream_sha256": "d11046b1300c438c040fa052b54c9cb4d9997086f3f9d1346ee31c080ea9edb3",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/apps/aref_explorer/main.js",
+          "sha256": "23539db69c258b92a0a83624392985c042f35e678570d17989a003bb32f99ee3",
+          "bytes": 8203,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_explorer/main.js",
+          "upstream_sha256": "998a13fd3fb74881660db031a635fc723f8566e78f68915799830d3a2acff2df",
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/LICENSE.alexpereap",
+          "sha256": "72479db7cc03773b84999663a6917a433fe35438b9a9ad77afe3c8eeca377a44",
+          "bytes": 1067,
+          "upstream_path": null,
+          "upstream_sha256": null,
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/LICENSE.idrive7-apps",
+          "sha256": "7c813412dcaf1b9d18c28ca6b6199c4349e15e35beca44ab6cab8e4413fe0aa6",
+          "bytes": 1151,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.idrive7-apps",
+          "upstream_sha256": "7c813412dcaf1b9d18c28ca6b6199c4349e15e35beca44ab6cab8e4413fe0aa6",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/LICENSE.nickgcode",
+          "sha256": "c4a5df2c16e8e39f05b68a84adda3506c271b5871d53a219b12ad0578995f381",
+          "bytes": 1367,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.nickgcode",
+          "upstream_sha256": "c4a5df2c16e8e39f05b68a84adda3506c271b5871d53a219b12ad0578995f381",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/NOTICE.AQ-ID8",
+          "sha256": "0b6abf356781d51786923570979e2c64ad438bdb07d46925b35e0d4fbb49726e",
+          "bytes": 631,
+          "upstream_path": null,
+          "upstream_sha256": null,
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/platform/permissions.json",
+          "sha256": "a03a2d7be452e89f9ce5361820361dded34ef36aa1e4a5afda95a4a1b1e26b01",
+          "bytes": 9142,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/platform/permissions.json",
+          "upstream_sha256": "a03a2d7be452e89f9ce5361820361dded34ef36aa1e4a5afda95a4a1b1e26b01",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/anim.js",
+          "sha256": "a16f3fabc5496a290ee1270c479236ce36e6f47a368ad02843219f249e98b43d",
+          "bytes": 13385,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/anim.js",
+          "upstream_sha256": "a16f3fabc5496a290ee1270c479236ce36e6f47a368ad02843219f249e98b43d",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/arabic.js",
+          "sha256": "908b88b1872b7af2c29e2e5c970384adec062893bfbe63b050c91830796a4c6c",
+          "bytes": 5414,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/arabic.js",
+          "upstream_sha256": "908b88b1872b7af2c29e2e5c970384adec062893bfbe63b050c91830796a4c6c",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/audio_probe.js",
+          "sha256": "7747b6c34448bda717d1646d191fa47fbb7f611cccd372d21b58cac63006c9d3",
+          "bytes": 9006,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/audio_probe.js",
+          "upstream_sha256": "7747b6c34448bda717d1646d191fa47fbb7f611cccd372d21b58cac63006c9d3",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/canvas.js",
+          "sha256": "310305904e7129a7d25273c0f1ab58b9aef40c576f094c2bb6a1621a66c2b731",
+          "bytes": 24903,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/canvas.js",
+          "upstream_sha256": "310305904e7129a7d25273c0f1ab58b9aef40c576f094c2bb6a1621a66c2b731",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/car.js",
+          "sha256": "b4356f5c03a22dc98da80ec2cb61aaf543e446fc7d7abdf262e184f4c87a54f0",
+          "bytes": 23918,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/car.js",
+          "upstream_sha256": "b4356f5c03a22dc98da80ec2cb61aaf543e446fc7d7abdf262e184f4c87a54f0",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/cluster_render.js",
+          "sha256": "a0d41ba9bf7509fdb7fb9149ff59690648ee8ffd3c6f147a11e287ee71eccd48",
+          "bytes": 6602,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/cluster_render.js",
+          "upstream_sha256": "a0d41ba9bf7509fdb7fb9149ff59690648ee8ffd3c6f147a11e287ee71eccd48",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/credits.js",
+          "sha256": "74cb6154b98a5476d3147c5083642eac033cfbdf797a7a3f70ed7d7ce0b00e6b",
+          "bytes": 579,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/credits.js",
+          "upstream_sha256": "74cb6154b98a5476d3147c5083642eac033cfbdf797a7a3f70ed7d7ce0b00e6b",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/diag.js",
+          "sha256": "337bec1fed75f5216de2a3ef1fbe5cbb1e183b152a8071142a1009441bcd7cba",
+          "bytes": 10668,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/diag.js",
+          "upstream_sha256": "337bec1fed75f5216de2a3ef1fbe5cbb1e183b152a8071142a1009441bcd7cba",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/display.js",
+          "sha256": "11a35a3dacb4bbeab58ffd432264b9f347ef73db6bbe23df180d86b3bafbb811",
+          "bytes": 58780,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/display.js",
+          "upstream_sha256": "a826d58449919fb04e239c7b10445e729572f9046644ea1e1239e4d81d7074fc",
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/ecus.js",
+          "sha256": "f5ec3dbdece067f7eaa0080479dfde0d25b8a882f657df8b6f58f46f8622e149",
+          "bytes": 1257,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/ecus.js",
+          "upstream_sha256": "f5ec3dbdece067f7eaa0080479dfde0d25b8a882f657df8b6f58f46f8622e149",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/fonts/OFL-Inter.txt",
+          "sha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57",
+          "bytes": 4377,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/fonts/OFL-Inter.txt",
+          "upstream_sha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/fonts/OFL-NotoSansArabic.txt",
+          "sha256": "07fc70bfeb985cc1a87a8587d0a0c80bab11c86c9dc3fd95b6f0cb332f983e96",
+          "bytes": 4382,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/fonts/OFL-NotoSansArabic.txt",
+          "upstream_sha256": "07fc70bfeb985cc1a87a8587d0a0c80bab11c86c9dc3fd95b6f0cb332f983e96",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/fonts/OFL-NotoSansSC.txt",
+          "sha256": "babcfe66c8a098b2fa279bc724a3a342f8124f77ce18941fbcc1bbb39823cded",
+          "bytes": 4387,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/fonts/OFL-NotoSansSC.txt",
+          "upstream_sha256": "babcfe66c8a098b2fa279bc724a3a342f8124f77ce18941fbcc1bbb39823cded",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/fonts/arabic.json",
+          "sha256": "434c7b6d4e48b43129d29783d42658ba7a72a4aa7c85da3be8543b8589d1df08",
+          "bytes": 440854,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/fonts/arabic.json",
+          "upstream_sha256": "434c7b6d4e48b43129d29783d42658ba7a72a4aa7c85da3be8543b8589d1df08",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/fonts/bold.json",
+          "sha256": "c8185d6874a4ca1f79ffc2b73434d40426381b4bbf395f6f49733bd7020d7e76",
+          "bytes": 101476,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/fonts/bold.json",
+          "upstream_sha256": "c8185d6874a4ca1f79ffc2b73434d40426381b4bbf395f6f49733bd7020d7e76",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/fonts/cjk.json",
+          "sha256": "ca216560aecf5f1b3d9d8e3a5c281a0cc442a0c8e2a8cb022b370c3f6deaef42",
+          "bytes": 420462,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/fonts/cjk.json",
+          "upstream_sha256": "ca216560aecf5f1b3d9d8e3a5c281a0cc442a0c8e2a8cb022b370c3f6deaef42",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/fonts/gear.json",
+          "sha256": "d449f2afa02529e244a2499d294beb6ce20c887a56cb7ce8c9cf296413c6f592",
+          "bytes": 65999,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/fonts/gear.json",
+          "upstream_sha256": "d449f2afa02529e244a2499d294beb6ce20c887a56cb7ce8c9cf296413c6f592",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/fonts/label.json",
+          "sha256": "4dd985232ef36675f30ec855e8c4d5e6db5d44c8a0e04d82d50adc56c9eaf4cf",
+          "bytes": 72561,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/fonts/label.json",
+          "upstream_sha256": "4dd985232ef36675f30ec855e8c4d5e6db5d44c8a0e04d82d50adc56c9eaf4cf",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/fonts/light.json",
+          "sha256": "961ac19e874ed013c4cdfaaf009e85977e47889cbf3d470901f3d33b4bf4e0df",
+          "bytes": 91880,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/fonts/light.json",
+          "upstream_sha256": "961ac19e874ed013c4cdfaaf009e85977e47889cbf3d470901f3d33b4bf4e0df",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/fonts/num.json",
+          "sha256": "02a02e0c8e8da9c7bed35d66fce8c993998adf93080050e47511b602dbbcf9fc",
+          "bytes": 110925,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/fonts/num.json",
+          "upstream_sha256": "02a02e0c8e8da9c7bed35d66fce8c993998adf93080050e47511b602dbbcf9fc",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/fonts.js",
+          "sha256": "6aa1cfd474e51abfd484f6475126c5b1087ea6973e01e4406b2cfb0d6a2b0679",
+          "bytes": 2797,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/fonts.js",
+          "upstream_sha256": "6aa1cfd474e51abfd484f6475126c5b1087ea6973e01e4406b2cfb0d6a2b0679",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/fullscreen.js",
+          "sha256": "a2ebf7abe387965491eb4c95f4e5289418f28a065a178b7719f6f05886a040f9",
+          "bytes": 6919,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/fullscreen.js",
+          "upstream_sha256": "a2ebf7abe387965491eb4c95f4e5289418f28a065a178b7719f6f05886a040f9",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/gauges.js",
+          "sha256": "38ce7339796f71da3cf58d8c2493de18831ec3303cb195d6ed3ba585050349dc",
+          "bytes": 51100,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/gauges.js",
+          "upstream_sha256": "38ce7339796f71da3cf58d8c2493de18831ec3303cb195d6ed3ba585050349dc",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/gif.js",
+          "sha256": "166693feaa3d636b2dcafb570a201d9f2df3492768f287669b699bb2107b30da",
+          "bytes": 11431,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/gif.js",
+          "upstream_sha256": "166693feaa3d636b2dcafb570a201d9f2df3492768f287669b699bb2107b30da",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/gif_drop.js",
+          "sha256": "560cfce4bab2536e61819d0917bab4ff0a9c1a5413a21a80d45b838caaff5589",
+          "bytes": 12903,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/gif_drop.js",
+          "upstream_sha256": "560cfce4bab2536e61819d0917bab4ff0a9c1a5413a21a80d45b838caaff5589",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/gmark.js",
+          "sha256": "f06b0048f021dd7ef3a3e79dd719c755cd375b451b5d76532b23ffb944a3826b",
+          "bytes": 2244,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/gmark.js",
+          "upstream_sha256": "f06b0048f021dd7ef3a3e79dd719c755cd375b451b5d76532b23ffb944a3826b",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/hmi-text.js",
+          "sha256": "74d96fd26ec53f4dc55fd36e079901ed03994794c8b31ae37e93e095092814e0",
+          "bytes": 1163,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/hmi-text.js",
+          "upstream_sha256": "74d96fd26ec53f4dc55fd36e079901ed03994794c8b31ae37e93e095092814e0",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/hmi_widgets.js",
+          "sha256": "622c7d425f0aed6f9bb170596d35e41a8928eb1a498264fdb7bd6dc41926e218",
+          "bytes": 20939,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/hmi_widgets.js",
+          "upstream_sha256": "622c7d425f0aed6f9bb170596d35e41a8928eb1a498264fdb7bd6dc41926e218",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/homewidget.js",
+          "sha256": "eb7ee1047931d8c6a91cf701a9f8953f0b0af4aa0e7843a1e70eb42ab9a41177",
+          "bytes": 5144,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/homewidget.js",
+          "upstream_sha256": "eb7ee1047931d8c6a91cf701a9f8953f0b0af4aa0e7843a1e70eb42ab9a41177",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/i18n.js",
+          "sha256": "c57022ea82081eb52408c16c77b1286443f57765a9252eaf906fe93d10ed8d92",
+          "bytes": 1969,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/i18n.js",
+          "upstream_sha256": "c57022ea82081eb52408c16c77b1286443f57765a9252eaf906fe93d10ed8d92",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/id8_lifecycle.js",
+          "sha256": "c7006993869489c7baff0894ae303f2a9ce1d7e88189b65640a4c974063f970e",
+          "bytes": 2608,
+          "upstream_path": null,
+          "upstream_sha256": null,
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/locale.json",
+          "sha256": "c37863ed4336c34a3868d150767644841256ee3ad6fc3dad6e223bcb5913f7e7",
+          "bytes": 31,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/locale.json",
+          "upstream_sha256": "c37863ed4336c34a3868d150767644841256ee3ad6fc3dad6e223bcb5913f7e7",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/locales/zh-CN.json",
+          "sha256": "0837571c00c139eaceb32e962b9ec8f3c5d1e9bc48e0cc066e75f91bebd95f10",
+          "bytes": 37392,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/locales/zh-CN.json",
+          "upstream_sha256": "0837571c00c139eaceb32e962b9ec8f3c5d1e9bc48e0cc066e75f91bebd95f10",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/locales/zh-CN.tsv",
+          "sha256": "9b8360c7fe134b8130ad336413eebb87f1197399ceb208758ea16ea5ab744f18",
+          "bytes": 31497,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/locales/zh-CN.tsv",
+          "upstream_sha256": "9b8360c7fe134b8130ad336413eebb87f1197399ceb208758ea16ea5ab744f18",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/mgu.js",
+          "sha256": "0bfb309e78c6d387af36c1b07a13a6ae9540d54fd8a8f0bbe5a8bd5524e553c7",
+          "bytes": 53492,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/mgu.js",
+          "upstream_sha256": "f9a6acefdce49675661da021ba915851a312af081de07efd15f94fea2d0022ab",
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/pack.js",
+          "sha256": "8b1861ec2fd2c2fa97acf05aa5f3d0dc184e028db200ab88afcd98467f29aa2c",
+          "bytes": 3763,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/pack.js",
+          "upstream_sha256": "8b1861ec2fd2c2fa97acf05aa5f3d0dc184e028db200ab88afcd98467f29aa2c",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/parked.js",
+          "sha256": "43f5517ad9badb0d23a11bb59a9c4501482891a23443861e3f5bdd10d1dcab57",
+          "bytes": 1571,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/parked.js",
+          "upstream_sha256": "43f5517ad9badb0d23a11bb59a9c4501482891a23443861e3f5bdd10d1dcab57",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/platform_paths.js",
+          "sha256": "fc61b2c3aad628aafb313946cdf95370de5c7105917eb6f47f778a53b0e491b6",
+          "bytes": 1106,
+          "upstream_path": null,
+          "upstream_sha256": null,
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/png.js",
+          "sha256": "436143de6a10d1ef5667457aa1882373a6dde9e12959ff9bf7bdee03abf0997b",
+          "bytes": 3357,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/png.js",
+          "upstream_sha256": "436143de6a10d1ef5667457aa1882373a6dde9e12959ff9bf7bdee03abf0997b",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/record.js",
+          "sha256": "f412f53744957998d9083c178a60667b942fd65218a61af2d51d2653dd9d2173",
+          "bytes": 23375,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/record.js",
+          "upstream_sha256": "f412f53744957998d9083c178a60667b942fd65218a61af2d51d2653dd9d2173",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/remotelog.js",
+          "sha256": "643967074fe4cbe125f83759a64f23d69f66435f94a97536c4ec7845801a7a3f",
+          "bytes": 31456,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/remotelog.js",
+          "upstream_sha256": "643967074fe4cbe125f83759a64f23d69f66435f94a97536c4ec7845801a7a3f",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/renderd.js",
+          "sha256": "a11ee58e8a109898b82a2a25040de7df977c57c65588f6b092a7d685a5226ba1",
+          "bytes": 26479,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/renderd.js",
+          "upstream_sha256": "10633a2e6d0f4de4212df25ecf3e66f60574fe7124b1a699081c4415ef7d3f46",
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/ringlog.js",
+          "sha256": "12a9a5ab373653bb198ed1a19721f4c901ba43153f7d92d8b173d16effd63f90",
+          "bytes": 12782,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/ringlog.js",
+          "upstream_sha256": "12a9a5ab373653bb198ed1a19721f4c901ba43153f7d92d8b173d16effd63f90",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/sheet.js",
+          "sha256": "049438e9d1973f1d20d5bc23770fd5f9c0df2c2cd5c02289552b969e55bd4f67",
+          "bytes": 12848,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/sheet.js",
+          "upstream_sha256": "049438e9d1973f1d20d5bc23770fd5f9c0df2c2cd5c02289552b969e55bd4f67",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/signals.js",
+          "sha256": "92e3e397aef9cd44fcef989c3802af7980b7f3340028dba3fd4a1741bc940e23",
+          "bytes": 5721,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/signals.js",
+          "upstream_sha256": "92e3e397aef9cd44fcef989c3802af7980b7f3340028dba3fd4a1741bc940e23",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/sim.js",
+          "sha256": "bf16b8383c5f9a7e4da07a754b9f50fadce0f621825368bbec1e459581d6148e",
+          "bytes": 3670,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/sim.js",
+          "upstream_sha256": "bf16b8383c5f9a7e4da07a754b9f50fadce0f621825368bbec1e459581d6148e",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/themes.js",
+          "sha256": "c24c641a0e82c4b9bc1ba91ebc2916044de9e160e40d0cf888943fc12d80fa58",
+          "bytes": 3158,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/themes.js",
+          "upstream_sha256": "c24c641a0e82c4b9bc1ba91ebc2916044de9e160e40d0cf888943fc12d80fa58",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/uplink.js",
+          "sha256": "053a5db1f8dae75acb159d17883948c737c4d221d536c7b5af2f01d3af583af6",
+          "bytes": 3336,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/uplink.js",
+          "upstream_sha256": "053a5db1f8dae75acb159d17883948c737c4d221d536c7b5af2f01d3af583af6",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/widget_anim.js",
+          "sha256": "52dcb12ba34fdb454985d2cb1fdafdd296bd948bf51fb8e87a47c9ca7310f744",
+          "bytes": 18133,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/widget_anim.js",
+          "upstream_sha256": "52dcb12ba34fdb454985d2cb1fdafdd296bd948bf51fb8e87a47c9ca7310f744",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/runtime/x25519.js",
+          "sha256": "5c291211c8052453be9af694e514b3619c2d0f055fe31458043a3eaf74446015",
+          "bytes": 3546,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/x25519.js",
+          "upstream_sha256": "5c291211c8052453be9af694e514b3619c2d0f055fe31458043a3eaf74446015",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/tools/bake_arabic.py",
+          "sha256": "194b78f205d5edb3def14735df2da5f1b225f22185aa1dcc66e3aafa01e3069c",
+          "bytes": 2815,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/tools/bake_arabic.py",
+          "upstream_sha256": "194b78f205d5edb3def14735df2da5f1b225f22185aa1dcc66e3aafa01e3069c",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/tools/build.py",
+          "sha256": "119781e148bc8d7ee1ce5335792d392c140fab06cc5967fa008d32e288cf31ce",
+          "bytes": 49845,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
+          "upstream_sha256": "8e39acaf9b17b92048f9f906c25ddbbc67c2df5080d1a3c2517bc5e0a650ffdc",
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/tools/locale-revisions.json",
+          "sha256": "050193f3541049b9377e19fde90b8a337b13cbcb57cf0859b26ee274f69f5459",
+          "bytes": 12,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/tools/locale-revisions.json",
+          "upstream_sha256": "050193f3541049b9377e19fde90b8a337b13cbcb57cf0859b26ee274f69f5459",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/tools/localize.py",
+          "sha256": "b96ede4f86b17c1daeaee318a74c18ee43067c6fd8d0ee5f1e624af47a284593",
+          "bytes": 3238,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/tools/localize.py",
+          "upstream_sha256": "6910c7da719f06acddd311ddffdf7fa8dc985bf4e0e4968447778a0da43e66a5",
+          "unchanged_upstream": false
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/tools/oapgen/gen.js",
+          "sha256": "03353755765fd356df9b22b5042e5cb2227e057bcc933713b2c16147684bae1a",
+          "bytes": 2966,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/tools/oapgen/gen.js",
+          "upstream_sha256": "03353755765fd356df9b22b5042e5cb2227e057bcc933713b2c16147684bae1a",
+          "unchanged_upstream": true
+        },
+        {
+          "path": "apps/_ports/arefahmad-idrive8/kit/tools/pack_data.py",
+          "sha256": "578b9409ba3d7d8c4755b158858c4aa2349ff04d4eeb3dc7330babf41d6d1770",
+          "bytes": 3290,
+          "upstream_path": "apps/_sources/arefahmad-idrive7-apps/kit/tools/pack_data.py",
+          "upstream_sha256": "578b9409ba3d7d8c4755b158858c4aa2349ff04d4eeb3dc7330babf41d6d1770",
+          "unchanged_upstream": true
+        }
+      ],
+      "files_count": 70,
+      "source_bytes": 1994155,
+      "real_sdk_execution": "NOT_OBSERVED",
+      "live_id8_run": "NOT_OBSERVED"
+    }
+  ]
+}

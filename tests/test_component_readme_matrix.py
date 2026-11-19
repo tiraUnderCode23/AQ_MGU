@@ -101,6 +101,25 @@ class ComponentReadmeMatrixTests(unittest.TestCase):
         self.assertIn("not a live install result", self.document)
         self.assertIn("NOT OBSERVED", self.document)
 
+    def test_gallery_hmi_badges_match_current_inventory(self):
+        text = (ROOT / 'README.md').read_text(encoding='utf-8')
+        checked = 0
+        for block in re.findall(r'<details>.*?</details>', text, re.DOTALL):
+            identifier = re.search(r'<summary>.*?<code>([^<]+)</code>', block)
+            if not identifier or identifier[1] not in self.inventory:
+                continue
+            row = self.inventory[identifier[1]]
+            expected = ', '.join(row.get('supported_hmi') or []) or 'Not declared'
+            with self.subTest(component=identifier[1]):
+                badge = re.search(r'\*\*Supported:\*\* ([^·\n]+)', block)
+                self.assertIsNotNone(badge)
+                self.assertEqual(badge[1].strip(), expected)
+                if row.get('source_port'):
+                    self.assertIn('AQ source adaptation', block)
+                    self.assertIn(row['source_port']['path'] + '/README.md', block)
+            checked += 1
+        self.assertEqual(checked, 37)
+
 
 if __name__ == "__main__":
     unittest.main()

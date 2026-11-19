@@ -1,0 +1,30 @@
+{
+  "schema": "aq-mgu.source-port/1",
+  "id": "arefahmad-idrive8",
+  "revision": "aq-aref-id8-1",
+  "distribution": "AQ derived source; not an upstream release",
+  "upstream_repository": "arefahmad/idrive7-apps",
+  "upstream_commit": "6db26cdae67e6900c530611905f0b9aa856f27f0",
+  "upstream_snapshot": "apps/_sources/arefahmad-idrive7-apps",
+  "apps": [{"id": "aref_explorer", "version": "0.2.3", "mguHmi": ["ID7", "ID8"]}],
+  "reference_sources": [
+    {"repository": "cauliflowermossgrape/idrive7-apps", "commit": "422957a85461826c1e8654d37c8ec66a94849f9c", "license": "MIT", "scope": "ID8 RHMI generator, cells and renderer application area"},
+    {"repository": "alexpereap/pereaperformance-idrive7-apps", "commit": "5b758fad17761b8696989e2a4ffbfbfab4926b6f", "license": "MIT", "scope": "Public SDK lifecycle and entry point contract"}
+  ],
+  "changes": [
+    "Separate ID7 and ID8 RHMI resource trees with preserved state IDs and ID7 output",
+    "ID8 platform declarations, text cell mapping and native settings rows",
+    "Native renderer requirement, application area placement and touch settings",
+    "Foreground and background lifecycle, bounded entry initialization and visibility handling",
+    "MainApp family path selection: oap-mainapp for ID7 and oap-mainapp21 for ID8",
+    "Original and donor notices embedded in the derived target package"
+  ],
+  "limits": [
+    "No OEM SDK is included or executed by offline tests",
+    "No actual target build, HU registration or live ID8 run has been observed",
+    "ID8 canvas requires a native renderer with touch routing and a usable application area",
+    "Unknown or ambiguous MainApp paths are reported; the reader never falls back across HMI families",
+    "Other Aref applications, home-screen widgets and Tire Setup actions are not ported by this package"
+  ],
+  "test": "tests/test_id8_aref_port.py"
+}

@@ -350,5 +350,28 @@
       "included_for": "M Arcade: one ID7 app with six games; original source modules, RHMI package tree and build helpers",
       "checked_at": "2026-11-19"
     }
+  ],
+  "derived_ports": [
+    {
+      "id": "hexlay-idrive8",
+      "revision": "aq-hexlay-id8-1",
+      "path": "apps/_ports/hexlay-idrive8",
+      "provenance": "apps/_ports/hexlay-idrive8/PROVENANCE.json",
+      "source_metadata": "apps/_ports/hexlay-idrive8/PORT.json"
+    },
+    {
+      "id": "arefahmad-idrive8",
+      "revision": "aq-aref-id8-1",
+      "path": "apps/_ports/arefahmad-idrive8",
+      "provenance": "apps/_ports/arefahmad-idrive8/PROVENANCE.json",
+      "source_metadata": "apps/_ports/arefahmad-idrive8/PORT.json"
+    },
+    {
+      "id": "pinguinooo-idrive8",
+      "revision": "1",
+      "path": "apps/_ports/pinguinooo-idrive8",
+      "provenance": "apps/_ports/pinguinooo-idrive8/AQ_PORT.json",
+      "source_metadata": "apps/_ports/pinguinooo-idrive8/AQ_PORT.json"
+    }
   ]
 }

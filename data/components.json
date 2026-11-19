@@ -26,7 +26,7 @@
       },
       "artifact": {},
       "upstream_artifact_sha256": null,
-      "live_install_status": "NOT OBSERVED"
+      "live_install_status": "USER_REPORTED_INSTALLED; HMI and runtime not independently observed"
     },
     {
       "id": "adam_shiftlights",
@@ -53,7 +53,7 @@
       },
       "artifact": {},
       "upstream_artifact_sha256": null,
-      "live_install_status": "NOT OBSERVED"
+      "live_install_status": "UNCONFIRMED: updater connection reset; no final readback"
     },
     {
       "id": "adam_vitals",
@@ -63,7 +63,7 @@
       "description": "Boost, power, torque, gear, oil, coolant and transmission temperatures, with a warm-up guide and turbo cool-down",
       "source_repository": "pinguinooo/idrive7-apps",
       "license": "MIT; bundled MPL-2.0 client and SIL-OFL-1.1 art notices retained",
-      "source_path": "apps/_sources/pinguinooo-idrive7-apps/apps/adam_vitals",
+      "source_path": "apps/_ports/pinguinooo-idrive8/apps/adam_vitals",
       "delivery": "branch source",
       "icon": "",
       "images": [],
@@ -71,15 +71,26 @@
       "upstream_readme": "apps/_sources/pinguinooo-idrive7-apps/apps/adam_vitals/README.md",
       "version": "0.2.0",
       "supported_hmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
-        "idrive7-renderd": "2.1.7",
-        "mgu-inputgate": "1.0.0"
+        "mgu-render": "0.6.24"
       },
       "artifact": {},
       "upstream_artifact_sha256": null,
-      "live_install_status": "NOT OBSERVED"
+      "live_install_status": "NOT OBSERVED",
+      "source_origin_path": "apps/_sources/pinguinooo-idrive7-apps/apps/adam_vitals",
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
+      "source_port": {
+        "id": "pinguinooo-idrive8",
+        "revision": "1",
+        "path": "apps/_ports/pinguinooo-idrive8",
+        "provenance": "apps/_ports/pinguinooo-idrive8/AQ_PORT.json",
+        "source_metadata": "apps/_ports/pinguinooo-idrive8/AQ_PORT.json"
+      }
     },
     {
       "id": "airplay-rx",
@@ -118,7 +129,8 @@
       "version": "2.6.2",
       "description": "Any colour on the ambient light, animations, and a look for each driving mode",
       "supported_hmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
         "idrive7-renderd": "2.1.18",
@@ -320,7 +332,7 @@
       "description": "Finds the head unit's services behind a car feature (ambient light, route guidance and ETA, GPS position, now playing, climate, lights, doors, fuel) in its interface catalog and shows what each offers. Writes everything to explorer-report.txt, which new apps are designed from. Read-only: it reads two platform files and sends nothing to the car. For developers and curious owners.",
       "source_repository": "arefahmad/idrive7-apps",
       "license": "MIT with per-app, runtime and font notices retained",
-      "source_path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_explorer",
+      "source_path": "apps/_ports/arefahmad-idrive8/apps/aref_explorer",
       "delivery": "branch source",
       "icon": "",
       "images": [],
@@ -328,12 +340,26 @@
       "upstream_readme": "apps/_sources/arefahmad-idrive7-apps/apps/aref_explorer/README.md",
       "version": "0.2.3",
       "supported_hmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
-      "requires": {},
+      "requires": {
+        "mgu-render": "0.6.24"
+      },
       "artifact": {},
       "upstream_artifact_sha256": null,
-      "live_install_status": "NOT OBSERVED"
+      "live_install_status": "NOT OBSERVED",
+      "source_origin_path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_explorer",
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
+      "source_port": {
+        "id": "arefahmad-idrive8",
+        "revision": "aq-aref-id8-1",
+        "path": "apps/_ports/arefahmad-idrive8",
+        "provenance": "apps/_ports/arefahmad-idrive8/PROVENANCE.json",
+        "source_metadata": "apps/_ports/arefahmad-idrive8/PORT.json"
+      }
     },
     {
       "id": "aref_faultwatch",
@@ -926,7 +952,8 @@
       "version": "1.5.21",
       "description": "100-0 and 200-0 braking distance, peak decel and brake-fade tracking",
       "supported_hmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
         "idrive7-renderd": "2.1.18",
@@ -984,7 +1011,8 @@
       "version": "2.27.6",
       "description": "Live engine, thermal, intake / fuel / ignition, tyre and chassis gauges",
       "supported_hmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
         "idrive7-renderd": "2.1.18",
@@ -1222,7 +1250,8 @@
       "version": "1.7.22",
       "description": "Doom (Freedoom: Phase 1) on the iDrive. Main menu with all settings; the game drawn in full resolution across the whole screen, on the controller; BACK returns to the menu and saves",
       "supported_hmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
         "idrive7-renderd": "2.1.18",
@@ -1249,7 +1278,8 @@
       "version": "2.6.0",
       "description": "0-100, 100-200 and 1/4 mile timer with best times",
       "supported_hmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
         "idrive7-renderd": "2.1.18",
@@ -1403,7 +1433,8 @@
       "version": "2.9.8",
       "description": "Read and clear fault memory of every control unit, plus active Check Control messages",
       "supported_hmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
         "idrive7-renderd": "2.1.18",
@@ -1431,7 +1462,8 @@
       "version": "1.6.3",
       "description": "Power and torque curves from a full-throttle pull, saved and compared",
       "supported_hmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
         "idrive7-renderd": "2.1.15"
@@ -1457,7 +1489,8 @@
       "version": "2.10.1",
       "description": "Real electric range (plug-in hybrids and fully electric cars such as the iX3), live battery power, cells and climate power, HV battery health (SOH) and energy, last charge, charge log, the 12 V battery (charge, voltage, what it does, regen, history) and a home-screen widget; on a 48 V mild hybrid its 48 V battery and DC/DC converter",
       "supported_hmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
         "idrive7-renderd": "2.1.15"
@@ -1515,7 +1548,8 @@
       "version": "1.6.22",
       "description": "Friction circle with grip envelope, peak g per direction and session records",
       "supported_hmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
         "idrive7-renderd": "2.1.15"
@@ -2599,7 +2633,8 @@
       "version": "0.9.8",
       "description": "Engine Config for BMW MGU ID7. Exhaust Flap: OEM, OPEN and CLOSE over the car's own diagnostic link, or following the driving mode (Sport open, Eco Pro closed); held against the DME's timeout, Close handed back above a set engine speed. With BM3 or MHD picked in Settings: engine map switching, burbles, ASD and Max Cooling. Experimental: xDrive off until the ignition cycle (DSC LMV_FUNKTION), behind its own setting",
       "supported_hmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
         "idrive7-renderd": "2.1.18",
@@ -2639,7 +2674,8 @@
       "version": "1.0.16",
       "description": "Read-only live values from the car and its control units, a trip computer with fuel cost, and gauge screens of your own, one of them as the home-screen widget",
       "supported_hmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
         "idrive7-renderd": "2.1.18",
@@ -2677,15 +2713,16 @@
       "version": "1.0.31",
       "description": "AI co-driver that answers with your car's own data: live readings, service list, fault memory, model and engine from the car, plus your tune and mods. Read-only.",
       "supported_hmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
-        "idrive7-renderd": "2.1.7",
+        "mgu-render": "0.6.24",
         "mgu-inputgate": "1.0.0"
       },
       "source_repository": "hexlay/idrive7-custom-apps",
       "license": "GPL-3.0-or-later; retain third-party notices",
-      "source_path": "apps/_sources/hexlay-idrive7-apps/apps/m_copilot",
+      "source_path": "apps/_ports/hexlay-idrive8/apps/m_copilot",
       "delivery": "branch source",
       "artifact": {},
       "icon": "docs/assets/apps/m_copilot/icon.png",
@@ -2698,7 +2735,18 @@
       ],
       "image_count": 6,
       "upstream_artifact_sha256": null,
-      "live_install_status": "NOT OBSERVED"
+      "live_install_status": "NOT OBSERVED",
+      "source_origin_path": "apps/_sources/hexlay-idrive7-apps/apps/m_copilot",
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
+      "source_port": {
+        "id": "hexlay-idrive8",
+        "revision": "aq-hexlay-id8-1",
+        "path": "apps/_ports/hexlay-idrive8",
+        "provenance": "apps/_ports/hexlay-idrive8/PROVENANCE.json",
+        "source_metadata": "apps/_ports/hexlay-idrive8/PORT.json"
+      }
     },
     {
       "id": "marku-home-bridge",
@@ -3118,7 +3166,9 @@
       "title": "OBD Bridge service",
       "version": "1.0.0",
       "description": "BM3 diagnostic protocol bridge on the existing car hotspot.",
-      "supported_hmi": null,
+      "supported_hmi": [
+        "ID7"
+      ],
       "requires": {
         "mgu-deploy": "0.4.0"
       },
@@ -3131,7 +3181,8 @@
       "images": [],
       "image_count": 0,
       "upstream_artifact_sha256": null,
-      "live_install_status": "NOT OBSERVED"
+      "live_install_status": "NOT OBSERVED",
+      "hmi_evidence": "apps/_sources/noahg-mgu-apps/native/hu-obd-adapter/prebuilt/component.json"
     },
     {
       "id": "mgu-python",
@@ -3406,7 +3457,8 @@
       "version": "2.0.44",
       "description": "Full-screen rev tach with shift lights, gear, shift scoring and cold-engine rev guard; HUD by @biscotit",
       "supported_hmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
         "idrive7-renderd": "2.1.15"
@@ -3513,7 +3565,8 @@
       "version": "1.6.2",
       "description": "Service requirements from the instrument cluster: oil, brakes, brake fluid, vehicle check, inspection - distance, date, details; brake fluid and vehicle check reset",
       "supported_hmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
         "idrive7-renderd": "2.1.15"
@@ -3539,15 +3592,16 @@
       "version": "1.0.30",
       "description": "Spotify Connect cockpit player and library browser for BMW iDrive 7",
       "supported_hmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
-        "idrive7-renderd": "2.1.7",
+        "mgu-render": "0.6.24",
         "mgu-inputgate": "1.0.0"
       },
       "source_repository": "hexlay/idrive7-custom-apps",
       "license": "GPL-3.0-or-later; retain third-party notices",
-      "source_path": "apps/_sources/hexlay-idrive7-apps/apps/spotify",
+      "source_path": "apps/_ports/hexlay-idrive8/apps/spotify",
       "delivery": "branch source",
       "artifact": {},
       "icon": "docs/assets/apps/spotify/icon.png",
@@ -3561,7 +3615,18 @@
       ],
       "image_count": 7,
       "upstream_artifact_sha256": null,
-      "live_install_status": "NOT OBSERVED"
+      "live_install_status": "NOT OBSERVED",
+      "source_origin_path": "apps/_sources/hexlay-idrive7-apps/apps/spotify",
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
+      "source_port": {
+        "id": "hexlay-idrive8",
+        "revision": "aq-hexlay-id8-1",
+        "path": "apps/_ports/hexlay-idrive8",
+        "provenance": "apps/_ports/hexlay-idrive8/PROVENANCE.json",
+        "source_metadata": "apps/_ports/hexlay-idrive8/PORT.json"
+      }
     },
     {
       "id": "sys_monitor",
@@ -3571,15 +3636,16 @@
       "version": "1.0.4",
       "description": "What uses the head unit's memory and processor: free RAM, a live history, and every app and program with the memory it takes. Read only.",
       "supported_hmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
-        "idrive7-renderd": "2.1.7",
+        "mgu-render": "0.6.24",
         "mgu-inputgate": "1.0.0"
       },
       "source_repository": "hexlay/idrive7-custom-apps",
       "license": "GPL-3.0-or-later; retain third-party notices",
-      "source_path": "apps/_sources/hexlay-idrive7-apps/apps/sys_monitor",
+      "source_path": "apps/_ports/hexlay-idrive8/apps/sys_monitor",
       "delivery": "branch source",
       "artifact": {},
       "icon": null,
@@ -3591,7 +3657,18 @@
       ],
       "image_count": 4,
       "upstream_artifact_sha256": null,
-      "live_install_status": "NOT OBSERVED"
+      "live_install_status": "NOT OBSERVED",
+      "source_origin_path": "apps/_sources/hexlay-idrive7-apps/apps/sys_monitor",
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
+      "source_port": {
+        "id": "hexlay-idrive8",
+        "revision": "aq-hexlay-id8-1",
+        "path": "apps/_ports/hexlay-idrive8",
+        "provenance": "apps/_ports/hexlay-idrive8/PROVENANCE.json",
+        "source_metadata": "apps/_ports/hexlay-idrive8/PORT.json"
+      }
     },
     {
       "id": "vizualyse-bus",
@@ -3961,7 +4038,8 @@
       "version": "1.9.0",
       "description": "Oil and coolant warm-up calculator (time to ready), safe rev limit, turbo cool-down and a cold start counter",
       "supported_hmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
         "idrive7-renderd": "2.1.15"
@@ -4079,7 +4157,8 @@
       "version": "1.5.7",
       "description": "Transmission Config, experimental ZF 8HP monitor: live data, clutch fill adaptations, shift maps and temperature history",
       "supported_hmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
         "idrive7-renderd": "2.1.18",

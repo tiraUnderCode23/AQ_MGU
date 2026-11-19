@@ -1,14 +1,18 @@
 {
   "schema": "aq-mgu.verification-summary/1",
-  "observed_at_utc": "2026-11-19T10:10:53.831904+00:00",
-  "baseline_commit": "f424cf4e0e1844b23e5f5bcf9ce40b22b8ed6cfe",
-  "scope": "Local repository and original-source verification; no live unit operations or GitHub Actions.",
+  "observed_at_utc": "2026-11-19T11:46:28.485791+00:00",
+  "baseline_commit": "42dd429486219dea6a96f99bd02cea7d55b47ce9",
+  "scope": "Current ID8 source ports, catalog alignment, local package/runtime contracts, and offline install-state classification; no live unit operations or GitHub Actions. Original-artifact evidence is retained from the preceding verified round.",
   "offline_tests": {
     "command": "python -B -m unittest discover -s tests",
-    "tests": 77,
+    "tests": 137,
     "failures": 0,
     "errors": 0,
-    "result": "PASS"
+    "result": "PASS",
+    "limitations": [
+      "SDK-shaped test fixtures are synthetic and inert; they are not BMW SDK validation.",
+      "An inherited Hexlay fit_to_unit file-read ResourceWarning is visible in the test log; it did not fail the tests."
+    ]
   },
   "feed_validator": {
     "command": "python verify_store_feeds.py --json",
@@ -31,7 +35,9 @@
     "download_pass": 79,
     "archive_pass": 79,
     "native_https_header_routes_rechecked": 4,
-    "evidence": "data/artifact-verification-20261119.json"
+    "evidence": "data/artifact-verification-20261119.json",
+    "evidence_reused_from_commit": "42dd429486219dea6a96f99bd02cea7d55b47ce9",
+    "current_round_status": "UNCHANGED; catalog URLs, pinned digests and published artifacts were not modified or downloaded again in this round."
   },
   "source_inputs": {
     "parsed": 55,
@@ -46,11 +52,15 @@
     "evidence": [
       "data/source-import-provenance.json",
       "apps/_sources/iabadia-idrive-games/UPSTREAM_IMPORT.json"
-    ]
+    ],
+    "current_round_status": "Frozen upstream source trees are unchanged against the baseline commit."
   },
   "documentation": {
     "component_matrix_rows": 140,
-    "original_gallery_blocks_preserved": 37
+    "original_gallery_blocks_preserved": 37,
+    "gallery_compatibility_badges_aligned": 37,
+    "remaining_source_app_blockers": 28,
+    "remaining_original_release_apps_without_id8": 33
   },
   "iabadia_upstream_checks": {
     "focused_tests_passed": 31,
@@ -58,9 +68,98 @@
     "source_packaging": "PASS; not SDK build or installation"
   },
   "independent_review": {
-    "result": "No additional confirmed introduced defects after correcting four HTTPS artifact routes, inferred build dependencies in readiness, and wazecard report attribution."
+    "scope": "The five integrated source entries, derived payload attribution and notices, native renderer requirements, catalog/readiness consistency, and original publisher release support.",
+    "result": "Corrected gallery HMI badges, exact package attribution, vehicle-condition getter permission, ID8 display capability loss handling, MainApp path selection, and retained field-specific read failures before final verification.",
+    "final_cross_document_review": "No additional confirmed contradictions in README, ID8 implementation report, port registry, or install-readiness evidence."
   },
   "live_hu_installation": "NOT OBSERVED",
   "desktop_copy_updated": false,
-  "desktop_limitation": "TUF approved-root access did not include the Desktop AQ_MGU clone; no alternate shell route used to modify it."
+  "desktop_limitation": "TUF approved-root access did not include the Desktop AQ_MGU clone; no alternate shell route used to modify it.",
+  "id8_implementation": {
+    "applications": 95,
+    "previous_declared_id8_apps": 14,
+    "declared_id8_apps": 34,
+    "native_dual_app_declarations_corrected": 15,
+    "derived_apps": 5,
+    "derived_families": 3,
+    "source_apps_declaring_id8": 22,
+    "original_catalog_apps_declaring_id8": 12,
+    "synthetic_complete_derived_package_assemblies": 5,
+    "derived_file_hashes_checked": 218,
+    "actual_sdk_runs": 0,
+    "live_unit_installations_observed": 0,
+    "native_app_tests": 9,
+    "derived_catalog_and_hash_tests": 4,
+    "hexlay_tests": 4,
+    "pinguino_tests": 8,
+    "aref_tests": 15,
+    "target_install_route": "Native Store source build to a dual-resource npm .tgz; inherited standalone .mgu staging remains ID7.",
+    "evidence": [
+      "data/id8-ports.json",
+      "data/id8-native-app-evidence.json",
+      "data/id8-pinguino-port-evidence.json",
+      "data/id8-source-blockers-20261119.json",
+      "data/id8-release-review-20261119.json"
+    ]
+  },
+  "install_observations": {
+    "mtrack": "USER_REPORTED_INSTALLED; HMI family and runtime not observed.",
+    "shiftlights": "UNCONFIRMED_TRANSPORT_RESET; final installation state unknown.",
+    "offline_state_classifier_tests": 19,
+    "client_integration": "NOT COMPLETED; the source of the wrapper that emitted AQ_SOURCE_INSTALL_EXIT was not found in the available approved TUF root.",
+    "evidence": "data/install-observations-20261119.json"
+  },
+  "prior_round": {
+    "observed_at_utc": "2026-11-19T10:10:53.831904+00:00",
+    "baseline_commit": "f424cf4e0e1844b23e5f5bcf9ce40b22b8ed6cfe",
+    "offline_tests": {
+      "command": "python -B -m unittest discover -s tests",
+      "tests": 137,
+      "failures": 0,
+      "errors": 0,
+      "result": "PASS",
+      "limitations": [
+        "SDK-shaped test fixtures are synthetic and inert; they are not BMW SDK validation.",
+        "An inherited Hexlay fit_to_unit file-read ResourceWarning is visible in the test log; it did not fail the tests."
+      ]
+    },
+    "independent_review": {
+      "result": "No additional confirmed introduced defects after correcting four HTTPS artifact routes, inferred build dependencies in readiness, and wazecard report attribution."
+    }
+  },
+  "whitespace_check": {
+    "result": "PASS for changed AQ code and documentation; five byte-exact copied publisher files retain their original trailing whitespace.",
+    "original_files_preserved": [
+      {
+        "path": "apps/_ports/arefahmad-idrive8/kit/runtime/fonts/OFL-Inter.txt",
+        "original_source": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/fonts/OFL-Inter.txt",
+        "git_blob": "21f6aff961064c2e429f570995e446bcdd555422",
+        "byte_exact_original": true
+      },
+      {
+        "path": "apps/_ports/arefahmad-idrive8/kit/runtime/fonts/OFL-NotoSansArabic.txt",
+        "original_source": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/fonts/OFL-NotoSansArabic.txt",
+        "git_blob": "14c589f6384505ede3f8e52627d397513af3662d",
+        "byte_exact_original": true
+      },
+      {
+        "path": "apps/_ports/hexlay-idrive8/apps/spotify/jpeg.js",
+        "original_source": "apps/_sources/hexlay-idrive7-apps/apps/spotify/jpeg.js",
+        "git_blob": "1982481806e5fe29bd38cb008297f35731ade20b",
+        "byte_exact_original": true
+      },
+      {
+        "path": "apps/_ports/hexlay-idrive8/kit/runtime/fonts/OFL-NotoSansGeorgian.txt",
+        "original_source": "apps/_sources/hexlay-idrive7-apps/kit/runtime/fonts/OFL-NotoSansGeorgian.txt",
+        "git_blob": "437070a9ee723a4018777b51bd7e4a6830b36502",
+        "byte_exact_original": true
+      },
+      {
+        "path": "apps/_ports/hexlay-idrive8/kit/runtime/qrcodegen.js",
+        "original_source": "apps/_sources/hexlay-idrive7-apps/kit/runtime/qrcodegen.js",
+        "git_blob": "16de9b8ac0be1cb4a96be6cefdd0e7e2ccac88f0",
+        "byte_exact_original": true
+      }
+    ]
+  }
 }

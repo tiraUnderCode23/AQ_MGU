@@ -8,6 +8,26 @@ Last source, package and documentation review: **2026-11-19**.
 
 Read the [Arabic repair report](docs/REPOSITORY_REPAIR_20261119_AR.md) for the changes and evidence limits, and the [per-component readiness record](data/install-readiness-20261119.json) for all 140 IDs, versions, dependencies, package checks and remaining blockers.
 
+## ID8 source update — 19 November 2026
+
+The current inventory declares ID8 support for **34 of 95 applications** (14 previously), with **22 branch-source apps and 12 original catalog apps**. Fifteen original cauliflowermossgrape applications already contained dual resources and runtime handling; their outer AQ declarations now match that source. Five additional applications use explicitly attributed AQ source adaptations:
+
+| Application | Original version retained | AQ source adaptation |
+|---|---|---|
+| System Monitor | 1.0.4 | `hexlay-idrive8`, revision `aq-hexlay-id8-1` |
+| Spotify | 1.0.30 | `hexlay-idrive8`, revision `aq-hexlay-id8-1` |
+| M-Copilot | 1.0.31 | `hexlay-idrive8`, revision `aq-hexlay-id8-1` |
+| Engine Vitals | 0.2.0 | `pinguinooo-idrive8`, revision `1` |
+| Car Explorer | 0.2.3 | `arefahmad-idrive8`, revision `aq-aref-id8-1` |
+
+The adapted source is under `apps/_ports/`; frozen upstream snapshots remain in `apps/_sources/`. The changes include actual ID8 RHMI resources, public SDK lifecycle adaptation, native renderer/touch/application-area checks, settings controls, and original license notices. Car Explorer selects MainApp21 on ID8. M-Copilot refuses diagnostic reads when its ID8 operating-state samples are unavailable or stale; Engine Vitals hides telemetry on observed typed-field failures and expired existing poll streams.
+
+The original Store source-build route produces dual-resource npm `.tgz` packages. The inherited standalone `.mgu` staging layouts remain ID7. The five recipes require the original `mgu-render >= 0.6.24`; an installed renderer provider must still meet the runtime capability checks.
+
+These are source/resource/runtime-contract and synthetic package checks, **not BMW SDK or live ID8 validation**. The remaining **61 applications** retain ID7 declarations: 28 source recipes and 33 original released app packages. MTrack/Shiftlights cluster/HUD geometry, unsupported widgets/input paths, native helper limitations and the Tire Setup freshness boundary are recorded rather than relabelled. See the [ID8 implementation report](docs/ID8_IMPLEMENTATION_20261119_AR.md), [source blockers](data/id8-source-blockers-20261119.json), [publisher review](data/id8-release-review-20261119.json), and [port evidence](data/id8-ports.json).
+
+An updater connection reset is an unconfirmed installation outcome. [The incident report](docs/UPDATER_ECONNRESET_20261119_AR.md) explains the exact observed failure and read-only reconciliation contract. No uncertain install is automatically replayed.
+
 ## Use AQ_MGU with MGU Store
 
 Add these **three sources explicitly** through the original Store's **Add source** field. The six IterioDev helper tools are supplied by the author's own branch; the AQ branch and HTTPS catalog alone do not provide their payloads.
@@ -49,7 +69,7 @@ The matching configuration is in [data/store-sources.json](data/store-sources.js
 
 The [catalog](release/catalog.json) points to **78 original publisher artifacts** and **one existing AQ source-attributed package, `carplay-map@0.2.0`**, retained unchanged. All 58 newly added catalog references download the original publisher files directly; this update does not rehost them. Among the 79 archives, 15 are source packages marked `build=unit`, including 12 IterioDev apps; the remaining 64 are prepared app/tool archives. A source archive still needs the Store's normal target-side build and dependencies.
 
-Consult the [complete original README and installation matrix](docs/COMPONENT_README_INSTALL_MATRIX.md) for every ID, version, HMI and dependency. Source settings, catalog visibility, verified bytes and installed/running status are separate facts. **Live head-unit installation is NOT OBSERVED for all 140 entries.**
+Consult the [complete original README and installation matrix](docs/COMPONENT_README_INSTALL_MATRIX.md) for every ID, version, HMI and dependency. Source settings, catalog visibility, verified bytes and installed/running status are separate facts. **No live head-unit execution was directly observed by this audit.** A later user log reports MTrack installed and Shiftlights unconfirmed after a socket reset; the [observation record](data/install-observations-20261119.json) keeps those reports separate from independent target verification.
 
 ## Verification and ID7/ID8 scope
 
@@ -85,13 +105,13 @@ The original gallery and tool descriptions remain below. These additional entrie
 |---|---|---|---|---|
 | M Track Cluster (`adam_mtrack`) | 0.1.7 | ID7 | AQ branch | [original README](apps/_sources/pinguinooo-idrive7-apps/apps/adam_mtrack/README.md) |
 | Shift Lights (`adam_shiftlights`) | 0.4.5 | ID7 | AQ branch | [original README](apps/_sources/pinguinooo-idrive7-apps/apps/adam_shiftlights/README.md) |
-| Engine Vitals (`adam_vitals`) | 0.2.0 | ID7 | AQ branch | [original README](apps/_sources/pinguinooo-idrive7-apps/apps/adam_vitals/README.md) |
+| Engine Vitals (`adam_vitals`) | 0.2.0 | ID7/ID8 | AQ branch | [original README](apps/_sources/pinguinooo-idrive7-apps/apps/adam_vitals/README.md) |
 | Car Care (`aref_carcare`) | 0.2.3 | ID7 | AQ branch | [original README](apps/_sources/arefahmad-idrive7-apps/apps/aref_carcare/README.md) |
 | Car Lyrics (`aref_carlyrics`) | 0.3.9 | ID7 | AQ branch | [original README](apps/_sources/arefahmad-idrive7-apps/apps/aref_carlyrics/README.md) |
 | Car Watch (`aref_carwatch`) | 0.1.3 | ID7 | AQ branch | [original README](apps/_sources/arefahmad-idrive7-apps/apps/aref_carwatch/README.md) |
 | Drive Log (`aref_drivelog`) | 0.3.2 | ID7 | AQ branch | [original README](apps/_sources/arefahmad-idrive7-apps/apps/aref_drivelog/README.md) |
 | ETA Bar (`aref_eta`) | 1.15.1 | ID7 | AQ branch | [original README](apps/_sources/arefahmad-idrive7-apps/apps/aref_eta/README.md) |
-| Car Explorer (`aref_explorer`) | 0.2.3 | ID7 | AQ branch | [original README](apps/_sources/arefahmad-idrive7-apps/apps/aref_explorer/README.md) |
+| Car Explorer (`aref_explorer`) | 0.2.3 | ID7/ID8 | AQ branch | [original README](apps/_sources/arefahmad-idrive7-apps/apps/aref_explorer/README.md) |
 | Fault Watch (`aref_faultwatch`) | 0.2.2 | ID7 | AQ branch | [original README](apps/_sources/arefahmad-idrive7-apps/apps/aref_faultwatch/README.md) |
 | Misfire Watch (`aref_misfire`) | 0.1.1 | ID7 | AQ branch | [original README](apps/_sources/arefahmad-idrive7-apps/apps/aref_misfire/README.md) |
 | Tire Setup (`aref_tires`) | 0.2.1 | ID7 | AQ branch | [original README](apps/_sources/arefahmad-idrive7-apps/apps/aref_tires/README.md) |
@@ -189,7 +209,7 @@ Your iPhone&#x27;s screen on the central display by AirPlay screen mirroring, pa
 
 Any colour on the ambient light, animations, and a look for each driving mode
 
-**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/ambient_config) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/ambient_config">All 2 published images</a>
+**Supported:** ID7, ID8 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/ambient_config) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/ambient_config">All 2 published images</a>
 </details>
 
 <details>
@@ -199,7 +219,7 @@ Any colour on the ambient light, animations, and a look for each driving mode
 
 100-0 and 200-0 braking distance, peak decel and brake-fade tracking
 
-**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/brake_test) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/brake_test">All 3 published images</a>
+**Supported:** ID7, ID8 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/brake_test) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/brake_test">All 3 published images</a>
 </details>
 
 <details>
@@ -269,7 +289,7 @@ Cluster themes: chooses the instrument cluster theme (the vizualyse-cluster tool
 
 0-100, 100-200 and 1/4 mile timer with best times
 
-**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/draggy) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/draggy">All 3 published images</a>
+**Supported:** ID7, ID8 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/draggy) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/draggy">All 3 published images</a>
 </details>
 
 <details>
@@ -279,7 +299,7 @@ Cluster themes: chooses the instrument cluster theme (the vizualyse-cluster tool
 
 Real electric range (plug-in hybrids and fully electric cars such as the iX3), live battery power, cells and climate power, HV battery health (SOH) and energy, last charge, charge log, the 12 V battery (charge, voltage, what it does, regen, history) and a home-screen widget; on a 48 V mild hybrid its 48 V battery and DC/DC converter
 
-**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/edrive) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/edrive">All 8 published images</a>
+**Supported:** ID7, ID8 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/edrive) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/edrive">All 8 published images</a>
 </details>
 
 <details>
@@ -289,7 +309,7 @@ Real electric range (plug-in hybrids and fully electric cars such as the iX3), l
 
 Engine Config for BMW MGU ID7. Exhaust Flap: OEM, OPEN and CLOSE over the car&#x27;s own diagnostic link, or following the driving mode (Sport open, Eco Pro closed); held against the DME&#x27;s timeout, Close handed back above a set engine speed. With BM3 or MHD picked in Settings: engine map switching, burbles, ASD and Max Cooling. Experimental: xDrive off until the ignition cycle (DSC LMV_FUNKTION), behind its own setting
 
-**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/live_adjustments) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/live_adjustments">All 15 published images</a>
+**Supported:** ID7, ID8 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/live_adjustments) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/live_adjustments">All 15 published images</a>
 </details>
 
 <details>
@@ -299,7 +319,7 @@ Engine Config for BMW MGU ID7. Exhaust Flap: OEM, OPEN and CLOSE over the car&#x
 
 Read and clear fault memory of every control unit, plus active Check Control messages
 
-**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/dtc_scanner) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/dtc_scanner">All 3 published images</a>
+**Supported:** ID7, ID8 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/dtc_scanner) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/dtc_scanner">All 3 published images</a>
 </details>
 
 <details>
@@ -329,7 +349,7 @@ Patch or restore the FSC verifier.
 
 Friction circle with grip envelope, peak g per direction and session records
 
-**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/gforce) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/gforce">All 3 published images</a>
+**Supported:** ID7, ID8 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/gforce) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/gforce">All 3 published images</a>
 </details>
 
 <details>
@@ -359,7 +379,7 @@ Your own layout on the whole instrument cluster: themes made with idv7lol Studio
 
 Read-only live values from the car and its control units, a trip computer with fuel cost, and gauge screens of your own, one of them as the home-screen widget
 
-**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/live_data) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/live_data">All 13 published images</a>
+**Supported:** ID7, ID8 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/live_data) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/live_data">All 13 published images</a>
 </details>
 
 <details>
@@ -369,7 +389,7 @@ Read-only live values from the car and its control units, a trip computer with f
 
 Live engine, thermal, intake / fuel / ignition, tyre and chassis gauges
 
-**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/car_vitals) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/car_vitals">All 7 published images</a>
+**Supported:** ID7, ID8 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/car_vitals) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/car_vitals">All 7 published images</a>
 </details>
 
 <details>
@@ -379,7 +399,10 @@ Live engine, thermal, intake / fuel / ignition, tyre and chassis gauges
 
 Displays vehicle readings, service information, fault memory and vehicle details alongside tune and modification notes.
 
-**Supported:** ID7 · **License:** GPL-3.0-or-later; retain third-party notices · **Source:** [hexlay/idrive7-custom-apps](https://github.com/hexlay/idrive7-custom-apps/tree/04a42559a6d94d52d5a17bb2a7231e2142b26079/apps/m_copilot) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/m_copilot">All 6 published images</a>
+**Supported:** ID7, ID8 · **License:** GPL-3.0-or-later; retain third-party notices · **Source:** [hexlay/idrive7-custom-apps](https://github.com/hexlay/idrive7-custom-apps/tree/04a42559a6d94d52d5a17bb2a7231e2142b26079/apps/m_copilot) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/m_copilot">All 6 published images</a>
+
+
+**AQ source adaptation:** [hexlay-idrive8 / aq-hexlay-id8-1](apps/_ports/hexlay-idrive8/README.md). Original publisher images above are retained; they are not new ID8 runtime evidence.
 </details>
 
 <details>
@@ -409,7 +432,7 @@ BM3 diagnostic protocol bridge over the car hotspot.
 
 Full-screen rev tach with shift lights, gear, shift scoring and cold-engine rev guard; HUD by @biscotit
 
-**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/redline) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/redline">All 7 published images</a>
+**Supported:** ID7, ID8 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/redline) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/redline">All 7 published images</a>
 </details>
 
 <details>
@@ -419,7 +442,7 @@ Full-screen rev tach with shift lights, gear, shift scoring and cold-engine rev 
 
 Service requirements from the instrument cluster: oil, brakes, brake fluid, vehicle check, inspection - distance, date, details; brake fluid and vehicle check reset
 
-**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/service) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/service">All 2 published images</a>
+**Supported:** ID7, ID8 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/service) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/service">All 2 published images</a>
 </details>
 
 <details>
@@ -429,7 +452,10 @@ Service requirements from the instrument cluster: oil, brakes, brake fluid, vehi
 
 Spotify Connect cockpit player and library browser for BMW iDrive 7
 
-**Supported:** ID7 · **License:** GPL-3.0-or-later; retain third-party notices · **Source:** [hexlay/idrive7-custom-apps](https://github.com/hexlay/idrive7-custom-apps/tree/04a42559a6d94d52d5a17bb2a7231e2142b26079/apps/spotify) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/spotify">All 7 published images</a>
+**Supported:** ID7, ID8 · **License:** GPL-3.0-or-later; retain third-party notices · **Source:** [hexlay/idrive7-custom-apps](https://github.com/hexlay/idrive7-custom-apps/tree/04a42559a6d94d52d5a17bb2a7231e2142b26079/apps/spotify) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/spotify">All 7 published images</a>
+
+
+**AQ source adaptation:** [hexlay-idrive8 / aq-hexlay-id8-1](apps/_ports/hexlay-idrive8/README.md). Original publisher images above are retained; they are not new ID8 runtime evidence.
 </details>
 
 <details>
@@ -459,7 +485,10 @@ MGU Store app for browsing, installing and updating compatible MGU apps and comp
 
 What uses the head unit&#x27;s memory and processor: free RAM, a live history, and every app and program with the memory it takes. Read only.
 
-**Supported:** ID7 · **License:** GPL-3.0-or-later; retain third-party notices · **Source:** [hexlay/idrive7-custom-apps](https://github.com/hexlay/idrive7-custom-apps/tree/04a42559a6d94d52d5a17bb2a7231e2142b26079/apps/sys_monitor) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/sys_monitor">All 4 published images</a>
+**Supported:** ID7, ID8 · **License:** GPL-3.0-or-later; retain third-party notices · **Source:** [hexlay/idrive7-custom-apps](https://github.com/hexlay/idrive7-custom-apps/tree/04a42559a6d94d52d5a17bb2a7231e2142b26079/apps/sys_monitor) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/sys_monitor">All 4 published images</a>
+
+
+**AQ source adaptation:** [hexlay-idrive8 / aq-hexlay-id8-1](apps/_ports/hexlay-idrive8/README.md). Original publisher images above are retained; they are not new ID8 runtime evidence.
 </details>
 
 <details>
@@ -469,7 +498,7 @@ What uses the head unit&#x27;s memory and processor: free RAM, a live history, a
 
 Transmission Config, experimental ZF 8HP monitor: live data, clutch fill adaptations, shift maps and temperature history
 
-**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/zf8hp) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/zf8hp">All 4 published images</a>
+**Supported:** ID7, ID8 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/zf8hp) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/zf8hp">All 4 published images</a>
 </details>
 
 <details>
@@ -489,7 +518,7 @@ Original v0.1.5 interface; live ethanol/fuel readouts and blend-to-full calculat
 
 Power and torque curves from a full-throttle pull, saved and compared
 
-**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/dyno) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/dyno">All 2 published images</a>
+**Supported:** ID7, ID8 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/dyno) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/dyno">All 2 published images</a>
 </details>
 
 <details>
@@ -499,7 +528,7 @@ Power and torque curves from a full-throttle pull, saved and compared
 
 Oil and coolant warm-up calculator (time to ready), safe rev limit, turbo cool-down and a cold start counter
 
-**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/warmup) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/warmup">All 4 published images</a>
+**Supported:** ID7, ID8 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/warmup) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/warmup">All 4 published images</a>
 </details>
 
 <details>
@@ -542,7 +571,7 @@ Puts the CarPlay Waze map on the instrument cluster and Waze&#x27;s turns on BMW
 
 Doom (Freedoom: Phase 1) on the iDrive. Main menu with all settings; the game drawn in full resolution across the whole screen, on the controller; BACK returns to the menu and saves
 
-**Supported:** ID7 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/doom) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/doom">All 2 published images</a>
+**Supported:** ID7, ID8 · **License:** MIT; retain per-component and third-party notices · **Source:** [cauliflowermossgrape/idrive7-apps](https://github.com/cauliflowermossgrape/idrive7-apps/tree/422957a85461826c1e8654d37c8ec66a94849f9c/apps/doom) · <a href="https://github.com/tiraUnderCode23/AQ_MGU/tree/main/docs/assets/apps/doom">All 2 published images</a>
 </details>
 
 

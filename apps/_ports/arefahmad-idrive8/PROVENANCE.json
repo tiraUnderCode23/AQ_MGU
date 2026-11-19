@@ -1,0 +1,449 @@
+{
+  "schema": 1,
+  "revision": "aq-aref-id8-1",
+  "base": {
+    "repository": "arefahmad/idrive7-apps",
+    "commit": "6db26cdae67e6900c530611905f0b9aa856f27f0",
+    "snapshot": "apps/_sources/arefahmad-idrive7-apps"
+  },
+  "donors": [
+    {
+      "repository": "cauliflowermossgrape/idrive7-apps",
+      "commit": "422957a85461826c1e8654d37c8ec66a94849f9c",
+      "license": "MIT",
+      "scope": "ID8 RHMI generator, cells and renderer application area"
+    },
+    {
+      "repository": "alexpereap/pereaperformance-idrive7-apps",
+      "commit": "5b758fad17761b8696989e2a4ffbfbfab4926b6f",
+      "license": "MIT",
+      "scope": "Public SDK lifecycle and entry point contract"
+    }
+  ],
+  "files": [
+    {
+      "path": "LICENSE",
+      "sha256": "af0fd0696aa3715b61d36249da00b7c1404d28f3ebb5bbff5b1c0262af765cc3",
+      "upstream_sha256": "af0fd0696aa3715b61d36249da00b7c1404d28f3ebb5bbff5b1c0262af765cc3",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "PORT.json",
+      "sha256": "f1e73a68672023e78760eb8a28c5a8507e5792aa3f18bcd7fde2ff0748bb1d26",
+      "upstream_sha256": null,
+      "origin": "AQ-derived-or-notice"
+    },
+    {
+      "path": "README.md",
+      "sha256": "c4d03c0adb395131c22d12beb796a75ee87371c38315982a09690c83a0266aa7",
+      "upstream_sha256": "1eca724dd9619de2b28a9d357881eb1007b90aeb286e3554efcfdf055c7278ec",
+      "origin": "modified-upstream"
+    },
+    {
+      "path": "apps/aref_explorer/README.md",
+      "sha256": "c5fba9acfd02325913261db44165e2f222f9d14244a6780eec253b083532cefc",
+      "upstream_sha256": "c5fba9acfd02325913261db44165e2f222f9d14244a6780eec253b083532cefc",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "apps/aref_explorer/app.json",
+      "sha256": "bc53bfe01b46bff40a4678ba3ed89c1b4038f0cbd5067403e442dccdc840803c",
+      "upstream_sha256": "6961a5a182a3202bde9f5c7ed158aeb3b9eef520b583cee8ca348dd716d8cfc6",
+      "origin": "modified-upstream"
+    },
+    {
+      "path": "apps/aref_explorer/explore/catalog.js",
+      "sha256": "d106def09b3d8f492a420238b9198be8bc8890007cb13c5057fe1d29a8b97006",
+      "upstream_sha256": "d106def09b3d8f492a420238b9198be8bc8890007cb13c5057fe1d29a8b97006",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "apps/aref_explorer/icon.png",
+      "sha256": "d11046b1300c438c040fa052b54c9cb4d9997086f3f9d1346ee31c080ea9edb3",
+      "upstream_sha256": "d11046b1300c438c040fa052b54c9cb4d9997086f3f9d1346ee31c080ea9edb3",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "apps/aref_explorer/main.js",
+      "sha256": "23539db69c258b92a0a83624392985c042f35e678570d17989a003bb32f99ee3",
+      "upstream_sha256": "998a13fd3fb74881660db031a635fc723f8566e78f68915799830d3a2acff2df",
+      "origin": "modified-upstream"
+    },
+    {
+      "path": "kit/LICENSE.alexpereap",
+      "sha256": "72479db7cc03773b84999663a6917a433fe35438b9a9ad77afe3c8eeca377a44",
+      "upstream_sha256": null,
+      "origin": "AQ-derived-or-notice"
+    },
+    {
+      "path": "kit/LICENSE.idrive7-apps",
+      "sha256": "7c813412dcaf1b9d18c28ca6b6199c4349e15e35beca44ab6cab8e4413fe0aa6",
+      "upstream_sha256": "7c813412dcaf1b9d18c28ca6b6199c4349e15e35beca44ab6cab8e4413fe0aa6",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/LICENSE.nickgcode",
+      "sha256": "c4a5df2c16e8e39f05b68a84adda3506c271b5871d53a219b12ad0578995f381",
+      "upstream_sha256": "c4a5df2c16e8e39f05b68a84adda3506c271b5871d53a219b12ad0578995f381",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/NOTICE.AQ-ID8",
+      "sha256": "0b6abf356781d51786923570979e2c64ad438bdb07d46925b35e0d4fbb49726e",
+      "upstream_sha256": null,
+      "origin": "AQ-derived-or-notice"
+    },
+    {
+      "path": "kit/platform/permissions.json",
+      "sha256": "a03a2d7be452e89f9ce5361820361dded34ef36aa1e4a5afda95a4a1b1e26b01",
+      "upstream_sha256": "a03a2d7be452e89f9ce5361820361dded34ef36aa1e4a5afda95a4a1b1e26b01",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/anim.js",
+      "sha256": "a16f3fabc5496a290ee1270c479236ce36e6f47a368ad02843219f249e98b43d",
+      "upstream_sha256": "a16f3fabc5496a290ee1270c479236ce36e6f47a368ad02843219f249e98b43d",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/arabic.js",
+      "sha256": "908b88b1872b7af2c29e2e5c970384adec062893bfbe63b050c91830796a4c6c",
+      "upstream_sha256": "908b88b1872b7af2c29e2e5c970384adec062893bfbe63b050c91830796a4c6c",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/audio_probe.js",
+      "sha256": "7747b6c34448bda717d1646d191fa47fbb7f611cccd372d21b58cac63006c9d3",
+      "upstream_sha256": "7747b6c34448bda717d1646d191fa47fbb7f611cccd372d21b58cac63006c9d3",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/canvas.js",
+      "sha256": "310305904e7129a7d25273c0f1ab58b9aef40c576f094c2bb6a1621a66c2b731",
+      "upstream_sha256": "310305904e7129a7d25273c0f1ab58b9aef40c576f094c2bb6a1621a66c2b731",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/car.js",
+      "sha256": "b4356f5c03a22dc98da80ec2cb61aaf543e446fc7d7abdf262e184f4c87a54f0",
+      "upstream_sha256": "b4356f5c03a22dc98da80ec2cb61aaf543e446fc7d7abdf262e184f4c87a54f0",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/cluster_render.js",
+      "sha256": "a0d41ba9bf7509fdb7fb9149ff59690648ee8ffd3c6f147a11e287ee71eccd48",
+      "upstream_sha256": "a0d41ba9bf7509fdb7fb9149ff59690648ee8ffd3c6f147a11e287ee71eccd48",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/credits.js",
+      "sha256": "74cb6154b98a5476d3147c5083642eac033cfbdf797a7a3f70ed7d7ce0b00e6b",
+      "upstream_sha256": "74cb6154b98a5476d3147c5083642eac033cfbdf797a7a3f70ed7d7ce0b00e6b",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/diag.js",
+      "sha256": "337bec1fed75f5216de2a3ef1fbe5cbb1e183b152a8071142a1009441bcd7cba",
+      "upstream_sha256": "337bec1fed75f5216de2a3ef1fbe5cbb1e183b152a8071142a1009441bcd7cba",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/display.js",
+      "sha256": "11a35a3dacb4bbeab58ffd432264b9f347ef73db6bbe23df180d86b3bafbb811",
+      "upstream_sha256": "a826d58449919fb04e239c7b10445e729572f9046644ea1e1239e4d81d7074fc",
+      "origin": "modified-upstream"
+    },
+    {
+      "path": "kit/runtime/ecus.js",
+      "sha256": "f5ec3dbdece067f7eaa0080479dfde0d25b8a882f657df8b6f58f46f8622e149",
+      "upstream_sha256": "f5ec3dbdece067f7eaa0080479dfde0d25b8a882f657df8b6f58f46f8622e149",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/fonts/OFL-Inter.txt",
+      "sha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57",
+      "upstream_sha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/fonts/OFL-NotoSansArabic.txt",
+      "sha256": "07fc70bfeb985cc1a87a8587d0a0c80bab11c86c9dc3fd95b6f0cb332f983e96",
+      "upstream_sha256": "07fc70bfeb985cc1a87a8587d0a0c80bab11c86c9dc3fd95b6f0cb332f983e96",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/fonts/OFL-NotoSansSC.txt",
+      "sha256": "babcfe66c8a098b2fa279bc724a3a342f8124f77ce18941fbcc1bbb39823cded",
+      "upstream_sha256": "babcfe66c8a098b2fa279bc724a3a342f8124f77ce18941fbcc1bbb39823cded",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/fonts/arabic.json",
+      "sha256": "434c7b6d4e48b43129d29783d42658ba7a72a4aa7c85da3be8543b8589d1df08",
+      "upstream_sha256": "434c7b6d4e48b43129d29783d42658ba7a72a4aa7c85da3be8543b8589d1df08",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/fonts/bold.json",
+      "sha256": "c8185d6874a4ca1f79ffc2b73434d40426381b4bbf395f6f49733bd7020d7e76",
+      "upstream_sha256": "c8185d6874a4ca1f79ffc2b73434d40426381b4bbf395f6f49733bd7020d7e76",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/fonts/cjk.json",
+      "sha256": "ca216560aecf5f1b3d9d8e3a5c281a0cc442a0c8e2a8cb022b370c3f6deaef42",
+      "upstream_sha256": "ca216560aecf5f1b3d9d8e3a5c281a0cc442a0c8e2a8cb022b370c3f6deaef42",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/fonts/gear.json",
+      "sha256": "d449f2afa02529e244a2499d294beb6ce20c887a56cb7ce8c9cf296413c6f592",
+      "upstream_sha256": "d449f2afa02529e244a2499d294beb6ce20c887a56cb7ce8c9cf296413c6f592",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/fonts/label.json",
+      "sha256": "4dd985232ef36675f30ec855e8c4d5e6db5d44c8a0e04d82d50adc56c9eaf4cf",
+      "upstream_sha256": "4dd985232ef36675f30ec855e8c4d5e6db5d44c8a0e04d82d50adc56c9eaf4cf",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/fonts/light.json",
+      "sha256": "961ac19e874ed013c4cdfaaf009e85977e47889cbf3d470901f3d33b4bf4e0df",
+      "upstream_sha256": "961ac19e874ed013c4cdfaaf009e85977e47889cbf3d470901f3d33b4bf4e0df",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/fonts/num.json",
+      "sha256": "02a02e0c8e8da9c7bed35d66fce8c993998adf93080050e47511b602dbbcf9fc",
+      "upstream_sha256": "02a02e0c8e8da9c7bed35d66fce8c993998adf93080050e47511b602dbbcf9fc",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/fonts.js",
+      "sha256": "6aa1cfd474e51abfd484f6475126c5b1087ea6973e01e4406b2cfb0d6a2b0679",
+      "upstream_sha256": "6aa1cfd474e51abfd484f6475126c5b1087ea6973e01e4406b2cfb0d6a2b0679",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/fullscreen.js",
+      "sha256": "a2ebf7abe387965491eb4c95f4e5289418f28a065a178b7719f6f05886a040f9",
+      "upstream_sha256": "a2ebf7abe387965491eb4c95f4e5289418f28a065a178b7719f6f05886a040f9",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/gauges.js",
+      "sha256": "38ce7339796f71da3cf58d8c2493de18831ec3303cb195d6ed3ba585050349dc",
+      "upstream_sha256": "38ce7339796f71da3cf58d8c2493de18831ec3303cb195d6ed3ba585050349dc",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/gif.js",
+      "sha256": "166693feaa3d636b2dcafb570a201d9f2df3492768f287669b699bb2107b30da",
+      "upstream_sha256": "166693feaa3d636b2dcafb570a201d9f2df3492768f287669b699bb2107b30da",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/gif_drop.js",
+      "sha256": "560cfce4bab2536e61819d0917bab4ff0a9c1a5413a21a80d45b838caaff5589",
+      "upstream_sha256": "560cfce4bab2536e61819d0917bab4ff0a9c1a5413a21a80d45b838caaff5589",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/gmark.js",
+      "sha256": "f06b0048f021dd7ef3a3e79dd719c755cd375b451b5d76532b23ffb944a3826b",
+      "upstream_sha256": "f06b0048f021dd7ef3a3e79dd719c755cd375b451b5d76532b23ffb944a3826b",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/hmi-text.js",
+      "sha256": "74d96fd26ec53f4dc55fd36e079901ed03994794c8b31ae37e93e095092814e0",
+      "upstream_sha256": "74d96fd26ec53f4dc55fd36e079901ed03994794c8b31ae37e93e095092814e0",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/hmi_widgets.js",
+      "sha256": "622c7d425f0aed6f9bb170596d35e41a8928eb1a498264fdb7bd6dc41926e218",
+      "upstream_sha256": "622c7d425f0aed6f9bb170596d35e41a8928eb1a498264fdb7bd6dc41926e218",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/homewidget.js",
+      "sha256": "eb7ee1047931d8c6a91cf701a9f8953f0b0af4aa0e7843a1e70eb42ab9a41177",
+      "upstream_sha256": "eb7ee1047931d8c6a91cf701a9f8953f0b0af4aa0e7843a1e70eb42ab9a41177",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/i18n.js",
+      "sha256": "c57022ea82081eb52408c16c77b1286443f57765a9252eaf906fe93d10ed8d92",
+      "upstream_sha256": "c57022ea82081eb52408c16c77b1286443f57765a9252eaf906fe93d10ed8d92",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/id8_lifecycle.js",
+      "sha256": "c7006993869489c7baff0894ae303f2a9ce1d7e88189b65640a4c974063f970e",
+      "upstream_sha256": null,
+      "origin": "AQ-derived-or-notice"
+    },
+    {
+      "path": "kit/runtime/locale.json",
+      "sha256": "c37863ed4336c34a3868d150767644841256ee3ad6fc3dad6e223bcb5913f7e7",
+      "upstream_sha256": "c37863ed4336c34a3868d150767644841256ee3ad6fc3dad6e223bcb5913f7e7",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/locales/zh-CN.json",
+      "sha256": "0837571c00c139eaceb32e962b9ec8f3c5d1e9bc48e0cc066e75f91bebd95f10",
+      "upstream_sha256": "0837571c00c139eaceb32e962b9ec8f3c5d1e9bc48e0cc066e75f91bebd95f10",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/locales/zh-CN.tsv",
+      "sha256": "9b8360c7fe134b8130ad336413eebb87f1197399ceb208758ea16ea5ab744f18",
+      "upstream_sha256": "9b8360c7fe134b8130ad336413eebb87f1197399ceb208758ea16ea5ab744f18",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/mgu.js",
+      "sha256": "0bfb309e78c6d387af36c1b07a13a6ae9540d54fd8a8f0bbe5a8bd5524e553c7",
+      "upstream_sha256": "f9a6acefdce49675661da021ba915851a312af081de07efd15f94fea2d0022ab",
+      "origin": "modified-upstream"
+    },
+    {
+      "path": "kit/runtime/pack.js",
+      "sha256": "8b1861ec2fd2c2fa97acf05aa5f3d0dc184e028db200ab88afcd98467f29aa2c",
+      "upstream_sha256": "8b1861ec2fd2c2fa97acf05aa5f3d0dc184e028db200ab88afcd98467f29aa2c",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/parked.js",
+      "sha256": "43f5517ad9badb0d23a11bb59a9c4501482891a23443861e3f5bdd10d1dcab57",
+      "upstream_sha256": "43f5517ad9badb0d23a11bb59a9c4501482891a23443861e3f5bdd10d1dcab57",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/platform_paths.js",
+      "sha256": "fc61b2c3aad628aafb313946cdf95370de5c7105917eb6f47f778a53b0e491b6",
+      "upstream_sha256": null,
+      "origin": "AQ-derived-or-notice"
+    },
+    {
+      "path": "kit/runtime/png.js",
+      "sha256": "436143de6a10d1ef5667457aa1882373a6dde9e12959ff9bf7bdee03abf0997b",
+      "upstream_sha256": "436143de6a10d1ef5667457aa1882373a6dde9e12959ff9bf7bdee03abf0997b",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/record.js",
+      "sha256": "f412f53744957998d9083c178a60667b942fd65218a61af2d51d2653dd9d2173",
+      "upstream_sha256": "f412f53744957998d9083c178a60667b942fd65218a61af2d51d2653dd9d2173",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/remotelog.js",
+      "sha256": "643967074fe4cbe125f83759a64f23d69f66435f94a97536c4ec7845801a7a3f",
+      "upstream_sha256": "643967074fe4cbe125f83759a64f23d69f66435f94a97536c4ec7845801a7a3f",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/renderd.js",
+      "sha256": "a11ee58e8a109898b82a2a25040de7df977c57c65588f6b092a7d685a5226ba1",
+      "upstream_sha256": "10633a2e6d0f4de4212df25ecf3e66f60574fe7124b1a699081c4415ef7d3f46",
+      "origin": "modified-upstream"
+    },
+    {
+      "path": "kit/runtime/ringlog.js",
+      "sha256": "12a9a5ab373653bb198ed1a19721f4c901ba43153f7d92d8b173d16effd63f90",
+      "upstream_sha256": "12a9a5ab373653bb198ed1a19721f4c901ba43153f7d92d8b173d16effd63f90",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/sheet.js",
+      "sha256": "049438e9d1973f1d20d5bc23770fd5f9c0df2c2cd5c02289552b969e55bd4f67",
+      "upstream_sha256": "049438e9d1973f1d20d5bc23770fd5f9c0df2c2cd5c02289552b969e55bd4f67",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/signals.js",
+      "sha256": "92e3e397aef9cd44fcef989c3802af7980b7f3340028dba3fd4a1741bc940e23",
+      "upstream_sha256": "92e3e397aef9cd44fcef989c3802af7980b7f3340028dba3fd4a1741bc940e23",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/sim.js",
+      "sha256": "bf16b8383c5f9a7e4da07a754b9f50fadce0f621825368bbec1e459581d6148e",
+      "upstream_sha256": "bf16b8383c5f9a7e4da07a754b9f50fadce0f621825368bbec1e459581d6148e",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/themes.js",
+      "sha256": "c24c641a0e82c4b9bc1ba91ebc2916044de9e160e40d0cf888943fc12d80fa58",
+      "upstream_sha256": "c24c641a0e82c4b9bc1ba91ebc2916044de9e160e40d0cf888943fc12d80fa58",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/uplink.js",
+      "sha256": "053a5db1f8dae75acb159d17883948c737c4d221d536c7b5af2f01d3af583af6",
+      "upstream_sha256": "053a5db1f8dae75acb159d17883948c737c4d221d536c7b5af2f01d3af583af6",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/widget_anim.js",
+      "sha256": "52dcb12ba34fdb454985d2cb1fdafdd296bd948bf51fb8e87a47c9ca7310f744",
+      "upstream_sha256": "52dcb12ba34fdb454985d2cb1fdafdd296bd948bf51fb8e87a47c9ca7310f744",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/runtime/x25519.js",
+      "sha256": "5c291211c8052453be9af694e514b3619c2d0f055fe31458043a3eaf74446015",
+      "upstream_sha256": "5c291211c8052453be9af694e514b3619c2d0f055fe31458043a3eaf74446015",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/tools/bake_arabic.py",
+      "sha256": "194b78f205d5edb3def14735df2da5f1b225f22185aa1dcc66e3aafa01e3069c",
+      "upstream_sha256": "194b78f205d5edb3def14735df2da5f1b225f22185aa1dcc66e3aafa01e3069c",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/tools/build.py",
+      "sha256": "119781e148bc8d7ee1ce5335792d392c140fab06cc5967fa008d32e288cf31ce",
+      "upstream_sha256": "8e39acaf9b17b92048f9f906c25ddbbc67c2df5080d1a3c2517bc5e0a650ffdc",
+      "origin": "modified-upstream"
+    },
+    {
+      "path": "kit/tools/locale-revisions.json",
+      "sha256": "050193f3541049b9377e19fde90b8a337b13cbcb57cf0859b26ee274f69f5459",
+      "upstream_sha256": "050193f3541049b9377e19fde90b8a337b13cbcb57cf0859b26ee274f69f5459",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/tools/localize.py",
+      "sha256": "b96ede4f86b17c1daeaee318a74c18ee43067c6fd8d0ee5f1e624af47a284593",
+      "upstream_sha256": "6910c7da719f06acddd311ddffdf7fa8dc985bf4e0e4968447778a0da43e66a5",
+      "origin": "modified-upstream"
+    },
+    {
+      "path": "kit/tools/oapgen/gen.js",
+      "sha256": "03353755765fd356df9b22b5042e5cb2227e057bcc933713b2c16147684bae1a",
+      "upstream_sha256": "03353755765fd356df9b22b5042e5cb2227e057bcc933713b2c16147684bae1a",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "kit/tools/pack_data.py",
+      "sha256": "578b9409ba3d7d8c4755b158858c4aa2349ff04d4eeb3dc7330babf41d6d1770",
+      "upstream_sha256": "578b9409ba3d7d8c4755b158858c4aa2349ff04d4eeb3dc7330babf41d6d1770",
+      "origin": "unchanged-upstream"
+    }
+  ],
+  "validation": {
+    "focused_test_methods": 15,
+    "result": "PASS",
+    "synthetic_package_assembly": "PASS",
+    "sdk_execution": "NOT_OBSERVED",
+    "hu_installation": "NOT_OBSERVED"
+  },
+  "excluded_apps": {
+    "aref_tires": "ID8 prototype excluded: cached operating-state guard/freshness and provider availability are not qualified for control actions"
+  }
+}
