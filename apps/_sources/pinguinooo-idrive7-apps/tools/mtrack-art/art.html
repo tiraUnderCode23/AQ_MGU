@@ -1,0 +1,194 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>M Track art</title></head>
+<body>
+<!--
+  Dev-time only (not shipped): draws M Track Cluster's static art, item by item. 0.1.7: the Codex-designed M display
+  (ai-brain codex-mdash-test/out/m-display.html and HANDOFF.md: its tach paths, gradients, DIGITS outlines, stack, line
+  and caps) with Adam's two corrections, the tach scale 0-7 and faceted solid corner gauges, all placed by
+  apps/adam_mtrack/geom.js (loaded below, so the art and the live fill agree). tools/mtrack-art/make-art.mjs calls
+  makeArt(the font's bytes), renders each item on a transparent canvas and writes apps/adam_mtrack/art/art.json. The
+  atlas's unit labels and the gauges' labels are in Liberation Sans (fonts/, SIL OFL 1.1), committed so the art does not
+  depend on what the build machine has; makeArt refuses to draw on a fallback face.
+-->
+<script>var module = { exports: {} };</script>
+<script src="../../apps/adam_mtrack/geom.js"></script>
+<script>var GEOM = module.exports; module = { exports: {} };</script>
+<script src="../../apps/adam_mtrack/config.js"></script>
+<script>
+var MCFG = module.exports;
+window.makeArt = async function (faces) {      // a function scope: geom.js's top-level names stay global, these shadow them
+'use strict';
+// the atlas's text face (make-art.mjs's font files, [{ b64, weight }]): one family, a file per weight
+const FAMILY = 'MTrackArt';
+for (const f of faces) {
+  const face = new FontFace(FAMILY, Uint8Array.from(atob(f.b64), (ch) => ch.charCodeAt(0)), { weight: String(f.weight) });
+  await face.load();
+  document.fonts.add(face);
+  const c = document.createElement('canvas').getContext('2d'), w = (x) => { c.font = x; return c.measureText('mph 0123 \u00bd').width; };
+  if (face.status !== 'loaded' || Math.abs(w(`${f.weight} 20px "${FAMILY}"`) - w(`${f.weight} 20px monospace`)) < 1) throw new Error(FAMILY + ' ' + f.weight + ' did not load: refusing to draw on a fallback face');
+}
+const T = MCFG.tach, C = GEOM.CENTRE, TACH = GEOM.TACH;
+const SANS = `"${FAMILY}", sans-serif`;
+const DEG = Math.PI / 180;
+let ctx = null;
+
+/* ---------- Codex's paths (the LEFT tach; the right is its mirror, x' = 1920 - x) ---------- */
+const PATH_A = 'M614 598 C585 525 542 421 520 351 C498 285 545 207 658 85 L684 85 C603 188 562 264 570 320 C577 382 627 520 665 598 Z';
+const PATH_B = 'M614 598 C585 525 542 421 520 351 C498 285 545 207 658 85';
+const PATH_C = 'M665 598 C627 520 577 382 570 320 C562 264 603 188 684 85';
+// Codex DIGITS (64 x 82 grid, even-odd counters), plus a D for the gear spot
+const DIGITS = {
+  '0': 'M13 0 H51 Q64 0 64 13 V69 Q64 82 51 82 H13 Q0 82 0 69 V13 Q0 0 13 0 Z M15 13 Q12 13 12 17 V65 Q12 69 16 69 H48 Q52 69 52 65 V17 Q52 13 48 13 Z',
+  '1': 'M9 0 H49 V82 H34 V14 H9 Z',
+  '2': 'M1 0 H50 Q64 0 64 14 V32 Q64 46 50 46 H15 V68 H64 V82 H0 V47 Q0 33 14 33 H48 Q51 33 51 29 V17 Q51 13 47 13 H1 Z',
+  '3': 'M0 0 H49 Q64 0 64 14 V29 Q64 37 55 41 Q64 45 64 53 V68 Q64 82 49 82 H0 V69 H47 Q51 69 51 65 V52 Q51 48 47 48 H13 V35 H47 Q51 35 51 31 V17 Q51 13 47 13 H0 Z',
+  '4': 'M38 0 H54 V49 H64 V62 H54 V82 H40 V62 H0 V48 Z M40 17 L15 49 H40 Z',
+  '5': 'M1 0 H64 V13 H15 V33 H49 Q64 33 64 48 V68 Q64 82 49 82 H0 V69 H47 Q51 69 51 65 V50 Q51 46 47 46 H1 Z',
+  '6': 'M15 0 H60 V13 H18 Q13 13 13 18 V33 H49 Q64 33 64 48 V68 Q64 82 49 82 H15 Q0 82 0 67 V15 Q0 0 15 0 Z M13 46 V65 Q13 69 17 69 H47 Q51 69 51 65 V50 Q51 46 47 46 Z',
+  '7': 'M0 0 H64 V14 L27 82 H10 L49 14 H0 Z',
+  '8': 'M15 0 H49 Q64 0 64 14 V28 Q64 37 56 41 Q64 45 64 54 V68 Q64 82 49 82 H15 Q0 82 0 68 V54 Q0 45 8 41 Q0 37 0 28 V14 Q0 0 15 0 Z M17 13 Q13 13 13 17 V30 Q13 34 17 34 H47 Q51 34 51 30 V17 Q51 13 47 13 Z M17 47 Q13 47 13 51 V65 Q13 69 17 69 H47 Q51 69 51 65 V51 Q51 47 47 47 Z',
+  '9': 'M15 0 H49 Q64 0 64 15 V67 Q64 82 49 82 H4 V69 H46 Q51 69 51 64 V49 H15 Q0 49 0 34 V15 Q0 0 15 0 Z M17 13 Q13 13 13 17 V32 Q13 36 17 36 H51 V17 Q51 13 47 13 Z',
+  P: 'M0 0 H47 Q64 0 64 17 V34 Q64 51 47 51 H15 V82 H0 Z M15 14 V37 H44 Q50 37 50 31 V20 Q50 14 44 14 Z',
+  R: 'M0 0 H47 Q64 0 64 17 V32 Q64 47 49 49 L66 82 H49 L32 51 H15 V82 H0 Z M15 14 V37 H44 Q50 37 50 31 V20 Q50 14 44 14 Z',
+  N: 'M0 82 V0 H16 L49 57 V0 H64 V82 H48 L15 25 V82 Z',
+  D: 'M0 0 H47 Q64 0 64 17 V65 Q64 82 47 82 H0 Z M15 14 V68 H45 Q50 68 50 63 V19 Q50 14 45 14 Z',
+  '-': 'M5 35 H59 V48 H5 Z',
+};
+const mirrored = (draw) => { ctx.save(); ctx.translate(1920, 0); ctx.scale(-1, 1); draw(); ctx.restore(); };
+const stroke = (d, width, color) => { ctx.lineWidth = width; ctx.strokeStyle = color; ctx.lineCap = 'butt'; ctx.lineJoin = 'miter'; ctx.stroke(typeof d === 'string' ? new Path2D(d) : d); };
+function poly(pts) { const p = new Path2D(); pts.forEach((q, i) => p[i ? 'lineTo' : 'moveTo'](q[0], q[1])); p.closePath(); return p; }
+function text(s, x, y, size, color, align = 'center', weight = 400) {
+  ctx.font = `${weight} ${size}px ${SANS}`; ctx.fillStyle = color; ctx.textAlign = align; ctx.textBaseline = 'middle'; ctx.fillText(s, x, y);
+}
+
+// 0.1.7: a flat field of 16, glass edge to glass edge: the LCD shows a pure 0 as its lit backlight (KB-ANY-214), so the
+// background is never 0 and every byte of bgR2 stays >= 15 (manifest_art.test.js); Codex's black is not used
+function base() { ctx.fillStyle = '#101010'; ctx.fillRect(0, 0, 1920, 720); }
+function bandMask() { mirrored(() => { ctx.fillStyle = '#ffffff'; ctx.fill(new Path2D(PATH_A)); }); }
+/** The right tach's static lines (Codex's, the scale 0-7): bloom, outer and inner edge, red edge, end line, ticks. The
+ * track, red zone, fill, pointer and numerals are the tachs shader's. */
+function barOver() {
+  const red = GEOM.point(T.redFrom, T);
+  mirrored(() => {
+    ctx.save(); ctx.filter = 'blur(1.6px)'; ctx.globalAlpha = 0.16; stroke(PATH_B, 5, '#7e889e'); ctx.restore();
+    stroke(PATH_B, 5, '#151c27');
+    const g = ctx.createLinearGradient(0, 85, 0, 598);
+    [[0, '#2a303c'], [0.4, '#a0a8bb'], [0.65, '#b9bfd0'], [1, '#424956']].forEach((s) => g.addColorStop(s[0], s[1]));
+    stroke(PATH_B, 2.2, g);
+    stroke(PATH_C, 1.2, '#424856');
+    stroke(`M${1920 - red[0] - TACH.tickX} ${red[1]} L658 85`, 4, '#78283a');
+    stroke('M620 597 H661', 1, '#555d6c');
+  });
+  GEOM.ticks(T).forEach((t) => stroke(`M${t.x} ${t.y} H${t.x - t.len}`, t.major ? 2 : 1.2, t.rpm >= T.redFrom ? '#8a3748' : '#9da3b2'));
+}
+
+/* ---------- centre (static): the stack, the line and its caps, as alpha (the centre layer colours them #d7d9e1) ---------- */
+function centreStatic() {
+  const A = (a, draw) => { ctx.save(); ctx.globalAlpha = a; draw(); ctx.restore(); };
+  A(0.46, () => { ctx.fillStyle = '#ffffff'; ctx.fill(new Path2D('M1042 344 H1066 L1077 351 H1042 Z M1042 356 H1078 L1081 362 H1042 Z M1042 368 H1082 V374 H1042 Z')); });
+  A(0.15, () => stroke(`M735 ${C.lineY} H1185`, 1.5, '#ffffff'));
+  A(0.89, () => { ctx.fillStyle = '#ffffff'; ctx.fill(new Path2D('M735 404 L776 405 L776 408 L735 407 Z M1144 405 L1185 404 L1185 407 L1144 408 Z')); });
+}
+
+/* ---------- corners: the faceted gauge's track, outline, zone and labels (the live fill is widgets.js's) ---------- */
+const zoneQuads = (f0, f1, side) => (f0 === 0 ? GEOM.gaugeQuads(f1, side)
+  : [[GEOM.gaugePoint(f0, side, -9), GEOM.gaugePoint(f1, side, -9), GEOM.gaugePoint(f1, side, 9), GEOM.gaugePoint(f0, side, 9)]]);
+function gauge(side, labels, zone) {
+  const quads = GEOM.gaugeQuads(1, side);
+  quads.forEach((q) => { ctx.fillStyle = '#161a22'; ctx.fill(poly(q)); });
+  quads.forEach((q) => stroke(poly(q), 1.5, '#596171'));
+  zoneQuads(zone[0], zone[1], side).forEach((q) => stroke(poly(q), 1.5, '#b3283e'));
+  labels.forEach((l) => {      // pushed out by the label's measured box so it keeps 8 px clear of the band (Codex labelOff)
+    ctx.font = `400 25px ${SANS}`; ctx.textBaseline = 'middle';
+    const m = ctx.measureText(l[0]), h = 2 * Math.max(m.actualBoundingBoxAscent, m.actualBoundingBoxDescent);
+    const p = GEOM.gaugePoint(l[1], side, GEOM.gaugeLabelOff(l[1], side, m.width, h));
+    text(l[0], p[0], p[1], 25, '#d7d9e1');
+  });
+}
+function icon(d, vb, x, y, w, h, alpha) {
+  ctx.save(); ctx.globalAlpha = alpha || 1; ctx.translate(x, y); ctx.scale(w / vb[0], h / vb[1]);
+  stroke(d, 2, '#acb0bd'); ctx.restore();
+}
+function cornerL() {
+  gauge(-1, [['0', 0], ['½', 0.5], ['1', 1]], [0, 0.12]);      // widgets.js FUEL_LOW
+  icon('M3 27 V3 H15 V27 M3 12 H15 M1 27 H17 M15 8 L21 13 V24 Q21 28 18 24 V17 H15', [24, 30], 115, 638, 23, 27);   // Codex fuelIcon
+}
+const OIL_SCALE = { us: [120, 210, 300], metric: [50, 100, 150] };
+function cornerR(units) {
+  gauge(1, OIL_SCALE[units].map((n, i) => [String(n), i / 2]), [0.86, 1]);   // widgets.js SCALES.oil
+  const p = GEOM.gaugePoint(0, 1, 0);       // Codex oilIcon, below the band's low end, at 65%
+  icon('M3 12 H19 L26 8 L29 11 L23 19 L18 23 H4 Z M8 12 V7 H17 M1 11 V19', [32, 32], p[0] - 15, p[1] + 14, 30, 30, 0.65);
+}
+
+/* ---------- the glyph atlas: white on transparent, one cell a glyph ---------- */
+// 0.1.7: Codex's DIGITS outlines (gear P R N D - and the engaged gear's digit 1-8, the speed, the tachs' numerals 0..7 with
+// Codex's local -3 deg skew), the unit labels, and one static cell: the centre's stack, line and caps (CENTRE_CELL, panel px)
+const STYLES = {
+  gear: { chars: 'PRND-12345678', w: C.gearW, h: C.gearH, skew: 0 },
+  speed: { chars: '0123456789-', w: C.speedW, h: C.speedH, skew: 0 },
+  bar: { chars: '01234567', w: TACH.labelW, h: TACH.labelH, skew: -3 },
+};
+const CENTRE_CELL = GEOM.CENTRE_CELL;
+const LABELS = { mph: [22, 400], 'km/h': [22, 400] };
+function atlasLayout() {             // cells packed in rows, 1024 wide
+  const W = 1024, cells = [], meta = { w: W, h: 0, styles: {}, labels: {} };
+  let x = 0, y = 0, rowH = 0;
+  const place = (w, h) => { if (x + w > W) { x = 0; y += rowH; rowH = 0; } const r = { x, y, w, h }; x += w; rowH = Math.max(rowH, h); return r; };
+  Object.keys(STYLES).forEach((name) => {
+    const S = STYLES[name], pad = 2, lean = Math.ceil(-Math.tan(S.skew * DEG) * S.h) + (S.skew ? 1 : 0);
+    const st = meta.styles[name] = { w: S.w, h: S.h, gap: 0.18 * S.w, pad, glyphs: {} };
+    for (const c of S.chars) {
+      const cw = Math.ceil(S.w * 66 / 64) + lean + 2 * pad, ch = S.h + 2 * pad, r = place(cw, ch);   // R reaches x 66 of 64
+      st.glyphs[c] = { x: r.x, y: r.y, w: cw, h: ch, ox: pad + lean, adv: S.w };
+      cells.push(() => {
+        ctx.save(); ctx.translate(r.x + pad + lean, r.y + pad); ctx.scale(S.w / 64, S.h / 82);
+        if (S.skew) ctx.transform(1, 0, Math.tan(S.skew * DEG), 1, 0, 0);
+        ctx.fillStyle = '#ffffff'; ctx.fill(new Path2D(DIGITS[c]), 'evenodd'); ctx.restore();
+      });
+    }
+  });
+  const measure = (s, size, weight) => { const c = document.createElement('canvas').getContext('2d'); c.font = `${weight} ${size}px ${SANS}`; return Math.ceil(c.measureText(s).width); };
+  Object.keys(LABELS).forEach((s) => {
+    const [size, weight] = LABELS[s], w = measure(s, size, weight) + 8, h = size + 12, r = place(w, h);
+    meta.labels[s] = { x: r.x, y: r.y, w, h, ox: 4 };
+    cells.push(() => text(s, r.x + 4, r.y + h / 2, size, '#ffffff', 'left', weight));
+  });
+  const cc = place(CENTRE_CELL.w, CENTRE_CELL.h);
+  meta.centre = { x: cc.x, y: cc.y, w: CENTRE_CELL.w, h: CENTRE_CELL.h, px: CENTRE_CELL.x, py: CENTRE_CELL.y };
+  cells.push(() => { ctx.save(); ctx.beginPath(); ctx.rect(cc.x, cc.y, CENTRE_CELL.w, CENTRE_CELL.h); ctx.clip(); ctx.translate(cc.x - CENTRE_CELL.x, cc.y - CENTRE_CELL.y); centreStatic(); ctx.restore(); });
+  meta.h = y + rowH;
+  return { meta, draw: () => cells.forEach((f) => f()) };
+}
+
+/* ---------- the items: name, format, rect (panel px), draw ---------- */
+const R = GEOM.RECTS, ATLAS = atlasLayout();
+// v2 (0.1.3): 'bg' is drawn whole and make-art.mjs keeps its right half at half resolution (bgR2: the tachs layer mirrors
+// it and samples it bilinear); one over-art (the right tach, no numerals): the tachs layer mirrors it for the left tach and
+// draws the numerals itself. 0.1.7: no M badge
+const ITEMS = [
+  { name: 'bg', format: 'r8', from: 'luma', rect: R.tachs, sampling: 'bilinear', draw: base },
+  { name: 'band', format: 'r8', from: 'alpha', rect: R.band, sampling: 'nearest', draw: bandMask },
+  { name: 'overR', format: 'rgba8', rect: R.overR, sampling: 'nearest', draw: barOver },
+  { name: 'atlas', format: 'r8', from: 'alpha', rect: { x: 0, y: 0, w: ATLAS.meta.w, h: ATLAS.meta.h }, sampling: 'nearest', draw: ATLAS.draw },
+  { name: 'cornerL', format: 'rgba8', rect: R.cornerL, sampling: 'nearest', draw: cornerL },
+  { name: 'cornerR_us', format: 'rgba8', rect: R.cornerR, sampling: 'nearest', draw: () => cornerR('us') },
+  { name: 'cornerR_metric', format: 'rgba8', rect: R.cornerR, sampling: 'nearest', draw: () => cornerR('metric') },
+];
+
+/** Draws item i on a transparent canvas of its rect; returns its RGBA (straight alpha) as base64. */
+window.renderItem = function (i) {
+  const it = ITEMS[i], r = it.rect, cv = document.createElement('canvas');
+  cv.width = r.w; cv.height = r.h;
+  ctx = cv.getContext('2d');
+  ctx.translate(-r.x, -r.y);
+  it.draw();
+  const px = ctx.getImageData(0, 0, r.w, r.h).data;
+  let s = '';
+  for (let k = 0; k < px.length; k += 0x8000) s += String.fromCharCode.apply(null, px.subarray(k, k + 0x8000));
+  return btoa(s);
+};
+window.ART = { items: ITEMS.map((it) => ({ name: it.name, format: it.format, from: it.from || 'rgba', rect: { x: it.rect.x, y: it.rect.y, w: it.rect.w, h: it.rect.h }, sampling: it.sampling })), atlas: ATLAS.meta };
+return window.ART;
+};
+</script>
+</body></html>

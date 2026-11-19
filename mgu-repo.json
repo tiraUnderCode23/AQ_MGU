@@ -2,6 +2,122 @@
   "schema": 1,
   "components": [
     {
+      "id": "adam_mtrack",
+      "kind": "app",
+      "path": "apps/_sources/pinguinooo-idrive7-apps/apps/adam_mtrack",
+      "manifest": "app.json",
+      "icon": "icon.png",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0",
+        "cluster-render": "0.6.7"
+      },
+      "build": {
+        "python": "apps/_sources/pinguinooo-idrive7-apps/kit/tools/build.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "apps/_sources/pinguinooo-idrive7-apps/oap-sdk",
+        "output": "apps/_sources/pinguinooo-idrive7-apps/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/pinguinooo-idrive7-apps/kit/runtime",
+          "apps/_sources/pinguinooo-idrive7-apps/kit/platform",
+          "apps/_sources/pinguinooo-idrive7-apps/kit/tools/build.py",
+          "apps/_sources/pinguinooo-idrive7-apps/kit/tools/pack_data.py",
+          "apps/_sources/pinguinooo-idrive7-apps/kit/tools/localize.py",
+          "apps/_sources/pinguinooo-idrive7-apps/kit/tools/locale-revisions.json",
+          "apps/_sources/pinguinooo-idrive7-apps/kit/tools/oapgen",
+          "apps/_sources/pinguinooo-idrive7-apps/LICENSE",
+          "apps/_sources/pinguinooo-idrive7-apps/kit/LICENSE",
+          "apps/_sources/pinguinooo-idrive7-apps/kit/NOTICE",
+          "apps/_sources/pinguinooo-idrive7-apps/kit/NOTICE.zh-CN.md"
+        ]
+      },
+      "version": "0.1.7",
+      "title": "M Track Cluster",
+      "description": "An M Track style cover on the instrument cluster in Sport+: bar tachs to 7,000 rpm, gear and mph, side panels, shift-light slats. Off until you turn it on"
+    },
+    {
+      "id": "adam_shiftlights",
+      "kind": "app",
+      "path": "apps/_sources/pinguinooo-idrive7-apps/apps/adam_shiftlights",
+      "manifest": "app.json",
+      "icon": "icon.png",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0",
+        "cluster-render": "0.6.7"
+      },
+      "build": {
+        "python": "apps/_sources/pinguinooo-idrive7-apps/kit/tools/build.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "apps/_sources/pinguinooo-idrive7-apps/oap-sdk",
+        "output": "apps/_sources/pinguinooo-idrive7-apps/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/pinguinooo-idrive7-apps/kit/runtime",
+          "apps/_sources/pinguinooo-idrive7-apps/kit/platform",
+          "apps/_sources/pinguinooo-idrive7-apps/kit/tools/build.py",
+          "apps/_sources/pinguinooo-idrive7-apps/kit/tools/pack_data.py",
+          "apps/_sources/pinguinooo-idrive7-apps/kit/tools/localize.py",
+          "apps/_sources/pinguinooo-idrive7-apps/kit/tools/locale-revisions.json",
+          "apps/_sources/pinguinooo-idrive7-apps/kit/tools/oapgen",
+          "apps/_sources/pinguinooo-idrive7-apps/LICENSE",
+          "apps/_sources/pinguinooo-idrive7-apps/kit/LICENSE",
+          "apps/_sources/pinguinooo-idrive7-apps/kit/NOTICE",
+          "apps/_sources/pinguinooo-idrive7-apps/kit/NOTICE.zh-CN.md"
+        ]
+      },
+      "version": "0.4.5",
+      "title": "Shift Lights",
+      "description": "RPM shift lights on the instrument cluster and HUD, with per-drive-mode thresholds and a cold-engine limit"
+    },
+    {
+      "id": "adam_vitals",
+      "kind": "app",
+      "path": "apps/_sources/pinguinooo-idrive7-apps/apps/adam_vitals",
+      "manifest": "app.json",
+      "icon": "icon.png",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0"
+      },
+      "build": {
+        "python": "apps/_sources/pinguinooo-idrive7-apps/kit/tools/build.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "apps/_sources/pinguinooo-idrive7-apps/oap-sdk",
+        "output": "apps/_sources/pinguinooo-idrive7-apps/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/pinguinooo-idrive7-apps/kit/runtime",
+          "apps/_sources/pinguinooo-idrive7-apps/kit/platform",
+          "apps/_sources/pinguinooo-idrive7-apps/kit/tools/build.py",
+          "apps/_sources/pinguinooo-idrive7-apps/kit/tools/pack_data.py",
+          "apps/_sources/pinguinooo-idrive7-apps/kit/tools/localize.py",
+          "apps/_sources/pinguinooo-idrive7-apps/kit/tools/locale-revisions.json",
+          "apps/_sources/pinguinooo-idrive7-apps/kit/tools/oapgen",
+          "apps/_sources/pinguinooo-idrive7-apps/LICENSE",
+          "apps/_sources/pinguinooo-idrive7-apps/kit/LICENSE",
+          "apps/_sources/pinguinooo-idrive7-apps/kit/NOTICE",
+          "apps/_sources/pinguinooo-idrive7-apps/kit/NOTICE.zh-CN.md"
+        ]
+      },
+      "version": "0.2.0",
+      "title": "Engine Vitals",
+      "description": "Boost, power, torque, gear, oil, coolant and transmission temperatures, with a warm-up guide and turbo cool-down"
+    },
+    {
       "id": "ambient_config",
       "kind": "app",
       "title": "Ambient config",
@@ -37,6 +153,309 @@
         "idrive7-renderd": "2.1.18",
         "mgu-inputgate": "1.1.0"
       }
+    },
+    {
+      "id": "aref_carcare",
+      "kind": "app",
+      "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_carcare",
+      "manifest": "app.json",
+      "icon": "icon.png",
+      "mguHmi": [
+        "ID7"
+      ],
+      "build": {
+        "python": "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "apps/_sources/arefahmad-idrive7-apps/oap-sdk",
+        "output": "apps/_sources/arefahmad-idrive7-apps/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/arefahmad-idrive7-apps/kit/runtime",
+          "apps/_sources/arefahmad-idrive7-apps/kit/platform",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/pack_data.py",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/localize.py",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/locale-revisions.json",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/oapgen",
+          "apps/_sources/arefahmad-idrive7-apps/LICENSE",
+          "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.idrive7-apps",
+          "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.nickgcode"
+        ]
+      },
+      "version": "0.2.3",
+      "title": "Car Care",
+      "description": "Your own service intervals, apart from BMW's: engine oil (3,000 mi by default), spark plugs, coils, diff, transfer case and transmission fluid, brake fluid, air and cabin filters, each with how much is left. Done today records the odometer and the date; Done earlier sets a service from before. It never resets BMW's own service reminders, so a dealer's free service still comes due on BMW's schedule. Read-only toward the car."
+    },
+    {
+      "id": "aref_carlyrics",
+      "kind": "app",
+      "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_carlyrics",
+      "manifest": "app.json",
+      "icon": "icon.png",
+      "mguHmi": [
+        "ID7"
+      ],
+      "build": {
+        "python": "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "apps/_sources/arefahmad-idrive7-apps/oap-sdk",
+        "output": "apps/_sources/arefahmad-idrive7-apps/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/arefahmad-idrive7-apps/kit/runtime",
+          "apps/_sources/arefahmad-idrive7-apps/kit/platform",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/pack_data.py",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/localize.py",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/locale-revisions.json",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/oapgen",
+          "apps/_sources/arefahmad-idrive7-apps/LICENSE",
+          "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.idrive7-apps",
+          "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.nickgcode"
+        ]
+      },
+      "version": "0.3.9",
+      "title": "Car Lyrics",
+      "description": "Synced lyrics for whatever the car plays: Apple Music over CarPlay, Bluetooth or USB, no Spotify needed. A full-screen page drawn like Apple Music's: the album art blurred behind, the cover and a progress line on the left, and the lyrics gliding line by line on the right, timed to the song from the car's own clock. Lyrics from LRCLIB, artwork from Apple's iTunes search. A Probe tab shows what the car reports. Read-only toward the car. Needs internet through the Store's uplink."
+    },
+    {
+      "id": "aref_carwatch",
+      "kind": "app",
+      "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_carwatch",
+      "manifest": "app.json",
+      "icon": "icon.png",
+      "mguHmi": [
+        "ID7"
+      ],
+      "build": {
+        "python": "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "apps/_sources/arefahmad-idrive7-apps/oap-sdk",
+        "output": "apps/_sources/arefahmad-idrive7-apps/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/arefahmad-idrive7-apps/kit/runtime",
+          "apps/_sources/arefahmad-idrive7-apps/kit/platform",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/pack_data.py",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/localize.py",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/locale-revisions.json",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/oapgen",
+          "apps/_sources/arefahmad-idrive7-apps/LICENSE",
+          "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.idrive7-apps",
+          "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.nickgcode"
+        ]
+      },
+      "version": "0.1.3",
+      "title": "Car Watch",
+      "description": "Misfire Watch, Fault Watch and Drive Log in one app that starts with the car: every misfire per cylinder with the conditions, a timeline of fault codes from every control unit, and every drive's numbers (distance, top speed, 0-60, g, oil and coolant). One process instead of three. On first start it brings over the old apps' history. Read-only."
+    },
+    {
+      "id": "aref_drivelog",
+      "kind": "app",
+      "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_drivelog",
+      "manifest": "app.json",
+      "icon": "icon.png",
+      "mguHmi": [
+        "ID7"
+      ],
+      "build": {
+        "python": "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "apps/_sources/arefahmad-idrive7-apps/oap-sdk",
+        "output": "apps/_sources/arefahmad-idrive7-apps/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/arefahmad-idrive7-apps/kit/runtime",
+          "apps/_sources/arefahmad-idrive7-apps/kit/platform",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/pack_data.py",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/localize.py",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/locale-revisions.json",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/oapgen",
+          "apps/_sources/arefahmad-idrive7-apps/LICENSE",
+          "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.idrive7-apps",
+          "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.nickgcode"
+        ]
+      },
+      "version": "0.3.2",
+      "title": "Drive Log",
+      "description": "Replaced by Car Watch (install it, then remove this app). Records every drive in the background: distance, time moving, top speed, best 0-60 mph, peak rpm, the most acceleration, braking and cornering g, and the highest oil and coolant temperatures. Compare with Dragy (off by default): enter a Dragy's time after a run, and after 3 runs every 0-60 also shows a Dragy-adjusted time. History, 0-60 runs and Save CSV. Read-only. Starts with the car."
+    },
+    {
+      "id": "aref_eta",
+      "kind": "app",
+      "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_eta",
+      "manifest": "app.json",
+      "icon": "icon.png",
+      "mguHmi": [
+        "ID7"
+      ],
+      "build": {
+        "python": "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "apps/_sources/arefahmad-idrive7-apps/oap-sdk",
+        "output": "apps/_sources/arefahmad-idrive7-apps/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/arefahmad-idrive7-apps/kit/runtime",
+          "apps/_sources/arefahmad-idrive7-apps/kit/platform",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/pack_data.py",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/localize.py",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/locale-revisions.json",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/oapgen",
+          "apps/_sources/arefahmad-idrive7-apps/LICENSE",
+          "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.idrive7-apps",
+          "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.nickgcode",
+          "apps/_sources/arefahmad-idrive7-apps/apps/aref_carlyrics/car/nowplaying.js",
+          "apps/_sources/arefahmad-idrive7-apps/apps/aref_carlyrics/art/artwork.js",
+          "apps/_sources/arefahmad-idrive7-apps/apps/aref_carlyrics/stage/lyrics.js",
+          "apps/_sources/arefahmad-idrive7-apps/apps/aref_carlyrics/vendor/jpeg_decoder.js",
+          "apps/_sources/arefahmad-idrive7-apps/apps/aref_carlyrics/net/http.js",
+          "apps/_sources/arefahmad-idrive7-apps/apps/aref_carlyrics/LICENSE"
+        ]
+      },
+      "version": "1.15.1",
+      "title": "ETA Bar",
+      "description": "Apple Maps' arrival time, time left and distance on the instrument cluster while Apple Maps guides on CarPlay. Two presets: the bottom strip's blank space (black, smoked, outline or plain), or an island at the top that pops out of the driver attention camera like iPhone's Dynamic Island, once or every 10 s to 5 min. Updates with every route change. Starts with the car. Needs the Cluster renderer tool from the Store."
+    },
+    {
+      "id": "aref_explorer",
+      "kind": "app",
+      "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_explorer",
+      "manifest": "app.json",
+      "icon": "icon.png",
+      "mguHmi": [
+        "ID7"
+      ],
+      "build": {
+        "python": "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "apps/_sources/arefahmad-idrive7-apps/oap-sdk",
+        "output": "apps/_sources/arefahmad-idrive7-apps/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/arefahmad-idrive7-apps/kit/runtime",
+          "apps/_sources/arefahmad-idrive7-apps/kit/platform",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/pack_data.py",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/localize.py",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/locale-revisions.json",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/oapgen",
+          "apps/_sources/arefahmad-idrive7-apps/LICENSE",
+          "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.idrive7-apps",
+          "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.nickgcode"
+        ]
+      },
+      "version": "0.2.3",
+      "title": "Car Explorer",
+      "description": "Finds the head unit's services behind a car feature (ambient light, route guidance and ETA, GPS position, now playing, climate, lights, doors, fuel) in its interface catalog and shows what each offers. Writes everything to explorer-report.txt, which new apps are designed from. Read-only: it reads two platform files and sends nothing to the car. For developers and curious owners."
+    },
+    {
+      "id": "aref_faultwatch",
+      "kind": "app",
+      "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_faultwatch",
+      "manifest": "app.json",
+      "icon": "icon.png",
+      "mguHmi": [
+        "ID7"
+      ],
+      "build": {
+        "python": "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "apps/_sources/arefahmad-idrive7-apps/oap-sdk",
+        "output": "apps/_sources/arefahmad-idrive7-apps/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/arefahmad-idrive7-apps/kit/runtime",
+          "apps/_sources/arefahmad-idrive7-apps/kit/platform",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/pack_data.py",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/localize.py",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/locale-revisions.json",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/oapgen",
+          "apps/_sources/arefahmad-idrive7-apps/LICENSE",
+          "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.idrive7-apps",
+          "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.nickgcode"
+        ]
+      },
+      "version": "0.2.2",
+      "title": "Fault Watch",
+      "description": "Replaced by Car Watch (install it, then remove this app). Reads every control unit's fault memory in the background every few minutes while the car is on, and keeps a timeline of what changed: new faults, faults that turn active, faults that clear. Each entry has the time and the drive at that moment (speed, gear, rpm, oil, drive mode), so an intermittent fault can be matched to when it happened. Read-only: it never clears or writes anything. Starts with the car."
+    },
+    {
+      "id": "aref_misfire",
+      "kind": "app",
+      "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_misfire",
+      "manifest": "app.json",
+      "icon": "icon.png",
+      "mguHmi": [
+        "ID7"
+      ],
+      "build": {
+        "python": "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "apps/_sources/arefahmad-idrive7-apps/oap-sdk",
+        "output": "apps/_sources/arefahmad-idrive7-apps/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/arefahmad-idrive7-apps/kit/runtime",
+          "apps/_sources/arefahmad-idrive7-apps/kit/platform",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/pack_data.py",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/localize.py",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/locale-revisions.json",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/oapgen",
+          "apps/_sources/arefahmad-idrive7-apps/LICENSE",
+          "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.idrive7-apps",
+          "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.nickgcode"
+        ]
+      },
+      "version": "0.1.1",
+      "title": "Misfire Watch",
+      "description": "Replaced by Car Watch (install it, then remove this app). Logs every misfire the engine counts, per cylinder, across every drive. It reads the engine unit's own misfire counters every few seconds while the engine runs and records each new misfire with the conditions at that moment: rpm, speed, gear, torque, coolant and drive mode. Shows this drive per cylinder, all-time totals, the DME's 10-drive average, a misfire log and a list of drives, and exports CSV. Finds a weak coil or worn plug early. Read-only. Starts with the car."
+    },
+    {
+      "id": "aref_tires",
+      "kind": "app",
+      "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_tires",
+      "manifest": "app.json",
+      "icon": "icon.png",
+      "mguHmi": [
+        "ID7"
+      ],
+      "build": {
+        "python": "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "apps/_sources/arefahmad-idrive7-apps/oap-sdk",
+        "output": "apps/_sources/arefahmad-idrive7-apps/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/arefahmad-idrive7-apps/kit/runtime",
+          "apps/_sources/arefahmad-idrive7-apps/kit/platform",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/pack_data.py",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/localize.py",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/locale-revisions.json",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/oapgen",
+          "apps/_sources/arefahmad-idrive7-apps/LICENSE",
+          "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.idrive7-apps",
+          "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.nickgcode"
+        ]
+      },
+      "version": "0.2.1",
+      "title": "Tire Setup",
+      "description": "The tire pressure monitor as your BMW sees it, in plain English: why auto detect fails, the car's tire list, what's fitted, the last reset, pressures and targets. Sends the iDrive tire menu's own actions (tire list, pick a tire, auto detect, reset, season) with DSC guarded: every write leaves DSC alone, only parked, and DSC is checked before and after."
     },
     {
       "id": "brake_test",
@@ -154,6 +573,30 @@
       "path": "apps/_sources/bimmer-lab-apps/apps/cluster_themes",
       "manifest": "app.json",
       "description": "Redraws the instrument cluster: GT3 race dash, M-style, M view, Vector (with a music panel), Sport, Minimal, Track, Drag, Rally, Retro 80s, Cruise, Dyno (BMW-coloured readout tiles) or Ribbon (with holiday editions), with shift lights, boost, temps, tyres, a G-meter and a 0-60 timer"
+    },
+    {
+      "id": "dk_backgammon",
+      "kind": "app",
+      "path": "apps/_sources/mistergahan-mgu-backgammon/apps/dk_backgammon",
+      "build": "unit",
+      "title": "Нарды",
+      "description": "Короткие и длинные нарды: вдвоём или с компьютером.",
+      "mguHmi": [
+        "ID7"
+      ],
+      "version": "0.1.1"
+    },
+    {
+      "id": "dk_tetris",
+      "kind": "app",
+      "path": "apps/_sources/mistergahan-mgu-backgammon/apps/dk_tetris",
+      "build": "unit",
+      "title": "Тетрис",
+      "description": "Тетрис для iDrive 7: семь фигур, уровни, рекорд и сохранение.",
+      "mguHmi": [
+        "ID7"
+      ],
+      "version": "0.1.1"
     },
     {
       "id": "doom",
@@ -352,6 +795,11 @@
         "python": "apps/_sources/turnkey-ethanol-blend/tools/build_store.py",
         "args": [
           "{id}"
+        ],
+        "shared": [
+          "apps/_sources/turnkey-ethanol-blend/store-v015",
+          "apps/_sources/turnkey-ethanol-blend/LICENSE",
+          "apps/_sources/turnkey-ethanol-blend/LICENSE.idrive7-apps"
         ]
       }
     },
@@ -390,6 +838,22 @@
       "requires": {
         "idrive7-renderd": "2.1.15"
       }
+    },
+    {
+      "id": "iabadia_m_arcade",
+      "kind": "app",
+      "title": "M Arcade",
+      "description": "Six games in one controller-first arcade, with shared menus, progress and named records",
+      "version": "0.1.3",
+      "requires": {
+        "mgu-render": "0.6.9"
+      },
+      "mguHmi": [
+        "ID7"
+      ],
+      "uninstallable": true,
+      "path": "apps/_sources/iabadia-idrive-games/apps/iabadia_m_arcade",
+      "build": "unit"
     },
     {
       "id": "idrive7-renderd",
@@ -874,7 +1338,8 @@
           "apps/_sources/hexlay-idrive7-apps/kit/tools/pack_data.py",
           "apps/_sources/hexlay-idrive7-apps/kit/tools/localize.py",
           "apps/_sources/hexlay-idrive7-apps/kit/tools/locale-revisions.json",
-          "apps/_sources/hexlay-idrive7-apps/kit/tools/oapgen"
+          "apps/_sources/hexlay-idrive7-apps/kit/tools/oapgen",
+          "apps/_sources/hexlay-idrive7-apps/kit/tools/make_icon.js"
         ]
       },
       "requires": {

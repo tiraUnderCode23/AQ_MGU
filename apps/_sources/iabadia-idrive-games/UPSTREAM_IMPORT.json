@@ -1,0 +1,868 @@
+{
+  "schema": 1,
+  "repository": "iAbadia/idrive-games",
+  "url": "https://github.com/iAbadia/idrive-games",
+  "commit": "247324d718be76d5380ce148561676d495c61d26",
+  "source_tree": "feb709b2029f9cfded2d32f7b5aedba6e0b5b851",
+  "snapshot_date": "2026-11-19",
+  "mode": "selected-original-source-bytes",
+  "license": "GPL-3.0-or-later with retained MIT kit and SIL OFL font notices",
+  "component_ids": [
+    "iabadia_m_arcade"
+  ],
+  "excluded": [
+    "BMW SDK and firmware",
+    "node_modules",
+    "binary packages",
+    "GitHub workflows",
+    "legacy standalone applications except save-import helper and referenced license notices"
+  ],
+  "files": [
+    {
+      "path": "LICENSE",
+      "bytes": 35149,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "git_blob_sha1": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3845,
+      "sha256": "a69a1a6027a055789fc134b7ffc967db42f26fdabcb850550376ff17009999ee",
+      "git_blob_sha1": "956d624bdc1b92aad50755723ef4d475d61fd46b"
+    },
+    {
+      "path": "THIRD_PARTY.md",
+      "bytes": 1752,
+      "sha256": "90a96abeee896e8a53f60ce5e448652f98287607ef83e26d7f4a0d4c3d15630d",
+      "git_blob_sha1": "1abb48c94aad9ab8fbc1fa8a5003f0c6fae69ffd"
+    },
+    {
+      "path": "apps/iabadia_2048/iabadia_2048@0.1.3/LICENSE-Inter.txt",
+      "bytes": 4380,
+      "sha256": "262481e844521b326f5ecd053e59b98c8b2da78c8ee1bdbb6e8174305e54935a",
+      "git_blob_sha1": "9b2ca37b3ffc77391d8b2ebef4a974ef32bf46ea"
+    },
+    {
+      "path": "apps/iabadia_2048/iabadia_2048@0.1.3/LICENSE-kit.txt",
+      "bytes": 1077,
+      "sha256": "481b839c45d8426a0b561b5a4f8d7437dd22dc61e08c8a2817b16831fab1e86a",
+      "git_blob_sha1": "4bd5906e99579be628bd5d97e0c824447bfc4857"
+    },
+    {
+      "path": "apps/iabadia_2048/src/leaderboard.js",
+      "bytes": 1704,
+      "sha256": "8578a041ed0ca5c50f4c2e64524acba95a9c957d0f4b219b90ede4590fe2c461",
+      "git_blob_sha1": "5b90128cf2b5d566da3a2eb3c1db44c85356b3ed"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/README.md",
+      "bytes": 4510,
+      "sha256": "747b663f98c7461532f3a2ee992d81563aa8d564923dee2db542f07b260fdfbb",
+      "git_blob_sha1": "d4f817661548831eb29dc56e5d4a4279f890725f"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/assets/README.md",
+      "bytes": 1149,
+      "sha256": "61dba583a47e3b04e82c9ab2546e2e8700456aa77d17f5a5d1b242d9b5df363a",
+      "git_blob_sha1": "dc0164547c260616fc215de6e3504890733a41f6"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/assets/games/2048.png",
+      "bytes": 19951,
+      "sha256": "123512c784360791a2bfd595a8eda0850dadc8edb91cfe5f1633a19c6a0c2d4b",
+      "git_blob_sha1": "0d31b5793ade356f1b3fed4353bca38ab591aa17"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/assets/games/breakout.png",
+      "bytes": 20466,
+      "sha256": "c4261b31f4fad5de7bab1a7862efd00c0fd8f7c5111746bc8ed4536e5ebec5e7",
+      "git_blob_sha1": "2aeb4acc86bd4389eb562d95b8250b9c5c73d689"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/assets/games/invaders.png",
+      "bytes": 20333,
+      "sha256": "566e3cf910618b6e9055ee36f1d8a2f3c80626182b547ae4556894474f82c18f",
+      "git_blob_sha1": "69cde03b949d2d52e78206fc33eecd1fa205abcf"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/assets/games/minesweeper.png",
+      "bytes": 23276,
+      "sha256": "78f7bd4241605df363b864230054e3c2e3940d371f2d185bfabca4e5ee208d58",
+      "git_blob_sha1": "0157171a5191a36ae16b34ddad7579b8f24fc6cf"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/assets/games/snake.png",
+      "bytes": 22202,
+      "sha256": "5da9052d49255fca3c8b18a4351c51bdfd1f7eb31796578532c0208096c1e6a5",
+      "git_blob_sha1": "e1a32c70606b37d8a6fbee8980b89a7eb00c1a0e"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/assets/games/tetris.png",
+      "bytes": 20904,
+      "sha256": "4e6a09c1636b541261eade610d86aea55337e170008b3ff8f8c7df73c7259f6f",
+      "git_blob_sha1": "27e25fb0ecf9cf9b45ca96a40226837897907e3d"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/assets/icon.png",
+      "bytes": 27986,
+      "sha256": "1b60bd8d38561ad711dc2383f092832c0b9ab9ac8ad0191fc42023bb59494434",
+      "git_blob_sha1": "7db0cfe0d464149ae395d6dbfcb9b0b4fffbe142"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/iabadia_m_arcade@0.1.3/CHANGELOG.md",
+      "bytes": 689,
+      "sha256": "a269f4c829add46f1458407e02296ea0eac26b61289eb87b133a346b2ebb8578",
+      "git_blob_sha1": "2870dedb42d89d02f029e411caee73d33fa2472f"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/iabadia_m_arcade@0.1.3/LICENSE",
+      "bytes": 35149,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "git_blob_sha1": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/iabadia_m_arcade@0.1.3/LICENSE-Inter.txt",
+      "bytes": 4380,
+      "sha256": "262481e844521b326f5ecd053e59b98c8b2da78c8ee1bdbb6e8174305e54935a",
+      "git_blob_sha1": "9b2ca37b3ffc77391d8b2ebef4a974ef32bf46ea"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/iabadia_m_arcade@0.1.3/LICENSE-kit.txt",
+      "bytes": 1077,
+      "sha256": "481b839c45d8426a0b561b5a4f8d7437dd22dc61e08c8a2817b16831fab1e86a",
+      "git_blob_sha1": "4bd5906e99579be628bd5d97e0c824447bfc4857"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/iabadia_m_arcade@0.1.3/config/base.json",
+      "bytes": 3,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "git_blob_sha1": "0967ef424bce6791893e9a57bb952f80fd536e93"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/iabadia_m_arcade@0.1.3/config/icons/2048.png",
+      "bytes": 19951,
+      "sha256": "123512c784360791a2bfd595a8eda0850dadc8edb91cfe5f1633a19c6a0c2d4b",
+      "git_blob_sha1": "0d31b5793ade356f1b3fed4353bca38ab591aa17"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/iabadia_m_arcade@0.1.3/config/icons/breakout.png",
+      "bytes": 20466,
+      "sha256": "c4261b31f4fad5de7bab1a7862efd00c0fd8f7c5111746bc8ed4536e5ebec5e7",
+      "git_blob_sha1": "2aeb4acc86bd4389eb562d95b8250b9c5c73d689"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/iabadia_m_arcade@0.1.3/config/icons/invaders.png",
+      "bytes": 20333,
+      "sha256": "566e3cf910618b6e9055ee36f1d8a2f3c80626182b547ae4556894474f82c18f",
+      "git_blob_sha1": "69cde03b949d2d52e78206fc33eecd1fa205abcf"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/iabadia_m_arcade@0.1.3/config/icons/minesweeper.png",
+      "bytes": 23276,
+      "sha256": "78f7bd4241605df363b864230054e3c2e3940d371f2d185bfabca4e5ee208d58",
+      "git_blob_sha1": "0157171a5191a36ae16b34ddad7579b8f24fc6cf"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/iabadia_m_arcade@0.1.3/config/icons/snake.png",
+      "bytes": 22202,
+      "sha256": "5da9052d49255fca3c8b18a4351c51bdfd1f7eb31796578532c0208096c1e6a5",
+      "git_blob_sha1": "e1a32c70606b37d8a6fbee8980b89a7eb00c1a0e"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/iabadia_m_arcade@0.1.3/config/icons/tetris.png",
+      "bytes": 20904,
+      "sha256": "4e6a09c1636b541261eade610d86aea55337e170008b3ff8f8c7df73c7259f6f",
+      "git_blob_sha1": "27e25fb0ecf9cf9b45ca96a40226837897907e3d"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/iabadia_m_arcade@0.1.3/manifest.json",
+      "bytes": 1887,
+      "sha256": "0c59e67f6530aab8bee1b2cd016812b212cd6d3c3ababfd15f5cfe9bff1c6d1f",
+      "git_blob_sha1": "aa43a8e6f32bbd906c4730fad65c7021bae982f6"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/iabadia_m_arcade@0.1.3/npm-shrinkwrap.json",
+      "bytes": 121,
+      "sha256": "e46991e06931ca08ccd2f7bb72a2de66acaca35c75d36bc24cb7bdbf30422215",
+      "git_blob_sha1": "791fde147a93bea41d29fe028626776986d6ffd0"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/iabadia_m_arcade@0.1.3/package.json",
+      "bytes": 1016,
+      "sha256": "747877e72c9f8a5ee5ffa93fe3431f3e3b541f530ee1158381dcd20d23e4b6fc",
+      "git_blob_sha1": "fe7b12028c2286b8331e6bb41fad5e6e5f1c55a5"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/iabadia_m_arcade@0.1.3/permissions.json",
+      "bytes": 3115,
+      "sha256": "257629fa5f71297eead5af84ea2f2195fd77a2311a06bb6fe7761263d4e66a0b",
+      "git_blob_sha1": "02c77b8e6836e9bc4eafe99cb00195440d367db5"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/iabadia_m_arcade@0.1.3/rhmiData/application.json",
+      "bytes": 1427,
+      "sha256": "b39e33f9a969dc9975567d1593ff2ef4e27ebfdf355d174df4022b9fc31dec1b",
+      "git_blob_sha1": "0821026cd548c5bbf7dd1cc736c580b388be0728"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/iabadia_m_arcade@0.1.3/rhmiData/uiDescriptions/ID7/application.xml",
+      "bytes": 1572,
+      "sha256": "ae5f0499090cab355aec5252a51cd836fa3d7b26db4fec8036ec0d208de2ca6e",
+      "git_blob_sha1": "c3ede0f342804f14ccd03116b9e8e60578352cc0"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/iabadia_m_arcade@0.1.3/rhmiData/uiDescriptions/ID7/uiDescription.json",
+      "bytes": 4160,
+      "sha256": "0435df77ac61744af416b625b0ee278fa2ad0ac60f7683c61e6386dcd5e839b3",
+      "git_blob_sha1": "0acc6289c1926ee7ee67785404ff90c05314a8ff"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/iabadia_m_arcade@0.1.3/rhmiData/variantGroups/Common/images/iabadia_m_arcade_icon.png",
+      "bytes": 27986,
+      "sha256": "1b60bd8d38561ad711dc2383f092832c0b9ab9ac8ad0191fc42023bb59494434",
+      "git_blob_sha1": "7db0cfe0d464149ae395d6dbfcb9b0b4fffbe142"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/iabadia_m_arcade@0.1.3/rhmiData/variantGroups/Common/texts/en_GB.json",
+      "bytes": 38,
+      "sha256": "3150f54013512be764e4a3420232b66a42d49e776b16063933580fc21845e0a0",
+      "git_blob_sha1": "2b2cf9b00c85f11baeb64e575210e64eb6e65c5f"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/mgu-app.json",
+      "bytes": 1882,
+      "sha256": "5d485659140f0cf3455f6426d1fe8b672581ec88d00130fbec3e2f253861e21b",
+      "git_blob_sha1": "24122d23eb746f1fdd4e0201162b10a3ef9eeb2e"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/app.js",
+      "bytes": 15035,
+      "sha256": "dac9a76f1a0caaa4e7436b40a0e4d62577abed9406a619ddc052d3bdc84f43de",
+      "git_blob_sha1": "6d0fbe837526c425d998f155cb76a9114fc80298"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/core_carousel.js",
+      "bytes": 1218,
+      "sha256": "43727c06c40f0be71a185b6bc895212b765b33ab6e383e00819888bde3d85fa9",
+      "git_blob_sha1": "b9762b6a1140f0642f28eb8397b59274389d84e8"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/core_input.js",
+      "bytes": 2078,
+      "sha256": "48fa2ee47f52e9a5aedc64c1e2fdd8428de246d222f27c77c5b4734409a0421f",
+      "git_blob_sha1": "c9fc3ba913e95584ba1d61b03aa83912e77bbd8c"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/core_registry.js",
+      "bytes": 524,
+      "sha256": "77cce1e7734ef7dcbece0a5712e3efe7185f14984e2997d954a630b222cda0c7",
+      "git_blob_sha1": "6f82a5561fcfdc2128bd71b73e2b98f3303dfce2"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/core_runtime.js",
+      "bytes": 2911,
+      "sha256": "131607c026fb39007bc0f82c9d1c84c54e99a060448b43fa7f7a912c46a38d46",
+      "git_blob_sha1": "c60396565df8c617de30637a7c8c9cf9caecc6e2"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/core_saves.js",
+      "bytes": 4893,
+      "sha256": "d707e5e2329688cae9515041271847969b1f8d6b3001a8b204c55f0c8310e4de",
+      "git_blob_sha1": "1926ca560a63bd2e0937f00a8f51629c6158d4a2"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/core_scores.js",
+      "bytes": 2356,
+      "sha256": "1cd33bed91a8dd530020c1f692bfe7a7ce391f2d583365d945045bfe013f93e0",
+      "git_blob_sha1": "39d63edacfbe79a20da7648aef91ca24631fb209"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/core_session.js",
+      "bytes": 19099,
+      "sha256": "fc5b0e046cbe2bd8df849c83088522053c1da0444bc40bde706adabf74c22179",
+      "git_blob_sha1": "d79672e29e22918b886e9340a07768c0700c21e9"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/games_2048_board.js",
+      "bytes": 3064,
+      "sha256": "a1d47bceaa0ee2f02f04fe882632b05c4dca026264e0a14578020f7b1a5e8805",
+      "git_blob_sha1": "de3fc1d9583ed7dca781f42999151b7e14cccd0c"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/games_2048_definition.js",
+      "bytes": 917,
+      "sha256": "13150b11eef73163830b7b25324e7fb39b19e272d9e889a2812be40bb1706d75",
+      "git_blob_sha1": "adfdc6ece22e7bc36e1b4561a3d953ada1383646"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/games_2048_model.js",
+      "bytes": 3453,
+      "sha256": "cf23400bf8edc2bc4f90a0b7d6252fa71bb9ce73520b795b417ecd295a9c52a8",
+      "git_blob_sha1": "5f3a9a1d6baa52df6cf7b0211328b1d2c8906c26"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/games_2048_runtime.js",
+      "bytes": 1596,
+      "sha256": "65e88004f8914fd30a1ff3b73766df5f40c3bcae5a1c886e9b6cc7a752310b2f",
+      "git_blob_sha1": "a4f64f5c2743c8f1ea3094adfe44c83f4c8d7faa"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/games_breakout_board.js",
+      "bytes": 2512,
+      "sha256": "8d00552f2f5779b8b43a9182c80d4cb3f1e2ef58ed8f84478c85619da0c5f1a1",
+      "git_blob_sha1": "b96293b335674dcfb0997fff4779d91235bbcc71"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/games_breakout_definition.js",
+      "bytes": 1410,
+      "sha256": "e462c27833147e9168b6fadef54acb39733b08a30c41c098dceaa40554cb551f",
+      "git_blob_sha1": "b56e76103a649ed111222aefb6f7c8939465e69b"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/games_breakout_model.js",
+      "bytes": 5524,
+      "sha256": "bd850f2fbd890035aa0130b3c7976375803cc161ce83409e40930f584f4df03f",
+      "git_blob_sha1": "052d17aaf5e0f79b879a2df269c7a38c323f76f4"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/games_breakout_runtime.js",
+      "bytes": 874,
+      "sha256": "4d91d096cfa8e4694baa23eea11c3bc354bb263741e2e3ccebd771e5c283dea9",
+      "git_blob_sha1": "30a6310ae3fc5cb056d58bfb6a4b44177d30d0d2"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/games_invaders_board.js",
+      "bytes": 3656,
+      "sha256": "0f22bbd11753e0ae1354a617f733f2dac40e4c7daab5013619ffc87b8a27609f",
+      "git_blob_sha1": "bc5c67fa59fc6f31184abec1e686158d4d186cf4"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/games_invaders_definition.js",
+      "bytes": 1409,
+      "sha256": "0dd5ea2db6d4151cd08c7b4a4b8e86f2258fc637d1b1b1ed3b9084ac99573c69",
+      "git_blob_sha1": "7322f92ca03c794ea27a3f20af0dbff1069e1682"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/games_invaders_model.js",
+      "bytes": 5623,
+      "sha256": "d76d2960cdfd6c51bec17d8a0436181f81d9c68bd10ff3a048ae91b796d58379",
+      "git_blob_sha1": "abab778a3b6401f4e4e2c867405ba4b7047e7640"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/games_invaders_runtime.js",
+      "bytes": 874,
+      "sha256": "fe359c21e2e70b694ffd1e8efb69466c077de7409be5dfccfe3178fc36bd9f42",
+      "git_blob_sha1": "de96b622f3b8b7b960cd87bb76bd970c7e3ebfac"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/games_minesweeper_board.js",
+      "bytes": 3871,
+      "sha256": "183eef320ad1ceda8c8f7a1349f2be326c8d04bcaf61a3f265e9983008bdfbcd",
+      "git_blob_sha1": "fffd6da6d3cb80965b1b7580ebc1e69f36c959bb"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/games_minesweeper_definition.js",
+      "bytes": 1466,
+      "sha256": "1f027432f976464ae289c11ddcd7ee066195dacc053c4b5d87aacf977e48e10c",
+      "git_blob_sha1": "996a39f5cef0e1688ff4cc6e4a19c28e49411552"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/games_minesweeper_model.js",
+      "bytes": 4912,
+      "sha256": "9d5472810ee867cf62501d32d14dc56ffd579e76cbab958bd86456d67738ecad",
+      "git_blob_sha1": "7b97be87ad20c22a44e6c12596e894dcbda126ce"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/games_minesweeper_runtime.js",
+      "bytes": 2316,
+      "sha256": "92a1585c1b7c0b9bc46da02052b63e01c8afb3d3045fe5e8ab0382d3e0bfd510",
+      "git_blob_sha1": "cd210e8ab039db4de19ba72d8f8950383abd0d9a"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/games_snake_board.js",
+      "bytes": 3271,
+      "sha256": "f1d10c70d3a0fc593a726a26dc5b46e6b49607f0373e305d7524107895329331",
+      "git_blob_sha1": "0a6a7cecadc023d9a51ef7fb71ca33caa372c5ba"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/games_snake_definition.js",
+      "bytes": 1397,
+      "sha256": "2af8e98443c2d239d06e02bbcb1918ee024138c2cf8d7ca3f8c01e4cf2804860",
+      "git_blob_sha1": "0d5edc816e9ad828b319269901d07e71b6e91cec"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/games_snake_model.js",
+      "bytes": 3093,
+      "sha256": "e5dcd0de640eadb9f603658834ed303c1243866f68123c6dcd24b206ae257112",
+      "git_blob_sha1": "9955a16c799bb197098ef98e99d66d3a0bccc98d"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/games_snake_runtime.js",
+      "bytes": 1796,
+      "sha256": "bbc1c66d22dd8178bca5f7dfba780d509fb0a4b911d6d2edbdcc63d5347d99e7",
+      "git_blob_sha1": "30b45e5e53caec5f945b4a146b030c5bc3e3ec7e"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/games_tetris_board.js",
+      "bytes": 3174,
+      "sha256": "24a59daf295f177a8211eae5252095358cc093850514ed577d095575463e022d",
+      "git_blob_sha1": "ad40f64f0222cd39260aa25032132769f3e74fbc"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/games_tetris_definition.js",
+      "bytes": 1402,
+      "sha256": "f163b52d8f1ce8c70d38dbabc86dbc2917ac960ec54ec8f60790ed0bad92dac8",
+      "git_blob_sha1": "c2ac19c0def353d643517a2e1205411cc9fd7221"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/games_tetris_model.js",
+      "bytes": 5206,
+      "sha256": "51c72be817e7c0f9e26aab0ab59e2f1abe630d9d6bf9f5d5676427b911b1f7a5",
+      "git_blob_sha1": "f5e63577604e20062cdfcea13ecce439f0099e15"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/games_tetris_runtime.js",
+      "bytes": 1436,
+      "sha256": "470fb05fcd780f564a87562d1c1e78298752295d818ff0573205ef184d9a96f9",
+      "git_blob_sha1": "45f5401a65213747d512dffd577ca140e49ae9d7"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/kit_font_regular.js",
+      "bytes": 47828,
+      "sha256": "ae1cf3133495e3615979ee708af33d4d4123b52a3bfa99a2c14bb0d167520b64",
+      "git_blob_sha1": "789d615904884a0212c59d30bf7ae297bb761746"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/kit_font_semibold.js",
+      "bytes": 119661,
+      "sha256": "d694ffce0e95c35d972da4b3321513ae36ee1bae8c31a5337585a45a3b425078",
+      "git_blob_sha1": "00ee9cdc9e10ed758817ff52d1d13ddb35d89b93"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/kit_kit_canvas.js",
+      "bytes": 25359,
+      "sha256": "3a5455b85e13ca7ed175c3a1b3da2699844fd69175d7084cddfa629fd0858715",
+      "git_blob_sha1": "a099926397cda12855d8fa392413db4191b23b8f"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/kit_kit_fonts.js",
+      "bytes": 956,
+      "sha256": "7873637e4cf57baada8d51d028ed3bdad3bc4782a573d74106204889f3a943c6",
+      "git_blob_sha1": "6d4126bf4b0261be5a3c64efc877532a187309da"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/kit_kit_record.js",
+      "bytes": 18428,
+      "sha256": "9991c297eeee245bc2e4403eb9ec4cb54dcc274117e589d3ab550834d0712cff",
+      "git_blob_sha1": "d5ace031b79efd3dacf38f46586c37fc4bc5cdcd"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/kit_mgu_render_client.js",
+      "bytes": 21380,
+      "sha256": "4c8206e0dcef0769e4da89659bd0842e7123d5fb8704ade539224a8c841ba258",
+      "git_blob_sha1": "87f47f4aff9391f8fdfbcec063c683753c98d3f8"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/ui_draw.js",
+      "bytes": 11103,
+      "sha256": "bc5e14097f4a1aa3f9ed16be48cf656e2dc2ea44add8745123e723c8399bb36b",
+      "git_blob_sha1": "00fb285ad42be4e146cdfc4c7ecb0f1a69bbf944"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/ui_icons.js",
+      "bytes": 665,
+      "sha256": "aeebe72d42a79ba819137da81ec3d4321ed1dec58be405d8eb3475b00ca4ba49",
+      "git_blob_sha1": "b1dca586fd6c9f251919ebf0d6ff4733d2186d90"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/ui_png.js",
+      "bytes": 2924,
+      "sha256": "7b9b65ad936127d54a3881e72de4ea7241d4da6dfe0a23d03bff9f368b07a858",
+      "git_blob_sha1": "c0fd40b252fbce8ee12ed1a3a16fa3c6b190eba7"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/package-src/ui_theme.js",
+      "bytes": 292,
+      "sha256": "027ec10a53b7ca517a14f76ec5ec144e186372623a2dae5191e9ae9e27cad89d",
+      "git_blob_sha1": "74368727d4b855e6b86c5cbee1abe4f5c1c0e5e8"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/preview/carousel.gif",
+      "bytes": 456725,
+      "sha256": "ffbc05a16929a633f058adbe9a9672c7a4c8397cc73b859ffc46eadc8ac9ed2e",
+      "git_blob_sha1": "c1cd0b7d8ca2a79cbfc6a3449ef99ae8b6b00e0f"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/preview/game.png",
+      "bytes": 63406,
+      "sha256": "788998ccee5ec6173befc76ba13aeaa66da7c7b70523c49d42dc9d0e1fff59cf",
+      "git_blob_sha1": "6ac0ef2afbcd96669695d5d449e1d395a74cbabd"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/preview/library.png",
+      "bytes": 196828,
+      "sha256": "2b9083af770c29a84af5c3fa4fbffb73a57c9e98c9439e051b021f0ad1a3b02c",
+      "git_blob_sha1": "9982ed9b19b43d71688b7c278de91cdf75856d60"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/preview/menu.png",
+      "bytes": 46323,
+      "sha256": "58da1ffb12979ee956f2ace4ff3657bdad3e31d268c04cfa12c6b51b59198996",
+      "git_blob_sha1": "dcf6927f12a8df31a3ca6500a4ccebf7747a8713"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/release.json",
+      "bytes": 138,
+      "sha256": "6da480e2d3de2950abb55488f07ae88197160b85280e42fcc09dfc1de8d69ff4",
+      "git_blob_sha1": "634e66fe11579cfab34ce6c3daf50b99aa16695b"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/app.js",
+      "bytes": 15035,
+      "sha256": "6dba3d01480005b4c088dbf6b328ba6693187ba5bb3e00b6240225203e75be55",
+      "git_blob_sha1": "637347b2e2eb8b526ecd25b2050efd22b6b82307"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/core/carousel.js",
+      "bytes": 1218,
+      "sha256": "43727c06c40f0be71a185b6bc895212b765b33ab6e383e00819888bde3d85fa9",
+      "git_blob_sha1": "b9762b6a1140f0642f28eb8397b59274389d84e8"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/core/input.js",
+      "bytes": 2078,
+      "sha256": "48fa2ee47f52e9a5aedc64c1e2fdd8428de246d222f27c77c5b4734409a0421f",
+      "git_blob_sha1": "c9fc3ba913e95584ba1d61b03aa83912e77bbd8c"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/core/registry.js",
+      "bytes": 530,
+      "sha256": "e4ca4cee45abf37b65176e93ac6519da43726d5ed23080ab19b1be380d8abe79",
+      "git_blob_sha1": "2acd1596de3b7b02f919af90a23fb01dfd3e5d36"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/core/runtime.js",
+      "bytes": 2911,
+      "sha256": "131607c026fb39007bc0f82c9d1c84c54e99a060448b43fa7f7a912c46a38d46",
+      "git_blob_sha1": "c60396565df8c617de30637a7c8c9cf9caecc6e2"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/core/saves.js",
+      "bytes": 4888,
+      "sha256": "dfc3ddd201062d04bb89f993d906c0a42b4e9db86fc461b78ff052dbafdd5365",
+      "git_blob_sha1": "b3e4c7dff9b1ac04e1572837af8c661d1c6ec8fc"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/core/scores.js",
+      "bytes": 2356,
+      "sha256": "1cd33bed91a8dd530020c1f692bfe7a7ce391f2d583365d945045bfe013f93e0",
+      "git_blob_sha1": "39d63edacfbe79a20da7648aef91ca24631fb209"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/core/session.js",
+      "bytes": 19074,
+      "sha256": "e61b81817d088d0c670c71b6d5e62dc0e9b7541e518003bdb64a89ef3fcdc443",
+      "git_blob_sha1": "72c3b655c8e52e7ef85a45913bd38ac56db1a4ae"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/games/2048/board.js",
+      "bytes": 3068,
+      "sha256": "db95dc7ed0e63e2cf353dd710171daa585bd1f841f64b183a610c13f8216f417",
+      "git_blob_sha1": "2ece5d7e45ba5677f639faf59754bb67b2657914"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/games/2048/definition.js",
+      "bytes": 906,
+      "sha256": "f4c528f7f83d47bac4aa716c81046c7843f6b5449b4a138c74d7d8eb0471a955",
+      "git_blob_sha1": "77e7c73dcaabfb32e236c4c0d5fcd67eedf01dcb"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/games/2048/model.js",
+      "bytes": 3453,
+      "sha256": "cf23400bf8edc2bc4f90a0b7d6252fa71bb9ce73520b795b417ecd295a9c52a8",
+      "git_blob_sha1": "5f3a9a1d6baa52df6cf7b0211328b1d2c8906c26"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/games/2048/runtime.js",
+      "bytes": 1578,
+      "sha256": "10e45d512ed3e17229c155deef22dbbf1bc2d30ce1b22f73ca2f5bcfb01174ee",
+      "git_blob_sha1": "5e901e376ffc9f615dd7f1629316ba75beaf45be"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/games/breakout/board.js",
+      "bytes": 2501,
+      "sha256": "07be65899c94d33c7aefce394b4327927c10740e379e9c58b990103454528ec3",
+      "git_blob_sha1": "689f61348682a10c8c06e7fb205bdddef0be7e27"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/games/breakout/definition.js",
+      "bytes": 1395,
+      "sha256": "a34f79a0f0864f88e19e74c3128fed98b74ee4e75e539ffed73f21eb42c27103",
+      "git_blob_sha1": "30799e44050a9b931a300382eb07dd63dda106de"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/games/breakout/model.js",
+      "bytes": 5524,
+      "sha256": "bd850f2fbd890035aa0130b3c7976375803cc161ce83409e40930f584f4df03f",
+      "git_blob_sha1": "052d17aaf5e0f79b879a2df269c7a38c323f76f4"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/games/breakout/runtime.js",
+      "bytes": 848,
+      "sha256": "9d78dcae1c88af4bbc76651e22d73cdc4ad6dfab5d861cdf338f3fc4396dd0e1",
+      "git_blob_sha1": "0611a55ae8dee6c9b09deda4e3ba154975b61cb4"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/games/invaders/board.js",
+      "bytes": 3645,
+      "sha256": "087447024f8eedfb62812b536c015a2653fd4f7d360c8de5c2197c99c39caf9c",
+      "git_blob_sha1": "210fb5ce049ecd045ece6b387e33196a91684826"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/games/invaders/definition.js",
+      "bytes": 1394,
+      "sha256": "1b7cb52aff0d5f3250bc356d5be9b6451182a2783333d34a6697c5c468fb4713",
+      "git_blob_sha1": "6e269823dff1a329cf9e5bfe726725afe15a2d79"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/games/invaders/model.js",
+      "bytes": 5623,
+      "sha256": "d76d2960cdfd6c51bec17d8a0436181f81d9c68bd10ff3a048ae91b796d58379",
+      "git_blob_sha1": "abab778a3b6401f4e4e2c867405ba4b7047e7640"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/games/invaders/runtime.js",
+      "bytes": 848,
+      "sha256": "9d78dcae1c88af4bbc76651e22d73cdc4ad6dfab5d861cdf338f3fc4396dd0e1",
+      "git_blob_sha1": "0611a55ae8dee6c9b09deda4e3ba154975b61cb4"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/games/minesweeper/board.js",
+      "bytes": 3857,
+      "sha256": "f2d8e9cac0ed1c66c073d42b42e406cfe09566e47c32383a08bd86e34a46ea47",
+      "git_blob_sha1": "2228bfdc13a14e71a087cfabad649a375f406a63"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/games/minesweeper/definition.js",
+      "bytes": 1448,
+      "sha256": "1929d2cd1af266d0838908c8082fb3883e248e412d606da79a877064a0d57b00",
+      "git_blob_sha1": "c73765f7adecf86252faef43c4b97cc445b370f6"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/games/minesweeper/model.js",
+      "bytes": 4912,
+      "sha256": "9d5472810ee867cf62501d32d14dc56ffd579e76cbab958bd86456d67738ecad",
+      "git_blob_sha1": "7b97be87ad20c22a44e6c12596e894dcbda126ce"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/games/minesweeper/runtime.js",
+      "bytes": 2284,
+      "sha256": "17e40e98f82a31b4f3cb1894779083c484e0b973c2c3cbedbec8ca963f848127",
+      "git_blob_sha1": "2d5c4320d2e598f244d592170b31f341655cccf4"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/games/snake/board.js",
+      "bytes": 3263,
+      "sha256": "a5ed1b4debc0a1895d1d8e3acb7b8bd6317b11a6f3c9131cd142915c9ce46168",
+      "git_blob_sha1": "6a17e74fdffbac277f6c00b5cbe2ada5b6ad6a24"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/games/snake/definition.js",
+      "bytes": 1385,
+      "sha256": "50204527d6a6762820ccd4b7fff5f1a384c4b068523fcee146dffc3b20c1b02b",
+      "git_blob_sha1": "97f159df59f859eda3856b583e3ea0c77ac84cfa"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/games/snake/model.js",
+      "bytes": 3093,
+      "sha256": "e5dcd0de640eadb9f603658834ed303c1243866f68123c6dcd24b206ae257112",
+      "git_blob_sha1": "9955a16c799bb197098ef98e99d66d3a0bccc98d"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/games/snake/runtime.js",
+      "bytes": 1776,
+      "sha256": "ee07be96d6bd1bff11d3644ccd4a3eb0550d4dc25f763f20534e2056069f438b",
+      "git_blob_sha1": "3f0b1de05a0db2eb20a1bc788bd735ff4c208f90"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/games/tetris/board.js",
+      "bytes": 3165,
+      "sha256": "12dc74dd8338d4463f4b57e71b4774813b6b3cb9009b57b24acdb6b8f450dd47",
+      "git_blob_sha1": "1c12f28959dfcbf02a2730ae24b1e88ea482c791"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/games/tetris/definition.js",
+      "bytes": 1389,
+      "sha256": "33a4e8721b48446535c797ca0115a4234c1f4a5bce1d54df48a32809737df13b",
+      "git_blob_sha1": "1c745e61db016f04059ffd231fc589aceb5a5041"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/games/tetris/model.js",
+      "bytes": 5206,
+      "sha256": "51c72be817e7c0f9e26aab0ab59e2f1abe630d9d6bf9f5d5676427b911b1f7a5",
+      "git_blob_sha1": "f5e63577604e20062cdfcea13ecce439f0099e15"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/games/tetris/runtime.js",
+      "bytes": 1414,
+      "sha256": "4e789bb206baf03c2f39a58ca32914c00ae2ea4337616d04bdebb226c507fb59",
+      "git_blob_sha1": "b2113de5030dcfffb1cddff65c2e7edb27839d89"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/kit/font_regular.js",
+      "bytes": 47828,
+      "sha256": "ae1cf3133495e3615979ee708af33d4d4123b52a3bfa99a2c14bb0d167520b64",
+      "git_blob_sha1": "789d615904884a0212c59d30bf7ae297bb761746"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/kit/font_semibold.js",
+      "bytes": 119661,
+      "sha256": "d694ffce0e95c35d972da4b3321513ae36ee1bae8c31a5337585a45a3b425078",
+      "git_blob_sha1": "00ee9cdc9e10ed758817ff52d1d13ddb35d89b93"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/kit/kit_canvas.js",
+      "bytes": 25355,
+      "sha256": "6cbbccc5a6a96327501be0fbd82ace3160e7aec848cddf42d196b3d457b014fb",
+      "git_blob_sha1": "cdad9786bd7048c8672b8779e7b818a1847afa3c"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/kit/kit_fonts.js",
+      "bytes": 948,
+      "sha256": "6b0e4bec26982a168935e41d4d9e20f2bab85e931f1756218663ffa5b9141791",
+      "git_blob_sha1": "b3ba258db230aa1bc43ea7ecdc4be22e56c38410"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/kit/kit_record.js",
+      "bytes": 18420,
+      "sha256": "46c825bd308f6392d39b49aea844cc92a9bf1d09c5d83689aa33d712f1aaa287",
+      "git_blob_sha1": "d7109113da04bdfb13322050b9cc0daa40ae9716"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/kit/mgu_render_client.js",
+      "bytes": 21380,
+      "sha256": "4c8206e0dcef0769e4da89659bd0842e7123d5fb8704ade539224a8c841ba258",
+      "git_blob_sha1": "87f47f4aff9391f8fdfbcec063c683753c98d3f8"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/ui/draw.js",
+      "bytes": 11102,
+      "sha256": "4a170850d10e9d69e1ac9639a001f0a219f7220327fb625bdc9a49780ae6d154",
+      "git_blob_sha1": "a0412582e499056e31bd4cf8bc5541e3dc1c0ba0"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/ui/icons.js",
+      "bytes": 663,
+      "sha256": "a5e8b33ee76b55921b7db283778d90e9d3411299e61bb299a0042994574c9f5b",
+      "git_blob_sha1": "9478a6f210c91ad2724ce79cbd32d73e26282da6"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/ui/png.js",
+      "bytes": 2924,
+      "sha256": "7b9b65ad936127d54a3881e72de4ea7241d4da6dfe0a23d03bff9f368b07a858",
+      "git_blob_sha1": "c0fd40b252fbce8ee12ed1a3a16fa3c6b190eba7"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/src/ui/theme.js",
+      "bytes": 292,
+      "sha256": "027ec10a53b7ca517a14f76ec5ec144e186372623a2dae5191e9ae9e27cad89d",
+      "git_blob_sha1": "74368727d4b855e6b86c5cbee1abe4f5c1c0e5e8"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/tools/build.js",
+      "bytes": 5765,
+      "sha256": "bbd534174b86e4550efb6907b25a8e7dbe7b0421411ccf16fe576785d0082546",
+      "git_blob_sha1": "532e5032c930bd24df4a57f4593f1a4c09bc528a"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/tools/carousel_media.js",
+      "bytes": 2110,
+      "sha256": "a0232ff93bcf77ebac7e71d3ea3e0742809d7bfa166b6a565951b5df4be093b7",
+      "git_blob_sha1": "90d91c476ad102bb73d4689f57ca658861650090"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/tools/import_saves.js",
+      "bytes": 5363,
+      "sha256": "81dd7e8a29df87a5e1245686d5a651f69e830df4cfd2cc9fd701eeb7ecc0fc10",
+      "git_blob_sha1": "5efb4cc6fa860a49e05fb04143d6c616bb95e1d3"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/tools/preview.js",
+      "bytes": 1306,
+      "sha256": "94404e63db2dca09cdda9cda228292f806239fd364b423d083623402484f85af",
+      "git_blob_sha1": "c1fa3f8b77356ccf49b5f14b26dde625e449e445"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/tools/serve.js",
+      "bytes": 5570,
+      "sha256": "5de0cca2c8d11e1b1695607f749f598dccd3aa6ba7ad7de2e0736f49810c04ac",
+      "git_blob_sha1": "c8998d7a0a59f661685f7469e874b9e77d3e5814"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/tools/test.js",
+      "bytes": 22741,
+      "sha256": "a617cff9cba3b3ab67f265fdda6a3be8f8dab1fc29b6241d3fca59239ed4bd20",
+      "git_blob_sha1": "f36f743d1b39ecd45a2b12a1f8a2afdd78eb6fdd"
+    },
+    {
+      "path": "apps/iabadia_m_arcade/tools/test_app.js",
+      "bytes": 18603,
+      "sha256": "c3f3fa53fec0ded14f22e7f6a25b81fffd81834b6467c3847596b28bf7f77551",
+      "git_blob_sha1": "083c09d335b7bc37613c0fc22a81cd2de47aca2a"
+    },
+    {
+      "path": "docs/LEGACY_GAMES.md",
+      "bytes": 1716,
+      "sha256": "d8257821ce387942569d7cc72170a1886382383fbbf6e57945f923d912d28243",
+      "git_blob_sha1": "48605dd75cc72f25eaa235171f4df2702f4ca61e"
+    },
+    {
+      "path": "docs/architecture/M_ARCADE.md",
+      "bytes": 10474,
+      "sha256": "d24c21141f2175aa09e397fe21487a3d5f60a1ac4584f2563df207df8fa21fd5",
+      "git_blob_sha1": "6e21d3f728455c7c74aac1a925c990d8da6a04f8"
+    },
+    {
+      "path": "docs/architecture/game-contract.d.ts",
+      "bytes": 2510,
+      "sha256": "7da4507a852618e46882efe8d7d7ba3c3d20aa34fc5ce899afc8b19f947dda4e",
+      "git_blob_sha1": "cc0e11fa8533cf5e34a00527d4361bc70b37e562"
+    },
+    {
+      "path": "docs/assets/header.svg",
+      "bytes": 1210,
+      "sha256": "8bd33862d31e2270fb6c46e236db29a58e935caf90706db58dca3bc86625af78",
+      "git_blob_sha1": "ef0d8335edfe4f998d60433699192e5435c6f46f"
+    },
+    {
+      "path": "mgu-repo.json",
+      "bytes": 435,
+      "sha256": "e3d584b2afb4fbbcbb2477d4654efb10c660518c7d98100671115234aaf2fa00",
+      "git_blob_sha1": "48b5a9af5975ff595ac598941c4b4bf208575133"
+    },
+    {
+      "path": "tools/collect_startup.js",
+      "bytes": 5246,
+      "sha256": "10ca0542f45c74eaa47b86bc8cc50f816bd99061ecd6120bdd094a84725c9bde",
+      "git_blob_sha1": "8ab46715d8b225ce48125b7137b7bd535bfecacd"
+    },
+    {
+      "path": "tools/oap_link.js",
+      "bytes": 38373,
+      "sha256": "54f22cf5341e4edd2544ab633470a14e77e3cea16b77b574318fa0185af27d33",
+      "git_blob_sha1": "aa3dc7979acdcc3f4eebb4bb2291f69ac2f6f9dc"
+    },
+    {
+      "path": "tools/oap_pack.js",
+      "bytes": 4351,
+      "sha256": "29764fc73ecc6ebc1726374cad11b6d6b35a856d960f4e03a886523ca927d041",
+      "git_blob_sha1": "f8ed6ea9d48a46a12ee41db3df46bc8ffdcb28c5"
+    },
+    {
+      "path": "tools/test_collect_startup.js",
+      "bytes": 2875,
+      "sha256": "22b706c1ea26f38275854f866c2e4a7952b2c584220d70c135de35c9f9079636",
+      "git_blob_sha1": "b65f6feb14c5a70bfeef389598eca0f03fd43696"
+    }
+  ]
+}

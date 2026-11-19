@@ -1,44 +1,105 @@
-"""Checks that the documented installation matrix covers every Store entry."""
+"""Keep documentation aligned with AQ feeds and original external helpers."""
 
 import json
 from pathlib import Path
 import re
-import subprocess
 import unittest
+from urllib.parse import urlsplit
 
 
 ROOT = Path(__file__).resolve().parents[1]
 DOC = ROOT / "docs" / "COMPONENT_README_INSTALL_MATRIX.md"
-ROW = re.compile(r"^\| `([a-z0-9_-]+)@([0-9]+\.[0-9]+\.[0-9]+)` \|")
-README_LINK = re.compile(r"\]\(\.\./([A-Za-z0-9._/-]+\.md)(?:#L\d+)?\)")
+ROW = re.compile(r"^\| `([^@`]+)@([^`]+)` \|")
+README_LINK = re.compile(r"\[[^]]+\]\(([^)]+)\)")
 
 
 class ComponentReadmeMatrixTests(unittest.TestCase):
-    def test_all_61_exact_versions_and_source_document_paths(self):
-        source = json.loads((ROOT / "mgu-repo.json").read_text(encoding="utf-8"))
-        release = json.loads((ROOT / "release/catalog.json").read_text(encoding="utf-8"))
-        known = {
-            row["id"]: row["version"]
-            for row in source["components"] + release["components"]
-        }
-        self.assertEqual(len(known), 61)
-        lines = DOC.read_text(encoding="utf-8").splitlines()
-        component_lines = [line for line in lines if ROW.match(line)]
-        documented = [ROW.match(line).groups() for line in component_lines]
-        self.assertEqual(len(documented), 61)
-        self.assertEqual(len({cid for cid, _ in documented}), 61)
-        self.assertEqual(dict(documented), known)
+    @classmethod
+    def setUpClass(cls):
+        def read(relative):
+            return json.loads((ROOT / relative).read_text(encoding="utf-8"))
 
-        tracked = set(
-            subprocess.check_output(
-                ["git", "-C", str(ROOT), "ls-tree", "-r", "--name-only", "HEAD"],
-            ).decode("utf-8").splitlines()
-        )
-        for line in component_lines:
-            link = README_LINK.search(line)
-            self.assertIsNotNone(link, line)
-            self.assertIn(link.group(1), tracked, line)
-        self.assertIn("not a live install result", "\n".join(lines))
+        cls.source = read("mgu-repo.json")["components"]
+        cls.release = read("release/catalog.json")["components"]
+        cls.external = read("data/external-store-components.json")
+        cls.rows = cls.source + cls.release + cls.external["components"]
+        cls.known = {row["id"]: row for row in cls.rows}
+        cls.inventory = {row["id"]: row for row in read("data/components.json")["components"]}
+        cls.settings = read("data/store-sources.json")
+        cls.document = DOC.read_text(encoding="utf-8")
+        cls.component_lines = [line for line in cls.document.splitlines() if ROW.match(line)]
+
+    def test_every_source_package_and_external_helper_has_its_exact_version(self):
+        self.assertEqual(len(self.rows), len(self.known), "IDs must not overlap between delivery routes")
+        documented = [ROW.match(line).groups() for line in self.component_lines]
+        self.assertEqual(len(documented), len(self.known))
+        self.assertEqual(len({cid for cid, _ in documented}), len(self.known))
+        self.assertEqual(dict(documented), {cid: row["version"] for cid, row in self.known.items()})
+        self.assertEqual({cid: row["version"] for cid, row in self.inventory.items()}, dict(documented))
+        self.assertTrue(self.external["reference_only"])
+
+    def test_each_readme_exists_locally_or_is_the_pinned_original_in_metadata(self):
+        for line in self.component_lines:
+            cid = ROW.match(line)[1]
+            cells = [cell.strip() for cell in line.split("|")[1:-1]]
+            with self.subTest(component=cid):
+                self.assertEqual(len(cells), 6)
+                links = README_LINK.findall(cells[4])
+                self.assertEqual(len(links), 1, line)
+                target = links[0]
+                parsed = urlsplit(target)
+                if parsed.scheme:
+                    item = self.inventory[cid]
+                    self.assertEqual(target, item.get("upstream_readme"), line)
+                    self.assertEqual(parsed.scheme, "https")
+                    self.assertFalse(parsed.username or parsed.password or parsed.query)
+                    parts = parsed.path.strip("/").split("/")
+                    if parsed.hostname == "raw.githubusercontent.com":
+                        self.assertGreaterEqual(len(parts), 4)
+                        repository, commit, filename = "/".join(parts[:2]), parts[2], "/".join(parts[3:])
+                    else:
+                        self.assertEqual(parsed.hostname, "github.com")
+                        self.assertGreaterEqual(len(parts), 5)
+                        self.assertEqual(parts[2], "blob")
+                        repository, commit, filename = "/".join(parts[:2]), parts[3], "/".join(parts[4:])
+                    self.assertEqual(repository, item["source_repository"])
+                    self.assertRegex(commit, r"^[0-9a-f]{40}$")
+                    self.assertTrue(Path(filename).name.lower().startswith("readme"))
+                else:
+                    self.assertFalse(parsed.netloc)
+                    path = (DOC.parent / parsed.path).resolve()
+                    self.assertTrue(path.is_relative_to(ROOT), target)
+                    self.assertTrue(path.is_file(), target)
+                    self.assertTrue(path.name.lower().startswith("readme"), target)
+                    metadata_ref = self.inventory[cid].get("upstream_readme")
+                    if metadata_ref:
+                        self.assertEqual(path, (ROOT / metadata_ref).resolve())
+
+    def test_hmi_and_minimum_dependencies_match_the_actual_delivery_feeds(self):
+        for line in self.component_lines:
+            cid = ROW.match(line)[1]
+            cells = [cell.strip() for cell in line.split("|")[1:-1]]
+            component = self.known[cid]
+            with self.subTest(component=cid):
+                self.assertEqual(cells[2], "/".join(component.get("mguHmi") or []) or "Not declared")
+                requirements = "; ".join(f"{key}>={value}" for key, value in sorted(component.get("requires", {}).items()))
+                self.assertEqual(cells[3], requirements or "None declared")
+                self.assertTrue(cells[1].startswith(component["kind"] + " / "))
+                if component.get("build") == "unit":
+                    self.assertIn("unit linker", cells[1])
+                if component.get("artifact"):
+                    self.assertIn(f"{component['artifact']['size']:,} compressed bytes", cells[1])
+
+    def test_main_readme_uses_the_same_explicit_source_configuration(self):
+        text = (ROOT / "README.md").read_text(encoding="utf-8")
+        config = re.search(r"```json\n(.*?)\n```", text, flags=re.DOTALL)
+        self.assertIsNotNone(config)
+        self.assertEqual(json.loads(config[1]), self.settings)
+        self.assertIn(self.external["source_id"], {row["id"] for row in self.settings["sources"]})
+        self.assertIn("does not auto-import", text)
+        self.assertIn(f"{len(self.known)} inventory entries", text)
+        self.assertIn("not a live install result", self.document)
+        self.assertIn("NOT OBSERVED", self.document)
 
 
 if __name__ == "__main__":

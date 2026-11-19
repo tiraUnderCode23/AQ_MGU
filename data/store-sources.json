@@ -11,6 +11,12 @@
       "id": "aq-mgu-catalog",
       "type": "https",
       "url": "https://raw.githubusercontent.com/tiraUnderCode23/AQ_MGU/main/release/catalog.json"
+    },
+    {
+      "id": "aq-mgu-iteriodev",
+      "type": "github",
+      "repo": "IterioDev/car-apps",
+      "channel": "branch:main"
     }
   ]
 }

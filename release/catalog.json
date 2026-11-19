@@ -12,7 +12,7 @@
         "name": "airplay-rx@1.0.0.tgz",
         "size": 3313575,
         "sha256": "b4ada38b813ee1e4f489583eb569d540db294ae2f466b30142136717aab5b36c",
-        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/airplay-rx%401.0.0.tgz"
+        "url": "https://github.com/noth4m4d/mgu-hamadstools/releases/download/catalog/airplay-rx%401.0.0.tgz"
       },
       "requires": {
         "mgu-deploy": "0.7.0"
@@ -34,7 +34,7 @@
         "name": "apm_airplay@1.0.6.tgz",
         "size": 802852,
         "sha256": "75a8f310aa5a62bc6bc64c6ced6cc5be6c8324f551284f3068119ef718a9402b",
-        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/apm_airplay%401.0.6.tgz"
+        "url": "https://github.com/noth4m4d/mgu-hamadstools/releases/download/catalog/apm_airplay%401.0.6.tgz"
       },
       "requires": {
         "mgu-deploy": "0.7.0",
@@ -57,7 +57,7 @@
         "name": "app-privacy@1.7.2.tgz",
         "size": 19586,
         "sha256": "eea01214be305cec03a9cb8abeefa2ab543693376ab16a8d9639eb55e5191c5b",
-        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/app-privacy%401.7.2.tgz"
+        "url": "https://github.com/robertnisipeanu/mgu-store/releases/download/app-privacy%401.7.2/app-privacy%401.7.2.tgz"
       },
       "requires": {
         "mgu-deploy": "0.6.3"
@@ -194,6 +194,488 @@
       }
     },
     {
+      "id": "aurelm-myairplay",
+      "kind": "tool",
+      "version": "1.0.1",
+      "title": "myAirPlay service",
+      "description": "For the app myAirPlay: the AirPlay receiver \"BMW iDrive\" (UxPlay's protocol on the head unit). The iPhone's screen mirroring decoded on the GPU into mgu-render's frame file and its sound into SmartXbar's CarLife input; a video sent with the AirPlay button (YouTube) played by its own player from the internet (mgu-uplink, through a proxy running as uid 13102). Opens the firewall for its ports only while the receiver runs.",
+      "author": "aurelmarius",
+      "mguHmi": [
+        "ID7"
+      ],
+      "artifact": {
+        "name": "aurelm-myairplay@1.0.1.tgz",
+        "size": 3214981,
+        "sha256": "e9593c58d06e8d3b0d68f9ddbc431a14ed71066ef098cac30ba6dae809271b52",
+        "url": "https://raw.githubusercontent.com/aurelmarius/bmw-apps/a95d5790f6f9a968ba9d9eb3d98a624a3a4ca755/packages/aurelm-myairplay@1.0.1.tgz"
+      },
+      "requires": {
+        "mgu-deploy": "0.7.0",
+        "mgu-uplink": "0.7.0"
+      },
+      "uninstallable": true
+    },
+    {
+      "id": "aurelm-tvhplayer",
+      "kind": "tool",
+      "version": "1.0.2",
+      "title": "TVH Player service",
+      "description": "For the app TVH Player: Tvheadend's channels on the head unit. The channel comes with one of the server's transcoding profiles (mgu-hd, mgu-sd, mgu-low: H.264 deinterlaced by the server, AAC, MPEG-TS), is decoded on the GPU into mgu-render's frame file (the app shows it while parked) and played into SmartXbar's CarLife input. Signs in once from the phone (a page on the car Wi-Fi, opened from the app's QR code); keeps the server, the user and the password (root's, 0600). Its internet goes through mgu-uplink, as uid 13103 only; the player runs as nobody.",
+      "author": "aurelmarius",
+      "mguHmi": [
+        "ID7"
+      ],
+      "artifact": {
+        "name": "aurelm-tvhplayer@1.0.2.tgz",
+        "size": 927711,
+        "sha256": "f1016ecd1b8b3a6a7582090899dc80a66f5c4b661b52f13e395a319ba0844899",
+        "url": "https://raw.githubusercontent.com/aurelmarius/bmw-apps/a95d5790f6f9a968ba9d9eb3d98a624a3a4ca755/packages/aurelm-tvhplayer@1.0.2.tgz"
+      },
+      "requires": {
+        "mgu-deploy": "0.7.0",
+        "mgu-uplink": "0.7.0"
+      },
+      "uninstallable": true
+    },
+    {
+      "id": "aurelm_apex_chase",
+      "kind": "app",
+      "version": "1.0.0",
+      "title": "Apex Chase",
+      "description": "A maze chase in a city at night, drawn by the GPU renderer at 60 fps: the M car collects the fuel drops while four electric cars hunt it; a NITRO can drains their batteries. iDrive controller or swipes. Parked only.",
+      "mguHmi": [
+        "ID7"
+      ],
+      "artifact": {
+        "name": "aurelm_apex_chase@1.0.0.tgz",
+        "size": 570128,
+        "sha256": "21c78f14db74f9e08210862fa16d100e9af010244933c769bb9083764267c02b",
+        "url": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/packages/aurelm_apex_chase@1.0.0.tgz"
+      },
+      "uninstallable": true
+    },
+    {
+      "id": "aurelm_blackjack",
+      "kind": "app",
+      "version": "1.0.1",
+      "title": "Blackjack",
+      "description": "Casino blackjack for play credits, drawn by the GPU renderer at 60 fps: a felt table with a leather rail, cards dealt from the shoe, chips, six decks, 3 to 2, double, split, insurance, a strategy hint, statistics. iDrive controller or touch. Parked only.",
+      "mguHmi": [
+        "ID7"
+      ],
+      "artifact": {
+        "name": "aurelm_blackjack@1.0.1.tgz",
+        "size": 573880,
+        "sha256": "128e7261e22a43d3d441c998a694a3891cc171cec16d20aa1740bcfd5b6c6fd5",
+        "url": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/packages/aurelm_blackjack@1.0.1.tgz"
+      },
+      "uninstallable": true
+    },
+    {
+      "id": "aurelm_engine_care",
+      "kind": "app",
+      "version": "1.5.2",
+      "title": "Engine Care",
+      "description": "PHEV B48 operating hours, EV vs ICE split, cold hard starts, engine runs that never warm the oil, battery charge at engine starts and true oil degradation next to BMW CBS",
+      "mguHmi": [
+        "ID7"
+      ],
+      "artifact": {
+        "name": "aurelm_engine_care@1.5.2.tgz",
+        "size": 570802,
+        "sha256": "f005b335d91355d9c8eb301d95cdf43d09333c95355a16fbe056e6737dcfad76",
+        "url": "https://raw.githubusercontent.com/aurelmarius/bmw-apps/a95d5790f6f9a968ba9d9eb3d98a624a3a4ca755/packages/aurelm_engine_care@1.5.2.tgz"
+      },
+      "uninstallable": true,
+      "icon": "https://raw.githubusercontent.com/aurelmarius/bmw-apps/a95d5790f6f9a968ba9d9eb3d98a624a3a4ca755/aurelm_engine_care.png",
+      "iconSha256": "e00267cdc7e01dd2d0af2da474ecd811e8725708e96c933786f5023a4802d60b"
+    },
+    {
+      "id": "aurelm_hybrid_cost",
+      "kind": "app",
+      "version": "1.1.2",
+      "title": "Hybrid Cost",
+      "description": "PHEV running cost calculator: live electric vs petrol cost per 100 km in 11 currencies, dynamic torque split, trip savings and a price editor for fuel and electricity",
+      "mguHmi": [
+        "ID7"
+      ],
+      "artifact": {
+        "name": "aurelm_hybrid_cost@1.1.2.tgz",
+        "size": 566753,
+        "sha256": "a4a92d1ec96d34ca497ccadc685e9f47c911880e06010ea79adb938bd820aae6",
+        "url": "https://raw.githubusercontent.com/aurelmarius/bmw-apps/a95d5790f6f9a968ba9d9eb3d98a624a3a4ca755/packages/aurelm_hybrid_cost@1.1.2.tgz"
+      },
+      "uninstallable": true,
+      "icon": "https://raw.githubusercontent.com/aurelmarius/bmw-apps/a95d5790f6f9a968ba9d9eb3d98a624a3a4ca755/aurelm_hybrid_cost.png",
+      "iconSha256": "37cc0d55a3ba679809bee3ad470d0d8a5693033f795736bb8c413105d0d8d290"
+    },
+    {
+      "id": "aurelm_lap_record",
+      "kind": "app",
+      "version": "1.0.0",
+      "title": "Lap Record",
+      "description": "Time trial on a circuit seen from above, the camera on the car: the knob is the steering wheel, lap after lap against your best and its ghost, the gap live, sectors in purple, green and yellow. Two circuits, kerbs, gravel, tyre walls, grandstands, tyre smoke and marks. GPU renderer. Parked only.",
+      "mguHmi": [
+        "ID7"
+      ],
+      "artifact": {
+        "name": "aurelm_lap_record@1.0.0.tgz",
+        "size": 574607,
+        "sha256": "f3923efc0a55b9b08a1feb34ff8583de2a320d64a6472e26ce6e37539bef0b31",
+        "url": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/packages/aurelm_lap_record@1.0.0.tgz"
+      },
+      "uninstallable": true
+    },
+    {
+      "id": "aurelm_lucky_sevens",
+      "kind": "app",
+      "version": "1.1.0",
+      "title": "Lucky Sevens",
+      "description": "A five reel slot machine for play credits, drawn by the GPU renderer at 60 fps: glossy symbols, reels that bounce to a stop, ten paylines, WILD, free spins, a progressive jackpot, statistics. iDrive controller or touch. Parked only.",
+      "mguHmi": [
+        "ID7"
+      ],
+      "artifact": {
+        "name": "aurelm_lucky_sevens@1.1.0.tgz",
+        "size": 573862,
+        "sha256": "e5ab4ccce1f2f9159eaba91c251caa3c2485b4daf08ee812517000303557708a",
+        "url": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/packages/aurelm_lucky_sevens@1.1.0.tgz"
+      },
+      "uninstallable": true
+    },
+    {
+      "id": "aurelm_myairplay",
+      "kind": "app",
+      "version": "1.0.1",
+      "title": "myAirPlay",
+      "description": "The head unit as an AirPlay receiver for an iPhone: screen mirroring on the centre screen with the sound on the car's speakers (also with wireless CarPlay connected), and videos sent with the AirPlay button (YouTube) played by the head unit itself, with their controls on the iDrive. The picture shows while parked. Needs the myAirPlay service.",
+      "mguHmi": [
+        "ID7"
+      ],
+      "artifact": {
+        "name": "aurelm_myairplay@1.0.1.tgz",
+        "size": 576952,
+        "sha256": "1ef5bb93b90506f7076f51109073735908d97519b218b0bd30be6af98500ef77",
+        "url": "https://raw.githubusercontent.com/aurelmarius/bmw-apps/a95d5790f6f9a968ba9d9eb3d98a624a3a4ca755/packages/aurelm_myairplay@1.0.1.tgz"
+      },
+      "uninstallable": true,
+      "icon": "https://raw.githubusercontent.com/aurelmarius/bmw-apps/a95d5790f6f9a968ba9d9eb3d98a624a3a4ca755/aurelm_myairplay.png",
+      "iconSha256": "eacf6d436d58a4113184b9b3b2306012cc5d52ec1d6c8d0f264371fbd00522bb",
+      "requires": {
+        "aurelm-myairplay": "1.0.0"
+      }
+    },
+    {
+      "id": "aurelm_pinball",
+      "kind": "app",
+      "version": "1.0.1",
+      "title": "M Pinball",
+      "description": "A pinball table on the circuit: wheels for bumpers, the CHICANE ramp, the PIT LANE, the M-POWER targets and SAFETY CAR MULTIBALL, seen in perspective with real ball physics; drawn by the GPU renderer at 60 fps. Flippers on the controller or a finger on each half of the table. Parked only.",
+      "mguHmi": [
+        "ID7"
+      ],
+      "artifact": {
+        "name": "aurelm_pinball@1.0.1.tgz",
+        "size": 577802,
+        "sha256": "3be0eccdcb00e908dc45d4c9597a56a3cd2e3be1a5d35218c2782aba8e50a374",
+        "url": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/packages/aurelm_pinball@1.0.1.tgz"
+      },
+      "uninstallable": true
+    },
+    {
+      "id": "aurelm_pit_wall",
+      "kind": "app",
+      "version": "1.0.0",
+      "title": "Pit Wall",
+      "description": "Break the advertising panels off the pit wall: a night race scene drawn by the GPU renderer at 60 fps, the ball on an M front wing, start lights, combos and power-ups. iDrive controller or touch. Parked only.",
+      "mguHmi": [
+        "ID7"
+      ],
+      "artifact": {
+        "name": "aurelm_pit_wall@1.0.0.tgz",
+        "size": 565262,
+        "sha256": "63053576847bc45d1a76a43d77cc11cf33a7d1d4f64307eb8a48de6bc952de31",
+        "url": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/packages/aurelm_pit_wall@1.0.0.tgz"
+      },
+      "uninstallable": true
+    },
+    {
+      "id": "aurelm_ridge_duel",
+      "kind": "app",
+      "version": "1.0.1",
+      "title": "Ridge Duel",
+      "description": "Two armed cars on hills at dusk, a turn each: aim with the knob, hold for power, fire. Ground that shells bite into, wind, four kinds of shell, a rival aimed by the game. Your car: a sport sedan (agile) or a performance SUV (armoured), in your colour. GPU renderer. Parked only.",
+      "mguHmi": [
+        "ID7"
+      ],
+      "artifact": {
+        "name": "aurelm_ridge_duel@1.0.1.tgz",
+        "size": 577789,
+        "sha256": "2c6d8790aa914dd935f0d96035a2616b0317473d87f4797e591d1004a548bcc9",
+        "url": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/packages/aurelm_ridge_duel@1.0.1.tgz"
+      },
+      "uninstallable": true
+    },
+    {
+      "id": "aurelm_snake",
+      "kind": "app",
+      "version": "1.0.0",
+      "title": "Snake",
+      "description": "Snake on the central display, drawn by the GPU renderer at 60 fps: steer with the iDrive controller (push or turn) or swipe on the screen. Parked only.",
+      "mguHmi": [
+        "ID7"
+      ],
+      "artifact": {
+        "name": "aurelm_snake@1.0.0.tgz",
+        "size": 557582,
+        "sha256": "bc2e4a76023e0b2a778e722d69aed4ad90a9b7eb21324d624f13fd54ef61c014",
+        "url": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/packages/aurelm_snake@1.0.0.tgz"
+      },
+      "uninstallable": true
+    },
+    {
+      "id": "aurelm_solitaire",
+      "kind": "app",
+      "version": "1.0.0",
+      "title": "Solitaire",
+      "description": "Klondike solitaire drawn by the GPU renderer at 60 fps: a felt card table, cards that fly, flip and bounce home. Tap or press for the best move, drag cards, draw one or three, undo, hint, auto finish, statistics. Parked only.",
+      "mguHmi": [
+        "ID7"
+      ],
+      "artifact": {
+        "name": "aurelm_solitaire@1.0.0.tgz",
+        "size": 570552,
+        "sha256": "742ed7f80b4169341a68675aa226b445398f24898f39906f53e6358aae980c3e",
+        "url": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/packages/aurelm_solitaire@1.0.0.tgz"
+      },
+      "uninstallable": true
+    },
+    {
+      "id": "aurelm_street_siege",
+      "kind": "app",
+      "version": "1.1.0",
+      "title": "Street Siege",
+      "description": "Defend the M garage: cars storm the town by night and the M car stops them with its roof cannon. Five districts in turn (the yard, the docks, the warehouses, the parking, the scrapyard) laid out as mazes with wide streets: tyres, containers, warehouses, fences, pallets, wrecks, water, oil; power-ups; drawn by the GPU renderer at 60 fps. Parked only.",
+      "mguHmi": [
+        "ID7"
+      ],
+      "artifact": {
+        "name": "aurelm_street_siege@1.1.0.tgz",
+        "size": 576692,
+        "sha256": "2963f545b959e9d009a68bb19edcf0ae0fce5b53cff3768f1341f4911d6fc49e",
+        "url": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/packages/aurelm_street_siege@1.1.0.tgz"
+      },
+      "uninstallable": true
+    },
+    {
+      "id": "aurelm_track_defender",
+      "kind": "app",
+      "version": "1.0.0",
+      "title": "Track Defender",
+      "description": "Arcade shooter on the central display, drawn by the GPU renderer at 60 fps: drones attack the track in waves, the M car shoots them down. iDrive controller or touch. Parked only.",
+      "mguHmi": [
+        "ID7"
+      ],
+      "artifact": {
+        "name": "aurelm_track_defender@1.0.0.tgz",
+        "size": 564807,
+        "sha256": "14f972b3cd7e41e0addff451164226b90cf25ff69f27a71d63b2449018dec378",
+        "url": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/packages/aurelm_track_defender@1.0.0.tgz"
+      },
+      "uninstallable": true
+    },
+    {
+      "id": "aurelm_tvhplayer",
+      "kind": "app",
+      "version": "1.0.4",
+      "title": "TVH Player",
+      "description": "Tvheadend's TV channels on the centre screen: sign in once from the phone (QR code), then Watch, Channel + / -, or the channel list over the picture. Skip < > on the steering wheel changes the channel. The picture shows while parked, the sound plays on the car's speakers. The server transcodes (profiles mgu-hd, mgu-sd, mgu-low: H.264 deinterlaced, AAC) and the profile goes down by itself when the internet is slow. Needs the TVH Player service.",
+      "mguHmi": [
+        "ID7"
+      ],
+      "artifact": {
+        "name": "aurelm_tvhplayer@1.0.4.tgz",
+        "size": 611394,
+        "sha256": "0f11bc32acdb8fedf69f2534282a590aff35b2bfeee5de9f91c35dc1b68ec6e1",
+        "url": "https://raw.githubusercontent.com/aurelmarius/bmw-apps/a95d5790f6f9a968ba9d9eb3d98a624a3a4ca755/packages/aurelm_tvhplayer@1.0.4.tgz"
+      },
+      "uninstallable": true,
+      "icon": "https://raw.githubusercontent.com/aurelmarius/bmw-apps/a95d5790f6f9a968ba9d9eb3d98a624a3a4ca755/aurelm_tvhplayer.png",
+      "iconSha256": "e58caa374e89c36706b63b11ea562c86fb7fa80f7ef42d01b10cd2ff049c55b8",
+      "requires": {
+        "aurelm-tvhplayer": "1.0.2"
+      }
+    },
+    {
+      "id": "aurelm_wheel_heat",
+      "kind": "app",
+      "version": "1.0.6",
+      "title": "Wheel Heating",
+      "description": "Steering wheel heating on/off from a favourite button: for a heated iDrive 8 (LCI) steering wheel without its own button, fitted to an iDrive 7 car",
+      "mguHmi": [
+        "ID7"
+      ],
+      "artifact": {
+        "name": "aurelm_wheel_heat@1.0.6.tgz",
+        "size": 560882,
+        "sha256": "54cb1363d3a2d71d108f42b2e250a164537fe916434118f35bd14b532e85b840",
+        "url": "https://raw.githubusercontent.com/aurelmarius/bmw-apps/a95d5790f6f9a968ba9d9eb3d98a624a3a4ca755/packages/aurelm_wheel_heat@1.0.6.tgz"
+      },
+      "uninstallable": true,
+      "icon": "https://raw.githubusercontent.com/aurelmarius/bmw-apps/a95d5790f6f9a968ba9d9eb3d98a624a3a4ca755/aurelm_wheel_heat.png",
+      "iconSha256": "6438eafb37a036fc896dc49765c821760fd37a7fd5be52ca2cfbb11c1cc64920"
+    },
+    {
+      "id": "camera-inspect",
+      "kind": "tool",
+      "title": "Camera inspector",
+      "description": "Reports, read only, what the head unit's camera inputs are (each capture node's driver, input, format and size, which process holds it, and the media graph), for Camera Probe and a camera app to come; it never takes a picture or changes a setting",
+      "version": "0.1.1",
+      "artifact": {
+        "name": "camera-inspect@0.1.1.tgz",
+        "size": 45556,
+        "sha256": "1f8445933e97d432101ef4b665c9c0727c18fd9ce0db79851681b43c22f0e289",
+        "url": "https://github.com/eroobeeroo/idrive-apps/releases/download/camera-inspect%400.1.1/camera-inspect%400.1.1.tgz"
+      },
+      "requires": {
+        "mgu-deploy": "0.4.0"
+      },
+      "mguHmi": [
+        "ID7"
+      ],
+      "uninstallable": true,
+      "texts": {
+        "ar": {
+          "title": "فاحص الكاميرات",
+          "description": "يعرض، للقراءة فقط، مداخل الكاميرات في وحدة الرأس لتطبيقات الكاميرا؛ لا يلتقط صورة ولا يغيّر أي إعداد"
+        },
+        "cs": {
+          "title": "Inspektor kamer",
+          "description": "Pouze pro čtení zjistí, jaké kamerové vstupy má hlavní jednotka, pro kamerové aplikace; nikdy nepořídí snímek ani nezmění nastavení"
+        },
+        "da": {
+          "title": "Kamerainspektør",
+          "description": "Viser, kun til læsning, hovedenhedens kameraindgange til kamera-apps; tager aldrig et billede og ændrer ingen indstillinger"
+        },
+        "de": {
+          "title": "Kamera-Inspektor",
+          "description": "Ermittelt nur lesend die Kameraeingänge der Head Unit für Kamera-Apps; nimmt nie ein Bild auf und ändert keine Einstellung"
+        },
+        "el": {
+          "title": "Επιθεωρητής καμερών",
+          "description": "Αναφέρει, μόνο για ανάγνωση, τις εισόδους καμερών της κεντρικής μονάδας για εφαρμογές καμερών· δεν τραβά ποτέ εικόνα ούτε αλλάζει ρυθμίσεις"
+        },
+        "es-US": {
+          "title": "Inspector de cámaras",
+          "description": "Informa, solo en lectura, de las entradas de cámara de la unidad principal para apps de cámara; nunca toma una imagen ni cambia ajustes"
+        },
+        "es": {
+          "title": "Inspector de cámaras",
+          "description": "Informa, solo en lectura, de las entradas de cámara de la unidad principal para apps de cámara; nunca toma una imagen ni cambia ajustes"
+        },
+        "fi": {
+          "title": "Kameratarkastin",
+          "description": "Raportoi vain lukien pääyksikön kameratulot kamerasovelluksille; ei koskaan ota kuvaa eikä muuta asetuksia"
+        },
+        "fr-CA": {
+          "title": "Inspecteur de caméras",
+          "description": "Indique, en lecture seule, les entrées caméra de l’unité centrale pour les applis caméra; ne prend jamais d’image et ne change aucun réglage"
+        },
+        "fr": {
+          "title": "Inspecteur de caméras",
+          "description": "Indique, en lecture seule, les entrées caméra de l’unité centrale pour les applis caméra ; ne prend jamais d’image et ne change aucun réglage"
+        },
+        "he": {
+          "title": "בודק מצלמות",
+          "description": "מדווח, לקריאה בלבד, על כניסות המצלמה של יחידת הראש עבור אפליקציות מצלמה; לעולם אינו מצלם ואינו משנה הגדרות"
+        },
+        "hu": {
+          "title": "Kameravizsgáló",
+          "description": "Csak olvasva jelenti a fejegység kamerabemeneteit kameraalkalmazásoknak; soha nem készít képet és nem módosít beállítást"
+        },
+        "id": {
+          "title": "Pemeriksa kamera",
+          "description": "Melaporkan, hanya baca, input kamera head unit untuk aplikasi kamera; tidak pernah mengambil gambar atau mengubah pengaturan"
+        },
+        "it": {
+          "title": "Ispettore telecamere",
+          "description": "Riporta, in sola lettura, gli ingressi telecamera dell’unità principale per le app telecamera; non scatta mai immagini né cambia impostazioni"
+        },
+        "ja": {
+          "title": "カメラインスペクター",
+          "description": "ヘッドユニットのカメラ入力を読み取り専用で報告します（カメラアプリ用）。撮影も設定変更も行いません"
+        },
+        "ko": {
+          "title": "카메라 검사기",
+          "description": "카메라 앱을 위해 헤드 유닛의 카메라 입력을 읽기 전용으로 보고합니다. 사진을 찍거나 설정을 바꾸지 않습니다"
+        },
+        "nb": {
+          "title": "Kamerainspektør",
+          "description": "Viser, kun lesende, hovedenhetens kamerainnganger for kameraapper; tar aldri bilde og endrer ingen innstillinger"
+        },
+        "nl": {
+          "title": "Camera-inspecteur",
+          "description": "Meldt, alleen-lezen, de camera-ingangen van de head unit voor camera-apps; maakt nooit een beeld en wijzigt geen instellingen"
+        },
+        "pl": {
+          "title": "Inspektor kamer",
+          "description": "Tylko do odczytu podaje wejścia kamer jednostki głównej dla aplikacji kamer; nigdy nie robi zdjęcia ani nie zmienia ustawień"
+        },
+        "pt-BR": {
+          "title": "Inspetor de câmeras",
+          "description": "Informa, somente leitura, as entradas de câmera da central para apps de câmera; nunca tira uma imagem nem muda configurações"
+        },
+        "pt": {
+          "title": "Inspetor de câmaras",
+          "description": "Indica, só de leitura, as entradas de câmara da unidade principal para apps de câmara; nunca capta uma imagem nem altera definições"
+        },
+        "ro": {
+          "title": "Inspector camere",
+          "description": "Raportează, doar citire, intrările de cameră ale unității principale pentru aplicații de cameră; nu face niciodată o imagine și nu schimbă setări"
+        },
+        "ru": {
+          "title": "Инспектор камер",
+          "description": "Только для чтения сообщает о входах камер головного устройства для приложений камер; никогда не снимает и не меняет настройки"
+        },
+        "sk": {
+          "title": "Inšpektor kamier",
+          "description": "Iba na čítanie zistí kamerové vstupy hlavnej jednotky pre kamerové aplikácie; nikdy nenasníma obraz ani nezmení nastavenie"
+        },
+        "sl": {
+          "title": "Pregledovalnik kamer",
+          "description": "Samo za branje poroča o vhodih kamer glavne enote za aplikacije kamer; nikoli ne posname slike in ne spremeni nastavitev"
+        },
+        "sv": {
+          "title": "Kamerainspektör",
+          "description": "Visar, endast läsning, huvudenhetens kameraingångar för kameraappar; tar aldrig en bild och ändrar inga inställningar"
+        },
+        "th": {
+          "title": "ตัวตรวจสอบกล้อง",
+          "description": "รายงานแบบอ่านอย่างเดียวว่าเฮดยูนิตมีอินพุตกล้องอะไรบ้าง สำหรับแอปกล้อง ไม่ถ่ายภาพและไม่เปลี่ยนการตั้งค่าใดๆ"
+        },
+        "tr": {
+          "title": "Kamera denetçisi",
+          "description": "Kamera uygulamaları için ana ünitenin kamera girişlerini salt okunur bildirir; asla görüntü almaz veya ayar değiştirmez"
+        },
+        "uk": {
+          "title": "Інспектор камер",
+          "description": "Лише для читання повідомляє про входи камер головного пристрою для застосунків камер; ніколи не знімає й не змінює налаштувань"
+        },
+        "vi": {
+          "title": "Trình kiểm tra camera",
+          "description": "Báo cáo, chỉ đọc, các đầu vào camera của head unit cho ứng dụng camera; không bao giờ chụp ảnh hay thay đổi cài đặt"
+        },
+        "zh-CN": {
+          "title": "摄像头检查器",
+          "description": "以只读方式报告主机的摄像头输入，供摄像头应用使用；从不拍摄画面，也不更改任何设置"
+        },
+        "zh-TW": {
+          "title": "攝影機檢查器",
+          "description": "以唯讀方式回報主機的攝影機輸入，供攝影機應用程式使用；絕不擷取畫面，也不變更任何設定"
+        }
+      }
+    },
+    {
       "id": "carplay-map",
       "kind": "tool",
       "title": "CarPlay Map Producer",
@@ -219,12 +701,12 @@
       "kind": "tool",
       "title": "Cluster renderer",
       "description": "Draws every app's layers on the instrument cluster and the HUD, sharing the display slots and one upload budget",
-      "version": "0.6.7",
+      "version": "0.6.9",
       "artifact": {
-        "name": "cluster-render@0.6.7.tgz",
-        "size": 10422485,
-        "sha256": "7a93d0898f4d3f816cac6ecdc213ba9de6ca3c2266bef9d888515e5ab2e9e413",
-        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/cluster-render%400.6.7.tgz"
+        "name": "cluster-render@0.6.9.tgz",
+        "size": 10442325,
+        "sha256": "68e537c06ad0c6a8cc86e0cb21d364f6f1705715538e2dcc75dcf8bc54eaff7d",
+        "url": "https://github.com/robertnisipeanu/idrive-apps/releases/download/cluster-render%400.6.9/cluster-render%400.6.9.tgz"
       },
       "requires": {
         "mgu-deploy": "0.4.0"
@@ -235,6 +717,10 @@
       ],
       "uninstallable": true,
       "texts": {
+        "ar": {
+          "title": "عارض لوحة العدادات",
+          "description": "يرسم طبقات جميع التطبيقات على لوحة العدادات وشاشة HUD، مع مشاركة خانات العرض وحصة رفع واحدة"
+        },
         "cs": {
           "title": "Renderer přístrojového štítu",
           "description": "Kreslí vrstvy všech aplikací na přístrojový štít a HUD a sdílí přitom pozice na displeji a jeden společný rozpočet nahrávání"
@@ -362,6 +848,118 @@
       }
     },
     {
+      "id": "doodle-gpu",
+      "kind": "tool",
+      "version": "1.0.0",
+      "title": "Doodle Jump GPU support",
+      "description": "Adds textured game scenes to the Store renderer",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-render": "0.6.23"
+      },
+      "optional": true,
+      "uninstallable": true,
+      "author": "kxrxh",
+      "artifact": {
+        "name": "doodle-gpu@1.0.0.tgz",
+        "url": "https://github.com/kxrxh/doodle-jump-mgu/releases/download/v0.9.0/doodle-gpu@1.0.0.tgz",
+        "size": 87513,
+        "sha256": "877fa863a352a59d29853423273b4291d80f36f8385801d98a10c7f5cc7e4a52"
+      }
+    },
+    {
+      "id": "drake1804-checks",
+      "kind": "tool",
+      "title": "YouTube Checks helper",
+      "description": "Reads the logs and runs the tests for the YouTube Checks app. Remove it when you are done",
+      "version": "0.1.2",
+      "artifact": {
+        "name": "drake1804-checks@0.1.2.tgz",
+        "size": 21965,
+        "sha256": "0e4ac3b1a92793908725f697e86f12afcb2436b84a4d4fe24d3f8f9261a61e6d",
+        "url": "https://github.com/Drake1804/bube-releases/releases/download/catalog/drake1804-checks@0.1.2.tgz"
+      },
+      "requires": {
+        "mgu-deploy": "0.7.0"
+      },
+      "optional": true,
+      "uninstallable": true,
+      "mguHmi": [
+        "ID7"
+      ]
+    },
+    {
+      "id": "drake1804-ytplay",
+      "kind": "tool",
+      "title": "YouTube player",
+      "description": "Fetches and decodes YouTube video outside the app's limits, for the YouTube app; yt-dlp, QuickJS and ffmpeg",
+      "version": "0.1.16",
+      "artifact": {
+        "name": "drake1804-ytplay@0.1.16.tgz",
+        "size": 10005174,
+        "sha256": "97e38def7219c6ed4f360e83f94723c2c2af68b47470af68e943380108a75b93",
+        "url": "https://github.com/Drake1804/bube-releases/releases/download/catalog/drake1804-ytplay@0.1.16.tgz"
+      },
+      "requires": {
+        "mgu-deploy": "0.7.0",
+        "mgu-render": "0.4.0",
+        "mgu-python": "1.0.0",
+        "mgu-uplink": "0.7.0"
+      },
+      "optional": true,
+      "uninstallable": true,
+      "mguHmi": [
+        "ID7"
+      ]
+    },
+    {
+      "id": "drake1804_checks",
+      "kind": "app",
+      "title": "YouTube Checks",
+      "description": "Tests the YouTube app's video and sound on this car, and prints the logs on the screen to take photos of. Remove it when you are done",
+      "version": "0.1.0",
+      "artifact": {
+        "name": "drake1804_checks@0.1.0.tgz",
+        "size": 295141,
+        "sha256": "9d6a19dd3a7bcaccf74c607f6216c3546f9d054e686bd6383a5c27e967f85ba5",
+        "url": "https://github.com/Drake1804/bube-releases/releases/download/catalog/drake1804_checks@0.1.0.tgz"
+      },
+      "requires": {
+        "mgu-deploy": "0.7.0",
+        "drake1804-checks": "0.1.0"
+      },
+      "uninstallable": true,
+      "mguHmi": [
+        "ID7"
+      ],
+      "build": "unit"
+    },
+    {
+      "id": "drake1804_youtube",
+      "kind": "app",
+      "title": "Bube",
+      "description": "Search and watch YouTube at 720p on the centre screen. Sound is experimental and always on",
+      "version": "0.1.10",
+      "artifact": {
+        "name": "drake1804_youtube@0.1.10.tgz",
+        "size": 564961,
+        "sha256": "a9747b0560c6d0bf511de374893376dba9f4e191edf0579e38e23a08a54fc201",
+        "url": "https://github.com/Drake1804/bube-releases/releases/download/catalog/drake1804_youtube@0.1.10.tgz"
+      },
+      "requires": {
+        "mgu-deploy": "0.7.0",
+        "mgu-render": "0.4.0",
+        "drake1804-ytplay": "0.1.16"
+      },
+      "uninstallable": true,
+      "mguHmi": [
+        "ID7"
+      ],
+      "build": "unit"
+    },
+    {
       "id": "hook111",
       "kind": "tool",
       "title": "CarPlay cluster map (stream 111)",
@@ -371,7 +969,7 @@
         "name": "hook111@0.1.6.tgz",
         "size": 43298,
         "sha256": "3f5ec443495340f1d9c518b7657832fec347f1cb0a7e3bcbd58abf976474d2dd",
-        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/hook111%400.1.6.tgz"
+        "url": "https://github.com/Vizualyse/idrive-apps/releases/download/hook111%400.1.6/hook111%400.1.6.tgz"
       },
       "requires": {
         "mgu-deploy": "0.7.0"
@@ -380,6 +978,357 @@
         "ID7"
       ],
       "uninstallable": true
+    },
+    {
+      "id": "iteriodev_ambient",
+      "kind": "app",
+      "title": "Ambient Light",
+      "version": "1.4.2",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "iteriodev-comfort": "0.6.1",
+        "mgu-deploy": "0.7.5"
+      },
+      "build": "unit",
+      "uninstallable": true,
+      "artifact": {
+        "name": "iteriodev_ambient@1.4.2.tgz",
+        "size": 744198,
+        "sha256": "509c535ce7cc31fb7bdd2fa9ce893a08bccad23fb7d71ba92259e5003e69f110",
+        "url": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/apps/iteriodev_ambient/iteriodev_ambient@1.4.2.tgz"
+      },
+      "mguNeeds": [
+        "renderer"
+      ]
+    },
+    {
+      "id": "iteriodev_cardash",
+      "kind": "app",
+      "title": "Car Data",
+      "version": "1.4.1",
+      "mguHmi": [
+        "ID8"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.5"
+      },
+      "build": "unit",
+      "uninstallable": true,
+      "artifact": {
+        "name": "iteriodev_cardash@1.4.1.tgz",
+        "size": 775221,
+        "sha256": "95fe3980a5d9552bec03693233a23d928663f6a7655d02a16edb15519d631a4f",
+        "url": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/apps/iteriodev_cardash/iteriodev_cardash@1.4.1.tgz"
+      },
+      "mguNeeds": [
+        "renderer"
+      ]
+    },
+    {
+      "id": "iteriodev_draggy",
+      "kind": "app",
+      "title": "Drag Timer",
+      "version": "1.2.0",
+      "mguHmi": [
+        "ID8"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.5"
+      },
+      "build": "unit",
+      "uninstallable": true,
+      "artifact": {
+        "name": "iteriodev_draggy@1.2.0.tgz",
+        "size": 738700,
+        "sha256": "d2520d168bd9af27a2b50e7cf7535bcccf76d7d4910cb12d303445d84c518f80",
+        "url": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/apps/iteriodev_draggy/iteriodev_draggy@1.2.0.tgz"
+      },
+      "mguNeeds": [
+        "renderer"
+      ]
+    },
+    {
+      "id": "iteriodev_dtcscan",
+      "kind": "app",
+      "title": "Fault Codes",
+      "version": "1.2.0",
+      "mguHmi": [
+        "ID8"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.5"
+      },
+      "build": "unit",
+      "uninstallable": true,
+      "artifact": {
+        "name": "iteriodev_dtcscan@1.2.0.tgz",
+        "size": 2762057,
+        "sha256": "7c9e16ccd8b299ac5a8a733717e29136e0de15041d6a05b51267730c6b65a7b2",
+        "url": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/apps/iteriodev_dtcscan/iteriodev_dtcscan@1.2.0.tgz"
+      },
+      "mguNeeds": [
+        "renderer"
+      ]
+    },
+    {
+      "id": "iteriodev_edrive",
+      "kind": "app",
+      "title": "eDrive",
+      "version": "1.1.0",
+      "mguHmi": [
+        "ID8"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.5"
+      },
+      "build": "unit",
+      "uninstallable": true,
+      "artifact": {
+        "name": "iteriodev_edrive@1.1.0.tgz",
+        "size": 750535,
+        "sha256": "6537d98218b92756a851911ab275d8f93c06e40322742798cb3bebbfaf184b03",
+        "url": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/apps/iteriodev_edrive/iteriodev_edrive@1.1.0.tgz"
+      },
+      "mguNeeds": [
+        "renderer"
+      ]
+    },
+    {
+      "id": "iteriodev_liveadjust",
+      "kind": "app",
+      "title": "Live Adjustments",
+      "version": "1.2.0",
+      "mguHmi": [
+        "ID8"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.5"
+      },
+      "build": "unit",
+      "uninstallable": true,
+      "artifact": {
+        "name": "iteriodev_liveadjust@1.2.0.tgz",
+        "size": 741641,
+        "sha256": "9c2d6f10a849102fa7dc1e0225804af9c549738d905185be6ea81fe8c71cc08e",
+        "url": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/apps/iteriodev_liveadjust/iteriodev_liveadjust@1.2.0.tgz"
+      },
+      "mguNeeds": [
+        "renderer"
+      ]
+    },
+    {
+      "id": "iteriodev_overlays",
+      "kind": "app",
+      "title": "Overlays",
+      "version": "1.4.0",
+      "mguHmi": [
+        "ID8"
+      ],
+      "requires": {
+        "iteriodev-overlays": "0.5.0",
+        "mgu-deploy": "0.7.5"
+      },
+      "build": "unit",
+      "uninstallable": true,
+      "artifact": {
+        "name": "iteriodev_overlays@1.4.0.tgz",
+        "size": 728911,
+        "sha256": "300db4ea936fa70ad3aa3d39bf23ad4be5a2df112b715d8d3fc4300bd2ce020e",
+        "url": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/apps/iteriodev_overlays/iteriodev_overlays@1.4.0.tgz"
+      },
+      "mguNeeds": [
+        "renderer"
+      ]
+    },
+    {
+      "id": "iteriodev_seats",
+      "kind": "app",
+      "title": "Seats",
+      "version": "1.6.3",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "iteriodev-comfort": "0.6.1",
+        "mgu-deploy": "0.7.5"
+      },
+      "build": "unit",
+      "uninstallable": true,
+      "artifact": {
+        "name": "iteriodev_seats@1.6.3.tgz",
+        "size": 1156820,
+        "sha256": "33e9dd466af2eb3fbef93fcb8bce0b4be4746df65ba020af8f051c844a66b535",
+        "url": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/apps/iteriodev_seats/iteriodev_seats@1.6.3.tgz"
+      },
+      "mguNeeds": [
+        "renderer"
+      ]
+    },
+    {
+      "id": "iteriodev_service",
+      "kind": "app",
+      "title": "Service",
+      "version": "1.0.0",
+      "mguHmi": [
+        "ID8"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.5"
+      },
+      "build": "unit",
+      "uninstallable": true,
+      "artifact": {
+        "name": "iteriodev_service@1.0.0.tgz",
+        "size": 721275,
+        "sha256": "7a2e25ed39e9cbab1dff0da433ad36ecb3edf03f72f364cc29f72e83fb09786d",
+        "url": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/apps/iteriodev_service/iteriodev_service@1.0.0.tgz"
+      },
+      "mguNeeds": [
+        "renderer"
+      ]
+    },
+    {
+      "id": "iteriodev_tailscale",
+      "kind": "app",
+      "title": "Tailscale",
+      "version": "1.1.1",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "iteriodev-tailscale": "1.104.4",
+        "mgu-deploy": "0.7.5"
+      },
+      "build": "unit",
+      "uninstallable": true,
+      "artifact": {
+        "name": "iteriodev_tailscale@1.1.1.tgz",
+        "size": 728987,
+        "sha256": "92174a42f6a96fd9993b50b655990f8b838e15af5ca6395ed1ed2fdbb2e7535f",
+        "url": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/apps/iteriodev_tailscale/iteriodev_tailscale@1.1.1.tgz"
+      },
+      "mguNeeds": [
+        "renderer"
+      ]
+    },
+    {
+      "id": "iteriodev_turnview",
+      "kind": "app",
+      "title": "Turn View",
+      "version": "1.5.1",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "iteriodev-turnview": "0.8.0",
+        "mgu-deploy": "0.7.5"
+      },
+      "build": "unit",
+      "uninstallable": true,
+      "artifact": {
+        "name": "iteriodev_turnview@1.5.1.tgz",
+        "size": 729787,
+        "sha256": "4eb363f13c884cfc047fde86cb9793ef308cbe9d21bf57a1841176f204ae650f",
+        "url": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/apps/iteriodev_turnview/iteriodev_turnview@1.5.1.tgz"
+      },
+      "mguNeeds": [
+        "renderer"
+      ]
+    },
+    {
+      "id": "jap-moonride",
+      "kind": "tool",
+      "title": "Moonride streaming service",
+      "description": "Moonride's background service: pairing, launch, the H.264/HEVC decoder (Intel MSDK) into mgu-render, the car's speakers, USB pads",
+      "author": "JustAnotherPU",
+      "version": "0.3.4",
+      "artifact": {
+        "name": "jap-moonride@0.3.4.tgz",
+        "size": 588700,
+        "sha256": "ef426b9b367c170becf76899306d584d899e34be4ef879aee71de04898dd24fb",
+        "url": "https://github.com/JustAnotherPU/moonride/releases/download/catalog/jap-moonride@0.3.4.tgz"
+      },
+      "requires": {
+        "mgu-deploy": "0.7.0",
+        "jap-node22": "22.23.4"
+      },
+      "uninstallable": true,
+      "mguHmi": [
+        "ID7"
+      ]
+    },
+    {
+      "id": "jap-node22",
+      "kind": "tool",
+      "title": "Node.js 22",
+      "description": "Node.js 22 LTS for the background services of Moonride and RideTube (BMW's apps keep the system Node 8)",
+      "author": "JustAnotherPU",
+      "version": "22.23.4",
+      "artifact": {
+        "name": "jap-node22@22.23.4.tgz",
+        "size": 49203293,
+        "sha256": "c62a8e2a3803b858b4d1020cb19746c8bd9ae8b753145f80c5adf7d781692743",
+        "url": "https://github.com/JustAnotherPU/mgu-apps/releases/download/catalog/jap-node22@22.23.4.tgz"
+      },
+      "requires": {
+        "mgu-deploy": "0.7.0"
+      },
+      "uninstallable": true,
+      "mguHmi": [
+        "ID7"
+      ],
+      "optional": true
+    },
+    {
+      "id": "jap-ridetube-d",
+      "kind": "tool",
+      "title": "RideTube service",
+      "description": "The car side of RideTube, an unofficial client for YouTube: yt-dlp (from its official release, run in mgu-python) fetches as the daemon's own internet uid; search, feeds and thumbnails on the car (jap-node22); audio through the BMW MediaPlayer, video decoded by ytdec into the mgu-render video layer; TV device sign-in; controlled by the RideTube app over /run/jap-ridetube-d/ctl.sock",
+      "version": "0.3.12",
+      "artifact": {
+        "name": "jap-ridetube-d@0.3.12.tgz",
+        "size": 8785888,
+        "sha256": "64c87ba1bbb9424351cd801ed3f87126a71d88288833b270c7af4f5a6cb93a06",
+        "url": "https://github.com/JustAnotherPU/ridetube/releases/download/catalog/jap-ridetube-d@0.3.12.tgz"
+      },
+      "requires": {
+        "mgu-deploy": "0.7.0",
+        "mgu-python": "1.0.2",
+        "jap-node22": "22.23.4",
+        "mgu-render": "0.6.11"
+      },
+      "uninstallable": true,
+      "mguHmi": [
+        "ID7"
+      ]
+    },
+    {
+      "id": "jap-ridewatch",
+      "kind": "tool",
+      "title": "RideWatch service",
+      "description": "The RideWatch app's background service: the stream and the events from your RideWatch server through a local SOCKS5 proxy, the H.264 decoder (Intel MSDK) into mgu-render",
+      "author": "JustAnotherPU",
+      "version": "0.3.2",
+      "artifact": {
+        "name": "jap-ridewatch@0.3.2.tgz",
+        "size": 387348,
+        "sha256": "be1111a4ade9e183d2b8e5221f84fb49d24e8aa49ecc56eb0a687dcb0a531515",
+        "url": "https://github.com/JustAnotherPU/ridewatch/releases/download/catalog/jap-ridewatch@0.3.2.tgz"
+      },
+      "requires": {
+        "mgu-deploy": "0.7.0",
+        "jap-node22": "22.23.4"
+      },
+      "uninstallable": true,
+      "mguHmi": [
+        "ID7"
+      ]
     },
     {
       "id": "jap-waze-on-cluster",
@@ -391,7 +1340,7 @@
         "name": "jap-waze-on-cluster@1.2.0.tgz",
         "size": 2590020,
         "sha256": "4dcf84662057a4b137427b5bbfd8f437faf715c270562113b03effb61fe7cfb6",
-        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/jap-waze-on-cluster%401.2.0.tgz"
+        "url": "https://github.com/JustAnotherPU/waze-hud/releases/download/jap-waze-on-cluster%401.2.0/jap-waze-on-cluster%401.2.0.tgz"
       },
       "requires": {
         "mgu-deploy": "0.7.11",
@@ -403,18 +1352,404 @@
       "uninstallable": true
     },
     {
+      "id": "jap-wireproxy",
+      "kind": "tool",
+      "title": "wireproxy",
+      "description": "A client for the WireGuard® protocol to your own server (no account, no relay), with a SOCKS5 server on 127.0.0.1; picks the endpoint, MTU and TCP send buffer for home Wi-Fi or 5G; does nothing until you write its configuration (README)",
+      "author": "JustAnotherPU",
+      "version": "1.1.3",
+      "artifact": {
+        "name": "jap-wireproxy@1.1.3.tgz",
+        "size": 5025473,
+        "sha256": "616e0ae1d48df67724f3c82b5ddce8d60d5fd28c02a65a7a21154e780fc8be8c",
+        "url": "https://github.com/JustAnotherPU/mgu-apps/releases/download/catalog/jap-wireproxy@1.1.3.tgz"
+      },
+      "requires": {
+        "mgu-deploy": "0.7.0"
+      },
+      "uninstallable": true,
+      "mguHmi": [
+        "ID7"
+      ],
+      "optional": true
+    },
+    {
+      "id": "jap_moonride",
+      "kind": "app",
+      "title": "Moonride",
+      "description": "Moonlight game streaming from your PC (Sunshine / Apollo / Vibepollo) on the iDrive 7 screen, parked only by default. Needs a USB gamepad (XInput) or the touchscreen.",
+      "author": "JustAnotherPU",
+      "version": "0.3.4",
+      "artifact": {
+        "name": "jap_moonride@0.3.4.tgz",
+        "size": 1223456,
+        "sha256": "530bb9b0cb00c3f40726307d50305401fdc2ffc7a97ba1a296276d0e2f2d05a5",
+        "url": "https://github.com/JustAnotherPU/moonride/releases/download/catalog/jap_moonride@0.3.4.tgz"
+      },
+      "requires": {
+        "jap-moonride": "0.3.4",
+        "mgu-render": "0.6.8"
+      },
+      "uninstallable": true,
+      "mguHmi": [
+        "ID7"
+      ],
+      "icon": "https://github.com/JustAnotherPU/moonride/releases/download/catalog/jap_moonride.png",
+      "iconSha256": "02f6374c9ccf1bb0f3d2d40015900b4442d93885e7757e65989c69577fceef71"
+    },
+    {
+      "id": "jap_ridetube",
+      "kind": "app",
+      "title": "RideTube",
+      "description": "Video in the car: an unofficial client for YouTube. Your Home, Subscriptions, Watch later and playlists (signed in on the car), search, channels and chapters; the sound through the car's media player, the picture only while parked (a podcast view while driving). Needs the jap-ridetube-d tool.",
+      "version": "0.3.14",
+      "artifact": {
+        "name": "jap_ridetube@0.3.14.tgz",
+        "size": 2269685,
+        "sha256": "0c6c674691c9ad2852153917f6ae0e01b0f6ed28534b638db03956ed5d9fafbd",
+        "url": "https://github.com/JustAnotherPU/ridetube/releases/download/catalog/jap_ridetube@0.3.14.tgz"
+      },
+      "requires": {
+        "jap-ridetube-d": "0.3.12",
+        "mgu-render": "0.6.11",
+        "mgu-inputgate": "1.0.0"
+      },
+      "uninstallable": true,
+      "mguHmi": [
+        "ID7"
+      ],
+      "icon": "https://github.com/JustAnotherPU/ridetube/releases/latest/download/jap_ridetube.png",
+      "iconSha256": "afbf63c28de964d4f249f062bdbddf853fe1e676cc8d62f59028ea0f1c6a9876"
+    },
+    {
+      "id": "jap_ridewatch",
+      "kind": "app",
+      "title": "RideWatch",
+      "description": "Your UniFi Protect cameras on the iDrive 7 screen, parked only by default: the camera that matters big, the others beside it, a timeline of detections with their clips. Needs your own RideWatch server (Linux, ffmpeg) and a tunnel to it.",
+      "author": "JustAnotherPU",
+      "version": "0.3.2",
+      "artifact": {
+        "name": "jap_ridewatch@0.3.2.tgz",
+        "size": 1198526,
+        "sha256": "1aeffd39e93c0b2f0de57246852c8e8caa4c65a85db9cc16855416d2e35dbe87",
+        "url": "https://github.com/JustAnotherPU/ridewatch/releases/download/catalog/jap_ridewatch@0.3.2.tgz"
+      },
+      "requires": {
+        "jap-ridewatch": "0.3.2",
+        "mgu-render": "0.6.8"
+      },
+      "uninstallable": true,
+      "mguHmi": [
+        "ID7"
+      ],
+      "icon": "https://github.com/JustAnotherPU/ridewatch/releases/latest/download/jap_ridewatch.png",
+      "iconSha256": "1b4c6c63e4cb78e4265de6bba0a5792a7fb81425f3082d69dc741b1c58319b99"
+    },
+    {
+      "id": "jap_sysmon",
+      "kind": "app",
+      "title": "iDrive Monitor",
+      "description": "The head unit's CPU, memory and graphics load, and a short pop-up when the iDrive runs short of them (CPU busy for 30 s, little free memory, apps near their memory cap). Starts with the head unit; no pop-up in reverse.",
+      "author": "JustAnotherPU",
+      "version": "1.0.6",
+      "artifact": {
+        "name": "jap_sysmon@1.0.6.tgz",
+        "size": 1127671,
+        "sha256": "8942dc1e87cf271eb07b028566c2c67fa947b546407727c3a3b464918b0d6114",
+        "url": "https://github.com/JustAnotherPU/mgu-apps/releases/download/catalog/jap_sysmon@1.0.6.tgz"
+      },
+      "requires": {
+        "mgu-render": "0.6.11",
+        "mgu-inputgate": "1.0.0"
+      },
+      "uninstallable": true,
+      "mguHmi": [
+        "ID7"
+      ],
+      "icon": "https://github.com/JustAnotherPU/mgu-apps/releases/latest/download/jap_sysmon.png",
+      "iconSha256": "a18bce2ddb06421caa29fcdd3fff0599819956e41eb7c9231f8e0adf653e16ef"
+    },
+    {
+      "id": "kxrxh_doodle_jump",
+      "kind": "app",
+      "version": "0.9.0",
+      "title": "Doodle Jump",
+      "description": "Doodle Jump for MGU7",
+      "author": "kxrxh",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-render": "0.6.23",
+        "mgu-python": "1.0.3",
+        "doodle-gpu": "1.0.0"
+      },
+      "icon": "https://github.com/kxrxh/doodle-jump-mgu/releases/download/catalog/kxrxh_doodle_jump.png",
+      "iconSha256": "5eb833c388867f4d29701358f81687f6cf53a7140eb18376bdf491b679c7b581",
+      "artifact": {
+        "name": "kxrxh_doodle_jump@0.9.0.tgz",
+        "url": "https://github.com/kxrxh/doodle-jump-mgu/releases/download/v0.9.0/kxrxh_doodle_jump@0.9.0.tgz",
+        "size": 24956148,
+        "sha256": "c672603efd96172b5d6cc26d95de674c6fc0b5c74fa156145904dc0ee9294334"
+      }
+    },
+    {
+      "id": "marku-home-bridge",
+      "kind": "tool",
+      "version": "0.1.0",
+      "title": "X3 Home bridge",
+      "description": "Локальный bridge с pairing и запретом произвольных команд Home Assistant",
+      "requires": {
+        "jap-node22": "22.23.4",
+        "mgu-deploy": "0.7.11",
+        "mgu-uplink": "0.7.3"
+      },
+      "uninstallable": true,
+      "mguHmi": [
+        "ID7"
+      ],
+      "artifact": {
+        "name": "marku-home-bridge@0.1.0.tgz",
+        "size": 17858,
+        "sha256": "4c7cd6ac623ba374b29bda9aa78a2f205263324b9880b39f5b3621830948f508",
+        "url": "https://github.com/istt1899/x3/releases/download/marku-home-bridge@0.1.0/marku-home-bridge@0.1.0.tgz"
+      },
+      "internet": true,
+      "uids": [
+        5000
+      ]
+    },
+    {
+      "id": "marku-kaluga-cameras",
+      "kind": "tool",
+      "version": "0.8.0",
+      "title": "Waze Strelka camera service",
+      "description": "Local Kaluga OSM camera snapshot, strict GPS diagnostics and optional verified-road camera alerts",
+      "optional": true,
+      "uninstallable": true,
+      "requires": {
+        "cluster-render": "0.4.0"
+      },
+      "mguHmi": [
+        "ID7"
+      ],
+      "internet": true,
+      "uids": [
+        5000
+      ],
+      "artifact": {
+        "name": "marku-kaluga-cameras@0.8.0.tgz",
+        "size": 572715,
+        "sha256": "e82b77e280ab62e8f5f0b844744569521fd0aa46874462d37c2e0a83a72bdb06",
+        "url": "https://raw.githubusercontent.com/istt1899/bmw-kaluga-cameras/fab6a5d5af34af6b815bf84107e06eaedba9b877/marku-kaluga-cameras%400.8.0.tgz"
+      }
+    },
+    {
+      "id": "marku_daily_hud",
+      "kind": "app",
+      "version": "0.2.0",
+      "title": "Только важное",
+      "description": "Слой отклонений 12 В, шин и CBS на приборной панели/HUD с живым превью",
+      "requires": {
+        "cluster-render": "0.4.0",
+        "mgu-deploy": "0.7.11"
+      },
+      "uninstallable": true,
+      "mguHmi": [
+        "ID7"
+      ],
+      "artifact": {
+        "name": "marku_daily_hud@0.2.0.tgz",
+        "size": 1278328,
+        "sha256": "590535861a44c8ecba5709ec0afe3e8aeae9ebbe0a5689012434d9640bcac577",
+        "url": "https://github.com/istt1899/x3/releases/download/marku_daily_hud@0.2.0/marku_daily_hud@0.2.0.tgz"
+      }
+    },
+    {
+      "id": "marku_kaluga_cameras",
+      "kind": "app",
+      "version": "0.8.0",
+      "title": "Waze Стрелка",
+      "description": "Waze on Cluster с настройками карты, HUD, CarPlay, Android Auto и дополнительным разделом камер",
+      "build": "unit",
+      "requires": {
+        "waze-on-cluster": "0.9.0",
+        "marku-kaluga-cameras": "0.8.0",
+        "mgu-deploy": "0.7.11"
+      },
+      "uninstallable": true,
+      "mguHmi": [
+        "ID7"
+      ],
+      "artifact": {
+        "name": "marku_kaluga_cameras@0.8.0.tgz",
+        "size": 135310,
+        "sha256": "cc5f3b4d3f5910fe9be58a5c9b7382925e053cde20591e82c730dad2192fd759",
+        "url": "https://raw.githubusercontent.com/istt1899/bmw-kaluga-cameras/fab6a5d5af34af6b815bf84107e06eaedba9b877/marku_kaluga_cameras%400.8.0.tgz"
+      },
+      "icon": "https://raw.githubusercontent.com/istt1899/bmw-kaluga-cameras/fab6a5d5af34af6b815bf84107e06eaedba9b877/marku_kaluga_cameras.png",
+      "iconSha256": "6afaa3655ab866b5f969685340d26b8774f1f72c32e30de275623119999b0dfd"
+    },
+    {
+      "id": "marku_x3_coding",
+      "kind": "app",
+      "version": "0.2.0",
+      "title": "Bimmer Code",
+      "description": "Каталог 10 функций G01 и чтение доступных блоков; запись кодировок отключена",
+      "requires": {
+        "mgu-deploy": "0.7.11"
+      },
+      "uninstallable": true,
+      "mguHmi": [
+        "ID7"
+      ],
+      "artifact": {
+        "name": "marku_x3_coding@0.2.0.tgz",
+        "size": 1255225,
+        "sha256": "998f30b137e8420d42f1b828d33fc8ac955d11b38f65643b3391063a9451e5b7",
+        "url": "https://github.com/istt1899/x3/releases/download/marku_x3_coding@0.2.0/marku_x3_coding@0.2.0.tgz"
+      }
+    },
+    {
+      "id": "marku_x3_health",
+      "kind": "app",
+      "version": "0.2.0",
+      "title": "Здоровье X3",
+      "description": "Read-only приборная панель CBS, 12 В и блоков ECU: приборы, история снимков, отчёт",
+      "requires": {
+        "mgu-deploy": "0.7.11"
+      },
+      "uninstallable": true,
+      "mguHmi": [
+        "ID7"
+      ],
+      "artifact": {
+        "name": "marku_x3_health@0.2.0.tgz",
+        "size": 1279802,
+        "sha256": "9b78c7372b1be0c85a7f512b36b3b0f50e2d19215014f7cd6d32d24d27f8296f",
+        "url": "https://github.com/istt1899/x3/releases/download/marku_x3_health@0.2.0/marku_x3_health@0.2.0.tgz"
+      }
+    },
+    {
+      "id": "marku_x3_home",
+      "kind": "app",
+      "version": "0.2.0",
+      "title": "X3 ↔ Дом",
+      "description": "Разрешённые сцены Home Assistant кнопками на экране и ручная телеметрия через локальный bridge",
+      "requires": {
+        "marku-home-bridge": "0.1.0",
+        "mgu-deploy": "0.7.11"
+      },
+      "uninstallable": true,
+      "mguHmi": [
+        "ID7"
+      ],
+      "artifact": {
+        "name": "marku_x3_home@0.2.0.tgz",
+        "size": 1273540,
+        "sha256": "21ad6b721e2e86eab58ae8fc62db01a6242161c1e3133d1960716faaae89ee1e",
+        "url": "https://github.com/istt1899/x3/releases/download/marku_x3_home@0.2.0/marku_x3_home@0.2.0.tgz"
+      }
+    },
+    {
+      "id": "marku_x3_trips",
+      "kind": "app",
+      "version": "0.2.0",
+      "title": "Поездки и расходы",
+      "description": "Локальные поездки, категории, топливо, итоги за период и CSV без геолокации",
+      "requires": {
+        "mgu-deploy": "0.7.11"
+      },
+      "uninstallable": true,
+      "mguHmi": [
+        "ID7"
+      ],
+      "artifact": {
+        "name": "marku_x3_trips@0.2.0.tgz",
+        "size": 1275932,
+        "sha256": "07308f173d1a26fb6bed6597f244635c3de01eabca9d14fef57874ed352570d2",
+        "url": "https://github.com/istt1899/x3/releases/download/marku_x3_trips@0.2.0/marku_x3_trips@0.2.0.tgz"
+      }
+    },
+    {
+      "id": "marku_x3_warm",
+      "kind": "app",
+      "version": "0.2.0",
+      "title": "Тёплый старт",
+      "description": "Приборы прогрева масла/ОЖ, кольцо готовности и рекомендация климата без записи в блоки",
+      "requires": {
+        "mgu-deploy": "0.7.11"
+      },
+      "uninstallable": true,
+      "mguHmi": [
+        "ID7"
+      ],
+      "artifact": {
+        "name": "marku_x3_warm@0.2.0.tgz",
+        "size": 1274529,
+        "sha256": "c7677bc4708aabc181b97448431d37e608489fac0da660d5a89f6054bca19710",
+        "url": "https://github.com/istt1899/x3/releases/download/marku_x3_warm@0.2.0/marku_x3_warm@0.2.0.tgz"
+      }
+    },
+    {
+      "id": "mgu-browser",
+      "kind": "tool",
+      "version": "0.16.1",
+      "title": "Browser runtime (experimental)",
+      "mguHmi": [
+        "ID7"
+      ],
+      "artifact": {
+        "name": "mgu-browser@0.16.1.tgz",
+        "size": 406404,
+        "sha256": "dac91634fe5ff877913b66add4205895a86f90800d48e8a9897c6cd75cf157aa",
+        "url": "https://github.com/pllanaio/mgu-browser/releases/download/v0.16.1/mgu-browser%400.16.1.tgz"
+      },
+      "requires": {
+        "mgu-browser-engine": "0.1.0",
+        "mgu-uplink": "0.7.3",
+        "mgu-deploy": "0.7.17"
+      },
+      "uninstallable": true,
+      "author": "Leon Pllana"
+    },
+    {
+      "id": "mgu-browser-engine",
+      "kind": "tool",
+      "version": "0.1.0",
+      "title": "Browser Chromium engine (experimental)",
+      "mguHmi": [
+        "ID7"
+      ],
+      "artifact": {
+        "name": "mgu-browser-engine@0.1.0.tgz",
+        "size": 181048639,
+        "sha256": "0b6a73c964354214262d01f2d9bec2d0ab253cac8d27de04708912e804ef0874",
+        "url": "https://github.com/pllanaio/mgu-browser/releases/download/v0.10.0/mgu-browser-engine%400.1.0.tgz"
+      },
+      "requires": {
+        "mgu-deploy": "0.7.17"
+      },
+      "uninstallable": true,
+      "author": "Leon Pllana"
+    },
+    {
       "id": "mgu-deploy",
       "kind": "tool",
       "title": "Deploy tool",
       "description": "Installs, updates, rolls back and removes our tools and apps on the head unit, with a snapshot before every change",
-      "version": "0.8.22",
+      "version": "0.8.23",
       "artifact": {
-        "name": "mgu-deploy@0.8.22.tgz",
-        "size": 163282,
-        "sha256": "9b1d5f082873f9f16709b8896dc2363ebe3bb5f53b5adf5fb7f1627d29eee997",
-        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/mgu-deploy%400.8.22.tgz"
+        "name": "mgu-deploy@0.8.23.tgz",
+        "size": 163392,
+        "sha256": "f5ede6d31c7f5156430440a29ad4a5c87199f0655309556a0a419b8f92403812",
+        "url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-deploy%400.8.23/mgu-deploy%400.8.23.tgz"
       },
       "texts": {
+        "ar": {
+          "title": "أداة النشر",
+          "description": "تثبّت أدواتنا وتطبيقاتنا على الوحدة الرئيسية وتحدّثها وتستعيد إصداراتها السابقة وتزيلها، مع لقطة قبل كل تغيير"
+        },
         "cs": {
           "title": "Nástroj nasazení",
           "description": "Instaluje, aktualizuje, vrací zpět a odebírá naše nástroje a aplikace na hlavní jednotce a před každou změnou pořizuje snímek"
@@ -539,7 +1874,11 @@
           "title": "部署工具",
           "description": "在主機上安裝、更新、回復及移除我們的工具與應用程式，每次變更前都會建立快照"
         }
-      }
+      },
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ]
     },
     {
       "id": "mgu-python",
@@ -551,7 +1890,7 @@
         "name": "mgu-python@1.0.3.tgz",
         "size": 14441404,
         "sha256": "98ce27bcee265ba6846446ad7867193fbdc9e0447195dbf22bcfaabf7e2f2533",
-        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/mgu-python%401.0.3.tgz"
+        "url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-python%401.0.3/mgu-python%401.0.3.tgz"
       },
       "mguHmi": [
         "ID7",
@@ -689,12 +2028,12 @@
       "kind": "tool",
       "title": "Renderer",
       "description": "Draws apps' screens on the GPU, over the HMI or inside the app's page",
-      "version": "0.6.23",
+      "version": "0.6.24",
       "artifact": {
-        "name": "mgu-render@0.6.23.tgz",
-        "size": 103250,
-        "sha256": "b1b52afbb6f21640e9ebb3932f3dde60ff4a80156f412e4dfc245f6d052e1f98",
-        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/mgu-render%400.6.23.tgz"
+        "name": "mgu-render@0.6.24.tgz",
+        "size": 103417,
+        "sha256": "558b44da060175274f6ed7c3c2c02d77905c23df157af253b3d32bfc8c7a8468",
+        "url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-render%400.6.24/mgu-render%400.6.24.tgz"
       },
       "requires": {
         "mgu-deploy": "0.6.9"
@@ -706,6 +2045,10 @@
       ],
       "mguProvides": "renderer",
       "texts": {
+        "ar": {
+          "title": "العارض",
+          "description": "يرسم شاشات التطبيقات باستخدام وحدة معالجة الرسومات، فوق واجهة HMI أو داخل صفحة التطبيق"
+        },
         "cs": {
           "title": "Renderer",
           "description": "Vykresluje obrazovky aplikací na GPU, nad HMI nebo uvnitř stránky aplikace"
@@ -837,18 +2180,22 @@
       "kind": "tool",
       "title": "Updater",
       "description": "Installs, updates and removes apps and head-unit tools from its sources",
-      "version": "0.8.47",
+      "version": "0.8.48",
       "artifact": {
-        "name": "mgu-updater@0.8.47.tgz",
-        "size": 139415,
-        "sha256": "2b52e1b8f9cf058b0377cfbb7079c562449fcd4cebd8befea0e9abae284224fd",
-        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/mgu-updater%400.8.47.tgz"
+        "name": "mgu-updater@0.8.48.tgz",
+        "size": 139439,
+        "sha256": "a0ead035d4a2c29193f65a3f2f9803466583e127896a0a61e7b83496aee405e9",
+        "url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-updater%400.8.48/mgu-updater%400.8.48.tgz"
       },
       "requires": {
         "mgu-deploy": "0.8.4",
         "mgu-python": "1.0.2"
       },
       "texts": {
+        "ar": {
+          "title": "أداة التحديث",
+          "description": "تثبّت التطبيقات وأدوات الوحدة الرئيسية من مصادرها وتحدّثها وتزيلها"
+        },
         "cs": {
           "title": "Služba aktualizací",
           "description": "Instaluje, aktualizuje a odebírá aplikace a nástroje hlavní jednotky ze svých zdrojů"
@@ -973,7 +2320,11 @@
           "title": "更新服務",
           "description": "從其來源安裝、更新及移除應用程式與主機工具"
         }
-      }
+      },
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ]
     },
     {
       "id": "mgu-uplink",
@@ -985,7 +2336,7 @@
         "name": "mgu-uplink@0.7.12.tgz",
         "size": 3604053,
         "sha256": "21ed6dad1b0e413572dedc67f05a9f44a3a4ee4eb7cc40d31d93d9b076a5082a",
-        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/mgu-uplink%400.7.12.tgz"
+        "url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-uplink%400.7.12/mgu-uplink%400.7.12.tgz"
       },
       "requires": {
         "mgu-updater": "0.7.2"
@@ -1116,7 +2467,61 @@
           "title": "網際網路連線",
           "description": "透過 USB 網路卡、LTE 網卡、以 USB 網路共用的手機或 Wi-Fi，為選定的應用程式提供網際網路"
         }
-      }
+      },
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ]
+    },
+    {
+      "id": "mgu_browser",
+      "kind": "app",
+      "version": "0.16.1",
+      "title": "Browser (experimental)",
+      "description": "Experimental iDrive browser with BMW audio integration and support for an owner-provided CDM; hardware/provider qualification remains required.",
+      "mguHmi": [
+        "ID7"
+      ],
+      "uninstallable": true,
+      "requires": {
+        "mgu-browser": "0.16.1",
+        "mgu-browser-engine": "0.1.0",
+        "mgu-uplink": "0.7.3",
+        "mgu-render": "0.6.11",
+        "mgu-deploy": "0.7.17"
+      },
+      "artifact": {
+        "name": "mgu_browser@0.16.1.tgz",
+        "size": 1906908,
+        "sha256": "893d78ec509168b6efe922955943aaaa1125a3b07a8cecd00ea4248e4a3ae7ad",
+        "url": "https://github.com/pllanaio/mgu-browser/releases/download/v0.16.1/mgu_browser%400.16.1.tgz"
+      },
+      "author": "Leon Pllana"
+    },
+    {
+      "id": "oap-driverecorder-next",
+      "kind": "app",
+      "title": "Drive Recorder",
+      "version": "2.5.1",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.5",
+        "iteriodev-drplay": "1.2.0"
+      },
+      "build": "unit",
+      "uninstallable": true,
+      "artifact": {
+        "name": "oap-driverecorder-next@2.5.1.tgz",
+        "size": 767988,
+        "sha256": "7707bd677bff3073ca6e71edcaf3ade94ac0f5be00476d75ec1f084331b754e0",
+        "url": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/apps/oap-driverecorder-next/oap-driverecorder-next@2.5.1.tgz"
+      },
+      "mguNeeds": [
+        "renderer"
+      ]
     },
     {
       "id": "vizualyse-bus",
@@ -1128,7 +2533,7 @@
         "name": "vizualyse-bus@0.1.0.tgz",
         "size": 122314,
         "sha256": "37c0ea1f62d208f08f8c12cce310596f8809f4bda926f2d5d5321ad85f0ebb4a",
-        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/vizualyse-bus%400.1.0.tgz"
+        "url": "https://github.com/Vizualyse/idrive-apps/releases/download/vizualyse-bus%400.1.0/vizualyse-bus%400.1.0.tgz"
       },
       "requires": {
         "mgu-deploy": "0.7.0"
@@ -1148,7 +2553,7 @@
         "name": "vizualyse-cast@0.4.1.tgz",
         "size": 30059154,
         "sha256": "cc08afd33d7ea50210a022cf0001be9a088331c0d3ce59ee12023a349eee500a",
-        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/vizualyse-cast%400.4.1.tgz"
+        "url": "https://github.com/Vizualyse/idrive-apps/releases/download/vizualyse-cast%400.4.1/vizualyse-cast%400.4.1.tgz"
       },
       "requires": {
         "mgu-deploy": "0.7.0",
@@ -1172,7 +2577,7 @@
         "name": "vizualyse-chromium@0.3.1.tgz",
         "size": 188979233,
         "sha256": "0a5cc143c962357203271ddc938f7311bf4eda8cf584ce363839e56c3992279e",
-        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/vizualyse-chromium%400.3.1.tgz"
+        "url": "https://github.com/Vizualyse/idrive-apps/releases/download/vizualyse-chromium%400.3.1/vizualyse-chromium%400.3.1.tgz"
       },
       "requires": {
         "mgu-deploy": "0.7.0",
@@ -1195,7 +2600,7 @@
         "name": "vizualyse-cluster@0.4.1.tgz",
         "size": 10991905,
         "sha256": "44516f46fdd41d6bd743d69e8087c7756b52981dc47538b1cc680c90124d10b1",
-        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/vizualyse-cluster%400.4.1.tgz"
+        "url": "https://github.com/Vizualyse/idrive-apps/releases/download/vizualyse-cluster%400.4.1/vizualyse-cluster%400.4.1.tgz"
       },
       "requires": {
         "mgu-deploy": "0.7.0",
@@ -1218,7 +2623,7 @@
         "name": "vizualyse-moonlight@0.3.1.tgz",
         "size": 943274,
         "sha256": "46f8ea10449243586f2285eca6b108550a9cfbac4daa6d6a7f5597399cd69ee0",
-        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/vizualyse-moonlight%400.3.1.tgz"
+        "url": "https://github.com/Vizualyse/idrive-apps/releases/download/vizualyse-moonlight%400.3.1/vizualyse-moonlight%400.3.1.tgz"
       },
       "requires": {
         "mgu-deploy": "0.7.0",
@@ -1241,7 +2646,7 @@
         "name": "vizualyse-steam@0.3.2.tgz",
         "size": 531208182,
         "sha256": "13e359eecf539d6f99e7a563dbfc5a0c4ca0f8d3d02b51f782c6054cd94a318f",
-        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/vizualyse-steam%400.3.2.tgz"
+        "url": "https://github.com/Vizualyse/idrive-apps/releases/download/vizualyse-steam%400.3.2/vizualyse-steam%400.3.2.tgz"
       },
       "requires": {
         "mgu-deploy": "0.7.0",
@@ -1264,7 +2669,7 @@
         "name": "waze-on-cluster@0.10.8.tgz",
         "size": 2539325,
         "sha256": "3369a2cf1b6fbbe217f86d946e8833f6144fc68e4a4d0f2707d8e5bfce8d788e",
-        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/waze-on-cluster%400.10.8.tgz"
+        "url": "https://github.com/robertnisipeanu/idrive-apps/releases/download/waze-on-cluster%400.10.8/waze-on-cluster%400.10.8.tgz"
       },
       "requires": {
         "mgu-deploy": "0.7.17",
@@ -1412,10 +2817,11 @@
         "name": "wazecard@1.0.0.tgz",
         "size": 12552,
         "sha256": "c424d80f4103a2973d41f6bff08fbe7979f1cc528cfcfcf69f7aa52e6d7a028d",
-        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/wazecard%401.0.0.tgz"
+        "url": "https://github.com/noth4m4d/mgu-hamadstools/releases/download/catalog/wazecard%401.0.0.tgz"
       },
       "requires": {
-        "mgu-deploy": "0.7.0"
+        "mgu-deploy": "0.7.0",
+        "cluster-render": "0.3.10"
       },
       "uninstallable": true,
       "mguHmi": [
@@ -1434,7 +2840,7 @@
         "name": "wzc_wazecards@1.0.1.tgz",
         "size": 801428,
         "sha256": "88c2db9b826fa0cdfe75db67708fef18a78e658e70f422ae69aaeff05f3440d5",
-        "url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/wzc_wazecards%401.0.1.tgz"
+        "url": "https://github.com/noth4m4d/mgu-hamadstools/releases/download/catalog/wzc_wazecards%401.0.1.tgz"
       },
       "requires": {
         "mgu-deploy": "0.7.0",

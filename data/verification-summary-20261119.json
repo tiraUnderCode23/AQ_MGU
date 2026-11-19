@@ -1,0 +1,66 @@
+{
+  "schema": "aq-mgu.verification-summary/1",
+  "observed_at_utc": "2026-11-19T10:10:53.831904+00:00",
+  "baseline_commit": "f424cf4e0e1844b23e5f5bcf9ce40b22b8ed6cfe",
+  "scope": "Local repository and original-source verification; no live unit operations or GitHub Actions.",
+  "offline_tests": {
+    "command": "python -B -m unittest discover -s tests",
+    "tests": 77,
+    "failures": 0,
+    "errors": 0,
+    "result": "PASS"
+  },
+  "feed_validator": {
+    "command": "python verify_store_feeds.py --json",
+    "result": "PASS",
+    "store_sources": 3,
+    "source": 55,
+    "release": 79,
+    "external": 6,
+    "metadata": 140,
+    "unit_modules": 123,
+    "shared_modules": 56,
+    "cross_app_modules": 5,
+    "warnings": [
+      "vizualyse-steam package exceeds the AQ Flutter Manager default 200 MiB download limit"
+    ]
+  },
+  "release_artifacts": {
+    "verified": 79,
+    "bytes": 1123523473,
+    "download_pass": 79,
+    "archive_pass": 79,
+    "native_https_header_routes_rechecked": 4,
+    "evidence": "data/artifact-verification-20261119.json"
+  },
+  "source_inputs": {
+    "parsed": 55,
+    "positive_static_input_evidence": 54,
+    "known_blocked": 1,
+    "evidence": "data/source-build-readiness.json"
+  },
+  "new_original_sources": {
+    "verified_files": 454,
+    "sha256_and_git_blob_and_size_match": true,
+    "original_payload_modified": false,
+    "evidence": [
+      "data/source-import-provenance.json",
+      "apps/_sources/iabadia-idrive-games/UPSTREAM_IMPORT.json"
+    ]
+  },
+  "documentation": {
+    "component_matrix_rows": 140,
+    "original_gallery_blocks_preserved": 37
+  },
+  "iabadia_upstream_checks": {
+    "focused_tests_passed": 31,
+    "additional_app_test": "PARTIAL; blocked by Unix socket EPERM in this environment; not reported as a complete pass",
+    "source_packaging": "PASS; not SDK build or installation"
+  },
+  "independent_review": {
+    "result": "No additional confirmed introduced defects after correcting four HTTPS artifact routes, inferred build dependencies in readiness, and wazecard report attribution."
+  },
+  "live_hu_installation": "NOT OBSERVED",
+  "desktop_copy_updated": false,
+  "desktop_limitation": "TUF approved-root access did not include the Desktop AQ_MGU clone; no alternate shell route used to modify it."
+}

@@ -1,39 +1,176 @@
 # AQ_MGU — BMW MGU Apps & Tools
 
-A single, source-attributed catalog of open-source BMW iDrive 7/8 MGU applications, games and Store components. Application images are copied from the pinned upstream repositories and organized by app.
+A source-attributed catalog of BMW iDrive 7/8 MGU applications, games and Store components, with original publisher downloads and separately licensed source snapshots. The existing application galleries are preserved below.
 
-**36 apps · 1 game · 24 Store tools · 61 catalog entries (40 source-build entries, 21 ready release packages)**<br>
-Last source and release review: 2026-11-17.
+**95 apps (including 16 games) · 45 Store tools · 140 inventory entries**<br>
+**55 AQ branch entries · 79 catalog package references · 6 original IterioDev helper references**<br>
+Last source, package and documentation review: **2026-11-19**.
+
+Read the [Arabic repair report](docs/REPOSITORY_REPAIR_20261119_AR.md) for the changes and evidence limits, and the [per-component readiness record](data/install-readiness-20261119.json) for all 140 IDs, versions, dependencies, package checks and remaining blockers.
 
 ## Use AQ_MGU with MGU Store
 
-Add **two different source types** in the original MGU Store: one GitHub branch source for source-built components, and one HTTPS catalog source for published packages. The original Store rejects adding the same GitHub repository twice, even with different channels. Both source URLs below are public and can be read without a GitHub sign-in when network access is available.
+Add these **three sources explicitly** through the original Store's **Add source** field. The six IterioDev helper tools are supplied by the author's own branch; the AQ branch and HTTPS catalog alone do not provide their payloads.
+
+| Source | Enter this URL | What it supplies |
+|---|---|---|
+| AQ branch | `https://github.com/tiraUnderCode23/AQ_MGU/tree/main` | `mgu-repo.json`: 50 app source recipes and 5 tool components |
+| AQ HTTPS catalog | `https://raw.githubusercontent.com/tiraUnderCode23/AQ_MGU/main/release/catalog.json` | 79 checksum-pinned package references, including 15 source archives that still build on the unit |
+| Original IterioDev branch | `https://github.com/IterioDev/car-apps/tree/main` | The six original IterioDev companion tools and the author's native source |
+
+The matching configuration is in [data/store-sources.json](data/store-sources.json):
 
 ```json
 {
   "schema": 1,
   "sources": [
-    { "id": "aq-mgu-apps", "type": "github", "repo": "tiraUnderCode23/AQ_MGU", "channel": "branch:main" },
-    { "id": "aq-mgu-catalog", "type": "https", "url": "https://raw.githubusercontent.com/tiraUnderCode23/AQ_MGU/main/release/catalog.json" }
+    {
+      "id": "aq-mgu-apps",
+      "type": "github",
+      "repo": "tiraUnderCode23/AQ_MGU",
+      "channel": "branch:main"
+    },
+    {
+      "id": "aq-mgu-catalog",
+      "type": "https",
+      "url": "https://raw.githubusercontent.com/tiraUnderCode23/AQ_MGU/main/release/catalog.json"
+    },
+    {
+      "id": "aq-mgu-iteriodev",
+      "type": "github",
+      "repo": "IterioDev/car-apps",
+      "channel": "branch:main"
+    }
   ]
 }
 ```
 
-In the Store's **Add source** text field, enter `https://github.com/tiraUnderCode23/AQ_MGU/tree/main` for the branch source, then separately enter `https://raw.githubusercontent.com/tiraUnderCode23/AQ_MGU/main/release/catalog.json` as an HTTPS catalog. The first URL selects the branch without the GitHub channel-picker API probe; the second URL is accepted by the original Store's HTTPS-source parser. Do not paste the `github.com/.../releases/download/catalog/catalog.json` URL in the original Store's on-screen Add source field: that parser rejects GitHub URLs other than repositories and branch URLs.
+**This file is configuration documentation; Store does not auto-import it merely because it is present in the repository.** Add each source, then refresh. `branch:main` is the required channel for both branch sources. The AQ branch and raw catalog use different source types because Store does not accept a second GitHub source for the same repository. Use the raw catalog URL in the table, not a GitHub release-asset URL in the Add source field. The original Store updater must be reachable for source management.
 
-The branch feed is [`mgu-repo.json`](mgu-repo.json). The HTTPS catalog feed reads [`release/catalog.json`](release/catalog.json), whose artifact URLs point to files attached to the GitHub Release named `catalog`. The ready-to-copy source settings are in [`data/store-sources.json`](data/store-sources.json). If Store still prompts for sign-in, distinguish a GitHub API probe failure, rate limit, offline connection, and private-source authorization rather than disabling its security checks. The local Store updater must be reachable for adding sources; this is separate from GitHub login.
+The [catalog](release/catalog.json) points to **78 original publisher artifacts** and **one existing AQ source-attributed package, `carplay-map@0.2.0`**, retained unchanged. All 58 newly added catalog references download the original publisher files directly; this update does not rehost them. Among the 79 archives, 15 are source packages marked `build=unit`, including 12 IterioDev apps; the remaining 64 are prepared app/tool archives. A source archive still needs the Store's normal target-side build and dependencies.
 
-The two feeds are not interchangeable: `branch` entries require the original MGU Store to fetch their pinned source files, prepare dependencies, and build where declared. `releases` entries download finished compressed `.tgz` artifacts. An item appearing in this catalog does not alone confirm it has been installed or can run on a specific head unit. Only the Store's installer and subsequent unit status can establish that.
+Consult the [complete original README and installation matrix](docs/COMPONENT_README_INSTALL_MATRIX.md) for every ID, version, HMI and dependency. Source settings, catalog visibility, verified bytes and installed/running status are separate facts. **Live head-unit installation is NOT OBSERVED for all 140 entries.**
 
-Before selecting a component, consult the [original README and installation eligibility matrix for all 61 apps and tools](docs/COMPONENT_README_INSTALL_MATRIX.md). It identifies each pinned version, source-building or released-package route, documented HMI and dependencies, and the most specific tracked upstream README available. It does **not** claim that any of the 61 components passed an installation test on a vehicle.
+## Verification and ID7/ID8 scope
 
-When Store reports `more than the expected N bytes`, do not replace a published SHA-256 or enlarge an artifact's declared size without checking the exact downloaded file. The Store compares transfer bytes against the compressed package's `artifact.size`, and later checks both exact size and SHA-256 before installation. If the failure occurs while fetching source files, inspect the source-build paths and their authorized donor SDK placement separately from the released packages.
+The [full artifact evidence](data/artifact-verification-20261119.json) records **79/79 downloads and native archive checks PASS**, totaling **1,123,523,473 compressed bytes**, including the large Chromium and Steam packages. The verifier compares actual bytes, SHA-256 and package identity; HTTP 200 or `Content-Length` alone is not success. No member path named `node_modules/oap-sdk/` appeared in this inspection; this is a narrow path check, not a certification of all compiled code.
 
-Feed checks run **manually**, without GitHub Actions: `python -B verify_store_feeds.py` and `python -B -m unittest discover -s tests -p 'test_*.py' -v`. These checks validate metadata and README coverage offline; they do not install packages or prove the head unit accepts them.
+The [source input audit](data/source-build-readiness.json) records **55 entries accepted by the original Store parser, 0 skipped, and 54 with positive static evidence for the reviewed inputs**. It does not claim successful target builds. One existing, unchanged `noahg_fscpatcher` recipe still selects the whole repository and exceeds the default 200 MiB source-input limit. The corrected benign recipes now include the small staged inputs for `ethanol_mix`, the `sys_monitor` icon-generation helper, and the app-shared inputs needed by `aref_eta`.
+
+| Target | MainApp root | HMI process | Application compatibility |
+|---|---|---|---|
+| ID7 | `/usr/lib/oap-mainapp` | `HmiMain3D` | Per-app ID7 declaration and resources |
+| ID8 | `/usr/lib/oap-mainapp21` | `Hmi8` | Per-app ID8 declaration and resources; a queued change remains pending until applied |
+
+The original Store performs path discovery and installation. Shared renderer support does not qualify an ID7 application for ID8, and example app UIDs are not universal install paths. See the [ID7/ID8 installation contract](docs/ID7_ID8_STORE_INSTALL_20261119_AR.md) for package, registry and pending-install distinctions.
+
+The [AQ coverage audit](docs/AQ_APPS_COVERAGE_20261119_AR.md) keeps five AQ IDs outside the executable feeds: `aq_lights` and `aq_flap` are UNLICENSED; `bimmer_blocks` and `vehicle_pass` lack a confirmed custom-code redistribution grant; `aa_cluster_companion` is historical/unsupported. The 19 NBT EVO QNX/ARM ports are outside this MGU catalog. The [awesome-bmw-mgu coverage report](docs/AWESOME_BMW_MGU_COVERAGE_20261119_AR.md) records the reviewed original repositories and exclusions.
+
+Checks run **manually**, without GitHub Actions:
+
+```sh
+python -B verify_store_feeds.py
+python -B -m unittest discover -s tests -p 'test_*.py' -v
+```
+
+For a deliberate package download check, use `tools/verify_release_artifacts.py --cache-dir <local-cache> --output <report.json>`. That verifier reads archives without installing them or executing their payloads.
+
+## Catalog additions (79)
+
+The original gallery and tool descriptions remain below. These additional entries are sorted by component ID; each README link identifies its actual source. The [full matrix](docs/COMPONENT_README_INSTALL_MATRIX.md) includes all original and new entries with their dependencies.
+
+### New apps and games (58)
+
+| Component | Version | HMI | Delivery | Original README |
+|---|---|---|---|---|
+| M Track Cluster (`adam_mtrack`) | 0.1.7 | ID7 | AQ branch | [original README](apps/_sources/pinguinooo-idrive7-apps/apps/adam_mtrack/README.md) |
+| Shift Lights (`adam_shiftlights`) | 0.4.5 | ID7 | AQ branch | [original README](apps/_sources/pinguinooo-idrive7-apps/apps/adam_shiftlights/README.md) |
+| Engine Vitals (`adam_vitals`) | 0.2.0 | ID7 | AQ branch | [original README](apps/_sources/pinguinooo-idrive7-apps/apps/adam_vitals/README.md) |
+| Car Care (`aref_carcare`) | 0.2.3 | ID7 | AQ branch | [original README](apps/_sources/arefahmad-idrive7-apps/apps/aref_carcare/README.md) |
+| Car Lyrics (`aref_carlyrics`) | 0.3.9 | ID7 | AQ branch | [original README](apps/_sources/arefahmad-idrive7-apps/apps/aref_carlyrics/README.md) |
+| Car Watch (`aref_carwatch`) | 0.1.3 | ID7 | AQ branch | [original README](apps/_sources/arefahmad-idrive7-apps/apps/aref_carwatch/README.md) |
+| Drive Log (`aref_drivelog`) | 0.3.2 | ID7 | AQ branch | [original README](apps/_sources/arefahmad-idrive7-apps/apps/aref_drivelog/README.md) |
+| ETA Bar (`aref_eta`) | 1.15.1 | ID7 | AQ branch | [original README](apps/_sources/arefahmad-idrive7-apps/apps/aref_eta/README.md) |
+| Car Explorer (`aref_explorer`) | 0.2.3 | ID7 | AQ branch | [original README](apps/_sources/arefahmad-idrive7-apps/apps/aref_explorer/README.md) |
+| Fault Watch (`aref_faultwatch`) | 0.2.2 | ID7 | AQ branch | [original README](apps/_sources/arefahmad-idrive7-apps/apps/aref_faultwatch/README.md) |
+| Misfire Watch (`aref_misfire`) | 0.1.1 | ID7 | AQ branch | [original README](apps/_sources/arefahmad-idrive7-apps/apps/aref_misfire/README.md) |
+| Tire Setup (`aref_tires`) | 0.2.1 | ID7 | AQ branch | [original README](apps/_sources/arefahmad-idrive7-apps/apps/aref_tires/README.md) |
+| Apex Chase (`aurelm_apex_chase`) | 1.0.0 | ID7 | Original package | [original README](https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md) |
+| Blackjack (`aurelm_blackjack`) | 1.0.1 | ID7 | Original package | [original README](https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md) |
+| Engine Care (`aurelm_engine_care`) | 1.5.2 | ID7 | Original package | [original README](https://raw.githubusercontent.com/aurelmarius/bmw-apps/a95d5790f6f9a968ba9d9eb3d98a624a3a4ca755/README.md) |
+| Hybrid Cost (`aurelm_hybrid_cost`) | 1.1.2 | ID7 | Original package | [original README](https://raw.githubusercontent.com/aurelmarius/bmw-apps/a95d5790f6f9a968ba9d9eb3d98a624a3a4ca755/README.md) |
+| Lap Record (`aurelm_lap_record`) | 1.0.0 | ID7 | Original package | [original README](https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md) |
+| Lucky Sevens (`aurelm_lucky_sevens`) | 1.1.0 | ID7 | Original package | [original README](https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md) |
+| myAirPlay (`aurelm_myairplay`) | 1.0.1 | ID7 | Original package | [original README](https://raw.githubusercontent.com/aurelmarius/bmw-apps/a95d5790f6f9a968ba9d9eb3d98a624a3a4ca755/README.md) |
+| M Pinball (`aurelm_pinball`) | 1.0.1 | ID7 | Original package | [original README](https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md) |
+| Pit Wall (`aurelm_pit_wall`) | 1.0.0 | ID7 | Original package | [original README](https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md) |
+| Ridge Duel (`aurelm_ridge_duel`) | 1.0.1 | ID7 | Original package | [original README](https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md) |
+| Snake (`aurelm_snake`) | 1.0.0 | ID7 | Original package | [original README](https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md) |
+| Solitaire (`aurelm_solitaire`) | 1.0.0 | ID7 | Original package | [original README](https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md) |
+| Street Siege (`aurelm_street_siege`) | 1.1.0 | ID7 | Original package | [original README](https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md) |
+| Track Defender (`aurelm_track_defender`) | 1.0.0 | ID7 | Original package | [original README](https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md) |
+| TVH Player (`aurelm_tvhplayer`) | 1.0.4 | ID7 | Original package | [original README](https://raw.githubusercontent.com/aurelmarius/bmw-apps/a95d5790f6f9a968ba9d9eb3d98a624a3a4ca755/README.md) |
+| Wheel Heating (`aurelm_wheel_heat`) | 1.0.6 | ID7 | Original package | [original README](https://raw.githubusercontent.com/aurelmarius/bmw-apps/a95d5790f6f9a968ba9d9eb3d98a624a3a4ca755/README.md) |
+| Нарды (`dk_backgammon`) | 0.1.1 | ID7 | AQ branch | [original README](apps/_sources/mistergahan-mgu-backgammon/README.md) |
+| Тетрис (`dk_tetris`) | 0.1.1 | ID7 | AQ branch | [original README](apps/_sources/mistergahan-mgu-backgammon/README.md) |
+| YouTube Checks (`drake1804_checks`) | 0.1.0 | ID7 | Original source archive | [original README](https://raw.githubusercontent.com/Drake1804/bube-releases/40ae77c1b877025c84d256c7527ee34bf3ef5c26/README.md) |
+| Bube (`drake1804_youtube`) | 0.1.10 | ID7 | Original source archive | [original README](https://raw.githubusercontent.com/Drake1804/bube-releases/40ae77c1b877025c84d256c7527ee34bf3ef5c26/README.md) |
+| M Arcade (`iabadia_m_arcade`) | 0.1.3 | ID7 | AQ branch | [original README](apps/_sources/iabadia-idrive-games/apps/iabadia_m_arcade/README.md) |
+| Ambient Light (`iteriodev_ambient`) | 1.4.2 | ID7/ID8 | Original source archive | [original README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
+| Car Data (`iteriodev_cardash`) | 1.4.1 | ID8 | Original source archive | [original README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
+| Drag Timer (`iteriodev_draggy`) | 1.2.0 | ID8 | Original source archive | [original README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
+| Fault Codes (`iteriodev_dtcscan`) | 1.2.0 | ID8 | Original source archive | [original README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
+| eDrive (`iteriodev_edrive`) | 1.1.0 | ID8 | Original source archive | [original README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
+| Live Adjustments (`iteriodev_liveadjust`) | 1.2.0 | ID8 | Original source archive | [original README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
+| Overlays (`iteriodev_overlays`) | 1.4.0 | ID8 | Original source archive | [original README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
+| Seats (`iteriodev_seats`) | 1.6.3 | ID7/ID8 | Original source archive | [original README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
+| Service (`iteriodev_service`) | 1.0.0 | ID8 | Original source archive | [original README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
+| Tailscale (`iteriodev_tailscale`) | 1.1.1 | ID7/ID8 | Original source archive | [original README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
+| Turn View (`iteriodev_turnview`) | 1.5.1 | ID7/ID8 | Original source archive | [original README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
+| Moonride (`jap_moonride`) | 0.3.4 | ID7 | Original package | [original README](https://raw.githubusercontent.com/JustAnotherPU/moonride/1a8e89f99ca17a95ff428b8959dcf379077143db/README.md) |
+| RideTube (`jap_ridetube`) | 0.3.14 | ID7 | Original package | [original README](https://raw.githubusercontent.com/JustAnotherPU/ridetube/68eafa17e860002740496da09f79127bceceab69/README.md) |
+| RideWatch (`jap_ridewatch`) | 0.3.2 | ID7 | Original package | [original README](https://raw.githubusercontent.com/JustAnotherPU/ridewatch/729d16583d56597de753bd7e23de31d14da4f2a5/README.md) |
+| iDrive Monitor (`jap_sysmon`) | 1.0.6 | ID7 | Original package | [original README](https://raw.githubusercontent.com/JustAnotherPU/mgu-apps/42cd2242d9e75c48aace6ee40274451a88c920a7/README.md) |
+| Doodle Jump (`kxrxh_doodle_jump`) | 0.9.0 | ID7 | Original package | [original README](https://raw.githubusercontent.com/kxrxh/doodle-jump-mgu/b3335710a22df83d415d0511cd6a5ac7e3be83ea/README.md) |
+| Только важное (`marku_daily_hud`) | 0.2.0 | ID7 | Original package | [original README](https://raw.githubusercontent.com/istt1899/x3/a7ca63436ba445ad42af7ad410570a7289154f35/README.md) |
+| Waze Стрелка (`marku_kaluga_cameras`) | 0.8.0 | ID7 | Original source archive | [original README](https://raw.githubusercontent.com/istt1899/bmw-kaluga-cameras/c3ce3e72c1b45c26f6af19fdc703f94631996d7b/README.md) |
+| Bimmer Code (`marku_x3_coding`) | 0.2.0 | ID7 | Original package | [original README](https://raw.githubusercontent.com/istt1899/x3/a7ca63436ba445ad42af7ad410570a7289154f35/README.md) |
+| Здоровье X3 (`marku_x3_health`) | 0.2.0 | ID7 | Original package | [original README](https://raw.githubusercontent.com/istt1899/x3/a7ca63436ba445ad42af7ad410570a7289154f35/README.md) |
+| X3 ↔ Дом (`marku_x3_home`) | 0.2.0 | ID7 | Original package | [original README](https://raw.githubusercontent.com/istt1899/x3/a7ca63436ba445ad42af7ad410570a7289154f35/README.md) |
+| Поездки и расходы (`marku_x3_trips`) | 0.2.0 | ID7 | Original package | [original README](https://raw.githubusercontent.com/istt1899/x3/a7ca63436ba445ad42af7ad410570a7289154f35/README.md) |
+| Тёплый старт (`marku_x3_warm`) | 0.2.0 | ID7 | Original package | [original README](https://raw.githubusercontent.com/istt1899/x3/a7ca63436ba445ad42af7ad410570a7289154f35/README.md) |
+| Browser (experimental) (`mgu_browser`) | 0.16.1 | ID7 | Original package | [original README](https://raw.githubusercontent.com/pllanaio/mgu-browser/fe5398a284e701a14a2cc2e13217e3c1a5467ee3/README.md) |
+| Drive Recorder (`oap-driverecorder-next`) | 2.5.1 | ID7/ID8 | Original source archive | [original README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
+
+### New tools and helper references (21)
+
+| Component | Version | HMI | Delivery | Original README |
+|---|---|---|---|---|
+| myAirPlay service (`aurelm-myairplay`) | 1.0.1 | ID7 | Original package | [original README](https://raw.githubusercontent.com/aurelmarius/bmw-apps/a95d5790f6f9a968ba9d9eb3d98a624a3a4ca755/README.md) |
+| TVH Player service (`aurelm-tvhplayer`) | 1.0.2 | ID7 | Original package | [original README](https://raw.githubusercontent.com/aurelmarius/bmw-apps/a95d5790f6f9a968ba9d9eb3d98a624a3a4ca755/README.md) |
+| Camera inspector (`camera-inspect`) | 0.1.1 | ID7 | Original package | [original README](https://raw.githubusercontent.com/eroobeeroo/idrive-apps/3b7ce93045294dd8f0e60b3a239b4a1cfb4a405f/README.md) |
+| Doodle Jump GPU support (`doodle-gpu`) | 1.0.0 | ID7 | Original package | [original README](https://raw.githubusercontent.com/kxrxh/doodle-jump-mgu/b3335710a22df83d415d0511cd6a5ac7e3be83ea/README.md) |
+| YouTube Checks helper (`drake1804-checks`) | 0.1.2 | ID7 | Original package | [original README](https://raw.githubusercontent.com/Drake1804/bube-releases/40ae77c1b877025c84d256c7527ee34bf3ef5c26/README.md) |
+| YouTube player (`drake1804-ytplay`) | 0.1.16 | ID7 | Original package | [original README](https://raw.githubusercontent.com/Drake1804/bube-releases/40ae77c1b877025c84d256c7527ee34bf3ef5c26/README.md) |
+| iteriodev-comfort (`iteriodev-comfort`) | 0.6.1 | ID7/ID8 | IterioDev branch | [original README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
+| iteriodev-drplay (`iteriodev-drplay`) | 1.2.6 | ID7/ID8 | IterioDev branch | [original README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
+| iteriodev-overlays (`iteriodev-overlays`) | 0.5.0 | ID8 | IterioDev branch | [original README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
+| iteriodev-screencast (`iteriodev-screencast`) | 1.0.8 | ID7/ID8 | IterioDev branch | [original README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
+| iteriodev-tailscale (`iteriodev-tailscale`) | 1.104.6 | ID7/ID8 | IterioDev branch | [original README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
+| iteriodev-turnview (`iteriodev-turnview`) | 0.8.0 | ID7/ID8 | IterioDev branch | [original README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
+| Moonride streaming service (`jap-moonride`) | 0.3.4 | ID7 | Original package | [original README](https://raw.githubusercontent.com/JustAnotherPU/moonride/1a8e89f99ca17a95ff428b8959dcf379077143db/README.md) |
+| Node.js 22 (`jap-node22`) | 22.23.4 | ID7 | Original package | [original README](https://raw.githubusercontent.com/JustAnotherPU/mgu-apps/42cd2242d9e75c48aace6ee40274451a88c920a7/README.md) |
+| RideTube service (`jap-ridetube-d`) | 0.3.12 | ID7 | Original package | [original README](https://raw.githubusercontent.com/JustAnotherPU/ridetube/68eafa17e860002740496da09f79127bceceab69/README.md) |
+| RideWatch service (`jap-ridewatch`) | 0.3.2 | ID7 | Original package | [original README](https://raw.githubusercontent.com/JustAnotherPU/ridewatch/729d16583d56597de753bd7e23de31d14da4f2a5/README.md) |
+| wireproxy (`jap-wireproxy`) | 1.1.3 | ID7 | Original package | [original README](https://raw.githubusercontent.com/JustAnotherPU/mgu-apps/42cd2242d9e75c48aace6ee40274451a88c920a7/README.md) |
+| X3 Home bridge (`marku-home-bridge`) | 0.1.0 | ID7 | Original package | [original README](https://raw.githubusercontent.com/istt1899/x3/a7ca63436ba445ad42af7ad410570a7289154f35/README.md) |
+| Waze Strelka camera service (`marku-kaluga-cameras`) | 0.8.0 | ID7 | Original package | [original README](https://raw.githubusercontent.com/istt1899/bmw-kaluga-cameras/c3ce3e72c1b45c26f6af19fdc703f94631996d7b/README.md) |
+| Browser runtime (experimental) (`mgu-browser`) | 0.16.1 | ID7 | Original package | [original README](https://raw.githubusercontent.com/pllanaio/mgu-browser/fe5398a284e701a14a2cc2e13217e3c1a5467ee3/README.md) |
+| Browser Chromium engine (experimental) (`mgu-browser-engine`) | 0.1.0 | ID7 | Original package | [original README](https://raw.githubusercontent.com/pllanaio/mgu-browser/fe5398a284e701a14a2cc2e13217e3c1a5467ee3/README.md) |
 
 ## Apps
 
-Each entry shows its upstream title, current pinned version, a short description, published icon/screenshots when available, supported HMI and license/source link. Open an entry for the gallery.
+The original gallery entries show upstream titles, pinned versions, descriptions and published images. Open an entry for its gallery; use the complete matrix above for the expanded inventory and current delivery route.
 
 <details>
 <summary><strong>AirPlay</strong> <code>apm_airplay</code> — v1.0.6</summary>
@@ -411,7 +548,7 @@ Doom (Freedoom: Phase 1) on the iDrive. Main menu with all settings; the game dr
 
 ## Store tools
 
-Tools are listed once across the branch and release feed; package source, version and dependencies are recorded in [`data/components.json`](data/components.json).
+The original tool descriptions below are preserved. Newly added tools and the six external helper references are listed above; the complete source, version, HMI and dependency inventory is in [`data/components.json`](data/components.json) and the installation matrix. Use the matrix's exact compressed byte counts for downloads; approximate sizes in the original descriptions may refer to an earlier package.
 
 | Tool | Version | Purpose | Source | Delivery |
 |---|---:|---|---|---|
@@ -451,6 +588,8 @@ These open-source setup utilities are included for reference but are **not** ins
 
 ## Licensing and scope
 
-AQ_MGU is an aggregation of separately licensed projects; it does not replace or override their licenses. Each source snapshot retains its own license and third-party notices. Components with restrictive or unclear redistribution terms are excluded from the current feed and recorded in [`data/external-sources.json`](data/external-sources.json). No BMW proprietary OAP SDK, private signing keys or vehicle data are included; some upstream build instructions may require an SDK donor already available to the vehicle owner.
+AQ_MGU aggregates separately licensed projects and preserves their source and third-party notices. A direct link to an original publisher file does not grant permission to mirror or relicense it. The IterioDev helper payloads remain with their author, and the newly added catalog artifacts are downloaded from their original publishers. The existing attributed `carplay-map` AQ release is the documented exception.
 
-The review covered MGU Store's checked default sources, the connected GitHub repository list, 20 candidate repositories and public GitLab searches. This is a documented best-effort snapshot, not a claim that every app ever published anywhere has been found. See [`docs/SOURCE-AUDIT.md`](docs/SOURCE-AUDIT.md), [`data/sources.json`](data/sources.json) and [`LICENSES/README.md`](LICENSES/README.md) for source commits, licensing notes and exclusions.
+Unresolved AQ custom-code grants, obsolete components and other exclusions are recorded in the coverage reports and [external-source records](data/external-sources.json). The reviewed source recipes resolve SDK inputs on the target; this update does not add SDK archives, private signing keys or vehicle data. Desktop utilities remain outside the 140 Store component count.
+
+See [source commits and notices](data/sources.json), [original-source coverage](docs/AWESOME_BMW_MGU_COVERAGE_20261119_AR.md), [AQ application coverage](docs/AQ_APPS_COVERAGE_20261119_AR.md), and [license guidance](LICENSES/README.md). The inventory records the reviewed versions and evidence, not every application that may exist elsewhere or a completed vehicle installation.

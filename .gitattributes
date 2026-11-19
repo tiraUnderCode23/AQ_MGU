@@ -1,0 +1,7 @@
+# These reviewed snapshots use byte-level upstream provenance. Keep their Git
+# bytes on Windows as well as Linux; do not apply core.autocrlf on checkout.
+/apps/_sources/iabadia-idrive-games/** -text
+/apps/_sources/mistergahan-mgu-backgammon/** -text
+/apps/_sources/pinguinooo-idrive7-apps/** -text
+/apps/_sources/arefahmad-idrive7-apps/** -text
+/apps/_sources/turnkey-ethanol-blend/store-v015/** -text
