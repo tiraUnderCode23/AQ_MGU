@@ -1,0 +1,55 @@
+{
+  "schema": "aq-mgu.saved-aq-coverage-exceptions/1",
+  "reviewed_at": "2026-11-19",
+  "scope": "Saved AQ snapshot exceptions, not authorization or an executable feed; reassess when original source observations change.",
+  "applications": [
+    {
+      "id": "aa_cluster_companion",
+      "classification": "historical_app_superseded_by_current_maps_waze",
+      "reason": "Original historical code and helper existed. The publisher combined Android Auto support into Maps/Waze; current robertn_waze_cluster with waze-on-cluster is already offered. Old companion/helper coexistence has no validated current install contract.",
+      "evidence_keys": [
+        "aa_readme",
+        "idrive_catalog"
+      ],
+      "observations_sha256": "b784e328192a35739f71b5988bed6620abb85b82cca73b3df1e51ea1afcefbbf",
+      "observed_versions": [
+        "0.3.3"
+      ],
+      "offered": false,
+      "replacement_id": "robertn_waze_cluster",
+      "review_evidence": "docs/APP_EXPANSION_20261119_AR.md"
+    },
+    {
+      "id": "aq_flap",
+      "classification": "real_application_permission_unestablished_and_donor_bundled",
+      "reason": "No independent application-code redistribution grant was established in the observed source; the existing archive contains donor SDK. The generic builder UNLICENSED marker alone is not conclusive license evidence.",
+      "evidence_keys": [
+        "aq_flap_license",
+        "aq_packages"
+      ],
+      "observations_sha256": "e88c6b685f1ea6936205a95470ae233c81bc34bfdeba838ccf384b9ea3425a93",
+      "observed_versions": [
+        "2.6.1"
+      ],
+      "offered": false,
+      "review_evidence": "docs/AQ_APPS_COVERAGE_20261119_AR.md"
+    },
+    {
+      "id": "aq_lights",
+      "classification": "real_application_permission_unestablished_and_donor_bundled",
+      "reason": "No independent application-code redistribution grant was established in the observed source; the existing archive contains donor SDK. The generic builder UNLICENSED marker alone is not conclusive license evidence.",
+      "evidence_keys": [
+        "aq_lights_license",
+        "aq_packages",
+        "id8_report"
+      ],
+      "observations_sha256": "2b9d3ff08a447f2c9493bf5daec9ff3f1ef36b4dbcc20a4ef703390b9b2f5fa5",
+      "observed_versions": [
+        "4.6.0"
+      ],
+      "offered": false,
+      "review_evidence": "docs/AQ_APPS_COVERAGE_20261119_AR.md",
+      "additional_package_issue": "Package metadata version 4.6.0 differs from RHMI application version 3.1.0; inspected RHMI/variantGroups are ID7 only."
+    }
+  ]
+}

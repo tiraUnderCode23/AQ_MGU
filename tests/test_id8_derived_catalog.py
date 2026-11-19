@@ -12,6 +12,15 @@ EXPECTED = {
     'm_copilot': ('hexlay-idrive8', '1.0.31'),
     'spotify': ('hexlay-idrive8', '1.0.30'),
     'sys_monitor': ('hexlay-idrive8', '1.0.4'),
+    'adam_shiftlights': ('pinguinooo-idrive8', '0.4.6'),
+    'aref_carcare': ('arefahmad-idrive8', '0.2.4'),
+    'aref_carlyrics': ('arefahmad-idrive8', '0.3.10'),
+    'parked_games': ('maxxxfoka-idrive8', '0.2.3'),
+    'e85': ('dante-idrive8', '1.2.2'),
+    'dimon_track_mode': ('dimonprograms-idrive8', '1.0.1'),
+    'ab_storage': ('bmwenthusiast-idrive8', '1.2.4'),
+    'bimmer_blocks': ('appstudio-idrive8', '1.1.1'),
+    'vehicle_pass': ('appstudio-idrive8', '1.1.1'),
 }
 
 
@@ -42,7 +51,7 @@ class DerivedId8CatalogTests(unittest.TestCase):
 
     def test_cluster_apps_and_tire_control_are_not_relabelled(self):
         rows = {r['id']: r for r in json.loads((ROOT / 'mgu-repo.json').read_text())['components']}
-        for cid in ('adam_mtrack', 'adam_shiftlights', 'aref_tires', 'aref_eta'):
+        for cid in ('adam_mtrack', 'aref_tires', 'aref_eta'):
             self.assertEqual(rows[cid]['mguHmi'], ['ID7'])
             self.assertTrue(rows[cid]['path'].startswith('apps/_sources/'))
 
@@ -68,12 +77,21 @@ class DerivedId8CatalogTests(unittest.TestCase):
         blockers = json.loads((ROOT / 'data/id8-source-blockers-20261119.json').read_text())['components']
         expected = {r['id'] for r in feed if r['kind'] == 'app' and 'ID8' not in (r.get('mguHmi') or [])}
         self.assertEqual({r['id'] for r in blockers}, expected)
-        self.assertEqual(len(blockers), 28)
+        self.assertTrue(all(row['blocker'] and row['evidence'] for row in blockers))
+        self.assertFalse(set(EXPECTED) & {row['id'] for row in blockers})
         ready = {r['id']: r for r in json.loads((ROOT / 'data/install-readiness-20261119.json').read_text())['components']}
         for row in feed:
             self.assertEqual(ready[row['id']]['mguHmi'], row.get('mguHmi'))
         self.assertEqual(ready['adam_mtrack']['live_install_result'], 'USER_REPORTED_INSTALLED')
-        self.assertEqual(ready['adam_shiftlights']['live_install_result'], 'UNCONFIRMED_TRANSPORT_RESET')
+        # A prior version's transport incident cannot become a live result for
+        # the newly derived version, even though the component ID is the same.
+        shift = ready['adam_shiftlights']
+        self.assertEqual(shift['version'], '0.4.6')
+        self.assertEqual(shift['live_install_result'], 'NOT OBSERVED')
+        self.assertEqual(shift['prior_install_observation']['version'], '0.4.5')
+        self.assertEqual(shift['prior_install_observation']['live_install_result'],
+                         'UNCONFIRMED_TRANSPORT_RESET')
+        self.assertFalse(shift['prior_install_observation']['current_version_observed'])
 
 
 def load_tests(loader, standard_tests, pattern):

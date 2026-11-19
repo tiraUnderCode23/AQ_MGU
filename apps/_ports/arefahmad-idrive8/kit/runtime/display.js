@@ -608,6 +608,7 @@ class Display {
                 }
             }
         }
+        if (this.id8()) { pl.hmi = 'ID8'; pl.headerHeight = this.headH(); }
         this.place = pl;
         this.gpu.place(pl);
         this._grab();

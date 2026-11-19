@@ -1,0 +1,16 @@
+{
+  "id": "esagono-cluster",
+  "upstreamVersion": "0.2.0",
+  "packageVersion": "0.2.1",
+  "originalRepository": "grabandrey/esagono-cluster",
+  "originalCommit": "5db3f831249bfc7ea0c03f90be4a1434d00ed305",
+  "scope": "AQ packaging only; original runtime, configuration and service bytes are unchanged. Original notices are included.",
+  "extraRequirements": {
+    "additional_provider": "iteriodev-overlays",
+    "observed_snapshot_version": "0.5.0",
+    "original_provider_source_id": "aq-mgu-iteriodev",
+    "provider_manifest_url": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/tools/iteriodev-overlays/component.json",
+    "reason": "Original esagono.js searches the installed Overlays/Comfort hmictl for live RPM; absent it the original code logs no live RPM and shows zero/demo. The observed official Overlays0.5.0 manifest installs hmictl. This is an AQ evidence-based provider minimum, not a minimum declared by Esagono upstream. No Iterio code or binary is copied."
+  },
+  "actualTargetExecution": "NOT OBSERVED"
+}

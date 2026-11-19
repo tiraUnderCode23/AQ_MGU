@@ -2524,6 +2524,51 @@
       ]
     },
     {
+      "id": "sideways",
+      "kind": "app",
+      "title": "Sideways",
+      "description": "Live drift angle, chained scoring up to x6, replays with a freestyle camera, videos of your drifts on your phone and a worldwide leaderboard.",
+      "author": "jarnesence",
+      "version": "0.6.6",
+      "artifact": {
+        "name": "sideways@0.6.6.tgz",
+        "size": 2614965,
+        "sha256": "13534b386d83bd81ffe973c7e70e8a910e9d37d6a5afe899611815e7989b739b",
+        "url": "https://github.com/idrive-labs/mgu-apps/releases/download/catalog/sideways@0.6.6.tgz"
+      },
+      "uninstallable": true,
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-render": "0.3.1"
+      },
+      "icon": "https://raw.githubusercontent.com/idrive-labs/mgu-apps/c3e0cc34c65d38e2eb1b251c0c8463ddb73b35c9/sideways.png",
+      "iconSha256": "6e9247721abc304184949b1893e7cd255136096d077d2077b1a9468d52a752a1",
+      "mguInternet": true
+    },
+    {
+      "id": "turnkey_e_blend_id8",
+      "kind": "app",
+      "title": "TurnKey E Blend",
+      "description": "Plan a petrol and E85 blend, read the remaining fuel from the car, or estimate tank ethanol.",
+      "version": "0.5.0",
+      "mguHmi": [
+        "ID8"
+      ],
+      "build": "unit",
+      "uninstallable": true,
+      "requires": {
+        "mgu-deploy": "0.7.0"
+      },
+      "artifact": {
+        "name": "turnkey_e_blend_id8@0.5.0.tgz",
+        "size": 24766,
+        "sha256": "a32236e51394822515e7c997b1cc3c28f2c82983e498c7d87b4c6c46d6a5096e",
+        "url": "https://raw.githubusercontent.com/vecyoroleg-lgtm/turnkey-e-blend-id8/918b336fbad09b8b49c0dd2914523c0ef1633d8a/turnkey_e_blend_id8%400.5.0.tgz"
+      }
+    },
+    {
       "id": "vizualyse-bus",
       "kind": "tool",
       "title": "Vizualyse bus",

@@ -64,6 +64,17 @@ function area(cv, margin) {
     if (cv && cv.own && cv.place) {
         const p = cv.place;
         const extra = cv.extra || 0;
+        // ID8 placement is local to the renderer-reported application area.
+        // Its absolute x/y origin must not reintroduce ID7's 84px side column
+        // or 720px display height into touch bounds.
+        if (p.hmi === 'ID8') {
+            const top = Math.max(38, Math.ceil(toPage(cv, 0, (p.headerHeight || 0) + GAP).y));
+            const left = Math.max(PAGE.x0, Math.ceil(toPage(cv, GAP, 0).x)) + m;
+            const right = Math.min(PAGE.x1, Math.floor(toPage(cv, p.w - GAP, 0).x)) - m;
+            const bottom = Math.min(PAGE.h + extra, Math.floor(toPage(cv, 0, p.h - 6).y)) - m;
+            return { x: left, y: top, w: Math.max(0, right - left), h: Math.max(0, bottom - top),
+                bottom, right, own: true, scale: p.scale };
+        }
         const top = Math.max(38, Math.ceil(toPage(cv, 0, STRIP_H + GAP).y));
         const left = Math.max(PAGE.x0, Math.ceil(toPage(cv, TOUCH_LEFT + GAP, 0).x));
         const bottom = Math.min(PAGE.h + extra, Math.floor(toPage(cv, 0, SCREEN.h - 6).y)) - m;
@@ -83,6 +94,12 @@ function button(cv, key, x, y, w, h, run, opts) {
     const o = opts || {}, s = o.slop == null ? SLOP : o.slop;
     const a = area(cv, 0);
     let x0 = x - s, y0 = y - s, x1 = x + w + s, y1 = y + h + s;
+    if (cv.place && cv.place.hmi === 'ID8') {
+        x0 = Math.max(x0, a.x); y0 = Math.max(y0, a.y);
+        x1 = Math.min(x1, a.right); y1 = Math.min(y1, a.bottom);
+        if (x1 <= x0 || y1 <= y0) return cv;
+        return cv.target(x0, y0, x1 - x0, y1 - y0, run, key, o.r != null ? o.r + s : null);
+    }
     if (y0 < a.y - GAP) y0 = Math.min(y, a.y - GAP);
     if (x0 < PAGE.x0) x0 = PAGE.x0;
     if (x1 > PAGE.x1) x1 = PAGE.x1;

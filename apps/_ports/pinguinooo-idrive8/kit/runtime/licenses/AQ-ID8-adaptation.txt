@@ -1,4 +1,7 @@
-AQ derived ID8 compatibility adaptation, recipe revision 1 (2026-11-19)
+AQ derived ID8 compatibility adaptation (2026-11-19)
+Engine Vitals: recipe revision 1, application version 0.2.0 unchanged.
+Shift Lights: recipe revision 2, AQ application version 0.4.6;
+original upstream application version 0.4.5.
 
 Original app and kit base:
 https://github.com/pinguinooo/idrive7-apps
@@ -15,7 +18,20 @@ https://github.com/alexpereap/pereaperformance-idrive7-apps
 
 AQ adaptations include bounded renderer area, type-based cell mapping,
 no native Graphic fallback on ID8, explicit typed read failures and canvas
-gating. SDK-free contract tests do not establish live vehicle compatibility.
+gating. Shift Lights adds hello-negotiated ID8 map/HUD rectangles, virtual
+artwork scaling, cache removal before reconnect, and bounded read-only
+RPM/oil freshness checks using only its already-declared getters. ID8
+requires opening the app after each head-unit start; its startup preference
+is informational and cannot be enabled. ID7 startup behavior is retained.
+
+The unmodified Shift Lights cluster_render_client.js and its application
+NOTICE retain the original MPL-2.0 attribution to Robert Nisipeanu. The
+complete license is installed as Cluster-Render-Client-MPL-2.0.txt. Original
+client commit: 793da1ec9c8f761fe9aa319cddb48544bada40b6, in
+https://github.com/robertnisipeanu/idrive-apps . The ID8 target contract was
+reviewed in the same repository at 59140a978e3d5e2c8c183bdd2fbb9a4682be466a.
+
+SDK-free contract tests do not establish live vehicle compatibility.
 No proprietary SDK, installer binary or package is included in this source.
 
 --- cauliflowermossgrape/idrive7-apps donor license ---

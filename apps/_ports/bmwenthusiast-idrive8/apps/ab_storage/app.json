@@ -1,0 +1,35 @@
+{
+  "id": "ab_storage",
+  "title": "MGU Storage Monitor",
+  "description": "Read-only display of filesystem space on the head unit. No background monitoring, no deletion, no network access.",
+  "version": "1.2.4",
+  "license": "MIT",
+  "vendor": "custom",
+  "loggingId": "OAA2",
+  "iconGlyph": "storage",
+  "startType": "manually",
+  "screens": [
+    {
+      "name": "MAIN",
+      "kind": "canvas",
+      "title": "MGU Storage Monitor",
+      "buttons": []
+    }
+  ],
+  "originalVersion": "1.2.3",
+  "mguHmi": [
+    "ID7",
+    "ID8"
+  ],
+  "requires": {
+    "mgu-render": "0.6.24"
+  },
+  "aqSourceRevision": "aq-storage-id8-1",
+  "id8ExcludedSignals": [],
+  "id8UnavailableFeatures": [
+    "Storage capacity is filesystem information, not guaranteed application-install capacity."
+  ],
+  "mguNeeds": [
+    "renderer"
+  ]
+}

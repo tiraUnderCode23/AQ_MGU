@@ -1,0 +1,28 @@
+{
+  "id": "esagono-cluster",
+  "kind": "tool",
+  "version": "0.2.0",
+  "title": "Esagono Cluster",
+  "description": "Supercar-style hexagon rev ring for the middle of the iDrive 8 cluster: 72-segment rev ring, redline and shift flash, big digital rpm readout, Comfort / Sport / Track colours. Pick 'Esagono' in the cluster's widget menu; change its settings in the Esagono Settings app. Live rpm needs an hmictl helper (IterioDev Overlays); EXPERIMENTAL, untested on a car.",
+  "optional": true,
+  "uninstallable": true,
+  "mguHmi": ["ID8"],
+  "requires": {
+    "cluster-render": "0.6.9",
+    "mgu-deploy": "0.7.0"
+  },
+  "files": [
+    { "path": "esagono.js", "from": "esagono.js", "mode": "0644" },
+    { "path": "shader.js", "from": "shader.js", "mode": "0644" },
+    { "path": "preview.png", "from": "preview.png", "mode": "0644" },
+    { "path": "cluster-render.d/esagono.conf", "from": "cluster-render.d/esagono.conf", "mode": "0644" }
+  ],
+  "units": [
+    { "name": "esagono-cluster.service", "from": "esagono-cluster.service" }
+  ],
+  "enable": [
+    { "unit": "esagono-cluster.service", "target": "multi-user.target" }
+  ],
+  "recmgr": ["esagono-cluster"],
+  "restart": ["esagono-cluster.service"]
+}

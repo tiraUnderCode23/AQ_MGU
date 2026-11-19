@@ -1,0 +1,72 @@
+{
+  "schema": "aq-mgu.source-port/1",
+  "id": "dimonprograms-idrive8",
+  "revision": "aq-dimon-track-id8-1",
+  "distribution": "AQ derived source; not an upstream release",
+  "upstream_repository": "DimonPrograms/dimonprograms-apps",
+  "upstream_commit": "5031c0287c4e90e7c8bdff076b594bbfd3897dee",
+  "upstream_snapshot": "apps/_sources/dimonprograms-apps",
+  "apps": [
+    {
+      "id": "dimon_track_mode",
+      "version": "1.0.1",
+      "originalVersion": "1.0.0",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ]
+    }
+  ],
+  "reference_sources": [
+    {
+      "repository": "cauliflowermossgrape/idrive7-apps",
+      "commit": "422957a85461826c1e8654d37c8ec66a94849f9c",
+      "license": "MIT",
+      "scope": "ID8 RHMI generation and renderer application area"
+    },
+    {
+      "repository": "alexpereap/pereaperformance-idrive7-apps",
+      "commit": "5b758fad17761b8696989e2a4ffbfbfab4926b6f",
+      "license": "MIT",
+      "scope": "Public SDK lifecycle and typed field contract"
+    },
+    {
+      "repository": "arefahmad/idrive7-apps",
+      "commit": "6db26cdae67e6900c530611905f0b9aa856f27f0",
+      "license": "MIT",
+      "scope": "Corrected AQ platform adapter portions; MIT license retained"
+    }
+  ],
+  "changes": [
+    "Target-specific ID8 RHMI, lifecycle, touch settings and native renderer geometry",
+    "Actual touch Lap control while preserving original timer and sector modules",
+    "ID8 read-only speed field with one outstanding getter per field and explicit freshness/provider/expiry/invalid guards",
+    "Original >5 km/h auto-start rule requires a fresh actual sample",
+    "Manual timing without live speed retains elapsed/sector timing and marks incomplete speed statistics null",
+    "Explicit-only ID8 demo and untouched real/demo save separation",
+    "ID8 unused CDS2 acceleration permission omitted; original ID7 declarations retained",
+    "Source and installed package dependency fields and original/donor notices retained"
+  ],
+  "target_build_contract": {
+    "selection": "--target-hmi ID7|ID8 or exactly one MainApp family directory",
+    "sdk_major_heuristic": false,
+    "unknown_or_ambiguous": "BUILD_REJECTED",
+    "package_mguHmi": "selected target only"
+  },
+  "limits": [
+    "Compatible Vehicle2 typed/raw read-only member and provider required for speed",
+    "Speed is not GPS position; lap boundaries remain manual",
+    "No speed statistics asserted for laps with observed reading loss or no samples",
+    "Native mgu-render >= 0.6.24 with touch and valid application area required",
+    "Dimon Battery diagnostic backend remains unported",
+    "No actual target build, registration or live installation observed"
+  ],
+  "test": [
+    "tests/test_id8_dimon_track.py"
+  ],
+  "verification": {
+    "offline_focused_tests": "7 PASS",
+    "target_build": "NOT_OBSERVED",
+    "live_installation": "NOT_OBSERVED"
+  }
+}

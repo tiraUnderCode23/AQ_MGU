@@ -82,13 +82,17 @@ process.on('exit', (code) => fileLog(code ? 'FATAL' : 'INFO', 'exit code ' + cod
 
 /* ---------------- settings (persisted in data/settings.json) ---------------- */
 class Settings {
-    constructor(schema) {
-        this.schema = schema || [];
+    constructor(schema, id8) {
+        this.schema = (schema || []).map((item) => id8 && item.id8ReadOnly
+            ? Object.assign({}, item, { type: 'info', readOnly: true }) : item);
         this.file = path.join(DATA_DIR, 'settings.json');
         this.values = {};
         this.listeners = [];
         for (const s of this.schema) this.values[s.key] = s.default;
         try { Object.assign(this.values, JSON.parse(fs.readFileSync(this.file, 'utf8'))); } catch (e) {}
+        // A saved ID7 autostart preference must not masquerade as an available
+        // ID8 action. Read-only family-specific controls never persist a toggle.
+        this.schema.filter((item) => item.readOnly).forEach((item) => { this.values[item.key] = false; });
         // one-time move of saved settings to the new default theme (M Tricolour); later choices are kept
         const th = this.item('theme');
         if (th && this.values._themeV !== 2) {
@@ -110,6 +114,7 @@ class Settings {
     }
     get(key) { return this.values[key]; }
     set(key, value) {
+        if (this.item(key) && this.item(key).readOnly) return;
         this.values[key] = value;
         try { fs.writeFileSync(this.file, JSON.stringify(this.values, null, 1)); } catch (e) { log.warn('settings save: ' + e); }
         this.listeners.forEach((fn) => { try { fn(key, value); } catch (e) { log.error(e); } });
@@ -120,6 +125,7 @@ class Settings {
     display(key) {
         const s = this.item(key), v = this.values[key];
         if (!s) return String(v);
+        if (s.readOnly) return s.id8ReadOnly;
         if (s.type === 'choice') { const o = (s.options || []).find((x) => x[0] === v); return o ? o[1] : String(v); }
         if (s.type === 'number') return (s.labels && s.labels[String(v)] !== undefined ? s.labels[String(v)] : String(v) + (s.unit ? ' ' + s.unit : '')) + (s.markDefault && v === s.default ? ' (default)' : '');
         if (s.type === 'bool') return v ? 'On' : 'Off';
@@ -479,12 +485,14 @@ function wireSettings(ctx) {
     const values = (s) => (ui.id8 ? null : s.type === 'choice' ? (s.options || []).map((o) => o[0]) : s.type === 'number' ? s.steps || [] : null);
     const refresh = () => Promise.all(schema.map((s) => {
         const comp = 'SET_' + s.key.toUpperCase();
+        if (s.readOnly) return ui.text(comp, s.id8ReadOnly);
         if (s.type === 'bool' && !ui.id8) return Promise.all([ui.text(comp, s.label), ui.checked(comp, !!settings.get(s.key))]);
         if (values(s)) return ui.selected(comp, Math.max(0, values(s).indexOf(settings.get(s.key))));
         // other types: two-row buttons in the wide settings state, label above, value below
         return ui.cells(comp, 0, { Text1stRow: s.label, Text2ndRow: settings.display(s.key) });
     }));
     schema.forEach((s) => {
+        if (s.readOnly) return;
         const comp = 'SET_' + s.key.toUpperCase();
         if (values(s)) {
             // the chosen row of the drop-down (the HMI shows the selection itself)
@@ -556,6 +564,7 @@ async function runInner(impl) {
     if (!app.rhmiApplication && id8Start) {
         await app.initialized();
         log.info('ID8 background start without RHMI resources');
+        if (SPEC.id === 'adam_shiftlights') log.info('ID8 Shift Lights: open the app after each head-unit start; automatic background output is unavailable');
         return;
     }
     if (!app.rhmiApplication) {
@@ -571,7 +580,7 @@ async function runInner(impl) {
     id8Start = ui.id8; // the loaded HMI resource marker overrides the SDK version hint
     if (assumedId8 && !ui.id8) await active();
     require('./signals').allowTyped(ui.id8, log);
-    const settings = new Settings(SPEC.settings);
+    const settings = new Settings(SPEC.settings, ui.id8);
     const display = new Display(ui, log, SPEC, settings, () => themes.theme(settings.get('theme')));
     ui.display = display;
     const ctx = {

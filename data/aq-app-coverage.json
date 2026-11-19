@@ -228,7 +228,7 @@
       },
       "upstream_repository": "cauliflowermossgrape/idrive7-apps",
       "license_review": "GPL-3.0-or-later",
-      "candidate_delivery": "historical_source_with_external_dependency",
+      "candidate_delivery": "Historical ID not reintroduced; current publisher Maps/Waze app already covers Android Auto.",
       "known_requirements": {
         "aa-on-cluster": ">=0.5.0"
       },
@@ -280,7 +280,8 @@
         "version": "2.6.2",
         "delivery": "branch source",
         "supported_hmi": [
-          "ID7"
+          "ID7",
+          "ID8"
         ],
         "artifact_url": null,
         "live_hu_install": "NOT OBSERVED"
@@ -307,7 +308,7 @@
         "delivery": null
       },
       "upstream_repository": null,
-      "license_review": "UNLICENSED",
+      "license_review": "No independent application-code grant established; donor-containing published archive is not copied. Generic builder marker alone is not conclusive.",
       "candidate_delivery": "metadata_only_not_for_publication",
       "known_requirements": {},
       "notes": "Original local package contains donor SDK. Do not mirror the package or its UNLICENSED application source; a separately licensed SDK-free source is required.",
@@ -339,7 +340,7 @@
         "delivery": null
       },
       "upstream_repository": null,
-      "license_review": "UNLICENSED",
+      "license_review": "No independent application-code grant established; donor-containing published archive is not copied. Generic builder marker alone is not conclusive.",
       "candidate_delivery": "metadata_only_not_for_publication",
       "known_requirements": {},
       "notes": "Original local package contains donor SDK. Do not mirror the package or its UNLICENSED application source; a separately licensed SDK-free source is required.",
@@ -673,16 +674,23 @@
         "delivery": null
       },
       "upstream_repository": null,
-      "license_review": "project_MIT_notice_present; custom_application_provenance_review_required",
-      "candidate_delivery": "local_source_review",
+      "license_review": "Original local App Studio project MIT license covers the custom application; supplemental font, drawing kit and third-party notices retained.",
+      "candidate_delivery": "AQ derived ID7/ID8 source recipe from exact locally licensed original snapshot",
       "known_requirements": {},
-      "notes": "App Studio local custom source. Record actual source and notices; do not invent a public upstream URL.",
+      "notes": "Project source license reviewed through TUF. The old generated UNLICENSED marker was generic builder output; no GitHub origin or commit is invented.",
       "current_hu_install_result": "NOT_OBSERVED",
       "integration_after_audit": {
-        "present": false,
-        "reason": "Local custom application; no authoritative public origin or explicit application-code redistribution permission was established.",
+        "present": true,
+        "version": "1.1.1",
+        "delivery": "branch source",
+        "supported_hmi": [
+          "ID7",
+          "ID8"
+        ],
+        "artifact_url": null,
         "live_hu_install": "NOT OBSERVED"
-      }
+      },
+      "local_source_provenance": "data/appstudio-source-imports-20261119.json"
     },
     {
       "id": "brake_test",
@@ -740,7 +748,8 @@
         "version": "1.5.21",
         "delivery": "branch source",
         "supported_hmi": [
-          "ID7"
+          "ID7",
+          "ID8"
         ],
         "artifact_url": null,
         "live_hu_install": "NOT OBSERVED"
@@ -802,7 +811,8 @@
         "version": "2.27.6",
         "delivery": "branch source",
         "supported_hmi": [
-          "ID7"
+          "ID7",
+          "ID8"
         ],
         "artifact_url": null,
         "live_hu_install": "NOT OBSERVED"
@@ -864,7 +874,8 @@
         "version": "1.7.22",
         "delivery": "branch source",
         "supported_hmi": [
-          "ID7"
+          "ID7",
+          "ID8"
         ],
         "artifact_url": null,
         "live_hu_install": "NOT OBSERVED"
@@ -926,7 +937,8 @@
         "version": "2.6.0",
         "delivery": "branch source",
         "supported_hmi": [
-          "ID7"
+          "ID7",
+          "ID8"
         ],
         "artifact_url": null,
         "live_hu_install": "NOT OBSERVED"
@@ -988,7 +1000,8 @@
         "version": "2.9.8",
         "delivery": "branch source",
         "supported_hmi": [
-          "ID7"
+          "ID7",
+          "ID8"
         ],
         "artifact_url": null,
         "live_hu_install": "NOT OBSERVED"
@@ -1048,7 +1061,8 @@
         "version": "1.6.3",
         "delivery": "branch source",
         "supported_hmi": [
-          "ID7"
+          "ID7",
+          "ID8"
         ],
         "artifact_url": null,
         "live_hu_install": "NOT OBSERVED"
@@ -1108,7 +1122,8 @@
         "version": "2.10.1",
         "delivery": "branch source",
         "supported_hmi": [
-          "ID7"
+          "ID7",
+          "ID8"
         ],
         "artifact_url": null,
         "live_hu_install": "NOT OBSERVED"
@@ -1168,7 +1183,8 @@
         "version": "1.6.22",
         "delivery": "branch source",
         "supported_hmi": [
-          "ID7"
+          "ID7",
+          "ID8"
         ],
         "artifact_url": null,
         "live_hu_install": "NOT OBSERVED"
@@ -1222,7 +1238,8 @@
         "version": "0.9.8",
         "delivery": "branch source",
         "supported_hmi": [
-          "ID7"
+          "ID7",
+          "ID8"
         ],
         "artifact_url": null,
         "live_hu_install": "NOT OBSERVED"
@@ -1276,7 +1293,8 @@
         "version": "1.0.16",
         "delivery": "branch source",
         "supported_hmi": [
-          "ID7"
+          "ID7",
+          "ID8"
         ],
         "artifact_url": null,
         "live_hu_install": "NOT OBSERVED"
@@ -1336,7 +1354,8 @@
         "version": "2.0.44",
         "delivery": "branch source",
         "supported_hmi": [
-          "ID7"
+          "ID7",
+          "ID8"
         ],
         "artifact_url": null,
         "live_hu_install": "NOT OBSERVED"
@@ -1491,7 +1510,8 @@
         "version": "1.6.2",
         "delivery": "branch source",
         "supported_hmi": [
-          "ID7"
+          "ID7",
+          "ID8"
         ],
         "artifact_url": null,
         "live_hu_install": "NOT OBSERVED"
@@ -1518,16 +1538,23 @@
         "delivery": null
       },
       "upstream_repository": null,
-      "license_review": "project_MIT_notice_plus_Bitstream_Vera_font_notice; application_provenance_review_required",
-      "candidate_delivery": "local_source_review",
+      "license_review": "Original local App Studio project MIT license covers the custom application; supplemental font, drawing kit and third-party notices retained.",
+      "candidate_delivery": "AQ derived ID7/ID8 source recipe from exact locally licensed original snapshot",
       "known_requirements": {},
-      "notes": "App Studio local custom source. Record actual source and notices; do not invent a public upstream URL.",
+      "notes": "Project source license reviewed through TUF. The old generated UNLICENSED marker was generic builder output; no GitHub origin or commit is invented.",
       "current_hu_install_result": "NOT_OBSERVED",
       "integration_after_audit": {
-        "present": false,
-        "reason": "Local custom application; font license and kit license do not establish permission for the application code.",
+        "present": true,
+        "version": "1.1.1",
+        "delivery": "branch source",
+        "supported_hmi": [
+          "ID7",
+          "ID8"
+        ],
+        "artifact_url": null,
         "live_hu_install": "NOT OBSERVED"
-      }
+      },
+      "local_source_provenance": "data/appstudio-source-imports-20261119.json"
     },
     {
       "id": "warmup",
@@ -1583,7 +1610,8 @@
         "version": "1.9.0",
         "delivery": "branch source",
         "supported_hmi": [
-          "ID7"
+          "ID7",
+          "ID8"
         ],
         "artifact_url": null,
         "live_hu_install": "NOT OBSERVED"
@@ -1637,7 +1665,8 @@
         "version": "1.5.7",
         "delivery": "branch source",
         "supported_hmi": [
-          "ID7"
+          "ID7",
+          "ID8"
         ],
         "artifact_url": null,
         "live_hu_install": "NOT OBSERVED"
@@ -1695,11 +1724,11 @@
       "metadata": "Per-component mguHmi, corroborated by RHMI UI support and dependencies. An aggregate repository claiming ID7 and ID8 does not make every entry dual-HMI."
     },
     "compatibility_rules": [
-      "The App Studio source manifest explicitly has id8Qualified=false.",
       "A helper supporting both HMIs does not make an ID7 app support ID8.",
       "MainApp folder/HMI disagreements must be resolved from actual unit state; do not assume a fixed default.",
       "Do not copy native NBT EVO QNX/ARM packages into the MGU feed.",
-      "Historical legacy AQ .mgu lane text conflicts with the later ID8 Store report; use the reviewed original deploy contract and target-specific package format."
+      "Historical legacy AQ .mgu lane text conflicts with the later ID8 Store report; use the reviewed original deploy contract and target-specific package format.",
+      "Historical App Studio source was ID7-only; the two separately attributed AQ adaptations add actual ID8 resource/runtime contracts and retain original source evidence."
     ]
   },
   "validation": {
@@ -1712,7 +1741,7 @@
   "integration_after_audit": {
     "as_of": "2026-11-19",
     "aq_picker_app_ids": 30,
-    "included_in_aq_feeds": 25,
+    "included_in_aq_feeds": 27,
     "added_from_original_publisher": [
       "aurelm_apex_chase",
       "aurelm_blackjack",
@@ -1726,11 +1755,81 @@
     "remaining_not_offered": [
       "aa_cluster_companion",
       "aq_flap",
-      "aq_lights",
-      "bimmer_blocks",
-      "vehicle_pass"
+      "aq_lights"
     ],
     "live_hu_install": "NOT OBSERVED",
-    "readiness_record": "data/install-readiness-20261119.json"
+    "readiness_record": "data/install-readiness-20261119.json",
+    "current_baseline_commit": "0f3f96e90ac821c7fd08dfa8a8b44c4479cdb34e",
+    "coverage_gate": "tools/check_aq_app_coverage.py --strict-current-mirror"
+  },
+  "repository_recheck": {
+    "repository": "tiraUnderCode23/AQxheaTool2",
+    "commit": "fe2da9c66aef9a2f0c67208917790c1682111bcc",
+    "access": "Authorized GitHub connector, independent from the offline Core (2) workstation.",
+    "read_at": "2026-11-19",
+    "files": [
+      {
+        "path": "assets/aq_runtime/aq_apps_source.manifest.json",
+        "sha": "010525c71277864d525f3c2a44c1e2f503629b36",
+        "size": 117127,
+        "sha256": "732cd012dd14a7b4ce58885317512a1a5ba92d1697cce37db5d91619f27b573a"
+      },
+      {
+        "path": "lib/features/mgu/services/mgu_app_studio_catalog.dart",
+        "sha": "a41c28e42ea60bb983cf2f07f292922e39eb3ae8",
+        "size": 4926,
+        "sha256": "7cb574c27641b565c57067ce04dadcb668e1762667d69486391c2634adfb1458"
+      },
+      {
+        "path": "lib/features/mgu/services/idrive_apps_catalog.dart",
+        "sha": "2fc20d80546eb2bbf441bcbda6fd199666da28a7",
+        "size": 38771,
+        "sha256": "36b3f8a6b7e8dbd9ec42aa88953707ed4ec4ce549d016776bc2b8ce32799ea7d"
+      },
+      {
+        "path": "lib/features/mgu/services/mgu_aq_bundled_package_catalog.dart",
+        "sha": "e02b1e951353005a971b3475e7332c00c27620db",
+        "size": 16939,
+        "sha256": "1f769351cf002e0e3e9503e596adfba452eb48eb142d29011a11f08767894261"
+      },
+      {
+        "path": "mgu_apps/docs/workspace_index.json",
+        "sha": "ddbf90053c3cdd9070ea9075b7457ba8d43f8ab8",
+        "size": 181090,
+        "sha256": "d866bcb5179c05239b5e517ac17c9b0bc9b8e51d36c1b0e957dd634e45ad07d3"
+      },
+      {
+        "path": "mgu_apps/docs/WORKSPACE_INDEX_AR.md",
+        "sha": "f0e9c6bc0a151c80054d3b2ea39bb2e0d243b44e",
+        "size": 23216,
+        "sha256": "d049e14c24789c31eb612d87b89bb7c4579516cc84df872ddecfc9d41c151ce0"
+      },
+      {
+        "path": "mgu_apps/docs/CONSOLIDATION_PLAN_AR.md",
+        "sha": "6f376a0f3463799990c16fd25411acfd5b702c92",
+        "size": 11088,
+        "sha256": "afdf31e47454c9fbaab42c0693eb337c14e9f13161424a0d232806784b4da81f"
+      },
+      {
+        "path": "tools/stage_mgu_app_studio_25.cjs",
+        "sha": "ca9501ec08ecc21b15ce5e5ca6825636bf57fded",
+        "size": 9509,
+        "sha256": "3975c641723e0972f5ad145dfbcf9718e9b5880725607fe7adf1bb389fded5a9"
+      },
+      {
+        "path": "docs/AQ_R61_MGU_LIGHTS_460_SOURCE_INTEGRATION_20261101_AR.md",
+        "sha": "d605fa709f2101894d8a593821801951f824d264",
+        "size": 6060,
+        "sha256": "6acc4fea3be43b9701f6e9fec39e068256ff28c4f51fe9d54d9a30f14584df99"
+      }
+    ],
+    "app_studio_catalog_ids": 25,
+    "workspace_index_app_observations": 33,
+    "workspace_index_distinct_app_ids": 17,
+    "licensed_source_manifest_app_ids": 11,
+    "additional_ids_beyond_saved_inventory": [],
+    "source_payload_limits": "Studio source archive and its manifest are absent from the current repository tree; catalog references do not provide the application code. AQ package binaries are not imported as source and no donor SDK is republished.",
+    "live_core_2_workstation_read": "BLOCKED: tunnel-client has not been seen for 300 seconds",
+    "raw_private_source_mirrored": false
   }
 }

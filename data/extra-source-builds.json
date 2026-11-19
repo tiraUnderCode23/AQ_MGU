@@ -1,0 +1,362 @@
+{
+  "schema": 1,
+  "recipes": [
+    {
+      "id": "dimon_battery",
+      "version": "1.0.0",
+      "source_root": "apps/_sources/dimonprograms-apps",
+      "app_path": "apps/dimon_battery",
+      "repository": "DimonPrograms/dimonprograms-apps",
+      "commit": "5031c0287c4e90e7c8bdff076b594bbfd3897dee",
+      "source_license": "MIT; retain source and bundled third-party notices",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0"
+      },
+      "notices": [
+        "LICENSE",
+        "NOTICE.zh-CN.md",
+        "kit/localization/credit.ru.json",
+        "kit/localization/credit.zh-CN.json",
+        "kit/localization/fonts/OFL-NotoSansKR.txt",
+        "kit/runtime/fonts/OFL-NotoSansSC.txt"
+      ]
+    },
+    {
+      "id": "true_time_id8",
+      "version": "1.0.0",
+      "source_root": "apps/_sources/giuseppe-mgu-apps-id8",
+      "app_path": "true-time/app",
+      "repository": "giuseppesalatino-boop/mgu-apps-id8",
+      "commit": "2d1b1449aa5cd44f04f204cf3157299827d8dca7",
+      "source_license": "MIT with the original MIT app-kit notices retained",
+      "mguHmi": [
+        "ID8"
+      ],
+      "requires": {
+        "mgu-render": "0.3.1"
+      },
+      "notices": [
+        "LICENSE",
+        "dpf-monitoring/LICENSE",
+        "ecu-live-data/LICENSE",
+        "true-time/LICENSE",
+        "vendor/idrive7-apps/LICENSE",
+        "vendor/idrive7-apps/NOTICE.zh-CN.md",
+        "vendor/idrive7-apps/kit/localization/fonts/OFL-NotoSansKR.txt",
+        "vendor/idrive7-apps/kit/runtime/fonts/OFL-Barlow.txt",
+        "vendor/idrive7-apps/kit/runtime/fonts/OFL-NotoSansSC.txt"
+      ],
+      "builder": "tools/build_unit.py",
+      "builder_args": [
+        "{id}",
+        "{app_dir}"
+      ],
+      "sdk_path": "vendor/idrive7-apps/oap-sdk",
+      "output": "vendor/idrive7-apps/dist/{id}@{version}.tgz",
+      "generatedHmi": [
+        "ID7",
+        "ID8"
+      ]
+    },
+    {
+      "id": "boostline_id8",
+      "version": "1.0.0",
+      "source_root": "apps/_sources/giuseppe-mgu-apps-id8",
+      "app_path": "ecu-live-data/app",
+      "repository": "giuseppesalatino-boop/mgu-apps-id8",
+      "commit": "2d1b1449aa5cd44f04f204cf3157299827d8dca7",
+      "source_license": "MIT with the original MIT app-kit notices retained",
+      "mguHmi": [
+        "ID8"
+      ],
+      "requires": {
+        "mgu-render": "0.3.1"
+      },
+      "notices": [
+        "LICENSE",
+        "dpf-monitoring/LICENSE",
+        "ecu-live-data/LICENSE",
+        "true-time/LICENSE",
+        "vendor/idrive7-apps/LICENSE",
+        "vendor/idrive7-apps/NOTICE.zh-CN.md",
+        "vendor/idrive7-apps/kit/localization/fonts/OFL-NotoSansKR.txt",
+        "vendor/idrive7-apps/kit/runtime/fonts/OFL-Barlow.txt",
+        "vendor/idrive7-apps/kit/runtime/fonts/OFL-NotoSansSC.txt"
+      ],
+      "builder": "tools/build_unit.py",
+      "builder_args": [
+        "{id}",
+        "{app_dir}"
+      ],
+      "sdk_path": "vendor/idrive7-apps/oap-sdk",
+      "output": "vendor/idrive7-apps/dist/{id}@{version}.tgz",
+      "generatedHmi": [
+        "ID7",
+        "ID8"
+      ]
+    },
+    {
+      "id": "dpf_id8",
+      "version": "1.0.0",
+      "source_root": "apps/_sources/giuseppe-mgu-apps-id8",
+      "app_path": "dpf-monitoring/app",
+      "repository": "giuseppesalatino-boop/mgu-apps-id8",
+      "commit": "2d1b1449aa5cd44f04f204cf3157299827d8dca7",
+      "source_license": "MIT with the original MIT app-kit notices retained",
+      "mguHmi": [
+        "ID8"
+      ],
+      "requires": {
+        "mgu-render": "0.3.1"
+      },
+      "notices": [
+        "LICENSE",
+        "dpf-monitoring/LICENSE",
+        "ecu-live-data/LICENSE",
+        "true-time/LICENSE",
+        "vendor/idrive7-apps/LICENSE",
+        "vendor/idrive7-apps/NOTICE.zh-CN.md",
+        "vendor/idrive7-apps/kit/localization/fonts/OFL-NotoSansKR.txt",
+        "vendor/idrive7-apps/kit/runtime/fonts/OFL-Barlow.txt",
+        "vendor/idrive7-apps/kit/runtime/fonts/OFL-NotoSansSC.txt"
+      ],
+      "builder": "tools/build_unit.py",
+      "builder_args": [
+        "{id}",
+        "{app_dir}"
+      ],
+      "sdk_path": "vendor/idrive7-apps/oap-sdk",
+      "output": "vendor/idrive7-apps/dist/{id}@{version}.tgz",
+      "generatedHmi": [
+        "ID7",
+        "ID8"
+      ]
+    },
+    {
+      "id": "c365_drive",
+      "version": "1.9.3",
+      "source_root": "apps/_sources/c365-mgu-drive",
+      "app_path": "apps/c365_drive",
+      "repository": "ivanivanov23022005-pixel/mgu-drive",
+      "commit": "0e3fc54275a7daf70f344b6c0c3640a873aee033",
+      "source_license": "MIT with original kit notices retained",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "mgu-render": "0.6.24"
+      },
+      "notices": [
+        "LICENSE",
+        "kit/localization/fonts/OFL-NotoSansKR.txt",
+        "kit/runtime/fonts/OFL-Barlow.txt",
+        "kit/runtime/fonts/OFL-NotoSansSC.txt"
+      ],
+      "builder": "kit/tools/build.py",
+      "builder_args": [
+        "{id}"
+      ],
+      "sdk_path": "oap-sdk",
+      "output": "dist/{id}@{version}.tgz",
+      "mguNeeds": [
+        "renderer"
+      ]
+    },
+    {
+      "id": "cluster_lyrics",
+      "version": "0.1.1",
+      "source_root": "apps/_sources/namels-mgu-apps",
+      "app_path": "apps/cluster_lyrics",
+      "repository": "NamelsMissing/mgu-apps",
+      "commit": "fd09bf29b37857b36dd29e76c066978280fea273",
+      "source_license": "GPL-3.0-only original app code; MIT kit/QR and MPL-2.0 cluster client and DejaVu font notices remain component-specific",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "cluster-render": "0.4.0"
+      },
+      "notices": [
+        "LICENSE",
+        "THIRD_PARTY_NOTICES.md",
+        "apps/cluster_lyrics/DEJAVU_LICENSE.txt",
+        "apps/cluster_lyrics/LICENSE",
+        "apps/cluster_lyrics/NOTICE",
+        "apps/gif_home/LICENSE"
+      ],
+      "builder": "tools/build_store_app.py",
+      "builder_args": [
+        "{id}"
+      ],
+      "sdk_path": "oap-sdk",
+      "output": "dist/{id}@{version}.tgz"
+    },
+    {
+      "id": "dpf_monitor",
+      "version": "0.2.8",
+      "source_root": "apps/_sources/namels-mgu-apps",
+      "app_path": "apps/dpf_monitor",
+      "repository": "NamelsMissing/mgu-apps",
+      "commit": "fd09bf29b37857b36dd29e76c066978280fea273",
+      "source_license": "GPL-3.0-only original app code; MIT kit/QR and MPL-2.0 cluster client and DejaVu font notices remain component-specific",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.6",
+        "mgu-inputgate": "1.0.0"
+      },
+      "notices": [
+        "LICENSE",
+        "THIRD_PARTY_NOTICES.md",
+        "apps/cluster_lyrics/DEJAVU_LICENSE.txt",
+        "apps/cluster_lyrics/LICENSE",
+        "apps/cluster_lyrics/NOTICE",
+        "apps/gif_home/LICENSE"
+      ],
+      "builder": "tools/build_store_app.py",
+      "builder_args": [
+        "{id}"
+      ],
+      "sdk_path": "oap-sdk",
+      "output": "dist/{id}@{version}.tgz"
+    },
+    {
+      "id": "gif_home",
+      "version": "0.3.1",
+      "source_root": "apps/_sources/namels-mgu-apps",
+      "app_path": "apps/gif_home",
+      "repository": "NamelsMissing/mgu-apps",
+      "commit": "fd09bf29b37857b36dd29e76c066978280fea273",
+      "source_license": "GPL-3.0-only original app code; MIT kit/QR and MPL-2.0 cluster client and DejaVu font notices remain component-specific",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0"
+      },
+      "notices": [
+        "LICENSE",
+        "THIRD_PARTY_NOTICES.md",
+        "apps/cluster_lyrics/DEJAVU_LICENSE.txt",
+        "apps/cluster_lyrics/LICENSE",
+        "apps/cluster_lyrics/NOTICE",
+        "apps/gif_home/LICENSE"
+      ],
+      "builder": "tools/build_gif_home.py",
+      "builder_args": [
+        "{id}"
+      ],
+      "sdk_path": "oap-sdk",
+      "output": "dist/{id}@{version}.tgz"
+    },
+    {
+      "id": "eldrive",
+      "version": "1.1.0",
+      "repository": "beele/eldrive",
+      "commit": "64d66ce6e0c89567b443c8715bab3675a0286a65",
+      "source_root": "apps/_sources/beele-eldrive",
+      "app_path": "apps/eldrive",
+      "source_license": "MIT original app and kit; retain Ubuntu/Noto and other bundled font notices",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0"
+      },
+      "notices": [
+        "LICENSE",
+        "kit/localization/fonts/OFL-NotoSansKR.txt",
+        "kit/runtime/fonts/UFL-Ubuntu.txt",
+        "kit/runtime/fonts/OFL-NotoSansSC.txt"
+      ]
+    },
+    {
+      "id": "dpf",
+      "version": "0.1.32",
+      "repository": "dzooky/bmrmodz",
+      "commit": "e5de0de8ca958027bd91a6bfe508b3e360a13310",
+      "source_root": "apps/_sources/dzooky-bmrmodz",
+      "app_path": "apps/dpf",
+      "source_license": "MIT project grant; original kit and font notices retained",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.19",
+        "mgu-inputgate": "1.2.1",
+        "mgu-deploy": "0.8.23"
+      },
+      "notices": [
+        "LICENSE",
+        "kit/localization/fonts/OFL-NotoSansKR.txt",
+        "kit/localization/fonts/OFL-NotoSansSC.txt",
+        "kit/runtime/fonts/LICENCE-UbuntuSans.txt",
+        "kit/runtime/fonts/OFL-NotoSansSC.txt"
+      ],
+      "builder_store_mode": true,
+      "requires_sdk": false
+    },
+    {
+      "id": "osa",
+      "version": "0.2.50",
+      "repository": "dzooky/bmrmodz",
+      "commit": "e5de0de8ca958027bd91a6bfe508b3e360a13310",
+      "source_root": "apps/_sources/dzooky-bmrmodz",
+      "app_path": "apps/osa",
+      "source_license": "MIT project grant; original kit and font notices retained",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.19",
+        "mgu-inputgate": "1.2.1",
+        "mgu-deploy": "0.8.23"
+      },
+      "notices": [
+        "LICENSE",
+        "kit/localization/fonts/OFL-NotoSansKR.txt",
+        "kit/localization/fonts/OFL-NotoSansSC.txt",
+        "kit/runtime/fonts/LICENCE-UbuntuSans.txt",
+        "kit/runtime/fonts/OFL-NotoSansSC.txt"
+      ],
+      "builder_store_mode": true,
+      "requires_sdk": false
+    },
+    {
+      "id": "spritmonitor",
+      "version": "0.1.44",
+      "repository": "dzooky/bmrmodz",
+      "commit": "e5de0de8ca958027bd91a6bfe508b3e360a13310",
+      "source_root": "apps/_sources/dzooky-bmrmodz",
+      "app_path": "apps/spritmonitor",
+      "source_license": "MIT project grant; original kit and font notices retained",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.19",
+        "mgu-inputgate": "1.2.1",
+        "mgu-deploy": "0.8.23"
+      },
+      "notices": [
+        "LICENSE",
+        "apps/spritmonitor/NOTICE",
+        "kit/localization/fonts/OFL-NotoSansKR.txt",
+        "kit/localization/fonts/OFL-NotoSansSC.txt",
+        "kit/runtime/fonts/LICENCE-UbuntuSans.txt",
+        "kit/runtime/fonts/OFL-NotoSansSC.txt"
+      ],
+      "builder_store_mode": true,
+      "requires_sdk": false,
+      "mguInternet": true
+    }
+  ]
+}

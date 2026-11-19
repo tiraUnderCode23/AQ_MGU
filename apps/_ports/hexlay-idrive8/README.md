@@ -1,6 +1,6 @@
 # Hexlay apps: AQ source port for ID7 and ID8
 
-This directory contains a derived source build of **System Monitor 1.0.4**, **Spotify 1.0.30** and **M-Copilot 1.0.31**. Application IDs and upstream versions are unchanged. The AQ build revision is `aq-hexlay-id8-1`; it is recorded in `PORT.json` and in each generated package's `aqSourcePort` field. The original snapshots remain in `apps/_sources/hexlay-idrive7-apps`.
+This directory contains a derived source build of **System Monitor 1.0.4**, **Spotify 1.0.30** and **M-Copilot 1.0.31**. Application IDs and upstream versions are unchanged. The AQ build revision is `aq-hexlay-id8-2`; it is recorded in `PORT.json` and in each generated package's `aqSourcePort` field. The original snapshots remain in `apps/_sources/hexlay-idrive7-apps`.
 
 ## Implemented changes
 

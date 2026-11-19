@@ -1,0 +1,354 @@
+{
+  "schema": 1,
+  "date": "2026-11-19",
+  "family": "appstudio-idrive8",
+  "recipe_revision": 1,
+  "source_repository": null,
+  "source_git_commit": null,
+  "source_snapshot": "MGU App Studio 2.4.0",
+  "source_connector": "Chat On Steroids Core (TUF)",
+  "source_root": "/ma-coding/MGU-App-Studio-2.4.0",
+  "source_observed_date": "2026-11-19",
+  "upstream_snapshot": "apps/_sources/app-studio-custom/projects/apps",
+  "source_record": "data/appstudio-source-imports-20261119.json",
+  "source_identity_note": "AppStudio and its parents were not a Git repository. Source is identified by verified local file hashes, not by a fabricated GitHub origin or commit.",
+  "components": [
+    {
+      "id": "bimmer_blocks",
+      "title": "Bimmer Blocks",
+      "version": "1.1.1",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "mgu-render": "0.6.24"
+      },
+      "mguNeeds": [
+        "renderer"
+      ],
+      "originalVersion": "1.1.0",
+      "recipe_revision": 1,
+      "path": "apps/_ports/appstudio-idrive8/apps/bimmer_blocks",
+      "manifest": "app.json",
+      "icon": "icon.png"
+    },
+    {
+      "id": "vehicle_pass",
+      "title": "Bimmer Pass",
+      "version": "1.1.1",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "mgu-render": "0.6.24"
+      },
+      "mguNeeds": [
+        "renderer"
+      ],
+      "originalVersion": "1.1.0",
+      "recipe_revision": 1,
+      "path": "apps/_ports/appstudio-idrive8/apps/vehicle_pass",
+      "manifest": "app.json",
+      "icon": "icon.png"
+    }
+  ],
+  "build": {
+    "python": "apps/_ports/appstudio-idrive8/kit/tools/build.py",
+    "args": [
+      "{id}"
+    ],
+    "sdk": "apps/_ports/appstudio-idrive8/oap-sdk",
+    "output": "apps/_ports/appstudio-idrive8/dist/{id}@{version}.tgz",
+    "shared": [
+      "apps/_ports/appstudio-idrive8/kit",
+      "apps/_ports/appstudio-idrive8/LICENSE",
+      "apps/_ports/appstudio-idrive8/THIRD-PARTY.txt",
+      "apps/_ports/appstudio-idrive8/AQ_PORT.json"
+    ],
+    "id8_route": "Original Store source build to dual-HMI npm .tgz; inherited standalone .mgu staging remains ID7.",
+    "language_closure": "Original locales, locale-revisions.json, de/ru glyph atlases, ru/zh credits and font notices are retained."
+  },
+  "license": {
+    "application_code": "MIT",
+    "source_grant": "apps/_sources/app-studio-custom/PROJEKT-LIZENZ.txt",
+    "scope_evidence": "apps/_sources/app-studio-custom/THIRD-PARTY.txt identifies this as the Apps project license; neither custom app declares an exception.",
+    "vehicle_pass_font": "Original app NOTICE explicitly assigns its LICENSE to the DejaVu supplemental font. Font bytes, license and notice remain unchanged.",
+    "package_marker": "Original generic UNLICENSED marker replaced by project MIT app-code grant; font and donor notices are separately installed.",
+    "evidence": [
+      {
+        "path": "apps/_sources/app-studio-custom/PROJEKT-LIZENZ.txt",
+        "sha256": "7c813412dcaf1b9d18c28ca6b6199c4349e15e35beca44ab6cab8e4413fe0aa6"
+      },
+      {
+        "path": "apps/_sources/app-studio-custom/THIRD-PARTY.txt",
+        "sha256": "5bb03762693ddbf923b88d247665d0b0b6bc154c31777346094af482793f5472"
+      },
+      {
+        "path": "apps/_sources/app-studio-custom/projects/apps/apps/vehicle_pass/NOTICE",
+        "sha256": "151228b06ceb090f35a88727c74e4481e1b3eb543baa2d82b70308efdc198f06"
+      },
+      {
+        "path": "apps/_sources/app-studio-custom/projects/apps/apps/vehicle_pass/LICENSE",
+        "sha256": "63d3ba759d12804c5b31a9d5940d855c1820d1f5999e6b0872eb1c7ff045fbc9"
+      }
+    ]
+  },
+  "public_compatibility_contracts": [
+    {
+      "repository": "cauliflowermossgrape/idrive7-apps",
+      "commit": "422957a85461826c1e8654d37c8ec66a94849f9c",
+      "license": "MIT",
+      "role": "ID8 generator, cell mapping and native application area"
+    },
+    {
+      "repository": "alexpereap/pereaperformance-idrive7-apps",
+      "commit": "5b758fad17761b8696989e2a4ffbfbfab4926b6f",
+      "license": "MIT",
+      "role": "Public entry-point lifecycle and SDK typed-proxy contract"
+    },
+    {
+      "repository": "pinguinooo/idrive7-apps",
+      "commit": "82bea95add762c03d97070d2bd462bfd5fac429c",
+      "license": "MIT",
+      "role": "Matched kit base for a three-way transfer of the existing AQ compatibility delta, preserving AppStudio-specific differences"
+    }
+  ],
+  "shared_aq_reader": {
+    "path": "kit/runtime/readonly_signals.js",
+    "copied_from": "apps/_ports/dante-idrive8/kit/runtime/readonly_signals.js",
+    "sha256": "07b6862a63bb0b072069186451c88d6889413d386a4cf7b1c14cec37bd168194",
+    "scope": "Corrected AQ read-only adapter: timeout reports failure while the unresolved original getter retains its slot; late, closed and old-provider results are discarded. This is AQ implementation, not attributed verbatim to Perea."
+  },
+  "changed_original_files": [
+    {
+      "path": "apps/bimmer_blocks/app.json",
+      "original_path": "apps/_sources/app-studio-custom/projects/apps/apps/bimmer_blocks/app.json",
+      "original_sha256": "91468fe78d5b23f8ba453db920e87c84b217267265359c8b3228361d44360c0a",
+      "derived_sha256": "5cd484bec0a0e827b5e2fde33a9397a4d4d33dc33ac855c59b6fb5bd2e5bab12"
+    },
+    {
+      "path": "apps/bimmer_blocks/main.js",
+      "original_path": "apps/_sources/app-studio-custom/projects/apps/apps/bimmer_blocks/main.js",
+      "original_sha256": "86d9ddb782275dfe43e340d0abedc28aa7e46fe8e106e1aaa0ba28261d107ebc",
+      "derived_sha256": "bfc1275d118a5261a335d5dd4563592e67cbadc40c58975704f11c52c8856dd3"
+    },
+    {
+      "path": "apps/vehicle_pass/app.json",
+      "original_path": "apps/_sources/app-studio-custom/projects/apps/apps/vehicle_pass/app.json",
+      "original_sha256": "bc98d3e3dd3c5353ff64bc997f731f6cece3ed3395bc81eaf6886d2933006e7d",
+      "derived_sha256": "d6e1a5a56d327a2fa5c02a98fdfb492a70e483591cdf8a1d59a4964c0722686c"
+    },
+    {
+      "path": "kit/runtime/display.js",
+      "original_path": "apps/_sources/app-studio-custom/projects/apps/kit/runtime/display.js",
+      "original_sha256": "f586fecc2501080c3e40a1225349f9c1997449c642ab2e50e0f2a61c188195bd",
+      "derived_sha256": "980bb5ce2a98846b80f2f0a4c1fec9eaa5635aaf7df8d4d2fd245b2117015c5e"
+    },
+    {
+      "path": "kit/runtime/mgu.js",
+      "original_path": "apps/_sources/app-studio-custom/projects/apps/kit/runtime/mgu.js",
+      "original_sha256": "d33b51dff1ff6e285ad80e06f08b4cb505d08e1098e8087e3ca5e556afe1ab46",
+      "derived_sha256": "806071f20064faf7d02c85f2242f95242737409cbedf0adcee9ee92bb93e4041"
+    },
+    {
+      "path": "kit/runtime/renderd.js",
+      "original_path": "apps/_sources/app-studio-custom/projects/apps/kit/runtime/renderd.js",
+      "original_sha256": "3eaeb815b8edcf91756077fd654a996d3b7c522b0242bc9f4fae8464f67ca538",
+      "derived_sha256": "61b8c64266f45abc6135a8e17467e8a6926b87c54bd80ed7ceb3eef26625eb4f"
+    },
+    {
+      "path": "kit/runtime/signals.js",
+      "original_path": "apps/_sources/app-studio-custom/projects/apps/kit/runtime/signals.js",
+      "original_sha256": "92e3e397aef9cd44fcef989c3802af7980b7f3340028dba3fd4a1741bc940e23",
+      "derived_sha256": "cf4a5b7628c455d47792b578265c33090c471712f211260bd7a225ce80489f4e"
+    },
+    {
+      "path": "kit/tools/build.py",
+      "original_path": "apps/_sources/app-studio-custom/projects/apps/kit/tools/build.py",
+      "original_sha256": "dfe7611b1567dff67f4e66e73b23ca97cf2af9f0ce6bfc4b7306af7f038b3239",
+      "derived_sha256": "eba514e1f6cd5ca24793dd9c2bb2dfd748d7836f9de74bb150890ce6d2eb41bd"
+    },
+    {
+      "path": "kit/tools/localize.py",
+      "original_path": "apps/_sources/app-studio-custom/projects/apps/kit/tools/localize.py",
+      "original_sha256": "58da3722bf589b3d3d26cb28413253fd6ef321ff9da9a50f3b2592289c5fdf12",
+      "derived_sha256": "fb187fccb176d5ab4e0e007d2dfe7bcdc1c22deaa302de25286e25e88ba4e1c1"
+    }
+  ],
+  "unchanged_original_file_count": 55,
+  "unchanged_app_files": [
+    {
+      "path": "apps/bimmer_blocks/controls.js",
+      "original_path": "apps/_sources/app-studio-custom/projects/apps/apps/bimmer_blocks/controls.js",
+      "original_sha256": "3e2462a8cab81143f679ec3eaa40c53877e13aebaf871d5c82d9132fc0252a09",
+      "derived_sha256": "3e2462a8cab81143f679ec3eaa40c53877e13aebaf871d5c82d9132fc0252a09"
+    },
+    {
+      "path": "apps/bimmer_blocks/engine.js",
+      "original_path": "apps/_sources/app-studio-custom/projects/apps/apps/bimmer_blocks/engine.js",
+      "original_sha256": "a52e75a491872a414cd1aba9ca94782300f05a84cbafe8c684be6ffba552f916",
+      "derived_sha256": "a52e75a491872a414cd1aba9ca94782300f05a84cbafe8c684be6ffba552f916"
+    },
+    {
+      "path": "apps/bimmer_blocks/icon.png",
+      "original_path": "apps/_sources/app-studio-custom/projects/apps/apps/bimmer_blocks/icon.png",
+      "original_sha256": "e3ad9939ce65d87b88aff7d85aa1156cb7d1d7d5a9df429c3c937cb8faaa5267",
+      "derived_sha256": "e3ad9939ce65d87b88aff7d85aa1156cb7d1d7d5a9df429c3c937cb8faaa5267"
+    },
+    {
+      "path": "apps/bimmer_blocks/scores.js",
+      "original_path": "apps/_sources/app-studio-custom/projects/apps/apps/bimmer_blocks/scores.js",
+      "original_sha256": "8d73fe97fb16a137bf0469c15ecc4ad53f1bf496541c813c701464a800193153",
+      "derived_sha256": "8d73fe97fb16a137bf0469c15ecc4ad53f1bf496541c813c701464a800193153"
+    },
+    {
+      "path": "apps/vehicle_pass/LICENSE",
+      "original_path": "apps/_sources/app-studio-custom/projects/apps/apps/vehicle_pass/LICENSE",
+      "original_sha256": "63d3ba759d12804c5b31a9d5940d855c1820d1f5999e6b0872eb1c7ff045fbc9",
+      "derived_sha256": "63d3ba759d12804c5b31a9d5940d855c1820d1f5999e6b0872eb1c7ff045fbc9"
+    },
+    {
+      "path": "apps/vehicle_pass/NOTICE",
+      "original_path": "apps/_sources/app-studio-custom/projects/apps/apps/vehicle_pass/NOTICE",
+      "original_sha256": "151228b06ceb090f35a88727c74e4481e1b3eb543baa2d82b70308efdc198f06",
+      "derived_sha256": "151228b06ceb090f35a88727c74e4481e1b3eb543baa2d82b70308efdc198f06"
+    },
+    {
+      "path": "apps/vehicle_pass/icon.png",
+      "original_path": "apps/_sources/app-studio-custom/projects/apps/apps/vehicle_pass/icon.png",
+      "original_sha256": "e54a915a173d0503bb8cadf41f189840eca66b2e65edc7f7cdf5e7bda25993cb",
+      "derived_sha256": "e54a915a173d0503bb8cadf41f189840eca66b2e65edc7f7cdf5e7bda25993cb"
+    },
+    {
+      "path": "apps/vehicle_pass/latin-font.js",
+      "original_path": "apps/_sources/app-studio-custom/projects/apps/apps/vehicle_pass/latin-font.js",
+      "original_sha256": "68f5739e21da6e5041a80b369df718f6a3b9ee7f95c99abc108bb0ed7ca14d93",
+      "derived_sha256": "68f5739e21da6e5041a80b369df718f6a3b9ee7f95c99abc108bb0ed7ca14d93"
+    },
+    {
+      "path": "apps/vehicle_pass/main.js",
+      "original_path": "apps/_sources/app-studio-custom/projects/apps/apps/vehicle_pass/main.js",
+      "original_sha256": "4b2691f65efb03fe30672a375b79686230734b71a32ef1779bd775f6b443c46a",
+      "derived_sha256": "4b2691f65efb03fe30672a375b79686230734b71a32ef1779bd775f6b443c46a"
+    },
+    {
+      "path": "apps/vehicle_pass/model.js",
+      "original_path": "apps/_sources/app-studio-custom/projects/apps/apps/vehicle_pass/model.js",
+      "original_sha256": "8fbe696d70d40deb0ea1dbd3046b65415acf245f635ef255c807e1854fac4e8d",
+      "derived_sha256": "8fbe696d70d40deb0ea1dbd3046b65415acf245f635ef255c807e1854fac4e8d"
+    },
+    {
+      "path": "apps/vehicle_pass/text-font.js",
+      "original_path": "apps/_sources/app-studio-custom/projects/apps/apps/vehicle_pass/text-font.js",
+      "original_sha256": "0db3f94b71f371ca3590ef7ae2d3035591ed6d39d417f2ab21528c3815ae4389",
+      "derived_sha256": "0db3f94b71f371ca3590ef7ae2d3035591ed6d39d417f2ab21528c3815ae4389"
+    }
+  ],
+  "added_files": [
+    {
+      "path": "LICENSE",
+      "sha256": "7c813412dcaf1b9d18c28ca6b6199c4349e15e35beca44ab6cab8e4413fe0aa6",
+      "bytes": 1151
+    },
+    {
+      "path": "README.md",
+      "sha256": "5f41a26498b0a6cfee465bc39eba11730d25dc16180e3385b61a3dd8ed3b7f0b",
+      "bytes": 5130
+    },
+    {
+      "path": "README_AQ_ID8.md",
+      "sha256": "c1db48f96badfb8d110ddc5bbc637674ae51e83517c1088a35dd6ba5fc74c25b",
+      "bytes": 7588
+    },
+    {
+      "path": "THIRD-PARTY.txt",
+      "sha256": "5bb03762693ddbf923b88d247665d0b0b6bc154c31777346094af482793f5472",
+      "bytes": 970
+    },
+    {
+      "path": "apps/bimmer_blocks/README.original.txt",
+      "sha256": "a04c1f58ad4e310913564181bc6b20da2ea59763ad0e4e44fe7af5abddbb93eb",
+      "bytes": 3841
+    },
+    {
+      "path": "apps/vehicle_pass/README.original.txt",
+      "sha256": "ce79c9e7b46abecc8617a2b665e2c50e908e94ca480e4244a3c3285865720741",
+      "bytes": 5643
+    },
+    {
+      "path": "kit/LICENSE.alexpereap",
+      "sha256": "72479db7cc03773b84999663a6917a433fe35438b9a9ad77afe3c8eeca377a44",
+      "bytes": 1067
+    },
+    {
+      "path": "kit/runtime/id8_lifecycle.js",
+      "sha256": "e8170b7c20b9abe13644e1b942a5e5b0b4ddcb8281cc86c0c90e87ba9e32fc28",
+      "bytes": 3407
+    },
+    {
+      "path": "kit/runtime/licenses/AQ-ID8-adaptation.txt",
+      "sha256": "5bdc392310f0e8c9cfc716b887a7dad1058e63cea0664ddcd3b05dcc43567797",
+      "bytes": 3155
+    },
+    {
+      "path": "kit/runtime/licenses/Alex-Perea-LICENSE.txt",
+      "sha256": "72479db7cc03773b84999663a6917a433fe35438b9a9ad77afe3c8eeca377a44",
+      "bytes": 1067
+    },
+    {
+      "path": "kit/runtime/licenses/Pinguino-LICENSE.txt",
+      "sha256": "34db9858708561a4831bc0430559a6951d78d1fd8e87ab9699d8fdbfe60c2136",
+      "bytes": 1249
+    },
+    {
+      "path": "kit/runtime/readonly_signals.js",
+      "sha256": "07b6862a63bb0b072069186451c88d6889413d386a4cf7b1c14cec37bd168194",
+      "bytes": 9980
+    }
+  ],
+  "added_files_note": "AQ_PORT.json excludes its own hash; root repository provenance records the whole family.",
+  "behavior": {
+    "bimmer_blocks": "Original finite/nonnegative speed <=0.5km/h, <10s age, visibility/focus, manual pause, game engine and local scores are preserved. ID8 additionally requires fresh read-only speed health (2s polling, 6s maximum age). Provider loss, errors and unknown speed keep the game paused.",
+    "bounded_requests": "Only the already-declared Vehicle2.statusCarSpeed2 getter/subscription; one unresolved getter per field. Its 3.5s reporting timeout never creates a second pending getter. Shutdown closes subscriptions and timers.",
+    "vehicle_pass": "No vehicle signals or diagnostic calls. Main/model/fonts are byte-identical; manual records, schema migration, backup and corrupt-file preservation retain original behavior.",
+    "id7": "Generator equality tested for both applications in en/de/ru/zh-CN; AppStudio immediate display visibility retained; actual game decisions compared against original.",
+    "id8": "Native list/button resources, dynamic loaded-HMI marker, resource/init/map/availability entry sequence, valid native touch application area and explicit missing-renderer fallback.",
+    "paths": "Relative RHMI resources and platform dataDir. No ID7 MainApp path is guessed for ID8 MainApp21.",
+    "controller": "Exclusive controller capture requires renderer/controller/input-gate support; compatible touch and native buttons remain distinct from that capability."
+  },
+  "validation": {
+    "focused_test_methods": 12,
+    "result": "PASS",
+    "id7_resource_equivalence_cases": 8,
+    "synthetic_complete_packages": 4,
+    "synthetic_languages": [
+      "en",
+      "de"
+    ],
+    "original_javascript_suites": 3,
+    "actual_application_main": "PASS with inert UI and telemetry dependencies; disposable local records only",
+    "actual_mgu_runInner": "PASS with inert SDK objects, no SDK execution",
+    "readonly_reader_timeout_lifecycle": "PASS: no accumulated getters across eight poll cycles, late result discarded, recovery only after settlement, shutdown cleanup",
+    "package_requires_and_mguNeeds": "PASS",
+    "package_notices_and_font_closure": "PASS",
+    "package_resource_warnings": "None with ResourceWarning enabled",
+    "unit_sdk_execution": "NOT_OBSERVED",
+    "live_installation": "NOT_OBSERVED",
+    "hu_registration": "NOT_OBSERVED",
+    "physical_display_touch_controller": "NOT_OBSERVED",
+    "live_vehicle_speed_provider": "NOT_OBSERVED"
+  },
+  "tests": [
+    "python -m unittest discover -s tests -p test_appstudio_id8_port.py -v"
+  ],
+  "limitations": [
+    "Original AppStudio 1.1.0 declares ID7 only; AQ 1.1.1 is separately derived, with offline ID8 evidence and no publisher claim.",
+    "Actual target SDK members and the native renderer protocol/application area must exist. Test doubles are not evidence of target availability.",
+    "Unknown/stale speed, read errors or provider loss pause Bimmer Blocks. No game operation is authorized by a cached stationary value on ID8.",
+    "If a getter never settles, it retains its slot and the game remains paused; no unbounded retry queue is created.",
+    "Vehicle Pass values are personal manual records, not live pressures, verified parts recommendations or CBS updates.",
+    "Target installation, registration and physical UI/controller/speed behavior have not been observed."
+  ]
+}

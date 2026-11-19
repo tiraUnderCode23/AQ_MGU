@@ -46,7 +46,7 @@ class PinguinoId8PortTests(unittest.TestCase):
             self.assertEqual((ORIGINAL / path).read_bytes(), (PORT / path).read_bytes())
         self.assertEqual(self.spec['id'], 'adam_vitals')
         self.assertEqual(self.spec['version'], '0.2.0')
-        self.assertEqual(sorted(p.name for p in (PORT / 'apps').iterdir()), ['adam_vitals'])
+        self.assertEqual(sorted(p.name for p in (PORT / 'apps').iterdir()), ['adam_shiftlights', 'adam_vitals'])
 
     def test_complete_package_assembly_with_inert_synthetic_sdk(self):
         with tempfile.TemporaryDirectory(prefix='aq-vitals-package-') as directory:

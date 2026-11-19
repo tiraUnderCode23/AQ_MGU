@@ -1,0 +1,96 @@
+{
+  "schema": 1,
+  "as_of": "2026-11-19",
+  "observations": [
+    {
+      "id": "eldrive",
+      "version": "1.1.0",
+      "repository": "beele/eldrive",
+      "commit": "64d66ce6e0c89567b443c8715bab3675a0286a65",
+      "status": "PASS",
+      "source_files_git_blob_sha256_bytes": "PASS",
+      "original_builder_exit_code": 0,
+      "sdk_mode": "two inert fixture files; no actual SDK",
+      "artifact_is_distributable": false,
+      "actual_rhmi_hmi": [
+        "ID7"
+      ],
+      "packaged_js_files": 27,
+      "packaged_mguInternet": false,
+      "missing_literal_relative_modules": [],
+      "package_licenses_observed": [
+        "package/javascript/kit/fonts/OFL-NotoSansSC.txt",
+        "package/javascript/kit/fonts/UFL-Ubuntu.txt"
+      ],
+      "scope": "Original Python packaging and static archive reads only. No app code, SDK runtime, helper, car or network execution. Test output removed."
+    },
+    {
+      "id": "dpf",
+      "version": "0.1.32",
+      "repository": "dzooky/bmrmodz",
+      "commit": "e5de0de8ca958027bd91a6bfe508b3e360a13310",
+      "status": "PASS",
+      "source_files_git_blob_sha256_bytes": "PASS",
+      "original_builder_exit_code": 0,
+      "sdk_mode": "original SDK-free Store mode",
+      "artifact_is_distributable": false,
+      "actual_rhmi_hmi": [
+        "ID7"
+      ],
+      "packaged_js_files": 32,
+      "packaged_mguInternet": false,
+      "missing_literal_relative_modules": [],
+      "package_licenses_observed": [
+        "package/javascript/kit/fonts/LICENCE-UbuntuSans.txt",
+        "package/javascript/kit/fonts/OFL-NotoSansSC.txt"
+      ],
+      "scope": "Original Python packaging and static archive reads only. No app code, SDK runtime, helper, car or network execution. Test output removed."
+    },
+    {
+      "id": "osa",
+      "version": "0.2.50",
+      "repository": "dzooky/bmrmodz",
+      "commit": "e5de0de8ca958027bd91a6bfe508b3e360a13310",
+      "status": "PASS",
+      "source_files_git_blob_sha256_bytes": "PASS",
+      "original_builder_exit_code": 0,
+      "sdk_mode": "original SDK-free Store mode",
+      "artifact_is_distributable": false,
+      "actual_rhmi_hmi": [
+        "ID7"
+      ],
+      "packaged_js_files": 34,
+      "packaged_mguInternet": false,
+      "missing_literal_relative_modules": [],
+      "package_licenses_observed": [
+        "package/javascript/kit/fonts/LICENCE-UbuntuSans.txt",
+        "package/javascript/kit/fonts/OFL-NotoSansSC.txt"
+      ],
+      "scope": "Original Python packaging and static archive reads only. No app code, SDK runtime, helper, car or network execution. Test output removed."
+    },
+    {
+      "id": "spritmonitor",
+      "version": "0.1.44",
+      "repository": "dzooky/bmrmodz",
+      "commit": "e5de0de8ca958027bd91a6bfe508b3e360a13310",
+      "status": "PASS",
+      "source_files_git_blob_sha256_bytes": "PASS",
+      "original_builder_exit_code": 0,
+      "sdk_mode": "original SDK-free Store mode",
+      "artifact_is_distributable": false,
+      "actual_rhmi_hmi": [
+        "ID7"
+      ],
+      "packaged_js_files": 41,
+      "packaged_mguInternet": true,
+      "missing_literal_relative_modules": [],
+      "package_licenses_observed": [
+        "package/javascript/NOTICE",
+        "package/javascript/kit/fonts/LICENCE-UbuntuSans.txt",
+        "package/javascript/kit/fonts/OFL-NotoSansSC.txt"
+      ],
+      "scope": "Original Python packaging and static archive reads only. No app code, SDK runtime, helper, car or network execution. Test output removed."
+    }
+  ],
+  "limitation": "Packaging closure is not a real SDK build or an observed vehicle installation. AQ notice-preserving wrappers must preserve upstream identities and required helper versions."
+}

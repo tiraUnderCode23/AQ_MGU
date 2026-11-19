@@ -349,29 +349,217 @@
       "license": "GPL-3.0-or-later; retain MIT drawing-kit and SIL OFL font notices",
       "included_for": "M Arcade: one ID7 app with six games; original source modules, RHMI package tree and build helpers",
       "checked_at": "2026-11-19"
+    },
+    {
+      "repository": "MaxxxFoka/IDRIVE7GAMES",
+      "url": "https://github.com/MaxxxFoka/IDRIVE7GAMES",
+      "snapshot_path": "apps/_sources/maxxxfoka-idrive7games",
+      "commit": "5c6ac210301822ec9108610e0c95013ba5136369",
+      "license": "MIT; retain source and bundled third-party notices",
+      "included_for": "Selected distinct applications; original runtime/build inputs and notices.",
+      "checked_at": "2026-11-19"
+    },
+    {
+      "repository": "DimonPrograms/dimonprograms-apps",
+      "url": "https://github.com/DimonPrograms/dimonprograms-apps",
+      "snapshot_path": "apps/_sources/dimonprograms-apps",
+      "commit": "5031c0287c4e90e7c8bdff076b594bbfd3897dee",
+      "license": "MIT; retain source and bundled third-party notices",
+      "included_for": "Selected distinct applications; original runtime/build inputs and notices.",
+      "checked_at": "2026-11-19"
+    },
+    {
+      "repository": "Dante1243/dante-idrive-apps",
+      "url": "https://github.com/Dante1243/dante-idrive-apps",
+      "snapshot_path": "apps/_sources/dante-idrive-apps",
+      "commit": "f5fdc6249d2c12b29bcc8564820948d67be585f9",
+      "license": "MIT; retain source and bundled third-party notices",
+      "included_for": "Selected distinct applications; original runtime/build inputs and notices.",
+      "checked_at": "2026-11-19"
+    },
+    {
+      "repository": "idrive-labs/mgu-apps",
+      "url": "https://github.com/idrive-labs/mgu-apps",
+      "snapshot_path": null,
+      "commit": "c3e0cc34c65d38e2eb1b251c0c8463ddb73b35c9",
+      "license": "GPL-3.0-or-later; original publisher source and notices retained",
+      "included_for": "Original release catalog",
+      "checked_at": "2026-11-19",
+      "distribution": "original-publisher-reference"
+    },
+    {
+      "repository": "idrive-labs/sideways",
+      "url": "https://github.com/idrive-labs/sideways",
+      "snapshot_path": null,
+      "commit": "33e6013c1c2eb1d9725dea4f43448ecaf081ae07",
+      "license": "GPL-3.0-or-later; original publisher source and notices retained",
+      "included_for": "Original application source and license",
+      "checked_at": "2026-11-19",
+      "distribution": "original-publisher-reference"
+    },
+    {
+      "repository": "vecyoroleg-lgtm/turnkey-e-blend-id8",
+      "url": "https://github.com/vecyoroleg-lgtm/turnkey-e-blend-id8",
+      "snapshot_path": null,
+      "commit": "918b336fbad09b8b49c0dd2914523c0ef1633d8a",
+      "license": "GPL-3.0-or-later application with original MIT TurnKey formula attribution",
+      "included_for": "Original release catalog",
+      "checked_at": "2026-11-19",
+      "distribution": "original-publisher-reference"
+    },
+    {
+      "repository": "grabandrey/idrive-apps",
+      "url": "https://github.com/grabandrey/idrive-apps",
+      "snapshot_path": "apps/_sources/grabandrey-idrive-apps",
+      "commit": "cc947dbb9eb2f7ddf0002a5e20d2de73a65b6d86",
+      "license": "MIT; Barlow font atlas carries SIL-OFL-1.1",
+      "included_for": "Selected distinct apps and their original build/runtime/notices; see expansion provenance and readiness.",
+      "checked_at": "2026-11-19"
+    },
+    {
+      "repository": "giuseppesalatino-boop/mgu-apps-id8",
+      "url": "https://github.com/giuseppesalatino-boop/mgu-apps-id8",
+      "snapshot_path": "apps/_sources/giuseppe-mgu-apps-id8",
+      "commit": "2d1b1449aa5cd44f04f204cf3157299827d8dca7",
+      "license": "MIT with the original MIT app-kit notices retained",
+      "included_for": "Selected distinct apps and their original build/runtime/notices; see expansion provenance and readiness.",
+      "checked_at": "2026-11-19"
+    },
+    {
+      "repository": "ivanivanov23022005-pixel/mgu-drive",
+      "url": "https://github.com/ivanivanov23022005-pixel/mgu-drive",
+      "snapshot_path": "apps/_sources/c365-mgu-drive",
+      "commit": "0e3fc54275a7daf70f344b6c0c3640a873aee033",
+      "license": "MIT with original kit notices retained",
+      "included_for": "Selected distinct apps and their original build/runtime/notices; see expansion provenance and readiness.",
+      "checked_at": "2026-11-19"
+    },
+    {
+      "repository": "BMWEnthusiastUK/mgu-storage-monitor",
+      "url": "https://github.com/BMWEnthusiastUK/mgu-storage-monitor",
+      "snapshot_path": "apps/_sources/bmwenthusiast-storage-monitor",
+      "commit": "5d53c82a39b8620546e6954902b7a5299c81d8ef",
+      "license": "MIT; retain JustAnotherPU and app-kit attribution",
+      "included_for": "Selected distinct apps and their original build/runtime/notices; see expansion provenance and readiness.",
+      "checked_at": "2026-11-19"
+    },
+    {
+      "repository": "NamelsMissing/mgu-apps",
+      "url": "https://github.com/NamelsMissing/mgu-apps",
+      "snapshot_path": "apps/_sources/namels-mgu-apps",
+      "commit": "fd09bf29b37857b36dd29e76c066978280fea273",
+      "license": "GPL-3.0-only original app code; MIT kit/QR and MPL-2.0 cluster client and DejaVu font notices remain component-specific",
+      "included_for": "Selected distinct apps and their original build/runtime/notices; see expansion provenance and readiness.",
+      "checked_at": "2026-11-19"
+    },
+    {
+      "repository": "grabandrey/esagono-cluster",
+      "url": "https://github.com/grabandrey/esagono-cluster",
+      "snapshot_path": "apps/_sources/grabandrey-esagono-cluster",
+      "commit": "5db3f831249bfc7ea0c03f90be4a1434d00ed305",
+      "license": "MIT; retain any original per-file notices",
+      "included_for": "Selected distinct apps and their original build/runtime/notices; see expansion provenance and readiness.",
+      "checked_at": "2026-11-19"
+    },
+    {
+      "repository": "cauliflowermossgrape/idrive7-apps",
+      "url": "https://github.com/cauliflowermossgrape/idrive7-apps",
+      "snapshot_path": "tools/_sources/cauli-inputgate-1.2.1",
+      "commit": "5555ef3bd2195aae15a8cec6803beeb40ca16456",
+      "license": "Original MIT and GPL notices retained; vsomeip interface headers retain MPL-2.0 notices; see frozen source and packaged notices.",
+      "included_for": "Original controller input gate 1.2.1 source, publisher-built library and guard/service metadata; AQ notice-only component 1.2.2.",
+      "checked_at": "2026-11-19"
+    },
+    {
+      "repository": "beele/eldrive",
+      "url": "https://github.com/beele/eldrive",
+      "snapshot_path": "apps/_sources/beele-eldrive",
+      "commit": "64d66ce6e0c89567b443c8715bab3675a0286a65",
+      "license": "MIT original app and kit; retain Ubuntu/Noto and other bundled font notices",
+      "included_for": "Reviewed original distinct apps with original runtime/build inputs and notices. ID7 source, not claimed ID8.",
+      "checked_at": "2026-11-19"
+    },
+    {
+      "repository": "dzooky/bmrmodz",
+      "url": "https://github.com/dzooky/bmrmodz",
+      "snapshot_path": "apps/_sources/dzooky-bmrmodz",
+      "commit": "e5de0de8ca958027bd91a6bfe508b3e360a13310",
+      "license": "MIT project grant; original kit and font notices retained",
+      "included_for": "Reviewed original distinct apps with original runtime/build inputs and notices. ID7 source, not claimed ID8.",
+      "checked_at": "2026-11-19"
     }
   ],
   "derived_ports": [
     {
       "id": "hexlay-idrive8",
-      "revision": "aq-hexlay-id8-1",
+      "revision": "aq-hexlay-id8-2",
       "path": "apps/_ports/hexlay-idrive8",
       "provenance": "apps/_ports/hexlay-idrive8/PROVENANCE.json",
       "source_metadata": "apps/_ports/hexlay-idrive8/PORT.json"
     },
     {
       "id": "arefahmad-idrive8",
-      "revision": "aq-aref-id8-1",
+      "revision": "aq-aref-id8-2",
       "path": "apps/_ports/arefahmad-idrive8",
       "provenance": "apps/_ports/arefahmad-idrive8/PROVENANCE.json",
       "source_metadata": "apps/_ports/arefahmad-idrive8/PORT.json"
     },
     {
       "id": "pinguinooo-idrive8",
-      "revision": "1",
+      "revision": 2,
       "path": "apps/_ports/pinguinooo-idrive8",
       "provenance": "apps/_ports/pinguinooo-idrive8/AQ_PORT.json",
       "source_metadata": "apps/_ports/pinguinooo-idrive8/AQ_PORT.json"
+    },
+    {
+      "id": "maxxxfoka-idrive8",
+      "revision": "aq-parked-games-id8-1",
+      "path": "apps/_ports/maxxxfoka-idrive8",
+      "provenance": "apps/_ports/maxxxfoka-idrive8/PROVENANCE.json",
+      "source_metadata": "apps/_ports/maxxxfoka-idrive8/PORT.json"
+    },
+    {
+      "id": "dante-idrive8",
+      "revision": "aq-dante-e85-id8-1",
+      "path": "apps/_ports/dante-idrive8",
+      "provenance": "apps/_ports/dante-idrive8/PROVENANCE.json",
+      "source_metadata": "apps/_ports/dante-idrive8/PORT.json"
+    },
+    {
+      "id": "dimonprograms-idrive8",
+      "revision": "aq-dimon-track-id8-1",
+      "path": "apps/_ports/dimonprograms-idrive8",
+      "provenance": "apps/_ports/dimonprograms-idrive8/PROVENANCE.json",
+      "source_metadata": "apps/_ports/dimonprograms-idrive8/PORT.json"
+    },
+    {
+      "id": "bmwenthusiast-idrive8",
+      "revision": "aq-storage-id8-1",
+      "path": "apps/_ports/bmwenthusiast-idrive8",
+      "provenance": "apps/_ports/bmwenthusiast-idrive8/PROVENANCE.json",
+      "source_metadata": "apps/_ports/bmwenthusiast-idrive8/PORT.json"
+    },
+    {
+      "id": "appstudio-idrive8",
+      "revision": 1,
+      "path": "apps/_ports/appstudio-idrive8",
+      "provenance": "apps/_ports/appstudio-idrive8/AQ_PORT.json",
+      "source_metadata": "apps/_ports/appstudio-idrive8/AQ_PORT.json"
+    }
+  ],
+  "local_sources": [
+    {
+      "id": "app-studio-custom",
+      "name": "MGU App Studio 2.4.0 original custom applications",
+      "repository": null,
+      "snapshot_path": "apps/_sources/app-studio-custom",
+      "origin": "TUF approved /ma-coding/MGU-App-Studio-2.4.0",
+      "license": "Project MIT for original custom application code; supplemental font and runtime notices retained.",
+      "provenance": "data/appstudio-source-imports-20261119.json",
+      "apps": [
+        "bimmer_blocks",
+        "vehicle_pass"
+      ]
     }
   ]
 }

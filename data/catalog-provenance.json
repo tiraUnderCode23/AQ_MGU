@@ -1075,6 +1075,59 @@
     "required_original_source": "aq-mgu-iteriodev"
   },
   {
+    "id": "sideways",
+    "kind": "app",
+    "version": "0.6.6",
+    "upstream_repository": "idrive-labs/mgu-apps",
+    "upstream_catalog": "https://raw.githubusercontent.com/idrive-labs/mgu-apps/c3e0cc34c65d38e2eb1b251c0c8463ddb73b35c9/catalog.json",
+    "upstream_catalog_commit": "c3e0cc34c65d38e2eb1b251c0c8463ddb73b35c9",
+    "upstream_artifact_url": "https://github.com/idrive-labs/mgu-apps/releases/download/catalog/sideways@0.6.6.tgz",
+    "upstream_catalog_artifact_url": "https://github.com/idrive-labs/mgu-apps/releases/download/catalog/sideways@0.6.6.tgz",
+    "artifact_name": "sideways@0.6.6.tgz",
+    "size": 2614965,
+    "sha256": "13534b386d83bd81ffe973c7e70e8a910e9d37d6a5afe899611815e7989b739b",
+    "artifact_url": "https://github.com/idrive-labs/mgu-apps/releases/download/catalog/sideways@0.6.6.tgz",
+    "distribution": "original-publisher-reference",
+    "source_repository": "idrive-labs/sideways",
+    "source_commit": "33e6013c1c2eb1d9725dea4f43448ecaf081ae07",
+    "license_url": "https://raw.githubusercontent.com/idrive-labs/sideways/33e6013c1c2eb1d9725dea4f43448ecaf081ae07/LICENSE",
+    "upstream_mguHmi": [
+      "ID7",
+      "ID8"
+    ],
+    "aq_mguHmi": [
+      "ID7"
+    ],
+    "duplicate_classification": "new-functional-app",
+    "aq_compatibility_correction": "Publisher declares ID7/ID8, but the exact archive contains only ID7 RHMI and ID7 variantGroups; AQ offers ID7 until an actual ID8 package is available."
+  },
+  {
+    "id": "turnkey_e_blend_id8",
+    "kind": "app",
+    "version": "0.5.0",
+    "upstream_repository": "vecyoroleg-lgtm/turnkey-e-blend-id8",
+    "upstream_catalog": "https://raw.githubusercontent.com/vecyoroleg-lgtm/turnkey-e-blend-id8/918b336fbad09b8b49c0dd2914523c0ef1633d8a/catalog.json",
+    "upstream_catalog_commit": "918b336fbad09b8b49c0dd2914523c0ef1633d8a",
+    "upstream_artifact_url": "https://raw.githubusercontent.com/vecyoroleg-lgtm/turnkey-e-blend-id8/918b336fbad09b8b49c0dd2914523c0ef1633d8a/turnkey_e_blend_id8%400.5.0.tgz",
+    "upstream_catalog_artifact_url": "https://raw.githubusercontent.com/vecyoroleg-lgtm/turnkey-e-blend-id8/main/turnkey_e_blend_id8%400.5.0.tgz",
+    "artifact_name": "turnkey_e_blend_id8@0.5.0.tgz",
+    "size": 24766,
+    "sha256": "a32236e51394822515e7c997b1cc3c28f2c82983e498c7d87b4c6c46d6a5096e",
+    "artifact_url": "https://raw.githubusercontent.com/vecyoroleg-lgtm/turnkey-e-blend-id8/918b336fbad09b8b49c0dd2914523c0ef1633d8a/turnkey_e_blend_id8%400.5.0.tgz",
+    "distribution": "original-publisher-reference",
+    "source_repository": "vecyoroleg-lgtm/turnkey-e-blend-id8",
+    "source_commit": "918b336fbad09b8b49c0dd2914523c0ef1633d8a",
+    "license_url": "https://raw.githubusercontent.com/vecyoroleg-lgtm/turnkey-e-blend-id8/918b336fbad09b8b49c0dd2914523c0ef1633d8a/LICENSE",
+    "upstream_mguHmi": [
+      "ID8"
+    ],
+    "aq_mguHmi": [
+      "ID8"
+    ],
+    "duplicate_classification": "id8-port-of-existing-function",
+    "native_https_route_note": "Original publisher raw archive pinned to the reviewed catalog commit; the mutable main URL is retained separately as upstream_catalog_artifact_url."
+  },
+  {
     "id": "vizualyse-bus",
     "kind": "tool",
     "version": "0.1.0",

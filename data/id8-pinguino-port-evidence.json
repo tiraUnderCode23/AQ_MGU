@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "recipe_revision": 1,
+  "recipe_revision": 2,
   "date": "2026-11-19",
   "component": {
     "id": "adam_vitals",
@@ -44,6 +44,41 @@
   ],
   "changed_original_files": [
     {
+      "path": "README.md",
+      "original_sha256": "2e224002839b9ff2a05e91fa3edabaa02d8961d8d2f06b3f091b91a946975e63",
+      "derived_sha256": "5b18789225bf7465f2517decac046962cfea7ac7a51b41c4b63dfdd66e8ff816"
+    },
+    {
+      "path": "apps/adam_shiftlights/app.json",
+      "original_sha256": "8f3a1a4b8f0fd4b0d344c721539712e445211eb82ad3e2511c9e87b0d0029a86",
+      "derived_sha256": "7cbe0d470f66601fa199116e6a4cea30da6136d35a87d04693389056f6674d0c"
+    },
+    {
+      "path": "apps/adam_shiftlights/hudcheck.js",
+      "original_sha256": "2e08f09d7d32da9d80e35e67618935f5c42cec93e249ee1750c9d223a671a950",
+      "derived_sha256": "b1451782e28ab4c5a3a5e19465aa375f1773f19acdcbe878fe4ff642f453be87"
+    },
+    {
+      "path": "apps/adam_shiftlights/main.js",
+      "original_sha256": "675d5ecdeab1276a58c9448d4f884467d07748f0fb3224f8faa7f5356e15c187",
+      "derived_sha256": "0d9481ee49f29d740eb196bd81fb89fa70a997a1b1bff49fe9c582e6b4168ef1"
+    },
+    {
+      "path": "apps/adam_shiftlights/output.js",
+      "original_sha256": "2a903cca1b2458d97d9c64f799c05b5cccf07fb361835950b030317c06d9c063",
+      "derived_sha256": "b0bae9d2a013027969df755925e24308915ab4e86bd39cac2bd1558d9296935e"
+    },
+    {
+      "path": "apps/adam_shiftlights/pages.js",
+      "original_sha256": "42f2dcd01b043682547c49b7d2a4ebc987de3267ef7a031f07d9d19a05a26871",
+      "derived_sha256": "3b65ea81528f4eb272a080534c5b17631fe766efe901f5f9f6d5577d646c8158"
+    },
+    {
+      "path": "apps/adam_shiftlights/ui.js",
+      "original_sha256": "1ba4e5eb578dd358276fa3ac2d424c6b5745cc0049d95429eadd32cae2159c09",
+      "derived_sha256": "a0a37befc12f161e36fb169c711cc5552040d355c4d04e18a614fafa879a8c3f"
+    },
+    {
       "path": "kit/runtime/display.js",
       "original_sha256": "ab9f171c53b4915a466f82bfd42c55b494793b8b58930dd18bb14a33f083da51",
       "derived_sha256": "f1f864993cd5080bd2991ff6e7769e7ee5f31aa5fd3808b4be1ce0b287edaca3"
@@ -51,7 +86,7 @@
     {
       "path": "kit/runtime/mgu.js",
       "original_sha256": "8b03db1cff4c2d412ff2e838baddf7e6f6b191d2117eba10750705aa402cd33d",
-      "derived_sha256": "76331ad304d5457c8fc112882b72b251b0e190daf4acfda16c814b4576a50496"
+      "derived_sha256": "82ed4bc2e1a4b161a0ae517d3586ad50243aaae168428c566d968a582cbabc79"
     },
     {
       "path": "kit/runtime/renderd.js",
@@ -61,12 +96,12 @@
     {
       "path": "kit/runtime/signals.js",
       "original_sha256": "92e3e397aef9cd44fcef989c3802af7980b7f3340028dba3fd4a1741bc940e23",
-      "derived_sha256": "016fb0517d659a329315ca3cd431f71701c349b2bd558f2abd0fae5d03f28f45"
+      "derived_sha256": "5f8eadec11f2338311e843514a9010f9474b578bbf922beed5bf20abb629301b"
     },
     {
       "path": "kit/tools/build.py",
       "original_sha256": "706c7cd7c4b2133d7d9f98dd4dc7334e8eab4bac84ee33931c4abd866b839b08",
-      "derived_sha256": "f06cd569521b686dc080754016b9001ca37f983b70718b31e1d0459ade43333b"
+      "derived_sha256": "977e49b8fb3b4dfd740ecffa4218b34d6588284640e51c2f98c14f17946c6456"
     },
     {
       "path": "kit/tools/localize.py",
@@ -74,7 +109,7 @@
       "derived_sha256": "fb187fccb176d5ab4e0e007d2dfe7bcdc1c22deaa302de25286e25e88ba4e1c1"
     }
   ],
-  "unchanged_original_file_count": 56,
+  "unchanged_original_file_count": 68,
   "unchanged_app_files": [
     {
       "path": "apps/adam_vitals/NOTICE",
@@ -138,42 +173,233 @@
     }
   ],
   "new_runtime_files": [
+    "apps/adam_shiftlights/id8_geometry.js",
+    "apps/adam_shiftlights/id8_signals.js",
     "kit/runtime/id8_lifecycle.js",
-    "kit/runtime/licenses/AQ-ID8-adaptation.txt"
+    "kit/runtime/licenses/AQ-ID8-adaptation.txt",
+    "kit/runtime/licenses/Cluster-Render-Client-MPL-2.0.txt"
   ],
   "validation": {
     "id7_ui_equivalence": "PASS",
     "id8_resource_generation": "PASS",
     "package_resource_tree_without_sdk": "PASS",
     "sandboxed_runtime_and_signals": "PASS",
-    "original_app_files": "PASS",
+    "original_app_files": "Vitals all 12 unchanged; Shift Lights original core geometry/shaders/logic/guards/client unchanged; modified files enumerated above.",
     "installed_notices": "PASS",
     "sdk_build": "NOT_OBSERVED",
     "hu_install": "NOT_OBSERVED",
     "live_vehicle_functions": "NOT_OBSERVED",
-    "complete_synthetic_package_assembly": "PASS; inert SDK-shaped fixture in a deleted temporary directory; no SDK execution",
-    "focused_test_methods": 8,
-    "target_route": "Original Store source build to dual-resource npm .tgz; standalone .mgu staging remains ID7"
+    "complete_synthetic_package_assembly": "PASS for Vitals and Shift Lights; inert SDK-shaped fixtures in deleted temporary directories, no SDK execution",
+    "focused_test_methods": 20,
+    "target_route": "Original Store source build to dual-resource npm .tgz; standalone .mgu staging remains ID7",
+    "shiftlights_geometry_assertions": 1100,
+    "shiftlights_offline_node_assertions": 1188,
+    "shiftlights_actual_main_and_original_client_with_inert_fakes": "PASS",
+    "shiftlights_typed_and_raw_watched_getter_health": "PASS",
+    "shiftlights_manual_id8_open_and_id7_autostart": "PASS",
+    "shiftlights_original_id7_wire_messages": "PASS",
+    "physical_cluster_hud_visibility": "NOT_OBSERVED",
+    "independent_source_review": "Read-only review by parallel agent: no confirmed defect found in geometry, freshness/provider-loss and reconnect paths; no SDK or target execution.",
+    "typed_pending_getter_regression": "PASS; one outstanding per-field request across duplicate availability, provider recovery, timeout and shutdown; raw ID7 behavior unchanged."
   },
   "tests": [
-    "python -m unittest discover -s tests -p test_pinguino_id8_port.py -v"
+    "python -m unittest discover -s tests -p test_pinguino_id8_port.py -v",
+    "python -m unittest discover -s tests -p test_shiftlights_id8_port.py -v",
+    "python -B -m unittest discover -s tests -p test_pinguino_pending_getters.py -v"
   ],
   "limitations": [
     "Actual target SDK and declared vehicle services must exist; compatibility was exercised only with local test doubles.",
     "ID8 canvas requires native touch renderer and valid bounded appArea; native RHMI shows text/settings when unavailable.",
-    "Typed initialization is not continuous provider availability. Failures pause cached canvas; only the same field recovering clears its error.",
-    "Freshness expiry uses three intervals only for existing polled fields. Event-only stream silence without availability events is not proven detectable.",
-    "Original app IDs and versions retained. AQ recipe revision does not claim an upstream release.",
-    "MTrack and Shiftlights remain ID7 pending independent cluster/HUD geometry and foreground validation."
+    "Vitals files/version and recipe 1 are retained. Its event-only stream silence without availability events remains a target verification limit.",
+    "Shift Lights is AQ-derived version 0.4.6 from original 0.4.5, recipe 2. It is not an upstream publisher release.",
+    "Shift Lights on ID8 requires manual opening after each head-unit start; no undocumented headless startup is claimed.",
+    "ID8 map replaces the ID7 strip placement. Target dimensions must be announced by the actual renderer; absent or invalid targets remain unavailable.",
+    "Bounded RPM/oil checks use only the existing read getters. A getter that never settles prevents a new getter for that field and keeps output paused.",
+    "MTrack remains ID7: the reviewed ID8 cluster-render contract has no full-panel target.",
+    "Package assembly, geometry and inert runtime tests do not establish physical cluster/HUD display or live SDK/vehicle compatibility.",
+    "Earlier ECONNRESET installation remains unconfirmed; this source port does not patch the unidentified external installer or prove an installation result.",
+    "Original mgu-inputgate>=1.0.0 remains a declared dependency for the ID7 controller path; no substitution is inferred from an ID8 touch-only check."
   ],
   "installed_notices": [
     "javascript/kit/licenses/Pinguino-LICENSE.txt",
     "javascript/kit/licenses/Kit-LICENSE.txt",
     "javascript/kit/licenses/Kit-NOTICE.txt",
     "javascript/kit/licenses/Kit-NOTICE.zh-CN.txt",
-    "javascript/kit/licenses/AQ-ID8-adaptation.txt"
+    "javascript/kit/licenses/AQ-ID8-adaptation.txt",
+    "javascript/NOTICE (Shift Lights original MPL client notice)",
+    "javascript/kit/licenses/Cluster-Render-Client-MPL-2.0.txt"
   ],
+  "recipe_revision_scope": "Current source collection. Application-specific package revisions remain 1 for Vitals and 2 for Shift Lights.",
+  "components": [
+    {
+      "id": "adam_vitals",
+      "version": "0.2.0",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "mgu-render": "0.6.24"
+      },
+      "mguNeeds": [
+        "renderer"
+      ],
+      "recipe_revision": 1,
+      "originalVersion": "0.2.0"
+    },
+    {
+      "id": "adam_shiftlights",
+      "version": "0.4.6",
+      "originalVersion": "0.4.5",
+      "recipe_revision": 2,
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "mgu-render": "0.6.24",
+        "cluster-render": "0.6.9",
+        "mgu-inputgate": "1.0.0"
+      },
+      "mguNeeds": [
+        "renderer"
+      ]
+    }
+  ],
+  "component_recipe_revisions": {
+    "adam_vitals": 1,
+    "adam_shiftlights": 2
+  },
+  "component_note": "The legacy singular component field describes the original Vitals recipe; components is the complete family inventory.",
+  "unchanged_shiftlights_files": [
+    {
+      "path": "apps/adam_shiftlights/NOTICE",
+      "original_sha256": "85c472f9478353445ddd9618a632cd81f70b257ef219c1aff1c3047f319ca692",
+      "derived_sha256": "85c472f9478353445ddd9618a632cd81f70b257ef219c1aff1c3047f319ca692"
+    },
+    {
+      "path": "apps/adam_shiftlights/README.md",
+      "original_sha256": "2012a051fe589aba60425488220f68651eeca53f99b8b9974f46c00895301fe5",
+      "derived_sha256": "2012a051fe589aba60425488220f68651eeca53f99b8b9974f46c00895301fe5"
+    },
+    {
+      "path": "apps/adam_shiftlights/cluster_render_client.js",
+      "original_sha256": "3b88e1898da6e2dd4c00b9dda816cbe242edde102fab7fc4dc3cb881d6c369d9",
+      "derived_sha256": "3b88e1898da6e2dd4c00b9dda816cbe242edde102fab7fc4dc3cb881d6c369d9"
+    },
+    {
+      "path": "apps/adam_shiftlights/config.js",
+      "original_sha256": "37ecf090f501d9a7daddcf303d10dd7dc1345cbb5f07562944f3233b97db37f5",
+      "derived_sha256": "37ecf090f501d9a7daddcf303d10dd7dc1345cbb5f07562944f3233b97db37f5"
+    },
+    {
+      "path": "apps/adam_shiftlights/crstatus.js",
+      "original_sha256": "5473e0de7bb457a5995d3885a7899ba3a252cec81d7c5d4f68c83a4ef7f050c9",
+      "derived_sha256": "5473e0de7bb457a5995d3885a7899ba3a252cec81d7c5d4f68c83a4ef7f050c9"
+    },
+    {
+      "path": "apps/adam_shiftlights/geom.js",
+      "original_sha256": "e35f37517f5b70e252ee14ddf5050a5a6f72a483ed1f5a4b48d8d041cdd861eb",
+      "derived_sha256": "e35f37517f5b70e252ee14ddf5050a5a6f72a483ed1f5a4b48d8d041cdd861eb"
+    },
+    {
+      "path": "apps/adam_shiftlights/hudart.js",
+      "original_sha256": "c51f188b594ed952d078173e643b7047e6dd51f0232d5bc62e62d4c3a6782e87",
+      "derived_sha256": "c51f188b594ed952d078173e643b7047e6dd51f0232d5bc62e62d4c3a6782e87"
+    },
+    {
+      "path": "apps/adam_shiftlights/icon.png",
+      "original_sha256": "b7a24c813d07b4e4f0aadf82d58bb86ea00cb185f63c7fb748aeacdec4752d12",
+      "derived_sha256": "b7a24c813d07b4e4f0aadf82d58bb86ea00cb185f63c7fb748aeacdec4752d12"
+    },
+    {
+      "path": "apps/adam_shiftlights/logic.js",
+      "original_sha256": "62414c6168202391b611c17d12d514649da177b8f788e4350c8b80646a03b372",
+      "derived_sha256": "62414c6168202391b611c17d12d514649da177b8f788e4350c8b80646a03b372"
+    },
+    {
+      "path": "apps/adam_shiftlights/rpmpoll.js",
+      "original_sha256": "bb11bb5b401c4f9306b354cc9914ba054fe2de156f99bfd076e6ec6fdfffb683",
+      "derived_sha256": "bb11bb5b401c4f9306b354cc9914ba054fe2de156f99bfd076e6ec6fdfffb683"
+    },
+    {
+      "path": "apps/adam_shiftlights/safety.js",
+      "original_sha256": "8e6b8d393c76f4e6ab03c89e4ad73df9b50c462d0a234799264ebd049f27bb9a",
+      "derived_sha256": "8e6b8d393c76f4e6ab03c89e4ad73df9b50c462d0a234799264ebd049f27bb9a"
+    },
+    {
+      "path": "apps/adam_shiftlights/shader.js",
+      "original_sha256": "ef4a4ae51566069f8985cf123041502fc92afa8a12fadc8c5ba5f357a31493c3",
+      "derived_sha256": "ef4a4ae51566069f8985cf123041502fc92afa8a12fadc8c5ba5f357a31493c3"
+    }
+  ],
+  "new_runtime_file_hashes": [
+    {
+      "path": "apps/adam_shiftlights/id8_geometry.js",
+      "sha256": "de9c76b5162391d48c7ec8fb3c5228bef63ab75c033ad39551b8b475a163dc13"
+    },
+    {
+      "path": "apps/adam_shiftlights/id8_signals.js",
+      "sha256": "ecdedaa9b9cec81229daec7c09b8c113b921af47659bf947d5539873a384a0e6"
+    },
+    {
+      "path": "kit/runtime/id8_lifecycle.js",
+      "sha256": "e8170b7c20b9abe13644e1b942a5e5b0b4ddcb8281cc86c0c90e87ba9e32fc28"
+    },
+    {
+      "path": "kit/runtime/licenses/AQ-ID8-adaptation.txt",
+      "sha256": "93d5b831a3412a61a4c8457e45b67815fa07dad68fc4efe9b17409eec054bbc8"
+    },
+    {
+      "path": "kit/runtime/licenses/Cluster-Render-Client-MPL-2.0.txt",
+      "sha256": "3f3d9e0024b1921b067d6f7f88deb4a60cbe7a78e76c64e3f1d7fc3b779b9d04"
+    }
+  ],
+  "cluster_render_contract": {
+    "repository": "robertnisipeanu/idrive-apps",
+    "commit": "59140a978e3d5e2c8c183bdd2fbb9a4682be466a",
+    "protocol_path": "apps/_sources/idrive-apps/native/cluster-render/PROTOCOL.md",
+    "protocol_sha256": "c62dff129e26232d0485adbbf1c0ace70645f87f6890b574e7dc08d2b4ca9944",
+    "protocol_url": "https://github.com/robertnisipeanu/idrive-apps/blob/59140a978e3d5e2c8c183bdd2fbb9a4682be466a/native/cluster-render/PROTOCOL.md",
+    "license_path": "apps/_sources/idrive-apps/LICENSES/MPL-2.0.txt",
+    "license_sha256": "3f3d9e0024b1921b067d6f7f88deb4a60cbe7a78e76c64e3f1d7fc3b779b9d04",
+    "additional_observation": "https://github.com/robertnisipeanu/idrive-apps/issues/164",
+    "observation_scope": "One reported G87 vehicle. Its dimensions are not hardcoded or generalized.",
+    "client_original_commit": "793da1ec9c8f761fe9aa319cddb48544bada40b6",
+    "client_sha256": "3b88e1898da6e2dd4c00b9dda816cbe242edde102fab7fc4dc3cb881d6c369d9",
+    "client_unchanged_from_pinguino_snapshot": true,
+    "client_license": "MPL-2.0",
+    "id8_targets": [
+      "map",
+      "hud"
+    ],
+    "negotiation": "Wait for backend=id8 and valid targets string in hello; ID8 never requests panel."
+  },
+  "shiftlights_behavior": {
+    "id7": "Original generated UI for updated patch version, original layer/uniform messages, and original autostart decisions preserved in offline comparisons.",
+    "id8_startup": "Manual open after each head-unit start. Background/no-RHMI initializes without impl.start; autoStart is read-only false even if a saved preference is true.",
+    "id8_cluster_placement": "Uses the advertised map target as a different placement from the ID7 strip; original virtual shader/image geometry is contained in actual target dimensions.",
+    "reconnect": "Delete cached ID8 layers before original client replay; rebuild only after new hello and a fresh application decision.",
+    "critical_read_fields": [
+      "de.bmw.infotainment.vehicle.CDS.statusEngineSpeed2",
+      "de.bmw.infotainment.vehicle.CDS.statusEngineTemperature"
+    ],
+    "no_added_vehicle_methods_or_permissions": true,
+    "freshness_policy_ms": {
+      "rpm_idle_poll": 500,
+      "rpm_max_age": 1500,
+      "oil_poll": 1000,
+      "oil_max_age": 3000,
+      "oil_getter_timeout": 600,
+      "health_check": 100
+    },
+    "getters": "Only already-watched rs fields; one unresolved getter per field. Expired and previous-provider responses are discarded.",
+    "guards": "Original kill-file, error budget, demo and enablement guards preserved; RPM/oil invalidity, age, read errors and provider loss additionally stop ID8 output.",
+    "installed_application_version": "0.4.6",
+    "upstream_application_version": "0.4.5"
+  },
   "snapshot_path": "apps/_ports/pinguinooo-idrive8",
-  "source_file_count": 67,
-  "source_bytes": 1839238
+  "source_file_count": 88,
+  "source_bytes": 2157340,
+  "evidence_scope": "Current source recipe including Vitals and Shift Lights; frozen original source is separate. Actual SDK and live HU results are not observed."
 }

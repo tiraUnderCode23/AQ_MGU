@@ -1,23 +1,32 @@
 {
   "schema": 1,
   "observed_date": "2026-11-19",
-  "baseline_git_commit": "42dd429486219dea6a96f99bd02cea7d55b47ce9",
-  "observation": "Working tree after native-Cauli alignment and five AQ source-port integrations; static inspection only.",
+  "baseline_git_commit": "0f3f96e90ac821c7fd08dfa8a8b44c4479cdb34e",
+  "observation": "Current catalog after reviewed expansion and derived ID8 implementations; no target execution.",
   "source_feed": {
     "path": "mgu-repo.json",
-    "observed_sha256": "873edd47c83a084d5421c933be96ef7768c9186188ffc8b73b9129e16ccfa86f",
-    "entries": 55,
-    "applications": 50,
-    "tools": 5,
-    "applications_declaring_id8": 22,
-    "remaining_id7_applications": 28
+    "observed_sha256": "a6b12b4f4bca0d0717a1286f9f43bac9b90af57fbd9a0e8d510cd5a98f2d9473",
+    "entries": 79,
+    "applications": 72,
+    "tools": 7,
+    "applications_declaring_id8": 39,
+    "remaining_id7_applications": 33
   },
   "excluded_implemented_ports": [
+    "ab_storage",
+    "adam_shiftlights",
     "adam_vitals",
+    "aref_carcare",
+    "aref_carlyrics",
     "aref_explorer",
+    "bimmer_blocks",
+    "dimon_track_mode",
+    "e85",
     "m_copilot",
+    "parked_games",
     "spotify",
-    "sys_monitor"
+    "sys_monitor",
+    "vehicle_pass"
   ],
   "classification_notes": [
     "A missing implementation in the selected AQ source is distinct from a publisher explicitly advertising ID7-only releases.",
@@ -27,11 +36,11 @@
   ],
   "category_counts_nonexclusive": {
     "cluster_hud_geometry_unsupported": 6,
-    "id7_rhmi_only_and_input_bridge": 26,
+    "id7_rhmi_only_and_input_bridge": 31,
     "native_helper_id7": 10,
     "safety_freshness_tires": 1,
     "source_workflow_outside_application_compatibility": 1,
-    "unknown_native_backend": 1,
+    "unknown_native_backend": 7,
     "widget_template_id7": 7
   },
   "components": [
@@ -72,185 +81,6 @@
       "upstream_status": "ID8 implementation not present in the selected AQ source recipe",
       "source_repository": "pinguinooo/idrive7-apps",
       "source_commit": "82bea95add762c03d97070d2bd462bfd5fac429c",
-      "id8_unit_validation": "NOT_OBSERVED",
-      "scope_note": "This describes missing ID8 work, not an ID7 installation failure."
-    },
-    {
-      "id": "adam_shiftlights",
-      "version": "0.4.5",
-      "kind": "app",
-      "source_path": "apps/_sources/pinguinooo-idrive7-apps/apps/adam_shiftlights",
-      "declared_hmi": [
-        "ID7"
-      ],
-      "status": "ID8_PORT_NOT_IMPLEMENTED",
-      "categories": [
-        "cluster_hud_geometry_unsupported",
-        "id7_rhmi_only_and_input_bridge"
-      ],
-      "blocker": "The main ID7 UI and the app-specific cluster/HUD display target behavior have not been ported to ID8. A dual-HMI cluster-render tool alone is insufficient.",
-      "required_unimplemented_parts": [
-        "Port the main UI/runtime using the derived Pinguino kit.",
-        "Implement/test ID8 cluster or HUD capability and geometry selection, occlusion/occupancy behavior, input handling and fresh-data guards without changing the existing ID7 behavior."
-      ],
-      "evidence": [
-        {
-          "path": "apps/_sources/pinguinooo-idrive7-apps/kit/tools/build.py",
-          "line_start": 496,
-          "line_end": 496,
-          "fact": "The selected original kit emits ID7 RHMI resources.",
-          "excerpt": "os.makedirs(os.path.join(pr, 'uiDescriptions', 'ID7'))"
-        },
-        {
-          "path": "apps/_sources/pinguinooo-idrive7-apps/apps/adam_shiftlights/config.js",
-          "line_start": 44,
-          "line_end": 44,
-          "fact": "HUD styling is tied to a specific 800x480 scene and visible region.",
-          "excerpt": "// visible: the widest picture the HUD shows, 680 x 300 inside the 800 x 480 scene (idrive-apps PR #41: \"wider is cut"
-        },
-        {
-          "path": "apps/_sources/pinguinooo-idrive7-apps/apps/adam_shiftlights/config.js",
-          "line_start": 73,
-          "line_end": 73,
-          "fact": "Cluster styling is tied to the 1920x720 panel geometry.",
-          "excerpt": "// on the 1920x720 panel, axis x 960 (cy = the bar's centre y). The slat styles sit 25 px lower than the mockup"
-        }
-      ],
-      "upstream_status": "ID8 implementation not present in the selected AQ source recipe",
-      "source_repository": "pinguinooo/idrive7-apps",
-      "source_commit": "82bea95add762c03d97070d2bd462bfd5fac429c",
-      "id8_unit_validation": "NOT_OBSERVED",
-      "scope_note": "This describes missing ID8 work, not an ID7 installation failure."
-    },
-    {
-      "id": "aref_carcare",
-      "version": "0.2.3",
-      "kind": "app",
-      "source_path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_carcare",
-      "declared_hmi": [
-        "ID7"
-      ],
-      "status": "ID8_PORT_NOT_IMPLEMENTED",
-      "categories": [
-        "id7_rhmi_only_and_input_bridge",
-        "widget_template_id7"
-      ],
-      "blocker": "The selected original app still uses the ID7-only Aref builder and raw signal layer.",
-      "required_unimplemented_parts": [
-        "Port the selected app to the derived ID8 main UI/runtime and test its own controls, foreground/background lifecycle, and missing-provider behavior.",
-        "Implement and test an actual ID8 widget contract, or explicitly disable and label the optional widget on ID8; do not relabel the ID7 template.",
-        "Adapt and test the app-specific data interface and lifecycle; preserve background shutdown and unavailable/stale-data handling."
-      ],
-      "evidence": [
-        {
-          "path": "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
-          "line_start": 703,
-          "line_end": 703,
-          "fact": "The selected original app builder emits only ID7 main resources.",
-          "excerpt": "os.makedirs(os.path.join(pr, 'uiDescriptions', 'ID7'))"
-        },
-        {
-          "path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/signals.js",
-          "line_start": 57,
-          "line_end": 57,
-          "fact": "The selected original signal layer requires generated raw SOME/IP configurations; it has no typed SDK fallback.",
-          "excerpt": "const cfg = loadConfig(iface);"
-        },
-        {
-          "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_carcare/app.json",
-          "line_start": 8,
-          "line_end": 8,
-          "fact": "This app declares a home-screen widget.",
-          "excerpt": "\"startWidget\": {"
-        },
-        {
-          "path": "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
-          "line_start": 495,
-          "line_end": 495,
-          "fact": "The shared widget builder uses the stock Drive Recorder widget template.",
-          "excerpt": "STOCK_WIDGET_LAYOUT = 'LT_Table_OnlineApps_DriveRecorderWidget'"
-        },
-        {
-          "path": "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
-          "line_start": 578,
-          "line_end": 578,
-          "fact": "The widget package emits ID7-only UI declarations.",
-          "excerpt": "os.makedirs(os.path.join(pkg_out, 'uiDescriptions', 'ID7'))"
-        }
-      ],
-      "upstream_status": "ID8 implementation not present in the selected AQ source recipe",
-      "source_repository": "arefahmad/idrive7-apps",
-      "source_commit": "6db26cdae67e6900c530611905f0b9aa856f27f0",
-      "id8_unit_validation": "NOT_OBSERVED",
-      "scope_note": "This describes missing ID8 work, not an ID7 installation failure."
-    },
-    {
-      "id": "aref_carlyrics",
-      "version": "0.3.9",
-      "kind": "app",
-      "source_path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_carlyrics",
-      "declared_hmi": [
-        "ID7"
-      ],
-      "status": "ID8_PORT_NOT_IMPLEMENTED",
-      "categories": [
-        "id7_rhmi_only_and_input_bridge",
-        "widget_template_id7"
-      ],
-      "blocker": "The selected original app still uses the ID7-only Aref builder and raw signal layer.",
-      "required_unimplemented_parts": [
-        "Port the selected app to the derived ID8 main UI/runtime and test its own controls, foreground/background lifecycle, and missing-provider behavior.",
-        "Implement and test an actual ID8 widget contract, or explicitly disable and label the optional widget on ID8; do not relabel the ID7 template.",
-        "Adapt and test the app-specific data interface and lifecycle; preserve background shutdown and unavailable/stale-data handling.",
-        "Verify media-clock callbacks, source changes and teardown through the target SDK; internet auth/playback is not established by UI resource tests."
-      ],
-      "evidence": [
-        {
-          "path": "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
-          "line_start": 703,
-          "line_end": 703,
-          "fact": "The selected original app builder emits only ID7 main resources.",
-          "excerpt": "os.makedirs(os.path.join(pr, 'uiDescriptions', 'ID7'))"
-        },
-        {
-          "path": "apps/_sources/arefahmad-idrive7-apps/kit/runtime/signals.js",
-          "line_start": 57,
-          "line_end": 57,
-          "fact": "The selected original signal layer requires generated raw SOME/IP configurations; it has no typed SDK fallback.",
-          "excerpt": "const cfg = loadConfig(iface);"
-        },
-        {
-          "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_carlyrics/app.json",
-          "line_start": 9,
-          "line_end": 9,
-          "fact": "This app declares a home-screen widget.",
-          "excerpt": "\"startWidget\": {"
-        },
-        {
-          "path": "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
-          "line_start": 495,
-          "line_end": 495,
-          "fact": "The shared widget builder uses the stock Drive Recorder widget template.",
-          "excerpt": "STOCK_WIDGET_LAYOUT = 'LT_Table_OnlineApps_DriveRecorderWidget'"
-        },
-        {
-          "path": "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
-          "line_start": 578,
-          "line_end": 578,
-          "fact": "The widget package emits ID7-only UI declarations.",
-          "excerpt": "os.makedirs(os.path.join(pkg_out, 'uiDescriptions', 'ID7'))"
-        },
-        {
-          "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_carlyrics/app.json",
-          "line_start": 4,
-          "line_end": 4,
-          "fact": "Lyrics timing depends on the vehicle media clock and the app uses internet services.",
-          "excerpt": "\"description\": \"Synced lyrics for whatever the car plays: Apple Music over CarPlay, Bluetooth or USB, no Spotify needed. A full-screen page drawn like Apple Music's: the album art blurred behind, the cover and a progress"
-        }
-      ],
-      "upstream_status": "ID8 implementation not present in the selected AQ source recipe",
-      "source_repository": "arefahmad/idrive7-apps",
-      "source_commit": "6db26cdae67e6900c530611905f0b9aa856f27f0",
       "id8_unit_validation": "NOT_OBSERVED",
       "scope_note": "This describes missing ID8 work, not an ID7 installation failure."
     },
@@ -711,6 +541,34 @@
       "scope_note": "This describes missing ID8 work, not an ID7 installation failure."
     },
     {
+      "id": "cluster_lyrics",
+      "status": "ID8_PORT_NOT_IMPLEMENTED",
+      "categories": [
+        "id7_rhmi_only_and_input_bridge",
+        "cluster_hud_geometry_unsupported"
+      ],
+      "blocker": "The original Namels builder emits ID7 UI; cluster lyrics positioning, media source lifecycle and native cluster target capabilities have not been implemented/tested for ID8.",
+      "required_unimplemented_parts": [
+        "Implement target-specific UI/media freshness, cluster geometry and visibility handling; qualify the original cluster helper."
+      ],
+      "evidence": [
+        {
+          "path": "apps/_sources/namels-mgu-apps/apps/cluster_lyrics/app.json",
+          "fact": "Original selected app manifest and reviewed source recipe; no ID8 source adaptation is selected."
+        }
+      ],
+      "upstream_status": "No qualified ID8 implementation in selected source",
+      "id8_unit_validation": "NOT_OBSERVED",
+      "scope_note": "An ID8 compatibility blocker does not prove an ID7 installation failure.",
+      "version": "0.1.1",
+      "kind": "app",
+      "source_path": "apps/_sources/namels-mgu-apps/apps/cluster_lyrics",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "source_repository": "NamelsMissing/mgu-apps"
+    },
+    {
       "id": "cluster_themes",
       "version": "0.19.0",
       "kind": "app",
@@ -756,6 +614,34 @@
       "source_commit": "ab81cee4d77859b531b21a118772c6b031455b78",
       "id8_unit_validation": "NOT_OBSERVED",
       "scope_note": "This describes missing ID8 work, not an ID7 installation failure."
+    },
+    {
+      "id": "dimon_battery",
+      "status": "ID8_PORT_NOT_IMPLEMENTED",
+      "categories": [
+        "id7_rhmi_only_and_input_bridge",
+        "unknown_native_backend"
+      ],
+      "blocker": "The selected original has an ID7 builder and a battery diagnostic transport. No validated ID8 diagnostic contract, permission set or data freshness behavior was established.",
+      "required_unimplemented_parts": [
+        "Review battery diagnostic transport and implement ID8 UI/lifecycle and unavailable-data handling without assuming the Track Mode speed adapter can service diagnostics."
+      ],
+      "evidence": [
+        {
+          "path": "apps/_sources/dimonprograms-apps/apps/dimon_battery/app.json",
+          "fact": "Original selected app manifest and reviewed source recipe; no ID8 source adaptation is selected."
+        }
+      ],
+      "upstream_status": "No qualified ID8 implementation in selected source",
+      "id8_unit_validation": "NOT_OBSERVED",
+      "scope_note": "An ID8 compatibility blocker does not prove an ID7 installation failure.",
+      "version": "1.0.0",
+      "kind": "app",
+      "source_path": "apps/_sources/dimonprograms-apps/apps/dimon_battery",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "source_repository": "DimonPrograms/dimonprograms-apps"
     },
     {
       "id": "dk_backgammon",
@@ -836,6 +722,91 @@
       "scope_note": "This describes missing ID8 work, not an ID7 installation failure."
     },
     {
+      "id": "dpf",
+      "status": "ID8_PORT_NOT_IMPLEMENTED",
+      "categories": [
+        "id7_rhmi_only_and_input_bridge",
+        "unknown_native_backend"
+      ],
+      "blocker": "The BMR DPF app uses its original ID7 builder and app-specific vehicle/cluster interfaces. Source packaging and original helper versions were reviewed, but the ID8 UI and provider contract are unimplemented.",
+      "required_unimplemented_parts": [
+        "Implement ID8 RHMI/lifecycle and qualify the DPF samples and optional cluster messages on ID8."
+      ],
+      "evidence": [
+        {
+          "path": "apps/_sources/dzooky-bmrmodz/apps/dpf/app.json",
+          "fact": "Original selected app manifest and reviewed source recipe; no ID8 source adaptation is selected."
+        }
+      ],
+      "upstream_status": "No qualified ID8 implementation in selected source",
+      "id8_unit_validation": "NOT_OBSERVED",
+      "scope_note": "An ID8 compatibility blocker does not prove an ID7 installation failure.",
+      "version": "0.1.32",
+      "kind": "app",
+      "source_path": "apps/_sources/dzooky-bmrmodz/apps/dpf",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "source_repository": "dzooky/bmrmodz"
+    },
+    {
+      "id": "dpf_monitor",
+      "status": "ID8_PORT_NOT_IMPLEMENTED",
+      "categories": [
+        "id7_rhmi_only_and_input_bridge",
+        "unknown_native_backend"
+      ],
+      "blocker": "The original Namels DPF monitor has ID7 resources and app-specific diagnostic/data bindings. An ID8 UI and verified provider/lifecycle adaptation are absent.",
+      "required_unimplemented_parts": [
+        "Qualify its actual DPF data providers, freshness/failure behavior and target-specific UI before declaring ID8."
+      ],
+      "evidence": [
+        {
+          "path": "apps/_sources/namels-mgu-apps/apps/dpf_monitor/app.json",
+          "fact": "Original selected app manifest and reviewed source recipe; no ID8 source adaptation is selected."
+        }
+      ],
+      "upstream_status": "No qualified ID8 implementation in selected source",
+      "id8_unit_validation": "NOT_OBSERVED",
+      "scope_note": "An ID8 compatibility blocker does not prove an ID7 installation failure.",
+      "version": "0.2.8",
+      "kind": "app",
+      "source_path": "apps/_sources/namels-mgu-apps/apps/dpf_monitor",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "source_repository": "NamelsMissing/mgu-apps"
+    },
+    {
+      "id": "eldrive",
+      "status": "ID8_PORT_NOT_IMPLEMENTED",
+      "categories": [
+        "id7_rhmi_only_and_input_bridge",
+        "widget_template_id7",
+        "unknown_native_backend"
+      ],
+      "blocker": "The BEV-specific fork has an ID7 home widget and app-specific InternalTasu/HV/climate providers. No ID8 provider/permission/lifecycle qualification has been established.",
+      "required_unimplemented_parts": [
+        "Qualify the actual BEV read-only provider set and independent field freshness, then implement and test ID8 UI and optional widget handling."
+      ],
+      "evidence": [
+        {
+          "path": "apps/_sources/beele-eldrive/apps/eldrive/app.json",
+          "fact": "Original selected app manifest and reviewed source recipe; no ID8 source adaptation is selected."
+        }
+      ],
+      "upstream_status": "No qualified ID8 implementation in selected source",
+      "id8_unit_validation": "NOT_OBSERVED",
+      "scope_note": "An ID8 compatibility blocker does not prove an ID7 installation failure.",
+      "version": "1.1.0",
+      "kind": "app",
+      "source_path": "apps/_sources/beele-eldrive/apps/eldrive",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "source_repository": "beele/eldrive"
+    },
+    {
       "id": "ethanol_mix",
       "version": "0.1.5",
       "kind": "app",
@@ -873,6 +844,34 @@
       "source_commit": "a378719e9c858ef4693949c3a7bca68bd5f9cafb",
       "id8_unit_validation": "NOT_OBSERVED",
       "scope_note": "This describes missing ID8 work, not an ID7 installation failure."
+    },
+    {
+      "id": "gif_home",
+      "status": "ID8_PORT_NOT_IMPLEMENTED",
+      "categories": [
+        "id7_rhmi_only_and_input_bridge",
+        "widget_template_id7"
+      ],
+      "blocker": "The original GIF Home builder retains an ID7 home widget and ID7 RHMI. The corresponding ID8 home widget layout and animation lifecycle are not implemented.",
+      "required_unimplemented_parts": [
+        "Implement a real ID8 widget contract or explicitly omit/label the widget in an ID8 package, while preserving ID7 GIF behavior."
+      ],
+      "evidence": [
+        {
+          "path": "apps/_sources/namels-mgu-apps/apps/gif_home/app.json",
+          "fact": "Original selected app manifest and reviewed source recipe; no ID8 source adaptation is selected."
+        }
+      ],
+      "upstream_status": "No qualified ID8 implementation in selected source",
+      "id8_unit_validation": "NOT_OBSERVED",
+      "scope_note": "An ID8 compatibility blocker does not prove an ID7 installation failure.",
+      "version": "0.3.1",
+      "kind": "app",
+      "source_path": "apps/_sources/namels-mgu-apps/apps/gif_home",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "source_repository": "NamelsMissing/mgu-apps"
     },
     {
       "id": "iabadia_m_arcade",
@@ -1126,6 +1125,34 @@
       "scope_note": "This describes missing ID8 work, not an ID7 installation failure."
     },
     {
+      "id": "osa",
+      "status": "ID8_PORT_NOT_IMPLEMENTED",
+      "categories": [
+        "id7_rhmi_only_and_input_bridge",
+        "unknown_native_backend"
+      ],
+      "blocker": "The BMR OSA app retains original ID7 resources and oil-service/cluster data bindings. A dual-HMI inputgate does not qualify those providers or UI.",
+      "required_unimplemented_parts": [
+        "Review and implement ID8 oil-service display, provider/freshness handling and optional cluster messages."
+      ],
+      "evidence": [
+        {
+          "path": "apps/_sources/dzooky-bmrmodz/apps/osa/app.json",
+          "fact": "Original selected app manifest and reviewed source recipe; no ID8 source adaptation is selected."
+        }
+      ],
+      "upstream_status": "No qualified ID8 implementation in selected source",
+      "id8_unit_validation": "NOT_OBSERVED",
+      "scope_note": "An ID8 compatibility blocker does not prove an ID7 installation failure.",
+      "version": "0.2.50",
+      "kind": "app",
+      "source_path": "apps/_sources/dzooky-bmrmodz/apps/osa",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "source_repository": "dzooky/bmrmodz"
+    },
+    {
       "id": "robertn_waze_cluster",
       "version": "0.6.12",
       "kind": "app",
@@ -1164,6 +1191,34 @@
       "source_commit": "59140a978e3d5e2c8c183bdd2fbb9a4682be466a",
       "id8_unit_validation": "NOT_OBSERVED",
       "scope_note": "This describes missing ID8 work, not an ID7 installation failure."
+    },
+    {
+      "id": "spritmonitor",
+      "status": "ID8_PORT_NOT_IMPLEMENTED",
+      "categories": [
+        "id7_rhmi_only_and_input_bridge",
+        "unknown_native_backend"
+      ],
+      "blocker": "Original ID7 application with internet/account operations, optional positioning and an experimental trip-reset option disabled by default. No ID8 interface/lifecycle qualification was established.",
+      "required_unimplemented_parts": [
+        "Port the ID8 UI and verify account/network cleanup, optional location and the separate trip-reset boundary; do not relabel the complete app as read-only."
+      ],
+      "evidence": [
+        {
+          "path": "apps/_sources/dzooky-bmrmodz/apps/spritmonitor/app.json",
+          "fact": "Original selected app manifest and reviewed source recipe; no ID8 source adaptation is selected."
+        }
+      ],
+      "upstream_status": "No qualified ID8 implementation in selected source",
+      "id8_unit_validation": "NOT_OBSERVED",
+      "scope_note": "An ID8 compatibility blocker does not prove an ID7 installation failure.",
+      "version": "0.1.44",
+      "kind": "app",
+      "source_path": "apps/_sources/dzooky-bmrmodz/apps/spritmonitor",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "source_repository": "dzooky/bmrmodz"
     },
     {
       "id": "vizualyse_cast",

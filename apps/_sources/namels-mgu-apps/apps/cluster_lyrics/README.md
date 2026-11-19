@@ -1,0 +1,140 @@
+# Cluster Lyrics 0.1.1 — BMW G21 / MGU iDrive 7
+
+Shows the synchronised lyrics of the song that is playing on **your own Spotify account**:
+
+- on the iDrive screen (title, artist, current line, next line), and
+- optionally in the **instrument cluster's map window**, in place of the Waze map.
+
+**Status: built and tested on a PC only.** Nothing in this app has run on a vehicle yet. See
+[What is verified](#what-is-verified) before you rely on any part of it.
+
+## Starts with the car, works without the app window (0.1.1)
+
+The app now carries `mguAppStartType: autostart`: the MGU Store starts its process with the head unit, so the lyrics can appear in the cluster without opening the app. What happens is decided only by the settings; with the defaults nothing is shown and the app does not even connect to the cluster renderer.
+
+| You want | Settings |
+| --- | --- |
+| Lyrics in the cluster, menu never opened | **Show lyrics in the instrument cluster** on (needs the Spotify sign-in once, see Setup) |
+| only when standing still | **When lyrics may be shown**: at a standstill (default) |
+| also while driving | **When lyrics may be shown**: always |
+| nothing in the cluster | **Show lyrics in the instrument cluster** off |
+
+Spotify polling, lyrics download and the cluster layers run in the background process (a timer, not the screen's draw loop). With the cluster switch off, the app does not poll Spotify unless its window is open.
+
+**Check it over SSH:** `cluster-lyrics-background.json` in the app data directory (`startReason`, `startedAt`, `windowOpenedYet`, current track, lyrics state, why the cluster is or is not shown). If `windowOpenedYet` is `false` and the file keeps updating, the process really runs without the window.
+
+**Not verified on a vehicle:** that the autostart process runs at all on this head unit (the same open question exists for Light Flasher), and everything listed under "What is verified".
+
+## How it works
+
+| Part | Source | Notes |
+|---|---|---|
+| What is playing, and the position in the song | Spotify Web API, `GET /v1/me/player/currently-playing` | Read-only. Asked every 4 s while a song plays, every 8 s otherwise, and only while the app's screen is open or cluster lyrics are switched on. |
+| Lyrics with time stamps | [LRCLIB](https://lrclib.net) | Spotify's API does not hand out lyrics. LRCLIB is a free community database: many songs have synchronised lyrics, some have none. Only title, artist, album and length are sent. |
+| Internet | MGU Store uplink (`"mguInternet": true`) | Same mechanism as MGU Video Hub. Only `accounts.spotify.com`, `api.spotify.com` and `lrclib.net` can be reached, on port 443, with certificate checks. |
+| Cluster display | `cluster-render`, target `map` (1088x480) | Four image layers of class `overlay`. The background is opaque and `exclusive`, so the Waze map below it is hidden while lyrics are shown. |
+
+When the lyrics are hidden (song paused, no lyrics found, vehicle moving in standstill mode, switch off), the
+layers become invisible and the map window is released: the Waze map or BMW's map comes back by itself.
+This app never changes Waze's own setting and draws nothing on the speedometer/warning area (`panel`).
+BMW's turn box stays visible (`guide_hold` 0).
+
+## Setup
+
+1. **Internet in the car.** Install the Store's `mgu-uplink`, then connect the car to your phone's hotspot in
+   **MGU Store → Settings → Wi-Fi**. Install (or reinstall) Cluster Lyrics *after* the uplink exists, so the
+   Store registers the app for internet access. The Setup page must show `Internet: ROUTED`.
+2. **Your own Spotify app** (needs Spotify Premium). At <https://developer.spotify.com/dashboard> create an app,
+   select *Web API* and add exactly this Redirect URI: `http://127.0.0.1:8898/callback`. Note the *Client ID*.
+3. **Sign in once on a PC:**
+
+   ```sh
+   python3 tools/spotify_login.py <client-id>
+   ```
+
+   Your browser opens Spotify's own sign-in page; the script never sees your password and uses no client
+   secret (Authorization Code with PKCE). It asks for two read-only permissions
+   (`user-read-currently-playing`, `user-read-playback-state`) and writes `cluster-lyrics-spotify.json`.
+4. **Bring it to the car.** Copy that file to a USB stick (top level or one folder down), plug it in, open
+   **Cluster Lyrics → Setup** and press **Import from USB**. Then delete the file from the stick: whoever has it
+   can see what you listen to until you remove the app's access in your Spotify account settings.
+5. Start a song in Spotify on your phone. The **Now playing** page shows the lines.
+6. For the cluster: press **KOMBI lyrics: Off** so it reads **On**.
+
+**Sign out** (Log page, press twice) removes the stored sign-in and the lyrics cache from the car.
+
+## Settings
+
+| Setting | Default | Meaning |
+|---|---|---|
+| Show lyrics in the instrument cluster | Off | The same switch as the **KOMBI lyrics** button. While off, the app does not even connect to `cluster-render`. |
+| When lyrics may be shown | Only at a standstill | *Only at a standstill*: shown after the car has stood for 1.5 s with a fresh speed signal, hidden at once from 3 km/h or when the signal is missing. *Also while driving*: no speed condition. |
+| Also replace BMW's own map (not only Waze) | Off | Off: the lyrics appear when the map window is already used by an app such as Waze or is free. On: the window is also taken from BMW's own map (`contend`). |
+| Show the next line | On | Second, dimmed line. |
+| Colour of the current line | White | White, green, amber or blue. |
+| Lyrics delay | 0 ms | Positive values show each line later. Use this if the sound in the car lags behind (wireless CarPlay usually does). −2000 … +3000 ms. |
+
+Reading text while driving takes your eyes off the road. The default therefore shows lyrics only at a
+standstill; choosing *Also while driving* is your own decision and responsibility as the driver.
+
+## What you see when something is missing
+
+| Message | Meaning |
+|---|---|
+| `Internet: Store uplink offline` / `Store online - app not routed` | No hotspot connection, or the app was installed before the uplink (reinstall it). |
+| `Spotify sign-in expired` | Repeat setup steps 3 and 4. |
+| `Spotify refused the request (Premium / app user list?)` | The Spotify account is not Premium, or it is not the account that owns the Spotify app. |
+| `Lyrics: not found on LRCLIB` / `only unsynchronised text available` | Nothing can be shown in time with the music for this song. Asked again after a week. |
+| `Lyrics: in a script this display cannot draw` | The built-in font covers Latin (with umlauts and accents) and Cyrillic, not e.g. Chinese, Japanese, Korean or Arabic. |
+| `KOMBI: hidden - vehicle moving` / `no fresh speed signal` | Standstill mode is doing its job. |
+| `KOMBI: requested - map window waiting (held by stock)` | BMW's own map holds the window and *Also replace BMW's own map* is off. |
+| `KOMBI: cluster-render not connected` | The `cluster-render` tool is not installed or not running. |
+
+The **Log** page lists the last events (song changes, renderer states, refusals). The same lines are in the
+app's log file.
+
+## What is verified
+
+Verified on a PC:
+
+- Unit tests (`node tests/cluster_lyrics.test.js`): LRC parsing and timing, line wrapping, the host allow-list
+  and DNS checks, token refresh and rotation, rate-limit and error handling, LRCLIB lookup and cache, the
+  standstill rule, and the cluster layers both against a fake renderer and through the real
+  `cluster_render_client.js` over a socket.
+- `python3 -m pytest tests/test_spotify_login.py`: PKCE values, the loopback callback, the code exchange.
+- The Store build (`python3 tools/build_store_app.py cluster_lyrics`) and the three app pages in the kit's PC
+  preview with canned answers.
+- TLS: a self-signed certificate is refused; the host name is used for SNI and the certificate check.
+
+**Not verified** — needs the car:
+
+- That the head unit's Node 8 accepts the certificates of Spotify and LRCLIB with its built-in root store, and
+  that an app with an uplink lease can reach them.
+- A real Spotify sign-in with `tools/spotify_login.py` and real answers from Spotify and LRCLIB (the sandbox
+  this was written in has no access to them).
+- Everything on the instrument cluster: that the `map` window shows these layers, that `exclusive` hides the
+  Waze map as documented, how it behaves next to Waze's video upload budget, during warnings and with BMW
+  route guidance. Custom Cluster's own cluster output is also still unconfirmed on this car.
+- How far the lyrics are off against the sound with CarPlay (the *Lyrics delay* setting is for this).
+- That a USB stick is readable by the app under `/media`, `/run/media`, `/mnt/usb` or `/mnt/media_rw`.
+
+First test with the car parked: open the app, check **Setup** (steps 1, 2 and 4 green), play a song, then
+switch **KOMBI lyrics** on and take a photo of the cluster and of the **Log** page.
+
+## Privacy and terms
+
+- The refresh token is stored only in the app's private data folder on the head unit (file mode 0600).
+- Lyrics are fetched at runtime and cached privately (at most 300 songs); none are part of this repository.
+  Song lyrics are protected works; LRCLIB's entries are contributed by its community.
+- You use your own Spotify developer app; its use is subject to Spotify's developer terms. This project is
+  not affiliated with or endorsed by Spotify, LRCLIB or BMW.
+
+## Files
+
+- `main.js`: pages, buttons, settings.
+- `engine.js`: polling, line timing, the rule for when the cluster may show text.
+- `spotify.js`, `lrclib.js`, `uplink_http.js`: the three network parts.
+- `lrc.js`: LRC parsing, timing, wrapping.
+- `kombi.js`, `cluster_render_client.js`: cluster layers (client from `robertnisipeanu/idrive-apps`, MPL-2.0).
+- `lyric_font.js`, `lyric_font_data.js`: text with umlauts/accents/Cyrillic (DejaVu Sans, baked by
+  `tools/bake_lyric_font.py`).

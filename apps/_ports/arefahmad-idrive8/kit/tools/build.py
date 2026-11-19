@@ -37,6 +37,7 @@ KIT = os.path.join(ROOT, 'kit')
 APPS = os.path.join(ROOT, 'apps')
 DIST = os.path.join(ROOT, 'dist')
 SDK = os.path.join(ROOT, 'oap-sdk')
+MAINAPP_ROOT = '/usr/lib'  # original Store builds on the selected target unit
 NS = uuid.UUID('6b1d3a52-8f0e-4c4b-9a77-0d0c4d4e5f10')
 
 LANGS = ['ar_AE', 'cs_CZ', 'da_DK', 'de_DE', 'el_GR', 'en_GB', 'en_US', 'es_ES', 'fi_FI', 'fr_FR', 'he_IL',
@@ -335,6 +336,15 @@ def build_ui(spec, language='en', hmi='ID7'):
             if kind == 'menu' and scr.get('settings'):
                 settings_items(items)
             groups.append(('List', items))
+        if id8 and (kind == 'settings' or scr.get('settings') is True) and spec.get('id8UnavailableFeatures'):
+            notice = 'ID8: ' + ' '.join(spec['id8UnavailableFeatures'])
+            notice_id = HMI8_MARK_ID + 1  # reserved, does not shift original state/action IDs
+            groups[0][1].append((notice_id, [
+                f'            <component id="{notice_id}" type="label" widget="LT_ScrollLabel">',
+                '                <property id="2" value="1"/>', '                <property id="3" value="0"/>',
+                '            </component>'], {'type': 'label', 'name': 'AQ_ID8_FEATURE_LIMIT',
+                'properties': {'Visible': {'value': 1, 'type': 'UInt'}, 'Focusable': {'value': 0, 'type': 'UInt'}},
+                'rows': [{'Text': {'value': notice, 'type': 'Text'}}]}))
         if id8 and main_id is None:
             mid = HMI8_MARK_ID
             groups[0][1].append((mid, [f'            <component id="{mid}" type="label" widget="LT_ScrollLabel">',
@@ -648,10 +658,36 @@ def build_start_widget(spec, app_id, icon_src, out, pkg_out=None):
     return {'component': comp, 'layout': layout, 'stream': stream}
 
 
-def build(app_id, language='en'):
-    spec = json.load(open(os.path.join(APPS, app_id, 'app.json'), encoding='utf-8'))
+def resolve_target_hmi(asked=None):
+    """Widget apps require an explicit host target or one unambiguous on-unit MainApp family.
+
+    SDK version is not an HMI selector: an SDK 50 donor can accompany ID7 resources.
+    """
+    if asked is not None:
+        if asked not in ('ID7', 'ID8'):
+            raise ValueError('target HMI must be ID7 or ID8')
+        return asked
+    families = {'ID7': 'oap-mainapp', 'ID8': 'oap-mainapp21'}
+    present = [hmi for hmi, directory in families.items()
+               if os.path.isdir(os.path.join(MAINAPP_ROOT, directory))]
+    if len(present) != 1:
+        raise ValueError('MainApp family is unknown or ambiguous; a host build requires --target-hmi ID7 or ID8')
+    return present[0]
+
+
+def build(app_id, language='en', target_hmi=None):
+    with open(os.path.join(APPS, app_id, 'app.json'), encoding='utf-8') as app_file:
+        spec = json.load(app_file)
     spec = localize_spec(spec, language)
     spec.setdefault('id', app_id)
+    selected_hmi = None
+    if spec.get('startWidget') and spec.get('id8WidgetPolicy') == 'omit-on-ID8':
+        selected_hmi = resolve_target_hmi(target_hmi)
+        if selected_hmi == 'ID8':
+            # The publisher's widget has only ID7 templates. Keep that limitation
+            # visible in Settings; never ship an ID7 widget inside an ID8 package.
+            spec['startWidget'] = None
+    package_hmis = [selected_hmi] if selected_hmi else ['ID7', 'ID8']
     ver = spec['version']
     stage = os.path.join(DIST, app_id)
     shutil.rmtree(stage, ignore_errors=True)
@@ -694,9 +730,16 @@ def build(app_id, language='en'):
         pkg['mguInternet'] = True
     # (arefahmad/idrive7-apps, as pinguinooo/idrive7-apps) app.json "mguAppStartType" goes to package.json: mgu-store's deploy reads it there
     if spec.get('mguAppStartType') in ('autostart', 'lum', 'manually'): pkg['mguAppStartType'] = spec['mguAppStartType']
-    pkg['mguHmi'] = ['ID7', 'ID8']
-    pkg['aqSourcePort'] = {'id': 'arefahmad-idrive8', 'revision': 'aq-aref-id8-1',
+    pkg['mguHmi'] = package_hmis
+    # Every app in this derived kit uses the native renderer. Keep the older
+    # app manifests intact while also declaring their requirements in archives.
+    pkg['requires'] = dict(spec.get('requires') or {'mgu-render': '0.6.24'})
+    pkg['mguNeeds'] = list(spec.get('mguNeeds') or ['renderer'])
+    pkg['aqSourcePort'] = {'id': 'arefahmad-idrive8', 'revision': 'aq-aref-id8-2',
                            'upstreamCommit': '6db26cdae67e6900c530611905f0b9aa856f27f0'}
+    if selected_hmi:
+        pkg['aqSourcePort']['targetHmi'] = selected_hmi
+        pkg['aqSourcePort']['unavailableFeatures'] = spec.get('id8UnavailableFeatures', []) if selected_hmi == 'ID8' else []
     json.dump(pkg, open(os.path.join(src, 'package.json'), 'w', encoding='utf-8', newline='\n'), indent=2)
     json.dump(manifest, open(os.path.join(src, 'manifest.json'), 'w', encoding='utf-8', newline='\n'), indent=2)
     shutil.copy(os.path.join(KIT, 'platform', 'permissions.json'), os.path.join(src, 'permissions.json'))
@@ -742,6 +785,9 @@ def build(app_id, language='en'):
             file.write(credit.encode('utf-8') + body)
     rt_spec = {k: spec.get(k) for k in ('id', 'title', 'version', 'screens', 'settings', 'retiredSettings', 'config', 'startWidget')}
     rt_spec['stateIds'] = state_ids
+    if selected_hmi:
+        rt_spec['targetHmi'] = selected_hmi
+        rt_spec['unavailableFeatures'] = pkg['aqSourcePort']['unavailableFeatures']
     if spec.get('startWidget'):
         # the template this build's widget uses (the app draws there only through the stream with "stream": true)
         layout, stream = start_widget_layout(spec['startWidget'])
@@ -772,18 +818,20 @@ def build(app_id, language='en'):
         },
     }
     pr = os.path.join(src, 'rhmiData')
-    for hmi in ('ID7', 'ID8'):
+    for hmi in package_hmis:
         os.makedirs(os.path.join(pr, 'uiDescriptions', hmi))
     os.makedirs(os.path.join(pr, 'variantGroups', 'Common', 'texts'))
     os.makedirs(os.path.join(pr, 'variantGroups', 'Common', 'images'))
     pj = json.loads(json.dumps(app_json))
     pj['application']['uiDescriptions'] = [{'applicationFilePath': './uiDescriptions/%s/application.xml' % h,
                                             'uiDescriptionFilePath': './uiDescriptions/%s/uiDescription.json' % h, 'hmi': [h]}
-                                           for h in ('ID7', 'ID8')]
+                                           for h in package_hmis]
     pj['application']['variantGroups'] = [{'stringsPath': './variantGroups/Common/texts',
-                                           'resourcesPath': './variantGroups/Common/images', 'hmi': ['ID7', 'ID8'], 'brands': ['BMW']}]
+                                           'resourcesPath': './variantGroups/Common/images', 'hmi': package_hmis, 'brands': ['BMW']}]
     json.dump(pj, open(os.path.join(pr, 'application.json'), 'w', encoding='utf-8', newline='\n'), indent=2)
     for h, hx, hd in (('ID7', xml, uidesc), ('ID8', xml8, uidesc8)):
+        if h not in package_hmis:
+            continue
         open(os.path.join(pr, 'uiDescriptions', h, 'application.xml'), 'w', encoding='utf-8', newline='\n').write(hx)
         json.dump(hd, open(os.path.join(pr, 'uiDescriptions', h, 'uiDescription.json'), 'w', encoding='utf-8', newline='\n'), indent=1)
     for lang in LANGS:
@@ -801,8 +849,8 @@ def build(app_id, language='en'):
         'bookmarkUuidPool': [u(app_id, 'bookmarks'), 1, 2, 3, 4, 5, 6, 7],
     })
     json.dump(ij, open(os.path.join(ir, 'application.json'), 'w', encoding='utf-8', newline='\n'), separators=(',', ':'))
-    open(os.path.join(ir, 'uiDescription', 'application.xml'), 'w', encoding='utf-8', newline='\n').write(xml)
-    json.dump(uidesc, open(os.path.join(ir, 'uiDescription', 'uiDescription.json'), 'w', encoding='utf-8', newline='\n'), indent=1)
+    open(os.path.join(ir, 'uiDescription', 'application.xml'), 'w', encoding='utf-8', newline='\n').write(xml8 if selected_hmi == 'ID8' else xml)
+    json.dump(uidesc8 if selected_hmi == 'ID8' else uidesc, open(os.path.join(ir, 'uiDescription', 'uiDescription.json'), 'w', encoding='utf-8', newline='\n'), indent=1)
     for lang in LANGS:
         json.dump(strings, open(os.path.join(ir, 'strings', lang + '.json'), 'w', encoding='utf-8', newline='\n'), ensure_ascii=False)
     shutil.copy(os.path.join(pr, 'variantGroups', 'Common', 'images', icon), os.path.join(ir, 'resources', icon))
@@ -814,6 +862,9 @@ def build(app_id, language='en'):
     # --- installer helpers + metadata ---
     shutil.copytree(os.path.join(KIT, 'tools', 'oapgen'), os.path.join(stage, 'oapgen'))
     meta = {'id': app_id, 'version': ver, 'title': spec['title'], 'native': NATIVE, 'kit': 1}
+    if selected_hmi:
+        meta['mguHmi'] = [selected_hmi]
+        meta['aqSourcePort'] = pkg['aqSourcePort']
     # app.json signals with "_optional": "<what the app loses>": a unit without that interface
     # still installs the app, without it (deploy/mgu-app-install.sh says what is missing)
     optional = {i: f['_optional'] for i, f in spec.get('signals', {}).items() if isinstance(f, dict) and f.get('_optional')}
@@ -839,11 +890,12 @@ def main():
     import argparse
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--language', choices=languages(), default='en')
+    parser.add_argument('--target-hmi', choices=('ID7', 'ID8'), help='Required for widget apps built away from a target unit')
     parser.add_argument('apps', nargs='*')
     args = parser.parse_args()
     ids = args.apps or sorted(d for d in os.listdir(APPS) if os.path.exists(os.path.join(APPS, d, 'app.json')))
     for i in ids:
-        build(i, args.language)
+        build(i, args.language, args.target_hmi)
 
 
 if __name__ == '__main__':

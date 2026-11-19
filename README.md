@@ -1,44 +1,53 @@
 # AQ_MGU — BMW MGU Apps & Tools
 
-A source-attributed catalog of BMW iDrive 7/8 MGU applications, games and Store components, with original publisher downloads and separately licensed source snapshots. The existing application galleries are preserved below.
+A source-attributed catalog of BMW iDrive 7/8 applications, games and Store components. Original publisher snapshots and downloads remain distinct from AQ's documented source adaptations.
 
-**95 apps (including 16 games) · 45 Store tools · 140 inventory entries**<br>
-**55 AQ branch entries · 79 catalog package references · 6 original IterioDev helper references**<br>
+**119 apps (including 18 games) · 47 Store tools · 166 inventory entries**<br>
+**79 AQ branch entries · 81 catalog package references · 6 original IterioDev helper references**<br>
 Last source, package and documentation review: **2026-11-19**.
 
-Read the [Arabic repair report](docs/REPOSITORY_REPAIR_20261119_AR.md) for the changes and evidence limits, and the [per-component readiness record](data/install-readiness-20261119.json) for all 140 IDs, versions, dependencies, package checks and remaining blockers.
+Read the [current Arabic expansion report](docs/APP_EXPANSION_20261119_AR.md), [original README and installation matrix](docs/COMPONENT_README_INSTALL_MATRIX.md), and [per-component readiness](data/install-readiness-20261119.json). Historical repair reports remain dated evidence of earlier repository states.
 
-## ID8 source update — 19 November 2026
+## ID8 source implementation
 
-The current inventory declares ID8 support for **34 of 95 applications** (14 previously), with **22 branch-source apps and 12 original catalog apps**. Fifteen original cauliflowermossgrape applications already contained dual resources and runtime handling; their outer AQ declarations now match that source. Five additional applications use explicitly attributed AQ source adaptations:
+The current inventory declares ID8 support for **52 of 119 applications**: **39 branch-source apps and 13 catalog apps**. The preceding published baseline contained 34 ID8 declarations. Fifteen original cauliflowermossgrape applications already had dual resources/runtime; AQ's declarations were aligned in the previous round. The current **14 AQ-derived applications in 8 source families** are separately identified below.
 
-| Application | Original version retained | AQ source adaptation |
-|---|---|---|
-| System Monitor | 1.0.4 | `hexlay-idrive8`, revision `aq-hexlay-id8-1` |
-| Spotify | 1.0.30 | `hexlay-idrive8`, revision `aq-hexlay-id8-1` |
-| M-Copilot | 1.0.31 | `hexlay-idrive8`, revision `aq-hexlay-id8-1` |
-| Engine Vitals | 0.2.0 | `pinguinooo-idrive8`, revision `1` |
-| Car Explorer | 0.2.3 | `arefahmad-idrive8`, revision `aq-aref-id8-1` |
+| Application | Original version | AQ version | Source adaptation |
+|---|---|---|---|
+| MGU Storage Monitor (`ab_storage`) | 1.2.3 | 1.2.4 | [bmwenthusiast-idrive8](apps/_ports/bmwenthusiast-idrive8/README.md) |
+| Shift Lights (`adam_shiftlights`) | 0.4.5 | 0.4.6 | [pinguinooo-idrive8](apps/_ports/pinguinooo-idrive8/README.md) |
+| Engine Vitals (`adam_vitals`) | 0.2.0 | 0.2.0 | [pinguinooo-idrive8](apps/_ports/pinguinooo-idrive8/README.md) |
+| Car Care (`aref_carcare`) | 0.2.3 | 0.2.4 | [arefahmad-idrive8](apps/_ports/arefahmad-idrive8/README.md) |
+| Car Lyrics (`aref_carlyrics`) | 0.3.9 | 0.3.10 | [arefahmad-idrive8](apps/_ports/arefahmad-idrive8/README.md) |
+| Car Explorer (`aref_explorer`) | 0.2.3 | 0.2.3 | [arefahmad-idrive8](apps/_ports/arefahmad-idrive8/README.md) |
+| Bimmer Blocks (`bimmer_blocks`) | 1.1.0 | 1.1.1 | [appstudio-idrive8](apps/_ports/appstudio-idrive8/README.md) |
+| Track Mode (`dimon_track_mode`) | 1.0.0 | 1.0.1 | [dimonprograms-idrive8](apps/_ports/dimonprograms-idrive8/README.md) |
+| E85 Blend (`e85`) | 1.2.1 | 1.2.2 | [dante-idrive8](apps/_ports/dante-idrive8/README.md) |
+| M-Copilot (`m_copilot`) | 1.0.31 | 1.0.31 | [hexlay-idrive8](apps/_ports/hexlay-idrive8/README.md) |
+| Parked Games (`parked_games`) | 0.2.2 | 0.2.3 | [maxxxfoka-idrive8](apps/_ports/maxxxfoka-idrive8/README.md) |
+| Spotify (`spotify`) | 1.0.30 | 1.0.30 | [hexlay-idrive8](apps/_ports/hexlay-idrive8/README.md) |
+| System Monitor (`sys_monitor`) | 1.0.4 | 1.0.4 | [hexlay-idrive8](apps/_ports/hexlay-idrive8/README.md) |
+| Bimmer Pass (`vehicle_pass`) | 1.1.0 | 1.1.1 | [appstudio-idrive8](apps/_ports/appstudio-idrive8/README.md) |
 
-The adapted source is under `apps/_ports/`; frozen upstream snapshots remain in `apps/_sources/`. The changes include actual ID8 RHMI resources, public SDK lifecycle adaptation, native renderer/touch/application-area checks, settings controls, and original license notices. Car Explorer selects MainApp21 on ID8. M-Copilot refuses diagnostic reads when its ID8 operating-state samples are unavailable or stale; Engine Vitals hides telemetry on observed typed-field failures and expired existing poll streams.
+Frozen originals remain in `apps/_sources/`; AQ changes live in `apps/_ports/`. The changes include actual ID8 RHMI resources, lifecycle and display/touch handling, target path selection, provider-loss/freshness guards where relevant, and preserved notices. ID8 support is not inferred from an application title or from a helper's HMI list.
 
-The original Store source-build route produces dual-resource npm `.tgz` packages. The inherited standalone `.mgu` staging layouts remain ID7. The five recipes require the original `mgu-render >= 0.6.24`; an installed renderer provider must still meet the runtime capability checks.
+Store builds npm `.tgz` packages. Some kits produce dual-resource archives; target-specific kits select ID7 or ID8 explicitly or from exactly one installed MainApp family, and reject unknown/ambiguous hosts. Car Care and Car Lyrics retain ID7 widgets and visibly omit unsupported ID8 widgets. Inherited standalone `.mgu` staging is ID7 unless the specific port documents a tested ID8 target. All derived UI recipes require `mgu-render >= 0.6.24` and the `renderer` capability.
 
-These are source/resource/runtime-contract and synthetic package checks, **not BMW SDK or live ID8 validation**. The remaining **61 applications** retain ID7 declarations: 28 source recipes and 33 original released app packages. MTrack/Shiftlights cluster/HUD geometry, unsupported widgets/input paths, native helper limitations and the Tire Setup freshness boundary are recorded rather than relabelled. See the [ID8 implementation report](docs/ID8_IMPLEMENTATION_20261119_AR.md), [source blockers](data/id8-source-blockers-20261119.json), [publisher review](data/id8-release-review-20261119.json), and [port evidence](data/id8-ports.json).
+Shiftlights uses runtime-advertised ID8 map/HUD geometry and requires manual opening after each unit start. Dante E85 supports manual calculations and qualified Kombi reads on ID8; its DME backend is not enabled there. Track Mode keeps manual lap timing when speed is unavailable and marks incomplete speed statistics. Vehicle Pass is a manual local record, not live vehicle telemetry. Blocks and Parked Games pause on unavailable or stale motion readings.
 
-An updater connection reset is an unconfirmed installation outcome. [The incident report](docs/UPDATER_ECONNRESET_20261119_AR.md) explains the exact observed failure and read-only reconciliation contract. No uncertain install is automatically replayed.
+The evidence is **source/resource/runtime-contract and synthetic assembly verification, not BMW SDK or live ID8 validation**. The remaining **67 apps** do not declare ID8 in the selected feed: 33 source recipes and 34 released app packages. Their specific limitations remain in the [source blockers](data/id8-source-blockers-20261119.json) and [publisher review](data/id8-release-review-20261119.json).
 
 ## Use AQ_MGU with MGU Store
 
-Add these **three sources explicitly** through the original Store's **Add source** field. The six IterioDev helper tools are supplied by the author's own branch; the AQ branch and HTTPS catalog alone do not provide their payloads.
+Add these **three sources explicitly** through the original Store's **Add source** field. The six IterioDev helper tools come from the author's branch.
 
 | Source | Enter this URL | What it supplies |
 |---|---|---|
-| AQ branch | `https://github.com/tiraUnderCode23/AQ_MGU/tree/main` | `mgu-repo.json`: 50 app source recipes and 5 tool components |
-| AQ HTTPS catalog | `https://raw.githubusercontent.com/tiraUnderCode23/AQ_MGU/main/release/catalog.json` | 79 checksum-pinned package references, including 15 source archives that still build on the unit |
-| Original IterioDev branch | `https://github.com/IterioDev/car-apps/tree/main` | The six original IterioDev companion tools and the author's native source |
+| AQ branch | `https://github.com/tiraUnderCode23/AQ_MGU/tree/main` | `mgu-repo.json`: 72 app recipes and 7 tool components |
+| AQ HTTPS catalog | `https://raw.githubusercontent.com/tiraUnderCode23/AQ_MGU/main/release/catalog.json` | 81 checksum-pinned archives; 16 still require the unit linker |
+| Original IterioDev branch | `https://github.com/IterioDev/car-apps/tree/main` | Six original companion tools and the author's native source |
 
-The matching configuration is in [data/store-sources.json](data/store-sources.json):
+The matching [configuration](data/store-sources.json) is:
 
 ```json
 {
@@ -65,128 +74,175 @@ The matching configuration is in [data/store-sources.json](data/store-sources.js
 }
 ```
 
-**This file is configuration documentation; Store does not auto-import it merely because it is present in the repository.** Add each source, then refresh. `branch:main` is the required channel for both branch sources. The AQ branch and raw catalog use different source types because Store does not accept a second GitHub source for the same repository. Use the raw catalog URL in the table, not a GitHub release-asset URL in the Add source field. The original Store updater must be reachable for source management.
+**Store does not auto-import this configuration merely because it is present in the repository.** Add each source, then refresh. Both branch sources use `branch:main`. The AQ branch and raw catalog have different source types because Store does not accept a second GitHub source for the same repository. The original updater must be reachable.
 
-The [catalog](release/catalog.json) points to **78 original publisher artifacts** and **one existing AQ source-attributed package, `carplay-map@0.2.0`**, retained unchanged. All 58 newly added catalog references download the original publisher files directly; this update does not rehost them. Among the 79 archives, 15 are source packages marked `build=unit`, including 12 IterioDev apps; the remaining 64 are prepared app/tool archives. A source archive still needs the Store's normal target-side build and dependencies.
+The [catalog](release/catalog.json) references 80 original publisher artifacts and the unchanged, source-attributed AQ `carplay-map@0.2.0`. Source archives need the normal target-side linker and dependencies. Helper versions and notices are checked separately from application compatibility; external helper payloads are not supplied by the two AQ sources alone.
 
-Consult the [complete original README and installation matrix](docs/COMPONENT_README_INSTALL_MATRIX.md) for every ID, version, HMI and dependency. Source settings, catalog visibility, verified bytes and installed/running status are separate facts. **No live head-unit execution was directly observed by this audit.** A later user log reports MTrack installed and Shiftlights unconfirmed after a socket reset; the [observation record](data/install-observations-20261119.json) keeps those reports separate from independent target verification.
+## Verification and installation status
 
-## Verification and ID7/ID8 scope
+The [artifact evidence](data/artifact-verification-20261119.json) contains **81/81 full-byte downloads and 81/81 archive checks PASS**, totaling **1,126,163,204 compressed bytes**. Unchanged original artifact evidence is retained; newly selected archives receive full byte/hash/identity checks. No `node_modules/oap-sdk/` member appeared in those archive checks; this is a narrow path observation.
 
-The [full artifact evidence](data/artifact-verification-20261119.json) records **79/79 downloads and native archive checks PASS**, totaling **1,123,523,473 compressed bytes**, including the large Chromium and Steam packages. The verifier compares actual bytes, SHA-256 and package identity; HTTP 200 or `Content-Length` alone is not success. No member path named `node_modules/oap-sdk/` appeared in this inspection; this is a narrow path check, not a certification of all compiled code.
+The [original Store input audit](data/source-build-readiness.json) accepts **79 source entries, with 0 skipped and 78 positive reviewed input results**. It does not establish target SDK builds. The unchanged `noahg_fscpatcher` recipe still selects the whole repository and exceeds the default 200 MiB input limit. The existing Steam archive also exceeds the AQ Manager default download limit. See the [verification summary](data/verification-summary-20261119.json) for the actual current test result.
 
-The [source input audit](data/source-build-readiness.json) records **55 entries accepted by the original Store parser, 0 skipped, and 54 with positive static evidence for the reviewed inputs**. It does not claim successful target builds. One existing, unchanged `noahg_fscpatcher` recipe still selects the whole repository and exceeds the default 200 MiB source-input limit. The corrected benign recipes now include the small staged inputs for `ethanol_mix`, the `sys_monitor` icon-generation helper, and the app-shared inputs needed by `aref_eta`.
-
-| Target | MainApp root | HMI process | Application compatibility |
+| Target | MainApp root | HMI process | Install interpretation |
 |---|---|---|---|
-| ID7 | `/usr/lib/oap-mainapp` | `HmiMain3D` | Per-app ID7 declaration and resources |
-| ID8 | `/usr/lib/oap-mainapp21` | `Hmi8` | Per-app ID8 declaration and resources; a queued change remains pending until applied |
+| ID7 | `/usr/lib/oap-mainapp` | `HmiMain3D` | Per-app ID7 resources and current target metadata |
+| ID8 | `/usr/lib/oap-mainapp21` | `Hmi8` | Per-app ID8 resources; queued changes remain pending until applied |
 
-The original Store performs path discovery and installation. Shared renderer support does not qualify an ID7 application for ID8, and example app UIDs are not universal install paths. See the [ID7/ID8 installation contract](docs/ID7_ID8_STORE_INSTALL_20261119_AR.md) for package, registry and pending-install distinctions.
+The Store owns path discovery and installation. Example app UIDs are not universal. The user reported MTrack 0.1.7 installed; the old Shiftlights 0.4.5 `ECONNRESET` leaves the result unknown. **AQ Shiftlights 0.4.6 has no observed live result**. The [incident report](docs/UPDATER_ECONNRESET_20261119_AR.md) and offline [state classifier](tools/check_source_install_state.py) preserve that distinction; uncertain installs are not automatically replayed. The wrapper that emitted the user log was not located, so no deployed-client fix is claimed.
 
-The [AQ coverage audit](docs/AQ_APPS_COVERAGE_20261119_AR.md) keeps five AQ IDs outside the executable feeds: `aq_lights` and `aq_flap` are UNLICENSED; `bimmer_blocks` and `vehicle_pass` lack a confirmed custom-code redistribution grant; `aa_cluster_companion` is historical/unsupported. The 19 NBT EVO QNX/ARM ports are outside this MGU catalog. The [awesome-bmw-mgu coverage report](docs/AWESOME_BMW_MGU_COVERAGE_20261119_AR.md) records the reviewed original repositories and exclusions.
+The [AQ coverage audit](docs/AQ_APPS_COVERAGE_20261119_AR.md) accounts for all 30 observed IDs, with **27 offered**. Bimmer Blocks and Vehicle Pass are covered by the original App Studio project MIT grant and now have distinct AQ ID8 adaptations. AQ Flap and AQ Lights remain outside the feed because application-code permission was not established and their archives contain donor SDK. The historical AA Cluster Companion was superseded by the publisher's Maps/Waze app already present here. NBT EVO QNX/ARM packages are outside this MGU inventory.
 
-Checks run **manually**, without GitHub Actions:
+Checks run manually, without GitHub Actions:
 
 ```sh
 python -B verify_store_feeds.py
 python -B -m unittest discover -s tests -p 'test_*.py' -v
+python -B tools/check_aq_app_coverage.py --strict-current-mirror
 ```
 
-For a deliberate package download check, use `tools/verify_release_artifacts.py --cache-dir <local-cache> --output <report.json>`. That verifier reads archives without installing them or executing their payloads.
+For deliberate archive verification, use `tools/verify_release_artifacts.py --cache-dir <local-cache> --output <report.json>`; it reads archives without installing or executing payloads.
 
-## Catalog additions (79)
+## Catalog index outside the original gallery
 
-The original gallery and tool descriptions remain below. These additional entries are sorted by component ID; each README link identifies its actual source. The [full matrix](docs/COMPONENT_README_INSTALL_MATRIX.md) includes all original and new entries with their dependencies.
-
-### New apps and games (58)
+The original 37 gallery entries remain below. This table includes every other application; a collection of games under one component ID is counted as one app.
 
 | Component | Version | HMI | Delivery | Original README |
 |---|---|---|---|---|
-| M Track Cluster (`adam_mtrack`) | 0.1.7 | ID7 | AQ branch | [original README](apps/_sources/pinguinooo-idrive7-apps/apps/adam_mtrack/README.md) |
-| Shift Lights (`adam_shiftlights`) | 0.4.5 | ID7 | AQ branch | [original README](apps/_sources/pinguinooo-idrive7-apps/apps/adam_shiftlights/README.md) |
-| Engine Vitals (`adam_vitals`) | 0.2.0 | ID7/ID8 | AQ branch | [original README](apps/_sources/pinguinooo-idrive7-apps/apps/adam_vitals/README.md) |
-| Car Care (`aref_carcare`) | 0.2.3 | ID7 | AQ branch | [original README](apps/_sources/arefahmad-idrive7-apps/apps/aref_carcare/README.md) |
-| Car Lyrics (`aref_carlyrics`) | 0.3.9 | ID7 | AQ branch | [original README](apps/_sources/arefahmad-idrive7-apps/apps/aref_carlyrics/README.md) |
-| Car Watch (`aref_carwatch`) | 0.1.3 | ID7 | AQ branch | [original README](apps/_sources/arefahmad-idrive7-apps/apps/aref_carwatch/README.md) |
-| Drive Log (`aref_drivelog`) | 0.3.2 | ID7 | AQ branch | [original README](apps/_sources/arefahmad-idrive7-apps/apps/aref_drivelog/README.md) |
-| ETA Bar (`aref_eta`) | 1.15.1 | ID7 | AQ branch | [original README](apps/_sources/arefahmad-idrive7-apps/apps/aref_eta/README.md) |
-| Car Explorer (`aref_explorer`) | 0.2.3 | ID7/ID8 | AQ branch | [original README](apps/_sources/arefahmad-idrive7-apps/apps/aref_explorer/README.md) |
-| Fault Watch (`aref_faultwatch`) | 0.2.2 | ID7 | AQ branch | [original README](apps/_sources/arefahmad-idrive7-apps/apps/aref_faultwatch/README.md) |
-| Misfire Watch (`aref_misfire`) | 0.1.1 | ID7 | AQ branch | [original README](apps/_sources/arefahmad-idrive7-apps/apps/aref_misfire/README.md) |
-| Tire Setup (`aref_tires`) | 0.2.1 | ID7 | AQ branch | [original README](apps/_sources/arefahmad-idrive7-apps/apps/aref_tires/README.md) |
-| Apex Chase (`aurelm_apex_chase`) | 1.0.0 | ID7 | Original package | [original README](https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md) |
-| Blackjack (`aurelm_blackjack`) | 1.0.1 | ID7 | Original package | [original README](https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md) |
-| Engine Care (`aurelm_engine_care`) | 1.5.2 | ID7 | Original package | [original README](https://raw.githubusercontent.com/aurelmarius/bmw-apps/a95d5790f6f9a968ba9d9eb3d98a624a3a4ca755/README.md) |
-| Hybrid Cost (`aurelm_hybrid_cost`) | 1.1.2 | ID7 | Original package | [original README](https://raw.githubusercontent.com/aurelmarius/bmw-apps/a95d5790f6f9a968ba9d9eb3d98a624a3a4ca755/README.md) |
-| Lap Record (`aurelm_lap_record`) | 1.0.0 | ID7 | Original package | [original README](https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md) |
-| Lucky Sevens (`aurelm_lucky_sevens`) | 1.1.0 | ID7 | Original package | [original README](https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md) |
-| myAirPlay (`aurelm_myairplay`) | 1.0.1 | ID7 | Original package | [original README](https://raw.githubusercontent.com/aurelmarius/bmw-apps/a95d5790f6f9a968ba9d9eb3d98a624a3a4ca755/README.md) |
-| M Pinball (`aurelm_pinball`) | 1.0.1 | ID7 | Original package | [original README](https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md) |
-| Pit Wall (`aurelm_pit_wall`) | 1.0.0 | ID7 | Original package | [original README](https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md) |
-| Ridge Duel (`aurelm_ridge_duel`) | 1.0.1 | ID7 | Original package | [original README](https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md) |
-| Snake (`aurelm_snake`) | 1.0.0 | ID7 | Original package | [original README](https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md) |
-| Solitaire (`aurelm_solitaire`) | 1.0.0 | ID7 | Original package | [original README](https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md) |
-| Street Siege (`aurelm_street_siege`) | 1.1.0 | ID7 | Original package | [original README](https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md) |
-| Track Defender (`aurelm_track_defender`) | 1.0.0 | ID7 | Original package | [original README](https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md) |
-| TVH Player (`aurelm_tvhplayer`) | 1.0.4 | ID7 | Original package | [original README](https://raw.githubusercontent.com/aurelmarius/bmw-apps/a95d5790f6f9a968ba9d9eb3d98a624a3a4ca755/README.md) |
-| Wheel Heating (`aurelm_wheel_heat`) | 1.0.6 | ID7 | Original package | [original README](https://raw.githubusercontent.com/aurelmarius/bmw-apps/a95d5790f6f9a968ba9d9eb3d98a624a3a4ca755/README.md) |
-| Нарды (`dk_backgammon`) | 0.1.1 | ID7 | AQ branch | [original README](apps/_sources/mistergahan-mgu-backgammon/README.md) |
-| Тетрис (`dk_tetris`) | 0.1.1 | ID7 | AQ branch | [original README](apps/_sources/mistergahan-mgu-backgammon/README.md) |
-| YouTube Checks (`drake1804_checks`) | 0.1.0 | ID7 | Original source archive | [original README](https://raw.githubusercontent.com/Drake1804/bube-releases/40ae77c1b877025c84d256c7527ee34bf3ef5c26/README.md) |
-| Bube (`drake1804_youtube`) | 0.1.10 | ID7 | Original source archive | [original README](https://raw.githubusercontent.com/Drake1804/bube-releases/40ae77c1b877025c84d256c7527ee34bf3ef5c26/README.md) |
-| M Arcade (`iabadia_m_arcade`) | 0.1.3 | ID7 | AQ branch | [original README](apps/_sources/iabadia-idrive-games/apps/iabadia_m_arcade/README.md) |
-| Ambient Light (`iteriodev_ambient`) | 1.4.2 | ID7/ID8 | Original source archive | [original README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
-| Car Data (`iteriodev_cardash`) | 1.4.1 | ID8 | Original source archive | [original README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
-| Drag Timer (`iteriodev_draggy`) | 1.2.0 | ID8 | Original source archive | [original README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
-| Fault Codes (`iteriodev_dtcscan`) | 1.2.0 | ID8 | Original source archive | [original README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
-| eDrive (`iteriodev_edrive`) | 1.1.0 | ID8 | Original source archive | [original README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
-| Live Adjustments (`iteriodev_liveadjust`) | 1.2.0 | ID8 | Original source archive | [original README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
-| Overlays (`iteriodev_overlays`) | 1.4.0 | ID8 | Original source archive | [original README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
-| Seats (`iteriodev_seats`) | 1.6.3 | ID7/ID8 | Original source archive | [original README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
-| Service (`iteriodev_service`) | 1.0.0 | ID8 | Original source archive | [original README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
-| Tailscale (`iteriodev_tailscale`) | 1.1.1 | ID7/ID8 | Original source archive | [original README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
-| Turn View (`iteriodev_turnview`) | 1.5.1 | ID7/ID8 | Original source archive | [original README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
-| Moonride (`jap_moonride`) | 0.3.4 | ID7 | Original package | [original README](https://raw.githubusercontent.com/JustAnotherPU/moonride/1a8e89f99ca17a95ff428b8959dcf379077143db/README.md) |
-| RideTube (`jap_ridetube`) | 0.3.14 | ID7 | Original package | [original README](https://raw.githubusercontent.com/JustAnotherPU/ridetube/68eafa17e860002740496da09f79127bceceab69/README.md) |
-| RideWatch (`jap_ridewatch`) | 0.3.2 | ID7 | Original package | [original README](https://raw.githubusercontent.com/JustAnotherPU/ridewatch/729d16583d56597de753bd7e23de31d14da4f2a5/README.md) |
-| iDrive Monitor (`jap_sysmon`) | 1.0.6 | ID7 | Original package | [original README](https://raw.githubusercontent.com/JustAnotherPU/mgu-apps/42cd2242d9e75c48aace6ee40274451a88c920a7/README.md) |
-| Doodle Jump (`kxrxh_doodle_jump`) | 0.9.0 | ID7 | Original package | [original README](https://raw.githubusercontent.com/kxrxh/doodle-jump-mgu/b3335710a22df83d415d0511cd6a5ac7e3be83ea/README.md) |
-| Только важное (`marku_daily_hud`) | 0.2.0 | ID7 | Original package | [original README](https://raw.githubusercontent.com/istt1899/x3/a7ca63436ba445ad42af7ad410570a7289154f35/README.md) |
-| Waze Стрелка (`marku_kaluga_cameras`) | 0.8.0 | ID7 | Original source archive | [original README](https://raw.githubusercontent.com/istt1899/bmw-kaluga-cameras/c3ce3e72c1b45c26f6af19fdc703f94631996d7b/README.md) |
-| Bimmer Code (`marku_x3_coding`) | 0.2.0 | ID7 | Original package | [original README](https://raw.githubusercontent.com/istt1899/x3/a7ca63436ba445ad42af7ad410570a7289154f35/README.md) |
-| Здоровье X3 (`marku_x3_health`) | 0.2.0 | ID7 | Original package | [original README](https://raw.githubusercontent.com/istt1899/x3/a7ca63436ba445ad42af7ad410570a7289154f35/README.md) |
-| X3 ↔ Дом (`marku_x3_home`) | 0.2.0 | ID7 | Original package | [original README](https://raw.githubusercontent.com/istt1899/x3/a7ca63436ba445ad42af7ad410570a7289154f35/README.md) |
-| Поездки и расходы (`marku_x3_trips`) | 0.2.0 | ID7 | Original package | [original README](https://raw.githubusercontent.com/istt1899/x3/a7ca63436ba445ad42af7ad410570a7289154f35/README.md) |
-| Тёплый старт (`marku_x3_warm`) | 0.2.0 | ID7 | Original package | [original README](https://raw.githubusercontent.com/istt1899/x3/a7ca63436ba445ad42af7ad410570a7289154f35/README.md) |
-| Browser (experimental) (`mgu_browser`) | 0.16.1 | ID7 | Original package | [original README](https://raw.githubusercontent.com/pllanaio/mgu-browser/fe5398a284e701a14a2cc2e13217e3c1a5467ee3/README.md) |
-| Drive Recorder (`oap-driverecorder-next`) | 2.5.1 | ID7/ID8 | Original source archive | [original README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
+| MGU Storage Monitor (`ab_storage`) | 1.2.4 | ID7/ID8 | branch source | [README](apps/_sources/bmwenthusiast-storage-monitor/README.md) |
+| M Track Cluster (`adam_mtrack`) | 0.1.7 | ID7 | branch source | [README](apps/_sources/pinguinooo-idrive7-apps/apps/adam_mtrack/README.md) |
+| Shift Lights (`adam_shiftlights`) | 0.4.6 | ID7/ID8 | branch source | [README](apps/_sources/pinguinooo-idrive7-apps/apps/adam_shiftlights/README.md) |
+| Engine Vitals (`adam_vitals`) | 0.2.0 | ID7/ID8 | branch source | [README](apps/_sources/pinguinooo-idrive7-apps/apps/adam_vitals/README.md) |
+| Car Care (`aref_carcare`) | 0.2.4 | ID7/ID8 | branch source | [README](apps/_sources/arefahmad-idrive7-apps/apps/aref_carcare/README.md) |
+| Car Lyrics (`aref_carlyrics`) | 0.3.10 | ID7/ID8 | branch source | [README](apps/_sources/arefahmad-idrive7-apps/apps/aref_carlyrics/README.md) |
+| Car Watch (`aref_carwatch`) | 0.1.3 | ID7 | branch source | [README](apps/_sources/arefahmad-idrive7-apps/apps/aref_carwatch/README.md) |
+| Drive Log (`aref_drivelog`) | 0.3.2 | ID7 | branch source | [README](apps/_sources/arefahmad-idrive7-apps/apps/aref_drivelog/README.md) |
+| ETA Bar (`aref_eta`) | 1.15.1 | ID7 | branch source | [README](apps/_sources/arefahmad-idrive7-apps/apps/aref_eta/README.md) |
+| Car Explorer (`aref_explorer`) | 0.2.3 | ID7/ID8 | branch source | [README](apps/_sources/arefahmad-idrive7-apps/apps/aref_explorer/README.md) |
+| Fault Watch (`aref_faultwatch`) | 0.2.2 | ID7 | branch source | [README](apps/_sources/arefahmad-idrive7-apps/apps/aref_faultwatch/README.md) |
+| Misfire Watch (`aref_misfire`) | 0.1.1 | ID7 | branch source | [README](apps/_sources/arefahmad-idrive7-apps/apps/aref_misfire/README.md) |
+| Tire Setup (`aref_tires`) | 0.2.1 | ID7 | branch source | [README](apps/_sources/arefahmad-idrive7-apps/apps/aref_tires/README.md) |
+| Apex Chase (`aurelm_apex_chase`) | 1.0.0 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md) |
+| Blackjack (`aurelm_blackjack`) | 1.0.1 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md) |
+| Engine Care (`aurelm_engine_care`) | 1.5.2 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/aurelmarius/bmw-apps/a95d5790f6f9a968ba9d9eb3d98a624a3a4ca755/README.md) |
+| Hybrid Cost (`aurelm_hybrid_cost`) | 1.1.2 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/aurelmarius/bmw-apps/a95d5790f6f9a968ba9d9eb3d98a624a3a4ca755/README.md) |
+| Lap Record (`aurelm_lap_record`) | 1.0.0 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md) |
+| Lucky Sevens (`aurelm_lucky_sevens`) | 1.1.0 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md) |
+| myAirPlay (`aurelm_myairplay`) | 1.0.1 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/aurelmarius/bmw-apps/a95d5790f6f9a968ba9d9eb3d98a624a3a4ca755/README.md) |
+| M Pinball (`aurelm_pinball`) | 1.0.1 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md) |
+| Pit Wall (`aurelm_pit_wall`) | 1.0.0 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md) |
+| Ridge Duel (`aurelm_ridge_duel`) | 1.0.1 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md) |
+| Snake (`aurelm_snake`) | 1.0.0 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md) |
+| Solitaire (`aurelm_solitaire`) | 1.0.0 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md) |
+| Street Siege (`aurelm_street_siege`) | 1.1.0 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md) |
+| Track Defender (`aurelm_track_defender`) | 1.0.0 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md) |
+| TVH Player (`aurelm_tvhplayer`) | 1.0.4 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/aurelmarius/bmw-apps/a95d5790f6f9a968ba9d9eb3d98a624a3a4ca755/README.md) |
+| Wheel Heating (`aurelm_wheel_heat`) | 1.0.6 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/aurelmarius/bmw-apps/a95d5790f6f9a968ba9d9eb3d98a624a3a4ca755/README.md) |
+| Bimmer Blocks (`bimmer_blocks`) | 1.1.1 | ID7/ID8 | branch source | [README](apps/_sources/app-studio-custom/README-DE-EN.txt) |
+| ECU Live Data (iDrive 8, untested) (`boostline_id8`) | 1.0.0 | ID8 | branch source | [README](apps/_sources/giuseppe-mgu-apps-id8/README.md) |
+| Drive (`c365_drive`) | 1.9.3 | ID7/ID8 | branch source | [README](apps/_sources/c365-mgu-drive/README.md) |
+| Cluster Lyrics (`cluster_lyrics`) | 0.1.1 | ID7 | branch source | [README](apps/_sources/namels-mgu-apps/apps/cluster_lyrics/README.md) |
+| Battery & Electrical (`dimon_battery`) | 1.0.0 | ID7 | branch source | [README](apps/_sources/dimonprograms-apps/apps/dimon_battery/README.md) |
+| Track Mode (`dimon_track_mode`) | 1.0.1 | ID7/ID8 | branch source | [README](apps/_sources/dimonprograms-apps/apps/dimon_track_mode/README.md) |
+| Нарды (`dk_backgammon`) | 0.1.1 | ID7 | branch source | [README](apps/_sources/mistergahan-mgu-backgammon/README.md) |
+| Тетрис (`dk_tetris`) | 0.1.1 | ID7 | branch source | [README](apps/_sources/mistergahan-mgu-backgammon/README.md) |
+| DPF Status (`dpf`) | 0.1.32 | ID7 | branch source | [README](apps/_sources/dzooky-bmrmodz/README.md) |
+| DPF Monitoring (iDrive 8, untested) (`dpf_id8`) | 1.0.0 | ID8 | branch source | [README](apps/_sources/giuseppe-mgu-apps-id8/README.md) |
+| DPF Monitor (`dpf_monitor`) | 0.2.8 | ID7 | branch source | [README](apps/_sources/namels-mgu-apps/apps/dpf_monitor/README.md) |
+| YouTube Checks (`drake1804_checks`) | 0.1.0 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/Drake1804/bube-releases/40ae77c1b877025c84d256c7527ee34bf3ef5c26/README.md) |
+| Bube (`drake1804_youtube`) | 0.1.10 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/Drake1804/bube-releases/40ae77c1b877025c84d256c7527ee34bf3ef5c26/README.md) |
+| E85 Blend (`e85`) | 1.2.2 | ID7/ID8 | branch source | [README](apps/_sources/dante-idrive-apps/README.md) |
+| elDrive (`eldrive`) | 1.1.0 | ID7 | branch source | [README](apps/_sources/beele-eldrive/README.md) |
+| Esagono Settings (`esagono_settings`) | 0.1.0 | ID8 | branch source | [README](apps/_sources/grabandrey-esagono-cluster/README.md) |
+| GIF Home (`gif_home`) | 0.3.1 | ID7 | branch source | [README](apps/_sources/namels-mgu-apps/apps/gif_home/README.md) |
+| M Arcade (`iabadia_m_arcade`) | 0.1.3 | ID7 | branch source | [README](apps/_sources/iabadia-idrive-games/apps/iabadia_m_arcade/README.md) |
+| Light Logger (`ida_lightlog`) | 1.3.1 | ID8 | branch source | [README](apps/_sources/grabandrey-idrive-apps/README.md) |
+| Seat Lights (`ida_seatlights`) | 1.3.2 | ID8 | branch source | [README](apps/_sources/grabandrey-idrive-apps/README.md) |
+| Vitals (`ida_vitals`) | 1.3.1 | ID8 | branch source | [README](apps/_sources/grabandrey-idrive-apps/README.md) |
+| Ambient Light (`iteriodev_ambient`) | 1.4.2 | ID7/ID8 | original publisher artifact | [README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
+| Car Data (`iteriodev_cardash`) | 1.4.1 | ID8 | original publisher artifact | [README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
+| Drag Timer (`iteriodev_draggy`) | 1.2.0 | ID8 | original publisher artifact | [README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
+| Fault Codes (`iteriodev_dtcscan`) | 1.2.0 | ID8 | original publisher artifact | [README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
+| eDrive (`iteriodev_edrive`) | 1.1.0 | ID8 | original publisher artifact | [README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
+| Live Adjustments (`iteriodev_liveadjust`) | 1.2.0 | ID8 | original publisher artifact | [README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
+| Overlays (`iteriodev_overlays`) | 1.4.0 | ID8 | original publisher artifact | [README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
+| Seats (`iteriodev_seats`) | 1.6.3 | ID7/ID8 | original publisher artifact | [README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
+| Service (`iteriodev_service`) | 1.0.0 | ID8 | original publisher artifact | [README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
+| Tailscale (`iteriodev_tailscale`) | 1.1.1 | ID7/ID8 | original publisher artifact | [README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
+| Turn View (`iteriodev_turnview`) | 1.5.1 | ID7/ID8 | original publisher artifact | [README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
+| Moonride (`jap_moonride`) | 0.3.4 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/JustAnotherPU/moonride/1a8e89f99ca17a95ff428b8959dcf379077143db/README.md) |
+| RideTube (`jap_ridetube`) | 0.3.14 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/JustAnotherPU/ridetube/68eafa17e860002740496da09f79127bceceab69/README.md) |
+| RideWatch (`jap_ridewatch`) | 0.3.2 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/JustAnotherPU/ridewatch/729d16583d56597de753bd7e23de31d14da4f2a5/README.md) |
+| iDrive Monitor (`jap_sysmon`) | 1.0.6 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/JustAnotherPU/mgu-apps/42cd2242d9e75c48aace6ee40274451a88c920a7/README.md) |
+| Doodle Jump (`kxrxh_doodle_jump`) | 0.9.0 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/kxrxh/doodle-jump-mgu/b3335710a22df83d415d0511cd6a5ac7e3be83ea/README.md) |
+| Только важное (`marku_daily_hud`) | 0.2.0 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/istt1899/x3/a7ca63436ba445ad42af7ad410570a7289154f35/README.md) |
+| Waze Стрелка (`marku_kaluga_cameras`) | 0.8.0 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/istt1899/bmw-kaluga-cameras/c3ce3e72c1b45c26f6af19fdc703f94631996d7b/README.md) |
+| Bimmer Code (`marku_x3_coding`) | 0.2.0 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/istt1899/x3/a7ca63436ba445ad42af7ad410570a7289154f35/README.md) |
+| Здоровье X3 (`marku_x3_health`) | 0.2.0 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/istt1899/x3/a7ca63436ba445ad42af7ad410570a7289154f35/README.md) |
+| X3 ↔ Дом (`marku_x3_home`) | 0.2.0 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/istt1899/x3/a7ca63436ba445ad42af7ad410570a7289154f35/README.md) |
+| Поездки и расходы (`marku_x3_trips`) | 0.2.0 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/istt1899/x3/a7ca63436ba445ad42af7ad410570a7289154f35/README.md) |
+| Тёплый старт (`marku_x3_warm`) | 0.2.0 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/istt1899/x3/a7ca63436ba445ad42af7ad410570a7289154f35/README.md) |
+| Browser (experimental) (`mgu_browser`) | 0.16.1 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/pllanaio/mgu-browser/fe5398a284e701a14a2cc2e13217e3c1a5467ee3/README.md) |
+| Drive Recorder (`oap-driverecorder-next`) | 2.5.1 | ID7/ID8 | original publisher artifact | [README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
+| Oil Service Assistant (`osa`) | 0.2.50 | ID7 | branch source | [README](apps/_sources/dzooky-bmrmodz/README.md) |
+| Parked Games (`parked_games`) | 0.2.3 | ID7/ID8 | branch source | [README](apps/_sources/maxxxfoka-idrive7games/README.md) |
+| Sideways (`sideways`) | 0.6.6 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/idrive-labs/sideways/33e6013c1c2eb1d9725dea4f43448ecaf081ae07/README.md) |
+| Spritmonitor (`spritmonitor`) | 0.1.44 | ID7 | branch source | [README](apps/_sources/dzooky-bmrmodz/README.md) |
+| True Time (iDrive 8, untested) (`true_time_id8`) | 1.0.0 | ID8 | branch source | [README](apps/_sources/giuseppe-mgu-apps-id8/README.md) |
+| TurnKey E Blend (`turnkey_e_blend_id8`) | 0.5.0 | ID8 | original publisher artifact | [README](https://raw.githubusercontent.com/vecyoroleg-lgtm/turnkey-e-blend-id8/918b336fbad09b8b49c0dd2914523c0ef1633d8a/README.md) |
+| Bimmer Pass (`vehicle_pass`) | 1.1.1 | ID7/ID8 | branch source | [README](apps/_sources/app-studio-custom/README-DE-EN.txt) |
 
-### New tools and helper references (21)
+### Tools and original helper references
 
 | Component | Version | HMI | Delivery | Original README |
 |---|---|---|---|---|
-| myAirPlay service (`aurelm-myairplay`) | 1.0.1 | ID7 | Original package | [original README](https://raw.githubusercontent.com/aurelmarius/bmw-apps/a95d5790f6f9a968ba9d9eb3d98a624a3a4ca755/README.md) |
-| TVH Player service (`aurelm-tvhplayer`) | 1.0.2 | ID7 | Original package | [original README](https://raw.githubusercontent.com/aurelmarius/bmw-apps/a95d5790f6f9a968ba9d9eb3d98a624a3a4ca755/README.md) |
-| Camera inspector (`camera-inspect`) | 0.1.1 | ID7 | Original package | [original README](https://raw.githubusercontent.com/eroobeeroo/idrive-apps/3b7ce93045294dd8f0e60b3a239b4a1cfb4a405f/README.md) |
-| Doodle Jump GPU support (`doodle-gpu`) | 1.0.0 | ID7 | Original package | [original README](https://raw.githubusercontent.com/kxrxh/doodle-jump-mgu/b3335710a22df83d415d0511cd6a5ac7e3be83ea/README.md) |
-| YouTube Checks helper (`drake1804-checks`) | 0.1.2 | ID7 | Original package | [original README](https://raw.githubusercontent.com/Drake1804/bube-releases/40ae77c1b877025c84d256c7527ee34bf3ef5c26/README.md) |
-| YouTube player (`drake1804-ytplay`) | 0.1.16 | ID7 | Original package | [original README](https://raw.githubusercontent.com/Drake1804/bube-releases/40ae77c1b877025c84d256c7527ee34bf3ef5c26/README.md) |
-| iteriodev-comfort (`iteriodev-comfort`) | 0.6.1 | ID7/ID8 | IterioDev branch | [original README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
-| iteriodev-drplay (`iteriodev-drplay`) | 1.2.6 | ID7/ID8 | IterioDev branch | [original README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
-| iteriodev-overlays (`iteriodev-overlays`) | 0.5.0 | ID8 | IterioDev branch | [original README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
-| iteriodev-screencast (`iteriodev-screencast`) | 1.0.8 | ID7/ID8 | IterioDev branch | [original README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
-| iteriodev-tailscale (`iteriodev-tailscale`) | 1.104.6 | ID7/ID8 | IterioDev branch | [original README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
-| iteriodev-turnview (`iteriodev-turnview`) | 0.8.0 | ID7/ID8 | IterioDev branch | [original README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
-| Moonride streaming service (`jap-moonride`) | 0.3.4 | ID7 | Original package | [original README](https://raw.githubusercontent.com/JustAnotherPU/moonride/1a8e89f99ca17a95ff428b8959dcf379077143db/README.md) |
-| Node.js 22 (`jap-node22`) | 22.23.4 | ID7 | Original package | [original README](https://raw.githubusercontent.com/JustAnotherPU/mgu-apps/42cd2242d9e75c48aace6ee40274451a88c920a7/README.md) |
-| RideTube service (`jap-ridetube-d`) | 0.3.12 | ID7 | Original package | [original README](https://raw.githubusercontent.com/JustAnotherPU/ridetube/68eafa17e860002740496da09f79127bceceab69/README.md) |
-| RideWatch service (`jap-ridewatch`) | 0.3.2 | ID7 | Original package | [original README](https://raw.githubusercontent.com/JustAnotherPU/ridewatch/729d16583d56597de753bd7e23de31d14da4f2a5/README.md) |
-| wireproxy (`jap-wireproxy`) | 1.1.3 | ID7 | Original package | [original README](https://raw.githubusercontent.com/JustAnotherPU/mgu-apps/42cd2242d9e75c48aace6ee40274451a88c920a7/README.md) |
-| X3 Home bridge (`marku-home-bridge`) | 0.1.0 | ID7 | Original package | [original README](https://raw.githubusercontent.com/istt1899/x3/a7ca63436ba445ad42af7ad410570a7289154f35/README.md) |
-| Waze Strelka camera service (`marku-kaluga-cameras`) | 0.8.0 | ID7 | Original package | [original README](https://raw.githubusercontent.com/istt1899/bmw-kaluga-cameras/c3ce3e72c1b45c26f6af19fdc703f94631996d7b/README.md) |
-| Browser runtime (experimental) (`mgu-browser`) | 0.16.1 | ID7 | Original package | [original README](https://raw.githubusercontent.com/pllanaio/mgu-browser/fe5398a284e701a14a2cc2e13217e3c1a5467ee3/README.md) |
-| Browser Chromium engine (experimental) (`mgu-browser-engine`) | 0.1.0 | ID7 | Original package | [original README](https://raw.githubusercontent.com/pllanaio/mgu-browser/fe5398a284e701a14a2cc2e13217e3c1a5467ee3/README.md) |
+| AirPlay receiver (`airplay-rx`) | 1.0.0 | ID7 | original publisher artifact | [README](apps/_sources/noth4m4d-mgu-hamadstools/README.md#L7) |
+| App privacy (`app-privacy`) | 1.7.2 | ID7/ID8 | original publisher artifact | [README](tools/_sources/mgu-store/native/app-privacy/README.md#L6) |
+| myAirPlay service (`aurelm-myairplay`) | 1.0.1 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/aurelmarius/bmw-apps/a95d5790f6f9a968ba9d9eb3d98a624a3a4ca755/README.md) |
+| TVH Player service (`aurelm-tvhplayer`) | 1.0.2 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/aurelmarius/bmw-apps/a95d5790f6f9a968ba9d9eb3d98a624a3a4ca755/README.md) |
+| Camera inspector (`camera-inspect`) | 0.1.1 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/eroobeeroo/idrive-apps/3b7ce93045294dd8f0e60b3a239b4a1cfb4a405f/README.md) |
+| CarPlay Map Producer (`carplay-map`) | 0.2.0 | ID7 | AQ release from attributed source | [README](apps/_sources/isaak-carplay-map-cluster/README.md#L42) |
+| Cluster renderer (`cluster-render`) | 0.6.9 | ID7/ID8 | original publisher artifact | [README](apps/_sources/idrive-apps/native/cluster-render/README.md#L7) |
+| Doodle Jump GPU support (`doodle-gpu`) | 1.0.0 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/kxrxh/doodle-jump-mgu/b3335710a22df83d415d0511cd6a5ac7e3be83ea/README.md) |
+| YouTube Checks helper (`drake1804-checks`) | 0.1.2 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/Drake1804/bube-releases/40ae77c1b877025c84d256c7527ee34bf3ef5c26/README.md) |
+| YouTube player (`drake1804-ytplay`) | 0.1.16 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/Drake1804/bube-releases/40ae77c1b877025c84d256c7527ee34bf3ef5c26/README.md) |
+| Esagono Cluster (`esagono-cluster`) | 0.2.1 | ID8 | branch source | [README](apps/_sources/grabandrey-esagono-cluster/README.md) |
+| CarPlay cluster map (stream 111) (`hook111`) | 0.1.6 | ID7 | original publisher artifact | [README](apps/_sources/vizualyse-idrive-apps/native/hook111/README.md#L3) |
+| Vitals Cluster (`ida-vitals-cluster`) | 1.3.3 | ID8 | branch source | [README](apps/_sources/grabandrey-idrive-apps/README.md) |
+| GPU renderer (`idrive7-renderd`) | 2.1.19 | ID7/ID8 | branch source | [README](apps/_sources/idrive7-apps/kit/renderd/README.md#L49) |
+| iteriodev-comfort (`iteriodev-comfort`) | 0.6.1 | ID7/ID8 | external original source | [README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
+| iteriodev-drplay (`iteriodev-drplay`) | 1.2.6 | ID7/ID8 | external original source | [README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
+| iteriodev-overlays (`iteriodev-overlays`) | 0.5.0 | ID8 | external original source | [README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
+| iteriodev-screencast (`iteriodev-screencast`) | 1.0.8 | ID7/ID8 | external original source | [README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
+| iteriodev-tailscale (`iteriodev-tailscale`) | 1.104.6 | ID7/ID8 | external original source | [README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
+| iteriodev-turnview (`iteriodev-turnview`) | 0.8.0 | ID7/ID8 | external original source | [README](https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md) |
+| Moonride streaming service (`jap-moonride`) | 0.3.4 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/JustAnotherPU/moonride/1a8e89f99ca17a95ff428b8959dcf379077143db/README.md) |
+| Node.js 22 (`jap-node22`) | 22.23.4 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/JustAnotherPU/mgu-apps/42cd2242d9e75c48aace6ee40274451a88c920a7/README.md) |
+| RideTube service (`jap-ridetube-d`) | 0.3.12 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/JustAnotherPU/ridetube/68eafa17e860002740496da09f79127bceceab69/README.md) |
+| RideWatch service (`jap-ridewatch`) | 0.3.2 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/JustAnotherPU/ridewatch/729d16583d56597de753bd7e23de31d14da4f2a5/README.md) |
+| Waze HUD on cluster (`jap-waze-on-cluster`) | 1.2.0 | ID7 | original publisher artifact | [README](apps/_sources/waze-hud/native/jap-waze-on-cluster/README.md#L39) |
+| wireproxy (`jap-wireproxy`) | 1.1.3 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/JustAnotherPU/mgu-apps/42cd2242d9e75c48aace6ee40274451a88c920a7/README.md) |
+| X3 Home bridge (`marku-home-bridge`) | 0.1.0 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/istt1899/x3/a7ca63436ba445ad42af7ad410570a7289154f35/README.md) |
+| Waze Strelka camera service (`marku-kaluga-cameras`) | 0.8.0 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/istt1899/bmw-kaluga-cameras/c3ce3e72c1b45c26f6af19fdc703f94631996d7b/README.md) |
+| Browser runtime (experimental) (`mgu-browser`) | 0.16.1 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/pllanaio/mgu-browser/fe5398a284e701a14a2cc2e13217e3c1a5467ee3/README.md) |
+| Browser Chromium engine (experimental) (`mgu-browser-engine`) | 0.1.0 | ID7 | original publisher artifact | [README](https://raw.githubusercontent.com/pllanaio/mgu-browser/fe5398a284e701a14a2cc2e13217e3c1a5467ee3/README.md) |
+| Deploy tool (`mgu-deploy`) | 0.8.23 | ID7/ID8 | original publisher artifact | [README](tools/_sources/mgu-store/deploy/README.md#L96) |
+| FSC patch service (`mgu-fscpatch`) | 1.0.0 | Not declared | branch source | [README](apps/_sources/noahg-mgu-apps/native/mgu-fscpatch/README.md#L27) |
+| Controller gate (`mgu-inputgate`) | 1.2.2 | ID7/ID8 | branch source | [README](tools/_sources/cauli-inputgate-1.2.1/kit/renderd/inputgate/tool/README.md) |
+| OBD Bridge service (`mgu-obd-adapter`) | 1.0.0 | ID7 | branch source | [README](apps/_sources/noahg-mgu-apps/native/hu-obd-adapter/README.md#L66) |
+| Python (`mgu-python`) | 1.0.3 | ID7/ID8 | original publisher artifact | [README](tools/_sources/mgu-store/native/mgu-python/README.md#L5) |
+| Renderer (`mgu-render`) | 0.6.24 | ID7/ID8 | original publisher artifact | [README](tools/_sources/mgu-store/native/mgu-render/README.md#L13) |
+| Updater (`mgu-updater`) | 0.8.48 | ID7/ID8 | original publisher artifact | [README](tools/_sources/mgu-store/native/mgu-updater/README.md#L67) |
+| Internet uplink (`mgu-uplink`) | 0.7.12 | ID7/ID8 | original publisher artifact | [README](tools/_sources/mgu-store/native/mgu-uplink/README.md#L13) |
+| Vizualyse bus (`vizualyse-bus`) | 0.1.0 | ID7 | original publisher artifact | [README](apps/_sources/vizualyse-idrive-apps/native/vizualyse-bus/README.md#L37) |
+| Cast to cluster (`vizualyse-cast`) | 0.4.1 | ID7 | original publisher artifact | [README](apps/_sources/vizualyse-idrive-apps/native/vizualyse-cast/README.md#L29) |
+| Browser (`vizualyse-chromium`) | 0.3.1 | ID7 | original publisher artifact | [README](apps/_sources/vizualyse-idrive-apps/native/vizualyse-chromium/README.md#L7) |
+| Cluster themes (`vizualyse-cluster`) | 0.4.1 | ID7 | original publisher artifact | [README](apps/_sources/vizualyse-idrive-apps/native/vizualyse-cluster/README.md#L18) |
+| Moonlight (`vizualyse-moonlight`) | 0.3.1 | ID7 | original publisher artifact | [README](apps/_sources/vizualyse-idrive-apps/native/vizualyse-moonlight/README.md#L6) |
+| Steam (`vizualyse-steam`) | 0.3.2 | ID7 | original publisher artifact | [README](apps/_sources/vizualyse-idrive-apps/native/vizualyse-steam/README.md#L7) |
+| CarPlay Map Mirror service (`vlad-carplay-mirror`) | 0.1.3 | ID7 | branch source | [README](apps/_sources/vlad-mgu-apps/README.md#L3) |
+| Maps on cluster (`waze-on-cluster`) | 0.10.8 | ID7 | original publisher artifact | [README](apps/_sources/idrive-apps/native/waze-on-cluster/README.md#L43) |
+| Waze Cards service (`wazecard`) | 1.0.0 | ID7 | original publisher artifact | [README](apps/_sources/noth4m4d-mgu-hamadstools/README.md#L9) |
 
 ## Apps
 

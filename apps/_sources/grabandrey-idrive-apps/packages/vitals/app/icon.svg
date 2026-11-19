@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 140 140">
+  <defs>
+    <linearGradient id="g" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#0a5ccc"/><stop offset="1" stop-color="#58aaf5"/>
+    </linearGradient>
+  </defs>
+  <rect width="140" height="140" fill="#0b0c0f"/>
+  <!-- the gauge track, 240 degrees open at the bottom -->
+  <path d="M 36.2 97.5 A 46 46 0 1 1 103.8 97.5" fill="none" stroke="#272a30" stroke-width="7" stroke-linecap="round"/>
+  <!-- the fill, about two thirds -->
+  <path d="M 36.2 97.5 A 46 46 0 0 1 93.0 30.2" fill="none" stroke="url(#g)" stroke-width="7" stroke-linecap="round"/>
+  <!-- a thermometer -->
+  <rect x="64" y="44" width="12" height="40" rx="6" fill="none" stroke="#e8eaee" stroke-width="3.5"/>
+  <circle cx="70" cy="90" r="10" fill="none" stroke="#e8eaee" stroke-width="3.5"/>
+  <rect x="68" y="62" width="4" height="26" rx="2" fill="#58aaf5"/>
+  <circle cx="70" cy="90" r="5.5" fill="#58aaf5"/>
+  <path d="M 80 54 h 6 M 80 62 h 6 M 80 70 h 6" stroke="#8a8f99" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

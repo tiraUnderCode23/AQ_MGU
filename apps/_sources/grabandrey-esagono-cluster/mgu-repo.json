@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "components": [
+    {
+      "id": "esagono-cluster",
+      "kind": "tool",
+      "path": "tools/esagono-cluster",
+      "mguHmi": ["ID8"]
+    },
+    {
+      "id": "esagono_settings",
+      "kind": "app",
+      "path": "apps/esagono_settings",
+      "build": "unit",
+      "title": "Esagono Settings",
+      "description": "Settings for the Esagono cluster widget: drive mode colours, redline, shift flash, scale, backdrop and demo.",
+      "requires": { "esagono-cluster": "0.2.0" },
+      "uninstallable": true,
+      "mguHmi": ["ID8"]
+    }
+  ]
+}

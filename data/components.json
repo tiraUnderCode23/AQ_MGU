@@ -2,6 +2,52 @@
   "as_of": "2026-11-19",
   "components": [
     {
+      "id": "ab_storage",
+      "kind": "app",
+      "category": "app",
+      "title": "MGU Storage Monitor",
+      "version": "1.2.4",
+      "description": "Read-only MGU filesystem space monitor",
+      "source_repository": "BMWEnthusiastUK/mgu-storage-monitor",
+      "license": "MIT; retain JustAnotherPU and app-kit attribution",
+      "source_path": "apps/_ports/bmwenthusiast-idrive8/apps/ab_storage",
+      "delivery": "branch source",
+      "icon": "",
+      "images": [],
+      "image_count": 0,
+      "upstream_readme": "apps/_sources/bmwenthusiast-storage-monitor/README.md",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "mgu-render": "0.6.24"
+      },
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "live_install_status": "NOT OBSERVED",
+      "source_review_notes": "Filesystem-only app. AQ source adaptation adds target-specific ID8 RHMI, display/touch and lifecycle while preserving original manual-start and filesystem parser. Original publisher ID7 report is distinct from AQ ID8 verification.",
+      "duplicate_classification": "new-functional-app-or-explicit-id8-sibling",
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
+      "source_origin_path": "apps/_sources/bmwenthusiast-storage-monitor/apps/ab_storage",
+      "upstream_version": "1.2.3",
+      "source_port": {
+        "id": "bmwenthusiast-idrive8",
+        "revision": "aq-storage-id8-1",
+        "path": "apps/_ports/bmwenthusiast-idrive8",
+        "provenance": "apps/_ports/bmwenthusiast-idrive8/PROVENANCE.json",
+        "source_metadata": "apps/_ports/bmwenthusiast-idrive8/PORT.json"
+      },
+      "id8_limitations": [
+        "No actual target SDK build, registration or live installation observed",
+        "Native mgu-render >= 0.6.24 with usable application area required",
+        "Target must permit the original bounded read-only df process and filesystem access",
+        "Filesystem space is not guaranteed application-install capacity"
+      ]
+    },
+    {
       "id": "adam_mtrack",
       "kind": "app",
       "category": "app",
@@ -36,24 +82,48 @@
       "description": "RPM shift lights on the instrument cluster and HUD, with per-drive-mode thresholds and a cold-engine limit",
       "source_repository": "pinguinooo/idrive7-apps",
       "license": "MIT; bundled MPL-2.0 client and SIL-OFL-1.1 art notices retained",
-      "source_path": "apps/_sources/pinguinooo-idrive7-apps/apps/adam_shiftlights",
+      "source_path": "apps/_ports/pinguinooo-idrive8/apps/adam_shiftlights",
       "delivery": "branch source",
       "icon": "",
       "images": [],
       "image_count": 0,
       "upstream_readme": "apps/_sources/pinguinooo-idrive7-apps/apps/adam_shiftlights/README.md",
-      "version": "0.4.5",
+      "version": "0.4.6",
       "supported_hmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "requires": {
-        "idrive7-renderd": "2.1.7",
-        "mgu-inputgate": "1.0.0",
-        "cluster-render": "0.6.7"
+        "mgu-render": "0.6.24",
+        "cluster-render": "0.6.9",
+        "mgu-inputgate": "1.0.0"
       },
       "artifact": {},
       "upstream_artifact_sha256": null,
-      "live_install_status": "UNCONFIRMED: updater connection reset; no final readback"
+      "live_install_status": "NOT OBSERVED for AQ 0.4.6",
+      "source_origin_path": "apps/_sources/pinguinooo-idrive7-apps/apps/adam_shiftlights",
+      "upstream_version": "0.4.5",
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
+      "source_port": {
+        "id": "pinguinooo-idrive8",
+        "revision": 2,
+        "path": "apps/_ports/pinguinooo-idrive8",
+        "provenance": "apps/_ports/pinguinooo-idrive8/AQ_PORT.json",
+        "source_metadata": "apps/_ports/pinguinooo-idrive8/AQ_PORT.json"
+      },
+      "id8_limitations": [
+        "Manual opening after every unit start; no ID8 headless autostart.",
+        "Renderer must advertise valid ID8 map/HUD targets and dimensions.",
+        "Real unit build, physical cluster/HUD visibility, and actual SDK providers remain unobserved."
+      ],
+      "prior_install_observation": {
+        "version": "0.4.5",
+        "result": "UNCONFIRMED_TRANSPORT_RESET",
+        "source": "data/install-observations-20261119.json",
+        "note": "User log for the earlier upstream version; not an observation of AQ 0.4.6."
+      }
     },
     {
       "id": "adam_vitals",
@@ -217,20 +287,39 @@
       "description": "Your own service intervals, apart from BMW's: engine oil (3,000 mi by default), spark plugs, coils, diff, transfer case and transmission fluid, brake fluid, air and cabin filters, each with how much is left. Done today records the odometer and the date; Done earlier sets a service from before. It never resets BMW's own service reminders, so a dealer's free service still comes due on BMW's schedule. Read-only toward the car.",
       "source_repository": "arefahmad/idrive7-apps",
       "license": "MIT with per-app, runtime and font notices retained",
-      "source_path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_carcare",
+      "source_path": "apps/_ports/arefahmad-idrive8/apps/aref_carcare",
       "delivery": "branch source",
       "icon": "",
       "images": [],
       "image_count": 0,
       "upstream_readme": "apps/_sources/arefahmad-idrive7-apps/apps/aref_carcare/README.md",
-      "version": "0.2.3",
+      "version": "0.2.4",
       "supported_hmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
-      "requires": {},
+      "requires": {
+        "mgu-render": "0.6.24"
+      },
       "artifact": {},
       "upstream_artifact_sha256": null,
-      "live_install_status": "NOT OBSERVED"
+      "live_install_status": "NOT OBSERVED",
+      "source_origin_path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_carcare",
+      "upstream_version": "0.2.3",
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
+      "source_port": {
+        "id": "arefahmad-idrive8",
+        "revision": "aq-aref-id8-2",
+        "path": "apps/_ports/arefahmad-idrive8",
+        "provenance": "apps/_ports/arefahmad-idrive8/PROVENANCE.json",
+        "source_metadata": "apps/_ports/arefahmad-idrive8/PORT.json"
+      },
+      "id8_limitations": [
+        "No ID8 home-screen widget; ID7 target retains the original widget.",
+        "Target provider and actual HU runtime not observed."
+      ]
     },
     {
       "id": "aref_carlyrics",
@@ -240,20 +329,39 @@
       "description": "Synced lyrics for whatever the car plays: Apple Music over CarPlay, Bluetooth or USB, no Spotify needed. A full-screen page drawn like Apple Music's: the album art blurred behind, the cover and a progress line on the left, and the lyrics gliding line by line on the right, timed to the song from the car's own clock. Lyrics from LRCLIB, artwork from Apple's iTunes search. A Probe tab shows what the car reports. Read-only toward the car. Needs internet through the Store's uplink.",
       "source_repository": "arefahmad/idrive7-apps",
       "license": "MIT with per-app, runtime and font notices retained",
-      "source_path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_carlyrics",
+      "source_path": "apps/_ports/arefahmad-idrive8/apps/aref_carlyrics",
       "delivery": "branch source",
       "icon": "",
       "images": [],
       "image_count": 0,
       "upstream_readme": "apps/_sources/arefahmad-idrive7-apps/apps/aref_carlyrics/README.md",
-      "version": "0.3.9",
+      "version": "0.3.10",
       "supported_hmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
-      "requires": {},
+      "requires": {
+        "mgu-render": "0.6.24"
+      },
       "artifact": {},
       "upstream_artifact_sha256": null,
-      "live_install_status": "NOT OBSERVED"
+      "live_install_status": "NOT OBSERVED",
+      "source_origin_path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_carlyrics",
+      "upstream_version": "0.3.9",
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
+      "source_port": {
+        "id": "arefahmad-idrive8",
+        "revision": "aq-aref-id8-2",
+        "path": "apps/_ports/arefahmad-idrive8",
+        "provenance": "apps/_ports/arefahmad-idrive8/PROVENANCE.json",
+        "source_metadata": "apps/_ports/arefahmad-idrive8/PORT.json"
+      },
+      "id8_limitations": [
+        "No ID8 home-screen widget; ID7 target retains the original widget.",
+        "Target provider and actual HU runtime not observed."
+      ]
     },
     {
       "id": "aref_carwatch",
@@ -355,7 +463,7 @@
       ],
       "source_port": {
         "id": "arefahmad-idrive8",
-        "revision": "aq-aref-id8-1",
+        "revision": "aq-aref-id8-2",
         "path": "apps/_ports/arefahmad-idrive8",
         "provenance": "apps/_ports/arefahmad-idrive8/PROVENANCE.json",
         "source_metadata": "apps/_ports/arefahmad-idrive8/PORT.json"
@@ -945,6 +1053,87 @@
       "live_install_status": "NOT OBSERVED"
     },
     {
+      "id": "bimmer_blocks",
+      "kind": "app",
+      "category": "game",
+      "title": "Bimmer Blocks",
+      "description": "Falling-block puzzle. Play only while stationary. Manual pause, next piece, ghost and local high score.",
+      "version": "1.1.1",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "mgu-render": "0.6.24"
+      },
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
+      "source_repository": null,
+      "source_git_commit": null,
+      "license": "MIT for original App Studio custom code; retain drawing-kit, font and third-party notices",
+      "source_path": "apps/_ports/appstudio-idrive8/apps/bimmer_blocks",
+      "source_origin_path": "apps/_sources/app-studio-custom/projects/apps/apps/bimmer_blocks",
+      "upstream_version": "1.1.0",
+      "upstream_readme": "apps/_sources/app-studio-custom/README-DE-EN.txt",
+      "delivery": "branch source",
+      "icon": "",
+      "images": [],
+      "image_count": 0,
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "live_install_status": "NOT OBSERVED",
+      "source_port": {
+        "id": "appstudio-idrive8",
+        "revision": 1,
+        "path": "apps/_ports/appstudio-idrive8",
+        "provenance": "apps/_ports/appstudio-idrive8/AQ_PORT.json",
+        "source_metadata": "apps/_ports/appstudio-idrive8/AQ_PORT.json"
+      },
+      "local_source_provenance": "data/appstudio-source-imports-20261119.json",
+      "id8_limitations": [
+        "Original AppStudio 1.1.0 declares ID7 only; AQ 1.1.1 is separately derived, with offline ID8 evidence and no publisher claim.",
+        "Actual target SDK members and the native renderer protocol/application area must exist. Test doubles are not evidence of target availability.",
+        "Unknown/stale speed, read errors or provider loss pause Bimmer Blocks. No game operation is authorized by a cached stationary value on ID8.",
+        "If a getter never settles, it retains its slot and the game remains paused; no unbounded retry queue is created.",
+        "Vehicle Pass values are personal manual records, not live pressures, verified parts recommendations or CBS updates.",
+        "Target installation, registration and physical UI/controller/speed behavior have not been observed."
+      ]
+    },
+    {
+      "id": "boostline_id8",
+      "kind": "app",
+      "category": "app",
+      "title": "ECU Live Data (iDrive 8, untested)",
+      "version": "1.0.0",
+      "description": "NOT YET TESTED ON AN iDRIVE 8 CAR. Needs the MGU Store's Renderer (mgu-render): the Store installs it first if it is missing. Live engine data from the DDE (diesel) or DME (petrol), CSV logs, road dyno and drag timer. Read-only: it never writes to a control unit.",
+      "source_repository": "giuseppesalatino-boop/mgu-apps-id8",
+      "license": "MIT with the original MIT app-kit notices retained",
+      "source_path": "apps/_sources/giuseppe-mgu-apps-id8/ecu-live-data/app",
+      "delivery": "branch source",
+      "icon": "",
+      "images": [],
+      "image_count": 0,
+      "upstream_readme": "apps/_sources/giuseppe-mgu-apps-id8/README.md",
+      "supported_hmi": [
+        "ID8"
+      ],
+      "requires": {
+        "mgu-render": "0.3.1"
+      },
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "live_install_status": "NOT OBSERVED",
+      "source_review_notes": "Publisher ID8 ports, versions1.0.0, with real ID8 widget generator and authoritative KIT_HMI_ID8 marker. Publisher explicitly says no car validation. Signals backend is raw-only (no typed fallback); it requires a compatible target backend. Do not count the ID7 sibling variants again as new functionality or infer a live data result.",
+      "duplicate_classification": "new-functional-app-or-explicit-id8-sibling",
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
+      "id8_limitations": [
+        "Original raw-only signal backend; compatible target provider required. Actual ID8 execution not observed."
+      ]
+    },
+    {
       "id": "brake_test",
       "kind": "app",
       "category": "app",
@@ -972,6 +1161,40 @@
       "image_count": 3,
       "upstream_artifact_sha256": null,
       "live_install_status": "NOT OBSERVED"
+    },
+    {
+      "id": "c365_drive",
+      "kind": "app",
+      "category": "app",
+      "title": "Drive",
+      "version": "1.9.3",
+      "description": "Speed, gear, oil and coolant, and the trip since you opened the app",
+      "source_repository": "ivanivanov23022005-pixel/mgu-drive",
+      "license": "MIT with original kit notices retained",
+      "source_path": "apps/_sources/c365-mgu-drive/apps/c365_drive",
+      "delivery": "branch source",
+      "icon": "",
+      "images": [],
+      "image_count": 0,
+      "upstream_readme": "apps/_sources/c365-mgu-drive/README.md",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "mgu-render": "0.6.24"
+      },
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "live_install_status": "NOT OBSERVED",
+      "source_review_notes": "Distinct compact drive-data dashboard. Original source really generates ID7 and ID8 RHMI and has marker-based cells and geometry; raw signal backend only, with no typed fallback. Original feed omits renderer dependency despite ID8 rendering requirement. Resolve the dependency contract and test synthetic packaging before acceptance; no target result observed.",
+      "duplicate_classification": "new-functional-app-or-explicit-id8-sibling",
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
+      "id8_limitations": [
+        "Original raw-only signal backend; compatible target provider required. Actual ID8 execution not observed."
+      ]
     },
     {
       "id": "camera-inspect",
@@ -1123,6 +1346,33 @@
       "live_install_status": "NOT OBSERVED"
     },
     {
+      "id": "cluster_lyrics",
+      "kind": "app",
+      "category": "app",
+      "title": "Cluster Lyrics",
+      "version": "0.1.1",
+      "description": "Shows the synchronised lyrics of the song playing on your Spotify account, optionally in the instrument cluster's map window instead of the Waze map.",
+      "source_repository": "NamelsMissing/mgu-apps",
+      "license": "GPL-3.0-only original app code; MIT kit/QR and MPL-2.0 cluster client and DejaVu font notices remain component-specific",
+      "source_path": "apps/_sources/namels-mgu-apps/apps/cluster_lyrics",
+      "delivery": "branch source",
+      "icon": "",
+      "images": [],
+      "image_count": 0,
+      "upstream_readme": "apps/_sources/namels-mgu-apps/apps/cluster_lyrics/README.md",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "cluster-render": "0.4.0"
+      },
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "live_install_status": "NOT OBSERVED",
+      "source_review_notes": "Three distinct original ID7 apps. Retain Store wrapper dependencies and GIF widget packaging, not merely kit/tools/build.py. GIF app LICENSE covers its QR vendor; it does not relicense all original app code to MIT. Cluster Lyrics LICENSE covers MPL client, not all original app code. No new native helper is required by these three feed definitions.",
+      "duplicate_classification": "new-functional-app-or-explicit-id8-sibling"
+    },
+    {
       "id": "cluster_themes",
       "kind": "app",
       "category": "app",
@@ -1165,6 +1415,79 @@
       "image_count": 20,
       "upstream_artifact_sha256": null,
       "live_install_status": "NOT OBSERVED"
+    },
+    {
+      "id": "dimon_battery",
+      "kind": "app",
+      "category": "app",
+      "title": "Battery & Electrical",
+      "description": "12 V battery monitor: voltage, current, charge, state of health and temperature, with a health verdict",
+      "source_repository": "DimonPrograms/dimonprograms-apps",
+      "license": "MIT; retain source and bundled third-party notices",
+      "source_path": "apps/_sources/dimonprograms-apps/apps/dimon_battery",
+      "delivery": "branch source",
+      "icon": "",
+      "images": [],
+      "image_count": 0,
+      "upstream_readme": "apps/_sources/dimonprograms-apps/apps/dimon_battery/README.md",
+      "version": "1.0.0",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0"
+      },
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "live_install_status": "NOT OBSERVED",
+      "packaging_recipe": "aq-original-source-notices/1"
+    },
+    {
+      "id": "dimon_track_mode",
+      "kind": "app",
+      "category": "app",
+      "title": "Track Mode",
+      "description": "Lap timer with sectors, best lap and live delta",
+      "source_repository": "DimonPrograms/dimonprograms-apps",
+      "license": "MIT; retain source and bundled third-party notices",
+      "source_path": "apps/_ports/dimonprograms-idrive8/apps/dimon_track_mode",
+      "delivery": "branch source",
+      "icon": "",
+      "images": [],
+      "image_count": 0,
+      "upstream_readme": "apps/_sources/dimonprograms-apps/apps/dimon_track_mode/README.md",
+      "version": "1.0.1",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "mgu-render": "0.6.24"
+      },
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "live_install_status": "NOT OBSERVED",
+      "source_origin_path": "apps/_sources/dimonprograms-apps/apps/dimon_track_mode",
+      "upstream_version": "1.0.0",
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
+      "source_port": {
+        "id": "dimonprograms-idrive8",
+        "revision": "aq-dimon-track-id8-1",
+        "path": "apps/_ports/dimonprograms-idrive8",
+        "provenance": "apps/_ports/dimonprograms-idrive8/PROVENANCE.json",
+        "source_metadata": "apps/_ports/dimonprograms-idrive8/PORT.json"
+      },
+      "id8_limitations": [
+        "Compatible Vehicle2 typed/raw read-only member and provider required for speed",
+        "Speed is not GPS position; lap boundaries remain manual",
+        "No speed statistics asserted for laps with observed reading loss or no samples",
+        "Native mgu-render >= 0.6.24 with touch and valid application area required",
+        "Dimon Battery diagnostic backend remains unported",
+        "No actual target build, registration or live installation observed"
+      ]
     },
     {
       "id": "dk_backgammon",
@@ -1269,6 +1592,102 @@
       "image_count": 2,
       "upstream_artifact_sha256": null,
       "live_install_status": "NOT OBSERVED"
+    },
+    {
+      "id": "dpf",
+      "kind": "app",
+      "category": "app",
+      "title": "DPF Status",
+      "description": "Read-only diesel particulate filter status monitoring",
+      "version": "0.1.32",
+      "source_repository": "dzooky/bmrmodz",
+      "source_path": "apps/_sources/dzooky-bmrmodz/apps/dpf",
+      "delivery": "branch source",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.19",
+        "mgu-inputgate": "1.2.1",
+        "mgu-deploy": "0.8.23"
+      },
+      "license": "MIT project grant; original kit and font notices retained",
+      "upstream_readme": "apps/_sources/dzooky-bmrmodz/README.md",
+      "icon": "",
+      "images": [],
+      "image_count": 0,
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "live_install_status": "NOT OBSERVED",
+      "packaging_recipe": "aq-original-source-notices/1",
+      "source_review_notes": "Original BMRMODZ ID7 application. Source scope is covered by root MIT grant; preserve original kit/font and app notices. Original Store mode emits SDK-free package under MGU_OUT. Requires idrive7-renderd >=2.1.19 and canonical mgu-inputgate >=1.2.1, never lower the inputgate requirement.",
+      "source_limitations": [
+        "ID7 only; no physical-unit validation by AQ.",
+        "Vehicle readings and cluster-message feature availability depend on actual target interfaces."
+      ],
+      "duplicate_classification": "new-original-app",
+      "aq_dependency_evidence": "mgu-deploy >=0.8.23 is the current reviewed original deploy implementation that supplies missing SDK modules while preparing an ordinary app package; qualified snapshot requirement, not a claimed historical minimum. Original SDK-free Store mode remains unchanged."
+    },
+    {
+      "id": "dpf_id8",
+      "kind": "app",
+      "category": "app",
+      "title": "DPF Monitoring (iDrive 8, untested)",
+      "version": "1.0.0",
+      "description": "NOT YET TESTED ON AN iDRIVE 8 CAR. Needs the MGU Store's Renderer (mgu-render): the Store installs it first if it is missing. The diesel particulate filter: soot and ash load, regenerations, differential pressure and exhaust temperatures from the diesel engine unit (DDE). Read-only.",
+      "source_repository": "giuseppesalatino-boop/mgu-apps-id8",
+      "license": "MIT with the original MIT app-kit notices retained",
+      "source_path": "apps/_sources/giuseppe-mgu-apps-id8/dpf-monitoring/app",
+      "delivery": "branch source",
+      "icon": "",
+      "images": [],
+      "image_count": 0,
+      "upstream_readme": "apps/_sources/giuseppe-mgu-apps-id8/README.md",
+      "supported_hmi": [
+        "ID8"
+      ],
+      "requires": {
+        "mgu-render": "0.3.1"
+      },
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "live_install_status": "NOT OBSERVED",
+      "source_review_notes": "Publisher ID8 ports, versions1.0.0, with real ID8 widget generator and authoritative KIT_HMI_ID8 marker. Publisher explicitly says no car validation. Signals backend is raw-only (no typed fallback); it requires a compatible target backend. Do not count the ID7 sibling variants again as new functionality or infer a live data result.",
+      "duplicate_classification": "new-functional-app-or-explicit-id8-sibling",
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
+      "id8_limitations": [
+        "Original raw-only signal backend; compatible target provider required. Actual ID8 execution not observed."
+      ]
+    },
+    {
+      "id": "dpf_monitor",
+      "kind": "app",
+      "category": "app",
+      "title": "DPF Monitor",
+      "version": "0.2.8",
+      "description": "View live DPF sensor data and recorded regeneration history from the engine control unit.",
+      "source_repository": "NamelsMissing/mgu-apps",
+      "license": "GPL-3.0-only original app code; MIT kit/QR and MPL-2.0 cluster client and DejaVu font notices remain component-specific",
+      "source_path": "apps/_sources/namels-mgu-apps/apps/dpf_monitor",
+      "delivery": "branch source",
+      "icon": "",
+      "images": [],
+      "image_count": 0,
+      "upstream_readme": "apps/_sources/namels-mgu-apps/apps/dpf_monitor/README.md",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.6",
+        "mgu-inputgate": "1.0.0"
+      },
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "live_install_status": "NOT OBSERVED",
+      "source_review_notes": "Three distinct original ID7 apps. Retain Store wrapper dependencies and GIF widget packaging, not merely kit/tools/build.py. GIF app LICENSE covers its QR vendor; it does not relicense all original app code to MIT. Cluster Lyrics LICENSE covers MPL client, not all original app code. No new native helper is required by these three feed definitions.",
+      "duplicate_classification": "new-functional-app-or-explicit-id8-sibling"
     },
     {
       "id": "draggy",
@@ -1482,6 +1901,50 @@
       "live_install_status": "NOT OBSERVED"
     },
     {
+      "id": "e85",
+      "kind": "app",
+      "category": "app",
+      "title": "E85 Blend",
+      "description": "The ethanol content in your tank from the fills you book and the car's own tank level, and how many litres of E85 or 98 hit your target: a top-up or a full tank, step by step at the pump. Warns before your tune's safe limit, and tracks what fuel costs you",
+      "source_repository": "Dante1243/dante-idrive-apps",
+      "license": "MIT; retain source and bundled third-party notices",
+      "source_path": "apps/_ports/dante-idrive8/apps/e85",
+      "delivery": "branch source",
+      "icon": "",
+      "images": [],
+      "image_count": 0,
+      "upstream_readme": "apps/_sources/dante-idrive-apps/README.md",
+      "version": "1.2.2",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "mgu-render": "0.6.24"
+      },
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "live_install_status": "NOT OBSERVED",
+      "source_origin_path": "apps/_sources/dante-idrive-apps/apps/e85",
+      "upstream_version": "1.2.1",
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
+      "source_port": {
+        "id": "dante-idrive8",
+        "revision": "aq-dante-e85-id8-1",
+        "path": "apps/_ports/dante-idrive8",
+        "provenance": "apps/_ports/dante-idrive8/PROVENANCE.json",
+        "source_metadata": "apps/_ports/dante-idrive8/PORT.json"
+      },
+      "id8_limitations": [
+        "DME tank diagnostics unavailable on ID8; explicit Kombi or manual input only",
+        "Compatible target SDK KombiIF member/provider required for live gauge",
+        "mgu-render >= 0.6.24 with native rendering, touch and valid application area required",
+        "No actual target build, registration or live installation observed"
+      ]
+    },
+    {
       "id": "edrive",
       "kind": "app",
       "category": "app",
@@ -1513,6 +1976,101 @@
       "image_count": 8,
       "upstream_artifact_sha256": null,
       "live_install_status": "NOT OBSERVED"
+    },
+    {
+      "id": "eldrive",
+      "kind": "app",
+      "category": "app",
+      "title": "elDrive",
+      "description": "eDrive with fully electric cars (BEV, e.g. the iX3): real range, live battery power, cells and climate power, HV battery health and energy, last charge, charge log, 12 V battery voltage and a home-screen widget; plug-in hybrids and 48 V mild hybrids as in eDrive",
+      "version": "1.1.0",
+      "source_repository": "beele/eldrive",
+      "source_path": "apps/_sources/beele-eldrive/apps/eldrive",
+      "delivery": "branch source",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0"
+      },
+      "license": "MIT original app and kit; retain Ubuntu/Noto and other bundled font notices",
+      "upstream_readme": "apps/_sources/beele-eldrive/README.md",
+      "icon": "",
+      "images": [],
+      "image_count": 0,
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "live_install_status": "NOT OBSERVED",
+      "packaging_recipe": "aq-original-source-notices/1",
+      "source_review_notes": "Original eDrive-based source with distinct BEV mode for iX3/G08, own app ID and data directory. Read-only diagnostics; the publisher identifies unconfirmed BEV readings separately. ID7 only, no ID8 claim. Use existing canonical renderer/inputgate, not this fork helper definitions.",
+      "source_limitations": [
+        "Functional eDrive fork with independent BEV/iX3 support, not an ID8 port.",
+        "Publisher documents confirmed versus unconfirmed BEV readings; no physical-unit validation by AQ.",
+        "Original packaging requires a target-provided SDK. Offline check used two inert fixture files, never real SDK code."
+      ],
+      "duplicate_classification": "functional-fork-with-new-BEV-support"
+    },
+    {
+      "id": "esagono-cluster",
+      "kind": "tool",
+      "category": "tool",
+      "title": "Esagono Cluster",
+      "version": "0.2.1",
+      "upstream_version": "0.2.0",
+      "description": "Supercar-style hexagon rev ring for the middle of the iDrive 8 cluster: 72-segment rev ring, redline and shift flash, big digital rpm readout, Comfort / Sport / Track colours. Pick 'Esagono' in the cluster's widget menu; change its settings in the Esagono Settings app. Live rpm needs an hmictl helper (IterioDev Overlays); EXPERIMENTAL, untested on a car.",
+      "source_repository": "grabandrey/esagono-cluster",
+      "license": "MIT; retain any original per-file notices",
+      "source_path": "tools/_packages/esagono-cluster",
+      "source_origin_path": "apps/_sources/grabandrey-esagono-cluster/tools/esagono-cluster",
+      "source_packaging": {
+        "path": "tools/_packages/esagono-cluster",
+        "provenance": "data/extra-tool-packaging.json",
+        "revision": "aq-helper-notices-1"
+      },
+      "delivery": "branch source",
+      "icon": "",
+      "images": [],
+      "image_count": 0,
+      "upstream_readme": "apps/_sources/grabandrey-esagono-cluster/README.md",
+      "supported_hmi": [
+        "ID8"
+      ],
+      "requires": {
+        "cluster-render": "0.6.9",
+        "mgu-deploy": "0.7.0",
+        "iteriodev-overlays": "0.5.0"
+      },
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "live_install_status": "NOT OBSERVED"
+    },
+    {
+      "id": "esagono_settings",
+      "kind": "app",
+      "category": "app",
+      "title": "Esagono Settings",
+      "version": "0.1.0",
+      "description": "Settings for the Esagono cluster widget: drive mode colours, redline, shift flash, scale, backdrop and demo.",
+      "source_repository": "grabandrey/esagono-cluster",
+      "license": "MIT; retain any original per-file notices",
+      "source_path": "apps/_sources/grabandrey-esagono-cluster/apps/esagono_settings",
+      "delivery": "branch source",
+      "icon": "",
+      "images": [],
+      "image_count": 0,
+      "upstream_readme": "apps/_sources/grabandrey-esagono-cluster/README.md",
+      "supported_hmi": [
+        "ID8"
+      ],
+      "requires": {
+        "esagono-cluster": "0.2.0"
+      },
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "live_install_status": "NOT OBSERVED",
+      "source_review_notes": "Committed apps/esagono_settings/package/rhmiData/uiDescriptions/ID8/application.xml and ID8 package declaration; helper explicitly targets cluster-render ID8 widget.",
+      "duplicate_classification": "new-functional-app"
     },
     {
       "id": "ethanol_mix",
@@ -1569,6 +2127,34 @@
       "live_install_status": "NOT OBSERVED"
     },
     {
+      "id": "gif_home",
+      "kind": "app",
+      "category": "app",
+      "title": "GIF Home",
+      "version": "0.3.1",
+      "description": "Animated home-screen GIF widget with built-in animations and phone uploads via QR code.",
+      "source_repository": "NamelsMissing/mgu-apps",
+      "license": "GPL-3.0-only original app code; MIT kit/QR and MPL-2.0 cluster client and DejaVu font notices remain component-specific",
+      "source_path": "apps/_sources/namels-mgu-apps/apps/gif_home",
+      "delivery": "branch source",
+      "icon": "",
+      "images": [],
+      "image_count": 0,
+      "upstream_readme": "apps/_sources/namels-mgu-apps/apps/gif_home/README.md",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0"
+      },
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "live_install_status": "NOT OBSERVED",
+      "source_review_notes": "Three distinct original ID7 apps. Retain Store wrapper dependencies and GIF widget packaging, not merely kit/tools/build.py. GIF app LICENSE covers its QR vendor; it does not relicense all original app code to MIT. Cluster Lyrics LICENSE covers MPL client, not all original app code. No new native helper is required by these three feed definitions.",
+      "duplicate_classification": "new-functional-app-or-explicit-id8-sibling"
+    },
+    {
       "id": "hook111",
       "kind": "tool",
       "category": "tool",
@@ -1621,6 +2207,116 @@
       "artifact": {},
       "upstream_artifact_sha256": null,
       "live_install_status": "NOT OBSERVED"
+    },
+    {
+      "id": "ida-vitals-cluster",
+      "kind": "tool",
+      "category": "tool",
+      "title": "Vitals Cluster",
+      "version": "1.3.3",
+      "upstream_version": "1.3.2",
+      "description": "iDrive 8-style widget for the middle of the cluster: water, engine oil and gearbox oil temperature bars, and each tyre's temperature and pressure. Pick 'Vitals' in the cluster's widget menu; the Vitals app feeds it the car's data and holds its settings. EXPERIMENTAL, untested on a car.",
+      "source_repository": "grabandrey/idrive-apps",
+      "license": "MIT; Barlow font atlas carries SIL-OFL-1.1",
+      "source_path": "tools/_packages/ida-vitals-cluster",
+      "source_origin_path": "apps/_sources/grabandrey-idrive-apps/packages/vitals/tool",
+      "source_packaging": {
+        "path": "tools/_packages/ida-vitals-cluster",
+        "provenance": "data/extra-tool-packaging.json",
+        "revision": "aq-helper-notices-1"
+      },
+      "delivery": "branch source",
+      "icon": "",
+      "images": [],
+      "image_count": 0,
+      "upstream_readme": "apps/_sources/grabandrey-idrive-apps/README.md",
+      "supported_hmi": [
+        "ID8"
+      ],
+      "requires": {
+        "cluster-render": "0.6.9",
+        "mgu-deploy": "0.7.0"
+      },
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "live_install_status": "NOT OBSERVED"
+    },
+    {
+      "id": "ida_lightlog",
+      "kind": "app",
+      "category": "app",
+      "title": "Light Logger",
+      "version": "1.3.1",
+      "description": "Finds what switches the seat logos off: the RGB light modules, the body controller's lamp outputs, and a finder that compares everything the body controller and seat modules report with the logos on and off. Keep on (off until you switch it on) holds the logos' lamp output on while the car is on. EXPERIMENTAL, untested on a car.",
+      "source_repository": "grabandrey/idrive-apps",
+      "license": "MIT; Barlow font atlas carries SIL-OFL-1.1",
+      "source_path": "apps/_sources/grabandrey-idrive-apps/packages/lightlog/app",
+      "delivery": "branch source",
+      "icon": "",
+      "images": [],
+      "image_count": 0,
+      "upstream_readme": "apps/_sources/grabandrey-idrive-apps/README.md",
+      "supported_hmi": [
+        "ID8"
+      ],
+      "requires": {},
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "live_install_status": "NOT OBSERVED",
+      "source_review_notes": "Original unit-built apps with committed ID8 RHMI descriptions. Vitals has a new publisher-owned JS/config/service helper, not a renamed canonical tool. Light Logger and Seat Lights contain original vehicle lighting controls; unchanged, not executed. Publisher labels these experimental; only the seat-light hold has a limited publisher-reported G87 observation.",
+      "duplicate_classification": "new-functional-app-or-explicit-id8-sibling"
+    },
+    {
+      "id": "ida_seatlights",
+      "kind": "app",
+      "category": "app",
+      "title": "Seat Lights",
+      "version": "1.3.2",
+      "description": "One switch: keeps the seat (headrest) logos lit, no timer, until you switch it off; off while the car is locked with the engine off (G87 M2: the body controller's lamp output 45). The switch is kept across drives. EXPERIMENTAL.",
+      "source_repository": "grabandrey/idrive-apps",
+      "license": "MIT; Barlow font atlas carries SIL-OFL-1.1",
+      "source_path": "apps/_sources/grabandrey-idrive-apps/packages/seatlights/app",
+      "delivery": "branch source",
+      "icon": "",
+      "images": [],
+      "image_count": 0,
+      "upstream_readme": "apps/_sources/grabandrey-idrive-apps/README.md",
+      "supported_hmi": [
+        "ID8"
+      ],
+      "requires": {},
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "live_install_status": "NOT OBSERVED",
+      "source_review_notes": "Original unit-built apps with committed ID8 RHMI descriptions. Vitals has a new publisher-owned JS/config/service helper, not a renamed canonical tool. Light Logger and Seat Lights contain original vehicle lighting controls; unchanged, not executed. Publisher labels these experimental; only the seat-light hold has a limited publisher-reported G87 observation.",
+      "duplicate_classification": "new-functional-app-or-explicit-id8-sibling"
+    },
+    {
+      "id": "ida_vitals",
+      "kind": "app",
+      "category": "app",
+      "title": "Vitals",
+      "version": "1.3.1",
+      "description": "Water, engine oil, gearbox oil and tyre temperatures in the iDrive 8 cluster: reads the car's data for the Vitals widget and holds its settings.",
+      "source_repository": "grabandrey/idrive-apps",
+      "license": "MIT; Barlow font atlas carries SIL-OFL-1.1",
+      "source_path": "apps/_sources/grabandrey-idrive-apps/packages/vitals/app",
+      "delivery": "branch source",
+      "icon": "",
+      "images": [],
+      "image_count": 0,
+      "upstream_readme": "apps/_sources/grabandrey-idrive-apps/README.md",
+      "supported_hmi": [
+        "ID8"
+      ],
+      "requires": {
+        "ida-vitals-cluster": "1.3.0"
+      },
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "live_install_status": "NOT OBSERVED",
+      "source_review_notes": "Original unit-built apps with committed ID8 RHMI descriptions. Vitals has a new publisher-owned JS/config/service helper, not a renamed canonical tool. Light Logger and Seat Lights contain original vehicle lighting controls; unchanged, not executed. Publisher labels these experimental; only the seat-light hold has a limited publisher-reported G87 observation.",
+      "duplicate_classification": "new-functional-app-or-explicit-id8-sibling"
     },
     {
       "id": "idrive7-renderd",
@@ -2742,7 +3438,7 @@
       ],
       "source_port": {
         "id": "hexlay-idrive8",
-        "revision": "aq-hexlay-id8-1",
+        "revision": "aq-hexlay-id8-2",
         "path": "apps/_ports/hexlay-idrive8",
         "provenance": "apps/_ports/hexlay-idrive8/PROVENANCE.json",
         "source_metadata": "apps/_ports/hexlay-idrive8/PORT.json"
@@ -3141,23 +3837,36 @@
       "kind": "tool",
       "category": "tool",
       "title": "Controller gate",
-      "version": "1.2.0",
+      "version": "1.2.2",
       "description": "Lets the apps have the iDrive controller (tabs, page buttons, settings, Doom); loads into the HMI at the next start (iDrive 7 and iDrive 8)",
       "supported_hmi": [
         "ID7",
         "ID8"
       ],
-      "requires": {},
+      "requires": {
+        "mgu-deploy": "0.3.2"
+      },
       "source_repository": "cauliflowermossgrape/idrive7-apps",
-      "license": "MIT; retain per-component and third-party notices",
-      "source_path": "apps/_sources/idrive7-apps/kit/renderd/inputgate/tool",
+      "license": "Original MIT and GPL notices retained; vsomeip interface headers retain MPL-2.0 notices; see frozen source and packaged notices.",
+      "source_path": "tools/_packages/mgu-inputgate",
       "delivery": "branch source",
       "artifact": {},
       "icon": null,
       "images": [],
       "image_count": 0,
       "upstream_artifact_sha256": null,
-      "live_install_status": "NOT OBSERVED"
+      "live_install_status": "NOT OBSERVED",
+      "source_origin_path": "tools/_sources/cauli-inputgate-1.2.1/kit/renderd/inputgate/tool",
+      "upstream_version": "1.2.1",
+      "upstream_readme": "tools/_sources/cauli-inputgate-1.2.1/kit/renderd/inputgate/tool/README.md",
+      "source_packaging": {
+        "id": "mgu-inputgate",
+        "path": "tools/_packages/mgu-inputgate",
+        "version": "1.2.2",
+        "upstream_version": "1.2.1",
+        "provenance": "data/extra-tool-packaging.json",
+        "scope": "AQ notice packaging of original publisher runtime/guards/services; no runtime modification."
+      }
     },
     {
       "id": "mgu-obd-adapter",
@@ -3421,6 +4130,85 @@
       "live_install_status": "NOT OBSERVED"
     },
     {
+      "id": "osa",
+      "kind": "app",
+      "category": "app",
+      "title": "Oil Service Assistant",
+      "description": "Engine, coolant and transmission oil temperature monitoring with live warm-up estimates and locally stored service history",
+      "version": "0.2.50",
+      "source_repository": "dzooky/bmrmodz",
+      "source_path": "apps/_sources/dzooky-bmrmodz/apps/osa",
+      "delivery": "branch source",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.19",
+        "mgu-inputgate": "1.2.1",
+        "mgu-deploy": "0.8.23"
+      },
+      "license": "MIT project grant; original kit and font notices retained",
+      "upstream_readme": "apps/_sources/dzooky-bmrmodz/README.md",
+      "icon": "",
+      "images": [],
+      "image_count": 0,
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "live_install_status": "NOT OBSERVED",
+      "packaging_recipe": "aq-original-source-notices/1",
+      "source_review_notes": "Original BMRMODZ ID7 application. Source scope is covered by root MIT grant; preserve original kit/font and app notices. Original Store mode emits SDK-free package under MGU_OUT. Requires idrive7-renderd >=2.1.19 and canonical mgu-inputgate >=1.2.1, never lower the inputgate requirement.",
+      "source_limitations": [
+        "ID7 only; no physical-unit validation by AQ.",
+        "Vehicle readings and cluster-message feature availability depend on actual target interfaces."
+      ],
+      "duplicate_classification": "new-original-app",
+      "aq_dependency_evidence": "mgu-deploy >=0.8.23 is the current reviewed original deploy implementation that supplies missing SDK modules while preparing an ordinary app package; qualified snapshot requirement, not a claimed historical minimum. Original SDK-free Store mode remains unchanged."
+    },
+    {
+      "id": "parked_games",
+      "kind": "app",
+      "category": "game",
+      "title": "Parked Games",
+      "description": "Small games for when the car is parked, played with the iDrive knob (and the touchscreen)",
+      "source_repository": "MaxxxFoka/IDRIVE7GAMES",
+      "license": "MIT; retain source and bundled third-party notices",
+      "source_path": "apps/_ports/maxxxfoka-idrive8/apps/parked_games",
+      "delivery": "branch source",
+      "icon": "",
+      "images": [],
+      "image_count": 0,
+      "upstream_readme": "apps/_sources/maxxxfoka-idrive7games/README.md",
+      "version": "0.2.3",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "mgu-render": "0.6.24"
+      },
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "live_install_status": "NOT OBSERVED",
+      "source_origin_path": "apps/_sources/maxxxfoka-idrive7games/apps/parked_games",
+      "upstream_version": "0.2.2",
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
+      "source_port": {
+        "id": "maxxxfoka-idrive8",
+        "revision": "aq-parked-games-id8-1",
+        "path": "apps/_ports/maxxxfoka-idrive8",
+        "provenance": "apps/_ports/maxxxfoka-idrive8/PROVENANCE.json",
+        "source_metadata": "apps/_ports/maxxxfoka-idrive8/PORT.json"
+      },
+      "id8_limitations": [
+        "Compatible target SDK Vehicle2 read-only member/provider required",
+        "mgu-render >= 0.6.24 native rendering, touch and application area required",
+        "ID8 controller-dependent multiplayer needs a supported renderer gate",
+        "No actual target build, registration or live installation observed"
+      ]
+    },
+    {
       "id": "perea_mhd_flex",
       "kind": "app",
       "category": "app",
@@ -3585,6 +4373,37 @@
       "live_install_status": "NOT OBSERVED"
     },
     {
+      "id": "sideways",
+      "kind": "app",
+      "category": "app",
+      "title": "Sideways",
+      "version": "0.6.6",
+      "description": "Live drift angle, chained scoring up to x6, replays with a freestyle camera, videos of your drifts on your phone and a worldwide leaderboard.",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-render": "0.3.1"
+      },
+      "source_repository": "idrive-labs/sideways",
+      "license": "GPL-3.0-or-later; original publisher source and notices retained",
+      "source_path": null,
+      "delivery": "original publisher artifact",
+      "artifact": {
+        "name": "sideways@0.6.6.tgz",
+        "size": 2614965,
+        "sha256": "13534b386d83bd81ffe973c7e70e8a910e9d37d6a5afe899611815e7989b739b",
+        "url": "https://github.com/idrive-labs/mgu-apps/releases/download/catalog/sideways@0.6.6.tgz"
+      },
+      "icon": "https://raw.githubusercontent.com/idrive-labs/mgu-apps/c3e0cc34c65d38e2eb1b251c0c8463ddb73b35c9/sideways.png",
+      "images": [],
+      "image_count": 0,
+      "upstream_artifact_sha256": "13534b386d83bd81ffe973c7e70e8a910e9d37d6a5afe899611815e7989b739b",
+      "upstream_readme": "https://raw.githubusercontent.com/idrive-labs/sideways/33e6013c1c2eb1d9725dea4f43448ecaf081ae07/README.md",
+      "live_install_status": "NOT OBSERVED",
+      "duplicate_classification": "new-functional-app"
+    },
+    {
       "id": "spotify",
       "kind": "app",
       "category": "app",
@@ -3622,11 +4441,49 @@
       ],
       "source_port": {
         "id": "hexlay-idrive8",
-        "revision": "aq-hexlay-id8-1",
+        "revision": "aq-hexlay-id8-2",
         "path": "apps/_ports/hexlay-idrive8",
         "provenance": "apps/_ports/hexlay-idrive8/PROVENANCE.json",
         "source_metadata": "apps/_ports/hexlay-idrive8/PORT.json"
       }
+    },
+    {
+      "id": "spritmonitor",
+      "kind": "app",
+      "category": "app",
+      "title": "Spritmonitor",
+      "description": "Third-party app for Spritmonitor.de that lets you log fuel and AdBlue refills from BMW iDrive 7.",
+      "version": "0.1.44",
+      "source_repository": "dzooky/bmrmodz",
+      "source_path": "apps/_sources/dzooky-bmrmodz/apps/spritmonitor",
+      "delivery": "branch source",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.19",
+        "mgu-inputgate": "1.2.1",
+        "mgu-deploy": "0.8.23"
+      },
+      "license": "MIT project grant; original kit and font notices retained",
+      "upstream_readme": "apps/_sources/dzooky-bmrmodz/README.md",
+      "icon": "",
+      "images": [],
+      "image_count": 0,
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "live_install_status": "NOT OBSERVED",
+      "packaging_recipe": "aq-original-source-notices/1",
+      "source_review_notes": "Original BMRMODZ ID7 application. Source scope is covered by root MIT grant; preserve original kit/font and app notices. Original Store mode emits SDK-free package under MGU_OUT. Requires idrive7-renderd >=2.1.19 and canonical mgu-inputgate >=1.2.1, never lower the inputgate requirement.",
+      "source_limitations": [
+        "Publisher labels application in development.",
+        "Requires configured Spritmonitor account and network service; mguInternet=true must remain in built package.",
+        "Experimental resetTripAfterFuelUpload exists upstream, default=false; do not describe the entire app as read-only.",
+        "Optional positioning is discovered from the local unit interface catalog by the original builder, not guaranteed on all vehicles."
+      ],
+      "duplicate_classification": "new-original-app",
+      "aq_dependency_evidence": "mgu-deploy >=0.8.23 is the current reviewed original deploy implementation that supplies missing SDK modules while preparing an ordinary app package; qualified snapshot requirement, not a claimed historical minimum. Original SDK-free Store mode remains unchanged.",
+      "mguInternet": true
     },
     {
       "id": "sys_monitor",
@@ -3664,11 +4521,123 @@
       ],
       "source_port": {
         "id": "hexlay-idrive8",
-        "revision": "aq-hexlay-id8-1",
+        "revision": "aq-hexlay-id8-2",
         "path": "apps/_ports/hexlay-idrive8",
         "provenance": "apps/_ports/hexlay-idrive8/PROVENANCE.json",
         "source_metadata": "apps/_ports/hexlay-idrive8/PORT.json"
       }
+    },
+    {
+      "id": "true_time_id8",
+      "kind": "app",
+      "category": "app",
+      "title": "True Time (iDrive 8, untested)",
+      "version": "1.0.0",
+      "description": "NOT YET TESTED ON AN iDRIVE 8 CAR. Needs the MGU Store's Renderer (mgu-render): the Store installs it first if it is missing. Acceleration and braking times, measured and corrected for the road's slope (the DSC's acceleration sensor). Read-only. Performance runs only on closed courses.",
+      "source_repository": "giuseppesalatino-boop/mgu-apps-id8",
+      "license": "MIT with the original MIT app-kit notices retained",
+      "source_path": "apps/_sources/giuseppe-mgu-apps-id8/true-time/app",
+      "delivery": "branch source",
+      "icon": "",
+      "images": [],
+      "image_count": 0,
+      "upstream_readme": "apps/_sources/giuseppe-mgu-apps-id8/README.md",
+      "supported_hmi": [
+        "ID8"
+      ],
+      "requires": {
+        "mgu-render": "0.3.1"
+      },
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "live_install_status": "NOT OBSERVED",
+      "source_review_notes": "Publisher ID8 ports, versions1.0.0, with real ID8 widget generator and authoritative KIT_HMI_ID8 marker. Publisher explicitly says no car validation. Signals backend is raw-only (no typed fallback); it requires a compatible target backend. Do not count the ID7 sibling variants again as new functionality or infer a live data result.",
+      "duplicate_classification": "new-functional-app-or-explicit-id8-sibling",
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
+      "id8_limitations": [
+        "Original raw-only signal backend; compatible target provider required. Actual ID8 execution not observed."
+      ]
+    },
+    {
+      "id": "turnkey_e_blend_id8",
+      "kind": "app",
+      "category": "app",
+      "title": "TurnKey E Blend",
+      "version": "0.5.0",
+      "description": "Plan a petrol and E85 blend, read the remaining fuel from the car, or estimate tank ethanol.",
+      "supported_hmi": [
+        "ID8"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.0"
+      },
+      "source_repository": "vecyoroleg-lgtm/turnkey-e-blend-id8",
+      "license": "GPL-3.0-or-later application with original MIT TurnKey formula attribution",
+      "source_path": null,
+      "delivery": "original publisher artifact",
+      "artifact": {
+        "name": "turnkey_e_blend_id8@0.5.0.tgz",
+        "size": 24766,
+        "sha256": "a32236e51394822515e7c997b1cc3c28f2c82983e498c7d87b4c6c46d6a5096e",
+        "url": "https://raw.githubusercontent.com/vecyoroleg-lgtm/turnkey-e-blend-id8/918b336fbad09b8b49c0dd2914523c0ef1633d8a/turnkey_e_blend_id8%400.5.0.tgz"
+      },
+      "icon": null,
+      "images": [],
+      "image_count": 0,
+      "upstream_artifact_sha256": "a32236e51394822515e7c997b1cc3c28f2c82983e498c7d87b4c6c46d6a5096e",
+      "upstream_readme": "https://raw.githubusercontent.com/vecyoroleg-lgtm/turnkey-e-blend-id8/918b336fbad09b8b49c0dd2914523c0ef1633d8a/README.md",
+      "live_install_status": "NOT OBSERVED",
+      "duplicate_classification": "id8-port-of-existing-function"
+    },
+    {
+      "id": "vehicle_pass",
+      "kind": "app",
+      "category": "app",
+      "title": "Bimmer Pass",
+      "description": "Personal maintenance log, tyre sizes and own target pressures, vehicle profile, modifications, engine oil and part numbers.",
+      "version": "1.1.1",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "mgu-render": "0.6.24"
+      },
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
+      "source_repository": null,
+      "source_git_commit": null,
+      "license": "MIT for original App Studio custom code; retain drawing-kit, font and third-party notices",
+      "source_path": "apps/_ports/appstudio-idrive8/apps/vehicle_pass",
+      "source_origin_path": "apps/_sources/app-studio-custom/projects/apps/apps/vehicle_pass",
+      "upstream_version": "1.1.0",
+      "upstream_readme": "apps/_sources/app-studio-custom/README-DE-EN.txt",
+      "delivery": "branch source",
+      "icon": "",
+      "images": [],
+      "image_count": 0,
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "live_install_status": "NOT OBSERVED",
+      "source_port": {
+        "id": "appstudio-idrive8",
+        "revision": 1,
+        "path": "apps/_ports/appstudio-idrive8",
+        "provenance": "apps/_ports/appstudio-idrive8/AQ_PORT.json",
+        "source_metadata": "apps/_ports/appstudio-idrive8/AQ_PORT.json"
+      },
+      "local_source_provenance": "data/appstudio-source-imports-20261119.json",
+      "id8_limitations": [
+        "Original AppStudio 1.1.0 declares ID7 only; AQ 1.1.1 is separately derived, with offline ID8 evidence and no publisher claim.",
+        "Actual target SDK members and the native renderer protocol/application area must exist. Test doubles are not evidence of target availability.",
+        "Unknown/stale speed, read errors or provider loss pause Bimmer Blocks. No game operation is authorized by a cached stationary value on ID8.",
+        "If a getter never settles, it retains its slot and the game remains paused; no unbounded retry queue is created.",
+        "Vehicle Pass values are personal manual records, not live pressures, verified parts recommendations or CBS updates.",
+        "Target installation, registration and physical UI/controller/speed behavior have not been observed."
+      ]
     },
     {
       "id": "vizualyse-bus",

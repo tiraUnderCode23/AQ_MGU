@@ -1,0 +1,117 @@
+{
+  "id": "vehicle_pass",
+  "title": "Bimmer Pass",
+  "description": "Personal maintenance log, tyre sizes and own target pressures, vehicle profile, modifications, engine oil and part numbers.",
+  "version": "1.1.1",
+  "vendor": "bimmer_custom",
+  "loggingId": "BP01",
+  "iconGlyph": "wrench",
+  "signals": {},
+  "screens": [
+    {
+      "name": "MAIN",
+      "kind": "canvas",
+      "title": "Bimmer Pass",
+      "buttons": [
+        [
+          "BTN_PAGE",
+          "Page"
+        ],
+        [
+          "BTN_NEXT",
+          "Next"
+        ],
+        [
+          "BTN_MINUS",
+          "-"
+        ],
+        [
+          "BTN_PLUS",
+          "+"
+        ],
+        [
+          "BTN_SAVE",
+          "Save"
+        ],
+        [
+          "BTN_BACK",
+          "Back"
+        ],
+        [
+          "BTN_SETTINGS",
+          "Settings"
+        ]
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "key": "theme",
+      "label": "Colour theme",
+      "type": "choice",
+      "default": "bimmer_blue",
+      "options": [
+        [
+          "bimmer_blue",
+          "Bimmer Blue"
+        ],
+        [
+          "m_tricolour",
+          "M Tricolour"
+        ],
+        [
+          "ice",
+          "Ice White"
+        ],
+        [
+          "amber",
+          "Night Amber"
+        ]
+      ],
+      "reset": 1
+    },
+    {
+      "key": "layout",
+      "label": "Screen layout",
+      "type": "choice",
+      "default": "full",
+      "options": [
+        [
+          "full",
+          "Full screen"
+        ],
+        [
+          "standard",
+          "Standard"
+        ]
+      ]
+    },
+    {
+      "key": "renderer",
+      "label": "Renderer",
+      "type": "choice",
+      "default": "auto",
+      "options": [
+        [
+          "auto",
+          "GPU 60 fps (default)"
+        ],
+        [
+          "software",
+          "Software"
+        ]
+      ]
+    }
+  ],
+  "aqOriginalVersion": "1.1.0",
+  "mguHmi": [
+    "ID7",
+    "ID8"
+  ],
+  "requires": {
+    "mgu-render": "0.6.24"
+  },
+  "mguNeeds": [
+    "renderer"
+  ]
+}

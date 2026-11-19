@@ -1,0 +1,560 @@
+{
+  "schema": "aq-mgu.source-port-files/1",
+  "port": "dimonprograms-idrive8",
+  "revision": "aq-dimon-track-id8-1",
+  "upstream_commit": "5031c0287c4e90e7c8bdff076b594bbfd3897dee",
+  "excluded": [
+    "PROVENANCE.json",
+    "__pycache__",
+    "dist",
+    "node_modules"
+  ],
+  "files": [
+    {
+      "path": "LICENSE",
+      "sha256": "d145efd9dcbae2428ead578711b8cde2fe7b2126f840418491cb7591b6ecf186",
+      "bytes": 1223,
+      "original_sha256": "d145efd9dcbae2428ead578711b8cde2fe7b2126f840418491cb7591b6ecf186",
+      "original_unchanged": true
+    },
+    {
+      "path": "NOTICE.zh-CN.md",
+      "sha256": "788e04acd7d904d6adff05ac2798f91191173e608d76b820070450e107469bab",
+      "bytes": 1081,
+      "original_sha256": "788e04acd7d904d6adff05ac2798f91191173e608d76b820070450e107469bab",
+      "original_unchanged": true
+    },
+    {
+      "path": "PORT.json",
+      "sha256": "6ded5fc7e70f2db615e4d096cf4c443be371f138a75c11b61fe3e8813562ba24",
+      "bytes": 2879,
+      "original_sha256": null,
+      "original_unchanged": false
+    },
+    {
+      "path": "README.md",
+      "sha256": "e4d1fc8113d7c9f7b9c18a7a451c8bf57f72736648911b1603b3f37d4e0ae008",
+      "bytes": 3563,
+      "original_sha256": "14b4e0af8645534984971ef73c294f189972147a799300bc5f0b71faf371c318",
+      "original_unchanged": false
+    },
+    {
+      "path": "README.upstream.md",
+      "sha256": "14b4e0af8645534984971ef73c294f189972147a799300bc5f0b71faf371c318",
+      "bytes": 7166,
+      "original_sha256": null,
+      "original_unchanged": false
+    },
+    {
+      "path": "apps/dimon_track_mode/README.md",
+      "sha256": "f838067bcb8d523e4b2e751f21003c586cd9b34720c58bf81b4028ef28ba572f",
+      "bytes": 1710,
+      "original_sha256": "f838067bcb8d523e4b2e751f21003c586cd9b34720c58bf81b4028ef28ba572f",
+      "original_unchanged": true
+    },
+    {
+      "path": "apps/dimon_track_mode/app.json",
+      "sha256": "041338c704847f8237ec42b338d85483f9058c6bee708f20e223e777dfdea740",
+      "bytes": 3237,
+      "original_sha256": "0653a00d6b2758a4ce76fd2ccc361f94bf02e4707becf4a2b29511ac2782df11",
+      "original_unchanged": false
+    },
+    {
+      "path": "apps/dimon_track_mode/demo.js",
+      "sha256": "7769c9255cce11bfd58f2e5c098bd10d97d12bfc9c9173c7c1eb8c9eb4ad83e1",
+      "bytes": 1698,
+      "original_sha256": "7769c9255cce11bfd58f2e5c098bd10d97d12bfc9c9173c7c1eb8c9eb4ad83e1",
+      "original_unchanged": true
+    },
+    {
+      "path": "apps/dimon_track_mode/icon.png",
+      "sha256": "cf17bba5286f9c96b10284952de891d585e46e9898ba1f8acdd81fbae4dbc5e3",
+      "bytes": 1322,
+      "original_sha256": "cf17bba5286f9c96b10284952de891d585e46e9898ba1f8acdd81fbae4dbc5e3",
+      "original_unchanged": true
+    },
+    {
+      "path": "apps/dimon_track_mode/lap.js",
+      "sha256": "56941d96cb2fc0ccfbc8c67fe6fa904c42cd6d6d2457c27e92131df72ed83d87",
+      "bytes": 4057,
+      "original_sha256": "56941d96cb2fc0ccfbc8c67fe6fa904c42cd6d6d2457c27e92131df72ed83d87",
+      "original_unchanged": true
+    },
+    {
+      "path": "apps/dimon_track_mode/main.js",
+      "sha256": "ec97f8c38c2c3561711cb8e7aaa7cce29dc09402ee2a54c33bc34db41091ca9a",
+      "bytes": 15461,
+      "original_sha256": "a6f138c90d02e8e3cacc5b7d0d4a6a198c337ba33959d62b3ebd0099d3ca4b01",
+      "original_unchanged": false
+    },
+    {
+      "path": "apps/dimon_track_mode/speed_id8.js",
+      "sha256": "378655ed106a260a9371ba9c291281ac2e402feae0314c115262eb1f4670a141",
+      "bytes": 2735,
+      "original_sha256": null,
+      "original_unchanged": false
+    },
+    {
+      "path": "kit/LICENSE.alexpereap",
+      "sha256": "72479db7cc03773b84999663a6917a433fe35438b9a9ad77afe3c8eeca377a44",
+      "bytes": 1067,
+      "original_sha256": null,
+      "original_unchanged": false
+    },
+    {
+      "path": "kit/LICENSE.aref",
+      "sha256": "af0fd0696aa3715b61d36249da00b7c1404d28f3ebb5bbff5b1c0262af765cc3",
+      "bytes": 1061,
+      "original_sha256": null,
+      "original_unchanged": false
+    },
+    {
+      "path": "kit/LICENSE.idrive7-apps",
+      "sha256": "7c813412dcaf1b9d18c28ca6b6199c4349e15e35beca44ab6cab8e4413fe0aa6",
+      "bytes": 1151,
+      "original_sha256": null,
+      "original_unchanged": false
+    },
+    {
+      "path": "kit/NOTICE.AQ-ID8",
+      "sha256": "160afac69d33b021a7990efd08d9a0ff6b160c1c5aab03bcbd14a8d3e71945e0",
+      "bytes": 364,
+      "original_sha256": null,
+      "original_unchanged": false
+    },
+    {
+      "path": "kit/localization/credit.ru.json",
+      "sha256": "656d45a268efe4ae518b331a15b31a7194264b027466b416a77cfbf412fb86b2",
+      "bytes": 448,
+      "original_sha256": "656d45a268efe4ae518b331a15b31a7194264b027466b416a77cfbf412fb86b2",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/localization/credit.zh-CN.json",
+      "sha256": "c15e741d089c95575f0e8c4833489d6530980ced429672c9248ea8b6bc8fbd59",
+      "bytes": 576,
+      "original_sha256": "c15e741d089c95575f0e8c4833489d6530980ced429672c9248ea8b6bc8fbd59",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/localization/diagnostic-full-manifest.json",
+      "sha256": "0a59838fbcb318324925285784d9e8a559136a37694db6725d71f860c474dad8",
+      "bytes": 656,
+      "original_sha256": "0a59838fbcb318324925285784d9e8a559136a37694db6725d71f860c474dad8",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/localization/diagnostic-full-manifest.ru.json",
+      "sha256": "7c01c38093ead7e2a5c0964c52b68c4c4e4f329f0b35356388fdb454fe6a9af1",
+      "bytes": 733,
+      "original_sha256": "7c01c38093ead7e2a5c0964c52b68c4c4e4f329f0b35356388fdb454fe6a9af1",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/localization/diagnostic-full-terms.tsv",
+      "sha256": "03bd61e16b7adc99ccaf9c1b9594eeb9c795b3ec2c5f7fe717ea4f50cd1a5fdb",
+      "bytes": 25028,
+      "original_sha256": "03bd61e16b7adc99ccaf9c1b9594eeb9c795b3ec2c5f7fe717ea4f50cd1a5fdb",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/localization/diagnostic-full.ru.json",
+      "sha256": "8a0bdd031c635d7e0929d0d913caafbd9d174afde2d6de7e8b55c4255028eae5",
+      "bytes": 13580391,
+      "original_sha256": "8a0bdd031c635d7e0929d0d913caafbd9d174afde2d6de7e8b55c4255028eae5",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/localization/diagnostic-full.zh-CN.json",
+      "sha256": "f1217e13b23b0a10db3a23a8b4d11f5e603b34fcafaf11cdd6544420a9101e9a",
+      "bytes": 11844672,
+      "original_sha256": "f1217e13b23b0a10db3a23a8b4d11f5e603b34fcafaf11cdd6544420a9101e9a",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/localization/diagnostic-overrides.ru.json",
+      "sha256": "2d9674d9658df2b6e2c64a30f48eba3f5e6283d0eb9692285147f717280afbe7",
+      "bytes": 1017,
+      "original_sha256": "2d9674d9658df2b6e2c64a30f48eba3f5e6283d0eb9692285147f717280afbe7",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/localization/diagnostic-overrides.zh-CN.json",
+      "sha256": "bce13aa67f5ae78caf65e5741c7f92ee6d4591aad1fb7874bdea78f97ff7a8a5",
+      "bytes": 2568,
+      "original_sha256": "bce13aa67f5ae78caf65e5741c7f92ee6d4591aad1fb7874bdea78f97ff7a8a5",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/localization/diagnostic-terms.tsv",
+      "sha256": "856300a191ad8da43aeb4c532baf0a7a42736be8825eeecb0cf6ac9490e6b9b8",
+      "bytes": 19262,
+      "original_sha256": "856300a191ad8da43aeb4c532baf0a7a42736be8825eeecb0cf6ac9490e6b9b8",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/localization/fonts/OFL-NotoSansKR.txt",
+      "sha256": "77fe79c891328aee1528d3efa06f344798c180d0d4df0ea02efe243f63c865fe",
+      "bytes": 4236,
+      "original_sha256": "77fe79c891328aee1528d3efa06f344798c180d0d4df0ea02efe243f63c865fe",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/localization/fonts/cyrillic-ru.json",
+      "sha256": "c847f70baaa6b2f12df1e5acebab0227d97f46c76a09248e66b57ae5686d5758",
+      "bytes": 53292,
+      "original_sha256": "c847f70baaa6b2f12df1e5acebab0227d97f46c76a09248e66b57ae5686d5758",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/localization/fonts/diagnostic-zh-CN.json",
+      "sha256": "82e0ded0741e4fe402ef3fa7569d9c5a53f7684e4bc71f9d5ead36cfe280c8bd",
+      "bytes": 679189,
+      "original_sha256": "82e0ded0741e4fe402ef3fa7569d9c5a53f7684e4bc71f9d5ead36cfe280c8bd",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/localization/fonts/korean.json",
+      "sha256": "ae4c3c2728fd414d5b001d3c413cbfc3c4cc0588f983bc82d6d038b574273dc9",
+      "bytes": 755507,
+      "original_sha256": "ae4c3c2728fd414d5b001d3c413cbfc3c4cc0588f983bc82d6d038b574273dc9",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/platform/permissions.json",
+      "sha256": "a03a2d7be452e89f9ce5361820361dded34ef36aa1e4a5afda95a4a1b1e26b01",
+      "bytes": 9142,
+      "original_sha256": "a03a2d7be452e89f9ce5361820361dded34ef36aa1e4a5afda95a4a1b1e26b01",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/runtime/canvas.js",
+      "sha256": "5ba26f725e46ef5bf4b47308f40365791d44b59e7d8424b43e1024514f0dfcc8",
+      "bytes": 27276,
+      "original_sha256": "5ba26f725e46ef5bf4b47308f40365791d44b59e7d8424b43e1024514f0dfcc8",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/runtime/car.js",
+      "sha256": "a056c5b5af6b5e401ea1efcd0521e891936e6b89d234a3151719c3f91a430b39",
+      "bytes": 12021,
+      "original_sha256": "a056c5b5af6b5e401ea1efcd0521e891936e6b89d234a3151719c3f91a430b39",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/runtime/credits.js",
+      "sha256": "6074066bc6ae85794db9b844322264ad8aa73b89c850f6b03a3ee57c57d95084",
+      "bytes": 529,
+      "original_sha256": "6074066bc6ae85794db9b844322264ad8aa73b89c850f6b03a3ee57c57d95084",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/runtime/diag.js",
+      "sha256": "337bec1fed75f5216de2a3ef1fbe5cbb1e183b152a8071142a1009441bcd7cba",
+      "bytes": 10668,
+      "original_sha256": "337bec1fed75f5216de2a3ef1fbe5cbb1e183b152a8071142a1009441bcd7cba",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/runtime/dids.js",
+      "sha256": "cf6ae106099e64863a7806ad1db36cdd24f161c03a4d97fba1aa2d5b630c73f4",
+      "bytes": 7048,
+      "original_sha256": "cf6ae106099e64863a7806ad1db36cdd24f161c03a4d97fba1aa2d5b630c73f4",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/runtime/display.js",
+      "sha256": "9ec248eb54472e83d1a65317b5c966981058c558150283af749d58eb96ca0221",
+      "bytes": 58856,
+      "original_sha256": "ab9f171c53b4915a466f82bfd42c55b494793b8b58930dd18bb14a33f083da51",
+      "original_unchanged": false
+    },
+    {
+      "path": "kit/runtime/ecus.js",
+      "sha256": "f5ec3dbdece067f7eaa0080479dfde0d25b8a882f657df8b6f58f46f8622e149",
+      "bytes": 1257,
+      "original_sha256": "f5ec3dbdece067f7eaa0080479dfde0d25b8a882f657df8b6f58f46f8622e149",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/runtime/engine.js",
+      "sha256": "58745a5ed7f39204b295e1f7b83b3c42592adb215d29fbfb185e9694ceb6de90",
+      "bytes": 4263,
+      "original_sha256": "58745a5ed7f39204b295e1f7b83b3c42592adb215d29fbfb185e9694ceb6de90",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/runtime/fonts/OFL-NotoSansSC.txt",
+      "sha256": "babcfe66c8a098b2fa279bc724a3a342f8124f77ce18941fbcc1bbb39823cded",
+      "bytes": 4387,
+      "original_sha256": "babcfe66c8a098b2fa279bc724a3a342f8124f77ce18941fbcc1bbb39823cded",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/runtime/fonts/bold.json",
+      "sha256": "c8185d6874a4ca1f79ffc2b73434d40426381b4bbf395f6f49733bd7020d7e76",
+      "bytes": 101476,
+      "original_sha256": "c8185d6874a4ca1f79ffc2b73434d40426381b4bbf395f6f49733bd7020d7e76",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/runtime/fonts/cjk.json",
+      "sha256": "c2eb9fad6fa946810f1d5993ed1654fd44b76366d20a4b4cb2fcad7e365ae37f",
+      "bytes": 470342,
+      "original_sha256": "c2eb9fad6fa946810f1d5993ed1654fd44b76366d20a4b4cb2fcad7e365ae37f",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/runtime/fonts/gear.json",
+      "sha256": "d449f2afa02529e244a2499d294beb6ce20c887a56cb7ce8c9cf296413c6f592",
+      "bytes": 65999,
+      "original_sha256": "d449f2afa02529e244a2499d294beb6ce20c887a56cb7ce8c9cf296413c6f592",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/runtime/fonts/label.json",
+      "sha256": "4dd985232ef36675f30ec855e8c4d5e6db5d44c8a0e04d82d50adc56c9eaf4cf",
+      "bytes": 72561,
+      "original_sha256": "4dd985232ef36675f30ec855e8c4d5e6db5d44c8a0e04d82d50adc56c9eaf4cf",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/runtime/fonts/light.json",
+      "sha256": "961ac19e874ed013c4cdfaaf009e85977e47889cbf3d470901f3d33b4bf4e0df",
+      "bytes": 91880,
+      "original_sha256": "961ac19e874ed013c4cdfaaf009e85977e47889cbf3d470901f3d33b4bf4e0df",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/runtime/fonts/num.json",
+      "sha256": "02a02e0c8e8da9c7bed35d66fce8c993998adf93080050e47511b602dbbcf9fc",
+      "bytes": 110925,
+      "original_sha256": "02a02e0c8e8da9c7bed35d66fce8c993998adf93080050e47511b602dbbcf9fc",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/runtime/fonts.js",
+      "sha256": "32b44c27f72741fba695d9814b8026644b8e2eb00afe5da5989e7de67aeedc82",
+      "bytes": 1848,
+      "original_sha256": "32b44c27f72741fba695d9814b8026644b8e2eb00afe5da5989e7de67aeedc82",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/runtime/gauges.js",
+      "sha256": "3eb52e936767eae6b881e8a4342e74a09dfb1d5414a31f3bd6a9106dc0556af0",
+      "bytes": 50921,
+      "original_sha256": "3eb52e936767eae6b881e8a4342e74a09dfb1d5414a31f3bd6a9106dc0556af0",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/runtime/hmi-text.js",
+      "sha256": "74d96fd26ec53f4dc55fd36e079901ed03994794c8b31ae37e93e095092814e0",
+      "bytes": 1163,
+      "original_sha256": "74d96fd26ec53f4dc55fd36e079901ed03994794c8b31ae37e93e095092814e0",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/runtime/i18n.js",
+      "sha256": "0600bbd7946fc5cda8155702c63d0a2c9c4422541daca4d353b52fe95a0b7768",
+      "bytes": 3756,
+      "original_sha256": "0600bbd7946fc5cda8155702c63d0a2c9c4422541daca4d353b52fe95a0b7768",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/runtime/id8_lifecycle.js",
+      "sha256": "c7006993869489c7baff0894ae303f2a9ce1d7e88189b65640a4c974063f970e",
+      "bytes": 2608,
+      "original_sha256": null,
+      "original_unchanged": false
+    },
+    {
+      "path": "kit/runtime/locale.json",
+      "sha256": "c37863ed4336c34a3868d150767644841256ee3ad6fc3dad6e223bcb5913f7e7",
+      "bytes": 31,
+      "original_sha256": "c37863ed4336c34a3868d150767644841256ee3ad6fc3dad6e223bcb5913f7e7",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/runtime/locales/ko.json",
+      "sha256": "92c8de670d913ea2b5c33740979c57915aa34e254f99a0260c5539840ce1ec13",
+      "bytes": 90327,
+      "original_sha256": "92c8de670d913ea2b5c33740979c57915aa34e254f99a0260c5539840ce1ec13",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/runtime/locales/ko.tsv",
+      "sha256": "8bce9187292a57654a0997a5df3031c7d2c4b2ba5b3e7700378ece99d77a3989",
+      "bytes": 75869,
+      "original_sha256": "8bce9187292a57654a0997a5df3031c7d2c4b2ba5b3e7700378ece99d77a3989",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/runtime/locales/ru.json",
+      "sha256": "34430f6c60c2bde977a934378f0fda453a9bc19666aab62d408cd520652b6a76",
+      "bytes": 127103,
+      "original_sha256": "34430f6c60c2bde977a934378f0fda453a9bc19666aab62d408cd520652b6a76",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/runtime/locales/ru.tsv",
+      "sha256": "8d884901c6d7b92cb051a4f0590f5eb24ba2de2c58f05b6c2958d66af3214e47",
+      "bytes": 114021,
+      "original_sha256": "8d884901c6d7b92cb051a4f0590f5eb24ba2de2c58f05b6c2958d66af3214e47",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/runtime/locales/zh-CN.json",
+      "sha256": "bc8f0a729ec794fa3a59ff1e0fc93bdded62d2ef163521a0382172efbd57d372",
+      "bytes": 61281,
+      "original_sha256": "bc8f0a729ec794fa3a59ff1e0fc93bdded62d2ef163521a0382172efbd57d372",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/runtime/locales/zh-CN.tsv",
+      "sha256": "425535f4690259ad9c899e1cc78b21866a574d882a824f71d123a9a579beed2f",
+      "bytes": 51796,
+      "original_sha256": "425535f4690259ad9c899e1cc78b21866a574d882a824f71d123a9a579beed2f",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/runtime/mgu.js",
+      "sha256": "943397b78b77b745f49bd8b369a1e1fe014cf9d20a92b86b61b91675b191ce7d",
+      "bytes": 48181,
+      "original_sha256": "cc2e680edc2973f773034476a00911144e79a69dcfcffe2dc9d945c0932542d3",
+      "original_unchanged": false
+    },
+    {
+      "path": "kit/runtime/pack.js",
+      "sha256": "25e8270eb6b67045d8d9bbc225f6877dc54f9078036742e5adca687e1cf040c2",
+      "bytes": 3758,
+      "original_sha256": "25e8270eb6b67045d8d9bbc225f6877dc54f9078036742e5adca687e1cf040c2",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/runtime/parked.js",
+      "sha256": "43f5517ad9badb0d23a11bb59a9c4501482891a23443861e3f5bdd10d1dcab57",
+      "bytes": 1571,
+      "original_sha256": "43f5517ad9badb0d23a11bb59a9c4501482891a23443861e3f5bdd10d1dcab57",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/runtime/readonly-diag.js",
+      "sha256": "e46d9e54020b7111d38447f8b58dd8af51777f04524d0051893e7e5aa658f733",
+      "bytes": 9183,
+      "original_sha256": "e46d9e54020b7111d38447f8b58dd8af51777f04524d0051893e7e5aa658f733",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/runtime/readonly_signals.js",
+      "sha256": "07b6862a63bb0b072069186451c88d6889413d386a4cf7b1c14cec37bd168194",
+      "bytes": 9980,
+      "original_sha256": null,
+      "original_unchanged": false
+    },
+    {
+      "path": "kit/runtime/record.js",
+      "sha256": "c0764f55676a99e33a614780ffb972c37371331b69e17e9200e6df627d107b31",
+      "bytes": 18706,
+      "original_sha256": "c0764f55676a99e33a614780ffb972c37371331b69e17e9200e6df627d107b31",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/runtime/renderd.js",
+      "sha256": "a11ee58e8a109898b82a2a25040de7df977c57c65588f6b092a7d685a5226ba1",
+      "bytes": 26479,
+      "original_sha256": "4bad1bb4e73c0b7719ed97125fd48db7779287d87f12f102343641854d8b10ef",
+      "original_unchanged": false
+    },
+    {
+      "path": "kit/runtime/sgbd.js",
+      "sha256": "799b35e09d558be20fa4fd6bacab0b6fd102fe49aaf34ae81dbadd7fcabfa37e",
+      "bytes": 5451,
+      "original_sha256": "799b35e09d558be20fa4fd6bacab0b6fd102fe49aaf34ae81dbadd7fcabfa37e",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/runtime/sheet.js",
+      "sha256": "27492de538f1ae034f572a6f8362599ddc4d318a02505ceed16fe2530ff58f05",
+      "bytes": 14369,
+      "original_sha256": "27492de538f1ae034f572a6f8362599ddc4d318a02505ceed16fe2530ff58f05",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/runtime/signals.js",
+      "sha256": "92e3e397aef9cd44fcef989c3802af7980b7f3340028dba3fd4a1741bc940e23",
+      "bytes": 5721,
+      "original_sha256": "92e3e397aef9cd44fcef989c3802af7980b7f3340028dba3fd4a1741bc940e23",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/runtime/sim.js",
+      "sha256": "b7d1ee492c017223e1f0726a69af0d8cff1aa44ae10557e2effae1e3249fa2d9",
+      "bytes": 3920,
+      "original_sha256": "b7d1ee492c017223e1f0726a69af0d8cff1aa44ae10557e2effae1e3249fa2d9",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/runtime/text-layout.js",
+      "sha256": "0a36ff6e5b4d882a28d0689e0c110f007a53babc1fe9198be822823423d534d6",
+      "bytes": 545,
+      "original_sha256": "0a36ff6e5b4d882a28d0689e0c110f007a53babc1fe9198be822823423d534d6",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/runtime/themes.js",
+      "sha256": "c24c641a0e82c4b9bc1ba91ebc2916044de9e160e40d0cf888943fc12d80fa58",
+      "bytes": 3158,
+      "original_sha256": "c24c641a0e82c4b9bc1ba91ebc2916044de9e160e40d0cf888943fc12d80fa58",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/tools/build.py",
+      "sha256": "769f4ab012e95280029f76eea6834412f55290a4b96f2ff32743fb62e28dbe4d",
+      "bytes": 45024,
+      "original_sha256": "e3525d43fc795b408110f517d4c29d52cb6301087e3794543f1a499d81703fd8",
+      "original_unchanged": false
+    },
+    {
+      "path": "kit/tools/locale-revisions.json",
+      "sha256": "8c6ff86fd251dcd03eb2f2c6ccf86cf26dc7cc8e4697993521b63f5363ee27a5",
+      "bytes": 31,
+      "original_sha256": "8c6ff86fd251dcd03eb2f2c6ccf86cf26dc7cc8e4697993521b63f5363ee27a5",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/tools/localize.py",
+      "sha256": "1bc348f27ad3d31debccf3764b44c13b7057f6662872f9ac9e8d432f8bfcdbbb",
+      "bytes": 3955,
+      "original_sha256": "3da5941a9b05f0f0318bdd48c7595dcac5b8145c24c3afc73a0a828d30910d34",
+      "original_unchanged": false
+    },
+    {
+      "path": "kit/tools/make_icon.js",
+      "sha256": "1a49ac25bab9b3c1c78ebd073c60834e4a25efe98cf630bc7dbfbe59bfb165e3",
+      "bytes": 5845,
+      "original_sha256": "1a49ac25bab9b3c1c78ebd073c60834e4a25efe98cf630bc7dbfbe59bfb165e3",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/tools/oapgen/gen.js",
+      "sha256": "03353755765fd356df9b22b5042e5cb2227e057bcc933713b2c16147684bae1a",
+      "bytes": 2966,
+      "original_sha256": "03353755765fd356df9b22b5042e5cb2227e057bcc933713b2c16147684bae1a",
+      "original_unchanged": true
+    },
+    {
+      "path": "kit/tools/pack_data.py",
+      "sha256": "f0795f6170588a11efb2db504bd6cee6fb58a5aefd689d05d926583eff05e0ce",
+      "bytes": 3280,
+      "original_sha256": "f0795f6170588a11efb2db504bd6cee6fb58a5aefd689d05d926583eff05e0ce",
+      "original_unchanged": true
+    },
+    {
+      "path": "mgu-repo.json",
+      "sha256": "87c3887926e9cc23a649059af1d2296e156c14a479dcf52d29cbd700d79252f6",
+      "bytes": 1505,
+      "original_sha256": "87c3887926e9cc23a649059af1d2296e156c14a479dcf52d29cbd700d79252f6",
+      "original_unchanged": true
+    }
+  ]
+}

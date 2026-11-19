@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "id": "ida_seatlights",
+  "version": "1.3.2",
+  "tree": "package",
+  "modules": [
+    "src/ida_seatlights.js",
+    "src/seat_light.js",
+    "src/uds.js",
+    "src/lamps.js",
+    "src/someip_link.js",
+    "src/gpu.js",
+    "src/ui.js",
+    "src/ui_font.js",
+    "src/seat_images.js"
+  ],
+  "sdk": [
+    "oap-sdk/src/core/OnlineApp.js",
+    "oap-sdk/src/logging/logging",
+    "oap-sdk/src/someip/someipBuilders"
+  ]
+}

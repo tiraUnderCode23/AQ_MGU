@@ -545,6 +545,10 @@ def build(app_id, language='en'):
     if spec.get('mguLocalOnly'):
         pkg['mguLocalOnly'] = True
     pkg['mguHmi'] = ['ID7', 'ID8']
+    # Match the derived Store recipes even when an unchanged app manifest
+    # predates native renderer capability declarations.
+    pkg['requires'] = dict(spec.get('requires') or {'mgu-render': '0.6.24'})
+    pkg['mguNeeds'] = list(spec.get('mguNeeds') or ['renderer'])
     with open(os.path.join(ROOT, 'PORT.json'), encoding='utf-8') as port_file:
         port = json.load(port_file)
     pkg['aqSourcePort'] = {'revision': port['revision'], 'baseCommit': port['base']['commit'], 'liveValidation': 'NOT_OBSERVED'}

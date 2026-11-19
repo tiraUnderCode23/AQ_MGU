@@ -1,0 +1,100 @@
+{
+  "schema": 1,
+  "baseline_commit": "0f3f96e90ac821c7fd08dfa8a8b44c4479cdb34e",
+  "components": [
+    {
+      "id": "mgu-inputgate",
+      "old_source_entry": {
+        "id": "mgu-inputgate",
+        "kind": "tool",
+        "version": "1.2.0",
+        "title": "Controller gate",
+        "description": "Lets the apps have the iDrive controller (tabs, page buttons, settings, Doom); loads into the HMI at the next start (iDrive 7 and iDrive 8)",
+        "mguHmi": [
+          "ID7",
+          "ID8"
+        ],
+        "path": "apps/_sources/idrive7-apps/kit/renderd/inputgate/tool"
+      },
+      "new_source_entry": {
+        "id": "mgu-inputgate",
+        "kind": "tool",
+        "title": "Controller gate",
+        "description": "Lets the apps have the iDrive controller (tabs, page buttons, settings, Doom); loads into the HMI at the next start (iDrive 7 and iDrive 8)",
+        "mguHmi": [
+          "ID7",
+          "ID8"
+        ],
+        "version": "1.2.2",
+        "path": "tools/_packages/mgu-inputgate",
+        "requires": {
+          "mgu-deploy": "0.3.2"
+        }
+      },
+      "original_evidence": {
+        "schema": 1,
+        "repository": "cauliflowermossgrape/idrive7-apps",
+        "source_commit": "5555ef3bd2195aae15a8cec6803beeb40ca16456",
+        "id": "mgu-inputgate",
+        "version": "1.2.1",
+        "mguHmi": [
+          "ID7",
+          "ID8"
+        ],
+        "manifest_path": "kit/renderd/inputgate/tool/component.json",
+        "root_license": "Original README identifies inputgate implementation as MIT; vsomeip headers remain MPL-2.0. Parent renderer GPL-3.0-or-later notice is also retained.",
+        "deployed_original": {
+          "bytes": 18848,
+          "sha256": "56cd02ab5bd6e827ff151f2d24669e089dffad03ab663585c9da59d6d9c750eb",
+          "machine": "Machine:                           Advanced Micro Devices X86-64",
+          "abi_versions": [
+            "CXXABI_1.3",
+            "GLIBCXX_3.4.11",
+            "GLIBCXX_3.4.21",
+            "GLIBC_2.17",
+            "GLIBC_2.2.5",
+            "GLIBC_2.3.4",
+            "GLIBC_2.4"
+          ]
+        },
+        "host_compile": {
+          "command": "make build/mgu-inputgate.so",
+          "cwd": "Separate temporary host build of the same original source (not distributed)",
+          "exit_code": 0,
+          "sdk_required": false,
+          "external_download_during_build": false,
+          "result": {
+            "bytes": 18480,
+            "sha256": "2f74b87b343fb0404fb3faea52d7b4179fad39cf13395fd86ba85e3461f1f890",
+            "machine": "Machine:                           Advanced Micro Devices X86-64",
+            "abi_versions": [
+              "CXXABI_1.3",
+              "GLIBCXX_3.4.11",
+              "GLIBCXX_3.4.21",
+              "GLIBC_2.17",
+              "GLIBC_2.2.5",
+              "GLIBC_2.32",
+              "GLIBC_2.33",
+              "GLIBC_2.34"
+            ]
+          },
+          "not_for_distribution": "Host-built test library is not qualified for the HU ABI. Preserve the publisher-built library unchanged for original tool packaging."
+        },
+        "component_closure": {
+          "file_unit_dropin_references": 6,
+          "missing": []
+        },
+        "mechanism": "Existing controller-input gate loaded by standard HMI preload service configuration. Source interposes only controller input; no firmware/signature/license patching or security-unlock procedure was added. Guards and source bytes unchanged.",
+        "target_activity": "NOT_OBSERVED; neither original nor host library executed or loaded",
+        "integration_notes": [
+          "Use a new frozen source snapshot for1.2.1, do not modify old snapshots or use a fork with the same ID.",
+          "Native Store stages the already-built original .so plus guard/service/dropin files; no on-HU C++/OAP SDK build is needed for the tool.",
+          "Original component files omit license documents. AQ packaging must include MIT grant and preserve attribution/MPL source license notice.",
+          "Publish the full source/provenance with tool reference; host compile success is not HU or ABI validation."
+        ],
+        "source_snapshot": "tools/_sources/cauli-inputgate-1.2.1",
+        "integration": "Original publisher runtime replaces the older source tool route; old frozen snapshot stays unchanged. Host build result is compiler closure only, not HU ABI/runtime evidence."
+      }
+    }
+  ]
+}

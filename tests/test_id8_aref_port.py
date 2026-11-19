@@ -157,7 +157,8 @@ class ArefId8PortTests(unittest.TestCase):
         for relative in ("kit/runtime/signals.js", "kit/runtime/parked.js", "kit/runtime/diag.js"):
             with self.subTest(file=relative):
                 self.assertEqual((PORT / relative).read_bytes(), (ORIGINAL / relative).read_bytes())
-        self.assertEqual({p.parent.name for p in (PORT / "apps").glob("*/app.json")}, {APP})
+        self.assertEqual({p.parent.name for p in (PORT / "apps").glob("*/app.json")},
+                         {APP, "aref_carcare", "aref_carlyrics"})
 
     def test_runtime_uses_dynamic_hmi_marker_cells_and_settings(self):
         self.node_scenario("ui")

@@ -1,10 +1,10 @@
-AQ source adaptation aq-aref-id8-1, 19 November 2026.
+AQ source adaptation aq-aref-id8-2, 19 November 2026.
 
 Original Aref source: arefahmad/idrive7-apps at
 6db26cdae67e6900c530611905f0b9aa856f27f0 (MIT).
 ID8 generator, cell and renderer contract: cauliflowermossgrape/idrive7-apps at
 422957a85461826c1e8654d37c8ec66a94849f9c (MIT).
-Public SDK lifecycle reference: alexpereap/pereaperformance-idrive7-apps at
+Public SDK lifecycle and typed field-reader reference: alexpereap/pereaperformance-idrive7-apps at
 5b758fad17761b8696989e2a4ffbfbfab4926b6f (MIT).
 
 This is an AQ-derived source recipe, not an upstream application release.

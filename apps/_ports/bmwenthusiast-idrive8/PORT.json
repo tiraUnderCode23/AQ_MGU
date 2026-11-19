@@ -1,0 +1,70 @@
+{
+  "schema": "aq-mgu.source-port/1",
+  "id": "bmwenthusiast-idrive8",
+  "revision": "aq-storage-id8-1",
+  "distribution": "AQ derived source; not an upstream release",
+  "upstream_repository": "BMWEnthusiastUK/mgu-storage-monitor",
+  "upstream_commit": "5d53c82a39b8620546e6954902b7a5299c81d8ef",
+  "upstream_snapshot": "apps/_sources/bmwenthusiast-storage-monitor",
+  "apps": [
+    {
+      "id": "ab_storage",
+      "version": "1.2.4",
+      "originalVersion": "1.2.3",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ]
+    }
+  ],
+  "reference_sources": [
+    {
+      "repository": "cauliflowermossgrape/idrive7-apps",
+      "commit": "422957a85461826c1e8654d37c8ec66a94849f9c",
+      "license": "MIT",
+      "scope": "ID8 RHMI and renderer application-area contract"
+    },
+    {
+      "repository": "alexpereap/pereaperformance-idrive7-apps",
+      "commit": "5b758fad17761b8696989e2a4ffbfbfab4926b6f",
+      "license": "MIT",
+      "scope": "Public SDK lifecycle and entry contract"
+    },
+    {
+      "repository": "arefahmad/idrive7-apps",
+      "commit": "6db26cdae67e6900c530611905f0b9aa856f27f0",
+      "license": "MIT",
+      "scope": "Corrected AQ platform portions; original MIT attribution retained"
+    }
+  ],
+  "changes": [
+    "Actual target-specific ID8 RHMI generation, lifecycle, native display placement and text/touch mapping",
+    "Original filesystem parser and df argument/deadline/deduplication behavior retained",
+    "Manual-start package contract retained; no widget or vehicle backend introduced",
+    "Visibility-only reads, one in-flight batch, shutdown cleanup and invalidation of late results",
+    "Initial already-visible page renders; queued visibility after shutdown cannot restart reads",
+    "Original Life implementation retained with ACTIVE/INACTIVE transitions under both HMI families",
+    "Original source, kit, third-party, donor and font license notices copied into packages"
+  ],
+  "target_build_contract": {
+    "selection": "--target-hmi ID7|ID8 or exactly one MainApp family directory",
+    "sdk_major_heuristic": false,
+    "unknown_or_ambiguous": "BUILD_REJECTED",
+    "package_mguHmi": "selected target only",
+    "startType": "manually"
+  },
+  "limits": [
+    "No actual target SDK build, registration or live installation observed",
+    "Native mgu-render >= 0.6.24 with usable application area required",
+    "Target must permit the original bounded read-only df process and filesystem access",
+    "Filesystem space is not guaranteed application-install capacity"
+  ],
+  "test": [
+    "tests/test_id8_storage_port.py"
+  ],
+  "verification": {
+    "offline_focused_tests": "7 PASS",
+    "target_build": "NOT_OBSERVED",
+    "live_installation": "NOT_OBSERVED"
+  }
+}

@@ -1,0 +1,303 @@
+{
+  "schema": 1,
+  "repository": "cauliflowermossgrape/idrive7-apps",
+  "commit": "5555ef3bd2195aae15a8cec6803beeb40ca16456",
+  "source_snapshot": "tools/_sources/cauli-inputgate-1.2.1",
+  "upstream_version": "1.2.1",
+  "source_file_count": 33,
+  "source_bytes": 188617,
+  "files": [
+    {
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/cauliflowermossgrape/idrive7-apps/5555ef3bd2195aae15a8cec6803beeb40ca16456/LICENSE",
+      "git_blob_sha": "e9b4f0ac353e8c9d8537426f7bcaf03e3201224a",
+      "sha256": "7c813412dcaf1b9d18c28ca6b6199c4349e15e35beca44ab6cab8e4413fe0aa6",
+      "bytes": 1151,
+      "verified_original_bytes": true
+    },
+    {
+      "path": "kit/renderd/LICENSE",
+      "url": "https://raw.githubusercontent.com/cauliflowermossgrape/idrive7-apps/5555ef3bd2195aae15a8cec6803beeb40ca16456/kit/renderd/LICENSE",
+      "git_blob_sha": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "bytes": 35149,
+      "verified_original_bytes": true
+    },
+    {
+      "path": "kit/renderd/LICENSE.mgu-renderd",
+      "url": "https://raw.githubusercontent.com/cauliflowermossgrape/idrive7-apps/5555ef3bd2195aae15a8cec6803beeb40ca16456/kit/renderd/LICENSE.mgu-renderd",
+      "git_blob_sha": "4bd5906e99579be628bd5d97e0c824447bfc4857",
+      "sha256": "481b839c45d8426a0b561b5a4f8d7437dd22dc61e08c8a2817b16831fab1e86a",
+      "bytes": 1077,
+      "verified_original_bytes": true
+    },
+    {
+      "path": "kit/renderd/Makefile",
+      "url": "https://raw.githubusercontent.com/cauliflowermossgrape/idrive7-apps/5555ef3bd2195aae15a8cec6803beeb40ca16456/kit/renderd/Makefile",
+      "git_blob_sha": "fea517037d02ca021f6836b404e13363097fc521",
+      "sha256": "880c35bd0f949b9470f5e6f33de1be9a80b010c9296b68357eccef55bd5cecb7",
+      "bytes": 5553,
+      "verified_original_bytes": true
+    },
+    {
+      "path": "kit/renderd/README.md",
+      "url": "https://raw.githubusercontent.com/cauliflowermossgrape/idrive7-apps/5555ef3bd2195aae15a8cec6803beeb40ca16456/kit/renderd/README.md",
+      "git_blob_sha": "f3650dca2255bf57c5a0c4cf248218b76dc250ad",
+      "sha256": "51e3e6cc73b9031e7e65f00a830ee6551626b9fe06884a0b42deedb0be4db7ab",
+      "bytes": 20508,
+      "verified_original_bytes": true
+    },
+    {
+      "path": "kit/renderd/inputgate/mgu-inputgate.cpp",
+      "url": "https://raw.githubusercontent.com/cauliflowermossgrape/idrive7-apps/5555ef3bd2195aae15a8cec6803beeb40ca16456/kit/renderd/inputgate/mgu-inputgate.cpp",
+      "git_blob_sha": "3f77b0d38cf99140faaedbf5ab1a4721c753f269",
+      "sha256": "0c3ce4292ce04db4a04d2fffbc7e85ece6414add50baf2fee5392b8cea4f5cd3",
+      "bytes": 10853,
+      "verified_original_bytes": true
+    },
+    {
+      "path": "kit/renderd/inputgate/tool/README.md",
+      "url": "https://raw.githubusercontent.com/cauliflowermossgrape/idrive7-apps/5555ef3bd2195aae15a8cec6803beeb40ca16456/kit/renderd/inputgate/tool/README.md",
+      "git_blob_sha": "12825b8a5b0bfff5a1735286345f31dbb3655861",
+      "sha256": "1a1e91514a57495c5e5f45bf3a4e0dd1adc90137aef2fa30d4be6d5b811c6884",
+      "bytes": 1774,
+      "verified_original_bytes": true
+    },
+    {
+      "path": "kit/renderd/inputgate/tool/component.json",
+      "url": "https://raw.githubusercontent.com/cauliflowermossgrape/idrive7-apps/5555ef3bd2195aae15a8cec6803beeb40ca16456/kit/renderd/inputgate/tool/component.json",
+      "git_blob_sha": "2fb7898b5c2be2f54b3ad9b88f5623311f9ef43d",
+      "sha256": "a367253bbcc02b9a91f2b2e109405bfd4ebad270e2dc999a35b7c8185fb2136e",
+      "bytes": 707,
+      "verified_original_bytes": true
+    },
+    {
+      "path": "kit/renderd/inputgate/tool/guard.sh",
+      "url": "https://raw.githubusercontent.com/cauliflowermossgrape/idrive7-apps/5555ef3bd2195aae15a8cec6803beeb40ca16456/kit/renderd/inputgate/tool/guard.sh",
+      "git_blob_sha": "2452cff998102ba445512e0205328d8749c5ac98",
+      "sha256": "effa1c4efd2baed51e8f0a9ebc6e815f332e5e1c8176b0eac6aa5c2b588602bb",
+      "bytes": 2872,
+      "verified_original_bytes": true
+    },
+    {
+      "path": "kit/renderd/inputgate/tool/mgu-inputgate-check.service",
+      "url": "https://raw.githubusercontent.com/cauliflowermossgrape/idrive7-apps/5555ef3bd2195aae15a8cec6803beeb40ca16456/kit/renderd/inputgate/tool/mgu-inputgate-check.service",
+      "git_blob_sha": "8a48cab1bf54297b519b1f59eacf67193b096b8e",
+      "sha256": "b3a0f7cb214b78658670407e46e556d4b904a0a0052335f4092a0a4e91190fc4",
+      "bytes": 385,
+      "verified_original_bytes": true
+    },
+    {
+      "path": "kit/renderd/inputgate/tool/mgu-inputgate-guard.service",
+      "url": "https://raw.githubusercontent.com/cauliflowermossgrape/idrive7-apps/5555ef3bd2195aae15a8cec6803beeb40ca16456/kit/renderd/inputgate/tool/mgu-inputgate-guard.service",
+      "git_blob_sha": "715f84add7c3b130a0d0d1317a5db9596937acd9",
+      "sha256": "9e853df40500621f540cbdf814d973cba213664860881347595020a65029a384",
+      "bytes": 496,
+      "verified_original_bytes": true
+    },
+    {
+      "path": "kit/renderd/inputgate/tool/mgu-inputgate.so",
+      "url": "https://raw.githubusercontent.com/cauliflowermossgrape/idrive7-apps/5555ef3bd2195aae15a8cec6803beeb40ca16456/kit/renderd/inputgate/tool/mgu-inputgate.so",
+      "git_blob_sha": "804ecc1411513de2c8b2a89ac536613a33a3a370",
+      "sha256": "56cd02ab5bd6e827ff151f2d24669e089dffad03ab663585c9da59d6d9c750eb",
+      "bytes": 18848,
+      "verified_original_bytes": true
+    },
+    {
+      "path": "kit/renderd/inputgate/tool/zz-mgu-inputgate.conf",
+      "url": "https://raw.githubusercontent.com/cauliflowermossgrape/idrive7-apps/5555ef3bd2195aae15a8cec6803beeb40ca16456/kit/renderd/inputgate/tool/zz-mgu-inputgate.conf",
+      "git_blob_sha": "ccd40bedb84f0b35708a87d95b4e7b5432d6fdb2",
+      "sha256": "ec0de0f98caa1f360a237b05c2c446cded72d4604d4449ca572831cf92119e9c",
+      "bytes": 295,
+      "verified_original_bytes": true
+    },
+    {
+      "path": "kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/application.hpp",
+      "url": "https://raw.githubusercontent.com/cauliflowermossgrape/idrive7-apps/5555ef3bd2195aae15a8cec6803beeb40ca16456/kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/application.hpp",
+      "git_blob_sha": "0d4b671f8e14e5b4f01afa446a2c0e6f11f14500",
+      "sha256": "c87e25f03043527a8dddf42dfbc9d9d5d55a64d0b25224c7f3a1010de622c441",
+      "bytes": 45840,
+      "verified_original_bytes": true
+    },
+    {
+      "path": "kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/constants.hpp",
+      "url": "https://raw.githubusercontent.com/cauliflowermossgrape/idrive7-apps/5555ef3bd2195aae15a8cec6803beeb40ca16456/kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/constants.hpp",
+      "git_blob_sha": "c91d03742921ee35ff3e35e7b0496621b914bfc4",
+      "sha256": "4ca8c1f28f955895c89662c6b50ec7a2bbac2497444eba476c895062c961ee4d",
+      "bytes": 2300,
+      "verified_original_bytes": true
+    },
+    {
+      "path": "kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/defines.hpp",
+      "url": "https://raw.githubusercontent.com/cauliflowermossgrape/idrive7-apps/5555ef3bd2195aae15a8cec6803beeb40ca16456/kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/defines.hpp",
+      "git_blob_sha": "0442faea24dbaaad122457d214c8a87907533b5c",
+      "sha256": "77e7a4970a4cc865c386f3efafb2fd56c6563ee641181dea1dbb250da5a6d9b9",
+      "bytes": 1801,
+      "verified_original_bytes": true
+    },
+    {
+      "path": "kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/enumeration_types.hpp",
+      "url": "https://raw.githubusercontent.com/cauliflowermossgrape/idrive7-apps/5555ef3bd2195aae15a8cec6803beeb40ca16456/kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/enumeration_types.hpp",
+      "git_blob_sha": "71ff38afbc0b306ae6edb076b99eae43339207ce",
+      "sha256": "cd860bc32408ebe617495230cf42546b39da99ac02616d25ba7d15fa292d5376",
+      "bytes": 1948,
+      "verified_original_bytes": true
+    },
+    {
+      "path": "kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/error.hpp",
+      "url": "https://raw.githubusercontent.com/cauliflowermossgrape/idrive7-apps/5555ef3bd2195aae15a8cec6803beeb40ca16456/kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/error.hpp",
+      "git_blob_sha": "175f2655fcaa524db1c64a054fcc6cdc3f1ef8a5",
+      "sha256": "2e28f062a6e5458875f5da21c3ffcc502524b7ce2c316e0319d9c55e5d443235",
+      "bytes": 700,
+      "verified_original_bytes": true
+    },
+    {
+      "path": "kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/export.hpp",
+      "url": "https://raw.githubusercontent.com/cauliflowermossgrape/idrive7-apps/5555ef3bd2195aae15a8cec6803beeb40ca16456/kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/export.hpp",
+      "git_blob_sha": "a8577eec5d22a573793dd6988be4bf1fe9077fc3",
+      "sha256": "f9b64ea7b7e2d31bd942307ca8fd16ebc5c5b4c04a8f3c48897fdf16f279134a",
+      "bytes": 926,
+      "verified_original_bytes": true
+    },
+    {
+      "path": "kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/function_types.hpp",
+      "url": "https://raw.githubusercontent.com/cauliflowermossgrape/idrive7-apps/5555ef3bd2195aae15a8cec6803beeb40ca16456/kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/function_types.hpp",
+      "git_blob_sha": "aa086ddc0cc6f7bd7253ca932a9b9d6c8c1428e2",
+      "sha256": "154131c4268d3cde689f8fe1c744be4beb03ad5fefe2ae6f3e6be832c575380f",
+      "bytes": 630,
+      "verified_original_bytes": true
+    },
+    {
+      "path": "kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/handler.hpp",
+      "url": "https://raw.githubusercontent.com/cauliflowermossgrape/idrive7-apps/5555ef3bd2195aae15a8cec6803beeb40ca16456/kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/handler.hpp",
+      "git_blob_sha": "4c742556a319ffd546d1687038affa361b9d289b",
+      "sha256": "8fe38d2599b4ddaf870bf62c70eadbad2c858f58a2bfce9e925e5ecb9f092314",
+      "bytes": 2647,
+      "verified_original_bytes": true
+    },
+    {
+      "path": "kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/internal/deserializable.hpp",
+      "url": "https://raw.githubusercontent.com/cauliflowermossgrape/idrive7-apps/5555ef3bd2195aae15a8cec6803beeb40ca16456/kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/internal/deserializable.hpp",
+      "git_blob_sha": "10ead1900bdb58c11243487b60a1cc70603332cb",
+      "sha256": "d2b7731ef7976d481cb99b54962c53427ec43158cce6b7fd13f3320bd8ae75f2",
+      "bytes": 660,
+      "verified_original_bytes": true
+    },
+    {
+      "path": "kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/internal/serializable.hpp",
+      "url": "https://raw.githubusercontent.com/cauliflowermossgrape/idrive7-apps/5555ef3bd2195aae15a8cec6803beeb40ca16456/kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/internal/serializable.hpp",
+      "git_blob_sha": "8363f4be434967a33da4a4f978c26269c39763b2",
+      "sha256": "5a3f4ee21c34e8061feb9011d218768415d3946610809d8995674a5232a2ab91",
+      "bytes": 779,
+      "verified_original_bytes": true
+    },
+    {
+      "path": "kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/message.hpp",
+      "url": "https://raw.githubusercontent.com/cauliflowermossgrape/idrive7-apps/5555ef3bd2195aae15a8cec6803beeb40ca16456/kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/message.hpp",
+      "git_blob_sha": "b7049eea648e5d2600ba9963b09abd5d1286bfa6",
+      "sha256": "677523c5030f29c783fad6affbf5c9a229f9870722aaca55a701023693499807",
+      "bytes": 1147,
+      "verified_original_bytes": true
+    },
+    {
+      "path": "kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/message_base.hpp",
+      "url": "https://raw.githubusercontent.com/cauliflowermossgrape/idrive7-apps/5555ef3bd2195aae15a8cec6803beeb40ca16456/kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/message_base.hpp",
+      "git_blob_sha": "ffc81fbefea83901bf4e1d77d6636c8ebb2ff62a",
+      "sha256": "41df143001c89de913e02fb326b8c33cb53790266f117f14b102fedeab557e57",
+      "bytes": 6709,
+      "verified_original_bytes": true
+    },
+    {
+      "path": "kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/payload.hpp",
+      "url": "https://raw.githubusercontent.com/cauliflowermossgrape/idrive7-apps/5555ef3bd2195aae15a8cec6803beeb40ca16456/kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/payload.hpp",
+      "git_blob_sha": "e604a3d46b712d98be653affda4050e820aca40f",
+      "sha256": "43eedb4f584fc187454b5bfb43ed552ba32fd5ead92d230ab85227f609c10ba8",
+      "bytes": 2946,
+      "verified_original_bytes": true
+    },
+    {
+      "path": "kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/plugin.hpp",
+      "url": "https://raw.githubusercontent.com/cauliflowermossgrape/idrive7-apps/5555ef3bd2195aae15a8cec6803beeb40ca16456/kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/plugin.hpp",
+      "git_blob_sha": "4d608f17707ad707a59539e65f81a4bc717dc1d9",
+      "sha256": "debc6cc8a3293d8eb1137c0726beffad7976432e2610c4811f272e3337313611",
+      "bytes": 2159,
+      "verified_original_bytes": true
+    },
+    {
+      "path": "kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/plugins/application_plugin.hpp",
+      "url": "https://raw.githubusercontent.com/cauliflowermossgrape/idrive7-apps/5555ef3bd2195aae15a8cec6803beeb40ca16456/kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/plugins/application_plugin.hpp",
+      "git_blob_sha": "7f0bb4a8c774d6ba0e29c75f5a98d4974ba0df22",
+      "sha256": "63e0e2846add004d26450b2bd13f1b3986867ef10e9cce561d725733f18d5df0",
+      "bytes": 1307,
+      "verified_original_bytes": true
+    },
+    {
+      "path": "kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/plugins/pre_configuration_plugin.hpp",
+      "url": "https://raw.githubusercontent.com/cauliflowermossgrape/idrive7-apps/5555ef3bd2195aae15a8cec6803beeb40ca16456/kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/plugins/pre_configuration_plugin.hpp",
+      "git_blob_sha": "bce60b06fe293934214fbc33e9121eff49c67112",
+      "sha256": "d2c54824834f2a85ad2f4a940a40da6d1f67428fb96c4299d500c072f3843395",
+      "bytes": 1027,
+      "verified_original_bytes": true
+    },
+    {
+      "path": "kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/primitive_types.hpp",
+      "url": "https://raw.githubusercontent.com/cauliflowermossgrape/idrive7-apps/5555ef3bd2195aae15a8cec6803beeb40ca16456/kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/primitive_types.hpp",
+      "git_blob_sha": "93c9960de7ec4a8ac4d9a34102d2656e61740cb6",
+      "sha256": "b99bd7551a9bd37b9a0ed6e4cacef834e594f96ac6d38cdf3dfb62c375f9bb34",
+      "bytes": 1485,
+      "verified_original_bytes": true
+    },
+    {
+      "path": "kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/runtime.hpp",
+      "url": "https://raw.githubusercontent.com/cauliflowermossgrape/idrive7-apps/5555ef3bd2195aae15a8cec6803beeb40ca16456/kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/runtime.hpp",
+      "git_blob_sha": "fda15ec50e0778e824088a210c3cf08eef2d1649",
+      "sha256": "135cb8262c821c702d0567f81f630790f1508b90e91f2d380519d4381cc4f3e7",
+      "bytes": 6881,
+      "verified_original_bytes": true
+    },
+    {
+      "path": "kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/trace.hpp",
+      "url": "https://raw.githubusercontent.com/cauliflowermossgrape/idrive7-apps/5555ef3bd2195aae15a8cec6803beeb40ca16456/kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/trace.hpp",
+      "git_blob_sha": "ebdd4185d6ae8d721460c9ae6af5f3c1c0ca3f9e",
+      "sha256": "f74344c44392b4122ed6aac1dd74bbdaa209d201d832f9c1aac2c4e0b91a57d5",
+      "bytes": 6298,
+      "verified_original_bytes": true
+    },
+    {
+      "path": "kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/vsomeip.hpp",
+      "url": "https://raw.githubusercontent.com/cauliflowermossgrape/idrive7-apps/5555ef3bd2195aae15a8cec6803beeb40ca16456/kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/vsomeip.hpp",
+      "git_blob_sha": "101e136ea7fd284b97d57a5baf00d562ffa5ad26",
+      "sha256": "029260e1d4a50f76e7e8af128775a41dfeeecf3055e322a9a338cbc158630edd",
+      "bytes": 759,
+      "verified_original_bytes": true
+    }
+  ],
+  "supplemental_license": {
+    "path": "licenses/MPL-2.0.txt",
+    "license_url": "https://www.mozilla.org/MPL/2.0/",
+    "copied_verbatim_from": "apps/_sources/idrive-apps/native/cluster-render/dcsm/third_party/vsomeip/LICENSE",
+    "bytes": 16726,
+    "sha256": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85",
+    "scope": "Supplemental complete license document; not counted among the 33 pinned publisher source files."
+  },
+  "publisher_binary": {
+    "bytes": 18848,
+    "sha256": "56cd02ab5bd6e827ff151f2d24669e089dffad03ab663585c9da59d6d9c750eb",
+    "machine": "Machine:                           Advanced Micro Devices X86-64",
+    "abi_versions": [
+      "CXXABI_1.3",
+      "GLIBCXX_3.4.11",
+      "GLIBCXX_3.4.21",
+      "GLIBC_2.17",
+      "GLIBC_2.2.5",
+      "GLIBC_2.3.4",
+      "GLIBC_2.4"
+    ]
+  },
+  "verification": {
+    "sha256_and_git_blobs": "33 of 33 matched cached publisher tree evidence",
+    "library_or_service_execution": "NOT OBSERVED",
+    "target_abi_validation": "NOT OBSERVED",
+    "live_installation": "NOT OBSERVED"
+  }
+}

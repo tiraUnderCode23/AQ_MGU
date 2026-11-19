@@ -1,0 +1,9 @@
+MGU App Studio 2.4.0 - local validation
+49 Python unit tests passed (backend, host-key handling, bundled apps, portable paths, languages).
+All eight upstream game model test suites passed.
+Mixed German kit build passed: eight English games + German Vehicle Pass and Bimmer Blocks.
+English kit build passed: Snake, Vehicle Pass, Bimmer Blocks.
+All eight imported games executed and produced their demo frames using upstream simulated vehicle/clock.
+SSH CLI --help executed through launcher child-script dispatch successfully.
+Test SDK and generated install packages removed before delivery.
+No real car connected. No Windows GUI test. Windows EXE build not executed here.

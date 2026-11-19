@@ -1,0 +1,95 @@
+{
+  "id": "mgu-inputgate",
+  "kind": "tool",
+  "version": "1.2.2",
+  "title": "Controller gate",
+  "description": "Lets the apps have the iDrive controller (tabs, page buttons, settings, Doom); loads into the HMI at the next start (iDrive 7 and iDrive 8)",
+  "mguHmi": [
+    "ID7",
+    "ID8"
+  ],
+  "files": [
+    {
+      "path": "mgu-inputgate.so",
+      "mode": "0755"
+    },
+    {
+      "path": "guard.sh",
+      "mode": "0755"
+    },
+    {
+      "path": "licenses/LICENSE",
+      "from": "licenses/LICENSE",
+      "mode": "0644"
+    },
+    {
+      "path": "licenses/LICENSE.mgu-renderd",
+      "from": "licenses/LICENSE.mgu-renderd",
+      "mode": "0644"
+    },
+    {
+      "path": "licenses/LICENSE.renderd",
+      "from": "licenses/LICENSE.renderd",
+      "mode": "0644"
+    },
+    {
+      "path": "licenses/MPL-2.0.txt",
+      "from": "licenses/MPL-2.0.txt",
+      "mode": "0644"
+    },
+    {
+      "path": "licenses/NOTICE.md",
+      "from": "licenses/NOTICE.md",
+      "mode": "0644"
+    },
+    {
+      "path": "licenses/UPSTREAM-RENDERD-README.md",
+      "from": "licenses/UPSTREAM-RENDERD-README.md",
+      "mode": "0644"
+    },
+    {
+      "path": "licenses/VSOMEIP-NOTICES.txt",
+      "from": "licenses/VSOMEIP-NOTICES.txt",
+      "mode": "0644"
+    },
+    {
+      "path": "licenses/AQ-PACKAGING.json",
+      "from": "AQ-PACKAGING.json",
+      "mode": "0644"
+    },
+    {
+      "path": "licenses/SOURCE-PROVENANCE.json",
+      "from": "SOURCE-PROVENANCE.json",
+      "mode": "0644"
+    },
+    {
+      "path": "licenses/UPSTREAM-TOOL-README.md",
+      "from": "README.md",
+      "mode": "0644"
+    }
+  ],
+  "units": [
+    {
+      "name": "mgu-inputgate-guard.service"
+    },
+    {
+      "name": "mgu-inputgate-check.service"
+    }
+  ],
+  "dropins": [
+    {
+      "unit": "hmi.service",
+      "name": "zz-mgu-inputgate.conf"
+    },
+    {
+      "unit": "hmi8.service",
+      "name": "zz-mgu-inputgate.conf"
+    }
+  ],
+  "enable": [],
+  "recmgr": [],
+  "restart": [],
+  "requires": {
+    "mgu-deploy": "0.3.2"
+  }
+}

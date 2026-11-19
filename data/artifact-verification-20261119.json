@@ -2168,6 +2168,79 @@
       "archive": "PASS"
     },
     {
+      "id": "sideways",
+      "version": "0.6.6",
+      "live_hu_install": "NOT OBSERVED",
+      "artifact_url": "https://github.com/idrive-labs/mgu-apps/releases/download/catalog/sideways@0.6.6.tgz",
+      "expected_bytes": 2614965,
+      "expected_sha256": "13534b386d83bd81ffe973c7e70e8a910e9d37d6a5afe899611815e7989b739b",
+      "download": "PASS",
+      "received_bytes": 2614965,
+      "sha256": "13534b386d83bd81ffe973c7e70e8a910e9d37d6a5afe899611815e7989b739b",
+      "manifest": "package/package.json",
+      "package_id": "sideways",
+      "package_version": "0.6.6",
+      "source_build": false,
+      "package_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "ui_hmi": [
+        "ID7"
+      ],
+      "effective_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "hmi_source": "declared",
+      "package_requires": {},
+      "package_needs": [],
+      "package_provides": null,
+      "contains_donor_sdk": false,
+      "members": 117,
+      "archive": "PASS",
+      "catalog_hmi": [
+        "ID7"
+      ],
+      "download_request_contract": "Native HTTPS source headers: User-Agent, no API octet-stream override; full byte count and SHA-256 checked.",
+      "aq_compatibility_correction": "Publisher declares ID7/ID8, but the exact archive contains only ID7 RHMI and ID7 variantGroups; AQ offers ID7 until an actual ID8 package is available."
+    },
+    {
+      "id": "turnkey_e_blend_id8",
+      "version": "0.5.0",
+      "live_hu_install": "NOT OBSERVED",
+      "artifact_url": "https://raw.githubusercontent.com/vecyoroleg-lgtm/turnkey-e-blend-id8/918b336fbad09b8b49c0dd2914523c0ef1633d8a/turnkey_e_blend_id8%400.5.0.tgz",
+      "expected_bytes": 24766,
+      "expected_sha256": "a32236e51394822515e7c997b1cc3c28f2c82983e498c7d87b4c6c46d6a5096e",
+      "download": "PASS",
+      "received_bytes": 24766,
+      "sha256": "a32236e51394822515e7c997b1cc3c28f2c82983e498c7d87b4c6c46d6a5096e",
+      "manifest": "mgu-app.json",
+      "package_id": "turnkey_e_blend_id8",
+      "package_version": "0.5.0",
+      "source_build": true,
+      "package_hmi": [
+        "ID8"
+      ],
+      "ui_hmi": [
+        "ID8"
+      ],
+      "effective_hmi": [
+        "ID8"
+      ],
+      "hmi_source": "declared",
+      "package_requires": {},
+      "package_needs": [],
+      "package_provides": null,
+      "contains_donor_sdk": false,
+      "members": 17,
+      "archive": "PASS",
+      "catalog_hmi": [
+        "ID8"
+      ],
+      "download_request_contract": "Native HTTPS source headers: User-Agent, no API octet-stream override; full byte count and SHA-256 checked."
+    },
+    {
       "id": "vizualyse-bus",
       "version": "0.1.0",
       "live_hu_install": "NOT OBSERVED",
@@ -2436,10 +2509,10 @@
   ],
   "checked_at": "2026-11-19",
   "summary": {
-    "artifacts": 79,
-    "download_pass": 79,
-    "archive_pass": 79,
-    "compressed_bytes": 1123523473,
+    "artifacts": 81,
+    "download_pass": 81,
+    "archive_pass": 81,
+    "compressed_bytes": 1126163204,
     "contains_donor_sdk": 0
   },
   "native_https_route_corrections": {
@@ -2457,5 +2530,15 @@
       "received_bytes": 1479,
       "expected_artifact_bytes": 3313575
     }
+  },
+  "expansion_verification": {
+    "baseline_commit": "0f3f96e90ac821c7fd08dfa8a8b44c4479cdb34e",
+    "previous_unchanged_artifacts": 79,
+    "new_complete_downloads": [
+      "sideways",
+      "turnkey_e_blend_id8"
+    ],
+    "new_bytes": 2639731,
+    "no_live_install": true
   }
 }

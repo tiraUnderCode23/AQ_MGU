@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "id": "esagono_settings",
+  "version": "0.1.0",
+  "tree": "package",
+  "modules": [
+    "src/esagono_settings.js",
+    "src/ctl_client.js",
+    "src/settings_model.js"
+  ],
+  "sdk": [
+    "oap-sdk/src/core/OnlineApp.js",
+    "oap-sdk/src/logging/logging"
+  ]
+}

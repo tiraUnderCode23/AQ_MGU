@@ -149,25 +149,41 @@ function loadConfig(iface) {
  * fields a car may not notify (BMW's x_call only ever reads TPMS, it never subscribes).
  */
 async function watch(iface, instance, handlers, log, opts) {
-    const res = { iface, available: false, proxy: null, error: null, shutdown: () => Promise.resolve() };
+    const res = { iface, available: false, proxy: null, error: null, availabilityGeneration: 0, shutdown: () => Promise.resolve() };
     if (!someip && !typedOk) { res.error = 'someip native module not available'; return res; }
     try {
         const o = await open(iface, instance);
         const cfg = o.cfg, p = o.p;
         res.proxy = p;
-        res.shutdown = () => Promise.resolve().then(() => p.shutdown && p.shutdown()).catch(() => {});
         const fields = Object.keys(handlers || {});
+        let availability = null;
         const typedErrors = {};
         const state = p.typed ? (typedReadState[iface] = { errors: typedErrors, last: {}, pollMs: opts && opts.pollMs || 0, provider: null, result: res }) : null;
-        let typedFresh = false, typedProvider = null;
+        let typedFresh = false, typedProvider = null, typedClosed = false, pollTimer = null;
+        const typedPending = Object.create(null);
+        fields.forEach((field) => { typedPending[field] = { busy: false, deadline: null }; });
+        res.shutdown = () => {
+            if (p.typed) {
+                if (typedClosed) return Promise.resolve();
+                typedClosed = true; res.available = false; res.availabilityGeneration++;
+                state.initialError = res.error = 'typed subscription stopped';
+                if (pollTimer !== null) clearInterval(pollTimer);
+                fields.forEach((field) => {
+                    if (typedPending[field].deadline !== null) clearTimeout(typedPending[field].deadline);
+                    typedPending[field].deadline = null;
+                });
+            }
+            return Promise.resolve().then(() => p.shutdown && p.shutdown()).catch(() => {});
+        };
         const failed = (field, error) => {
-            if (!p.typed) return;
+            if (!p.typed || typedClosed) return;
             typedErrors[field] = String(error && error.message || error);
             res.error = 'typed fields: ' + Object.keys(typedErrors).map((key) => key + ': ' + typedErrors[key]).join('; ');
             res.available = false;
             if (log) log.warn('signals ' + iface + '.' + field + ': ' + typedErrors[field]);
         };
         const receive = (field, value) => {
+            if (p.typed && (typedClosed || typedProvider === false)) return;
             handlers[field](value);
             if (p.typed) {
                 delete typedErrors[field];
@@ -178,20 +194,66 @@ async function watch(iface, instance, handlers, log, opts) {
                 res.available = typedProvider !== false && !res.error;
             }
         };
+        // A caller may refresh ONLY an already-watched getter. The Shiftlights
+        // ID8 guard bounds its calls and can discard a late response without
+        // feeding cached data or clearing another field's health error.
+        res.readField = (field, timeoutMs, accept) => {
+            if (p.typed && typedClosed) return Promise.reject(new Error('typed subscription stopped'));
+            const getter = fields.indexOf(field) >= 0 && (cfg ? cfg.fields && cfg.fields[field] && cfg.fields[field].getter : p.hasGetter && p.hasGetter(field));
+            if (!getter) return Promise.reject(new Error('no watched getter for ' + field));
+            const generation = res.availabilityGeneration;
+            const accepted = () => (!p.typed || !typedClosed) && (!accept || accept()) && (!opts || !opts.dropStaleReads || generation === res.availabilityGeneration);
+            return new Promise((resolve, reject) => setImmediate(() => {
+                if (p.typed && typedClosed) { resolve(null); return; }
+                try { Promise.resolve(p.getValue(field, timeoutMs || 3000)).then(resolve, reject); } catch (error) { reject(error); }
+            })).then((value) => {
+                if (!accepted()) return null;
+                if (p.typed) receive(field, value); else handlers[field](value);
+                return value;
+            }, (error) => { if (accepted()) failed(field, error); throw error; });
+        };
         const fetchAll = () => fields.forEach((f) => {
             if (cfg ? cfg.fields && cfg.fields[f] && cfg.fields[f].getter : p.hasGetter && p.hasGetter(f)) {
-                p.getValue(f, 3000).then((v) => p.typed ? receive(f, v) : handlers[f](v)).catch((e) => failed(f, e));
+                const generation = res.availabilityGeneration;
+                if (p.typed) {
+                    const pending = typedPending[f];
+                    if (typedClosed || typedProvider === false || pending.busy) return;
+                    pending.busy = true;
+                    let expired = false;
+                    const current = () => !typedClosed && typedProvider !== false && generation === res.availabilityGeneration;
+                    // Timeout reports a failure; it cannot cancel an SDK getter.
+                    // Keep its slot busy until the underlying promise settles.
+                    pending.deadline = setTimeout(() => {
+                        pending.deadline = null; expired = true;
+                        if (current()) failed(f, new Error('typed getter timed out'));
+                    }, 3500);
+                    const settled = () => {
+                        if (pending.deadline !== null) clearTimeout(pending.deadline);
+                        pending.deadline = null; pending.busy = false;
+                    };
+                    Promise.resolve().then(() => current() ? p.getValue(f, 3000) : null)
+                        .then((v) => { if (!expired && current()) receive(f, v); },
+                            (e) => { if (!expired && current()) failed(f, e); }).then(settled, settled);
+                    return;
+                }
+                // Raw ID7 binding behavior is unchanged.
+                p.getValue(f, 3000).then((v) => {
+                    if (opts && opts.dropStaleReads && generation !== res.availabilityGeneration) return;
+                    if (p.typed) receive(f, v); else handlers[f](v);
+                }).catch((e) => { if (!opts || !opts.dropStaleReads || generation === res.availabilityGeneration) failed(f, e); });
             }
         });
         await nativeTick(() => {
             try { return p.subscribeToAvailability((a) => {
+                if (p.typed && typedClosed) return;
+                if (availability !== !!a) { availability = !!a; res.availabilityGeneration++; }
                 if (p.typed) {
                     typedProvider = !!a;
                     state.provider = typedProvider;
                     if (!a) { typedFresh = false; res.available = false; }
                     else res.available = typedFresh && !res.error;
                 } else res.available = !!a;
-                if (a) setImmediate(fetchAll);
+                if (a && (!opts || opts.initialRead !== false)) setImmediate(fetchAll);
             }); } catch (e) { return null; /* older binding */ }
         });
         for (const f of fields) {
@@ -202,10 +264,13 @@ async function watch(iface, instance, handlers, log, opts) {
                 if (log) log.warn('subscribe ' + iface + '.' + f + ': ' + e);
             }
         }
-        if (p.isAvailable && p.isAvailable()) { if (!p.typed) res.available = true; fetchAll(); }
+        if (p.isAvailable && p.isAvailable()) {
+            if (!p.typed) res.available = true;
+            if (!opts || opts.initialRead !== false) fetchAll();
+        }
         // A typed getter failure must not stop polling forever; retry while the
         // provider has not explicitly become unavailable. Raw polling is unchanged.
-        if (opts && opts.pollMs) setInterval(() => { if (p.typed ? typedProvider !== false : res.available) setImmediate(fetchAll); }, opts.pollMs);
+        if (opts && opts.pollMs) pollTimer = setInterval(() => { if (p.typed ? !typedClosed && typedProvider !== false : res.available) setImmediate(fetchAll); }, opts.pollMs);
     } catch (e) {
         res.error = String(e);
         if (typedOk && backend[iface] && backend[iface].indexOf('none (') === 0) typedReadState[iface] = { initialError: res.error, errors: {}, last: {}, pollMs: 0 };

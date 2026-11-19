@@ -1,0 +1,70 @@
+{
+  "schema": "aq-mgu.source-port/1",
+  "id": "dante-idrive8",
+  "revision": "aq-dante-e85-id8-1",
+  "distribution": "AQ derived source; not an upstream release",
+  "upstream_repository": "Dante1243/dante-idrive-apps",
+  "upstream_commit": "f5fdc6249d2c12b29bcc8564820948d67be585f9",
+  "upstream_snapshot": "apps/_sources/dante-idrive-apps",
+  "apps": [
+    {
+      "id": "e85",
+      "version": "1.2.2",
+      "originalVersion": "1.2.1",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ]
+    }
+  ],
+  "reference_sources": [
+    {
+      "repository": "cauliflowermossgrape/idrive7-apps",
+      "commit": "422957a85461826c1e8654d37c8ec66a94849f9c",
+      "license": "MIT",
+      "scope": "ID8 RHMI and renderer application area"
+    },
+    {
+      "repository": "alexpereap/pereaperformance-idrive7-apps",
+      "commit": "5b758fad17761b8696989e2a4ffbfbfab4926b6f",
+      "license": "MIT",
+      "scope": "Public SDK lifecycle and typed field contract"
+    },
+    {
+      "repository": "arefahmad/idrive7-apps",
+      "commit": "6db26cdae67e6900c530611905f0b9aa856f27f0",
+      "license": "MIT",
+      "scope": "Corrected AQ platform adapter portions; donor license retained"
+    }
+  ],
+  "changes": [
+    "Actual target-specific ID8 RHMI resources, lifecycle, native application area and touch input",
+    "ID8 Kombi-only typed read adapter preserving original settling/math; stale/provider/invalid/clock rollback cleared",
+    "DME transport not constructed and InternalTasu excluded on ID8; limitation visible in tank page and package",
+    "Explicit manual current tank input supports original local calculations, guided pours and pump-liter cost records",
+    "Manual readings cannot trigger automatic measured fills or tank-size suggestions; no invented odometer",
+    "ID8 automatic demo fallback disabled; explicit demo remains visibly labelled",
+    "Original ID7 UI and original tank/blend source retained; target package carries requires/mguNeeds and original/donor notices",
+    "One outstanding getter per field even after reporting timeout; late timeout results ignored and shutdown clears deadlines"
+  ],
+  "target_build_contract": {
+    "selection": "--target-hmi ID7|ID8 or exactly one /usr/lib/oap-mainapp or /usr/lib/oap-mainapp21",
+    "unknown_or_ambiguous": "BUILD_REJECTED",
+    "sdk_major_heuristic": false,
+    "package_mguHmi": "selected target only"
+  },
+  "limits": [
+    "DME tank diagnostics unavailable on ID8; explicit Kombi or manual input only",
+    "Compatible target SDK KombiIF member/provider required for live gauge",
+    "mgu-render >= 0.6.24 with native rendering, touch and valid application area required",
+    "No actual target build, registration or live installation observed"
+  ],
+  "test": [
+    "tests/test_id8_dante_e85.py"
+  ],
+  "verification": {
+    "offline_focused_tests": "8 PASS",
+    "target_build": "NOT_OBSERVED",
+    "live_installation": "NOT_OBSERVED"
+  }
+}

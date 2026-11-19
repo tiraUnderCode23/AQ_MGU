@@ -1,0 +1,27 @@
+{
+  "id": "parked_games",
+  "title": "Parked Games",
+  "description": "Small games for when the car is parked, played with the iDrive knob (and the touchscreen)",
+  "version": "0.2.2",
+  "vendor": "custom",
+  "loggingId": "OAB1",
+  "iconGlyph": "PG",
+  "signals": {
+    "de.bmw.infotainment.vehicle.Vehicle2": {
+      "statusCarSpeed2": "rs"
+    },
+    "de.bmw.infotainment.controlelements.FrontCCU": {
+      "statusRotaryEncoderState": "rs"
+    }
+  },
+  "screens": [
+    {
+      "name": "MAIN",
+      "kind": "canvas",
+      "title": "Parked Games",
+      "bar": false,
+      "buttons": []
+    }
+  ],
+  "settings": []
+}

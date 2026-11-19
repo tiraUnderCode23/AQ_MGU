@@ -74,7 +74,9 @@ class HexlayID8Port(unittest.TestCase):
                     package = json.loads(read('package.json'))
                     self.assertEqual((package['name'], package['version']), (app_id, version))
                     self.assertEqual(package['mguHmi'], ['ID7', 'ID8'])
-                    self.assertEqual(package['aqSourcePort']['revision'], 'aq-hexlay-id8-1')
+                    self.assertEqual(package['aqSourcePort']['revision'], 'aq-hexlay-id8-2')
+                    self.assertEqual(package['requires'], {'mgu-render': '0.6.24'})
+                    self.assertEqual(package['mguNeeds'], ['renderer'])
                     for license_name in ('LICENSE', 'LICENSE.MIT', 'LICENSE.PEREA', 'PORT.json'):
                         self.assertEqual(read(license_name), (PORT / license_name).read_bytes())
                     manifest = json.loads(read('manifest.json'))

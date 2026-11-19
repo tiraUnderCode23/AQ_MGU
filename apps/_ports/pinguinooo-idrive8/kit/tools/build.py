@@ -233,6 +233,9 @@ def build_ui(spec, language='en', hmi='ID7'):
     def settings_items(items):
         for s in spec['settings']:
             name = 'SET_' + s['key'].upper()
+            if id8 and s.get('id8ReadOnly'):
+                items.append(comp('text', name, rows=[text_row('SET_' + s['key'] + '_ID8_INFO', s['id8ReadOnly'])]))
+                continue
             if s['type'] == 'bool':
                 row = text_row('SET_' + s['key'], s['label'])
                 if id8:     # a row with the label and On / Off (the app writes it)
@@ -519,8 +522,14 @@ def build(app_id, language='en'):
     # (pinguinooo/idrive7-apps) app.json "mguAppStartType" goes to package.json: mgu-store's deploy reads it there
     if spec.get('mguAppStartType') in ('autostart', 'lum', 'manually'): pkg['mguAppStartType'] = spec['mguAppStartType']
     pkg['mguHmi'] = ['ID7', 'ID8']
-    pkg['aqSourcePort'] = {'id': 'pinguinooo-idrive8', 'revision': '1',
+    # Every app in this derived kit uses the native renderer. Keep the older
+    # app manifests intact while also declaring their requirements in archives.
+    pkg['requires'] = dict(spec.get('requires') or {'mgu-render': '0.6.24'})
+    pkg['mguNeeds'] = list(spec.get('mguNeeds') or ['renderer'])
+    pkg['aqSourcePort'] = {'id': 'pinguinooo-idrive8', 'revision': '2' if app_id == 'adam_shiftlights' else '1',
                            'upstreamCommit': '82bea95add762c03d97070d2bd462bfd5fac429c'}
+    if spec.get('aqOriginalVersion'):
+        pkg['aqSourcePort']['originalVersion'] = spec['aqOriginalVersion']
     json.dump(pkg, open(os.path.join(src, 'package.json'), 'w', encoding='utf-8', newline='\n'), indent=2)
     json.dump(manifest, open(os.path.join(src, 'manifest.json'), 'w', encoding='utf-8', newline='\n'), indent=2)
     shutil.copy(os.path.join(KIT, 'platform', 'permissions.json'), os.path.join(src, 'permissions.json'))

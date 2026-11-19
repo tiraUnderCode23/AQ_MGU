@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "revision": "aq-aref-id8-1",
+  "revision": "aq-aref-id8-2",
   "base": {
     "repository": "arefahmad/idrive7-apps",
     "commit": "6db26cdae67e6900c530611905f0b9aa856f27f0",
@@ -17,7 +17,7 @@
       "repository": "alexpereap/pereaperformance-idrive7-apps",
       "commit": "5b758fad17761b8696989e2a4ffbfbfab4926b6f",
       "license": "MIT",
-      "scope": "Public SDK lifecycle and entry point contract"
+      "scope": "Public SDK lifecycle, entry point and typed read-only field/member contract"
     }
   ],
   "files": [
@@ -29,15 +29,123 @@
     },
     {
       "path": "PORT.json",
-      "sha256": "f1e73a68672023e78760eb8a28c5a8507e5792aa3f18bcd7fde2ff0748bb1d26",
+      "sha256": "c53000c0ca4ada5538883636975326b61bf5fd67fb1adf13835ef3ec8eb6b5b5",
       "upstream_sha256": null,
       "origin": "AQ-derived-or-notice"
     },
     {
       "path": "README.md",
-      "sha256": "c4d03c0adb395131c22d12beb796a75ee87371c38315982a09690c83a0266aa7",
+      "sha256": "62a069accb44f97584daab789a1a89d640616f348174c54489b6a712d99e2b5b",
       "upstream_sha256": "1eca724dd9619de2b28a9d357881eb1007b90aeb286e3554efcfdf055c7278ec",
       "origin": "modified-upstream"
+    },
+    {
+      "path": "apps/aref_carcare/README.md",
+      "sha256": "5952859d424f6c89eb8f9aef399381c9385374cfcfe35e49ae7cee7eeed032e5",
+      "upstream_sha256": "9c096407b85d12d3f8e2225daa76ab22cc3b8282910ac172b7b1c8c385b3de77",
+      "origin": "modified-upstream"
+    },
+    {
+      "path": "apps/aref_carcare/app.json",
+      "sha256": "bde3fc8730a8fdfa201a240b33d6623d7bfeb9869c74fcd82e98fd089f836491",
+      "upstream_sha256": "d6f999555db3e3c4564158f59b303bc6768597aea2a80c0a69ddb31fac730cdd",
+      "origin": "modified-upstream"
+    },
+    {
+      "path": "apps/aref_carcare/care/items.js",
+      "sha256": "6848466c1249c622c52be388ca71e923b9489eb9cbdc047679cf22743ababfd9",
+      "upstream_sha256": "6848466c1249c622c52be388ca71e923b9489eb9cbdc047679cf22743ababfd9",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "apps/aref_carcare/icon.png",
+      "sha256": "d0243aa67d712e69c0bc3eff91fb14c775853b97b4139e0b2a05ec36c48e22c6",
+      "upstream_sha256": "d0243aa67d712e69c0bc3eff91fb14c775853b97b4139e0b2a05ec36c48e22c6",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "apps/aref_carcare/main.js",
+      "sha256": "3f32213f427608401df74a1f74cf0bc0d1412155aea09d39663d60576fe0d4f6",
+      "upstream_sha256": "5463fb2532a0e27baf6f7a70b73e8d4bc60fc538987f67d6fc654f7e04c776f7",
+      "origin": "modified-upstream"
+    },
+    {
+      "path": "apps/aref_carlyrics/LICENSE",
+      "sha256": "d3bb178453c17b8b70bc02780e2b3288737818507940f185709953b06ac388f8",
+      "upstream_sha256": "d3bb178453c17b8b70bc02780e2b3288737818507940f185709953b06ac388f8",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "apps/aref_carlyrics/README.md",
+      "sha256": "324ab83435e5d27be416bf9d81447ca794455f150f62cf193357cb934f6ca6af",
+      "upstream_sha256": "f3730dc8763e996ff8f22fc7e13a4147209ff8df60433a5a610d72aa39856285",
+      "origin": "modified-upstream"
+    },
+    {
+      "path": "apps/aref_carlyrics/app.json",
+      "sha256": "61534d2a26a32ce5d1a86366b88cfef611527a66c66265175678b55e553a5ec7",
+      "upstream_sha256": "f4904956d36fc1bdac2d85e115e0124bae06f0279ef0e418d85c2347925d23cd",
+      "origin": "modified-upstream"
+    },
+    {
+      "path": "apps/aref_carlyrics/art/artwork.js",
+      "sha256": "2714388fdf47904faee87243a2fb16d75deb77913522720a85ac80de3e8c172c",
+      "upstream_sha256": "2714388fdf47904faee87243a2fb16d75deb77913522720a85ac80de3e8c172c",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "apps/aref_carlyrics/car/nowplaying.js",
+      "sha256": "c0243c24150332afcc4d5e05a805396263da1b5b4bca7d3783cb95bbdc8881b9",
+      "upstream_sha256": "4a9c9d87f7cf7aadfa4cd3df1e94ad26235d078c2395a4c2d69e2003680759b4",
+      "origin": "modified-upstream"
+    },
+    {
+      "path": "apps/aref_carlyrics/data/fonts/LICENSE-Inter.txt",
+      "sha256": "262481e844521b326f5ecd053e59b98c8b2da78c8ee1bdbb6e8174305e54935a",
+      "upstream_sha256": "262481e844521b326f5ecd053e59b98c8b2da78c8ee1bdbb6e8174305e54935a",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "apps/aref_carlyrics/data/fonts/cl_bold.json",
+      "sha256": "4c57f97ec6fc8115685140661f7838c867068143b57c6c07b6450d8d679519be",
+      "upstream_sha256": "4c57f97ec6fc8115685140661f7838c867068143b57c6c07b6450d8d679519be",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "apps/aref_carlyrics/data/fonts/cl_med.json",
+      "sha256": "7c2e496fda20f25c9ae6a403f8d0bed722fff8dc1588fbe765034dadd45b6da2",
+      "upstream_sha256": "7c2e496fda20f25c9ae6a403f8d0bed722fff8dc1588fbe765034dadd45b6da2",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "apps/aref_carlyrics/icon.png",
+      "sha256": "fb6816d4d705ae5e66f33a1837e7c840aa9f02f5939ebdc59054b2c13ee88284",
+      "upstream_sha256": "fb6816d4d705ae5e66f33a1837e7c840aa9f02f5939ebdc59054b2c13ee88284",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "apps/aref_carlyrics/main.js",
+      "sha256": "eb768992f010c22470e266940d57cfb61fda2bd956e4f65bc7420c8372074b34",
+      "upstream_sha256": "dc727221ee4a8a44f1b9d555016f6eb4e9c93054bbb6195b881e7a63eabeed1a",
+      "origin": "modified-upstream"
+    },
+    {
+      "path": "apps/aref_carlyrics/net/http.js",
+      "sha256": "46d580a311f3622c5f3400471543bf878887992b5a47ee7fb72806ebab262171",
+      "upstream_sha256": "46d580a311f3622c5f3400471543bf878887992b5a47ee7fb72806ebab262171",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "apps/aref_carlyrics/stage/lyrics.js",
+      "sha256": "6c5ee6e51f558da7e2d0e6865a94aed8f57cc211cd72daa31dda360a618211e8",
+      "upstream_sha256": "6c5ee6e51f558da7e2d0e6865a94aed8f57cc211cd72daa31dda360a618211e8",
+      "origin": "unchanged-upstream"
+    },
+    {
+      "path": "apps/aref_carlyrics/vendor/jpeg_decoder.js",
+      "sha256": "1412b0ea55aca9b9d378b45a85c57dc116797760d02357323c8fed7034e27db4",
+      "upstream_sha256": "1412b0ea55aca9b9d378b45a85c57dc116797760d02357323c8fed7034e27db4",
+      "origin": "unchanged-upstream"
     },
     {
       "path": "apps/aref_explorer/README.md",
@@ -89,7 +197,7 @@
     },
     {
       "path": "kit/NOTICE.AQ-ID8",
-      "sha256": "0b6abf356781d51786923570979e2c64ad438bdb07d46925b35e0d4fbb49726e",
+      "sha256": "ac59b5b5d36497f33f70c9bd9749cec9820ce6d380e388626faf395955908fbe",
       "upstream_sha256": null,
       "origin": "AQ-derived-or-notice"
     },
@@ -149,7 +257,7 @@
     },
     {
       "path": "kit/runtime/display.js",
-      "sha256": "11a35a3dacb4bbeab58ffd432264b9f347ef73db6bbe23df180d86b3bafbb811",
+      "sha256": "9ec248eb54472e83d1a65317b5c966981058c558150283af749d58eb96ca0221",
       "upstream_sha256": "a826d58449919fb04e239c7b10445e729572f9046644ea1e1239e4d81d7074fc",
       "origin": "modified-upstream"
     },
@@ -227,9 +335,9 @@
     },
     {
       "path": "kit/runtime/fullscreen.js",
-      "sha256": "a2ebf7abe387965491eb4c95f4e5289418f28a065a178b7719f6f05886a040f9",
+      "sha256": "911feec5ff7eb21a79d4aae907283d48807a3048b44325d18d28099c5cf36722",
       "upstream_sha256": "a2ebf7abe387965491eb4c95f4e5289418f28a065a178b7719f6f05886a040f9",
-      "origin": "unchanged-upstream"
+      "origin": "modified-upstream"
     },
     {
       "path": "kit/runtime/gauges.js",
@@ -334,6 +442,12 @@
       "origin": "unchanged-upstream"
     },
     {
+      "path": "kit/runtime/readonly_signals.js",
+      "sha256": "07b6862a63bb0b072069186451c88d6889413d386a4cf7b1c14cec37bd168194",
+      "upstream_sha256": null,
+      "origin": "AQ-derived-or-notice"
+    },
+    {
       "path": "kit/runtime/record.js",
       "sha256": "f412f53744957998d9083c178a60667b942fd65218a61af2d51d2653dd9d2173",
       "upstream_sha256": "f412f53744957998d9083c178a60667b942fd65218a61af2d51d2653dd9d2173",
@@ -407,7 +521,7 @@
     },
     {
       "path": "kit/tools/build.py",
-      "sha256": "119781e148bc8d7ee1ce5335792d392c140fab06cc5967fa008d32e288cf31ce",
+      "sha256": "9adc4b5abff94fce054eb0ca6a4d99d910b24626aad5cbbc65e8da3757dedd8b",
       "upstream_sha256": "8e39acaf9b17b92048f9f906c25ddbbc67c2df5080d1a3c2517bc5e0a650ffdc",
       "origin": "modified-upstream"
     },
@@ -437,11 +551,24 @@
     }
   ],
   "validation": {
-    "focused_test_methods": 15,
+    "focused_test_methods": 24,
     "result": "PASS",
+    "command": "python3 -m unittest discover -s tests -p 'test_id8_aref*.py' -q",
     "synthetic_package_assembly": "PASS",
+    "additional_target_packages": {
+      "aref_carcare": [
+        "ID7",
+        "ID8"
+      ],
+      "aref_carlyrics": [
+        "ID7",
+        "ID8"
+      ]
+    },
+    "existing_explorer_regression": "PASS",
     "sdk_execution": "NOT_OBSERVED",
-    "hu_installation": "NOT_OBSERVED"
+    "hu_installation": "NOT_OBSERVED",
+    "live_vehicle_data": "NOT_OBSERVED"
   },
   "excluded_apps": {
     "aref_tires": "ID8 prototype excluded: cached operating-state guard/freshness and provider availability are not qualified for control actions"

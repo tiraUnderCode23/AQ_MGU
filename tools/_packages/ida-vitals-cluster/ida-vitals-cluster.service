@@ -1,0 +1,17 @@
+[Unit]
+Description=Vitals: coolant, oil and tyre temperatures in the iDrive 8 cluster's middle (drawn by cluster-render)
+After=cluster-render.socket
+
+[Service]
+# Settings: /var/opt/ida-vitals-cluster/settings.json (kept over updates, reloaded on change).
+ExecStart=/usr/bin/node /var/opt/ida-vitals-cluster/current/vitals.js
+# the car's system.conf has DefaultStandardOutput=null: the log would never reach the journal
+StandardOutput=journal
+# the Vitals app's control socket: /run/ida-vitals-cluster/ctl.sock (0666, the app runs as its own uid)
+RuntimeDirectory=ida-vitals-cluster
+RuntimeDirectoryMode=0755
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

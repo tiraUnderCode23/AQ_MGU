@@ -1,0 +1,68 @@
+{
+  "schema": "aq-mgu.source-port/1",
+  "id": "maxxxfoka-idrive8",
+  "revision": "aq-parked-games-id8-1",
+  "distribution": "AQ derived source; not an upstream release",
+  "upstream_repository": "MaxxxFoka/IDRIVE7GAMES",
+  "upstream_commit": "5c6ac210301822ec9108610e0c95013ba5136369",
+  "upstream_snapshot": "apps/_sources/maxxxfoka-idrive7games",
+  "apps": [
+    {
+      "id": "parked_games",
+      "version": "0.2.3",
+      "originalVersion": "0.2.2",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ]
+    }
+  ],
+  "reference_sources": [
+    {
+      "repository": "cauliflowermossgrape/idrive7-apps",
+      "commit": "422957a85461826c1e8654d37c8ec66a94849f9c",
+      "license": "MIT",
+      "scope": "RHMI generation and renderer area contract"
+    },
+    {
+      "repository": "alexpereap/pereaperformance-idrive7-apps",
+      "commit": "5b758fad17761b8696989e2a4ffbfbfab4926b6f",
+      "license": "MIT",
+      "scope": "Public SDK lifecycle and typed field contract"
+    },
+    {
+      "repository": "arefahmad/idrive7-apps",
+      "commit": "6db26cdae67e6900c530611905f0b9aa856f27f0",
+      "license": "MIT",
+      "scope": "AQ corrected platform portions derived from this kit; notices retained"
+    }
+  ],
+  "changes": [
+    "Target-specific ID7/ID8 RHMI and native lifecycle/display/input implementation",
+    "ID8 read-only speed freshness gate; unknown, invalid, stale, provider-loss and clock rollback remain paused",
+    "Original effective 3 km/h guard threshold retained; original 2-second cadence and 6-second maximum reading age",
+    "Raw FrontCCU fallback excluded on ID8; controller-dependent multiplayer visibly gated by actual renderer capability",
+    "Original eight game directory trees and package notices retained"
+  ],
+  "target_build_contract": {
+    "selection": "--target-hmi ID7|ID8 or exactly one /usr/lib/oap-mainapp or /usr/lib/oap-mainapp21",
+    "unknown_or_ambiguous": "BUILD_REJECTED",
+    "sdk_major_heuristic": false,
+    "package_mguHmi": "selected target only"
+  },
+  "limits": [
+    "Compatible target SDK Vehicle2 read-only member/provider required",
+    "mgu-render >= 0.6.24 native rendering, touch and application area required",
+    "ID8 controller-dependent multiplayer needs a supported renderer gate",
+    "No actual target build, registration or live installation observed"
+  ],
+  "test": [
+    "tests/test_id8_parked_games.py"
+  ],
+  "verification": {
+    "offline_focused_tests": "7 PASS",
+    "publisher_pure_game_programs": "8 PASS",
+    "actual_target_build": "NOT_OBSERVED",
+    "live_installation": "NOT_OBSERVED"
+  }
+}

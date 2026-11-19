@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "revision": "aq-hexlay-id8-1",
+  "revision": "aq-hexlay-id8-2",
   "base": {
     "repository": "hexlay/idrive7-custom-apps",
     "commit": "04a42559a6d94d52d5a17bb2a7231e2142b26079",
@@ -53,13 +53,13 @@
     },
     {
       "path": "PORT.json",
-      "sha256": "3a3713758ce22f65db04ca26231af558f98f182c3d543762269bad5a1edb60af",
+      "sha256": "8564d524eab69c60033c25242e77abdd03fdbed8de4d39b3cb220c00387adbec",
       "origin": "AQ-derived-or-notice",
       "upstream_sha256": null
     },
     {
       "path": "README.md",
-      "sha256": "73081be2663da906e098455a65178e28443e0bb00b40b25e3e57a17afde96f29",
+      "sha256": "dfe0edca479020cdaac9c3aca6de2599e62847894433abb01c419cf0b619378e",
       "origin": "modified-upstream",
       "upstream_sha256": "cc03227d73d787e91c0353a9c5f83ecf24b07de9688ccb64d08fda94e3c48bac"
     },
@@ -467,7 +467,7 @@
     },
     {
       "path": "kit/tools/build.py",
-      "sha256": "45ba27b0f8105a0442fd84151e46e3256cc98e09d11de6d7a870d88da0b255ad",
+      "sha256": "07dde6b58a4d1c379304350ce7308e0d12e1c3b6c745932dd5fa30c8fee8231b",
       "origin": "modified-upstream",
       "upstream_sha256": "89d39a6f90102c66fdfc7bbf0389962a83e8b79ffb557469cb90eb61a2620fec"
     },
@@ -509,7 +509,7 @@
     },
     {
       "path": "tests/test_port.py",
-      "sha256": "6a1352a5347b3c3c5a2d619d0584f02e263853a571c393444c315176a0f5ffb2",
+      "sha256": "274b5f3883a3b2bc2c4d9a659debe6ea80b5f787a8c0cf3df8f2692ae531e1be",
       "origin": "AQ-derived-or-notice",
       "upstream_sha256": null
     }

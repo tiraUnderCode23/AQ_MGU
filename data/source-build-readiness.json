@@ -1,15 +1,15 @@
 {
   "schema": 1,
-  "observed_at_utc": "2026-11-19T11:40:18.063952+00:00",
-  "baseline_git_commit": "42dd429486219dea6a96f99bd02cea7d55b47ce9",
+  "observed_at_utc": "2026-11-19T13:30:54.972509+00:00",
+  "baseline_git_commit": "0f3f96e90ac821c7fd08dfa8a8b44c4479cdb34e",
   "store_source_commit": "7956321fd40bceafffa8842719155e6176652720",
-  "catalog_sha256": "f8322d1d0b0b982723aec95f0feba8395a18b7692f06bd6765f008bfb15f9c3c",
+  "catalog_sha256": "a6b12b4f4bca0d0717a1286f9f43bac9b90af57fbd9a0e8d510cd5a98f2d9473",
   "scope": "Static source inputs only: original Store repoCatalog and partPaths; filesystem inspection. No builders or components executed for this audit.",
   "working_tree_observation": {
     "file_selection": "git ls-files --cached --others --exclude-standard; existing regular files; Store .git/.DS_Store/._ skips; local Python/test caches and this report excluded",
-    "files": 5848,
-    "bytes": 242076818,
-    "path_size_inventory_sha256": "8858e250fba6d62f29531ed5676d51670de4bed9dcf0d148518e7090b14e478e",
+    "files": 7439,
+    "bytes": 398831945,
+    "path_size_inventory_sha256": "d304acd83ca49c64bb36fdf53bcee9ab0873e26672f05f0d1dc2ba954cb813eb",
     "working_tree_changes_included": true
   },
   "original_store_limits": {
@@ -22,16 +22,16 @@
     ]
   },
   "summary": {
-    "source_entries": 55,
+    "source_entries": 79,
     "parser_skipped": [],
-    "positive_static_input_evidence": 54,
+    "positive_static_input_evidence": 78,
     "known_blocked_entries": [
       "noahg_fscpatcher"
     ],
     "whole_repository_fallback_entries": [
       "noahg_fscpatcher"
     ],
-    "source_tool_payload_references_checked": 31
+    "source_tool_payload_references_checked": 60
   },
   "limits_of_evidence": [
     "Input byte counts do not measure peak build usage, generated output, SDK extraction, or downloaded assets.",
@@ -40,6 +40,41 @@
     "A source fetch or build failure may cause Store to retry the whole repository, which exceeds the default build byte budget in this observation."
   ],
   "components": [
+    {
+      "id": "ab_storage",
+      "kind": "app",
+      "version": "1.2.4",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "selected_paths": [
+        "apps/_ports/bmwenthusiast-idrive8/apps/ab_storage",
+        "apps/_ports/bmwenthusiast-idrive8/kit",
+        "apps/_ports/bmwenthusiast-idrive8/LICENSE",
+        "apps/_ports/bmwenthusiast-idrive8/THIRD_PARTY_LICENSES",
+        "apps/_ports/bmwenthusiast-idrive8/PORT.json",
+        "apps/_ports/bmwenthusiast-idrive8/PROVENANCE.json",
+        "apps/_ports/bmwenthusiast-idrive8/kit/tools/build.py"
+      ],
+      "selected_path_count": 7,
+      "selected_file_count": 46,
+      "selected_bytes": 1844772,
+      "source_fetch_scope": "selected_paths",
+      "whole_repository_fallback": false,
+      "input_byte_budget": "PASS",
+      "partial_file_budget": "PASS",
+      "input_omissions": [],
+      "static_input_evidence": "POSITIVE_FOR_REVIEWED_INPUTS",
+      "known_blockers": [],
+      "unit_build": "NOT_OBSERVED",
+      "live_installation": "NOT_OBSERVED",
+      "icon_input": "COMMITTED_ICON_PRESENT",
+      "nested_recipe_paths": "PASS",
+      "sdk_resolution": "SUPPLIED_ON_TARGET; extraction and target SDK compatibility not tested",
+      "app_shared_input_count": 0,
+      "recipe_review": "STATIC_PYTHON_INPUTS_AND_NESTED_RECIPE_PATHS"
+    },
     {
       "id": "adam_mtrack",
       "kind": "app",
@@ -83,28 +118,30 @@
     {
       "id": "adam_shiftlights",
       "kind": "app",
-      "version": "0.4.5",
+      "version": "0.4.6",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "selected_paths": [
-        "apps/_sources/pinguinooo-idrive7-apps/apps/adam_shiftlights",
-        "apps/_sources/pinguinooo-idrive7-apps/kit/runtime",
-        "apps/_sources/pinguinooo-idrive7-apps/kit/platform",
-        "apps/_sources/pinguinooo-idrive7-apps/kit/tools/build.py",
-        "apps/_sources/pinguinooo-idrive7-apps/kit/tools/pack_data.py",
-        "apps/_sources/pinguinooo-idrive7-apps/kit/tools/localize.py",
-        "apps/_sources/pinguinooo-idrive7-apps/kit/tools/locale-revisions.json",
-        "apps/_sources/pinguinooo-idrive7-apps/kit/tools/oapgen",
-        "apps/_sources/pinguinooo-idrive7-apps/LICENSE",
-        "apps/_sources/pinguinooo-idrive7-apps/kit/LICENSE",
-        "apps/_sources/pinguinooo-idrive7-apps/kit/NOTICE",
-        "apps/_sources/pinguinooo-idrive7-apps/kit/NOTICE.zh-CN.md",
-        "apps/_sources/pinguinooo-idrive7-apps/kit/tools/build.py"
+        "apps/_ports/pinguinooo-idrive8/apps/adam_shiftlights",
+        "apps/_ports/pinguinooo-idrive8/kit/runtime",
+        "apps/_ports/pinguinooo-idrive8/kit/platform",
+        "apps/_ports/pinguinooo-idrive8/kit/tools/build.py",
+        "apps/_ports/pinguinooo-idrive8/kit/tools/pack_data.py",
+        "apps/_ports/pinguinooo-idrive8/kit/tools/localize.py",
+        "apps/_ports/pinguinooo-idrive8/kit/tools/locale-revisions.json",
+        "apps/_ports/pinguinooo-idrive8/kit/tools/oapgen",
+        "apps/_ports/pinguinooo-idrive8/LICENSE",
+        "apps/_ports/pinguinooo-idrive8/kit/LICENSE",
+        "apps/_ports/pinguinooo-idrive8/kit/NOTICE",
+        "apps/_ports/pinguinooo-idrive8/kit/NOTICE.zh-CN.md",
+        "apps/_ports/pinguinooo-idrive8/AQ_PORT.json",
+        "apps/_ports/pinguinooo-idrive8/kit/tools/build.py"
       ],
-      "selected_path_count": 13,
-      "selected_file_count": 64,
-      "selected_bytes": 1864172,
+      "selected_path_count": 14,
+      "selected_file_count": 70,
+      "selected_bytes": 1958505,
       "source_fetch_scope": "selected_paths",
       "whole_repository_fallback": false,
       "input_byte_budget": "PASS",
@@ -145,8 +182,8 @@
         "apps/_ports/pinguinooo-idrive8/kit/tools/build.py"
       ],
       "selected_path_count": 14,
-      "selected_file_count": 61,
-      "selected_bytes": 1816949,
+      "selected_file_count": 62,
+      "selected_bytes": 1851785,
       "source_fetch_scope": "selected_paths",
       "whole_repository_fallback": false,
       "input_byte_budget": "PASS",
@@ -203,27 +240,31 @@
     {
       "id": "aref_carcare",
       "kind": "app",
-      "version": "0.2.3",
+      "version": "0.2.4",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "selected_paths": [
-        "apps/_sources/arefahmad-idrive7-apps/apps/aref_carcare",
-        "apps/_sources/arefahmad-idrive7-apps/kit/runtime",
-        "apps/_sources/arefahmad-idrive7-apps/kit/platform",
-        "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
-        "apps/_sources/arefahmad-idrive7-apps/kit/tools/pack_data.py",
-        "apps/_sources/arefahmad-idrive7-apps/kit/tools/localize.py",
-        "apps/_sources/arefahmad-idrive7-apps/kit/tools/locale-revisions.json",
-        "apps/_sources/arefahmad-idrive7-apps/kit/tools/oapgen",
-        "apps/_sources/arefahmad-idrive7-apps/LICENSE",
-        "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.idrive7-apps",
-        "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.nickgcode",
-        "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py"
+        "apps/_ports/arefahmad-idrive8/apps/aref_carcare",
+        "apps/_ports/arefahmad-idrive8/kit/runtime",
+        "apps/_ports/arefahmad-idrive8/kit/platform",
+        "apps/_ports/arefahmad-idrive8/kit/tools/build.py",
+        "apps/_ports/arefahmad-idrive8/kit/tools/pack_data.py",
+        "apps/_ports/arefahmad-idrive8/kit/tools/localize.py",
+        "apps/_ports/arefahmad-idrive8/kit/tools/locale-revisions.json",
+        "apps/_ports/arefahmad-idrive8/kit/tools/oapgen",
+        "apps/_ports/arefahmad-idrive8/LICENSE",
+        "apps/_ports/arefahmad-idrive8/kit/LICENSE.idrive7-apps",
+        "apps/_ports/arefahmad-idrive8/kit/LICENSE.nickgcode",
+        "apps/_ports/arefahmad-idrive8/kit/LICENSE.alexpereap",
+        "apps/_ports/arefahmad-idrive8/kit/NOTICE.AQ-ID8",
+        "apps/_ports/arefahmad-idrive8/PORT.json",
+        "apps/_ports/arefahmad-idrive8/kit/tools/build.py"
       ],
-      "selected_path_count": 12,
-      "selected_file_count": 62,
-      "selected_bytes": 1953485,
+      "selected_path_count": 15,
+      "selected_file_count": 68,
+      "selected_bytes": 1994073,
       "source_fetch_scope": "selected_paths",
       "whole_repository_fallback": false,
       "input_byte_budget": "PASS",
@@ -242,27 +283,31 @@
     {
       "id": "aref_carlyrics",
       "kind": "app",
-      "version": "0.3.9",
+      "version": "0.3.10",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
       "selected_paths": [
-        "apps/_sources/arefahmad-idrive7-apps/apps/aref_carlyrics",
-        "apps/_sources/arefahmad-idrive7-apps/kit/runtime",
-        "apps/_sources/arefahmad-idrive7-apps/kit/platform",
-        "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
-        "apps/_sources/arefahmad-idrive7-apps/kit/tools/pack_data.py",
-        "apps/_sources/arefahmad-idrive7-apps/kit/tools/localize.py",
-        "apps/_sources/arefahmad-idrive7-apps/kit/tools/locale-revisions.json",
-        "apps/_sources/arefahmad-idrive7-apps/kit/tools/oapgen",
-        "apps/_sources/arefahmad-idrive7-apps/LICENSE",
-        "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.idrive7-apps",
-        "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.nickgcode",
-        "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py"
+        "apps/_ports/arefahmad-idrive8/apps/aref_carlyrics",
+        "apps/_ports/arefahmad-idrive8/kit/runtime",
+        "apps/_ports/arefahmad-idrive8/kit/platform",
+        "apps/_ports/arefahmad-idrive8/kit/tools/build.py",
+        "apps/_ports/arefahmad-idrive8/kit/tools/pack_data.py",
+        "apps/_ports/arefahmad-idrive8/kit/tools/localize.py",
+        "apps/_ports/arefahmad-idrive8/kit/tools/locale-revisions.json",
+        "apps/_ports/arefahmad-idrive8/kit/tools/oapgen",
+        "apps/_ports/arefahmad-idrive8/LICENSE",
+        "apps/_ports/arefahmad-idrive8/kit/LICENSE.idrive7-apps",
+        "apps/_ports/arefahmad-idrive8/kit/LICENSE.nickgcode",
+        "apps/_ports/arefahmad-idrive8/kit/LICENSE.alexpereap",
+        "apps/_ports/arefahmad-idrive8/kit/NOTICE.AQ-ID8",
+        "apps/_ports/arefahmad-idrive8/PORT.json",
+        "apps/_ports/arefahmad-idrive8/kit/tools/build.py"
       ],
-      "selected_path_count": 12,
-      "selected_file_count": 70,
-      "selected_bytes": 2363573,
+      "selected_path_count": 15,
+      "selected_file_count": 76,
+      "selected_bytes": 2405436,
       "source_fetch_scope": "selected_paths",
       "whole_repository_fallback": false,
       "input_byte_budget": "PASS",
@@ -427,8 +472,8 @@
         "apps/_ports/arefahmad-idrive8/kit/tools/build.py"
       ],
       "selected_path_count": 15,
-      "selected_file_count": 67,
-      "selected_bytes": 1969323,
+      "selected_file_count": 68,
+      "selected_bytes": 1986031,
       "source_fetch_scope": "selected_paths",
       "whole_repository_fallback": false,
       "input_byte_budget": "PASS",
@@ -562,6 +607,78 @@
       "recipe_review": "STATIC_PYTHON_INPUTS_AND_NESTED_RECIPE_PATHS"
     },
     {
+      "id": "bimmer_blocks",
+      "kind": "app",
+      "version": "1.1.1",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "selected_paths": [
+        "apps/_ports/appstudio-idrive8/apps/bimmer_blocks",
+        "apps/_ports/appstudio-idrive8/kit",
+        "apps/_ports/appstudio-idrive8/LICENSE",
+        "apps/_ports/appstudio-idrive8/THIRD-PARTY.txt",
+        "apps/_ports/appstudio-idrive8/AQ_PORT.json",
+        "apps/_ports/appstudio-idrive8/kit/tools/build.py"
+      ],
+      "selected_path_count": 6,
+      "selected_file_count": 66,
+      "selected_bytes": 2065820,
+      "source_fetch_scope": "selected_paths",
+      "whole_repository_fallback": false,
+      "input_byte_budget": "PASS",
+      "partial_file_budget": "PASS",
+      "input_omissions": [],
+      "static_input_evidence": "POSITIVE_FOR_REVIEWED_INPUTS",
+      "known_blockers": [],
+      "unit_build": "NOT_OBSERVED",
+      "live_installation": "NOT_OBSERVED",
+      "icon_input": "COMMITTED_ICON_PRESENT",
+      "nested_recipe_paths": "PASS",
+      "sdk_resolution": "SUPPLIED_ON_TARGET; extraction and target SDK compatibility not tested",
+      "app_shared_input_count": 0,
+      "recipe_review": "STATIC_PYTHON_INPUTS_AND_NESTED_RECIPE_PATHS"
+    },
+    {
+      "id": "boostline_id8",
+      "kind": "app",
+      "version": "1.0.0",
+      "mguHmi": [
+        "ID8"
+      ],
+      "selected_paths": [
+        "apps/_sources/giuseppe-mgu-apps-id8/ecu-live-data/app",
+        "apps/_sources/giuseppe-mgu-apps-id8/tools",
+        "apps/_sources/giuseppe-mgu-apps-id8/vendor/idrive7-apps",
+        "apps/_sources/giuseppe-mgu-apps-id8/LICENSE",
+        "apps/_sources/giuseppe-mgu-apps-id8/README.md",
+        "apps/_sources/giuseppe-mgu-apps-id8/dpf-monitoring/LICENSE",
+        "apps/_sources/giuseppe-mgu-apps-id8/ecu-live-data/LICENSE",
+        "apps/_sources/giuseppe-mgu-apps-id8/true-time/LICENSE",
+        "tools/build_extra_source_app.py",
+        "data/extra-source-builds.json",
+        "tools/build_extra_source_app.py"
+      ],
+      "selected_path_count": 11,
+      "selected_file_count": 86,
+      "selected_bytes": 4140625,
+      "source_fetch_scope": "selected_paths",
+      "whole_repository_fallback": false,
+      "input_byte_budget": "PASS",
+      "partial_file_budget": "PASS",
+      "input_omissions": [],
+      "static_input_evidence": "POSITIVE_FOR_REVIEWED_INPUTS",
+      "known_blockers": [],
+      "unit_build": "NOT_OBSERVED",
+      "live_installation": "NOT_OBSERVED",
+      "nested_recipe_paths": "PASS",
+      "recipe_review": "ORIGINAL_BUILDER_AND_NOTICE_PRESERVING_WRAPPER",
+      "source_recipe": "data/extra-source-builds.json",
+      "sdk_resolution": "SUPPLIED_ON_TARGET; no original SDK is distributed",
+      "offline_packaging_check": "Separate tests/test_extra_source_apps.py builds from the original Store partPaths with inert synthetic SDK fixtures when required, or the original SDK-free Store mode; see verification summary for execution result"
+    },
+    {
       "id": "brake_test",
       "kind": "app",
       "version": "1.5.21",
@@ -598,6 +715,41 @@
       "sdk_resolution": "SUPPLIED_ON_TARGET; extraction and target SDK compatibility not tested",
       "app_shared_input_count": 0,
       "recipe_review": "STATIC_PYTHON_INPUTS_AND_NESTED_RECIPE_PATHS"
+    },
+    {
+      "id": "c365_drive",
+      "kind": "app",
+      "version": "1.9.3",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "selected_paths": [
+        "apps/_sources/c365-mgu-drive/apps/c365_drive",
+        "apps/_sources/c365-mgu-drive/kit",
+        "apps/_sources/c365-mgu-drive/LICENSE",
+        "apps/_sources/c365-mgu-drive/README.md",
+        "tools/build_extra_source_app.py",
+        "data/extra-source-builds.json",
+        "tools/build_extra_source_app.py"
+      ],
+      "selected_path_count": 7,
+      "selected_file_count": 78,
+      "selected_bytes": 29238777,
+      "source_fetch_scope": "selected_paths",
+      "whole_repository_fallback": false,
+      "input_byte_budget": "PASS",
+      "partial_file_budget": "PASS",
+      "input_omissions": [],
+      "static_input_evidence": "POSITIVE_FOR_REVIEWED_INPUTS",
+      "known_blockers": [],
+      "unit_build": "NOT_OBSERVED",
+      "live_installation": "NOT_OBSERVED",
+      "nested_recipe_paths": "PASS",
+      "recipe_review": "ORIGINAL_BUILDER_AND_NOTICE_PRESERVING_WRAPPER",
+      "source_recipe": "data/extra-source-builds.json",
+      "sdk_resolution": "SUPPLIED_ON_TARGET; no original SDK is distributed",
+      "offline_packaging_check": "Separate tests/test_extra_source_apps.py builds from the original Store partPaths with inert synthetic SDK fixtures when required, or the original SDK-free Store mode; see verification summary for execution result"
     },
     {
       "id": "car_vitals",
@@ -668,6 +820,43 @@
       "recipe_review": "STATIC_UNIT_MANIFEST_AND_HMI_TREE"
     },
     {
+      "id": "cluster_lyrics",
+      "kind": "app",
+      "version": "0.1.1",
+      "mguHmi": [
+        "ID7"
+      ],
+      "selected_paths": [
+        "apps/_sources/namels-mgu-apps/apps/cluster_lyrics",
+        "apps/_sources/namels-mgu-apps/kit",
+        "apps/_sources/namels-mgu-apps/tools",
+        "apps/_sources/namels-mgu-apps/LICENSE",
+        "apps/_sources/namels-mgu-apps/README.md",
+        "apps/_sources/namels-mgu-apps/THIRD_PARTY_NOTICES.md",
+        "apps/_sources/namels-mgu-apps/apps/gif_home/LICENSE",
+        "tools/build_extra_source_app.py",
+        "data/extra-source-builds.json",
+        "tools/build_extra_source_app.py"
+      ],
+      "selected_path_count": 10,
+      "selected_file_count": 59,
+      "selected_bytes": 1189940,
+      "source_fetch_scope": "selected_paths",
+      "whole_repository_fallback": false,
+      "input_byte_budget": "PASS",
+      "partial_file_budget": "PASS",
+      "input_omissions": [],
+      "static_input_evidence": "POSITIVE_FOR_REVIEWED_INPUTS",
+      "known_blockers": [],
+      "unit_build": "NOT_OBSERVED",
+      "live_installation": "NOT_OBSERVED",
+      "nested_recipe_paths": "PASS",
+      "recipe_review": "ORIGINAL_BUILDER_AND_NOTICE_PRESERVING_WRAPPER",
+      "source_recipe": "data/extra-source-builds.json",
+      "sdk_resolution": "SUPPLIED_ON_TARGET; no original SDK is distributed",
+      "offline_packaging_check": "Separate tests/test_extra_source_apps.py builds from the original Store partPaths with inert synthetic SDK fixtures when required, or the original SDK-free Store mode; see verification summary for execution result"
+    },
+    {
       "id": "cluster_themes",
       "kind": "app",
       "version": "0.19.0",
@@ -696,6 +885,83 @@
       "nested_recipe_paths": "PASS",
       "sdk_resolution": "SUPPLIED_ON_TARGET; extraction and target SDK compatibility not tested",
       "app_shared_input_count": 27,
+      "recipe_review": "STATIC_PYTHON_INPUTS_AND_NESTED_RECIPE_PATHS"
+    },
+    {
+      "id": "dimon_battery",
+      "kind": "app",
+      "version": "1.0.0",
+      "mguHmi": [
+        "ID7"
+      ],
+      "selected_paths": [
+        "apps/_sources/dimonprograms-apps/apps/dimon_battery",
+        "apps/_sources/dimonprograms-apps/kit/runtime",
+        "apps/_sources/dimonprograms-apps/kit/platform",
+        "apps/_sources/dimonprograms-apps/kit/localization",
+        "apps/_sources/dimonprograms-apps/kit/tools/build.py",
+        "apps/_sources/dimonprograms-apps/kit/tools/pack_data.py",
+        "apps/_sources/dimonprograms-apps/kit/tools/localize.py",
+        "apps/_sources/dimonprograms-apps/kit/tools/locale-revisions.json",
+        "apps/_sources/dimonprograms-apps/kit/tools/oapgen",
+        "apps/_sources/dimonprograms-apps/kit/tools/make_icon.js",
+        "apps/_sources/dimonprograms-apps/LICENSE",
+        "apps/_sources/dimonprograms-apps/NOTICE.zh-CN.md",
+        "tools/build_extra_source_app.py",
+        "data/extra-source-builds.json",
+        "tools/build_extra_source_app.py"
+      ],
+      "selected_path_count": 15,
+      "selected_file_count": 69,
+      "selected_bytes": 28806357,
+      "source_fetch_scope": "selected_paths",
+      "whole_repository_fallback": false,
+      "input_byte_budget": "PASS",
+      "partial_file_budget": "PASS",
+      "input_omissions": [],
+      "static_input_evidence": "POSITIVE_FOR_REVIEWED_INPUTS",
+      "known_blockers": [],
+      "unit_build": "NOT_OBSERVED",
+      "live_installation": "NOT_OBSERVED",
+      "nested_recipe_paths": "PASS",
+      "recipe_review": "ORIGINAL_BUILDER_AND_NOTICE_PRESERVING_WRAPPER",
+      "source_recipe": "data/extra-source-builds.json",
+      "sdk_resolution": "SUPPLIED_ON_TARGET; no original SDK is distributed",
+      "offline_packaging_check": "Separate tests/test_extra_source_apps.py builds from the original Store partPaths with inert synthetic SDK fixtures when required, or the original SDK-free Store mode; see verification summary for execution result"
+    },
+    {
+      "id": "dimon_track_mode",
+      "kind": "app",
+      "version": "1.0.1",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "selected_paths": [
+        "apps/_ports/dimonprograms-idrive8/apps/dimon_track_mode",
+        "apps/_ports/dimonprograms-idrive8/kit",
+        "apps/_ports/dimonprograms-idrive8/LICENSE",
+        "apps/_ports/dimonprograms-idrive8/NOTICE.zh-CN.md",
+        "apps/_ports/dimonprograms-idrive8/PORT.json",
+        "apps/_ports/dimonprograms-idrive8/PROVENANCE.json",
+        "apps/_ports/dimonprograms-idrive8/kit/tools/build.py"
+      ],
+      "selected_path_count": 7,
+      "selected_file_count": 76,
+      "selected_bytes": 28870363,
+      "source_fetch_scope": "selected_paths",
+      "whole_repository_fallback": false,
+      "input_byte_budget": "PASS",
+      "partial_file_budget": "PASS",
+      "input_omissions": [],
+      "static_input_evidence": "POSITIVE_FOR_REVIEWED_INPUTS",
+      "known_blockers": [],
+      "unit_build": "NOT_OBSERVED",
+      "live_installation": "NOT_OBSERVED",
+      "icon_input": "COMMITTED_ICON_PRESENT",
+      "nested_recipe_paths": "PASS",
+      "sdk_resolution": "SUPPLIED_ON_TARGET; extraction and target SDK compatibility not tested",
+      "app_shared_input_count": 0,
       "recipe_review": "STATIC_PYTHON_INPUTS_AND_NESTED_RECIPE_PATHS"
     },
     {
@@ -801,6 +1067,126 @@
         "download": "NOT_PERFORMED",
         "validation": "Pinned asset references observed; runtime download not tested"
       }
+    },
+    {
+      "id": "dpf",
+      "kind": "app",
+      "version": "0.1.32",
+      "mguHmi": [
+        "ID7"
+      ],
+      "selected_paths": [
+        "apps/_sources/dzooky-bmrmodz/apps/dpf",
+        "apps/_sources/dzooky-bmrmodz/kit/runtime",
+        "apps/_sources/dzooky-bmrmodz/kit/platform",
+        "apps/_sources/dzooky-bmrmodz/kit/localization",
+        "apps/_sources/dzooky-bmrmodz/kit/tools/build.py",
+        "apps/_sources/dzooky-bmrmodz/kit/tools/pack_data.py",
+        "apps/_sources/dzooky-bmrmodz/kit/tools/localize.py",
+        "apps/_sources/dzooky-bmrmodz/kit/tools/locale-revisions.json",
+        "apps/_sources/dzooky-bmrmodz/kit/tools/oapgen",
+        "apps/_sources/dzooky-bmrmodz/LICENSE",
+        "apps/_sources/dzooky-bmrmodz/README.md",
+        "apps/_sources/dzooky-bmrmodz/mgu-repo.json",
+        "tools/build_extra_source_app.py",
+        "data/extra-source-builds.json",
+        "tools/build_extra_source_app.py"
+      ],
+      "selected_path_count": 15,
+      "selected_file_count": 71,
+      "selected_bytes": 4936363,
+      "source_fetch_scope": "selected_paths",
+      "whole_repository_fallback": false,
+      "input_byte_budget": "PASS",
+      "partial_file_budget": "PASS",
+      "input_omissions": [],
+      "static_input_evidence": "POSITIVE_FOR_REVIEWED_INPUTS",
+      "known_blockers": [],
+      "unit_build": "NOT_OBSERVED",
+      "live_installation": "NOT_OBSERVED",
+      "nested_recipe_paths": "PASS",
+      "recipe_review": "ORIGINAL_BUILDER_AND_NOTICE_PRESERVING_WRAPPER",
+      "source_recipe": "data/extra-source-builds.json",
+      "sdk_resolution": "Original SDK-free Store mode; SDK modules are supplied later by the reviewed original deploy tool",
+      "offline_packaging_check": "Separate tests/test_extra_source_apps.py builds from the original Store partPaths with inert synthetic SDK fixtures when required, or the original SDK-free Store mode; see verification summary for execution result"
+    },
+    {
+      "id": "dpf_id8",
+      "kind": "app",
+      "version": "1.0.0",
+      "mguHmi": [
+        "ID8"
+      ],
+      "selected_paths": [
+        "apps/_sources/giuseppe-mgu-apps-id8/dpf-monitoring/app",
+        "apps/_sources/giuseppe-mgu-apps-id8/tools",
+        "apps/_sources/giuseppe-mgu-apps-id8/vendor/idrive7-apps",
+        "apps/_sources/giuseppe-mgu-apps-id8/LICENSE",
+        "apps/_sources/giuseppe-mgu-apps-id8/README.md",
+        "apps/_sources/giuseppe-mgu-apps-id8/dpf-monitoring/LICENSE",
+        "apps/_sources/giuseppe-mgu-apps-id8/ecu-live-data/LICENSE",
+        "apps/_sources/giuseppe-mgu-apps-id8/true-time/LICENSE",
+        "tools/build_extra_source_app.py",
+        "data/extra-source-builds.json",
+        "tools/build_extra_source_app.py"
+      ],
+      "selected_path_count": 11,
+      "selected_file_count": 81,
+      "selected_bytes": 3760036,
+      "source_fetch_scope": "selected_paths",
+      "whole_repository_fallback": false,
+      "input_byte_budget": "PASS",
+      "partial_file_budget": "PASS",
+      "input_omissions": [],
+      "static_input_evidence": "POSITIVE_FOR_REVIEWED_INPUTS",
+      "known_blockers": [],
+      "unit_build": "NOT_OBSERVED",
+      "live_installation": "NOT_OBSERVED",
+      "nested_recipe_paths": "PASS",
+      "recipe_review": "ORIGINAL_BUILDER_AND_NOTICE_PRESERVING_WRAPPER",
+      "source_recipe": "data/extra-source-builds.json",
+      "sdk_resolution": "SUPPLIED_ON_TARGET; no original SDK is distributed",
+      "offline_packaging_check": "Separate tests/test_extra_source_apps.py builds from the original Store partPaths with inert synthetic SDK fixtures when required, or the original SDK-free Store mode; see verification summary for execution result"
+    },
+    {
+      "id": "dpf_monitor",
+      "kind": "app",
+      "version": "0.2.8",
+      "mguHmi": [
+        "ID7"
+      ],
+      "selected_paths": [
+        "apps/_sources/namels-mgu-apps/apps/dpf_monitor",
+        "apps/_sources/namels-mgu-apps/kit",
+        "apps/_sources/namels-mgu-apps/tools",
+        "apps/_sources/namels-mgu-apps/LICENSE",
+        "apps/_sources/namels-mgu-apps/README.md",
+        "apps/_sources/namels-mgu-apps/THIRD_PARTY_NOTICES.md",
+        "apps/_sources/namels-mgu-apps/apps/cluster_lyrics/DEJAVU_LICENSE.txt",
+        "apps/_sources/namels-mgu-apps/apps/cluster_lyrics/LICENSE",
+        "apps/_sources/namels-mgu-apps/apps/cluster_lyrics/NOTICE",
+        "apps/_sources/namels-mgu-apps/apps/gif_home/LICENSE",
+        "tools/build_extra_source_app.py",
+        "data/extra-source-builds.json",
+        "tools/build_extra_source_app.py"
+      ],
+      "selected_path_count": 13,
+      "selected_file_count": 53,
+      "selected_bytes": 910873,
+      "source_fetch_scope": "selected_paths",
+      "whole_repository_fallback": false,
+      "input_byte_budget": "PASS",
+      "partial_file_budget": "PASS",
+      "input_omissions": [],
+      "static_input_evidence": "POSITIVE_FOR_REVIEWED_INPUTS",
+      "known_blockers": [],
+      "unit_build": "NOT_OBSERVED",
+      "live_installation": "NOT_OBSERVED",
+      "nested_recipe_paths": "PASS",
+      "recipe_review": "ORIGINAL_BUILDER_AND_NOTICE_PRESERVING_WRAPPER",
+      "source_recipe": "data/extra-source-builds.json",
+      "sdk_resolution": "SUPPLIED_ON_TARGET; no original SDK is distributed",
+      "offline_packaging_check": "Separate tests/test_extra_source_apps.py builds from the original Store partPaths with inert synthetic SDK fixtures when required, or the original SDK-free Store mode; see verification summary for execution result"
     },
     {
       "id": "draggy",
@@ -917,6 +1303,41 @@
       "recipe_review": "STATIC_PYTHON_INPUTS_AND_NESTED_RECIPE_PATHS"
     },
     {
+      "id": "e85",
+      "kind": "app",
+      "version": "1.2.2",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "selected_paths": [
+        "apps/_ports/dante-idrive8/apps/e85",
+        "apps/_ports/dante-idrive8/kit",
+        "apps/_ports/dante-idrive8/LICENSE",
+        "apps/_ports/dante-idrive8/NOTICE.zh-CN.md",
+        "apps/_ports/dante-idrive8/PORT.json",
+        "apps/_ports/dante-idrive8/PROVENANCE.json",
+        "apps/_ports/dante-idrive8/kit/tools/build.py"
+      ],
+      "selected_path_count": 7,
+      "selected_file_count": 65,
+      "selected_bytes": 14103902,
+      "source_fetch_scope": "selected_paths",
+      "whole_repository_fallback": false,
+      "input_byte_budget": "PASS",
+      "partial_file_budget": "PASS",
+      "input_omissions": [],
+      "static_input_evidence": "POSITIVE_FOR_REVIEWED_INPUTS",
+      "known_blockers": [],
+      "unit_build": "NOT_OBSERVED",
+      "live_installation": "NOT_OBSERVED",
+      "icon_input": "COMMITTED_ICON_PRESENT",
+      "nested_recipe_paths": "PASS",
+      "sdk_resolution": "SUPPLIED_ON_TARGET; extraction and target SDK compatibility not tested",
+      "app_shared_input_count": 0,
+      "recipe_review": "STATIC_PYTHON_INPUTS_AND_NESTED_RECIPE_PATHS"
+    },
+    {
       "id": "edrive",
       "kind": "app",
       "version": "2.10.1",
@@ -953,6 +1374,140 @@
       "sdk_resolution": "SUPPLIED_ON_TARGET; extraction and target SDK compatibility not tested",
       "app_shared_input_count": 0,
       "recipe_review": "STATIC_PYTHON_INPUTS_AND_NESTED_RECIPE_PATHS"
+    },
+    {
+      "id": "eldrive",
+      "kind": "app",
+      "version": "1.1.0",
+      "mguHmi": [
+        "ID7"
+      ],
+      "selected_paths": [
+        "apps/_sources/beele-eldrive/apps/eldrive",
+        "apps/_sources/beele-eldrive/kit/runtime",
+        "apps/_sources/beele-eldrive/kit/platform",
+        "apps/_sources/beele-eldrive/kit/localization",
+        "apps/_sources/beele-eldrive/kit/tools/build.py",
+        "apps/_sources/beele-eldrive/kit/tools/pack_data.py",
+        "apps/_sources/beele-eldrive/kit/tools/localize.py",
+        "apps/_sources/beele-eldrive/kit/tools/locale-revisions.json",
+        "apps/_sources/beele-eldrive/kit/tools/oapgen",
+        "apps/_sources/beele-eldrive/kit/tools/make_icon.js",
+        "apps/_sources/beele-eldrive/LICENSE",
+        "apps/_sources/beele-eldrive/README.md",
+        "apps/_sources/beele-eldrive/mgu-repo.json",
+        "tools/build_extra_source_app.py",
+        "data/extra-source-builds.json",
+        "tools/build_extra_source_app.py"
+      ],
+      "selected_path_count": 16,
+      "selected_file_count": 63,
+      "selected_bytes": 3561204,
+      "source_fetch_scope": "selected_paths",
+      "whole_repository_fallback": false,
+      "input_byte_budget": "PASS",
+      "partial_file_budget": "PASS",
+      "input_omissions": [],
+      "static_input_evidence": "POSITIVE_FOR_REVIEWED_INPUTS",
+      "known_blockers": [],
+      "unit_build": "NOT_OBSERVED",
+      "live_installation": "NOT_OBSERVED",
+      "nested_recipe_paths": "PASS",
+      "recipe_review": "ORIGINAL_BUILDER_AND_NOTICE_PRESERVING_WRAPPER",
+      "source_recipe": "data/extra-source-builds.json",
+      "sdk_resolution": "SUPPLIED_ON_TARGET; no original SDK is distributed",
+      "offline_packaging_check": "Separate tests/test_extra_source_apps.py builds from the original Store partPaths with inert synthetic SDK fixtures when required, or the original SDK-free Store mode; see verification summary for execution result"
+    },
+    {
+      "id": "esagono-cluster",
+      "kind": "tool",
+      "version": "0.2.1",
+      "mguHmi": [
+        "ID8"
+      ],
+      "selected_paths": [
+        "tools/_packages/esagono-cluster"
+      ],
+      "selected_path_count": 1,
+      "selected_file_count": 8,
+      "selected_bytes": 173688,
+      "source_fetch_scope": "selected_paths",
+      "whole_repository_fallback": false,
+      "input_byte_budget": "PASS",
+      "partial_file_budget": "PASS",
+      "input_omissions": [],
+      "static_input_evidence": "POSITIVE_FOR_REVIEWED_INPUTS",
+      "known_blockers": [],
+      "unit_build": "NOT_OBSERVED",
+      "live_installation": "NOT_OBSERVED",
+      "tool_payload_references": [
+        {
+          "field": "files",
+          "path": "esagono.js",
+          "present_in_selected_files": true
+        },
+        {
+          "field": "files",
+          "path": "shader.js",
+          "present_in_selected_files": true
+        },
+        {
+          "field": "files",
+          "path": "preview.png",
+          "present_in_selected_files": true
+        },
+        {
+          "field": "files",
+          "path": "cluster-render.d/esagono.conf",
+          "present_in_selected_files": true
+        },
+        {
+          "field": "files",
+          "path": "licenses/LICENSE",
+          "present_in_selected_files": true
+        },
+        {
+          "field": "files",
+          "path": "AQ-PACKAGING.json",
+          "present_in_selected_files": true
+        },
+        {
+          "field": "units",
+          "path": "esagono-cluster.service",
+          "present_in_selected_files": true
+        }
+      ],
+      "recipe_review": "STATIC_COMPONENT_PAYLOAD_REFERENCES"
+    },
+    {
+      "id": "esagono_settings",
+      "kind": "app",
+      "version": "0.1.0",
+      "mguHmi": [
+        "ID8"
+      ],
+      "selected_paths": [
+        "apps/_sources/grabandrey-esagono-cluster/apps/esagono_settings"
+      ],
+      "selected_path_count": 1,
+      "selected_file_count": 54,
+      "selected_bytes": 51264,
+      "source_fetch_scope": "selected_paths",
+      "whole_repository_fallback": false,
+      "input_byte_budget": "PASS",
+      "partial_file_budget": "PASS",
+      "input_omissions": [],
+      "static_input_evidence": "POSITIVE_FOR_REVIEWED_INPUTS",
+      "known_blockers": [],
+      "unit_build": "NOT_OBSERVED",
+      "live_installation": "NOT_OBSERVED",
+      "unit_source_manifest": {
+        "module_count": 3,
+        "module_paths_present": true,
+        "declared_hmi_trees_present": true,
+        "sdk_resolution": "SUPPLIED_ON_TARGET; not part of public source snapshot"
+      },
+      "recipe_review": "STATIC_UNIT_MANIFEST_AND_HMI_TREE"
     },
     {
       "id": "ethanol_mix",
@@ -1024,6 +1579,45 @@
       "recipe_review": "STATIC_PYTHON_INPUTS_AND_NESTED_RECIPE_PATHS"
     },
     {
+      "id": "gif_home",
+      "kind": "app",
+      "version": "0.3.1",
+      "mguHmi": [
+        "ID7"
+      ],
+      "selected_paths": [
+        "apps/_sources/namels-mgu-apps/apps/gif_home",
+        "apps/_sources/namels-mgu-apps/kit",
+        "apps/_sources/namels-mgu-apps/tools",
+        "apps/_sources/namels-mgu-apps/LICENSE",
+        "apps/_sources/namels-mgu-apps/README.md",
+        "apps/_sources/namels-mgu-apps/THIRD_PARTY_NOTICES.md",
+        "apps/_sources/namels-mgu-apps/apps/cluster_lyrics/DEJAVU_LICENSE.txt",
+        "apps/_sources/namels-mgu-apps/apps/cluster_lyrics/LICENSE",
+        "apps/_sources/namels-mgu-apps/apps/cluster_lyrics/NOTICE",
+        "tools/build_extra_source_app.py",
+        "data/extra-source-builds.json",
+        "tools/build_extra_source_app.py"
+      ],
+      "selected_path_count": 12,
+      "selected_file_count": 58,
+      "selected_bytes": 2277172,
+      "source_fetch_scope": "selected_paths",
+      "whole_repository_fallback": false,
+      "input_byte_budget": "PASS",
+      "partial_file_budget": "PASS",
+      "input_omissions": [],
+      "static_input_evidence": "POSITIVE_FOR_REVIEWED_INPUTS",
+      "known_blockers": [],
+      "unit_build": "NOT_OBSERVED",
+      "live_installation": "NOT_OBSERVED",
+      "nested_recipe_paths": "PASS",
+      "recipe_review": "ORIGINAL_BUILDER_AND_NOTICE_PRESERVING_WRAPPER",
+      "source_recipe": "data/extra-source-builds.json",
+      "sdk_resolution": "SUPPLIED_ON_TARGET; no original SDK is distributed",
+      "offline_packaging_check": "Separate tests/test_extra_source_apps.py builds from the original Store partPaths with inert synthetic SDK fixtures when required, or the original SDK-free Store mode; see verification summary for execution result"
+    },
+    {
       "id": "iabadia_m_arcade",
       "kind": "app",
       "version": "0.1.3",
@@ -1047,6 +1641,182 @@
       "live_installation": "NOT_OBSERVED",
       "unit_source_manifest": {
         "module_count": 42,
+        "module_paths_present": true,
+        "declared_hmi_trees_present": true,
+        "sdk_resolution": "SUPPLIED_ON_TARGET; not part of public source snapshot"
+      },
+      "recipe_review": "STATIC_UNIT_MANIFEST_AND_HMI_TREE"
+    },
+    {
+      "id": "ida-vitals-cluster",
+      "kind": "tool",
+      "version": "1.3.3",
+      "mguHmi": [
+        "ID8"
+      ],
+      "selected_paths": [
+        "tools/_packages/ida-vitals-cluster"
+      ],
+      "selected_path_count": 1,
+      "selected_file_count": 13,
+      "selected_bytes": 425536,
+      "source_fetch_scope": "selected_paths",
+      "whole_repository_fallback": false,
+      "input_byte_budget": "PASS",
+      "partial_file_budget": "PASS",
+      "input_omissions": [],
+      "static_input_evidence": "POSITIVE_FOR_REVIEWED_INPUTS",
+      "known_blockers": [],
+      "unit_build": "NOT_OBSERVED",
+      "live_installation": "NOT_OBSERVED",
+      "tool_payload_references": [
+        {
+          "field": "files",
+          "path": "vitals.js",
+          "present_in_selected_files": true
+        },
+        {
+          "field": "files",
+          "path": "layout.js",
+          "present_in_selected_files": true
+        },
+        {
+          "field": "files",
+          "path": "view.js",
+          "present_in_selected_files": true
+        },
+        {
+          "field": "files",
+          "path": "text.js",
+          "present_in_selected_files": true
+        },
+        {
+          "field": "files",
+          "path": "font.js",
+          "present_in_selected_files": true
+        },
+        {
+          "field": "files",
+          "path": "shader.js",
+          "present_in_selected_files": true
+        },
+        {
+          "field": "files",
+          "path": "preview.png",
+          "present_in_selected_files": true
+        },
+        {
+          "field": "files",
+          "path": "cluster-render.d/vitals.conf",
+          "present_in_selected_files": true
+        },
+        {
+          "field": "files",
+          "path": "licenses/LICENSE",
+          "present_in_selected_files": true
+        },
+        {
+          "field": "files",
+          "path": "licenses/OFL-Barlow.txt",
+          "present_in_selected_files": true
+        },
+        {
+          "field": "files",
+          "path": "AQ-PACKAGING.json",
+          "present_in_selected_files": true
+        },
+        {
+          "field": "units",
+          "path": "ida-vitals-cluster.service",
+          "present_in_selected_files": true
+        }
+      ],
+      "recipe_review": "STATIC_COMPONENT_PAYLOAD_REFERENCES"
+    },
+    {
+      "id": "ida_lightlog",
+      "kind": "app",
+      "version": "1.3.1",
+      "mguHmi": [
+        "ID8"
+      ],
+      "selected_paths": [
+        "apps/_sources/grabandrey-idrive-apps/packages/lightlog/app"
+      ],
+      "selected_path_count": 1,
+      "selected_file_count": 65,
+      "selected_bytes": 582215,
+      "source_fetch_scope": "selected_paths",
+      "whole_repository_fallback": false,
+      "input_byte_budget": "PASS",
+      "partial_file_budget": "PASS",
+      "input_omissions": [],
+      "static_input_evidence": "POSITIVE_FOR_REVIEWED_INPUTS",
+      "known_blockers": [],
+      "unit_build": "NOT_OBSERVED",
+      "live_installation": "NOT_OBSERVED",
+      "unit_source_manifest": {
+        "module_count": 13,
+        "module_paths_present": true,
+        "declared_hmi_trees_present": true,
+        "sdk_resolution": "SUPPLIED_ON_TARGET; not part of public source snapshot"
+      },
+      "recipe_review": "STATIC_UNIT_MANIFEST_AND_HMI_TREE"
+    },
+    {
+      "id": "ida_seatlights",
+      "kind": "app",
+      "version": "1.3.2",
+      "mguHmi": [
+        "ID8"
+      ],
+      "selected_paths": [
+        "apps/_sources/grabandrey-idrive-apps/packages/seatlights/app"
+      ],
+      "selected_path_count": 1,
+      "selected_file_count": 62,
+      "selected_bytes": 2382141,
+      "source_fetch_scope": "selected_paths",
+      "whole_repository_fallback": false,
+      "input_byte_budget": "PASS",
+      "partial_file_budget": "PASS",
+      "input_omissions": [],
+      "static_input_evidence": "POSITIVE_FOR_REVIEWED_INPUTS",
+      "known_blockers": [],
+      "unit_build": "NOT_OBSERVED",
+      "live_installation": "NOT_OBSERVED",
+      "unit_source_manifest": {
+        "module_count": 9,
+        "module_paths_present": true,
+        "declared_hmi_trees_present": true,
+        "sdk_resolution": "SUPPLIED_ON_TARGET; not part of public source snapshot"
+      },
+      "recipe_review": "STATIC_UNIT_MANIFEST_AND_HMI_TREE"
+    },
+    {
+      "id": "ida_vitals",
+      "kind": "app",
+      "version": "1.3.1",
+      "mguHmi": [
+        "ID8"
+      ],
+      "selected_paths": [
+        "apps/_sources/grabandrey-idrive-apps/packages/vitals/app"
+      ],
+      "selected_path_count": 1,
+      "selected_file_count": 61,
+      "selected_bytes": 589514,
+      "source_fetch_scope": "selected_paths",
+      "whole_repository_fallback": false,
+      "input_byte_budget": "PASS",
+      "partial_file_budget": "PASS",
+      "input_omissions": [],
+      "static_input_evidence": "POSITIVE_FOR_REVIEWED_INPUTS",
+      "known_blockers": [],
+      "unit_build": "NOT_OBSERVED",
+      "live_installation": "NOT_OBSERVED",
+      "unit_source_manifest": {
+        "module_count": 8,
         "module_paths_present": true,
         "declared_hmi_trees_present": true,
         "sdk_resolution": "SUPPLIED_ON_TARGET; not part of public source snapshot"
@@ -1338,7 +2108,7 @@
       ],
       "selected_path_count": 14,
       "selected_file_count": 65,
-      "selected_bytes": 5530445,
+      "selected_bytes": 5530895,
       "source_fetch_scope": "selected_paths",
       "whole_repository_fallback": false,
       "input_byte_budget": "PASS",
@@ -1403,17 +2173,17 @@
     {
       "id": "mgu-inputgate",
       "kind": "tool",
-      "version": "1.2.0",
+      "version": "1.2.2",
       "mguHmi": [
         "ID7",
         "ID8"
       ],
       "selected_paths": [
-        "apps/_sources/idrive7-apps/kit/renderd/inputgate/tool"
+        "tools/_packages/mgu-inputgate"
       ],
       "selected_path_count": 1,
-      "selected_file_count": 7,
-      "selected_bytes": 20961,
+      "selected_file_count": 16,
+      "selected_bytes": 130765,
       "source_fetch_scope": "selected_paths",
       "whole_repository_fallback": false,
       "input_byte_budget": "PASS",
@@ -1432,6 +2202,56 @@
         {
           "field": "files",
           "path": "guard.sh",
+          "present_in_selected_files": true
+        },
+        {
+          "field": "files",
+          "path": "licenses/LICENSE",
+          "present_in_selected_files": true
+        },
+        {
+          "field": "files",
+          "path": "licenses/LICENSE.mgu-renderd",
+          "present_in_selected_files": true
+        },
+        {
+          "field": "files",
+          "path": "licenses/LICENSE.renderd",
+          "present_in_selected_files": true
+        },
+        {
+          "field": "files",
+          "path": "licenses/MPL-2.0.txt",
+          "present_in_selected_files": true
+        },
+        {
+          "field": "files",
+          "path": "licenses/NOTICE.md",
+          "present_in_selected_files": true
+        },
+        {
+          "field": "files",
+          "path": "licenses/UPSTREAM-RENDERD-README.md",
+          "present_in_selected_files": true
+        },
+        {
+          "field": "files",
+          "path": "licenses/VSOMEIP-NOTICES.txt",
+          "present_in_selected_files": true
+        },
+        {
+          "field": "files",
+          "path": "AQ-PACKAGING.json",
+          "present_in_selected_files": true
+        },
+        {
+          "field": "files",
+          "path": "SOURCE-PROVENANCE.json",
+          "present_in_selected_files": true
+        },
+        {
+          "field": "files",
+          "path": "README.md",
           "present_in_selected_files": true
         },
         {
@@ -1507,8 +2327,8 @@
       ],
       "selected_paths": null,
       "selected_path_count": null,
-      "selected_file_count": 5848,
-      "selected_bytes": 242076818,
+      "selected_file_count": 7439,
+      "selected_bytes": 398831945,
       "source_fetch_scope": "whole_repository",
       "whole_repository_fallback": true,
       "input_byte_budget": "EXCEEDED",
@@ -1549,6 +2369,84 @@
       "recipe_review": "STATIC_PREBUILT_METADATA_AND_PATHS",
       "prebuilt_output_present": true,
       "nested_recipe_paths": "PASS"
+    },
+    {
+      "id": "osa",
+      "kind": "app",
+      "version": "0.2.50",
+      "mguHmi": [
+        "ID7"
+      ],
+      "selected_paths": [
+        "apps/_sources/dzooky-bmrmodz/apps/osa",
+        "apps/_sources/dzooky-bmrmodz/kit/runtime",
+        "apps/_sources/dzooky-bmrmodz/kit/platform",
+        "apps/_sources/dzooky-bmrmodz/kit/localization",
+        "apps/_sources/dzooky-bmrmodz/kit/tools/build.py",
+        "apps/_sources/dzooky-bmrmodz/kit/tools/pack_data.py",
+        "apps/_sources/dzooky-bmrmodz/kit/tools/localize.py",
+        "apps/_sources/dzooky-bmrmodz/kit/tools/locale-revisions.json",
+        "apps/_sources/dzooky-bmrmodz/kit/tools/oapgen",
+        "apps/_sources/dzooky-bmrmodz/LICENSE",
+        "apps/_sources/dzooky-bmrmodz/README.md",
+        "apps/_sources/dzooky-bmrmodz/mgu-repo.json",
+        "tools/build_extra_source_app.py",
+        "data/extra-source-builds.json",
+        "tools/build_extra_source_app.py"
+      ],
+      "selected_path_count": 15,
+      "selected_file_count": 73,
+      "selected_bytes": 5087620,
+      "source_fetch_scope": "selected_paths",
+      "whole_repository_fallback": false,
+      "input_byte_budget": "PASS",
+      "partial_file_budget": "PASS",
+      "input_omissions": [],
+      "static_input_evidence": "POSITIVE_FOR_REVIEWED_INPUTS",
+      "known_blockers": [],
+      "unit_build": "NOT_OBSERVED",
+      "live_installation": "NOT_OBSERVED",
+      "nested_recipe_paths": "PASS",
+      "recipe_review": "ORIGINAL_BUILDER_AND_NOTICE_PRESERVING_WRAPPER",
+      "source_recipe": "data/extra-source-builds.json",
+      "sdk_resolution": "Original SDK-free Store mode; SDK modules are supplied later by the reviewed original deploy tool",
+      "offline_packaging_check": "Separate tests/test_extra_source_apps.py builds from the original Store partPaths with inert synthetic SDK fixtures when required, or the original SDK-free Store mode; see verification summary for execution result"
+    },
+    {
+      "id": "parked_games",
+      "kind": "app",
+      "version": "0.2.3",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "selected_paths": [
+        "apps/_ports/maxxxfoka-idrive8/apps/parked_games",
+        "apps/_ports/maxxxfoka-idrive8/kit",
+        "apps/_ports/maxxxfoka-idrive8/LICENSE",
+        "apps/_ports/maxxxfoka-idrive8/NOTICE.zh-CN.md",
+        "apps/_ports/maxxxfoka-idrive8/PORT.json",
+        "apps/_ports/maxxxfoka-idrive8/PROVENANCE.json",
+        "apps/_ports/maxxxfoka-idrive8/kit/tools/build.py"
+      ],
+      "selected_path_count": 7,
+      "selected_file_count": 111,
+      "selected_bytes": 3911123,
+      "source_fetch_scope": "selected_paths",
+      "whole_repository_fallback": false,
+      "input_byte_budget": "PASS",
+      "partial_file_budget": "PASS",
+      "input_omissions": [],
+      "static_input_evidence": "POSITIVE_FOR_REVIEWED_INPUTS",
+      "known_blockers": [],
+      "unit_build": "NOT_OBSERVED",
+      "live_installation": "NOT_OBSERVED",
+      "icon_input": "BUILD_FALLBACK_SELECTED; committed catalog icon is absent",
+      "icon_generator": "apps/_ports/maxxxfoka-idrive8/kit/tools/make_icon.js",
+      "nested_recipe_paths": "PASS",
+      "sdk_resolution": "SUPPLIED_ON_TARGET; extraction and target SDK compatibility not tested",
+      "app_shared_input_count": 0,
+      "recipe_review": "STATIC_PYTHON_INPUTS_AND_NESTED_RECIPE_PATHS"
     },
     {
       "id": "perea_mhd_flex",
@@ -1744,7 +2642,7 @@
       ],
       "selected_path_count": 14,
       "selected_file_count": 60,
-      "selected_bytes": 2050963,
+      "selected_bytes": 2051413,
       "source_fetch_scope": "selected_paths",
       "whole_repository_fallback": false,
       "input_byte_budget": "PASS",
@@ -1759,6 +2657,48 @@
       "sdk_resolution": "SUPPLIED_ON_TARGET; extraction and target SDK compatibility not tested",
       "app_shared_input_count": 0,
       "recipe_review": "STATIC_PYTHON_INPUTS_AND_NESTED_RECIPE_PATHS"
+    },
+    {
+      "id": "spritmonitor",
+      "kind": "app",
+      "version": "0.1.44",
+      "mguHmi": [
+        "ID7"
+      ],
+      "selected_paths": [
+        "apps/_sources/dzooky-bmrmodz/apps/spritmonitor",
+        "apps/_sources/dzooky-bmrmodz/kit/runtime",
+        "apps/_sources/dzooky-bmrmodz/kit/platform",
+        "apps/_sources/dzooky-bmrmodz/kit/localization",
+        "apps/_sources/dzooky-bmrmodz/kit/tools/build.py",
+        "apps/_sources/dzooky-bmrmodz/kit/tools/pack_data.py",
+        "apps/_sources/dzooky-bmrmodz/kit/tools/localize.py",
+        "apps/_sources/dzooky-bmrmodz/kit/tools/locale-revisions.json",
+        "apps/_sources/dzooky-bmrmodz/kit/tools/oapgen",
+        "apps/_sources/dzooky-bmrmodz/LICENSE",
+        "apps/_sources/dzooky-bmrmodz/README.md",
+        "apps/_sources/dzooky-bmrmodz/mgu-repo.json",
+        "tools/build_extra_source_app.py",
+        "data/extra-source-builds.json",
+        "tools/build_extra_source_app.py"
+      ],
+      "selected_path_count": 15,
+      "selected_file_count": 82,
+      "selected_bytes": 6373746,
+      "source_fetch_scope": "selected_paths",
+      "whole_repository_fallback": false,
+      "input_byte_budget": "PASS",
+      "partial_file_budget": "PASS",
+      "input_omissions": [],
+      "static_input_evidence": "POSITIVE_FOR_REVIEWED_INPUTS",
+      "known_blockers": [],
+      "unit_build": "NOT_OBSERVED",
+      "live_installation": "NOT_OBSERVED",
+      "nested_recipe_paths": "PASS",
+      "recipe_review": "ORIGINAL_BUILDER_AND_NOTICE_PRESERVING_WRAPPER",
+      "source_recipe": "data/extra-source-builds.json",
+      "sdk_resolution": "Original SDK-free Store mode; SDK modules are supplied later by the reviewed original deploy tool",
+      "offline_packaging_check": "Separate tests/test_extra_source_apps.py builds from the original Store partPaths with inert synthetic SDK fixtures when required, or the original SDK-free Store mode; see verification summary for execution result"
     },
     {
       "id": "sys_monitor",
@@ -1787,7 +2727,7 @@
       ],
       "selected_path_count": 15,
       "selected_file_count": 58,
-      "selected_bytes": 1923888,
+      "selected_bytes": 1924338,
       "source_fetch_scope": "selected_paths",
       "whole_repository_fallback": false,
       "input_byte_budget": "PASS",
@@ -1799,6 +2739,78 @@
       "live_installation": "NOT_OBSERVED",
       "icon_input": "BUILD_FALLBACK_SELECTED; committed catalog icon is absent",
       "icon_generator": "apps/_ports/hexlay-idrive8/kit/tools/make_icon.js",
+      "nested_recipe_paths": "PASS",
+      "sdk_resolution": "SUPPLIED_ON_TARGET; extraction and target SDK compatibility not tested",
+      "app_shared_input_count": 0,
+      "recipe_review": "STATIC_PYTHON_INPUTS_AND_NESTED_RECIPE_PATHS"
+    },
+    {
+      "id": "true_time_id8",
+      "kind": "app",
+      "version": "1.0.0",
+      "mguHmi": [
+        "ID8"
+      ],
+      "selected_paths": [
+        "apps/_sources/giuseppe-mgu-apps-id8/true-time/app",
+        "apps/_sources/giuseppe-mgu-apps-id8/tools",
+        "apps/_sources/giuseppe-mgu-apps-id8/vendor/idrive7-apps",
+        "apps/_sources/giuseppe-mgu-apps-id8/LICENSE",
+        "apps/_sources/giuseppe-mgu-apps-id8/README.md",
+        "apps/_sources/giuseppe-mgu-apps-id8/dpf-monitoring/LICENSE",
+        "apps/_sources/giuseppe-mgu-apps-id8/ecu-live-data/LICENSE",
+        "apps/_sources/giuseppe-mgu-apps-id8/true-time/LICENSE",
+        "tools/build_extra_source_app.py",
+        "data/extra-source-builds.json",
+        "tools/build_extra_source_app.py"
+      ],
+      "selected_path_count": 11,
+      "selected_file_count": 83,
+      "selected_bytes": 3798812,
+      "source_fetch_scope": "selected_paths",
+      "whole_repository_fallback": false,
+      "input_byte_budget": "PASS",
+      "partial_file_budget": "PASS",
+      "input_omissions": [],
+      "static_input_evidence": "POSITIVE_FOR_REVIEWED_INPUTS",
+      "known_blockers": [],
+      "unit_build": "NOT_OBSERVED",
+      "live_installation": "NOT_OBSERVED",
+      "nested_recipe_paths": "PASS",
+      "recipe_review": "ORIGINAL_BUILDER_AND_NOTICE_PRESERVING_WRAPPER",
+      "source_recipe": "data/extra-source-builds.json",
+      "sdk_resolution": "SUPPLIED_ON_TARGET; no original SDK is distributed",
+      "offline_packaging_check": "Separate tests/test_extra_source_apps.py builds from the original Store partPaths with inert synthetic SDK fixtures when required, or the original SDK-free Store mode; see verification summary for execution result"
+    },
+    {
+      "id": "vehicle_pass",
+      "kind": "app",
+      "version": "1.1.1",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "selected_paths": [
+        "apps/_ports/appstudio-idrive8/apps/vehicle_pass",
+        "apps/_ports/appstudio-idrive8/kit",
+        "apps/_ports/appstudio-idrive8/LICENSE",
+        "apps/_ports/appstudio-idrive8/THIRD-PARTY.txt",
+        "apps/_ports/appstudio-idrive8/AQ_PORT.json",
+        "apps/_ports/appstudio-idrive8/kit/tools/build.py"
+      ],
+      "selected_path_count": 6,
+      "selected_file_count": 68,
+      "selected_bytes": 2233285,
+      "source_fetch_scope": "selected_paths",
+      "whole_repository_fallback": false,
+      "input_byte_budget": "PASS",
+      "partial_file_budget": "PASS",
+      "input_omissions": [],
+      "static_input_evidence": "POSITIVE_FOR_REVIEWED_INPUTS",
+      "known_blockers": [],
+      "unit_build": "NOT_OBSERVED",
+      "live_installation": "NOT_OBSERVED",
+      "icon_input": "COMMITTED_ICON_PRESENT",
       "nested_recipe_paths": "PASS",
       "sdk_resolution": "SUPPLIED_ON_TARGET; extraction and target SDK compatibility not tested",
       "app_shared_input_count": 0,

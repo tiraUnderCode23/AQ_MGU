@@ -1,0 +1,41 @@
+{
+  "id": "mgu-inputgate",
+  "upstreamVersion": "1.2.1",
+  "packageVersion": "1.2.2",
+  "originalRepository": "cauliflowermossgrape/idrive7-apps",
+  "originalCommit": "5555ef3bd2195aae15a8cec6803beeb40ca16456",
+  "scope": "AQ notices, provenance and explicit original Store-inferred drop-in requirement only; publisher library, guard, service units and both HMI drop-ins are unchanged.",
+  "licenseScope": {
+    "evidence": "kit/renderd/README.md:235-242",
+    "controller_gate": "MIT",
+    "vsomeip_interface_headers": "MPL-2.0",
+    "general_renderer_directory": "GPL-3.0-or-later with the original stated MIT portions; its full notices are retained"
+  },
+  "originalSourceSnapshot": "tools/_sources/cauli-inputgate-1.2.1",
+  "sourceProvenance": "licenses/SOURCE-PROVENANCE.json",
+  "publisherBinary": {
+    "bytes": 18848,
+    "sha256": "56cd02ab5bd6e827ff151f2d24669e089dffad03ab663585c9da59d6d9c750eb",
+    "machine": "Machine:                           Advanced Micro Devices X86-64",
+    "abi_versions": [
+      "CXXABI_1.3",
+      "GLIBCXX_3.4.11",
+      "GLIBCXX_3.4.21",
+      "GLIBC_2.17",
+      "GLIBC_2.2.5",
+      "GLIBC_2.3.4",
+      "GLIBC_2.4"
+    ]
+  },
+  "extraRequirements": {
+    "mgu-deploy": "0.3.2"
+  },
+  "actualTargetExecution": "NOT OBSERVED",
+  "hostBuildDistributed": false,
+  "requirementEvidence": {
+    "original_store_source": "tools/_sources/mgu-store/native/mgu-updater/js/sources.js",
+    "minimum_constant": "DEPLOY_SDK_MIN = 0.3.2",
+    "condition": "repoCatalog adds this minimum to a native tool whose component.json declares dropins.",
+    "reason": "Make the original Store-inferred deployment requirement explicit in the packaged component; no new runtime capability or larger minimum is added."
+  }
+}

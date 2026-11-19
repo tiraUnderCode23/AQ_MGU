@@ -1,0 +1,40 @@
+{
+  "name": "ida_vitals",
+  "version": "1.3.1",
+  "description": "Water, engine oil, gearbox oil and tyre temperatures for the Vitals cluster widget, and its settings",
+  "private": false,
+  "main": "javascript/runner.js",
+  "oapAppSettings": {
+    "maxDiskUsage": 5242880,
+    "cpuLimit": 20,
+    "memoryThresholdKB": 65536,
+    "priority": "PRIO_MEDIUM",
+    "visibility": "FOREGROUND",
+    "latencyClass": "FOREGROUND",
+    "loggingId": "VTLS",
+    "userLoginRequired": false,
+    "backgroundPriority": 150,
+    "someipManifest": "manifest.json"
+  },
+  "files": [
+    "config",
+    "rhmiData",
+    "package.json",
+    "npm-shrinkwrap.json",
+    "permissions.json",
+    "javascript",
+    "manifest.json",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "oap-sdk": "24.10.2"
+  },
+  "engines": {
+    "node": ">=8.7.0"
+  },
+  "author": "Vitals",
+  "license": "MIT",
+  "mguHmi": [
+    "ID8"
+  ]
+}

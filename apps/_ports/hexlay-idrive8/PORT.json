@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "revision": "aq-hexlay-id8-1",
+  "revision": "aq-hexlay-id8-2",
   "date": "2026-11-19",
   "applications": {
     "sys_monitor": "1.0.4",
@@ -73,5 +73,6 @@
     "apps/m_copilot/main.js (ID8-only fresh-state read guard and existing getter polling)",
     "apps/*/app.json (dual HMI source declaration)",
     "apps/m_copilot/app.json: existing VehicleCondition field now declares read+subscribe for the ID8 freshness poll; no write or new vehicle method"
-  ]
+  ],
+  "packaging_revision_note": "Revision 2 embeds mgu-render >=0.6.24 and renderer capability into each generated package, matching the already-required Store feed dependencies."
 }

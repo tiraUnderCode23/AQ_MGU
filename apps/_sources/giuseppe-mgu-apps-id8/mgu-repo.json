@@ -1,0 +1,77 @@
+{
+  "schema": 1,
+  "components": [
+    {
+      "id": "true_time_id8",
+      "kind": "app",
+      "path": "true-time/app",
+      "title": "True Time (iDrive 8, untested)",
+      "description": "NOT YET TESTED ON AN iDRIVE 8 CAR. Needs the MGU Store's Renderer (mgu-render): the Store installs it first if it is missing. Acceleration and braking times, measured and corrected for the road's slope (the DSC's acceleration sensor). Read-only. Performance runs only on closed courses.",
+      "texts": {
+        "it": {
+          "title": "True Time (iDrive 8, non testata)",
+          "description": "NON ANCORA TESTATA SU UN'AUTO CON iDRIVE 8. Richiede il Renderer dello Store (mgu-render): se manca, lo Store lo installa prima. Tempi di accelerazione e frenata, misurati e corretti per la pendenza della strada (sensore di accelerazione del DSC). Sola lettura. Prove di prestazioni solo su circuiti chiusi."
+        }
+      },
+      "mguHmi": ["ID8"],
+      "needs": ["renderer"],
+      "requires": { "mgu-render": "0.3.1" },
+      "icon": "icon.png",
+      "build": {
+        "python": "tools/build_unit.py",
+        "args": ["{id}", "{dir}"],
+        "sdk": "vendor/idrive7-apps/oap-sdk",
+        "shared": ["vendor/idrive7-apps"],
+        "output": "vendor/idrive7-apps/dist/{id}@{version}.tgz"
+      }
+    },
+    {
+      "id": "boostline_id8",
+      "kind": "app",
+      "path": "ecu-live-data/app",
+      "title": "ECU Live Data (iDrive 8, untested)",
+      "description": "NOT YET TESTED ON AN iDRIVE 8 CAR. Needs the MGU Store's Renderer (mgu-render): the Store installs it first if it is missing. Live engine data from the DDE (diesel) or DME (petrol), CSV logs, road dyno and drag timer. Read-only: it never writes to a control unit.",
+      "texts": {
+        "it": {
+          "title": "ECU Live Data (iDrive 8, non testata)",
+          "description": "NON ANCORA TESTATA SU UN'AUTO CON iDRIVE 8. Richiede il Renderer dello Store (mgu-render): se manca, lo Store lo installa prima. Dati motore in tempo reale dalla DDE (diesel) o dalla DME (benzina), log CSV, banco prova su strada e drag timer. Sola lettura: non scrive mai su una centralina."
+        }
+      },
+      "mguHmi": ["ID8"],
+      "needs": ["renderer"],
+      "requires": { "mgu-render": "0.3.1" },
+      "icon": "icon.png",
+      "build": {
+        "python": "tools/build_unit.py",
+        "args": ["{id}", "{dir}"],
+        "sdk": "vendor/idrive7-apps/oap-sdk",
+        "shared": ["vendor/idrive7-apps"],
+        "output": "vendor/idrive7-apps/dist/{id}@{version}.tgz"
+      }
+    },
+    {
+      "id": "dpf_id8",
+      "kind": "app",
+      "path": "dpf-monitoring/app",
+      "title": "DPF Monitoring (iDrive 8, untested)",
+      "description": "NOT YET TESTED ON AN iDRIVE 8 CAR. Needs the MGU Store's Renderer (mgu-render): the Store installs it first if it is missing. The diesel particulate filter: soot and ash load, regenerations, differential pressure and exhaust temperatures from the diesel engine unit (DDE). Read-only.",
+      "texts": {
+        "it": {
+          "title": "DPF Monitoring (iDrive 8, non testata)",
+          "description": "NON ANCORA TESTATA SU UN'AUTO CON iDRIVE 8. Richiede il Renderer dello Store (mgu-render): se manca, lo Store lo installa prima. Il filtro antiparticolato: carico di fuliggine e cenere, rigenerazioni, pressione differenziale e temperature dei gas di scarico dalla centralina diesel (DDE). Sola lettura."
+        }
+      },
+      "mguHmi": ["ID8"],
+      "needs": ["renderer"],
+      "requires": { "mgu-render": "0.3.1" },
+      "icon": "icon.png",
+      "build": {
+        "python": "tools/build_unit.py",
+        "args": ["{id}", "{dir}"],
+        "sdk": "vendor/idrive7-apps/oap-sdk",
+        "shared": ["vendor/idrive7-apps"],
+        "output": "vendor/idrive7-apps/dist/{id}@{version}.tgz"
+      }
+    }
+  ]
+}
