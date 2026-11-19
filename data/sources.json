@@ -487,6 +487,42 @@
       "license": "MIT project grant; original kit and font notices retained",
       "included_for": "Reviewed original distinct apps with original runtime/build inputs and notices. ID7 source, not claimed ID8.",
       "checked_at": "2026-11-19"
+    },
+    {
+      "repository": "cauliflowermossgrape/idrive7-apps",
+      "url": "https://github.com/cauliflowermossgrape/idrive7-apps",
+      "snapshot_path": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7",
+      "commit": "8d4aa0ef8ef7ae2a007a24acdbda095f219fc7b4",
+      "license": "MIT; bundled third-party and native-component notices retained",
+      "included_for": "ambient_config, car_vitals, edrive, live_adjustments, live_data, redline, service, zf8hp",
+      "checked_at": "2026-11-19"
+    },
+    {
+      "repository": "dzooky/bmrmodz",
+      "url": "https://github.com/dzooky/bmrmodz",
+      "snapshot_path": "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476",
+      "commit": "f141b7fb7476383ca081fd1196a6beb3a0566761",
+      "license": "MIT; bundled third-party and native-component notices retained",
+      "included_for": "climate-comfort, dpf, osa, spritmonitor",
+      "checked_at": "2026-11-19"
+    },
+    {
+      "repository": "alexp50/bmw-apps",
+      "url": "https://github.com/alexp50/bmw-apps",
+      "snapshot_path": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec",
+      "commit": "4fb5a5dba1ec7c6a57545ae935a14cb91a194d19",
+      "license": "MIT; bundled third-party and native-component notices retained",
+      "included_for": "adas_feature_probe, ambient_studio_full, drive_hud_full, green_light_alert, hotspot_studio, front_camera_cluster, parking_clearance, ride_height, road_trip_computer, start_stop_insight, telemetry_studio, vehicle_health, vehicle_network, waze_hud, xdrive_studio",
+      "checked_at": "2026-11-19"
+    },
+    {
+      "repository": "robertnisipeanu/mgu-store",
+      "url": "https://github.com/robertnisipeanu/mgu-store",
+      "snapshot_path": "tools/_sources/collection-mgu-store-b42fdba",
+      "commit": "b42fdba837210899005b52b84f6bd00cd4ac7f8f",
+      "license": "GPL-3.0-or-later",
+      "included_for": "Store app 0.9.41 unit source",
+      "checked_at": "2026-11-19"
     }
   ],
   "derived_ports": [

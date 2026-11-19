@@ -7,3 +7,8 @@
 /apps/_sources/turnkey-ethanol-blend/store-v015/** -text
 # Derived ports have separate byte-level provenance and keep stable build inputs.
 /apps/_ports/** -text
+/apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/** -text
+/apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/** -text
+/apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/** -text
+tools/_sources/collection-mgu-store-b42fdba/** -text
+/apps/_sources/aq-flap-2.6.1/** -text

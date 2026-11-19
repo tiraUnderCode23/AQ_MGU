@@ -1,0 +1,13 @@
+AQFlap 2.6.1
+Application-specific source supplied by AQ///Bimmer.
+
+MGU App Kit
+javascript/kit contains code derived from cauliflowermossgrape/idrive7-apps.
+Copyright (c) 2026 cauliflowermossgrape. MIT License:
+LICENSES/MGU-App-Kit-MIT.txt
+
+Ubuntu derivative MGU bitmap atlases
+javascript/kit/fonts contains bitmap atlases baked from the Ubuntu font family.
+Copyright 2011 Canonical Ltd. Ubuntu Font Licence 1.0:
+LICENSES/Ubuntu-UFL-1.0.txt
+The font software retains its own license.

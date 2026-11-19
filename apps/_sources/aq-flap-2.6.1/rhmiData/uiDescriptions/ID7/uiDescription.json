@@ -1,0 +1,1307 @@
+{
+ "schemaVersion": "1.3.0",
+ "containers": {
+  "1": {
+   "type": "state",
+   "name": "MAIN",
+   "components": {
+    "2": {
+     "type": "label",
+     "name": "MAIN_GFX",
+     "properties": {
+      "Visible": {
+       "value": 1,
+       "type": "UInt"
+      },
+      "Focusable": {
+       "value": 0,
+       "type": "UInt"
+      }
+     },
+     "rows": [
+      {
+       "Graphic": {
+        "value": "",
+        "type": "Text"
+       }
+      }
+     ]
+    },
+    "3": {
+     "type": "button",
+     "name": "BTN_PAGE",
+     "properties": {
+      "Focusable": {
+       "value": 3,
+       "type": "UInt"
+      }
+     },
+     "rows": [
+      {
+       "Text": {
+        "value": "SID_AQ_FLAP_BTN_PAGE",
+        "type": "StringId"
+       }
+      }
+     ]
+    },
+    "4": {
+     "type": "button",
+     "name": "BTN_PREV",
+     "properties": {
+      "Focusable": {
+       "value": 3,
+       "type": "UInt"
+      }
+     },
+     "rows": [
+      {
+       "Text": {
+        "value": "SID_AQ_FLAP_BTN_PREV",
+        "type": "StringId"
+       }
+      }
+     ]
+    },
+    "5": {
+     "type": "button",
+     "name": "BTN_SETTINGS",
+     "properties": {
+      "Focusable": {
+       "value": 3,
+       "type": "UInt"
+      }
+     },
+     "rows": [
+      {
+       "Text": {
+        "value": "SID_AQ_FLAP_BTN_SETTINGS",
+        "type": "StringId"
+       }
+      }
+     ]
+    },
+    "6": {
+     "type": "title",
+     "name": "MAIN_TITLE",
+     "rows": [
+      {
+       "Text": {
+        "value": "SID_AQ_FLAP_MAIN_TITLE",
+        "type": "StringId"
+       }
+      }
+     ]
+    }
+   }
+  },
+  "10": {
+   "type": "state",
+   "name": "SETTINGS",
+   "components": {
+    "11": {
+     "type": "dropDownMenu",
+     "name": "SET_PAGE",
+     "rows": [
+      {
+       "ItemText": {
+        "value": "Engine",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "Thermals",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "Fuel & ignition",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "Chassis",
+        "type": "Text"
+       }
+      }
+     ],
+     "cells": {
+      "HeaderText": {
+       "value": "Start page",
+       "type": "Text"
+      },
+      "SelectedItem": {
+       "value": 0,
+       "type": "UInt"
+      }
+     }
+    },
+    "12": {
+     "type": "dropDownMenu",
+     "name": "SET_TEMPUNIT",
+     "rows": [
+      {
+       "ItemText": {
+        "value": "Celsius",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "Fahrenheit",
+        "type": "Text"
+       }
+      }
+     ],
+     "cells": {
+      "HeaderText": {
+       "value": "Temperature",
+       "type": "Text"
+      },
+      "SelectedItem": {
+       "value": 0,
+       "type": "UInt"
+      }
+     }
+    },
+    "13": {
+     "type": "dropDownMenu",
+     "name": "SET_PRESSUNIT",
+     "rows": [
+      {
+       "ItemText": {
+        "value": "bar",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "psi",
+        "type": "Text"
+       }
+      }
+     ],
+     "cells": {
+      "HeaderText": {
+       "value": "Pressure unit",
+       "type": "Text"
+      },
+      "SelectedItem": {
+       "value": 0,
+       "type": "UInt"
+      }
+     }
+    },
+    "14": {
+     "type": "dropDownMenu",
+     "name": "SET_SPEEDUNIT",
+     "rows": [
+      {
+       "ItemText": {
+        "value": "km/h",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "mph",
+        "type": "Text"
+       }
+      }
+     ],
+     "cells": {
+      "HeaderText": {
+       "value": "Speed",
+       "type": "Text"
+      },
+      "SelectedItem": {
+       "value": 0,
+       "type": "UInt"
+      }
+     }
+    },
+    "15": {
+     "type": "dropDownMenu",
+     "name": "SET_REDLINE",
+     "rows": [
+      {
+       "ItemText": {
+        "value": "5500 rpm",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "6000 rpm",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "6500 rpm",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "7000 rpm",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "7200 rpm",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "7500 rpm",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "8000 rpm",
+        "type": "Text"
+       }
+      }
+     ],
+     "cells": {
+      "HeaderText": {
+       "value": "Redline",
+       "type": "Text"
+      },
+      "SelectedItem": {
+       "value": 3,
+       "type": "UInt"
+      }
+     }
+    },
+    "16": {
+     "type": "dropDownMenu",
+     "name": "SET_MAXPOWER",
+     "rows": [
+      {
+       "ItemText": {
+        "value": "100 kW",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "120 kW",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "135 kW",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "140 kW",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "150 kW",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "160 kW",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "170 kW",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "185 kW",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "190 kW",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "200 kW",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "215 kW",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "230 kW",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "240 kW",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "250 kW",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "260 kW",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "275 kW",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "285 kW",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "300 kW",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "320 kW",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "340 kW",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "360 kW",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "375 kW",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "390 kW",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "405 kW",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "420 kW",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "450 kW",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "460 kW",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "480 kW",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "500 kW",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "530 kW",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "550 kW",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "600 kW",
+        "type": "Text"
+       }
+      }
+     ],
+     "cells": {
+      "HeaderText": {
+       "value": "Max power (100% on sport display)",
+       "type": "Text"
+      },
+      "SelectedItem": {
+       "value": 10,
+       "type": "UInt"
+      }
+     }
+    },
+    "17": {
+     "type": "dropDownMenu",
+     "name": "SET_POWERUNIT",
+     "rows": [
+      {
+       "ItemText": {
+        "value": "kW",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "hp",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "PS",
+        "type": "Text"
+       }
+      }
+     ],
+     "cells": {
+      "HeaderText": {
+       "value": "Power unit",
+       "type": "Text"
+      },
+      "SelectedItem": {
+       "value": 0,
+       "type": "UInt"
+      }
+     }
+    },
+    "18": {
+     "type": "dropDownMenu",
+     "name": "SET_TORQUEUNIT",
+     "rows": [
+      {
+       "ItemText": {
+        "value": "Nm",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "lb-ft",
+        "type": "Text"
+       }
+      }
+     ],
+     "cells": {
+      "HeaderText": {
+       "value": "Torque unit",
+       "type": "Text"
+      },
+      "SelectedItem": {
+       "value": 0,
+       "type": "UInt"
+      }
+     }
+    },
+    "19": {
+     "type": "dropDownMenu",
+     "name": "SET_POWERSOURCE",
+     "rows": [
+      {
+       "ItemText": {
+        "value": "Sport display",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "Torque x rpm",
+        "type": "Text"
+       }
+      }
+     ],
+     "cells": {
+      "HeaderText": {
+       "value": "Power from",
+       "type": "Text"
+      },
+      "SelectedItem": {
+       "value": 0,
+       "type": "UInt"
+      }
+     }
+    },
+    "20": {
+     "type": "dropDownMenu",
+     "name": "SET_OILWARN",
+     "rows": [
+      {
+       "ItemText": {
+        "value": "110 C",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "115 C",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "120 C",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "125 C",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "130 C",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "135 C",
+        "type": "Text"
+       }
+      }
+     ],
+     "cells": {
+      "HeaderText": {
+       "value": "Oil temp warning",
+       "type": "Text"
+      },
+      "SelectedItem": {
+       "value": 3,
+       "type": "UInt"
+      }
+     }
+    },
+    "21": {
+     "type": "checkBox",
+     "name": "SET_PEAKS",
+     "properties": {
+      "Visible": {
+       "value": 1,
+       "type": "UInt"
+      },
+      "Focusable": {
+       "value": 2,
+       "type": "UInt"
+      }
+     },
+     "rows": [
+      {
+       "Text": {
+        "value": "SID_AQ_FLAP_SET_PEAKS",
+        "type": "StringId"
+       }
+      }
+     ]
+    },
+    "22": {
+     "type": "dropDownMenu",
+     "name": "SET_PEAKHOLD",
+     "rows": [
+      {
+       "ItemText": {
+        "value": "5 s",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "10 s",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "15 s",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "30 s",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "60 s",
+        "type": "Text"
+       }
+      }
+     ],
+     "cells": {
+      "HeaderText": {
+       "value": "Peak hold",
+       "type": "Text"
+      },
+      "SelectedItem": {
+       "value": 2,
+       "type": "UInt"
+      }
+     }
+    },
+    "23": {
+     "type": "dropDownMenu",
+     "name": "SET_XDRIVE",
+     "rows": [
+      {
+       "ItemText": {
+        "value": "Auto",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "Show",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "Hide (RWD)",
+        "type": "Text"
+       }
+      }
+     ],
+     "cells": {
+      "HeaderText": {
+       "value": "xDrive card",
+       "type": "Text"
+      },
+      "SelectedItem": {
+       "value": 0,
+       "type": "UInt"
+      }
+     }
+    },
+    "24": {
+     "type": "dropDownMenu",
+     "name": "SET_SHOWBOOST",
+     "rows": [
+      {
+       "ItemText": {
+        "value": "Auto",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "Show",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "Hide",
+        "type": "Text"
+       }
+      }
+     ],
+     "cells": {
+      "HeaderText": {
+       "value": "Boost",
+       "type": "Text"
+      },
+      "SelectedItem": {
+       "value": 0,
+       "type": "UInt"
+      }
+     }
+    },
+    "25": {
+     "type": "dropDownMenu",
+     "name": "SET_BOOSTSOURCE",
+     "rows": [
+      {
+       "ItemText": {
+        "value": "Auto (first that works)",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "Sport display",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "Engine unit (OBD)",
+        "type": "Text"
+       }
+      }
+     ],
+     "cells": {
+      "HeaderText": {
+       "value": "Boost from",
+       "type": "Text"
+      },
+      "SelectedItem": {
+       "value": 0,
+       "type": "UInt"
+      }
+     }
+    },
+    "26": {
+     "type": "dropDownMenu",
+     "name": "SET_SHOWGEARBOX",
+     "rows": [
+      {
+       "ItemText": {
+        "value": "Auto",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "Show",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "Hide",
+        "type": "Text"
+       }
+      }
+     ],
+     "cells": {
+      "HeaderText": {
+       "value": "Gearbox oil temperature",
+       "type": "Text"
+      },
+      "SelectedItem": {
+       "value": 0,
+       "type": "UInt"
+      }
+     }
+    },
+    "27": {
+     "type": "dropDownMenu",
+     "name": "SET_SHOWEGS",
+     "rows": [
+      {
+       "ItemText": {
+        "value": "Auto",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "Show",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "Hide",
+        "type": "Text"
+       }
+      }
+     ],
+     "cells": {
+      "HeaderText": {
+       "value": "Gearbox temperature (EGS)",
+       "type": "Text"
+      },
+      "SelectedItem": {
+       "value": 0,
+       "type": "UInt"
+      }
+     }
+    },
+    "28": {
+     "type": "dropDownMenu",
+     "name": "SET_SHOWIAT",
+     "rows": [
+      {
+       "ItemText": {
+        "value": "Auto",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "Show",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "Hide",
+        "type": "Text"
+       }
+      }
+     ],
+     "cells": {
+      "HeaderText": {
+       "value": "Intake air temperature",
+       "type": "Text"
+      },
+      "SelectedItem": {
+       "value": 0,
+       "type": "UInt"
+      }
+     }
+    },
+    "29": {
+     "type": "dropDownMenu",
+     "name": "SET_SHOWHPFP",
+     "rows": [
+      {
+       "ItemText": {
+        "value": "Auto",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "Show",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "Hide",
+        "type": "Text"
+       }
+      }
+     ],
+     "cells": {
+      "HeaderText": {
+       "value": "High pressure fuel",
+       "type": "Text"
+      },
+      "SelectedItem": {
+       "value": 0,
+       "type": "UInt"
+      }
+     }
+    },
+    "30": {
+     "type": "dropDownMenu",
+     "name": "SET_SHOWLPFP",
+     "rows": [
+      {
+       "ItemText": {
+        "value": "Auto",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "Show",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "Hide",
+        "type": "Text"
+       }
+      }
+     ],
+     "cells": {
+      "HeaderText": {
+       "value": "Low pressure fuel",
+       "type": "Text"
+      },
+      "SelectedItem": {
+       "value": 0,
+       "type": "UInt"
+      }
+     }
+    },
+    "31": {
+     "type": "dropDownMenu",
+     "name": "SET_SHOWTIMING",
+     "rows": [
+      {
+       "ItemText": {
+        "value": "Auto",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "Show",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "Hide",
+        "type": "Text"
+       }
+      }
+     ],
+     "cells": {
+      "HeaderText": {
+       "value": "Ignition timing",
+       "type": "Text"
+      },
+      "SelectedItem": {
+       "value": 0,
+       "type": "UInt"
+      }
+     }
+    },
+    "32": {
+     "type": "dropDownMenu",
+     "name": "SET_SHOWMISFIRE",
+     "rows": [
+      {
+       "ItemText": {
+        "value": "Auto",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "Show",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "Hide",
+        "type": "Text"
+       }
+      }
+     ],
+     "cells": {
+      "HeaderText": {
+       "value": "Misfire counter",
+       "type": "Text"
+      },
+      "SelectedItem": {
+       "value": 0,
+       "type": "UInt"
+      }
+     }
+    },
+    "33": {
+     "type": "dropDownMenu",
+     "name": "SET_SHOWTYRES",
+     "rows": [
+      {
+       "ItemText": {
+        "value": "Auto",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "Show",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "Hide",
+        "type": "Text"
+       }
+      }
+     ],
+     "cells": {
+      "HeaderText": {
+       "value": "Tyre card",
+       "type": "Text"
+      },
+      "SelectedItem": {
+       "value": 0,
+       "type": "UInt"
+      }
+     }
+    },
+    "34": {
+     "type": "dropDownMenu",
+     "name": "SET_SHOWTYRETEMP",
+     "rows": [
+      {
+       "ItemText": {
+        "value": "Auto",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "Show",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "Hide",
+        "type": "Text"
+       }
+      }
+     ],
+     "cells": {
+      "HeaderText": {
+       "value": "Tyre temperatures",
+       "type": "Text"
+      },
+      "SelectedItem": {
+       "value": 0,
+       "type": "UInt"
+      }
+     }
+    },
+    "35": {
+     "type": "dropDownMenu",
+     "name": "SET_THEME",
+     "rows": [
+      {
+       "ItemText": {
+        "value": "M Red",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "M Tricolour",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "Ice White",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "Night Amber",
+        "type": "Text"
+       }
+      }
+     ],
+     "cells": {
+      "HeaderText": {
+       "value": "Colour theme",
+       "type": "Text"
+      },
+      "SelectedItem": {
+       "value": 1,
+       "type": "UInt"
+      }
+     }
+    },
+    "36": {
+     "type": "dropDownMenu",
+     "name": "SET_SPEEDRATE",
+     "rows": [
+      {
+       "ItemText": {
+        "value": "5 fps",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "10 fps (default)",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "15 fps",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "30 fps",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "60 fps",
+        "type": "Text"
+       }
+      }
+     ],
+     "cells": {
+      "HeaderText": {
+       "value": "Speed display rate",
+       "type": "Text"
+      },
+      "SelectedItem": {
+       "value": 1,
+       "type": "UInt"
+      }
+     }
+    },
+    "37": {
+     "type": "dropDownMenu",
+     "name": "SET_LAYOUT",
+     "rows": [
+      {
+       "ItemText": {
+        "value": "Full screen",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "Standard",
+        "type": "Text"
+       }
+      }
+     ],
+     "cells": {
+      "HeaderText": {
+       "value": "Screen layout",
+       "type": "Text"
+      },
+      "SelectedItem": {
+       "value": 0,
+       "type": "UInt"
+      }
+     }
+    },
+    "38": {
+     "type": "dropDownMenu",
+     "name": "SET_RENDERER",
+     "rows": [
+      {
+       "ItemText": {
+        "value": "GPU 60 fps (default)",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "Software",
+        "type": "Text"
+       }
+      }
+     ],
+     "cells": {
+      "HeaderText": {
+       "value": "Renderer",
+       "type": "Text"
+      },
+      "SelectedItem": {
+       "value": 0,
+       "type": "UInt"
+      }
+     }
+    },
+    "39": {
+     "type": "dropDownMenu",
+     "name": "SET_DEMO",
+     "rows": [
+      {
+       "ItemText": {
+        "value": "Auto",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "Always",
+        "type": "Text"
+       }
+      },
+      {
+       "ItemText": {
+        "value": "Never",
+        "type": "Text"
+       }
+      }
+     ],
+     "cells": {
+      "HeaderText": {
+       "value": "Demo data",
+       "type": "Text"
+      },
+      "SelectedItem": {
+       "value": 0,
+       "type": "UInt"
+      }
+     }
+    },
+    "40": {
+     "type": "title",
+     "name": "SETTINGS_TITLE",
+     "rows": [
+      {
+       "Text": {
+        "value": "SID_AQ_FLAP_SETTINGS_TITLE",
+        "type": "StringId"
+       }
+      }
+     ]
+    }
+   },
+   "properties": {
+    "ParentState": {
+     "value": 1,
+     "type": "UInt"
+    }
+   }
+  }
+ }
+}

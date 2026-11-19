@@ -1,0 +1,75 @@
+{
+  "proxies": {
+    "com.harman.infotainment.systemfunctions.tasu.tasu.InternalTasu": {
+      "methods": ["sendTasuRequest"],
+      "broadcasts": ["sendTasuResponse"],
+      "instances": "SystemFunctionsInternalTasuInst1"
+    },
+    "de.bmw.infotainment.climate.Climate2": {
+      "attributes": {
+        "airConditionParkFunctions": "w",
+        "operationAirConditioningFront": "w",
+        "operationStratificationSeatHeating": "w",
+        "statusACFront": "rs",
+        "statusACFrontFunctions": "rs",
+        "statusAirConditionDRStatus": "rs",
+        "statusAirConditionPSStatus": "rs",
+        "statusAirConditionParkFunctions": "rs",
+        "statusPreconditioningParkAirConditioning": "rs",
+        "statusTemperatureInside": "rs"
+      },
+      "instances": "1"
+    },
+    "de.bmw.infotainment.climate.Climate": {
+      "attributes": {
+        "acFond": "w",
+        "acSpecialFunction": "w",
+        "operationStratificationSeatHeating": "w",
+        "seatHeatingLamination": "w",
+        "statusSeatClimateDR": "rs",
+        "statusSeatClimateDRR": "rs",
+        "statusSeatClimatePS": "rs",
+        "statusSeatClimatePSR": "rs",
+        "statusSeatHeatingDR": "rs",
+        "statusSeatHeatingDRR": "rs",
+        "statusSeatHeatingPS": "rs",
+        "statusSeatHeatingPSR": "rs",
+        "statusACFond2": "rs",
+        "statusACFront": "rs"
+      },
+      "instances": "1"
+    },
+    "de.bmw.infrastructure.EnvironmentalInformation": {
+      "attributes": {
+        "ExteriorTemperature": "s",
+        "unfilteredExteriorTemperature": "s"
+      },
+      "instances": "1"
+    },
+    "de.bmw.infotainment.vehicle.CDS": {
+      "attributes": {"statusBattery2": "rs", "statusEngineStatus": "rs", "statusEngineTemperature": "rs"},
+      "instances": "1"
+    },
+    "de.bmw.infotainment.vehicle.Vehicle2": {
+      "attributes": {"statusCarSpeed2": "rs", "statusOilDipstick2": "rs"},
+      "instances": "1"
+    },
+    "de.bmw.infotainment.vehicle.TPMS": {
+      "attributes": {"statusTyrePressure": "rs"},
+      "instances": "1"
+    },
+    "de.bmw.infotainment.KombiIF": {
+      "attributes": {"statusRangeTankStatus": "rs"},
+      "instances": "1"
+    },
+    "de.bmw.infotainment.KombiInterface_2": {
+      "attributes": {"cbsDataServiceList": "rs", "cbsDataSBA": "rs"},
+      "instances": "1"
+    },
+    "de.bmw.infotainment.checkcontrol.CheckControlMaster": {
+      "attributes": {"basicList": "rs"},
+      "instances": "1"
+    }
+  },
+  "providers": {}
+}

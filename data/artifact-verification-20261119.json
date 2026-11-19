@@ -96,6 +96,101 @@
       "archive": "PASS"
     },
     {
+      "id": "aurelm-emby",
+      "version": "0.3.13",
+      "live_hu_install": "NOT OBSERVED",
+      "artifact_url": "https://github.com/aurelmarius/bmw-test-apps/releases/download/catalog/aurelm-emby@0.3.13.tgz",
+      "expected_bytes": 912239,
+      "expected_sha256": "9e2a10699ab44a4b6c013fcea0302a69b765b5248f139ed289f61fdbac2dadbe",
+      "download": "PASS",
+      "received_bytes": 912239,
+      "sha256": "9e2a10699ab44a4b6c013fcea0302a69b765b5248f139ed289f61fdbac2dadbe",
+      "manifest": "component.json",
+      "package_id": "aurelm-emby",
+      "package_version": "0.3.13",
+      "source_build": false,
+      "package_hmi": [
+        "ID7"
+      ],
+      "ui_hmi": [],
+      "effective_hmi": [
+        "ID7"
+      ],
+      "hmi_source": "declared",
+      "package_requires": {
+        "mgu-deploy": "0.7.0",
+        "mgu-uplink": "0.7.0"
+      },
+      "package_needs": [],
+      "package_provides": null,
+      "contains_donor_sdk": false,
+      "members": 19,
+      "archive": "PASS"
+    },
+    {
+      "id": "aurelm-mediaprobe",
+      "version": "0.1.3",
+      "live_hu_install": "NOT OBSERVED",
+      "artifact_url": "https://github.com/aurelmarius/bmw-test-apps/releases/download/catalog/aurelm-mediaprobe@0.1.3.tgz",
+      "expected_bytes": 979949,
+      "expected_sha256": "3108e7b1bb9e9a35fd3e7c31642a7d4fdbe4627eb49ad2ccab88145251e7da9e",
+      "download": "PASS",
+      "received_bytes": 979949,
+      "sha256": "3108e7b1bb9e9a35fd3e7c31642a7d4fdbe4627eb49ad2ccab88145251e7da9e",
+      "manifest": "component.json",
+      "package_id": "aurelm-mediaprobe",
+      "package_version": "0.1.3",
+      "source_build": false,
+      "package_hmi": [
+        "ID7"
+      ],
+      "ui_hmi": [],
+      "effective_hmi": [
+        "ID7"
+      ],
+      "hmi_source": "declared",
+      "package_requires": {
+        "mgu-deploy": "0.7.0"
+      },
+      "package_needs": [],
+      "package_provides": null,
+      "contains_donor_sdk": false,
+      "members": 25,
+      "archive": "PASS"
+    },
+    {
+      "id": "aurelm-music",
+      "version": "0.1.9",
+      "live_hu_install": "NOT OBSERVED",
+      "artifact_url": "https://github.com/aurelmarius/bmw-test-apps/releases/download/catalog/aurelm-music@0.1.9.tgz",
+      "expected_bytes": 427717,
+      "expected_sha256": "d40807876ba8d1e98514eaadc6083ada83193b8ef7799f8ea0959c3895b6780b",
+      "download": "PASS",
+      "received_bytes": 427717,
+      "sha256": "d40807876ba8d1e98514eaadc6083ada83193b8ef7799f8ea0959c3895b6780b",
+      "manifest": "component.json",
+      "package_id": "aurelm-music",
+      "package_version": "0.1.9",
+      "source_build": false,
+      "package_hmi": [
+        "ID7"
+      ],
+      "ui_hmi": [],
+      "effective_hmi": [
+        "ID7"
+      ],
+      "hmi_source": "declared",
+      "package_requires": {
+        "mgu-deploy": "0.7.0",
+        "mgu-uplink": "0.7.0"
+      },
+      "package_needs": [],
+      "package_provides": null,
+      "contains_donor_sdk": false,
+      "members": 19,
+      "archive": "PASS"
+    },
+    {
       "id": "aurelm-myairplay",
       "version": "1.0.1",
       "live_hu_install": "NOT OBSERVED",
@@ -656,6 +751,133 @@
       "archive": "PASS"
     },
     {
+      "id": "base-player-receiver",
+      "version": "0.2.1",
+      "live_hu_install": "NOT OBSERVED",
+      "artifact_url": "https://github.com/alex-base-pr/base-player/releases/download/v0.2.1/base-player-receiver%400.2.1.tgz",
+      "expected_bytes": 103331084,
+      "expected_sha256": "3f93313111dace9c2ae397b88d27399736b8ae6e1d3f0875c909bddc3f5b2814",
+      "download": "PASS",
+      "received_bytes": 103331084,
+      "sha256": "3f93313111dace9c2ae397b88d27399736b8ae6e1d3f0875c909bddc3f5b2814",
+      "manifest": "component.json",
+      "package_id": "base-player-receiver",
+      "package_version": "0.2.1",
+      "source_build": false,
+      "package_hmi": [
+        "ID7"
+      ],
+      "ui_hmi": [],
+      "effective_hmi": [
+        "ID7"
+      ],
+      "hmi_source": "declared",
+      "package_requires": {
+        "mgu-deploy": "0.7.17"
+      },
+      "package_needs": [],
+      "package_provides": null,
+      "contains_donor_sdk": false,
+      "members": 263,
+      "archive": "PASS"
+    },
+    {
+      "id": "base_player",
+      "version": "0.2.1",
+      "live_hu_install": "NOT OBSERVED",
+      "artifact_url": "https://github.com/alex-base-pr/base-player/releases/download/v0.2.1/base_player%400.2.1.tgz",
+      "expected_bytes": 1004841,
+      "expected_sha256": "be4436aa1f442cb47ba8aee9e824430dd80fc13cccf00ea5368eeedbc07f618e",
+      "download": "PASS",
+      "received_bytes": 1004841,
+      "sha256": "be4436aa1f442cb47ba8aee9e824430dd80fc13cccf00ea5368eeedbc07f618e",
+      "manifest": "package.json",
+      "package_id": "base_player",
+      "package_version": "0.2.1",
+      "source_build": false,
+      "package_hmi": [
+        "ID7"
+      ],
+      "ui_hmi": [
+        "ID7"
+      ],
+      "effective_hmi": [
+        "ID7"
+      ],
+      "hmi_source": "declared",
+      "package_requires": {},
+      "package_needs": [],
+      "package_provides": null,
+      "contains_donor_sdk": false,
+      "members": 102,
+      "archive": "PASS"
+    },
+    {
+      "id": "bcs_store",
+      "version": "3.4.5",
+      "live_hu_install": "NOT OBSERVED",
+      "artifact_url": "https://github.com/bcs-asia/app-store/releases/download/catalog/bcs_store@3.4.5.tgz",
+      "expected_bytes": 4729989,
+      "expected_sha256": "656f3bd8cee577d531680cc399d13e4218a4e0e0eec3ac3d876dc265a4374dc8",
+      "download": "PASS",
+      "received_bytes": 4729989,
+      "sha256": "656f3bd8cee577d531680cc399d13e4218a4e0e0eec3ac3d876dc265a4374dc8",
+      "manifest": "mgu-app.json",
+      "package_id": "bcs_store",
+      "package_version": "3.4.5",
+      "source_build": true,
+      "package_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "ui_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "effective_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "hmi_source": "declared",
+      "package_requires": {},
+      "package_needs": [],
+      "package_provides": null,
+      "contains_donor_sdk": false,
+      "members": 93,
+      "archive": "PASS"
+    },
+    {
+      "id": "bm3_live_id8",
+      "version": "0.1.1",
+      "live_hu_install": "NOT OBSERVED",
+      "artifact_url": "https://github.com/danny67999/mgu-bm3-live-adjustments-idrive-8/releases/download/v0.1.1/bm3_live_id8@0.1.1.tgz",
+      "expected_bytes": 197934,
+      "expected_sha256": "5ab85631b2d3a196ab1dc83e1b31d15f1c6020c0e3e25cc590040e99c08bf93b",
+      "download": "PASS",
+      "received_bytes": 197934,
+      "sha256": "5ab85631b2d3a196ab1dc83e1b31d15f1c6020c0e3e25cc590040e99c08bf93b",
+      "manifest": "mgu-app.json",
+      "package_id": "bm3_live_id8",
+      "package_version": "0.1.1",
+      "source_build": true,
+      "package_hmi": [
+        "ID8"
+      ],
+      "ui_hmi": [
+        "ID8"
+      ],
+      "effective_hmi": [
+        "ID8"
+      ],
+      "hmi_source": "declared",
+      "package_requires": {},
+      "package_needs": [],
+      "package_provides": null,
+      "contains_donor_sdk": false,
+      "members": 42,
+      "archive": "PASS"
+    },
+    {
       "id": "camera-inspect",
       "version": "0.1.1",
       "live_hu_install": "NOT OBSERVED",
@@ -745,6 +967,37 @@
       "archive": "PASS"
     },
     {
+      "id": "cluster_metrics",
+      "version": "0.8.0",
+      "live_hu_install": "NOT OBSERVED",
+      "artifact_url": "https://github.com/chyiz/mgu-apps/releases/download/v0.8.0/cluster_metrics@0.8.0.tgz",
+      "expected_bytes": 2369409,
+      "expected_sha256": "fdd9e18bf42d2ceed78245b076cbbc8daaa795e26037cee81cf6107dd640f99c",
+      "download": "PASS",
+      "received_bytes": 2369409,
+      "sha256": "fdd9e18bf42d2ceed78245b076cbbc8daaa795e26037cee81cf6107dd640f99c",
+      "manifest": "package/package.json",
+      "package_id": "cluster_metrics",
+      "package_version": "0.8.0",
+      "source_build": false,
+      "package_hmi": [
+        "ID7"
+      ],
+      "ui_hmi": [
+        "ID7"
+      ],
+      "effective_hmi": [
+        "ID7"
+      ],
+      "hmi_source": "declared",
+      "package_requires": {},
+      "package_needs": [],
+      "package_provides": null,
+      "contains_donor_sdk": false,
+      "members": 109,
+      "archive": "PASS"
+    },
+    {
       "id": "doodle-gpu",
       "version": "1.0.0",
       "live_hu_install": "NOT OBSERVED",
@@ -771,6 +1024,66 @@
       "package_provides": null,
       "contains_donor_sdk": false,
       "members": 6,
+      "archive": "PASS"
+    },
+    {
+      "id": "dorin-ambient",
+      "version": "0.2.5",
+      "live_hu_install": "NOT OBSERVED",
+      "artifact_url": "https://github.com/dorindumitras/ambient-drive/releases/download/catalog/dorin-ambient@0.2.5.tgz",
+      "expected_bytes": 12663,
+      "expected_sha256": "9309c3a657494888df6d0269758076b2a4b7885aeb89529de13bd1c2f9f7e162",
+      "download": "PASS",
+      "received_bytes": 12663,
+      "sha256": "9309c3a657494888df6d0269758076b2a4b7885aeb89529de13bd1c2f9f7e162",
+      "manifest": "component.json",
+      "package_id": "dorin-ambient",
+      "package_version": "0.2.5",
+      "source_build": false,
+      "package_hmi": [
+        "ID7"
+      ],
+      "ui_hmi": [],
+      "effective_hmi": [
+        "ID7"
+      ],
+      "hmi_source": "declared",
+      "package_requires": {},
+      "package_needs": [],
+      "package_provides": null,
+      "contains_donor_sdk": false,
+      "members": 13,
+      "archive": "PASS"
+    },
+    {
+      "id": "dorin_ambientdrive",
+      "version": "0.2.7",
+      "live_hu_install": "NOT OBSERVED",
+      "artifact_url": "https://github.com/dorindumitras/ambient-drive/releases/download/catalog/dorin_ambientdrive@0.2.7.tgz",
+      "expected_bytes": 840428,
+      "expected_sha256": "929f1ed79e42073448748b533cdb4c76a2876f19f11b490e1026d0533d68a8f6",
+      "download": "PASS",
+      "received_bytes": 840428,
+      "sha256": "929f1ed79e42073448748b533cdb4c76a2876f19f11b490e1026d0533d68a8f6",
+      "manifest": "package/package.json",
+      "package_id": "dorin_ambientdrive",
+      "package_version": "0.2.7",
+      "source_build": false,
+      "package_hmi": [
+        "ID7"
+      ],
+      "ui_hmi": [
+        "ID7"
+      ],
+      "effective_hmi": [
+        "ID7"
+      ],
+      "hmi_source": "declared",
+      "package_requires": {},
+      "package_needs": [],
+      "package_provides": null,
+      "contains_donor_sdk": false,
+      "members": 124,
       "archive": "PASS"
     },
     {
@@ -894,6 +1207,38 @@
       "archive": "PASS"
     },
     {
+      "id": "front-camera-cluster-helper",
+      "version": "0.2.1",
+      "live_hu_install": "NOT OBSERVED",
+      "artifact_url": "https://github.com/alexp50/bmw-apps/releases/download/front-camera-cluster-helper@0.2.1/front-camera-cluster-helper@0.2.1.tgz",
+      "expected_bytes": 4006,
+      "expected_sha256": "394076ef83aa204b6902ee20afe9a839f19f67296a6c8b530885df6ae1e07dd4",
+      "download": "PASS",
+      "received_bytes": 4006,
+      "sha256": "394076ef83aa204b6902ee20afe9a839f19f67296a6c8b530885df6ae1e07dd4",
+      "manifest": "component.json",
+      "package_id": "front-camera-cluster-helper",
+      "package_version": "0.2.1",
+      "source_build": false,
+      "package_hmi": [
+        "ID7"
+      ],
+      "ui_hmi": [],
+      "effective_hmi": [
+        "ID7"
+      ],
+      "hmi_source": "declared",
+      "package_requires": {
+        "mgu-deploy": "0.7.11",
+        "cluster-render": "0.3.10"
+      },
+      "package_needs": [],
+      "package_provides": null,
+      "contains_donor_sdk": false,
+      "members": 5,
+      "archive": "PASS"
+    },
+    {
       "id": "hook111",
       "version": "0.1.6",
       "live_hu_install": "NOT OBSERVED",
@@ -920,6 +1265,39 @@
       "package_provides": null,
       "contains_donor_sdk": false,
       "members": 8,
+      "archive": "PASS"
+    },
+    {
+      "id": "hotspot-studio-helper",
+      "version": "0.1.7",
+      "live_hu_install": "NOT OBSERVED",
+      "artifact_url": "https://github.com/alexp50/bmw-apps/releases/download/hotspot-studio-helper@0.1.7/hotspot-studio-helper@0.1.7.tgz",
+      "expected_bytes": 9437,
+      "expected_sha256": "a2350a9d330008649f3cbe948f48d018be3a97f5cf179a5ab0305b1198ab135a",
+      "download": "PASS",
+      "received_bytes": 9437,
+      "sha256": "a2350a9d330008649f3cbe948f48d018be3a97f5cf179a5ab0305b1198ab135a",
+      "manifest": "component.json",
+      "package_id": "hotspot-studio-helper",
+      "package_version": "0.1.7",
+      "source_build": false,
+      "package_hmi": [
+        "ID7"
+      ],
+      "ui_hmi": [],
+      "effective_hmi": [
+        "ID7"
+      ],
+      "hmi_source": "declared",
+      "package_requires": {
+        "mgu-deploy": "0.7.11",
+        "mgu-python": "1.0.2",
+        "mgu-uplink": "0.7.3"
+      },
+      "package_needs": [],
+      "package_provides": null,
+      "contains_donor_sdk": false,
+      "members": 5,
       "archive": "PASS"
     },
     {
@@ -1362,17 +1740,17 @@
     },
     {
       "id": "jap-ridetube-d",
-      "version": "0.3.12",
+      "version": "0.4.1",
       "live_hu_install": "NOT OBSERVED",
-      "artifact_url": "https://github.com/JustAnotherPU/ridetube/releases/download/catalog/jap-ridetube-d@0.3.12.tgz",
-      "expected_bytes": 8785888,
-      "expected_sha256": "64c87ba1bbb9424351cd801ed3f87126a71d88288833b270c7af4f5a6cb93a06",
+      "artifact_url": "https://github.com/JustAnotherPU/ridetube/releases/download/catalog/jap-ridetube-d@0.4.1.tgz",
+      "expected_bytes": 8825424,
+      "expected_sha256": "6f2c074f6e516d1c94c301665cdb7c6eda89d5aa178393bdb548bccb173020d3",
       "download": "PASS",
-      "received_bytes": 8785888,
-      "sha256": "64c87ba1bbb9424351cd801ed3f87126a71d88288833b270c7af4f5a6cb93a06",
+      "received_bytes": 8825424,
+      "sha256": "6f2c074f6e516d1c94c301665cdb7c6eda89d5aa178393bdb548bccb173020d3",
       "manifest": "component.json",
       "package_id": "jap-ridetube-d",
-      "package_version": "0.3.12",
+      "package_version": "0.4.1",
       "source_build": false,
       "package_hmi": [
         "ID7"
@@ -1386,7 +1764,7 @@
       "package_needs": [],
       "package_provides": null,
       "contains_donor_sdk": false,
-      "members": 12,
+      "members": 17,
       "archive": "PASS"
     },
     {
@@ -1507,17 +1885,17 @@
     },
     {
       "id": "jap_ridetube",
-      "version": "0.3.14",
+      "version": "0.4.4",
       "live_hu_install": "NOT OBSERVED",
-      "artifact_url": "https://github.com/JustAnotherPU/ridetube/releases/download/catalog/jap_ridetube@0.3.14.tgz",
-      "expected_bytes": 2269685,
-      "expected_sha256": "0c6c674691c9ad2852153917f6ae0e01b0f6ed28534b638db03956ed5d9fafbd",
+      "artifact_url": "https://github.com/JustAnotherPU/ridetube/releases/download/catalog/jap_ridetube@0.4.4.tgz",
+      "expected_bytes": 3122448,
+      "expected_sha256": "642f5020631fd1ae47b65b064ef003c54767e49c809686c923615c54386ad8a5",
       "download": "PASS",
-      "received_bytes": 2269685,
-      "sha256": "0c6c674691c9ad2852153917f6ae0e01b0f6ed28534b638db03956ed5d9fafbd",
+      "received_bytes": 3122448,
+      "sha256": "642f5020631fd1ae47b65b064ef003c54767e49c809686c923615c54386ad8a5",
       "manifest": "package/package.json",
       "package_id": "jap_ridetube",
-      "package_version": "0.3.14",
+      "package_version": "0.4.4",
       "source_build": false,
       "package_hmi": null,
       "ui_hmi": [
@@ -1531,7 +1909,7 @@
       "package_needs": [],
       "package_provides": null,
       "contains_donor_sdk": false,
-      "members": 92,
+      "members": 105,
       "archive": "PASS"
     },
     {
@@ -1590,6 +1968,35 @@
       "package_provides": null,
       "contains_donor_sdk": false,
       "members": 84,
+      "archive": "PASS"
+    },
+    {
+      "id": "kombikraft",
+      "version": "0.1.0",
+      "live_hu_install": "NOT OBSERVED",
+      "artifact_url": "https://github.com/callan280/kombikraft/releases/download/catalog/kombikraft%400.1.0.tgz",
+      "expected_bytes": 9981,
+      "expected_sha256": "a0f8ba03c893c1e4b216030cea6a8d05e9e8efea2b79c233b263bbf5f8bf85f7",
+      "download": "PASS",
+      "received_bytes": 9981,
+      "sha256": "a0f8ba03c893c1e4b216030cea6a8d05e9e8efea2b79c233b263bbf5f8bf85f7",
+      "manifest": "package/package.json",
+      "package_id": "kombikraft",
+      "package_version": "0.1.0",
+      "source_build": false,
+      "package_hmi": null,
+      "ui_hmi": [
+        "ID7"
+      ],
+      "effective_hmi": [
+        "ID7"
+      ],
+      "hmi_source": "rhmiData",
+      "package_requires": {},
+      "package_needs": [],
+      "package_provides": null,
+      "contains_donor_sdk": false,
+      "members": 18,
       "archive": "PASS"
     },
     {
@@ -1652,17 +2059,17 @@
     },
     {
       "id": "marku-kaluga-cameras",
-      "version": "0.8.0",
+      "version": "0.9.3",
       "live_hu_install": "NOT OBSERVED",
-      "artifact_url": "https://raw.githubusercontent.com/istt1899/bmw-kaluga-cameras/fab6a5d5af34af6b815bf84107e06eaedba9b877/marku-kaluga-cameras%400.8.0.tgz",
-      "expected_bytes": 572715,
-      "expected_sha256": "e82b77e280ab62e8f5f0b844744569521fd0aa46874462d37c2e0a83a72bdb06",
+      "artifact_url": "https://raw.githubusercontent.com/istt1899/x3/b3717281543afd48010584f7b6a3930d8f45ff1e/marku-kaluga-cameras%400.9.3.tgz",
+      "expected_bytes": 1432329,
+      "expected_sha256": "0e66e6458bfb0530b238cb8ed8fde7825447090c80eeafe9d94e92d3d0388902",
       "download": "PASS",
-      "received_bytes": 572715,
-      "sha256": "e82b77e280ab62e8f5f0b844744569521fd0aa46874462d37c2e0a83a72bdb06",
+      "received_bytes": 1432329,
+      "sha256": "0e66e6458bfb0530b238cb8ed8fde7825447090c80eeafe9d94e92d3d0388902",
       "manifest": "component.json",
       "package_id": "marku-kaluga-cameras",
-      "package_version": "0.8.0",
+      "package_version": "0.9.3",
       "source_build": false,
       "package_hmi": [
         "ID7"
@@ -1678,7 +2085,7 @@
       "package_needs": [],
       "package_provides": null,
       "contains_donor_sdk": false,
-      "members": 37,
+      "members": 45,
       "archive": "PASS"
     },
     {
@@ -1714,17 +2121,17 @@
     },
     {
       "id": "marku_kaluga_cameras",
-      "version": "0.8.0",
+      "version": "0.9.3",
       "live_hu_install": "NOT OBSERVED",
-      "artifact_url": "https://raw.githubusercontent.com/istt1899/bmw-kaluga-cameras/fab6a5d5af34af6b815bf84107e06eaedba9b877/marku_kaluga_cameras%400.8.0.tgz",
-      "expected_bytes": 135310,
-      "expected_sha256": "cc5f3b4d3f5910fe9be58a5c9b7382925e053cde20591e82c730dad2192fd759",
+      "artifact_url": "https://raw.githubusercontent.com/istt1899/x3/b3717281543afd48010584f7b6a3930d8f45ff1e/marku_kaluga_cameras%400.9.3.tgz",
+      "expected_bytes": 153698,
+      "expected_sha256": "7f272d64c221198b324bba6534efab4dc397e06dd59a861abf225b1d1cc463b6",
       "download": "PASS",
-      "received_bytes": 135310,
-      "sha256": "cc5f3b4d3f5910fe9be58a5c9b7382925e053cde20591e82c730dad2192fd759",
+      "received_bytes": 153698,
+      "sha256": "7f272d64c221198b324bba6534efab4dc397e06dd59a861abf225b1d1cc463b6",
       "manifest": "mgu-app.json",
       "package_id": "marku_kaluga_cameras",
-      "package_version": "0.8.0",
+      "package_version": "0.9.3",
       "source_build": true,
       "package_hmi": [
         "ID7"
@@ -1740,7 +2147,7 @@
       "package_needs": [],
       "package_provides": null,
       "contains_donor_sdk": false,
-      "members": 65,
+      "members": 67,
       "archive": "PASS"
     },
     {
@@ -1964,17 +2371,17 @@
     },
     {
       "id": "mgu-deploy",
-      "version": "0.8.23",
+      "version": "0.8.27",
       "live_hu_install": "NOT OBSERVED",
-      "artifact_url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-deploy%400.8.23/mgu-deploy%400.8.23.tgz",
-      "expected_bytes": 163392,
-      "expected_sha256": "f5ede6d31c7f5156430440a29ad4a5c87199f0655309556a0a419b8f92403812",
+      "artifact_url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-deploy%400.8.27/mgu-deploy%400.8.27.tgz",
+      "expected_bytes": 168362,
+      "expected_sha256": "57797407580d4f0c4be234e226d4f51972002adeb1ad718e3cf2ffcd00ea36b6",
       "download": "PASS",
-      "received_bytes": 163392,
-      "sha256": "f5ede6d31c7f5156430440a29ad4a5c87199f0655309556a0a419b8f92403812",
+      "received_bytes": 168362,
+      "sha256": "57797407580d4f0c4be234e226d4f51972002adeb1ad718e3cf2ffcd00ea36b6",
       "manifest": "component.json",
       "package_id": "mgu-deploy",
-      "package_version": "0.8.23",
+      "package_version": "0.8.27",
       "source_build": false,
       "package_hmi": null,
       "ui_hmi": [],
@@ -2050,18 +2457,47 @@
       "archive": "PASS"
     },
     {
-      "id": "mgu-updater",
-      "version": "0.8.48",
+      "id": "mgu-render-id7-touch",
+      "version": "1.4.0",
       "live_hu_install": "NOT OBSERVED",
-      "artifact_url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-updater%400.8.48/mgu-updater%400.8.48.tgz",
-      "expected_bytes": 139439,
-      "expected_sha256": "a0ead035d4a2c29193f65a3f2f9803466583e127896a0a61e7b83496aee405e9",
+      "artifact_url": "https://github.com/JustAnotherPU/ridetube/releases/download/catalog/mgu-render-id7-touch@1.4.0.tgz",
+      "expected_bytes": 3499,
+      "expected_sha256": "74606000de4c70b4e81c72f39bfc7ff5d96b89cc22706e02d8fcb2bcd612df84",
       "download": "PASS",
-      "received_bytes": 139439,
-      "sha256": "a0ead035d4a2c29193f65a3f2f9803466583e127896a0a61e7b83496aee405e9",
+      "received_bytes": 3499,
+      "sha256": "74606000de4c70b4e81c72f39bfc7ff5d96b89cc22706e02d8fcb2bcd612df84",
+      "manifest": "component.json",
+      "package_id": "mgu-render-id7-touch",
+      "package_version": "1.4.0",
+      "source_build": false,
+      "package_hmi": [
+        "ID7"
+      ],
+      "ui_hmi": [],
+      "effective_hmi": [
+        "ID7"
+      ],
+      "hmi_source": "declared",
+      "package_requires": {},
+      "package_needs": [],
+      "package_provides": null,
+      "contains_donor_sdk": false,
+      "members": 7,
+      "archive": "PASS"
+    },
+    {
+      "id": "mgu-updater",
+      "version": "0.8.51",
+      "live_hu_install": "NOT OBSERVED",
+      "artifact_url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-updater%400.8.51/mgu-updater%400.8.51.tgz",
+      "expected_bytes": 143205,
+      "expected_sha256": "e38745a14fad5d34648c101e0d7eadd9a60d53fa1f4cda38462e3f77e08eeb95",
+      "download": "PASS",
+      "received_bytes": 143205,
+      "sha256": "e38745a14fad5d34648c101e0d7eadd9a60d53fa1f4cda38462e3f77e08eeb95",
       "manifest": "component.json",
       "package_id": "mgu-updater",
-      "package_version": "0.8.48",
+      "package_version": "0.8.51",
       "source_build": false,
       "package_hmi": null,
       "ui_hmi": [],
@@ -2076,17 +2512,17 @@
     },
     {
       "id": "mgu-uplink",
-      "version": "0.7.12",
+      "version": "0.7.13",
       "live_hu_install": "NOT OBSERVED",
-      "artifact_url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-uplink%400.7.12/mgu-uplink%400.7.12.tgz",
-      "expected_bytes": 3604053,
-      "expected_sha256": "21ed6dad1b0e413572dedc67f05a9f44a3a4ee4eb7cc40d31d93d9b076a5082a",
+      "artifact_url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-uplink%400.7.13/mgu-uplink%400.7.13.tgz",
+      "expected_bytes": 3605106,
+      "expected_sha256": "077e3200356df726a1e653fd67db9f9a1237e22b548f946b726c6eadd0f48d28",
       "download": "PASS",
-      "received_bytes": 3604053,
-      "sha256": "21ed6dad1b0e413572dedc67f05a9f44a3a4ee4eb7cc40d31d93d9b076a5082a",
+      "received_bytes": 3605106,
+      "sha256": "077e3200356df726a1e653fd67db9f9a1237e22b548f946b726c6eadd0f48d28",
       "manifest": "component.json",
       "package_id": "mgu-uplink",
-      "package_version": "0.7.12",
+      "package_version": "0.7.13",
       "source_build": false,
       "package_hmi": null,
       "ui_hmi": [],
@@ -2131,6 +2567,35 @@
       "archive": "PASS"
     },
     {
+      "id": "mlurker-hud-signals",
+      "version": "0.5.0",
+      "live_hu_install": "NOT OBSERVED",
+      "artifact_url": "https://github.com/mlurker/bmw-idrive7-apps/releases/download/catalog/mlurker-hud-signals@0.5.0.tgz",
+      "expected_bytes": 928271,
+      "expected_sha256": "3a89d02849c16ebef781b55212c3c332f69f640b0e4aa24d5695d4e4c6e2a43e",
+      "download": "PASS",
+      "received_bytes": 928271,
+      "sha256": "3a89d02849c16ebef781b55212c3c332f69f640b0e4aa24d5695d4e4c6e2a43e",
+      "manifest": "component.json",
+      "package_id": "mlurker-hud-signals",
+      "package_version": "0.5.0",
+      "source_build": false,
+      "package_hmi": [
+        "ID7"
+      ],
+      "ui_hmi": [],
+      "effective_hmi": [
+        "ID7"
+      ],
+      "hmi_source": "declared",
+      "package_requires": {},
+      "package_needs": [],
+      "package_provides": null,
+      "contains_donor_sdk": false,
+      "members": 5,
+      "archive": "PASS"
+    },
+    {
       "id": "oap-driverecorder-next",
       "version": "2.5.1",
       "live_hu_install": "NOT OBSERVED",
@@ -2165,6 +2630,101 @@
       "package_provides": null,
       "contains_donor_sdk": false,
       "members": 50,
+      "archive": "PASS"
+    },
+    {
+      "id": "pllana-airplay-receiver",
+      "version": "0.6.3",
+      "live_hu_install": "NOT OBSERVED",
+      "artifact_url": "https://github.com/pllanaio/bmw-airplay/releases/download/v0.6.3/pllana-airplay-receiver%400.6.3.tgz",
+      "expected_bytes": 103292035,
+      "expected_sha256": "0733409fa78c203d61cbdf01db78ad3125971b7547f13ccf26998ea563827057",
+      "download": "PASS",
+      "received_bytes": 103292035,
+      "sha256": "0733409fa78c203d61cbdf01db78ad3125971b7547f13ccf26998ea563827057",
+      "manifest": "component.json",
+      "package_id": "pllana-airplay-receiver",
+      "package_version": "0.6.3",
+      "source_build": false,
+      "package_hmi": [
+        "ID7"
+      ],
+      "ui_hmi": [],
+      "effective_hmi": [
+        "ID7"
+      ],
+      "hmi_source": "declared",
+      "package_requires": {
+        "mgu-deploy": "0.7.17"
+      },
+      "package_needs": [],
+      "package_provides": null,
+      "contains_donor_sdk": false,
+      "members": 265,
+      "archive": "PASS"
+    },
+    {
+      "id": "pllana_airplay",
+      "version": "0.6.3",
+      "live_hu_install": "NOT OBSERVED",
+      "artifact_url": "https://github.com/pllanaio/bmw-airplay/releases/download/v0.6.3/pllana_airplay%400.6.3.tgz",
+      "expected_bytes": 1021214,
+      "expected_sha256": "8f29a8db1923613afcfbac337ebfa37814f5e26a03427f9a1de958a267438525",
+      "download": "PASS",
+      "received_bytes": 1021214,
+      "sha256": "8f29a8db1923613afcfbac337ebfa37814f5e26a03427f9a1de958a267438525",
+      "manifest": "package.json",
+      "package_id": "pllana_airplay",
+      "package_version": "0.6.3",
+      "source_build": false,
+      "package_hmi": [
+        "ID7"
+      ],
+      "ui_hmi": [
+        "ID7"
+      ],
+      "effective_hmi": [
+        "ID7"
+      ],
+      "hmi_source": "declared",
+      "package_requires": {},
+      "package_needs": [],
+      "package_provides": null,
+      "contains_donor_sdk": false,
+      "members": 100,
+      "archive": "PASS"
+    },
+    {
+      "id": "remote-telemetry-bridge",
+      "version": "0.3.0",
+      "live_hu_install": "NOT OBSERVED",
+      "artifact_url": "https://raw.githubusercontent.com/alexp50/bmw-apps/main/packages/remote-telemetry-bridge@0.3.0.tgz",
+      "expected_bytes": 17661,
+      "expected_sha256": "390701235ad4094d792da2dd92f7dd82f403471292d5a78c2f64ef4a5525f1d7",
+      "download": "PASS",
+      "received_bytes": 17661,
+      "sha256": "390701235ad4094d792da2dd92f7dd82f403471292d5a78c2f64ef4a5525f1d7",
+      "manifest": "component.json",
+      "package_id": "remote-telemetry-bridge",
+      "package_version": "0.3.0",
+      "source_build": false,
+      "package_hmi": [
+        "ID7"
+      ],
+      "ui_hmi": [],
+      "effective_hmi": [
+        "ID7"
+      ],
+      "hmi_source": "declared",
+      "package_requires": {
+        "mgu-deploy": "0.7.11",
+        "mgu-uplink": "0.7.3",
+        "vehicle_health": "0.1.9"
+      },
+      "package_needs": [],
+      "package_provides": null,
+      "contains_donor_sdk": false,
+      "members": 6,
       "archive": "PASS"
     },
     {
@@ -2239,6 +2799,38 @@
         "ID8"
       ],
       "download_request_contract": "Native HTTPS source headers: User-Agent, no API octet-stream override; full byte count and SHA-256 checked."
+    },
+    {
+      "id": "vehicle-network-observer",
+      "version": "0.1.2",
+      "live_hu_install": "NOT OBSERVED",
+      "artifact_url": "https://github.com/alexp50/bmw-apps/releases/download/vehicle-network-observer@0.1.2/vehicle-network-observer@0.1.2.tgz",
+      "expected_bytes": 5887,
+      "expected_sha256": "216a50ffbe3e5b64524b7a2bb89a752a0f30aea197493455028236f9e690a715",
+      "download": "PASS",
+      "received_bytes": 5887,
+      "sha256": "216a50ffbe3e5b64524b7a2bb89a752a0f30aea197493455028236f9e690a715",
+      "manifest": "component.json",
+      "package_id": "vehicle-network-observer",
+      "package_version": "0.1.2",
+      "source_build": false,
+      "package_hmi": [
+        "ID7"
+      ],
+      "ui_hmi": [],
+      "effective_hmi": [
+        "ID7"
+      ],
+      "hmi_source": "declared",
+      "package_requires": {
+        "mgu-deploy": "0.7.11",
+        "mgu-python": "1.0.2"
+      },
+      "package_needs": [],
+      "package_provides": null,
+      "contains_donor_sdk": false,
+      "members": 3,
+      "archive": "PASS"
     },
     {
       "id": "vizualyse-bus",
@@ -2387,17 +2979,17 @@
     },
     {
       "id": "vizualyse-steam",
-      "version": "0.3.2",
+      "version": "0.4.0",
       "live_hu_install": "NOT OBSERVED",
-      "artifact_url": "https://github.com/Vizualyse/idrive-apps/releases/download/vizualyse-steam%400.3.2/vizualyse-steam%400.3.2.tgz",
-      "expected_bytes": 531208182,
-      "expected_sha256": "13e359eecf539d6f99e7a563dbfc5a0c4ca0f8d3d02b51f782c6054cd94a318f",
+      "artifact_url": "https://github.com/Vizualyse/idrive-apps/releases/download/vizualyse-steam%400.4.0/vizualyse-steam%400.4.0.tgz",
+      "expected_bytes": 531211774,
+      "expected_sha256": "3719af147d3d2209f9e5fa93de0993a3c95f8df9ccc2f5f7e990c6d227f5eeb6",
       "download": "PASS",
-      "received_bytes": 531208182,
-      "sha256": "13e359eecf539d6f99e7a563dbfc5a0c4ca0f8d3d02b51f782c6054cd94a318f",
+      "received_bytes": 531211774,
+      "sha256": "3719af147d3d2209f9e5fa93de0993a3c95f8df9ccc2f5f7e990c6d227f5eeb6",
       "manifest": "component.json",
       "package_id": "vizualyse-steam",
-      "package_version": "0.3.2",
+      "package_version": "0.4.0",
       "source_build": false,
       "package_hmi": [
         "ID7"
@@ -2415,18 +3007,51 @@
       "archive": "PASS"
     },
     {
-      "id": "waze-on-cluster",
-      "version": "0.10.8",
+      "id": "waze-hud-control",
+      "version": "0.3.0",
       "live_hu_install": "NOT OBSERVED",
-      "artifact_url": "https://github.com/robertnisipeanu/idrive-apps/releases/download/waze-on-cluster%400.10.8/waze-on-cluster%400.10.8.tgz",
-      "expected_bytes": 2539325,
-      "expected_sha256": "3369a2cf1b6fbbe217f86d946e8833f6144fc68e4a4d0f2707d8e5bfce8d788e",
+      "artifact_url": "https://github.com/alexp50/bmw-apps/releases/download/waze-hud-control@0.3.0/waze-hud-control@0.3.0.tgz",
+      "expected_bytes": 3201,
+      "expected_sha256": "26f324ccfa58f42a17b78c11321bd9413c5fb83c71f5d46dff44195fbc764f57",
       "download": "PASS",
-      "received_bytes": 2539325,
-      "sha256": "3369a2cf1b6fbbe217f86d946e8833f6144fc68e4a4d0f2707d8e5bfce8d788e",
+      "received_bytes": 3201,
+      "sha256": "26f324ccfa58f42a17b78c11321bd9413c5fb83c71f5d46dff44195fbc764f57",
+      "manifest": "component.json",
+      "package_id": "waze-hud-control",
+      "package_version": "0.3.0",
+      "source_build": false,
+      "package_hmi": [
+        "ID7"
+      ],
+      "ui_hmi": [],
+      "effective_hmi": [
+        "ID7"
+      ],
+      "hmi_source": "declared",
+      "package_requires": {
+        "mgu-deploy": "0.7.11",
+        "cluster-render": "0.3.10",
+        "waze-on-cluster": "0.8.3"
+      },
+      "package_needs": [],
+      "package_provides": null,
+      "contains_donor_sdk": false,
+      "members": 4,
+      "archive": "PASS"
+    },
+    {
+      "id": "waze-on-cluster",
+      "version": "0.10.12",
+      "live_hu_install": "NOT OBSERVED",
+      "artifact_url": "https://github.com/robertnisipeanu/idrive-apps/releases/download/waze-on-cluster%400.10.12/waze-on-cluster%400.10.12.tgz",
+      "expected_bytes": 2567979,
+      "expected_sha256": "594748589c76aa71833e81658d6270853b1ce78463c7f8d929db004ff764d209",
+      "download": "PASS",
+      "received_bytes": 2567979,
+      "sha256": "594748589c76aa71833e81658d6270853b1ce78463c7f8d929db004ff764d209",
       "manifest": "component.json",
       "package_id": "waze-on-cluster",
-      "package_version": "0.10.8",
+      "package_version": "0.10.12",
       "source_build": false,
       "package_hmi": [
         "ID7"
@@ -2507,7 +3132,7 @@
       "download_request_contract": "Native HTTPS source headers: User-Agent, no GitHub API octet-stream Accept override; fresh cache"
     }
   ],
-  "checked_at": "2026-11-19",
+  "checked_at": "2026-11-19T21:24:46.633094+00:00",
   "summary": {
     "artifacts": 81,
     "download_pass": 81,
@@ -2540,5 +3165,13 @@
     ],
     "new_bytes": 2639731,
     "no_live_install": true
+  },
+  "collection_verification": {
+    "current_release_entries": 101,
+    "download_pass": 101,
+    "archive_pass": 101,
+    "compressed_bytes": 1348076985,
+    "unchanged_artifact_evidence": "Retained only where artifact SHA256 and version are unchanged.",
+    "new_or_updated_artifacts": 29
   }
 }

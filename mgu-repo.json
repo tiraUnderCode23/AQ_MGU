@@ -162,41 +162,142 @@
       ]
     },
     {
+      "id": "adas_feature_probe",
+      "kind": "app",
+      "path": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/adas_feature_probe",
+      "manifest": "app.json",
+      "version": "0.1.0",
+      "title": "ADAS Feature Probe",
+      "description": "Live BMW availability and ECU-state probe for acoustic collision warning, driveaway prevention and Close Passing Assistant",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0"
+      },
+      "build": {
+        "python": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/build.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/oap-sdk",
+        "output": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/runtime",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/platform",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/localization",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/build.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/pack_data.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/localize.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/locale-revisions.json",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/oapgen",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/LICENSE"
+        ]
+      },
+      "icon": "icon.png"
+    },
+    {
       "id": "ambient_config",
       "kind": "app",
+      "path": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/apps/ambient_config",
+      "manifest": "app.json",
+      "version": "2.7.13",
       "title": "Ambient config",
-      "version": "2.6.2",
+      "description": "Any colour on the ambient light, animations, and a look for each driving mode",
       "mguHmi": [
         "ID7",
         "ID8"
       ],
+      "requires": {
+        "idrive7-renderd": "2.1.18",
+        "mgu-inputgate": "1.1.0"
+      },
       "build": {
-        "python": "apps/_sources/idrive7-apps/kit/tools/build.py",
+        "python": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/build.py",
         "args": [
           "{id}"
         ],
-        "sdk": "apps/_sources/idrive7-apps/oap-sdk",
-        "output": "apps/_sources/idrive7-apps/dist/{id}@{version}.tgz",
+        "sdk": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/oap-sdk",
+        "output": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/dist/{id}@{version}.tgz",
         "network": [
           "doom"
         ],
         "shared": [
-          "apps/_sources/idrive7-apps/kit/runtime",
-          "apps/_sources/idrive7-apps/kit/platform",
-          "apps/_sources/idrive7-apps/kit/localization",
-          "apps/_sources/idrive7-apps/kit/tools/build.py",
-          "apps/_sources/idrive7-apps/kit/tools/pack_data.py",
-          "apps/_sources/idrive7-apps/kit/tools/localize.py",
-          "apps/_sources/idrive7-apps/kit/tools/locale-revisions.json",
-          "apps/_sources/idrive7-apps/kit/tools/oapgen"
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/runtime",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/platform",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/localization",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/build.py",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/pack_data.py",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/localize.py",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/locale-revisions.json",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/oapgen",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/LICENSE",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/NOTICE.zh-CN.md",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/make_icon.js"
         ]
       },
-      "path": "apps/_sources/idrive7-apps/apps/ambient_config",
+      "icon": "icon.png"
+    },
+    {
+      "id": "ambient_studio_full",
+      "kind": "app",
+      "path": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/ambient_studio_full",
       "manifest": "app.json",
-      "description": "Any colour on the ambient light, animations, and a look for each driving mode",
+      "version": "0.1.5",
+      "title": "Ambient Studio",
+      "description": "Full-screen drive-mode colours and rate-limited ambient-light alerts",
+      "mguHmi": [
+        "ID7"
+      ],
       "requires": {
-        "idrive7-renderd": "2.1.18",
-        "mgu-inputgate": "1.1.0"
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0"
+      },
+      "build": {
+        "python": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/build.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/oap-sdk",
+        "output": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/runtime",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/platform",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/localization",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/build.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/pack_data.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/localize.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/locale-revisions.json",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/oapgen",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/LICENSE"
+        ]
+      },
+      "icon": "icon.png"
+    },
+    {
+      "id": "aq_flap",
+      "kind": "app",
+      "title": "AQ Flap",
+      "description": "Exhaust flap control with open, close and automatic modes.",
+      "version": "2.6.1",
+      "path": "apps/_sources/aq-flap-2.6.1",
+      "manifest": "package.json",
+      "icon": "rhmiData/variantGroups/Common/images/aq_flap_icon.png",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-python": "1.0.0",
+        "mgu-deploy": "0.3.2"
+      },
+      "build": {
+        "python": "apps/_sources/aq-flap-2.6.1/build.py",
+        "args": [],
+        "sdk": "apps/_sources/aq-flap-2.6.1/target-sdk",
+        "shared": [
+          "apps/_sources/aq-flap-2.6.1/LICENSES"
+        ]
       }
     },
     {
@@ -686,40 +787,44 @@
     {
       "id": "car_vitals",
       "kind": "app",
+      "path": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/apps/car_vitals",
+      "manifest": "app.json",
+      "version": "2.27.9",
       "title": "M Vitals",
-      "version": "2.27.6",
+      "description": "Live engine, thermal, intake / fuel / ignition, tyre and chassis gauges",
       "mguHmi": [
         "ID7",
         "ID8"
       ],
+      "requires": {
+        "idrive7-renderd": "2.1.18",
+        "mgu-inputgate": "1.1.0"
+      },
       "build": {
-        "python": "apps/_sources/idrive7-apps/kit/tools/build.py",
+        "python": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/build.py",
         "args": [
           "{id}"
         ],
-        "sdk": "apps/_sources/idrive7-apps/oap-sdk",
-        "output": "apps/_sources/idrive7-apps/dist/{id}@{version}.tgz",
+        "sdk": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/oap-sdk",
+        "output": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/dist/{id}@{version}.tgz",
         "network": [
           "doom"
         ],
         "shared": [
-          "apps/_sources/idrive7-apps/kit/runtime",
-          "apps/_sources/idrive7-apps/kit/platform",
-          "apps/_sources/idrive7-apps/kit/localization",
-          "apps/_sources/idrive7-apps/kit/tools/build.py",
-          "apps/_sources/idrive7-apps/kit/tools/pack_data.py",
-          "apps/_sources/idrive7-apps/kit/tools/localize.py",
-          "apps/_sources/idrive7-apps/kit/tools/locale-revisions.json",
-          "apps/_sources/idrive7-apps/kit/tools/oapgen"
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/runtime",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/platform",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/localization",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/build.py",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/pack_data.py",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/localize.py",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/locale-revisions.json",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/oapgen",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/LICENSE",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/NOTICE.zh-CN.md",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/make_icon.js"
         ]
       },
-      "path": "apps/_sources/idrive7-apps/apps/car_vitals",
-      "manifest": "app.json",
-      "description": "Live engine, thermal, intake / fuel / ignition, tyre and chassis gauges",
-      "requires": {
-        "idrive7-renderd": "2.1.18",
-        "mgu-inputgate": "1.1.0"
-      }
+      "icon": "icon.png"
     },
     {
       "id": "carplay_map_toggle",
@@ -736,6 +841,41 @@
         "ID7"
       ],
       "uninstallable": true
+    },
+    {
+      "id": "climate-comfort",
+      "kind": "app",
+      "path": "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/apps/climate-comfort",
+      "manifest": "app.json",
+      "version": "0.1.60",
+      "title": "Climate Comfort",
+      "description": "Development preview. Development preview of seat heating, seat ventilation and steering wheel heating rules for BMW iDrive 7.",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.19",
+        "mgu-inputgate": "1.2.1"
+      },
+      "build": {
+        "python": "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/build.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/oap-sdk",
+        "shared": [
+          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/runtime",
+          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/platform",
+          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/localization",
+          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/build.py",
+          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/pack_data.py",
+          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/localize.py",
+          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/locale-revisions.json",
+          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/oapgen",
+          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/LICENSE"
+        ]
+      },
+      "icon": "icon.png"
     },
     {
       "id": "cluster_lyrics",
@@ -937,42 +1077,37 @@
     {
       "id": "dpf",
       "kind": "app",
-      "version": "0.1.32",
+      "path": "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/apps/dpf",
+      "manifest": "app.json",
+      "version": "0.1.33",
       "title": "DPF Status",
       "description": "Read-only diesel particulate filter status monitoring",
-      "path": "apps/_sources/dzooky-bmrmodz/apps/dpf",
-      "manifest": "app.json",
-      "icon": "icon.png",
       "mguHmi": [
         "ID7"
       ],
       "requires": {
         "idrive7-renderd": "2.1.19",
-        "mgu-inputgate": "1.2.1",
-        "mgu-deploy": "0.8.23"
+        "mgu-inputgate": "1.2.1"
       },
       "build": {
-        "python": "tools/build_extra_source_app.py",
+        "python": "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/build.py",
         "args": [
           "{id}"
         ],
-        "output": "apps/_sources/dzooky-bmrmodz/dist/{id}@{version}.tgz",
+        "sdk": "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/oap-sdk",
         "shared": [
-          "apps/_sources/dzooky-bmrmodz/kit/runtime",
-          "apps/_sources/dzooky-bmrmodz/kit/platform",
-          "apps/_sources/dzooky-bmrmodz/kit/localization",
-          "apps/_sources/dzooky-bmrmodz/kit/tools/build.py",
-          "apps/_sources/dzooky-bmrmodz/kit/tools/pack_data.py",
-          "apps/_sources/dzooky-bmrmodz/kit/tools/localize.py",
-          "apps/_sources/dzooky-bmrmodz/kit/tools/locale-revisions.json",
-          "apps/_sources/dzooky-bmrmodz/kit/tools/oapgen",
-          "apps/_sources/dzooky-bmrmodz/LICENSE",
-          "apps/_sources/dzooky-bmrmodz/README.md",
-          "apps/_sources/dzooky-bmrmodz/mgu-repo.json",
-          "tools/build_extra_source_app.py",
-          "data/extra-source-builds.json"
+          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/runtime",
+          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/platform",
+          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/localization",
+          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/build.py",
+          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/pack_data.py",
+          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/localize.py",
+          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/locale-revisions.json",
+          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/oapgen",
+          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/LICENSE"
         ]
-      }
+      },
+      "icon": "icon.png"
     },
     {
       "id": "dpf_id8",
@@ -1095,6 +1230,43 @@
       }
     },
     {
+      "id": "drive_hud_full",
+      "kind": "app",
+      "path": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/drive_hud_full",
+      "manifest": "app.json",
+      "version": "0.1.6",
+      "title": "Drive HUD",
+      "description": "Full-screen HUD controls: turn arrows, Sport gear/RPM/shift lights and engine warm-up",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0",
+        "cluster-render": "0.3.10"
+      },
+      "build": {
+        "python": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/build.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/oap-sdk",
+        "output": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/runtime",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/platform",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/localization",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/build.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/pack_data.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/localize.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/locale-revisions.json",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/oapgen",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/LICENSE"
+        ]
+      },
+      "icon": "icon.png"
+    },
+    {
       "id": "dtc_scanner",
       "kind": "app",
       "title": "Fault Scanner",
@@ -1207,39 +1379,43 @@
     {
       "id": "edrive",
       "kind": "app",
+      "path": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/apps/edrive",
+      "manifest": "app.json",
+      "version": "2.11.0",
       "title": "eDrive",
-      "version": "2.10.1",
+      "description": "Real electric range (plug-in hybrids and fully electric cars such as the iX3), live battery power, cells and climate power, HV battery health (SOH) and energy, last charge, charge log, the 12 V battery (charge, voltage, what it does, regen, history) and a home-screen widget; on a 48 V mild hybrid its 48 V battery and DC/DC converter",
       "mguHmi": [
         "ID7",
         "ID8"
       ],
+      "requires": {
+        "idrive7-renderd": "2.1.15"
+      },
       "build": {
-        "python": "apps/_sources/idrive7-apps/kit/tools/build.py",
+        "python": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/build.py",
         "args": [
           "{id}"
         ],
-        "sdk": "apps/_sources/idrive7-apps/oap-sdk",
-        "output": "apps/_sources/idrive7-apps/dist/{id}@{version}.tgz",
+        "sdk": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/oap-sdk",
+        "output": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/dist/{id}@{version}.tgz",
         "network": [
           "doom"
         ],
         "shared": [
-          "apps/_sources/idrive7-apps/kit/runtime",
-          "apps/_sources/idrive7-apps/kit/platform",
-          "apps/_sources/idrive7-apps/kit/localization",
-          "apps/_sources/idrive7-apps/kit/tools/build.py",
-          "apps/_sources/idrive7-apps/kit/tools/pack_data.py",
-          "apps/_sources/idrive7-apps/kit/tools/localize.py",
-          "apps/_sources/idrive7-apps/kit/tools/locale-revisions.json",
-          "apps/_sources/idrive7-apps/kit/tools/oapgen"
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/runtime",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/platform",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/localization",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/build.py",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/pack_data.py",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/localize.py",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/locale-revisions.json",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/oapgen",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/LICENSE",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/NOTICE.zh-CN.md",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/make_icon.js"
         ]
       },
-      "path": "apps/_sources/idrive7-apps/apps/edrive",
-      "manifest": "app.json",
-      "description": "Real electric range (plug-in hybrids and fully electric cars such as the iX3), live battery power, cells and climate power, HV battery health (SOH) and energy, last charge, charge log, the 12 V battery (charge, voltage, what it does, regen, history) and a home-screen widget; on a 48 V mild hybrid its 48 V battery and DC/DC converter",
-      "requires": {
-        "idrive7-renderd": "2.1.15"
-      }
+      "icon": "icon.png"
     },
     {
       "id": "eldrive",
@@ -1337,6 +1513,43 @@
       }
     },
     {
+      "id": "front_camera_cluster",
+      "kind": "app",
+      "path": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/front_camera_cluster",
+      "manifest": "app.json",
+      "version": "0.2.1",
+      "title": "Night Vision Cluster",
+      "description": "Full-screen control for BMW Night Vision and parking-camera projection in the instrument cluster",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0",
+        "front-camera-cluster-helper": "0.2.1"
+      },
+      "build": {
+        "python": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/build.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/oap-sdk",
+        "output": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/runtime",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/platform",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/localization",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/build.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/pack_data.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/localize.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/locale-revisions.json",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/oapgen",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/LICENSE"
+        ]
+      },
+      "icon": "icon.png"
+    },
+    {
       "id": "gforce",
       "kind": "app",
       "title": "G-Force",
@@ -1408,6 +1621,79 @@
         "idrive7-renderd": "2.1.7",
         "mgu-inputgate": "1.0.0"
       }
+    },
+    {
+      "id": "green_light_alert",
+      "kind": "app",
+      "path": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/green_light_alert",
+      "manifest": "app.json",
+      "version": "0.2.5",
+      "title": "Green Light Alert",
+      "description": "Monitors the raw KAFAS traffic-light camera feed, with BMW's validated display signal as a fallback",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0"
+      },
+      "build": {
+        "python": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/build.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/oap-sdk",
+        "output": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/runtime",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/platform",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/localization",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/build.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/pack_data.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/localize.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/locale-revisions.json",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/oapgen",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/LICENSE"
+        ]
+      },
+      "icon": "icon.png"
+    },
+    {
+      "id": "hotspot_studio",
+      "kind": "app",
+      "path": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/hotspot_studio",
+      "manifest": "app.json",
+      "version": "0.1.5",
+      "title": "Hotspot Studio",
+      "description": "Provides Huawei Internet proxies on BMW's hotspot and opens a timed single-client ENET relay on request",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0",
+        "hotspot-studio-helper": "0.1.7"
+      },
+      "build": {
+        "python": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/build.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/oap-sdk",
+        "output": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/runtime",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/platform",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/localization",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/build.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/pack_data.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/localize.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/locale-revisions.json",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/oapgen",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/LICENSE"
+        ]
+      },
+      "icon": "icon.png"
     },
     {
       "id": "iabadia_m_arcade",
@@ -1575,78 +1861,86 @@
     {
       "id": "live_adjustments",
       "kind": "app",
+      "path": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/apps/live_adjustments",
+      "manifest": "app.json",
+      "version": "0.9.10",
       "title": "Engine Config",
-      "version": "0.9.8",
+      "description": "Engine Config for BMW MGU ID7. Exhaust Flap: OEM, OPEN and CLOSE over the car's own diagnostic link, or following the driving mode (Sport open, Eco Pro closed); held against the DME's timeout, Close handed back above a set engine speed. With BM3 or MHD picked in Settings: engine map switching, burbles, ASD and Max Cooling. Experimental: xDrive off until the ignition cycle (DSC LMV_FUNKTION), behind its own setting",
       "mguHmi": [
         "ID7",
         "ID8"
       ],
+      "requires": {
+        "idrive7-renderd": "2.1.18",
+        "mgu-inputgate": "1.1.0"
+      },
       "build": {
-        "python": "apps/_sources/idrive7-apps/kit/tools/build.py",
+        "python": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/build.py",
         "args": [
           "{id}"
         ],
-        "sdk": "apps/_sources/idrive7-apps/oap-sdk",
-        "output": "apps/_sources/idrive7-apps/dist/{id}@{version}.tgz",
+        "sdk": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/oap-sdk",
+        "output": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/dist/{id}@{version}.tgz",
         "network": [
           "doom"
         ],
         "shared": [
-          "apps/_sources/idrive7-apps/kit/runtime",
-          "apps/_sources/idrive7-apps/kit/platform",
-          "apps/_sources/idrive7-apps/kit/localization",
-          "apps/_sources/idrive7-apps/kit/tools/build.py",
-          "apps/_sources/idrive7-apps/kit/tools/pack_data.py",
-          "apps/_sources/idrive7-apps/kit/tools/localize.py",
-          "apps/_sources/idrive7-apps/kit/tools/locale-revisions.json",
-          "apps/_sources/idrive7-apps/kit/tools/oapgen"
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/runtime",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/platform",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/localization",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/build.py",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/pack_data.py",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/localize.py",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/locale-revisions.json",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/oapgen",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/LICENSE",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/NOTICE.zh-CN.md",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/make_icon.js"
         ]
       },
-      "path": "apps/_sources/idrive7-apps/apps/live_adjustments",
-      "manifest": "app.json",
-      "description": "Engine Config for BMW MGU ID7. Exhaust Flap: OEM, OPEN and CLOSE over the car's own diagnostic link, or following the driving mode (Sport open, Eco Pro closed); held against the DME's timeout, Close handed back above a set engine speed. With BM3 or MHD picked in Settings: engine map switching, burbles, ASD and Max Cooling. Experimental: xDrive off until the ignition cycle (DSC LMV_FUNKTION), behind its own setting",
-      "requires": {
-        "idrive7-renderd": "2.1.18",
-        "mgu-inputgate": "1.1.0"
-      }
+      "icon": "icon.png"
     },
     {
       "id": "live_data",
       "kind": "app",
+      "path": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/apps/live_data",
+      "manifest": "app.json",
+      "version": "1.0.18",
       "title": "Live Data",
-      "version": "1.0.16",
+      "description": "Read-only live values from the car and its control units, a trip computer with fuel cost, and gauge screens of your own, one of them as the home-screen widget",
       "mguHmi": [
         "ID7",
         "ID8"
       ],
+      "requires": {
+        "idrive7-renderd": "2.1.18",
+        "mgu-inputgate": "1.1.0"
+      },
       "build": {
-        "python": "apps/_sources/idrive7-apps/kit/tools/build.py",
+        "python": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/build.py",
         "args": [
           "{id}"
         ],
-        "sdk": "apps/_sources/idrive7-apps/oap-sdk",
-        "output": "apps/_sources/idrive7-apps/dist/{id}@{version}.tgz",
+        "sdk": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/oap-sdk",
+        "output": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/dist/{id}@{version}.tgz",
         "network": [
           "doom"
         ],
         "shared": [
-          "apps/_sources/idrive7-apps/kit/runtime",
-          "apps/_sources/idrive7-apps/kit/platform",
-          "apps/_sources/idrive7-apps/kit/localization",
-          "apps/_sources/idrive7-apps/kit/tools/build.py",
-          "apps/_sources/idrive7-apps/kit/tools/pack_data.py",
-          "apps/_sources/idrive7-apps/kit/tools/localize.py",
-          "apps/_sources/idrive7-apps/kit/tools/locale-revisions.json",
-          "apps/_sources/idrive7-apps/kit/tools/oapgen"
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/runtime",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/platform",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/localization",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/build.py",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/pack_data.py",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/localize.py",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/locale-revisions.json",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/oapgen",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/LICENSE",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/NOTICE.zh-CN.md",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/make_icon.js"
         ]
       },
-      "path": "apps/_sources/idrive7-apps/apps/live_data",
-      "manifest": "app.json",
-      "description": "Read-only live values from the car and its control units, a trip computer with fuel cost, and gauge screens of your own, one of them as the home-screen widget",
-      "requires": {
-        "idrive7-renderd": "2.1.18",
-        "mgu-inputgate": "1.1.0"
-      }
+      "icon": "icon.png"
     },
     {
       "id": "m_copilot",
@@ -1785,42 +2079,37 @@
     {
       "id": "osa",
       "kind": "app",
-      "version": "0.2.50",
+      "path": "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/apps/osa",
+      "manifest": "app.json",
+      "version": "0.2.51",
       "title": "Oil Service Assistant",
       "description": "Engine, coolant and transmission oil temperature monitoring with live warm-up estimates and locally stored service history",
-      "path": "apps/_sources/dzooky-bmrmodz/apps/osa",
-      "manifest": "app.json",
-      "icon": "icon.png",
       "mguHmi": [
         "ID7"
       ],
       "requires": {
         "idrive7-renderd": "2.1.19",
-        "mgu-inputgate": "1.2.1",
-        "mgu-deploy": "0.8.23"
+        "mgu-inputgate": "1.2.1"
       },
       "build": {
-        "python": "tools/build_extra_source_app.py",
+        "python": "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/build.py",
         "args": [
           "{id}"
         ],
-        "output": "apps/_sources/dzooky-bmrmodz/dist/{id}@{version}.tgz",
+        "sdk": "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/oap-sdk",
         "shared": [
-          "apps/_sources/dzooky-bmrmodz/kit/runtime",
-          "apps/_sources/dzooky-bmrmodz/kit/platform",
-          "apps/_sources/dzooky-bmrmodz/kit/localization",
-          "apps/_sources/dzooky-bmrmodz/kit/tools/build.py",
-          "apps/_sources/dzooky-bmrmodz/kit/tools/pack_data.py",
-          "apps/_sources/dzooky-bmrmodz/kit/tools/localize.py",
-          "apps/_sources/dzooky-bmrmodz/kit/tools/locale-revisions.json",
-          "apps/_sources/dzooky-bmrmodz/kit/tools/oapgen",
-          "apps/_sources/dzooky-bmrmodz/LICENSE",
-          "apps/_sources/dzooky-bmrmodz/README.md",
-          "apps/_sources/dzooky-bmrmodz/mgu-repo.json",
-          "tools/build_extra_source_app.py",
-          "data/extra-source-builds.json"
+          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/runtime",
+          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/platform",
+          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/localization",
+          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/build.py",
+          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/pack_data.py",
+          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/localize.py",
+          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/locale-revisions.json",
+          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/oapgen",
+          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/LICENSE"
         ]
-      }
+      },
+      "icon": "icon.png"
     },
     {
       "path": "apps/_ports/maxxxfoka-idrive8/apps/parked_games",
@@ -1858,6 +2147,42 @@
       ]
     },
     {
+      "id": "parking_clearance",
+      "kind": "app",
+      "path": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/parking_clearance",
+      "manifest": "app.json",
+      "version": "0.1.8",
+      "title": "Parking & Clearance",
+      "description": "Read-only PDC distances, steering path and suspension stance for close parking",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0"
+      },
+      "build": {
+        "python": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/build.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/oap-sdk",
+        "output": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/runtime",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/platform",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/localization",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/build.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/pack_data.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/localize.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/locale-revisions.json",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/oapgen",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/LICENSE"
+        ]
+      },
+      "icon": "icon.png"
+    },
+    {
       "id": "perea_mhd_flex",
       "kind": "app",
       "title": "Flex Fuel",
@@ -1888,46 +2213,122 @@
     {
       "id": "redline",
       "kind": "app",
+      "path": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/apps/redline",
+      "manifest": "app.json",
+      "version": "2.0.45",
       "title": "Redline",
-      "version": "2.0.44",
+      "description": "Full-screen rev tach with shift lights, gear, shift scoring and cold-engine rev guard; HUD by @biscotit",
       "mguHmi": [
         "ID7",
         "ID8"
       ],
+      "requires": {
+        "idrive7-renderd": "2.1.15"
+      },
       "build": {
-        "python": "apps/_sources/idrive7-apps/kit/tools/build.py",
+        "python": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/build.py",
         "args": [
           "{id}"
         ],
-        "sdk": "apps/_sources/idrive7-apps/oap-sdk",
-        "output": "apps/_sources/idrive7-apps/dist/{id}@{version}.tgz",
+        "sdk": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/oap-sdk",
+        "output": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/dist/{id}@{version}.tgz",
         "network": [
           "doom"
         ],
         "shared": [
-          "apps/_sources/idrive7-apps/kit/runtime",
-          "apps/_sources/idrive7-apps/kit/platform",
-          "apps/_sources/idrive7-apps/kit/localization",
-          "apps/_sources/idrive7-apps/kit/tools/build.py",
-          "apps/_sources/idrive7-apps/kit/tools/pack_data.py",
-          "apps/_sources/idrive7-apps/kit/tools/localize.py",
-          "apps/_sources/idrive7-apps/kit/tools/locale-revisions.json",
-          "apps/_sources/idrive7-apps/kit/tools/oapgen"
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/runtime",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/platform",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/localization",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/build.py",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/pack_data.py",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/localize.py",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/locale-revisions.json",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/oapgen",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/LICENSE",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/NOTICE.zh-CN.md",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/make_icon.js"
         ]
       },
-      "path": "apps/_sources/idrive7-apps/apps/redline",
+      "icon": "icon.png"
+    },
+    {
+      "id": "ride_height",
+      "kind": "app",
+      "path": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/ride_height",
       "manifest": "app.json",
-      "description": "Full-screen rev tach with shift lights, gear, shift scoring and cold-engine rev guard; HUD by @biscotit",
+      "version": "0.6.0",
+      "title": "Ride Height Studio",
+      "description": "Full-screen VDP presets plus direct front/rear air-spring fill and vent control",
+      "mguHmi": [
+        "ID7"
+      ],
       "requires": {
-        "idrive7-renderd": "2.1.15"
-      }
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0"
+      },
+      "build": {
+        "python": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/build.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/oap-sdk",
+        "output": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/runtime",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/platform",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/localization",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/build.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/pack_data.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/localize.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/locale-revisions.json",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/oapgen",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/LICENSE"
+        ]
+      },
+      "icon": "icon.png"
+    },
+    {
+      "id": "road_trip_computer",
+      "kind": "app",
+      "path": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/road_trip_computer",
+      "manifest": "app.json",
+      "version": "1.0.0",
+      "title": "Road Trip Computer",
+      "description": "Full-screen trip history with fuel use, fuel price, cost, range, outside temperature and GPS elevation",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0"
+      },
+      "build": {
+        "python": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/build.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/oap-sdk",
+        "output": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/runtime",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/platform",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/localization",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/build.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/pack_data.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/localize.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/locale-revisions.json",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/oapgen",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/LICENSE"
+        ]
+      },
+      "icon": "icon.png"
     },
     {
       "id": "robertn_store",
       "kind": "app",
       "title": "Store",
       "description": "The apps and head-unit tools of every source with their state, and the sources; installs, updates and removes them through mgu-updater",
-      "version": "0.9.40",
+      "version": "0.9.41",
       "requires": {
         "mgu-deploy": "0.8.12",
         "mgu-updater": "0.8.28",
@@ -1937,7 +2338,7 @@
         "ID7",
         "ID8"
       ],
-      "path": "tools/_sources/mgu-store/apps/robertn_store",
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store",
       "build": "unit"
     },
     {
@@ -1958,39 +2359,43 @@
     {
       "id": "service",
       "kind": "app",
+      "path": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/apps/service",
+      "manifest": "app.json",
+      "version": "1.6.3",
       "title": "Service",
-      "version": "1.6.2",
+      "description": "Service requirements from the instrument cluster: oil, brakes, brake fluid, vehicle check, inspection - distance, date, details; brake fluid and vehicle check reset",
       "mguHmi": [
         "ID7",
         "ID8"
       ],
+      "requires": {
+        "idrive7-renderd": "2.1.15"
+      },
       "build": {
-        "python": "apps/_sources/idrive7-apps/kit/tools/build.py",
+        "python": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/build.py",
         "args": [
           "{id}"
         ],
-        "sdk": "apps/_sources/idrive7-apps/oap-sdk",
-        "output": "apps/_sources/idrive7-apps/dist/{id}@{version}.tgz",
+        "sdk": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/oap-sdk",
+        "output": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/dist/{id}@{version}.tgz",
         "network": [
           "doom"
         ],
         "shared": [
-          "apps/_sources/idrive7-apps/kit/runtime",
-          "apps/_sources/idrive7-apps/kit/platform",
-          "apps/_sources/idrive7-apps/kit/localization",
-          "apps/_sources/idrive7-apps/kit/tools/build.py",
-          "apps/_sources/idrive7-apps/kit/tools/pack_data.py",
-          "apps/_sources/idrive7-apps/kit/tools/localize.py",
-          "apps/_sources/idrive7-apps/kit/tools/locale-revisions.json",
-          "apps/_sources/idrive7-apps/kit/tools/oapgen"
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/runtime",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/platform",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/localization",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/build.py",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/pack_data.py",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/localize.py",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/locale-revisions.json",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/oapgen",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/LICENSE",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/NOTICE.zh-CN.md",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/make_icon.js"
         ]
       },
-      "path": "apps/_sources/idrive7-apps/apps/service",
-      "manifest": "app.json",
-      "description": "Service requirements from the instrument cluster: oil, brakes, brake fluid, vehicle check, inspection - distance, date, details; brake fluid and vehicle check reset",
-      "requires": {
-        "idrive7-renderd": "2.1.15"
-      }
+      "icon": "icon.png"
     },
     {
       "id": "spotify",
@@ -2038,43 +2443,73 @@
     {
       "id": "spritmonitor",
       "kind": "app",
-      "version": "0.1.44",
+      "path": "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/apps/spritmonitor",
+      "manifest": "app.json",
+      "version": "0.1.45",
       "title": "Spritmonitor",
       "description": "Third-party app for Spritmonitor.de that lets you log fuel and AdBlue refills from BMW iDrive 7.",
-      "path": "apps/_sources/dzooky-bmrmodz/apps/spritmonitor",
-      "manifest": "app.json",
-      "icon": "icon.png",
       "mguHmi": [
         "ID7"
       ],
       "requires": {
         "idrive7-renderd": "2.1.19",
-        "mgu-inputgate": "1.2.1",
-        "mgu-deploy": "0.8.23"
+        "mgu-inputgate": "1.2.1"
       },
       "build": {
-        "python": "tools/build_extra_source_app.py",
+        "python": "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/build.py",
         "args": [
           "{id}"
         ],
-        "output": "apps/_sources/dzooky-bmrmodz/dist/{id}@{version}.tgz",
+        "sdk": "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/oap-sdk",
         "shared": [
-          "apps/_sources/dzooky-bmrmodz/kit/runtime",
-          "apps/_sources/dzooky-bmrmodz/kit/platform",
-          "apps/_sources/dzooky-bmrmodz/kit/localization",
-          "apps/_sources/dzooky-bmrmodz/kit/tools/build.py",
-          "apps/_sources/dzooky-bmrmodz/kit/tools/pack_data.py",
-          "apps/_sources/dzooky-bmrmodz/kit/tools/localize.py",
-          "apps/_sources/dzooky-bmrmodz/kit/tools/locale-revisions.json",
-          "apps/_sources/dzooky-bmrmodz/kit/tools/oapgen",
-          "apps/_sources/dzooky-bmrmodz/LICENSE",
-          "apps/_sources/dzooky-bmrmodz/README.md",
-          "apps/_sources/dzooky-bmrmodz/mgu-repo.json",
-          "tools/build_extra_source_app.py",
-          "data/extra-source-builds.json"
+          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/runtime",
+          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/platform",
+          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/localization",
+          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/build.py",
+          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/pack_data.py",
+          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/localize.py",
+          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/locale-revisions.json",
+          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/oapgen",
+          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/LICENSE"
         ]
       },
-      "mguInternet": true
+      "icon": "icon.png"
+    },
+    {
+      "id": "start_stop_insight",
+      "kind": "app",
+      "path": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/start_stop_insight",
+      "manifest": "app.json",
+      "version": "0.1.3",
+      "title": "Start/Stop Insight",
+      "description": "Current and last ten observed Start/Stop inhibition states plus live electrical consumers",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0"
+      },
+      "build": {
+        "python": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/build.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/oap-sdk",
+        "output": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/runtime",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/platform",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/localization",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/build.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/pack_data.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/localize.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/locale-revisions.json",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/oapgen",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/LICENSE"
+        ]
+      },
+      "icon": "icon.png"
     },
     {
       "id": "sys_monitor",
@@ -2121,6 +2556,42 @@
       ]
     },
     {
+      "id": "telemetry_studio",
+      "kind": "app",
+      "path": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/telemetry_studio",
+      "manifest": "app.json",
+      "version": "0.2.0",
+      "title": "Telemetry Studio",
+      "description": "Full-screen categorized live data from powertrain, thermal, chassis, tyre, climate and electrical sensors",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0"
+      },
+      "build": {
+        "python": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/build.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/oap-sdk",
+        "output": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/runtime",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/platform",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/localization",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/build.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/pack_data.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/localize.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/locale-revisions.json",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/oapgen",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/LICENSE"
+        ]
+      },
+      "icon": "icon.png"
+    },
+    {
       "id": "true_time_id8",
       "kind": "app",
       "path": "apps/_sources/giuseppe-mgu-apps-id8/true-time/app",
@@ -2163,6 +2634,79 @@
       },
       "version": "1.0.0",
       "manifest": "app.json"
+    },
+    {
+      "id": "vehicle_health",
+      "kind": "app",
+      "path": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/vehicle_health",
+      "manifest": "app.json",
+      "version": "0.1.9",
+      "title": "Vehicle Health Center",
+      "description": "Read-only overview of tyres, fluids, temperatures, service requirements, Check Control, DPF and current faults",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0"
+      },
+      "build": {
+        "python": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/build.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/oap-sdk",
+        "output": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/runtime",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/platform",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/localization",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/build.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/pack_data.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/localize.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/locale-revisions.json",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/oapgen",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/LICENSE"
+        ]
+      },
+      "icon": "icon.png"
+    },
+    {
+      "id": "vehicle_network",
+      "kind": "app",
+      "path": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/vehicle_network",
+      "manifest": "app.json",
+      "version": "0.1.3",
+      "title": "Vehicle Network",
+      "description": "Live map of MGU interfaces, observed vehicle network devices and laptop IPv4 setup",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0",
+        "vehicle-network-observer": "0.1.2"
+      },
+      "build": {
+        "python": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/build.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/oap-sdk",
+        "output": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/runtime",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/platform",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/localization",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/build.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/pack_data.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/localize.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/locale-revisions.json",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/oapgen",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/LICENSE"
+        ]
+      },
+      "icon": "icon.png"
     },
     {
       "id": "vehicle_pass",
@@ -2349,42 +2893,119 @@
       }
     },
     {
+      "id": "waze_hud",
+      "kind": "app",
+      "path": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/waze_hud",
+      "manifest": "app.json",
+      "version": "0.3.0",
+      "title": "Waze HUD",
+      "description": "Full-screen control for projecting the CarPlay navigation map into the head-up display",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0",
+        "waze-hud-control": "0.3.0"
+      },
+      "build": {
+        "python": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/build.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/oap-sdk",
+        "output": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/runtime",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/platform",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/localization",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/build.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/pack_data.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/localize.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/locale-revisions.json",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/oapgen",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/LICENSE"
+        ]
+      },
+      "icon": "icon.png"
+    },
+    {
+      "id": "xdrive_studio",
+      "kind": "app",
+      "path": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/xdrive_studio",
+      "manifest": "app.json",
+      "version": "0.1.5",
+      "title": "xDrive Studio",
+      "description": "Read-only xDrive torque distribution, transfer-case torque, wheel slip and chassis dynamics",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0"
+      },
+      "build": {
+        "python": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/build.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/oap-sdk",
+        "output": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/runtime",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/platform",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/localization",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/build.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/pack_data.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/localize.py",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/locale-revisions.json",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/oapgen",
+          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/LICENSE"
+        ]
+      },
+      "icon": "icon.png"
+    },
+    {
       "id": "zf8hp",
       "kind": "app",
+      "path": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/apps/zf8hp",
+      "manifest": "app.json",
+      "version": "1.5.8",
       "title": "Transmission Config",
-      "version": "1.5.7",
+      "description": "Transmission Config, experimental ZF 8HP monitor: live data, clutch fill adaptations, shift maps and temperature history",
       "mguHmi": [
         "ID7",
         "ID8"
       ],
+      "requires": {
+        "idrive7-renderd": "2.1.18",
+        "mgu-inputgate": "1.1.0"
+      },
       "build": {
-        "python": "apps/_sources/idrive7-apps/kit/tools/build.py",
+        "python": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/build.py",
         "args": [
           "{id}"
         ],
-        "sdk": "apps/_sources/idrive7-apps/oap-sdk",
-        "output": "apps/_sources/idrive7-apps/dist/{id}@{version}.tgz",
+        "sdk": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/oap-sdk",
+        "output": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/dist/{id}@{version}.tgz",
         "network": [
           "doom"
         ],
         "shared": [
-          "apps/_sources/idrive7-apps/kit/runtime",
-          "apps/_sources/idrive7-apps/kit/platform",
-          "apps/_sources/idrive7-apps/kit/localization",
-          "apps/_sources/idrive7-apps/kit/tools/build.py",
-          "apps/_sources/idrive7-apps/kit/tools/pack_data.py",
-          "apps/_sources/idrive7-apps/kit/tools/localize.py",
-          "apps/_sources/idrive7-apps/kit/tools/locale-revisions.json",
-          "apps/_sources/idrive7-apps/kit/tools/oapgen"
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/runtime",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/platform",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/localization",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/build.py",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/pack_data.py",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/localize.py",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/locale-revisions.json",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/oapgen",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/LICENSE",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/NOTICE.zh-CN.md",
+          "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/kit/tools/make_icon.js"
         ]
       },
-      "path": "apps/_sources/idrive7-apps/apps/zf8hp",
-      "manifest": "app.json",
-      "description": "Transmission Config, experimental ZF 8HP monitor: live data, clutch fill adaptations, shift maps and temperature history",
-      "requires": {
-        "idrive7-renderd": "2.1.18",
-        "mgu-inputgate": "1.1.0"
-      }
+      "icon": "icon.png"
     }
   ]
 }

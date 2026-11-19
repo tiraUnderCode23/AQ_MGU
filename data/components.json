@@ -163,6 +163,34 @@
       }
     },
     {
+      "id": "adas_feature_probe",
+      "category": "app",
+      "images": [],
+      "image_count": 0,
+      "icon": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/adas_feature_probe/icon.png",
+      "kind": "app",
+      "version": "0.1.0",
+      "title": "ADAS Feature Probe",
+      "description": "Live BMW availability and ECU-state probe for acoustic collision warning, driveaway prevention and Close Passing Assistant",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0"
+      },
+      "source_repository": "alexp50/bmw-apps",
+      "source_commit": "4fb5a5dba1ec7c6a57545ae935a14cb91a194d19",
+      "license": "MIT; bundled third-party and native-component notices retained",
+      "source_path": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/adas_feature_probe",
+      "delivery": "branch source",
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "upstream_version": "0.1.0",
+      "live_install_status": "NOT OBSERVED",
+      "upstream_readme": "https://github.com/alexp50/bmw-apps/blob/4fb5a5dba1ec7c6a57545ae935a14cb91a194d19/README.md"
+    },
+    {
       "id": "airplay-rx",
       "kind": "tool",
       "category": "tool",
@@ -196,7 +224,7 @@
       "kind": "app",
       "category": "app",
       "title": "Ambient config",
-      "version": "2.6.2",
+      "version": "2.7.13",
       "description": "Any colour on the ambient light, animations, and a look for each driving mode",
       "supported_hmi": [
         "ID7",
@@ -207,8 +235,8 @@
         "mgu-inputgate": "1.1.0"
       },
       "source_repository": "cauliflowermossgrape/idrive7-apps",
-      "license": "MIT; retain per-component and third-party notices",
-      "source_path": "apps/_sources/idrive7-apps/apps/ambient_config",
+      "license": "MIT; bundled third-party and native-component notices retained",
+      "source_path": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/apps/ambient_config",
       "delivery": "branch source",
       "artifact": {},
       "icon": "docs/assets/apps/ambient_config/icon.png",
@@ -217,7 +245,38 @@
       ],
       "image_count": 2,
       "upstream_artifact_sha256": null,
-      "live_install_status": "NOT OBSERVED"
+      "live_install_status": "NOT OBSERVED",
+      "source_commit": "8d4aa0ef8ef7ae2a007a24acdbda095f219fc7b4",
+      "upstream_version": "2.7.13",
+      "upstream_readme": "https://github.com/cauliflowermossgrape/idrive7-apps/blob/8d4aa0ef8ef7ae2a007a24acdbda095f219fc7b4/README.md"
+    },
+    {
+      "id": "ambient_studio_full",
+      "category": "app",
+      "images": [],
+      "image_count": 0,
+      "icon": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/ambient_studio_full/icon.png",
+      "kind": "app",
+      "version": "0.1.5",
+      "title": "Ambient Studio",
+      "description": "Full-screen drive-mode colours and rate-limited ambient-light alerts",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0"
+      },
+      "source_repository": "alexp50/bmw-apps",
+      "source_commit": "4fb5a5dba1ec7c6a57545ae935a14cb91a194d19",
+      "license": "MIT; bundled third-party and native-component notices retained",
+      "source_path": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/ambient_studio_full",
+      "delivery": "branch source",
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "upstream_version": "0.1.5",
+      "live_install_status": "NOT OBSERVED",
+      "upstream_readme": "https://github.com/alexp50/bmw-apps/blob/4fb5a5dba1ec7c6a57545ae935a14cb91a194d19/README.md"
     },
     {
       "id": "apm_airplay",
@@ -278,6 +337,32 @@
       "image_count": 0,
       "upstream_artifact_sha256": "eea01214be305cec03a9cb8abeefa2ab543693376ab16a8d9639eb55e5191c5b",
       "live_install_status": "NOT OBSERVED"
+    },
+    {
+      "id": "aq_flap",
+      "kind": "app",
+      "category": "app",
+      "title": "AQ Flap",
+      "version": "2.6.1",
+      "description": "Exhaust flap control with open, close and automatic modes.",
+      "source_repository": "tiraUnderCode23/AQ_MGU",
+      "license": "UNLICENSED; AQ Bimmer source with retained MIT App Kit and Ubuntu Font Licence notices",
+      "source_path": "apps/_sources/aq-flap-2.6.1",
+      "delivery": "branch source",
+      "icon": "apps/_sources/aq-flap-2.6.1/rhmiData/variantGroups/Common/images/aq_flap_icon.png",
+      "images": [],
+      "image_count": 0,
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-python": "1.0.0",
+        "mgu-deploy": "0.3.2"
+      },
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "live_install_status": "NOT OBSERVED",
+      "source_archive_sha256": "a6fa7096aac9640364bee487d6fb69f0c9d9dd9b39991b6ea12599f234410b33"
     },
     {
       "id": "aref_carcare",
@@ -537,6 +622,98 @@
       "artifact": {},
       "upstream_artifact_sha256": null,
       "live_install_status": "NOT OBSERVED"
+    },
+    {
+      "id": "aurelm-emby",
+      "category": "tool",
+      "images": [],
+      "image_count": 0,
+      "kind": "tool",
+      "version": "0.3.13",
+      "title": "Emby cast service",
+      "description": "For the app Emby: the head unit as a cast target in the Emby phone app (Emby's remote control, as Kodi's Emby add-on), and the film's player: the server sends H.264 up to 1080p with AAC or AC-3, decoded on the GPU into mgu-render's frame file (the app shows it while parked) and played into SmartXbar's CarLife input. Signs in once from the phone (a page on the car Wi-Fi, opened from the app's QR code); keeps only the access token. Its internet goes through mgu-uplink, as uid 13101 only; the player runs as nobody (as AirPlay Test's receiver).",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.0",
+        "mgu-uplink": "0.7.0"
+      },
+      "source_repository": "aurelmarius/bmw-test-apps",
+      "source_commit": "0db3728df278d9233253a13a7ecdc3b63b34ddf9",
+      "license": "GPL-3.0-or-later",
+      "source_path": null,
+      "delivery": "original publisher artifact",
+      "artifact": {
+        "name": "aurelm-emby@0.3.13.tgz",
+        "size": 912239,
+        "sha256": "9e2a10699ab44a4b6c013fcea0302a69b765b5248f139ed289f61fdbac2dadbe",
+        "url": "https://github.com/aurelmarius/bmw-test-apps/releases/download/catalog/aurelm-emby@0.3.13.tgz"
+      },
+      "upstream_artifact_sha256": "9e2a10699ab44a4b6c013fcea0302a69b765b5248f139ed289f61fdbac2dadbe",
+      "live_install_status": "NOT OBSERVED",
+      "upstream_readme": "https://github.com/aurelmarius/bmw-test-apps/blob/0db3728df278d9233253a13a7ecdc3b63b34ddf9/README.md"
+    },
+    {
+      "id": "aurelm-mediaprobe",
+      "category": "tool",
+      "images": [],
+      "image_count": 0,
+      "kind": "tool",
+      "version": "0.1.3",
+      "title": "Media Probe service",
+      "description": "For the app Media Probe: what the car offers a music player (the first step of a Music Assistant client). Watches the steering wheel's buttons, the source the HMI takes as playing, CarLife's bridge to BMW's media and the BMW MediaPlayer, and runs tests the app starts: source 287 with a tone, CarLife's metadata written, button forwarding, source 1046 with MP3 / M4A / AAC files, a growing file, a pipe and http:// streams on 127.0.0.1. Everything a test changes is undone when it ends. No internet. Logs to /var/opt/aurelm-mediaprobe/state/probe.log; Report copies it to a USB stick.",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.0"
+      },
+      "source_repository": "aurelmarius/bmw-test-apps",
+      "source_commit": "0db3728df278d9233253a13a7ecdc3b63b34ddf9",
+      "license": "GPL-3.0-or-later",
+      "source_path": null,
+      "delivery": "original publisher artifact",
+      "artifact": {
+        "name": "aurelm-mediaprobe@0.1.3.tgz",
+        "size": 979949,
+        "sha256": "3108e7b1bb9e9a35fd3e7c31642a7d4fdbe4627eb49ad2ccab88145251e7da9e",
+        "url": "https://github.com/aurelmarius/bmw-test-apps/releases/download/catalog/aurelm-mediaprobe@0.1.3.tgz"
+      },
+      "upstream_artifact_sha256": "3108e7b1bb9e9a35fd3e7c31642a7d4fdbe4627eb49ad2ccab88145251e7da9e",
+      "live_install_status": "NOT OBSERVED",
+      "upstream_readme": "https://github.com/aurelmarius/bmw-test-apps/blob/0db3728df278d9233253a13a7ecdc3b63b34ddf9/README.md"
+    },
+    {
+      "id": "aurelm-music",
+      "category": "tool",
+      "images": [],
+      "image_count": 0,
+      "kind": "tool",
+      "version": "0.1.9",
+      "title": "Music Assistant service",
+      "description": "For the app Music Assistant: the car as a Music Assistant player. Signs in once from the phone (a page on the car Wi-Fi, opened from the app's QR code) and keeps only a long-lived token. Browses the library and the recommendations over the server's API, and receives the music over Sendspin (Music Assistant's own protocol, through its authenticated /sendspin): Opus decoded by ma-player (libopus) into SmartXbar's CarLife input. 30 s of music are buffered (a gap in the mobile network goes unheard). Its internet goes through mgu-uplink, as uid 13106 only; the player runs as nobody.",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.0",
+        "mgu-uplink": "0.7.0"
+      },
+      "source_repository": "aurelmarius/bmw-test-apps",
+      "source_commit": "0db3728df278d9233253a13a7ecdc3b63b34ddf9",
+      "license": "GPL-3.0-or-later",
+      "source_path": null,
+      "delivery": "original publisher artifact",
+      "artifact": {
+        "name": "aurelm-music@0.1.9.tgz",
+        "size": 427717,
+        "sha256": "d40807876ba8d1e98514eaadc6083ada83193b8ef7799f8ea0959c3895b6780b",
+        "url": "https://github.com/aurelmarius/bmw-test-apps/releases/download/catalog/aurelm-music@0.1.9.tgz"
+      },
+      "upstream_artifact_sha256": "d40807876ba8d1e98514eaadc6083ada83193b8ef7799f8ea0959c3895b6780b",
+      "live_install_status": "NOT OBSERVED",
+      "upstream_readme": "https://github.com/aurelmarius/bmw-test-apps/blob/0db3728df278d9233253a13a7ecdc3b63b34ddf9/README.md"
     },
     {
       "id": "aurelm-myairplay",
@@ -1053,6 +1230,103 @@
       "live_install_status": "NOT OBSERVED"
     },
     {
+      "id": "base-player-receiver",
+      "category": "tool",
+      "images": [],
+      "image_count": 0,
+      "kind": "tool",
+      "version": "0.2.1",
+      "title": "Base Player receiver",
+      "description": "UxPlay receiver, video and BMW audio output for Base Player",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.17"
+      },
+      "source_repository": "alex-base-pr/base-player",
+      "source_commit": "8a90f22755fdf7468e74f3048258cc3af8c7c7a6",
+      "license": "GPL-3.0-or-later",
+      "source_path": null,
+      "delivery": "original publisher artifact",
+      "artifact": {
+        "name": "base-player-receiver@0.2.1.tgz",
+        "size": 103331084,
+        "sha256": "3f93313111dace9c2ae397b88d27399736b8ae6e1d3f0875c909bddc3f5b2814",
+        "url": "https://github.com/alex-base-pr/base-player/releases/download/v0.2.1/base-player-receiver%400.2.1.tgz"
+      },
+      "upstream_artifact_sha256": "3f93313111dace9c2ae397b88d27399736b8ae6e1d3f0875c909bddc3f5b2814",
+      "live_install_status": "NOT OBSERVED",
+      "upstream_readme": "https://github.com/alex-base-pr/base-player/blob/8a90f22755fdf7468e74f3048258cc3af8c7c7a6/README.md"
+    },
+    {
+      "id": "base_player",
+      "category": "app",
+      "images": [],
+      "image_count": 0,
+      "kind": "app",
+      "version": "0.2.1",
+      "title": "Base Player",
+      "description": "Phone screen and sound on iDrive 7: AirPlay for iPhone, DLNA for Android",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "base-player-receiver": "0.2.1",
+        "mgu-uplink": "0.7.3",
+        "mgu-render": "0.6.11",
+        "mgu-deploy": "0.7.17"
+      },
+      "source_repository": "alex-base-pr/base-player",
+      "source_commit": "8a90f22755fdf7468e74f3048258cc3af8c7c7a6",
+      "license": "GPL-3.0-or-later",
+      "source_path": null,
+      "delivery": "original publisher artifact",
+      "artifact": {
+        "name": "base_player@0.2.1.tgz",
+        "size": 1004841,
+        "sha256": "be4436aa1f442cb47ba8aee9e824430dd80fc13cccf00ea5368eeedbc07f618e",
+        "url": "https://github.com/alex-base-pr/base-player/releases/download/v0.2.1/base_player%400.2.1.tgz"
+      },
+      "upstream_artifact_sha256": "be4436aa1f442cb47ba8aee9e824430dd80fc13cccf00ea5368eeedbc07f618e",
+      "live_install_status": "NOT OBSERVED",
+      "upstream_readme": "https://github.com/alex-base-pr/base-player/blob/8a90f22755fdf7468e74f3048258cc3af8c7c7a6/README.md"
+    },
+    {
+      "id": "bcs_store",
+      "category": "app",
+      "images": [],
+      "image_count": 0,
+      "kind": "app",
+      "version": "3.4.5",
+      "title": "Store",
+      "description": "BCS Automotive Solutions: apps and head-unit tools for the BMW MGU, from BCS and community sources",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "mgu-deploy": "0.8.12",
+        "mgu-updater": "0.8.28",
+        "mgu-render": "0.3.1"
+      },
+      "source_repository": "bcs-asia/app-store",
+      "source_commit": "87b8d423854a39089809f360072057903a8ea3b5",
+      "license": "GPL-3.0",
+      "source_path": null,
+      "delivery": "original publisher artifact",
+      "artifact": {
+        "name": "bcs_store@3.4.5.tgz",
+        "size": 4729989,
+        "sha256": "656f3bd8cee577d531680cc399d13e4218a4e0e0eec3ac3d876dc265a4374dc8",
+        "url": "https://github.com/bcs-asia/app-store/releases/download/catalog/bcs_store@3.4.5.tgz"
+      },
+      "upstream_artifact_sha256": "656f3bd8cee577d531680cc399d13e4218a4e0e0eec3ac3d876dc265a4374dc8",
+      "live_install_status": "NOT OBSERVED",
+      "upstream_readme": "https://github.com/bcs-asia/app-store/blob/87b8d423854a39089809f360072057903a8ea3b5/README.md",
+      "icon": "https://github.com/bcs-asia/app-store/releases/download/catalog/bcs_store.png"
+    },
+    {
       "id": "bimmer_blocks",
       "kind": "app",
       "category": "game",
@@ -1099,6 +1373,37 @@
         "Vehicle Pass values are personal manual records, not live pressures, verified parts recommendations or CBS updates.",
         "Target installation, registration and physical UI/controller/speed behavior have not been observed."
       ]
+    },
+    {
+      "id": "bm3_live_id8",
+      "category": "app",
+      "images": [],
+      "image_count": 0,
+      "kind": "app",
+      "version": "0.1.1",
+      "title": "MGU Bm3 Live Adjustments for IDrive 8",
+      "description": "Map switching, burble adjustments and vehicle data for supported BM3 CustomROM vehicles with iDrive 8.",
+      "supported_hmi": [
+        "ID8"
+      ],
+      "requires": {
+        "mgu-deploy": "0.6.9",
+        "mgu-render": "0.6.12"
+      },
+      "source_repository": "danny67999/mgu-bm3-live-adjustments-idrive-8",
+      "source_commit": "ddabe74bab848aadabba349c6991ed4db0a824c2",
+      "license": "GPL-3.0-or-later",
+      "source_path": null,
+      "delivery": "original publisher artifact",
+      "artifact": {
+        "name": "bm3_live_id8@0.1.1.tgz",
+        "url": "https://github.com/danny67999/mgu-bm3-live-adjustments-idrive-8/releases/download/v0.1.1/bm3_live_id8@0.1.1.tgz",
+        "size": 197934,
+        "sha256": "5ab85631b2d3a196ab1dc83e1b31d15f1c6020c0e3e25cc590040e99c08bf93b"
+      },
+      "upstream_artifact_sha256": "5ab85631b2d3a196ab1dc83e1b31d15f1c6020c0e3e25cc590040e99c08bf93b",
+      "live_install_status": "NOT OBSERVED",
+      "upstream_readme": "https://github.com/danny67999/mgu-bm3-live-adjustments-idrive-8/blob/ddabe74bab848aadabba349c6991ed4db0a824c2/README.md"
     },
     {
       "id": "boostline_id8",
@@ -1231,7 +1536,7 @@
       "kind": "app",
       "category": "app",
       "title": "M Vitals",
-      "version": "2.27.6",
+      "version": "2.27.9",
       "description": "Live engine, thermal, intake / fuel / ignition, tyre and chassis gauges",
       "supported_hmi": [
         "ID7",
@@ -1242,8 +1547,8 @@
         "mgu-inputgate": "1.1.0"
       },
       "source_repository": "cauliflowermossgrape/idrive7-apps",
-      "license": "MIT; retain per-component and third-party notices",
-      "source_path": "apps/_sources/idrive7-apps/apps/car_vitals",
+      "license": "MIT; bundled third-party and native-component notices retained",
+      "source_path": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/apps/car_vitals",
       "delivery": "branch source",
       "artifact": {},
       "icon": "docs/assets/apps/car_vitals/icon.png",
@@ -1257,7 +1562,10 @@
       ],
       "image_count": 7,
       "upstream_artifact_sha256": null,
-      "live_install_status": "NOT OBSERVED"
+      "live_install_status": "NOT OBSERVED",
+      "source_commit": "8d4aa0ef8ef7ae2a007a24acdbda095f219fc7b4",
+      "upstream_version": "2.27.9",
+      "upstream_readme": "https://github.com/cauliflowermossgrape/idrive7-apps/blob/8d4aa0ef8ef7ae2a007a24acdbda095f219fc7b4/README.md"
     },
     {
       "id": "carplay-map",
@@ -1316,6 +1624,35 @@
       "live_install_status": "NOT OBSERVED"
     },
     {
+      "id": "climate-comfort",
+      "category": "app",
+      "images": [],
+      "image_count": 0,
+      "icon": "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/apps/climate-comfort/icon.png",
+      "kind": "app",
+      "version": "0.1.60",
+      "title": "Climate Comfort",
+      "description": "Development preview. Development preview of seat heating, seat ventilation and steering wheel heating rules for BMW iDrive 7.",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.19",
+        "mgu-inputgate": "1.2.1"
+      },
+      "source_repository": "dzooky/bmrmodz",
+      "source_commit": "f141b7fb7476383ca081fd1196a6beb3a0566761",
+      "license": "MIT; bundled third-party and native-component notices retained",
+      "source_path": "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/apps/climate-comfort",
+      "delivery": "branch source",
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "upstream_version": "0.1.60",
+      "live_install_status": "NOT OBSERVED",
+      "upstream_readme": "https://github.com/dzooky/bmrmodz/blob/f141b7fb7476383ca081fd1196a6beb3a0566761/README.md",
+      "release_status": "development preview"
+    },
+    {
       "id": "cluster-render",
       "kind": "tool",
       "category": "tool",
@@ -1371,6 +1708,37 @@
       "live_install_status": "NOT OBSERVED",
       "source_review_notes": "Three distinct original ID7 apps. Retain Store wrapper dependencies and GIF widget packaging, not merely kit/tools/build.py. GIF app LICENSE covers its QR vendor; it does not relicense all original app code to MIT. Cluster Lyrics LICENSE covers MPL client, not all original app code. No new native helper is required by these three feed definitions.",
       "duplicate_classification": "new-functional-app-or-explicit-id8-sibling"
+    },
+    {
+      "id": "cluster_metrics",
+      "category": "app",
+      "images": [],
+      "image_count": 0,
+      "kind": "app",
+      "version": "0.8.0",
+      "title": "Cluster Metrics",
+      "description": "Real-time efficiency, HV battery %, powertrain temperatures, gear in D, full-wing Right-Wing Media/Charging/Trip widget, HUD turn-by-turn nav, and live DSC hydraulic brake indicator for BMW iDrive 7",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "cluster-render": "0.4.0"
+      },
+      "source_repository": "chyiz/mgu-apps",
+      "source_commit": "63b2d8b7c837f41dd29f6ee3dc49bc5bd5f2b394",
+      "license": "GPL-3.0",
+      "source_path": null,
+      "delivery": "original publisher artifact",
+      "artifact": {
+        "name": "cluster_metrics@0.8.0.tgz",
+        "size": 2369409,
+        "sha256": "fdd9e18bf42d2ceed78245b076cbbc8daaa795e26037cee81cf6107dd640f99c",
+        "url": "https://github.com/chyiz/mgu-apps/releases/download/v0.8.0/cluster_metrics@0.8.0.tgz"
+      },
+      "upstream_artifact_sha256": "fdd9e18bf42d2ceed78245b076cbbc8daaa795e26037cee81cf6107dd640f99c",
+      "live_install_status": "NOT OBSERVED",
+      "upstream_readme": "https://github.com/chyiz/mgu-apps/blob/63b2d8b7c837f41dd29f6ee3dc49bc5bd5f2b394/README.md",
+      "icon": "https://github.com/chyiz/mgu-apps/releases/download/catalog/cluster_metrics.png"
     },
     {
       "id": "cluster_themes",
@@ -1594,26 +1962,88 @@
       "live_install_status": "NOT OBSERVED"
     },
     {
+      "id": "dorin-ambient",
+      "category": "tool",
+      "images": [],
+      "image_count": 0,
+      "kind": "tool",
+      "version": "0.2.5",
+      "title": "Ambient Drive Service",
+      "description": "Aplică regulile de culoare și păstrează setările Ambient Drive între porniri. Componentă necesară aplicației Ambient Drive. Versiune de test.",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.11"
+      },
+      "source_repository": "dorindumitras/ambient-drive",
+      "source_commit": "7edb6250cf56d982c968189f5bddcddd99815eac",
+      "license": "MIT",
+      "source_path": null,
+      "delivery": "original publisher artifact",
+      "artifact": {
+        "name": "dorin-ambient@0.2.5.tgz",
+        "url": "https://github.com/dorindumitras/ambient-drive/releases/download/catalog/dorin-ambient@0.2.5.tgz",
+        "size": 12663,
+        "sha256": "9309c3a657494888df6d0269758076b2a4b7885aeb89529de13bd1c2f9f7e162"
+      },
+      "upstream_artifact_sha256": "9309c3a657494888df6d0269758076b2a4b7885aeb89529de13bd1c2f9f7e162",
+      "live_install_status": "NOT OBSERVED",
+      "upstream_readme": "https://github.com/dorindumitras/ambient-drive/blob/7edb6250cf56d982c968189f5bddcddd99815eac/README.md",
+      "icon": "https://github.com/dorindumitras/ambient-drive/releases/download/catalog/ambient-drive.png"
+    },
+    {
+      "id": "dorin_ambientdrive",
+      "category": "app",
+      "images": [],
+      "image_count": 0,
+      "kind": "app",
+      "version": "0.2.7",
+      "title": "Ambient Drive",
+      "description": "Schimbă automat lumina ambientală după modul de condus. Culori independente pentru Sport, Sport Plus, Sport Individual, Comfort, Adaptive, Eco Pro, Eco Pro Individual și M/S. STANDARD păstrează culoarea curentă; setările sunt memorate. Widget Home cu modul, culoarea setată și starea automatizării. Versiune de test.",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.11",
+        "dorin-ambient": "0.2.5"
+      },
+      "source_repository": "dorindumitras/ambient-drive",
+      "source_commit": "7edb6250cf56d982c968189f5bddcddd99815eac",
+      "license": "MIT",
+      "source_path": null,
+      "delivery": "original publisher artifact",
+      "artifact": {
+        "name": "dorin_ambientdrive@0.2.7.tgz",
+        "url": "https://github.com/dorindumitras/ambient-drive/releases/download/catalog/dorin_ambientdrive@0.2.7.tgz",
+        "size": 840428,
+        "sha256": "929f1ed79e42073448748b533cdb4c76a2876f19f11b490e1026d0533d68a8f6"
+      },
+      "upstream_artifact_sha256": "929f1ed79e42073448748b533cdb4c76a2876f19f11b490e1026d0533d68a8f6",
+      "live_install_status": "NOT OBSERVED",
+      "upstream_readme": "https://github.com/dorindumitras/ambient-drive/blob/7edb6250cf56d982c968189f5bddcddd99815eac/README.md",
+      "icon": "https://github.com/dorindumitras/ambient-drive/releases/download/catalog/ambient-drive.png"
+    },
+    {
       "id": "dpf",
       "kind": "app",
       "category": "app",
       "title": "DPF Status",
       "description": "Read-only diesel particulate filter status monitoring",
-      "version": "0.1.32",
+      "version": "0.1.33",
       "source_repository": "dzooky/bmrmodz",
-      "source_path": "apps/_sources/dzooky-bmrmodz/apps/dpf",
+      "source_path": "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/apps/dpf",
       "delivery": "branch source",
       "supported_hmi": [
         "ID7"
       ],
       "requires": {
         "idrive7-renderd": "2.1.19",
-        "mgu-inputgate": "1.2.1",
-        "mgu-deploy": "0.8.23"
+        "mgu-inputgate": "1.2.1"
       },
-      "license": "MIT project grant; original kit and font notices retained",
-      "upstream_readme": "apps/_sources/dzooky-bmrmodz/README.md",
-      "icon": "",
+      "license": "MIT; bundled third-party and native-component notices retained",
+      "upstream_readme": "https://github.com/dzooky/bmrmodz/blob/f141b7fb7476383ca081fd1196a6beb3a0566761/README.md",
+      "icon": "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/apps/dpf/icon.png",
       "images": [],
       "image_count": 0,
       "artifact": {},
@@ -1626,7 +2056,9 @@
         "Vehicle readings and cluster-message feature availability depend on actual target interfaces."
       ],
       "duplicate_classification": "new-original-app",
-      "aq_dependency_evidence": "mgu-deploy >=0.8.23 is the current reviewed original deploy implementation that supplies missing SDK modules while preparing an ordinary app package; qualified snapshot requirement, not a claimed historical minimum. Original SDK-free Store mode remains unchanged."
+      "aq_dependency_evidence": "mgu-deploy >=0.8.23 is the current reviewed original deploy implementation that supplies missing SDK modules while preparing an ordinary app package; qualified snapshot requirement, not a claimed historical minimum. Original SDK-free Store mode remains unchanged.",
+      "source_commit": "f141b7fb7476383ca081fd1196a6beb3a0566761",
+      "upstream_version": "0.1.33"
     },
     {
       "id": "dpf_id8",
@@ -1845,6 +2277,35 @@
       "live_install_status": "NOT OBSERVED"
     },
     {
+      "id": "drive_hud_full",
+      "category": "app",
+      "images": [],
+      "image_count": 0,
+      "icon": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/drive_hud_full/icon.png",
+      "kind": "app",
+      "version": "0.1.6",
+      "title": "Drive HUD",
+      "description": "Full-screen HUD controls: turn arrows, Sport gear/RPM/shift lights and engine warm-up",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0",
+        "cluster-render": "0.3.10"
+      },
+      "source_repository": "alexp50/bmw-apps",
+      "source_commit": "4fb5a5dba1ec7c6a57545ae935a14cb91a194d19",
+      "license": "MIT; bundled third-party and native-component notices retained",
+      "source_path": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/drive_hud_full",
+      "delivery": "branch source",
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "upstream_version": "0.1.6",
+      "live_install_status": "NOT OBSERVED",
+      "upstream_readme": "https://github.com/alexp50/bmw-apps/blob/4fb5a5dba1ec7c6a57545ae935a14cb91a194d19/README.md"
+    },
+    {
       "id": "dtc_scanner",
       "kind": "app",
       "category": "app",
@@ -1949,7 +2410,7 @@
       "kind": "app",
       "category": "app",
       "title": "eDrive",
-      "version": "2.10.1",
+      "version": "2.11.0",
       "description": "Real electric range (plug-in hybrids and fully electric cars such as the iX3), live battery power, cells and climate power, HV battery health (SOH) and energy, last charge, charge log, the 12 V battery (charge, voltage, what it does, regen, history) and a home-screen widget; on a 48 V mild hybrid its 48 V battery and DC/DC converter",
       "supported_hmi": [
         "ID7",
@@ -1959,8 +2420,8 @@
         "idrive7-renderd": "2.1.15"
       },
       "source_repository": "cauliflowermossgrape/idrive7-apps",
-      "license": "MIT; retain per-component and third-party notices",
-      "source_path": "apps/_sources/idrive7-apps/apps/edrive",
+      "license": "MIT; bundled third-party and native-component notices retained",
+      "source_path": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/apps/edrive",
       "delivery": "branch source",
       "artifact": {},
       "icon": "docs/assets/apps/edrive/icon.png",
@@ -1975,7 +2436,10 @@
       ],
       "image_count": 8,
       "upstream_artifact_sha256": null,
-      "live_install_status": "NOT OBSERVED"
+      "live_install_status": "NOT OBSERVED",
+      "source_commit": "8d4aa0ef8ef7ae2a007a24acdbda095f219fc7b4",
+      "upstream_version": "2.11.0",
+      "upstream_readme": "https://github.com/cauliflowermossgrape/idrive7-apps/blob/8d4aa0ef8ef7ae2a007a24acdbda095f219fc7b4/README.md"
     },
     {
       "id": "eldrive",
@@ -2099,6 +2563,66 @@
       "live_install_status": "NOT OBSERVED"
     },
     {
+      "id": "front-camera-cluster-helper",
+      "category": "tool",
+      "images": [],
+      "image_count": 0,
+      "kind": "tool",
+      "version": "0.2.1",
+      "title": "Night Vision cluster helper",
+      "description": "Mirrors BMW's protected Night Vision or parking-camera surface into the instrument cluster",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.11",
+        "cluster-render": "0.3.10"
+      },
+      "source_repository": "alexp50/bmw-apps",
+      "source_commit": "4fb5a5dba1ec7c6a57545ae935a14cb91a194d19",
+      "license": "MIT",
+      "source_path": null,
+      "delivery": "original publisher artifact",
+      "artifact": {
+        "name": "front-camera-cluster-helper@0.2.1.tgz",
+        "size": 4006,
+        "sha256": "394076ef83aa204b6902ee20afe9a839f19f67296a6c8b530885df6ae1e07dd4",
+        "url": "https://github.com/alexp50/bmw-apps/releases/download/front-camera-cluster-helper@0.2.1/front-camera-cluster-helper@0.2.1.tgz"
+      },
+      "upstream_artifact_sha256": "394076ef83aa204b6902ee20afe9a839f19f67296a6c8b530885df6ae1e07dd4",
+      "live_install_status": "NOT OBSERVED",
+      "upstream_readme": "https://github.com/alexp50/bmw-apps/blob/4fb5a5dba1ec7c6a57545ae935a14cb91a194d19/README.md"
+    },
+    {
+      "id": "front_camera_cluster",
+      "category": "app",
+      "images": [],
+      "image_count": 0,
+      "icon": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/front_camera_cluster/icon.png",
+      "kind": "app",
+      "version": "0.2.1",
+      "title": "Night Vision Cluster",
+      "description": "Full-screen control for BMW Night Vision and parking-camera projection in the instrument cluster",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0",
+        "front-camera-cluster-helper": "0.2.1"
+      },
+      "source_repository": "alexp50/bmw-apps",
+      "source_commit": "4fb5a5dba1ec7c6a57545ae935a14cb91a194d19",
+      "license": "MIT; bundled third-party and native-component notices retained",
+      "source_path": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/front_camera_cluster",
+      "delivery": "branch source",
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "upstream_version": "0.2.1",
+      "live_install_status": "NOT OBSERVED",
+      "upstream_readme": "https://github.com/alexp50/bmw-apps/blob/4fb5a5dba1ec7c6a57545ae935a14cb91a194d19/README.md"
+    },
+    {
       "id": "gforce",
       "kind": "app",
       "category": "app",
@@ -2155,6 +2679,34 @@
       "duplicate_classification": "new-functional-app-or-explicit-id8-sibling"
     },
     {
+      "id": "green_light_alert",
+      "category": "app",
+      "images": [],
+      "image_count": 0,
+      "icon": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/green_light_alert/icon.png",
+      "kind": "app",
+      "version": "0.2.5",
+      "title": "Green Light Alert",
+      "description": "Monitors the raw KAFAS traffic-light camera feed, with BMW's validated display signal as a fallback",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0"
+      },
+      "source_repository": "alexp50/bmw-apps",
+      "source_commit": "4fb5a5dba1ec7c6a57545ae935a14cb91a194d19",
+      "license": "MIT; bundled third-party and native-component notices retained",
+      "source_path": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/green_light_alert",
+      "delivery": "branch source",
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "upstream_version": "0.2.5",
+      "live_install_status": "NOT OBSERVED",
+      "upstream_readme": "https://github.com/alexp50/bmw-apps/blob/4fb5a5dba1ec7c6a57545ae935a14cb91a194d19/README.md"
+    },
+    {
       "id": "hook111",
       "kind": "tool",
       "category": "tool",
@@ -2182,6 +2734,67 @@
       "image_count": 0,
       "upstream_artifact_sha256": "3f5ec443495340f1d9c518b7657832fec347f1cb0a7e3bcbd58abf976474d2dd",
       "live_install_status": "NOT OBSERVED"
+    },
+    {
+      "id": "hotspot-studio-helper",
+      "category": "tool",
+      "images": [],
+      "image_count": 0,
+      "kind": "tool",
+      "version": "0.1.7",
+      "title": "Hotspot Studio helper",
+      "description": "Shares the MGU LTE uplink with BMW's hotspot and provides a guarded single-client ENET gateway",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.11",
+        "mgu-python": "1.0.2",
+        "mgu-uplink": "0.7.3"
+      },
+      "source_repository": "alexp50/bmw-apps",
+      "source_commit": "4fb5a5dba1ec7c6a57545ae935a14cb91a194d19",
+      "license": "MIT",
+      "source_path": null,
+      "delivery": "original publisher artifact",
+      "artifact": {
+        "name": "hotspot-studio-helper@0.1.7.tgz",
+        "size": 9437,
+        "sha256": "a2350a9d330008649f3cbe948f48d018be3a97f5cf179a5ab0305b1198ab135a",
+        "url": "https://github.com/alexp50/bmw-apps/releases/download/hotspot-studio-helper@0.1.7/hotspot-studio-helper@0.1.7.tgz"
+      },
+      "upstream_artifact_sha256": "a2350a9d330008649f3cbe948f48d018be3a97f5cf179a5ab0305b1198ab135a",
+      "live_install_status": "NOT OBSERVED",
+      "upstream_readme": "https://github.com/alexp50/bmw-apps/blob/4fb5a5dba1ec7c6a57545ae935a14cb91a194d19/README.md"
+    },
+    {
+      "id": "hotspot_studio",
+      "category": "app",
+      "images": [],
+      "image_count": 0,
+      "icon": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/hotspot_studio/icon.png",
+      "kind": "app",
+      "version": "0.1.5",
+      "title": "Hotspot Studio",
+      "description": "Provides Huawei Internet proxies on BMW's hotspot and opens a timed single-client ENET relay on request",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0",
+        "hotspot-studio-helper": "0.1.7"
+      },
+      "source_repository": "alexp50/bmw-apps",
+      "source_commit": "4fb5a5dba1ec7c6a57545ae935a14cb91a194d19",
+      "license": "MIT; bundled third-party and native-component notices retained",
+      "source_path": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/hotspot_studio",
+      "delivery": "branch source",
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "upstream_version": "0.1.5",
+      "live_install_status": "NOT OBSERVED",
+      "upstream_readme": "https://github.com/alexp50/bmw-apps/blob/4fb5a5dba1ec7c6a57545ae935a14cb91a194d19/README.md"
     },
     {
       "id": "iabadia_m_arcade",
@@ -3023,14 +3636,14 @@
       "title": "RideTube service",
       "description": "The car side of RideTube, an unofficial client for YouTube: yt-dlp (from its official release, run in mgu-python) fetches as the daemon's own internet uid; search, feeds and thumbnails on the car (jap-node22); audio through the BMW MediaPlayer, video decoded by ytdec into the mgu-render video layer; TV device sign-in; controlled by the RideTube app over /run/jap-ridetube-d/ctl.sock",
       "source_repository": "JustAnotherPU/ridetube",
-      "license": "GPL-3.0 (root text; per-file license choice retained)",
+      "license": "GPL-3.0-or-later",
       "source_path": null,
       "delivery": "original publisher artifact",
       "icon": "",
       "images": [],
       "image_count": 0,
-      "upstream_readme": "https://raw.githubusercontent.com/JustAnotherPU/ridetube/68eafa17e860002740496da09f79127bceceab69/README.md",
-      "version": "0.3.12",
+      "upstream_readme": "https://github.com/JustAnotherPU/ridetube/blob/959819b9fe14dac40a46ea83a40ebc70fe7eec5e/README.md",
+      "version": "0.4.1",
       "supported_hmi": [
         "ID7"
       ],
@@ -3041,13 +3654,14 @@
         "mgu-render": "0.6.11"
       },
       "artifact": {
-        "name": "jap-ridetube-d@0.3.12.tgz",
-        "size": 8785888,
-        "sha256": "64c87ba1bbb9424351cd801ed3f87126a71d88288833b270c7af4f5a6cb93a06",
-        "url": "https://github.com/JustAnotherPU/ridetube/releases/download/catalog/jap-ridetube-d@0.3.12.tgz"
+        "name": "jap-ridetube-d@0.4.1.tgz",
+        "size": 8825424,
+        "sha256": "6f2c074f6e516d1c94c301665cdb7c6eda89d5aa178393bdb548bccb173020d3",
+        "url": "https://github.com/JustAnotherPU/ridetube/releases/download/catalog/jap-ridetube-d@0.4.1.tgz"
       },
-      "upstream_artifact_sha256": "64c87ba1bbb9424351cd801ed3f87126a71d88288833b270c7af4f5a6cb93a06",
-      "live_install_status": "NOT OBSERVED"
+      "upstream_artifact_sha256": "6f2c074f6e516d1c94c301665cdb7c6eda89d5aa178393bdb548bccb173020d3",
+      "live_install_status": "NOT OBSERVED",
+      "source_commit": "959819b9fe14dac40a46ea83a40ebc70fe7eec5e"
     },
     {
       "id": "jap-ridewatch",
@@ -3176,32 +3790,33 @@
       "kind": "app",
       "category": "app",
       "title": "RideTube",
-      "description": "Video in the car: an unofficial client for YouTube. Your Home, Subscriptions, Watch later and playlists (signed in on the car), search, channels and chapters; the sound through the car's media player, the picture only while parked (a podcast view while driving). Needs the jap-ridetube-d tool.",
+      "description": "Video in the car: an unofficial client for YouTube. Your Home, Subscriptions, Watch later, History and playlists (signed in on the car), search, channels and chapters; the sound through the car's media player, the picture only while parked (a podcast view while driving). Needs the jap-ridetube-d tool.",
       "source_repository": "JustAnotherPU/ridetube",
-      "license": "GPL-3.0 (root text; per-file license choice retained)",
+      "license": "GPL-3.0-or-later",
       "source_path": null,
       "delivery": "original publisher artifact",
-      "icon": "",
+      "icon": "https://github.com/JustAnotherPU/ridetube/releases/download/catalog/jap_ridetube.png",
       "images": [],
       "image_count": 0,
-      "upstream_readme": "https://raw.githubusercontent.com/JustAnotherPU/ridetube/68eafa17e860002740496da09f79127bceceab69/README.md",
-      "version": "0.3.14",
+      "upstream_readme": "https://github.com/JustAnotherPU/ridetube/blob/959819b9fe14dac40a46ea83a40ebc70fe7eec5e/README.md",
+      "version": "0.4.4",
       "supported_hmi": [
         "ID7"
       ],
       "requires": {
-        "jap-ridetube-d": "0.3.12",
+        "jap-ridetube-d": "0.4.1",
         "mgu-render": "0.6.11",
         "mgu-inputgate": "1.0.0"
       },
       "artifact": {
-        "name": "jap_ridetube@0.3.14.tgz",
-        "size": 2269685,
-        "sha256": "0c6c674691c9ad2852153917f6ae0e01b0f6ed28534b638db03956ed5d9fafbd",
-        "url": "https://github.com/JustAnotherPU/ridetube/releases/download/catalog/jap_ridetube@0.3.14.tgz"
+        "name": "jap_ridetube@0.4.4.tgz",
+        "size": 3122448,
+        "sha256": "642f5020631fd1ae47b65b064ef003c54767e49c809686c923615c54386ad8a5",
+        "url": "https://github.com/JustAnotherPU/ridetube/releases/download/catalog/jap_ridetube@0.4.4.tgz"
       },
-      "upstream_artifact_sha256": "0c6c674691c9ad2852153917f6ae0e01b0f6ed28534b638db03956ed5d9fafbd",
-      "live_install_status": "NOT OBSERVED"
+      "upstream_artifact_sha256": "642f5020631fd1ae47b65b064ef003c54767e49c809686c923615c54386ad8a5",
+      "live_install_status": "NOT OBSERVED",
+      "source_commit": "959819b9fe14dac40a46ea83a40ebc70fe7eec5e"
     },
     {
       "id": "jap_ridewatch",
@@ -3290,6 +3905,36 @@
       "live_install_status": "NOT OBSERVED"
     },
     {
+      "id": "kombikraft",
+      "category": "app",
+      "images": [],
+      "image_count": 0,
+      "kind": "app",
+      "version": "0.1.0",
+      "title": "KombiKraft Lab · Offline prototype",
+      "description": "Experimental native preferences app. No vehicle-validated release; factory menu injection, HUD rendering and KOMBI skin activation remain unavailable.",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.2.0"
+      },
+      "source_repository": "callan280/kombikraft",
+      "source_commit": "d5404f70c6bf694d26ec5ebbd51a1285d3792532",
+      "license": "MIT",
+      "source_path": null,
+      "delivery": "original publisher artifact",
+      "artifact": {
+        "name": "kombikraft@0.1.0.tgz",
+        "size": 9981,
+        "sha256": "a0f8ba03c893c1e4b216030cea6a8d05e9e8efea2b79c233b263bbf5f8bf85f7",
+        "url": "https://github.com/callan280/kombikraft/releases/download/catalog/kombikraft%400.1.0.tgz"
+      },
+      "upstream_artifact_sha256": "a0f8ba03c893c1e4b216030cea6a8d05e9e8efea2b79c233b263bbf5f8bf85f7",
+      "live_install_status": "NOT OBSERVED",
+      "upstream_readme": "https://github.com/callan280/kombikraft/blob/d5404f70c6bf694d26ec5ebbd51a1285d3792532/README.md"
+    },
+    {
       "id": "kxrxh_doodle_jump",
       "kind": "app",
       "category": "game",
@@ -3326,7 +3971,7 @@
       "kind": "app",
       "category": "app",
       "title": "Engine Config",
-      "version": "0.9.8",
+      "version": "0.9.10",
       "description": "Engine Config for BMW MGU ID7. Exhaust Flap: OEM, OPEN and CLOSE over the car's own diagnostic link, or following the driving mode (Sport open, Eco Pro closed); held against the DME's timeout, Close handed back above a set engine speed. With BM3 or MHD picked in Settings: engine map switching, burbles, ASD and Max Cooling. Experimental: xDrive off until the ignition cycle (DSC LMV_FUNKTION), behind its own setting",
       "supported_hmi": [
         "ID7",
@@ -3337,8 +3982,8 @@
         "mgu-inputgate": "1.1.0"
       },
       "source_repository": "cauliflowermossgrape/idrive7-apps",
-      "license": "MIT; retain per-component and third-party notices",
-      "source_path": "apps/_sources/idrive7-apps/apps/live_adjustments",
+      "license": "MIT; bundled third-party and native-component notices retained",
+      "source_path": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/apps/live_adjustments",
       "delivery": "branch source",
       "artifact": {},
       "icon": "docs/assets/apps/live_adjustments/icon.png",
@@ -3360,14 +4005,17 @@
       ],
       "image_count": 15,
       "upstream_artifact_sha256": null,
-      "live_install_status": "NOT OBSERVED"
+      "live_install_status": "NOT OBSERVED",
+      "source_commit": "8d4aa0ef8ef7ae2a007a24acdbda095f219fc7b4",
+      "upstream_version": "0.9.10",
+      "upstream_readme": "https://github.com/cauliflowermossgrape/idrive7-apps/blob/8d4aa0ef8ef7ae2a007a24acdbda095f219fc7b4/README.md"
     },
     {
       "id": "live_data",
       "kind": "app",
       "category": "app",
       "title": "Live Data",
-      "version": "1.0.16",
+      "version": "1.0.18",
       "description": "Read-only live values from the car and its control units, a trip computer with fuel cost, and gauge screens of your own, one of them as the home-screen widget",
       "supported_hmi": [
         "ID7",
@@ -3378,8 +4026,8 @@
         "mgu-inputgate": "1.1.0"
       },
       "source_repository": "cauliflowermossgrape/idrive7-apps",
-      "license": "MIT; retain per-component and third-party notices",
-      "source_path": "apps/_sources/idrive7-apps/apps/live_data",
+      "license": "MIT; bundled third-party and native-component notices retained",
+      "source_path": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/apps/live_data",
       "delivery": "branch source",
       "artifact": {},
       "icon": "docs/assets/apps/live_data/icon.png",
@@ -3399,7 +4047,10 @@
       ],
       "image_count": 13,
       "upstream_artifact_sha256": null,
-      "live_install_status": "NOT OBSERVED"
+      "live_install_status": "NOT OBSERVED",
+      "source_commit": "8d4aa0ef8ef7ae2a007a24acdbda095f219fc7b4",
+      "upstream_version": "1.0.18",
+      "upstream_readme": "https://github.com/cauliflowermossgrape/idrive7-apps/blob/8d4aa0ef8ef7ae2a007a24acdbda095f219fc7b4/README.md"
     },
     {
       "id": "m_copilot",
@@ -3482,15 +4133,15 @@
       "category": "tool",
       "title": "Waze Strelka camera service",
       "description": "Local Kaluga OSM camera snapshot, strict GPS diagnostics and optional verified-road camera alerts",
-      "source_repository": "istt1899/bmw-kaluga-cameras",
-      "license": "GPL-3.0 (root text; per-file license choice retained)",
+      "source_repository": "istt1899/x3",
+      "license": "GPL-3.0-or-later",
       "source_path": null,
       "delivery": "original publisher artifact",
       "icon": "",
       "images": [],
       "image_count": 0,
-      "upstream_readme": "https://raw.githubusercontent.com/istt1899/bmw-kaluga-cameras/c3ce3e72c1b45c26f6af19fdc703f94631996d7b/README.md",
-      "version": "0.8.0",
+      "upstream_readme": "https://github.com/istt1899/x3/blob/fb5fabff19a751a7ccb8440d9d8876fda33a8034/README.md",
+      "version": "0.9.3",
       "supported_hmi": [
         "ID7"
       ],
@@ -3498,13 +4149,14 @@
         "cluster-render": "0.4.0"
       },
       "artifact": {
-        "name": "marku-kaluga-cameras@0.8.0.tgz",
-        "size": 572715,
-        "sha256": "e82b77e280ab62e8f5f0b844744569521fd0aa46874462d37c2e0a83a72bdb06",
-        "url": "https://raw.githubusercontent.com/istt1899/bmw-kaluga-cameras/fab6a5d5af34af6b815bf84107e06eaedba9b877/marku-kaluga-cameras%400.8.0.tgz"
+        "name": "marku-kaluga-cameras@0.9.3.tgz",
+        "size": 1432329,
+        "sha256": "0e66e6458bfb0530b238cb8ed8fde7825447090c80eeafe9d94e92d3d0388902",
+        "url": "https://raw.githubusercontent.com/istt1899/x3/b3717281543afd48010584f7b6a3930d8f45ff1e/marku-kaluga-cameras%400.9.3.tgz"
       },
-      "upstream_artifact_sha256": "e82b77e280ab62e8f5f0b844744569521fd0aa46874462d37c2e0a83a72bdb06",
-      "live_install_status": "NOT OBSERVED"
+      "upstream_artifact_sha256": "0e66e6458bfb0530b238cb8ed8fde7825447090c80eeafe9d94e92d3d0388902",
+      "live_install_status": "NOT OBSERVED",
+      "source_commit": "fb5fabff19a751a7ccb8440d9d8876fda33a8034"
     },
     {
       "id": "marku_daily_hud",
@@ -3543,31 +4195,32 @@
       "category": "app",
       "title": "Waze Стрелка",
       "description": "Waze on Cluster с настройками карты, HUD, CarPlay, Android Auto и дополнительным разделом камер",
-      "source_repository": "istt1899/bmw-kaluga-cameras",
-      "license": "GPL-3.0 (root text; per-file license choice retained)",
+      "source_repository": "istt1899/x3",
+      "license": "GPL-3.0-or-later",
       "source_path": null,
       "delivery": "original publisher artifact",
-      "icon": "",
+      "icon": "https://raw.githubusercontent.com/istt1899/bmw-kaluga-cameras/fab6a5d5af34af6b815bf84107e06eaedba9b877/marku_kaluga_cameras.png",
       "images": [],
       "image_count": 0,
-      "upstream_readme": "https://raw.githubusercontent.com/istt1899/bmw-kaluga-cameras/c3ce3e72c1b45c26f6af19fdc703f94631996d7b/README.md",
-      "version": "0.8.0",
+      "upstream_readme": "https://github.com/istt1899/x3/blob/fb5fabff19a751a7ccb8440d9d8876fda33a8034/README.md",
+      "version": "0.9.3",
       "supported_hmi": [
         "ID7"
       ],
       "requires": {
-        "waze-on-cluster": "0.9.0",
-        "marku-kaluga-cameras": "0.8.0",
+        "waze-on-cluster": "0.9.14",
+        "marku-kaluga-cameras": "0.9.3",
         "mgu-deploy": "0.7.11"
       },
       "artifact": {
-        "name": "marku_kaluga_cameras@0.8.0.tgz",
-        "size": 135310,
-        "sha256": "cc5f3b4d3f5910fe9be58a5c9b7382925e053cde20591e82c730dad2192fd759",
-        "url": "https://raw.githubusercontent.com/istt1899/bmw-kaluga-cameras/fab6a5d5af34af6b815bf84107e06eaedba9b877/marku_kaluga_cameras%400.8.0.tgz"
+        "name": "marku_kaluga_cameras@0.9.3.tgz",
+        "size": 153698,
+        "sha256": "7f272d64c221198b324bba6534efab4dc397e06dd59a861abf225b1d1cc463b6",
+        "url": "https://raw.githubusercontent.com/istt1899/x3/b3717281543afd48010584f7b6a3930d8f45ff1e/marku_kaluga_cameras%400.9.3.tgz"
       },
-      "upstream_artifact_sha256": "cc5f3b4d3f5910fe9be58a5c9b7382925e053cde20591e82c730dad2192fd759",
-      "live_install_status": "NOT OBSERVED"
+      "upstream_artifact_sha256": "7f272d64c221198b324bba6534efab4dc397e06dd59a861abf225b1d1cc463b6",
+      "live_install_status": "NOT OBSERVED",
+      "source_commit": "fb5fabff19a751a7ccb8440d9d8876fda33a8034"
     },
     {
       "id": "marku_x3_coding",
@@ -3787,7 +4440,7 @@
       "kind": "tool",
       "category": "tool",
       "title": "Deploy tool",
-      "version": "0.8.23",
+      "version": "0.8.27",
       "description": "Installs, updates, rolls back and removes our tools and apps on the head unit, with a snapshot before every change",
       "supported_hmi": [
         "ID7",
@@ -3799,16 +4452,18 @@
       "source_path": null,
       "delivery": "original publisher artifact",
       "artifact": {
-        "name": "mgu-deploy@0.8.23.tgz",
-        "size": 163392,
-        "sha256": "f5ede6d31c7f5156430440a29ad4a5c87199f0655309556a0a419b8f92403812",
-        "url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-deploy%400.8.23/mgu-deploy%400.8.23.tgz"
+        "name": "mgu-deploy@0.8.27.tgz",
+        "size": 168362,
+        "sha256": "57797407580d4f0c4be234e226d4f51972002adeb1ad718e3cf2ffcd00ea36b6",
+        "url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-deploy%400.8.27/mgu-deploy%400.8.27.tgz"
       },
       "icon": null,
       "images": [],
       "image_count": 0,
-      "upstream_artifact_sha256": "f5ede6d31c7f5156430440a29ad4a5c87199f0655309556a0a419b8f92403812",
-      "live_install_status": "NOT OBSERVED"
+      "upstream_artifact_sha256": "57797407580d4f0c4be234e226d4f51972002adeb1ad718e3cf2ffcd00ea36b6",
+      "live_install_status": "NOT OBSERVED",
+      "source_commit": "ef2b8a0463ed1e0c3b97c0461dbf033cf45a8412",
+      "upstream_readme": "https://github.com/robertnisipeanu/mgu-store/blob/ef2b8a0463ed1e0c3b97c0461dbf033cf45a8412/README.md"
     },
     {
       "id": "mgu-fscpatch",
@@ -3952,11 +4607,41 @@
       "live_install_status": "NOT OBSERVED"
     },
     {
+      "id": "mgu-render-id7-touch",
+      "category": "tool",
+      "images": [],
+      "image_count": 0,
+      "kind": "tool",
+      "version": "1.4.0",
+      "title": "Full-width touch",
+      "description": "Lets full-screen apps (RideTube, Moonride) use the screen's left edge: both renderers get the whole screen as their touch area, so a tap on the strip where the back arrow usually is reaches the app instead of closing it. Leave such an app with the BACK or MENU button. Other apps keep the back arrow. Removing it takes effect at the next start of the head unit.",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.0"
+      },
+      "source_repository": "JustAnotherPU/ridetube",
+      "source_commit": "959819b9fe14dac40a46ea83a40ebc70fe7eec5e",
+      "license": "GPL-3.0-or-later",
+      "source_path": null,
+      "delivery": "original publisher artifact",
+      "artifact": {
+        "name": "mgu-render-id7-touch@1.4.0.tgz",
+        "size": 3499,
+        "sha256": "74606000de4c70b4e81c72f39bfc7ff5d96b89cc22706e02d8fcb2bcd612df84",
+        "url": "https://github.com/JustAnotherPU/ridetube/releases/download/catalog/mgu-render-id7-touch@1.4.0.tgz"
+      },
+      "upstream_artifact_sha256": "74606000de4c70b4e81c72f39bfc7ff5d96b89cc22706e02d8fcb2bcd612df84",
+      "live_install_status": "NOT OBSERVED",
+      "upstream_readme": "https://github.com/JustAnotherPU/ridetube/blob/959819b9fe14dac40a46ea83a40ebc70fe7eec5e/README.md"
+    },
+    {
       "id": "mgu-updater",
       "kind": "tool",
       "category": "tool",
       "title": "Updater",
-      "version": "0.8.48",
+      "version": "0.8.51",
       "description": "Installs, updates and removes apps and head-unit tools from its sources",
       "supported_hmi": [
         "ID7",
@@ -3971,23 +4656,25 @@
       "source_path": null,
       "delivery": "original publisher artifact",
       "artifact": {
-        "name": "mgu-updater@0.8.48.tgz",
-        "size": 139439,
-        "sha256": "a0ead035d4a2c29193f65a3f2f9803466583e127896a0a61e7b83496aee405e9",
-        "url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-updater%400.8.48/mgu-updater%400.8.48.tgz"
+        "name": "mgu-updater@0.8.51.tgz",
+        "size": 143205,
+        "sha256": "e38745a14fad5d34648c101e0d7eadd9a60d53fa1f4cda38462e3f77e08eeb95",
+        "url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-updater%400.8.51/mgu-updater%400.8.51.tgz"
       },
       "icon": null,
       "images": [],
       "image_count": 0,
-      "upstream_artifact_sha256": "a0ead035d4a2c29193f65a3f2f9803466583e127896a0a61e7b83496aee405e9",
-      "live_install_status": "NOT OBSERVED"
+      "upstream_artifact_sha256": "e38745a14fad5d34648c101e0d7eadd9a60d53fa1f4cda38462e3f77e08eeb95",
+      "live_install_status": "NOT OBSERVED",
+      "source_commit": "ef2b8a0463ed1e0c3b97c0461dbf033cf45a8412",
+      "upstream_readme": "https://github.com/robertnisipeanu/mgu-store/blob/ef2b8a0463ed1e0c3b97c0461dbf033cf45a8412/README.md"
     },
     {
       "id": "mgu-uplink",
       "kind": "tool",
       "category": "tool",
       "title": "Internet uplink",
-      "version": "0.7.12",
+      "version": "0.7.13",
       "description": "Internet for selected apps through a USB network adapter, an LTE stick, a USB-tethered phone or Wi-Fi",
       "supported_hmi": [
         "ID7",
@@ -4001,16 +4688,18 @@
       "source_path": null,
       "delivery": "original publisher artifact",
       "artifact": {
-        "name": "mgu-uplink@0.7.12.tgz",
-        "size": 3604053,
-        "sha256": "21ed6dad1b0e413572dedc67f05a9f44a3a4ee4eb7cc40d31d93d9b076a5082a",
-        "url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-uplink%400.7.12/mgu-uplink%400.7.12.tgz"
+        "name": "mgu-uplink@0.7.13.tgz",
+        "size": 3605106,
+        "sha256": "077e3200356df726a1e653fd67db9f9a1237e22b548f946b726c6eadd0f48d28",
+        "url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-uplink%400.7.13/mgu-uplink%400.7.13.tgz"
       },
       "icon": null,
       "images": [],
       "image_count": 0,
-      "upstream_artifact_sha256": "21ed6dad1b0e413572dedc67f05a9f44a3a4ee4eb7cc40d31d93d9b076a5082a",
-      "live_install_status": "NOT OBSERVED"
+      "upstream_artifact_sha256": "077e3200356df726a1e653fd67db9f9a1237e22b548f946b726c6eadd0f48d28",
+      "live_install_status": "NOT OBSERVED",
+      "source_commit": "ef2b8a0463ed1e0c3b97c0461dbf033cf45a8412",
+      "upstream_readme": "https://github.com/robertnisipeanu/mgu-store/blob/ef2b8a0463ed1e0c3b97c0461dbf033cf45a8412/README.md"
     },
     {
       "id": "mgu_browser",
@@ -4045,6 +4734,38 @@
       },
       "upstream_artifact_sha256": "893d78ec509168b6efe922955943aaaa1125a3b07a8cecd00ea4248e4a3ae7ad",
       "live_install_status": "NOT OBSERVED"
+    },
+    {
+      "id": "mlurker-hud-signals",
+      "category": "tool",
+      "images": [],
+      "image_count": 0,
+      "kind": "tool",
+      "version": "0.5.0",
+      "title": "HUD signals",
+      "description": "Car’s turn and blind spot warning signals on the head-up display (HUD).",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.11",
+        "cluster-render": "0.4.0"
+      },
+      "source_repository": "mlurker/bmw-idrive7-apps",
+      "source_commit": "7534fc47e3068877e6b059cf0bb4792744a4dadc",
+      "license": "GPL-3.0",
+      "source_path": null,
+      "delivery": "original publisher artifact",
+      "artifact": {
+        "name": "mlurker-hud-signals@0.5.0.tgz",
+        "size": 928271,
+        "sha256": "3a89d02849c16ebef781b55212c3c332f69f640b0e4aa24d5695d4e4c6e2a43e",
+        "url": "https://github.com/mlurker/bmw-idrive7-apps/releases/download/catalog/mlurker-hud-signals@0.5.0.tgz"
+      },
+      "upstream_artifact_sha256": "3a89d02849c16ebef781b55212c3c332f69f640b0e4aa24d5695d4e4c6e2a43e",
+      "live_install_status": "NOT OBSERVED",
+      "upstream_readme": "https://github.com/mlurker/bmw-idrive7-apps/blob/7534fc47e3068877e6b059cf0bb4792744a4dadc/README.md",
+      "icon": "https://github.com/mlurker/bmw-idrive7-apps/releases/download/catalog/mlurker-hud-signals.png"
     },
     {
       "id": "noahg_fscpatcher",
@@ -4135,21 +4856,20 @@
       "category": "app",
       "title": "Oil Service Assistant",
       "description": "Engine, coolant and transmission oil temperature monitoring with live warm-up estimates and locally stored service history",
-      "version": "0.2.50",
+      "version": "0.2.51",
       "source_repository": "dzooky/bmrmodz",
-      "source_path": "apps/_sources/dzooky-bmrmodz/apps/osa",
+      "source_path": "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/apps/osa",
       "delivery": "branch source",
       "supported_hmi": [
         "ID7"
       ],
       "requires": {
         "idrive7-renderd": "2.1.19",
-        "mgu-inputgate": "1.2.1",
-        "mgu-deploy": "0.8.23"
+        "mgu-inputgate": "1.2.1"
       },
-      "license": "MIT project grant; original kit and font notices retained",
-      "upstream_readme": "apps/_sources/dzooky-bmrmodz/README.md",
-      "icon": "",
+      "license": "MIT; bundled third-party and native-component notices retained",
+      "upstream_readme": "https://github.com/dzooky/bmrmodz/blob/f141b7fb7476383ca081fd1196a6beb3a0566761/README.md",
+      "icon": "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/apps/osa/icon.png",
       "images": [],
       "image_count": 0,
       "artifact": {},
@@ -4162,7 +4882,9 @@
         "Vehicle readings and cluster-message feature availability depend on actual target interfaces."
       ],
       "duplicate_classification": "new-original-app",
-      "aq_dependency_evidence": "mgu-deploy >=0.8.23 is the current reviewed original deploy implementation that supplies missing SDK modules while preparing an ordinary app package; qualified snapshot requirement, not a claimed historical minimum. Original SDK-free Store mode remains unchanged."
+      "aq_dependency_evidence": "mgu-deploy >=0.8.23 is the current reviewed original deploy implementation that supplies missing SDK modules while preparing an ordinary app package; qualified snapshot requirement, not a claimed historical minimum. Original SDK-free Store mode remains unchanged.",
+      "source_commit": "f141b7fb7476383ca081fd1196a6beb3a0566761",
+      "upstream_version": "0.2.51"
     },
     {
       "id": "parked_games",
@@ -4209,6 +4931,34 @@
       ]
     },
     {
+      "id": "parking_clearance",
+      "category": "app",
+      "images": [],
+      "image_count": 0,
+      "icon": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/parking_clearance/icon.png",
+      "kind": "app",
+      "version": "0.1.8",
+      "title": "Parking & Clearance",
+      "description": "Read-only PDC distances, steering path and suspension stance for close parking",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0"
+      },
+      "source_repository": "alexp50/bmw-apps",
+      "source_commit": "4fb5a5dba1ec7c6a57545ae935a14cb91a194d19",
+      "license": "MIT; bundled third-party and native-component notices retained",
+      "source_path": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/parking_clearance",
+      "delivery": "branch source",
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "upstream_version": "0.1.8",
+      "live_install_status": "NOT OBSERVED",
+      "upstream_readme": "https://github.com/alexp50/bmw-apps/blob/4fb5a5dba1ec7c6a57545ae935a14cb91a194d19/README.md"
+    },
+    {
       "id": "perea_mhd_flex",
       "kind": "app",
       "category": "app",
@@ -4238,11 +4988,74 @@
       "live_install_status": "NOT OBSERVED"
     },
     {
+      "id": "pllana-airplay-receiver",
+      "category": "tool",
+      "images": [],
+      "image_count": 0,
+      "kind": "tool",
+      "version": "0.6.3",
+      "title": "PllanaCast for BMW Empfänger",
+      "description": "UxPlay receiver, video and BMW audio output for PllanaCast for BMW",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.17"
+      },
+      "source_repository": "pllanaio/bmw-airplay",
+      "source_commit": "4604be3b62909201d39de30c23bcba3081887b7b",
+      "license": "GPL-3.0",
+      "source_path": null,
+      "delivery": "original publisher artifact",
+      "artifact": {
+        "name": "pllana-airplay-receiver@0.6.3.tgz",
+        "size": 103292035,
+        "sha256": "0733409fa78c203d61cbdf01db78ad3125971b7547f13ccf26998ea563827057",
+        "url": "https://github.com/pllanaio/bmw-airplay/releases/download/v0.6.3/pllana-airplay-receiver%400.6.3.tgz"
+      },
+      "upstream_artifact_sha256": "0733409fa78c203d61cbdf01db78ad3125971b7547f13ccf26998ea563827057",
+      "live_install_status": "NOT OBSERVED",
+      "upstream_readme": "https://github.com/pllanaio/bmw-airplay/blob/4604be3b62909201d39de30c23bcba3081887b7b/README.md"
+    },
+    {
+      "id": "pllana_airplay",
+      "category": "app",
+      "images": [],
+      "image_count": 0,
+      "kind": "app",
+      "version": "0.6.3",
+      "title": "PllanaCast for BMW",
+      "description": "iPhone screen mirroring and YouTube/AirPlay video on the iDrive display with BMW audio",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "pllana-airplay-receiver": "0.6.3",
+        "mgu-uplink": "0.7.3",
+        "mgu-render": "0.6.11",
+        "mgu-deploy": "0.7.17"
+      },
+      "source_repository": "pllanaio/bmw-airplay",
+      "source_commit": "4604be3b62909201d39de30c23bcba3081887b7b",
+      "license": "GPL-3.0",
+      "source_path": null,
+      "delivery": "original publisher artifact",
+      "artifact": {
+        "name": "pllana_airplay@0.6.3.tgz",
+        "size": 1021214,
+        "sha256": "8f29a8db1923613afcfbac337ebfa37814f5e26a03427f9a1de958a267438525",
+        "url": "https://github.com/pllanaio/bmw-airplay/releases/download/v0.6.3/pllana_airplay%400.6.3.tgz"
+      },
+      "upstream_artifact_sha256": "8f29a8db1923613afcfbac337ebfa37814f5e26a03427f9a1de958a267438525",
+      "live_install_status": "NOT OBSERVED",
+      "upstream_readme": "https://github.com/pllanaio/bmw-airplay/blob/4604be3b62909201d39de30c23bcba3081887b7b/README.md"
+    },
+    {
       "id": "redline",
       "kind": "app",
       "category": "app",
       "title": "Redline",
-      "version": "2.0.44",
+      "version": "2.0.45",
       "description": "Full-screen rev tach with shift lights, gear, shift scoring and cold-engine rev guard; HUD by @biscotit",
       "supported_hmi": [
         "ID7",
@@ -4252,8 +5065,8 @@
         "idrive7-renderd": "2.1.15"
       },
       "source_repository": "cauliflowermossgrape/idrive7-apps",
-      "license": "MIT; retain per-component and third-party notices",
-      "source_path": "apps/_sources/idrive7-apps/apps/redline",
+      "license": "MIT; bundled third-party and native-component notices retained",
+      "source_path": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/apps/redline",
       "delivery": "branch source",
       "artifact": {},
       "icon": "docs/assets/apps/redline/icon.png",
@@ -4267,14 +5080,105 @@
       ],
       "image_count": 7,
       "upstream_artifact_sha256": null,
-      "live_install_status": "NOT OBSERVED"
+      "live_install_status": "NOT OBSERVED",
+      "source_commit": "8d4aa0ef8ef7ae2a007a24acdbda095f219fc7b4",
+      "upstream_version": "2.0.45",
+      "upstream_readme": "https://github.com/cauliflowermossgrape/idrive7-apps/blob/8d4aa0ef8ef7ae2a007a24acdbda095f219fc7b4/README.md"
+    },
+    {
+      "id": "remote-telemetry-bridge",
+      "category": "tool",
+      "images": [],
+      "image_count": 0,
+      "kind": "tool",
+      "version": "0.3.0",
+      "title": "Remote telemetry bridge",
+      "description": "Publishes parked-car telemetry, warm-up, trips, health and service data and executes authenticated climate commands through mgu-uplink",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.11",
+        "mgu-uplink": "0.7.3",
+        "vehicle_health": "0.1.9"
+      },
+      "source_repository": "alexp50/bmw-apps",
+      "source_commit": "4fb5a5dba1ec7c6a57545ae935a14cb91a194d19",
+      "license": "MIT",
+      "source_path": null,
+      "delivery": "original publisher artifact",
+      "artifact": {
+        "name": "remote-telemetry-bridge@0.3.0.tgz",
+        "size": 17661,
+        "sha256": "390701235ad4094d792da2dd92f7dd82f403471292d5a78c2f64ef4a5525f1d7",
+        "url": "https://raw.githubusercontent.com/alexp50/bmw-apps/main/packages/remote-telemetry-bridge@0.3.0.tgz"
+      },
+      "upstream_artifact_sha256": "390701235ad4094d792da2dd92f7dd82f403471292d5a78c2f64ef4a5525f1d7",
+      "live_install_status": "NOT OBSERVED",
+      "upstream_readme": "https://github.com/alexp50/bmw-apps/blob/4fb5a5dba1ec7c6a57545ae935a14cb91a194d19/README.md"
+    },
+    {
+      "id": "ride_height",
+      "category": "app",
+      "images": [],
+      "image_count": 0,
+      "icon": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/ride_height/icon.png",
+      "kind": "app",
+      "version": "0.6.0",
+      "title": "Ride Height Studio",
+      "description": "Full-screen VDP presets plus direct front/rear air-spring fill and vent control",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0"
+      },
+      "source_repository": "alexp50/bmw-apps",
+      "source_commit": "4fb5a5dba1ec7c6a57545ae935a14cb91a194d19",
+      "license": "MIT; bundled third-party and native-component notices retained",
+      "source_path": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/ride_height",
+      "delivery": "branch source",
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "upstream_version": "0.6.0",
+      "live_install_status": "NOT OBSERVED",
+      "upstream_readme": "https://github.com/alexp50/bmw-apps/blob/4fb5a5dba1ec7c6a57545ae935a14cb91a194d19/README.md"
+    },
+    {
+      "id": "road_trip_computer",
+      "category": "app",
+      "images": [],
+      "image_count": 0,
+      "icon": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/road_trip_computer/icon.png",
+      "kind": "app",
+      "version": "1.0.0",
+      "title": "Road Trip Computer",
+      "description": "Full-screen trip history with fuel use, fuel price, cost, range, outside temperature and GPS elevation",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0"
+      },
+      "source_repository": "alexp50/bmw-apps",
+      "source_commit": "4fb5a5dba1ec7c6a57545ae935a14cb91a194d19",
+      "license": "MIT; bundled third-party and native-component notices retained",
+      "source_path": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/road_trip_computer",
+      "delivery": "branch source",
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "upstream_version": "1.0.0",
+      "live_install_status": "NOT OBSERVED",
+      "upstream_readme": "https://github.com/alexp50/bmw-apps/blob/4fb5a5dba1ec7c6a57545ae935a14cb91a194d19/README.md"
     },
     {
       "id": "robertn_store",
       "kind": "app",
       "category": "app",
       "title": "Store",
-      "version": "0.9.40",
+      "version": "0.9.41",
       "description": "The apps and head-unit tools of every source with their state, and the sources; installs, updates and removes them through mgu-updater",
       "supported_hmi": [
         "ID7",
@@ -4287,7 +5191,7 @@
       },
       "source_repository": "robertnisipeanu/mgu-store",
       "license": "GPL-3.0-or-later",
-      "source_path": "tools/_sources/mgu-store/apps/robertn_store",
+      "source_path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store",
       "delivery": "branch source",
       "artifact": {},
       "icon": "docs/assets/apps/robertn_store/icon.png",
@@ -4296,7 +5200,10 @@
       ],
       "image_count": 2,
       "upstream_artifact_sha256": null,
-      "live_install_status": "NOT OBSERVED"
+      "live_install_status": "NOT OBSERVED",
+      "source_commit": "b42fdba837210899005b52b84f6bd00cd4ac7f8f",
+      "upstream_version": "0.9.41",
+      "upstream_readme": "https://github.com/robertnisipeanu/mgu-store/blob/b42fdba837210899005b52b84f6bd00cd4ac7f8f/README.md"
     },
     {
       "id": "robertn_waze_cluster",
@@ -4350,7 +5257,7 @@
       "kind": "app",
       "category": "app",
       "title": "Service",
-      "version": "1.6.2",
+      "version": "1.6.3",
       "description": "Service requirements from the instrument cluster: oil, brakes, brake fluid, vehicle check, inspection - distance, date, details; brake fluid and vehicle check reset",
       "supported_hmi": [
         "ID7",
@@ -4360,8 +5267,8 @@
         "idrive7-renderd": "2.1.15"
       },
       "source_repository": "cauliflowermossgrape/idrive7-apps",
-      "license": "MIT; retain per-component and third-party notices",
-      "source_path": "apps/_sources/idrive7-apps/apps/service",
+      "license": "MIT; bundled third-party and native-component notices retained",
+      "source_path": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/apps/service",
       "delivery": "branch source",
       "artifact": {},
       "icon": "docs/assets/apps/service/icon.png",
@@ -4370,7 +5277,10 @@
       ],
       "image_count": 2,
       "upstream_artifact_sha256": null,
-      "live_install_status": "NOT OBSERVED"
+      "live_install_status": "NOT OBSERVED",
+      "source_commit": "8d4aa0ef8ef7ae2a007a24acdbda095f219fc7b4",
+      "upstream_version": "1.6.3",
+      "upstream_readme": "https://github.com/cauliflowermossgrape/idrive7-apps/blob/8d4aa0ef8ef7ae2a007a24acdbda095f219fc7b4/README.md"
     },
     {
       "id": "sideways",
@@ -4453,21 +5363,20 @@
       "category": "app",
       "title": "Spritmonitor",
       "description": "Third-party app for Spritmonitor.de that lets you log fuel and AdBlue refills from BMW iDrive 7.",
-      "version": "0.1.44",
+      "version": "0.1.45",
       "source_repository": "dzooky/bmrmodz",
-      "source_path": "apps/_sources/dzooky-bmrmodz/apps/spritmonitor",
+      "source_path": "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/apps/spritmonitor",
       "delivery": "branch source",
       "supported_hmi": [
         "ID7"
       ],
       "requires": {
         "idrive7-renderd": "2.1.19",
-        "mgu-inputgate": "1.2.1",
-        "mgu-deploy": "0.8.23"
+        "mgu-inputgate": "1.2.1"
       },
-      "license": "MIT project grant; original kit and font notices retained",
-      "upstream_readme": "apps/_sources/dzooky-bmrmodz/README.md",
-      "icon": "",
+      "license": "MIT; bundled third-party and native-component notices retained",
+      "upstream_readme": "https://github.com/dzooky/bmrmodz/blob/f141b7fb7476383ca081fd1196a6beb3a0566761/README.md",
+      "icon": "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/apps/spritmonitor/icon.png",
       "images": [],
       "image_count": 0,
       "artifact": {},
@@ -4483,7 +5392,37 @@
       ],
       "duplicate_classification": "new-original-app",
       "aq_dependency_evidence": "mgu-deploy >=0.8.23 is the current reviewed original deploy implementation that supplies missing SDK modules while preparing an ordinary app package; qualified snapshot requirement, not a claimed historical minimum. Original SDK-free Store mode remains unchanged.",
-      "mguInternet": true
+      "mguInternet": true,
+      "source_commit": "f141b7fb7476383ca081fd1196a6beb3a0566761",
+      "upstream_version": "0.1.45"
+    },
+    {
+      "id": "start_stop_insight",
+      "category": "app",
+      "images": [],
+      "image_count": 0,
+      "icon": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/start_stop_insight/icon.png",
+      "kind": "app",
+      "version": "0.1.3",
+      "title": "Start/Stop Insight",
+      "description": "Current and last ten observed Start/Stop inhibition states plus live electrical consumers",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0"
+      },
+      "source_repository": "alexp50/bmw-apps",
+      "source_commit": "4fb5a5dba1ec7c6a57545ae935a14cb91a194d19",
+      "license": "MIT; bundled third-party and native-component notices retained",
+      "source_path": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/start_stop_insight",
+      "delivery": "branch source",
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "upstream_version": "0.1.3",
+      "live_install_status": "NOT OBSERVED",
+      "upstream_readme": "https://github.com/alexp50/bmw-apps/blob/4fb5a5dba1ec7c6a57545ae935a14cb91a194d19/README.md"
     },
     {
       "id": "sys_monitor",
@@ -4526,6 +5465,34 @@
         "provenance": "apps/_ports/hexlay-idrive8/PROVENANCE.json",
         "source_metadata": "apps/_ports/hexlay-idrive8/PORT.json"
       }
+    },
+    {
+      "id": "telemetry_studio",
+      "category": "app",
+      "images": [],
+      "image_count": 0,
+      "icon": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/telemetry_studio/icon.png",
+      "kind": "app",
+      "version": "0.2.0",
+      "title": "Telemetry Studio",
+      "description": "Full-screen categorized live data from powertrain, thermal, chassis, tyre, climate and electrical sensors",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0"
+      },
+      "source_repository": "alexp50/bmw-apps",
+      "source_commit": "4fb5a5dba1ec7c6a57545ae935a14cb91a194d19",
+      "license": "MIT; bundled third-party and native-component notices retained",
+      "source_path": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/telemetry_studio",
+      "delivery": "branch source",
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "upstream_version": "0.2.0",
+      "live_install_status": "NOT OBSERVED",
+      "upstream_readme": "https://github.com/alexp50/bmw-apps/blob/4fb5a5dba1ec7c6a57545ae935a14cb91a194d19/README.md"
     },
     {
       "id": "true_time_id8",
@@ -4590,6 +5557,94 @@
       "upstream_readme": "https://raw.githubusercontent.com/vecyoroleg-lgtm/turnkey-e-blend-id8/918b336fbad09b8b49c0dd2914523c0ef1633d8a/README.md",
       "live_install_status": "NOT OBSERVED",
       "duplicate_classification": "id8-port-of-existing-function"
+    },
+    {
+      "id": "vehicle-network-observer",
+      "category": "tool",
+      "images": [],
+      "image_count": 0,
+      "kind": "tool",
+      "version": "0.1.2",
+      "title": "Vehicle network observer",
+      "description": "Creates the passive network inventory consumed by the Vehicle Network app",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.11",
+        "mgu-python": "1.0.2"
+      },
+      "source_repository": "alexp50/bmw-apps",
+      "source_commit": "4fb5a5dba1ec7c6a57545ae935a14cb91a194d19",
+      "license": "MIT",
+      "source_path": null,
+      "delivery": "original publisher artifact",
+      "artifact": {
+        "name": "vehicle-network-observer@0.1.2.tgz",
+        "size": 5887,
+        "sha256": "216a50ffbe3e5b64524b7a2bb89a752a0f30aea197493455028236f9e690a715",
+        "url": "https://github.com/alexp50/bmw-apps/releases/download/vehicle-network-observer@0.1.2/vehicle-network-observer@0.1.2.tgz"
+      },
+      "upstream_artifact_sha256": "216a50ffbe3e5b64524b7a2bb89a752a0f30aea197493455028236f9e690a715",
+      "live_install_status": "NOT OBSERVED",
+      "upstream_readme": "https://github.com/alexp50/bmw-apps/blob/4fb5a5dba1ec7c6a57545ae935a14cb91a194d19/README.md"
+    },
+    {
+      "id": "vehicle_health",
+      "category": "app",
+      "images": [],
+      "image_count": 0,
+      "icon": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/vehicle_health/icon.png",
+      "kind": "app",
+      "version": "0.1.9",
+      "title": "Vehicle Health Center",
+      "description": "Read-only overview of tyres, fluids, temperatures, service requirements, Check Control, DPF and current faults",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0"
+      },
+      "source_repository": "alexp50/bmw-apps",
+      "source_commit": "4fb5a5dba1ec7c6a57545ae935a14cb91a194d19",
+      "license": "MIT; bundled third-party and native-component notices retained",
+      "source_path": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/vehicle_health",
+      "delivery": "branch source",
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "upstream_version": "0.1.9",
+      "live_install_status": "NOT OBSERVED",
+      "upstream_readme": "https://github.com/alexp50/bmw-apps/blob/4fb5a5dba1ec7c6a57545ae935a14cb91a194d19/README.md"
+    },
+    {
+      "id": "vehicle_network",
+      "category": "app",
+      "images": [],
+      "image_count": 0,
+      "icon": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/vehicle_network/icon.png",
+      "kind": "app",
+      "version": "0.1.3",
+      "title": "Vehicle Network",
+      "description": "Live map of MGU interfaces, observed vehicle network devices and laptop IPv4 setup",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0",
+        "vehicle-network-observer": "0.1.2"
+      },
+      "source_repository": "alexp50/bmw-apps",
+      "source_commit": "4fb5a5dba1ec7c6a57545ae935a14cb91a194d19",
+      "license": "MIT; bundled third-party and native-component notices retained",
+      "source_path": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/vehicle_network",
+      "delivery": "branch source",
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "upstream_version": "0.1.3",
+      "live_install_status": "NOT OBSERVED",
+      "upstream_readme": "https://github.com/alexp50/bmw-apps/blob/4fb5a5dba1ec7c6a57545ae935a14cb91a194d19/README.md"
     },
     {
       "id": "vehicle_pass",
@@ -4802,8 +5857,8 @@
       "kind": "tool",
       "category": "tool",
       "title": "Steam",
-      "version": "0.3.2",
-      "description": "EXPERIMENTAL. Windows games from your Steam library running on the car through Proton (Wine), on the car's own graphics drivers (64-bit Direct3D 9-11 games on Vulkan through DXVK by default, the rest on OpenGL), shown on the central screen while parked, with sound. Sign in to Steam and install games on the phone page (scan the QR code on the iDrive Steam page); play them from the iDrive or the phone. Touch is the mouse (a tap clicks); wired Xbox 360-style (XInput) USB controllers, up to four; no keyboard yet. Games that need the Steam client get an optional Run without Steam (gbe_fork). About 440 MB to download, 1.35 GB on the unit, plus the games.",
+      "version": "0.4.0",
+      "description": "",
       "supported_hmi": [
         "ID7"
       ],
@@ -4814,20 +5869,22 @@
         "vizualyse-bus": "0.1.0"
       },
       "source_repository": "Vizualyse/idrive-apps",
-      "license": "GPL-3.0-or-later with third-party notices",
+      "license": "GPL-3.0-or-later",
       "source_path": null,
       "delivery": "original publisher artifact",
       "artifact": {
-        "name": "vizualyse-steam@0.3.2.tgz",
-        "size": 531208182,
-        "sha256": "13e359eecf539d6f99e7a563dbfc5a0c4ca0f8d3d02b51f782c6054cd94a318f",
-        "url": "https://github.com/Vizualyse/idrive-apps/releases/download/vizualyse-steam%400.3.2/vizualyse-steam%400.3.2.tgz"
+        "name": "vizualyse-steam@0.4.0.tgz",
+        "size": 531211774,
+        "sha256": "3719af147d3d2209f9e5fa93de0993a3c95f8df9ccc2f5f7e990c6d227f5eeb6",
+        "url": "https://github.com/Vizualyse/idrive-apps/releases/download/vizualyse-steam%400.4.0/vizualyse-steam%400.4.0.tgz"
       },
       "icon": null,
       "images": [],
       "image_count": 0,
-      "upstream_artifact_sha256": "13e359eecf539d6f99e7a563dbfc5a0c4ca0f8d3d02b51f782c6054cd94a318f",
-      "live_install_status": "NOT OBSERVED"
+      "upstream_artifact_sha256": "3719af147d3d2209f9e5fa93de0993a3c95f8df9ccc2f5f7e990c6d227f5eeb6",
+      "live_install_status": "NOT OBSERVED",
+      "source_commit": "5c0629b3c6d2778c5524c609d294ba1a98a47191",
+      "upstream_readme": "https://github.com/Vizualyse/idrive-apps/blob/5c0629b3c6d2778c5524c609d294ba1a98a47191/README.md"
     },
     {
       "id": "vizualyse_cast",
@@ -5029,11 +6086,43 @@
       "live_install_status": "NOT OBSERVED"
     },
     {
+      "id": "waze-hud-control",
+      "category": "tool",
+      "images": [],
+      "image_count": 0,
+      "kind": "tool",
+      "version": "0.3.0",
+      "title": "Waze HUD controller",
+      "description": "Applies and persists the Waze HUD geometry selected in the Waze HUD app",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.11",
+        "cluster-render": "0.3.10",
+        "waze-on-cluster": "0.8.3"
+      },
+      "source_repository": "alexp50/bmw-apps",
+      "source_commit": "4fb5a5dba1ec7c6a57545ae935a14cb91a194d19",
+      "license": "MIT",
+      "source_path": null,
+      "delivery": "original publisher artifact",
+      "artifact": {
+        "name": "waze-hud-control@0.3.0.tgz",
+        "size": 3201,
+        "sha256": "26f324ccfa58f42a17b78c11321bd9413c5fb83c71f5d46dff44195fbc764f57",
+        "url": "https://github.com/alexp50/bmw-apps/releases/download/waze-hud-control@0.3.0/waze-hud-control@0.3.0.tgz"
+      },
+      "upstream_artifact_sha256": "26f324ccfa58f42a17b78c11321bd9413c5fb83c71f5d46dff44195fbc764f57",
+      "live_install_status": "NOT OBSERVED",
+      "upstream_readme": "https://github.com/alexp50/bmw-apps/blob/4fb5a5dba1ec7c6a57545ae935a14cb91a194d19/README.md"
+    },
+    {
       "id": "waze-on-cluster",
       "kind": "tool",
       "category": "tool",
       "title": "Maps on cluster",
-      "version": "0.10.8",
+      "version": "0.10.12",
       "description": "Runs the cluster map in the background. It is installed with the Maps on cluster app, which you use to control it.",
       "supported_hmi": [
         "ID7"
@@ -5043,20 +6132,51 @@
         "cluster-render": "0.5.3"
       },
       "source_repository": "robertnisipeanu/idrive-apps",
-      "license": "GPL-3.0-or-later with per-file/component notices",
+      "license": "GPL-3.0-or-later",
       "source_path": null,
       "delivery": "original publisher artifact",
       "artifact": {
-        "name": "waze-on-cluster@0.10.8.tgz",
-        "size": 2539325,
-        "sha256": "3369a2cf1b6fbbe217f86d946e8833f6144fc68e4a4d0f2707d8e5bfce8d788e",
-        "url": "https://github.com/robertnisipeanu/idrive-apps/releases/download/waze-on-cluster%400.10.8/waze-on-cluster%400.10.8.tgz"
+        "name": "waze-on-cluster@0.10.12.tgz",
+        "size": 2567979,
+        "sha256": "594748589c76aa71833e81658d6270853b1ce78463c7f8d929db004ff764d209",
+        "url": "https://github.com/robertnisipeanu/idrive-apps/releases/download/waze-on-cluster%400.10.12/waze-on-cluster%400.10.12.tgz"
       },
       "icon": null,
       "images": [],
       "image_count": 0,
-      "upstream_artifact_sha256": "3369a2cf1b6fbbe217f86d946e8833f6144fc68e4a4d0f2707d8e5bfce8d788e",
-      "live_install_status": "NOT OBSERVED"
+      "upstream_artifact_sha256": "594748589c76aa71833e81658d6270853b1ce78463c7f8d929db004ff764d209",
+      "live_install_status": "NOT OBSERVED",
+      "source_commit": "92e14f6ca5c520032a55f9d9f89d2fc7b2781af6",
+      "upstream_readme": "https://github.com/robertnisipeanu/idrive-apps/blob/92e14f6ca5c520032a55f9d9f89d2fc7b2781af6/README.md"
+    },
+    {
+      "id": "waze_hud",
+      "category": "app",
+      "images": [],
+      "image_count": 0,
+      "icon": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/waze_hud/icon.png",
+      "kind": "app",
+      "version": "0.3.0",
+      "title": "Waze HUD",
+      "description": "Full-screen control for projecting the CarPlay navigation map into the head-up display",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0",
+        "waze-hud-control": "0.3.0"
+      },
+      "source_repository": "alexp50/bmw-apps",
+      "source_commit": "4fb5a5dba1ec7c6a57545ae935a14cb91a194d19",
+      "license": "MIT; bundled third-party and native-component notices retained",
+      "source_path": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/waze_hud",
+      "delivery": "branch source",
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "upstream_version": "0.3.0",
+      "live_install_status": "NOT OBSERVED",
+      "upstream_readme": "https://github.com/alexp50/bmw-apps/blob/4fb5a5dba1ec7c6a57545ae935a14cb91a194d19/README.md"
     },
     {
       "id": "wazecard",
@@ -5119,11 +6239,39 @@
       "live_install_status": "NOT OBSERVED"
     },
     {
+      "id": "xdrive_studio",
+      "category": "app",
+      "images": [],
+      "image_count": 0,
+      "icon": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/xdrive_studio/icon.png",
+      "kind": "app",
+      "version": "0.1.5",
+      "title": "xDrive Studio",
+      "description": "Read-only xDrive torque distribution, transfer-case torque, wheel slip and chassis dynamics",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0"
+      },
+      "source_repository": "alexp50/bmw-apps",
+      "source_commit": "4fb5a5dba1ec7c6a57545ae935a14cb91a194d19",
+      "license": "MIT; bundled third-party and native-component notices retained",
+      "source_path": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/xdrive_studio",
+      "delivery": "branch source",
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "upstream_version": "0.1.5",
+      "live_install_status": "NOT OBSERVED",
+      "upstream_readme": "https://github.com/alexp50/bmw-apps/blob/4fb5a5dba1ec7c6a57545ae935a14cb91a194d19/README.md"
+    },
+    {
       "id": "zf8hp",
       "kind": "app",
       "category": "app",
       "title": "Transmission Config",
-      "version": "1.5.7",
+      "version": "1.5.8",
       "description": "Transmission Config, experimental ZF 8HP monitor: live data, clutch fill adaptations, shift maps and temperature history",
       "supported_hmi": [
         "ID7",
@@ -5134,8 +6282,8 @@
         "mgu-inputgate": "1.1.0"
       },
       "source_repository": "cauliflowermossgrape/idrive7-apps",
-      "license": "MIT; retain per-component and third-party notices",
-      "source_path": "apps/_sources/idrive7-apps/apps/zf8hp",
+      "license": "MIT; bundled third-party and native-component notices retained",
+      "source_path": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7/apps/zf8hp",
       "delivery": "branch source",
       "artifact": {},
       "icon": "docs/assets/apps/zf8hp/icon.png",
@@ -5146,7 +6294,10 @@
       ],
       "image_count": 4,
       "upstream_artifact_sha256": null,
-      "live_install_status": "NOT OBSERVED"
+      "live_install_status": "NOT OBSERVED",
+      "source_commit": "8d4aa0ef8ef7ae2a007a24acdbda095f219fc7b4",
+      "upstream_version": "1.5.8",
+      "upstream_readme": "https://github.com/cauliflowermossgrape/idrive7-apps/blob/8d4aa0ef8ef7ae2a007a24acdbda095f219fc7b4/README.md"
     }
   ]
 }

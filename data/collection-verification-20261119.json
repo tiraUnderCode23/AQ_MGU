@@ -1,0 +1,120 @@
+{
+  "schema": 1,
+  "observed_at_utc": "2026-11-19T21:31:18.045443+00:00",
+  "baseline_commit": "c70001e921b30c8b6c6db6acb45ac2d906c0d750",
+  "feed_validation": {
+    "status": "PASS",
+    "ref": "HEAD",
+    "headManifests": false,
+    "counts": {
+      "store_sources": 3,
+      "external": 6,
+      "source": 96,
+      "app_manifests": 89,
+      "unit_modules": 156,
+      "shared_modules": 56,
+      "cross_app_modules": 5,
+      "release": 101,
+      "metadata": 203,
+      "provenance": 101
+    },
+    "errors": [],
+    "warnings": [
+      "release/vizualyse-steam: 531211774 bytes exceeds Flutter manager's 200 MiB limit"
+    ]
+  },
+  "targeted_tests": [
+    {
+      "suite": "test_release_artifacts.py",
+      "tests": 19,
+      "passed": 19
+    },
+    {
+      "suite": "test_store_source_config.py",
+      "tests": 8,
+      "passed": 8
+    },
+    {
+      "suite": "test_original_store_contract.py",
+      "tests": 11,
+      "passed": 11,
+      "python_utf8_mode": true
+    }
+  ],
+  "full_test_suite": "NOT_RUN_FOR_THIS_COLLECTION",
+  "aq_flap_packaging": {
+    "schema": 1,
+    "application": "aq_flap",
+    "version": "2.6.1",
+    "sdk_used": "synthetic test fixture only",
+    "real_sdk_content_read": false,
+    "application_executed": false,
+    "live_hu_install": "NOT OBSERVED",
+    "synthetic_test_artifact": {
+      "bytes": 461988,
+      "sha256": "668ab6074b2e320eddd9dfeb36a0635f7580d68c9e4e0de5eccf8590b681799d",
+      "released": false,
+      "retained": false
+    },
+    "checks": [
+      {
+        "check": "tracked_source_inventory",
+        "result": "PASS",
+        "output": "aq_flap@2.6.1: 38 source files verified"
+      },
+      {
+        "check": "refuses_missing_target_sdk",
+        "result": "PASS"
+      },
+      {
+        "check": "flat_module_tree_and_allowlisted_payload",
+        "result": "PASS",
+        "members": 40
+      },
+      {
+        "check": "deterministic_tgz",
+        "result": "PASS"
+      },
+      {
+        "check": "original_archive_contract",
+        "result": "PASS",
+        "manifest": "package.json",
+        "hmi": [
+          "ID7"
+        ]
+      },
+      {
+        "check": "refuses_changed_pinned_input",
+        "result": "PASS"
+      }
+    ]
+  },
+  "source_inputs": {
+    "source_entries": 96,
+    "declared_source_entries": 96,
+    "parser_skipped": [],
+    "positive_static_input_evidence": 95,
+    "known_blocked_entries": [
+      "noahg_fscpatcher"
+    ],
+    "whole_repository_fallback_entries": [
+      "noahg_fscpatcher"
+    ],
+    "source_tool_payload_references_checked": 60
+  },
+  "artifacts": {
+    "current_release_entries": 101,
+    "download_pass": 101,
+    "archive_pass": 101,
+    "compressed_bytes": 1348076985,
+    "unchanged_artifact_evidence": "Retained only where artifact SHA256 and version are unchanged.",
+    "new_or_updated_artifacts": 29
+  },
+  "live_hu_install": "NOT OBSERVED",
+  "github_actions": "NOT USED",
+  "known_limits": [
+    "Existing noahg_fscpatcher source recipe retains its whole-repository input-budget blocker.",
+    "The selected Steam helper is larger than the AQ Manager default200MiB download budget.",
+    "Source and synthetic packaging evidence does not establish target SDK compatibility or vehicle runtime."
+  ]
+}
