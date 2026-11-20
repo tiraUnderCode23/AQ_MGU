@@ -198,6 +198,33 @@
       "icon": "icon.png"
     },
     {
+      "id": "advokat_live_adjustments",
+      "kind": "app",
+      "version": "10.17.1",
+      "title": "Advokat Engine Config",
+      "description": "Engine Config for BMW MGU ID7. Exhaust Flap: OEM, OPEN and CLOSE over the car's own diagnostic link, or following the driving mode (Sport open, Eco Pro closed); held against the DME's timeout, Close handed back above a set engine speed. With BM3, MHD or MG Flasher picked in Settings: engine map switching, burbles, ASD (BM3) and Max Cooling (MHD, MG Flasher). Experimental: xDrive off until the ignition cycle (DSC LMV_FUNKTION), behind its own setting",
+      "path": "apps/_sources/mlurker-advokat/apps/advokat_live_adjustments",
+      "manifest": "app.json",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {},
+      "build": {
+        "python": "apps/_sources/mlurker-advokat/kit/tools/build.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "apps/_sources/mlurker-advokat/oap-sdk",
+        "output": "apps/_sources/mlurker-advokat/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/mlurker-advokat/kit",
+          "apps/_sources/mlurker-advokat/LICENSE",
+          "apps/_sources/mlurker-advokat/README.md"
+        ]
+      },
+      "icon": "icon.png"
+    },
+    {
       "id": "ahg_control_center",
       "kind": "app",
       "version": "1.4.2",
@@ -673,6 +700,39 @@
       "description": "Misfire Watch, Fault Watch and Drive Log in one app that starts with the car: every misfire per cylinder with the conditions, a timeline of fault codes from every control unit, and every drive's numbers (distance, top speed, 0-60, g, oil and coolant). One process instead of three. On first start it brings over the old apps' history. Read-only."
     },
     {
+      "id": "aref_drivelog",
+      "kind": "app",
+      "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_drivelog",
+      "manifest": "app.json",
+      "icon": "icon.png",
+      "mguHmi": [
+        "ID7"
+      ],
+      "build": {
+        "python": "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "apps/_sources/arefahmad-idrive7-apps/oap-sdk",
+        "output": "apps/_sources/arefahmad-idrive7-apps/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/arefahmad-idrive7-apps/kit/runtime",
+          "apps/_sources/arefahmad-idrive7-apps/kit/platform",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/pack_data.py",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/localize.py",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/locale-revisions.json",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/oapgen",
+          "apps/_sources/arefahmad-idrive7-apps/LICENSE",
+          "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.idrive7-apps",
+          "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.nickgcode"
+        ]
+      },
+      "version": "0.3.2",
+      "title": "Drive Log",
+      "description": "Replaced by Car Watch (install it, then remove this app). Records every drive in the background: distance, time moving, top speed, best 0-60 mph, peak rpm, the most acceleration, braking and cornering g, and the highest oil and coolant temperatures. Compare with Dragy (off by default): enter a Dragy's time after a run, and after 3 runs every 0-60 also shows a Dragy-adjusted time. History, 0-60 runs and Save CSV. Read-only. Starts with the car."
+    },
+    {
       "id": "aref_eta",
       "kind": "app",
       "version": "1.20.1",
@@ -742,6 +802,72 @@
       "mguNeeds": [
         "renderer"
       ]
+    },
+    {
+      "id": "aref_faultwatch",
+      "kind": "app",
+      "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_faultwatch",
+      "manifest": "app.json",
+      "icon": "icon.png",
+      "mguHmi": [
+        "ID7"
+      ],
+      "build": {
+        "python": "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "apps/_sources/arefahmad-idrive7-apps/oap-sdk",
+        "output": "apps/_sources/arefahmad-idrive7-apps/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/arefahmad-idrive7-apps/kit/runtime",
+          "apps/_sources/arefahmad-idrive7-apps/kit/platform",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/pack_data.py",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/localize.py",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/locale-revisions.json",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/oapgen",
+          "apps/_sources/arefahmad-idrive7-apps/LICENSE",
+          "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.idrive7-apps",
+          "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.nickgcode"
+        ]
+      },
+      "version": "0.2.2",
+      "title": "Fault Watch",
+      "description": "Replaced by Car Watch (install it, then remove this app). Reads every control unit's fault memory in the background every few minutes while the car is on, and keeps a timeline of what changed: new faults, faults that turn active, faults that clear. Each entry has the time and the drive at that moment (speed, gear, rpm, oil, drive mode), so an intermittent fault can be matched to when it happened. Read-only: it never clears or writes anything. Starts with the car."
+    },
+    {
+      "id": "aref_misfire",
+      "kind": "app",
+      "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_misfire",
+      "manifest": "app.json",
+      "icon": "icon.png",
+      "mguHmi": [
+        "ID7"
+      ],
+      "build": {
+        "python": "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "apps/_sources/arefahmad-idrive7-apps/oap-sdk",
+        "output": "apps/_sources/arefahmad-idrive7-apps/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/arefahmad-idrive7-apps/kit/runtime",
+          "apps/_sources/arefahmad-idrive7-apps/kit/platform",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/pack_data.py",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/localize.py",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/locale-revisions.json",
+          "apps/_sources/arefahmad-idrive7-apps/kit/tools/oapgen",
+          "apps/_sources/arefahmad-idrive7-apps/LICENSE",
+          "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.idrive7-apps",
+          "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.nickgcode"
+        ]
+      },
+      "version": "0.1.1",
+      "title": "Misfire Watch",
+      "description": "Replaced by Car Watch (install it, then remove this app). Logs every misfire the engine counts, per cylinder, across every drive. It reads the engine unit's own misfire counters every few seconds while the engine runs and records each new misfire with the conditions at that moment: rpm, speed, gear, torque, coolant and drive mode. Shows this drive per cylinder, all-time totals, the DME's 10-drive average, a misfire log and a list of drives, and exports CSV. Finds a weak coil or worn plug early. Read-only. Starts with the car."
     },
     {
       "id": "aref_tires",
@@ -1979,6 +2105,47 @@
       "icon": "icon.png"
     },
     {
+      "id": "eldrive",
+      "kind": "app",
+      "version": "1.1.0",
+      "title": "elDrive",
+      "description": "eDrive with fully electric cars (BEV, e.g. the iX3): real range, live battery power, cells and climate power, HV battery health and energy, last charge, charge log, 12 V battery voltage and a home-screen widget; plug-in hybrids and 48 V mild hybrids as in eDrive",
+      "path": "apps/_sources/beele-eldrive/apps/eldrive",
+      "manifest": "app.json",
+      "icon": "icon.png",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0"
+      },
+      "build": {
+        "python": "tools/build_extra_source_app.py",
+        "args": [
+          "{id}"
+        ],
+        "output": "apps/_sources/beele-eldrive/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/beele-eldrive/kit/runtime",
+          "apps/_sources/beele-eldrive/kit/platform",
+          "apps/_sources/beele-eldrive/kit/localization",
+          "apps/_sources/beele-eldrive/kit/tools/build.py",
+          "apps/_sources/beele-eldrive/kit/tools/pack_data.py",
+          "apps/_sources/beele-eldrive/kit/tools/localize.py",
+          "apps/_sources/beele-eldrive/kit/tools/locale-revisions.json",
+          "apps/_sources/beele-eldrive/kit/tools/oapgen",
+          "apps/_sources/beele-eldrive/kit/tools/make_icon.js",
+          "apps/_sources/beele-eldrive/LICENSE",
+          "apps/_sources/beele-eldrive/README.md",
+          "apps/_sources/beele-eldrive/mgu-repo.json",
+          "tools/build_extra_source_app.py",
+          "data/extra-source-builds.json"
+        ],
+        "sdk": "apps/_sources/beele-eldrive/oap-sdk"
+      }
+    },
+    {
       "id": "equalizer",
       "kind": "app",
       "version": "0.2.4",
@@ -2715,6 +2882,30 @@
         ]
       },
       "icon": "icon.png"
+    },
+    {
+      "id": "kombikraft",
+      "kind": "app",
+      "version": "0.1.0",
+      "title": "KombiKraft Lab — Offline prototype",
+      "description": "Experimental native preferences app. No vehicle-validated release; factory menu injection, HUD rendering and KOMBI skin activation remain unavailable.",
+      "path": "apps/_prebuilt/kombikraft",
+      "manifest": "app.json",
+      "icon": "icon.png",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.2.0"
+      },
+      "uninstallable": true,
+      "build": {
+        "node": "tools/prebuilt.js",
+        "output": "{dir}/{id}@{version}.tgz",
+        "shared": [
+          "tools/prebuilt.js"
+        ]
+      }
     },
     {
       "id": "kombikraft_test",
@@ -3564,6 +3755,34 @@
       "icon": "icon.png"
     },
     {
+      "id": "perea_cluster_themes",
+      "kind": "app",
+      "version": "0.19.1",
+      "title": "Cluster Themes",
+      "description": "Redraws the instrument cluster: GT3 race dash, M-style, M view, Vector (with a music panel), Sport, Minimal, Track, Drag, Rally, Retro 80s, Cruise, Dyno (BMW-coloured readout tiles) or Ribbon (with holiday editions), with shift lights, boost, temps, tyres, a G-meter and a 0-60 timer",
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes",
+      "manifest": "app.json",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "cluster-render": "0.5.1"
+      },
+      "build": {
+        "python": "apps/_sources/alexpereap-idrive7-apps/kit/tools/build.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "apps/_sources/alexpereap-idrive7-apps/oap-sdk",
+        "output": "apps/_sources/alexpereap-idrive7-apps/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/alexpereap-idrive7-apps/kit",
+          "apps/_sources/alexpereap-idrive7-apps/shared"
+        ]
+      },
+      "icon": "icon.png"
+    },
+    {
       "id": "perea_mhd_flex",
       "kind": "app",
       "version": "1.6.0",
@@ -3770,6 +3989,24 @@
         ]
       },
       "icon": "icon.png"
+    },
+    {
+      "id": "robertn_store",
+      "kind": "app",
+      "title": "Store",
+      "description": "The apps and head-unit tools of every source with their state, and the sources; installs, updates and removes them through mgu-updater",
+      "version": "0.9.41",
+      "requires": {
+        "mgu-deploy": "0.8.12",
+        "mgu-updater": "0.8.28",
+        "mgu-render": "0.3.1"
+      },
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store",
+      "build": "unit"
     },
     {
       "id": "robertn_waze_cluster",

@@ -656,6 +656,32 @@
       ]
     },
     {
+      "id": "bcs_store",
+      "kind": "app",
+      "title": "Store",
+      "description": "BCS Automotive Solutions: apps and head-unit tools for the BMW MGU, from BCS and community sources",
+      "version": "3.4.5",
+      "artifact": {
+        "name": "bcs_store@3.4.5.tgz",
+        "size": 4729989,
+        "sha256": "656f3bd8cee577d531680cc399d13e4218a4e0e0eec3ac3d876dc265a4374dc8",
+        "url": "https://github.com/bcs-asia/app-store/releases/download/catalog/bcs_store@3.4.5.tgz"
+      },
+      "build": "unit",
+      "requires": {
+        "mgu-deploy": "0.8.12",
+        "mgu-updater": "0.8.28",
+        "mgu-render": "0.3.1"
+      },
+      "uninstallable": false,
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "icon": "https://github.com/bcs-asia/app-store/releases/download/catalog/bcs_store.png",
+      "iconSha256": "fde27bf6c3ccc15aaa779fa3726ab981bd50b781a9cc0f0d00cf2f5fabca611a"
+    },
+    {
       "id": "bimmervision",
       "kind": "app",
       "title": "BimmerVision",
@@ -1512,6 +1538,49 @@
       }
     },
     {
+      "id": "mdq-aapd-log",
+      "kind": "tool",
+      "title": "Android Auto log (for CarLink)",
+      "description": "Experimental. Copies the car's Android Auto daemon's log (journalctl -u aapd, the last 2000 lines) and a snapshot of its state (systemctl status, waze-on-cluster's aapd patch, /etc/aapd.conf against its backup, and the network: addresses, routes and the firewall rules) to /run/mdq-aapd-log, where CarLink shows it on the phone (Car log, Debug on). Runs as root but only reads; writes only that folder, which goes when it stops. Starts at the next head-unit start after its install.",
+      "author": "7amoody1985",
+      "version": "0.1.1",
+      "artifact": {
+        "name": "mdq-aapd-log@0.1.1.tgz",
+        "size": 4312,
+        "sha256": "486d898b32cf5a65c40c29115d960dd5b1d4aaa19c8e279c551486ddb5939510",
+        "url": "https://github.com/7amoody1985/mgu-apps-lab/releases/download/catalog/mdq-aapd-log@0.1.1.tgz"
+      },
+      "uninstallable": true,
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {}
+    },
+    {
+      "id": "mdq-ridetube-d",
+      "kind": "tool",
+      "title": "RideTube service (fork by 7amoody1985)",
+      "description": "The car side of the RideTube fork (JustAnotherPU's RideTube, modified, with its own ids): yt-dlp fetches on the car, the sound through the BMW MediaPlayer, the picture decoded by ytdec. The playing video streams in RAM (a 256 MB tmpfs) instead of being written whole to the head unit's flash; a debug report in /run/mdq-ridetube-d/status.json and log/sessions.jsonl. Needs Node.js 22 from the JustAnotherPU/mgu-apps source. Source: github.com/7amoody1985/ridetube",
+      "author": "JustAnotherPU, modified by 7amoody1985",
+      "version": "0.4.2",
+      "artifact": {
+        "name": "mdq-ridetube-d@0.4.2.tgz",
+        "size": 8785229,
+        "sha256": "b27100a3de2c8d86dcc9fa89a3feaac29f8ade71d2ec92f4f9b4b82d8949b06f",
+        "url": "https://github.com/7amoody1985/mgu-apps-lab/releases/download/catalog/mdq-ridetube-d@0.4.2.tgz"
+      },
+      "requires": {
+        "mgu-deploy": "0.7.0",
+        "mgu-python": "1.0.2",
+        "jap-node22": "22.23.4",
+        "mgu-render": "0.6.11"
+      },
+      "uninstallable": true,
+      "mguHmi": [
+        "ID7"
+      ]
+    },
+    {
       "id": "mdq_carlink",
       "kind": "app",
       "title": "CarLink (experimental)",
@@ -1533,6 +1602,31 @@
       ],
       "icon": "mdq_carlink.png",
       "iconSha256": "c588cb54d16397e778750c3e3c268b508cb2aef59a417c6d114fc02d3f33bf69"
+    },
+    {
+      "id": "mdq_ridetube",
+      "kind": "app",
+      "title": "RideTube (fork by 7amoody1985)",
+      "description": "A modified build of JustAnotherPU's RideTube (github.com/JustAnotherPU/ridetube), not endorsed by its developer, with its own ids: it installs beside the original and never over it (only one of them plays at a time). Fixes the Search menu (and the settings in it) closing right after it opens; its service streams the video in RAM instead of writing it to the head unit's flash. Source: github.com/7amoody1985/ridetube",
+      "author": "JustAnotherPU, modified by 7amoody1985",
+      "version": "0.4.0",
+      "artifact": {
+        "name": "mdq_ridetube@0.4.0.tgz",
+        "size": 1177863,
+        "sha256": "16c371e05d2470d26be9552395457133b51b1d3d94ad9f0b7ea49540baa99c5b",
+        "url": "https://github.com/7amoody1985/mgu-apps-lab/releases/download/catalog/mdq_ridetube@0.4.0.tgz"
+      },
+      "requires": {
+        "mdq-ridetube-d": "0.4.2",
+        "mgu-render": "0.6.11",
+        "mgu-inputgate": "1.0.0"
+      },
+      "uninstallable": true,
+      "mguHmi": [
+        "ID7"
+      ],
+      "icon": "mdq_ridetube.png",
+      "iconSha256": "afbf63c28de964d4f249f062bdbddf853fe1e676cc8d62f59028ea0f1c6a9876"
     },
     {
       "id": "mgu-browser",

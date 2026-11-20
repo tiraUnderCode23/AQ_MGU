@@ -2,13 +2,17 @@
 
 # AQ MGU — BMW iDrive 7 & 8 App Store
 
-![Apps](https://img.shields.io/badge/Apps-204-0066B1?style=for-the-badge) ![iDrive 8](https://img.shields.io/badge/iDrive_8_Ready-56-1C69D4?style=for-the-badge) ![Helper Tools](https://img.shields.io/badge/Helper_Tools-78-2B3137?style=for-the-badge)
+![Apps](https://img.shields.io/badge/Apps-214-0066B1?style=for-the-badge) ![iDrive 8](https://img.shields.io/badge/iDrive_8_Declared-58-1C69D4?style=for-the-badge) ![Helper Tools](https://img.shields.io/badge/Helper_Tools-80-2B3137?style=for-the-badge)
 
 **Branches:** [`main` — All & iDrive 7](https://github.com/tiraUnderCode23/AQ_MGU) · [`id8` — iDrive 8](https://github.com/tiraUnderCode23/AQ_MGU/branches) · [`games` — Games](https://github.com/tiraUnderCode23/AQ_MGU/branches) · [`Releases` — Prebuilt Catalog](https://github.com/tiraUnderCode23/AQ_MGU/releases/tag/catalog)
 
 [Cluster & HUD](#cluster--hud) · [Performance & Motorsport](#performance--motorsport) · [Diagnostics & Telemetry](#diagnostics--telemetry) · [Media, Video & Casting](#media-video--casting) · [Lighting, Cameras & Comfort](#lighting-cameras--comfort) · [Utilities & System](#utilities--system) · [Games](#games) · [Helper Tools](#helper-tools)
 
 </div>
+
+> HMI labels are publisher/source declarations. ID8 distribution eligibility is reviewed separately in [the ID8 report](docs/ID8_ELIGIBILITY_20261120_AR.md). Physical installation and runtime remain NOT OBSERVED.
+
+Restored legacy versions, forks and prototypes remain listed with their original descriptions; their inclusion does not replace newer alternatives.
 
 ---
 
@@ -72,6 +76,13 @@
 <td><strong>Cluster Themes</strong> <code>v0.19.0</code> &nbsp;·&nbsp; <code>ID7</code></td>
 </tr><tr>
 <td colspan="2"><img src="docs/assets/apps/cluster_themes/preview-01.png" height="150" alt="Cluster Themes" /> <img src="docs/assets/apps/cluster_themes/preview-02.png" height="150" alt="Cluster Themes" /> <img src="docs/assets/apps/cluster_themes/preview-03.png" height="150" alt="Cluster Themes" /></td>
+</tr></table>
+
+<table><tr>
+<td width="64" align="center"><img src="docs/assets/apps/perea_cluster_themes/icon.png" width="48" height="48" alt="Cluster Themes" /></td>
+<td><strong>Cluster Themes</strong> <code>v0.19.1</code> &nbsp;·&nbsp; <code>ID7</code></td>
+</tr><tr>
+<td colspan="2"><img src="docs/assets/apps/perea_cluster_themes/screen_1.png" height="150" alt="Cluster Themes" /> <img src="docs/assets/apps/perea_cluster_themes/screen_2.png" height="150" alt="Cluster Themes" /></td>
 </tr></table>
 
 <table><tr>
@@ -196,6 +207,13 @@
 </table>
 
 ## Performance & Motorsport
+
+<table><tr>
+<td width="64" align="center"><img src="docs/assets/apps/advokat_live_adjustments/icon.png" width="48" height="48" alt="Advokat Engine Config" /></td>
+<td><strong>Advokat Engine Config</strong> <code>v10.17.1</code> &nbsp;·&nbsp; <code>ID7</code></td>
+</tr><tr>
+<td colspan="2"><img src="docs/assets/apps/advokat_live_adjustments/screen_1.png" height="150" alt="Advokat Engine Config" /> <img src="docs/assets/apps/advokat_live_adjustments/screen_2.png" height="150" alt="Advokat Engine Config" /> <img src="docs/assets/apps/advokat_live_adjustments/screen_3.png" height="150" alt="Advokat Engine Config" /></td>
+</tr></table>
 
 <table><tr>
 <td width="64" align="center"><img src="docs/assets/apps/aq_flap/icon.png" width="48" height="48" alt="AQ Flap" /></td>
@@ -497,43 +515,47 @@
 </tr>
 <tr>
 <td width="50%"><img src="docs/assets/apps/c365_drive/icon.png" width="36" height="36" align="left" alt="Drive" />&nbsp;&nbsp;<strong>Drive</strong><br>&nbsp;&nbsp;<code>v1.9.3</code> · <code>ID7 / ID8</code></td>
+<td width="50%"><img src="docs/assets/apps/aref_drivelog/icon.png" width="36" height="36" align="left" alt="Drive Log" />&nbsp;&nbsp;<strong>Drive Log</strong><br>&nbsp;&nbsp;<code>v0.3.2</code> · <code>ID7</code></td>
+</tr>
+<tr>
 <td width="50%"><img src="docs/assets/apps/woodr_drivelog/icon.png" width="36" height="36" align="left" alt="Drive Log" />&nbsp;&nbsp;<strong>Drive Log</strong><br>&nbsp;&nbsp;<code>v0.1.1</code> · <code>ID7</code></td>
-</tr>
-<tr>
 <td width="50%"><img src="docs/assets/apps/boostline/icon.png" width="36" height="36" align="left" alt="ECU Live Data" />&nbsp;&nbsp;<strong>ECU Live Data</strong><br>&nbsp;&nbsp;<code>v1.0.1</code> · <code>ID7</code></td>
+</tr>
+<tr>
 <td width="50%"><img src="docs/assets/apps/boostline_id8/icon.png" width="36" height="36" align="left" alt="ECU Live Data (iDrive 8, untested)" />&nbsp;&nbsp;<strong>ECU Live Data (iDrive 8, untested)</strong><br>&nbsp;&nbsp;<code>v1.0.0</code> · <code>ID8</code></td>
-</tr>
-<tr>
 <td width="50%"><img src="docs/assets/apps/noahg_fscpatcher/icon.png" width="36" height="36" align="left" alt="FSC Patch" />&nbsp;&nbsp;<strong>FSC Patch</strong><br>&nbsp;&nbsp;<code>v1.0.0</code> · <code>ID7</code></td>
+</tr>
+<tr>
 <td width="50%"><img src="docs/assets/apps/mgu_audio_diagnostics/icon.png" width="36" height="36" align="left" alt="MGU Audio Diagnostics" />&nbsp;&nbsp;<strong>MGU Audio Diagnostics</strong><br>&nbsp;&nbsp;<code>v0.1.2</code> · <code>ID7</code></td>
-</tr>
-<tr>
 <td width="50%"><img src="docs/assets/apps/benspa_vitals/icon.png" width="36" height="36" align="left" alt="Mon Vitals" />&nbsp;&nbsp;<strong>Mon Vitals</strong><br>&nbsp;&nbsp;<code>v0.9.6</code> · <code>ID7</code></td>
+</tr>
+<tr>
 <td width="50%"><img src="docs/assets/apps/km_motordaten/icon.png" width="36" height="36" align="left" alt="Motordaten" />&nbsp;&nbsp;<strong>Motordaten</strong><br>&nbsp;&nbsp;<code>v0.4.1</code> · <code>ID7 / ID8</code></td>
-</tr>
-<tr>
 <td width="50%"><img src="docs/assets/apps/noahg_obdbridge/icon.png" width="36" height="36" align="left" alt="OBD Bridge" />&nbsp;&nbsp;<strong>OBD Bridge</strong><br>&nbsp;&nbsp;<code>v1.0.0</code> · <code>ID7</code></td>
+</tr>
+<tr>
 <td width="50%"><img src="docs/assets/apps/pps_gauges/icon.png" width="36" height="36" align="left" alt="Proven Gauges" />&nbsp;&nbsp;<strong>Proven Gauges</strong><br>&nbsp;&nbsp;<code>v1.0.3</code> · <code>ID7 / ID8</code></td>
-</tr>
-<tr>
 <td width="50%"><img src="docs/assets/apps/pps_warmup/icon.png" width="36" height="36" align="left" alt="Proven Warm-Up" />&nbsp;&nbsp;<strong>Proven Warm-Up</strong><br>&nbsp;&nbsp;<code>v1.2.1</code> · <code>ID7 / ID8</code></td>
+</tr>
+<tr>
 <td width="50%"><img src="docs/assets/apps/road_trip_computer/icon.png" width="36" height="36" align="left" alt="Road Trip Computer" />&nbsp;&nbsp;<strong>Road Trip Computer</strong><br>&nbsp;&nbsp;<code>v1.0.0</code> · <code>ID7</code></td>
-</tr>
-<tr>
 <td width="50%"><img src="docs/assets/apps/start_stop_insight/icon.png" width="36" height="36" align="left" alt="Start/Stop Insight" />&nbsp;&nbsp;<strong>Start/Stop Insight</strong><br>&nbsp;&nbsp;<code>v0.1.3</code> · <code>ID7</code></td>
+</tr>
+<tr>
 <td width="50%"><img src="docs/assets/apps/telemetry_studio/icon.png" width="36" height="36" align="left" alt="Telemetry Studio" />&nbsp;&nbsp;<strong>Telemetry Studio</strong><br>&nbsp;&nbsp;<code>v0.2.0</code> · <code>ID7</code></td>
-</tr>
-<tr>
 <td width="50%"><img src="docs/assets/apps/aref_tires/icon.png" width="36" height="36" align="left" alt="Tire Setup" />&nbsp;&nbsp;<strong>Tire Setup</strong><br>&nbsp;&nbsp;<code>v0.2.1</code> · <code>ID7</code></td>
+</tr>
+<tr>
 <td width="50%"><img src="docs/assets/apps/vehicle_health/icon.png" width="36" height="36" align="left" alt="Vehicle Health Center" />&nbsp;&nbsp;<strong>Vehicle Health Center</strong><br>&nbsp;&nbsp;<code>v0.1.9</code> · <code>ID7</code></td>
-</tr>
-<tr>
 <td width="50%"><img src="docs/assets/apps/vehicle_network/icon.png" width="36" height="36" align="left" alt="Vehicle Network" />&nbsp;&nbsp;<strong>Vehicle Network</strong><br>&nbsp;&nbsp;<code>v0.1.3</code> · <code>ID7</code></td>
-<td width="50%"><img src="docs/assets/apps/marku_x3_health/icon.png" width="36" height="36" align="left" alt="Здоровье X3" />&nbsp;&nbsp;<strong>Здоровье X3</strong><br>&nbsp;&nbsp;<code>v0.2.0</code> · <code>ID7</code></td>
 </tr>
 <tr>
+<td width="50%"><img src="docs/assets/apps/marku_x3_health/icon.png" width="36" height="36" align="left" alt="Здоровье X3" />&nbsp;&nbsp;<strong>Здоровье X3</strong><br>&nbsp;&nbsp;<code>v0.2.0</code> · <code>ID7</code></td>
 <td width="50%"><img src="docs/assets/apps/marku_x3_trips/icon.png" width="36" height="36" align="left" alt="Поездки и расходы" />&nbsp;&nbsp;<strong>Поездки и расходы</strong><br>&nbsp;&nbsp;<code>v0.2.0</code> · <code>ID7</code></td>
+</tr>
+<tr>
 <td width="50%"><img src="docs/assets/apps/marku_x3_warm/icon.png" width="36" height="36" align="left" alt="Тёплый старт" />&nbsp;&nbsp;<strong>Тёплый старт</strong><br>&nbsp;&nbsp;<code>v0.2.0</code> · <code>ID7</code></td>
+<td width="50%"></td>
 </tr>
 </table>
 
@@ -622,11 +644,11 @@
 </tr>
 <tr>
 <td width="50%"><img src="docs/assets/apps/aurelm_music/icon.png" width="36" height="36" align="left" alt="Music Assistant" />&nbsp;&nbsp;<strong>Music Assistant</strong><br>&nbsp;&nbsp;<code>v0.1.17</code> · <code>ID7</code></td>
-<td width="50%"><img src="docs/assets/apps/vizualyse_steam/icon.png" width="36" height="36" align="left" alt="Steam" />&nbsp;&nbsp;<strong>Steam</strong><br>&nbsp;&nbsp;<code>v0.2.1</code> · <code>ID7</code></td>
+<td width="50%"><img src="docs/assets/apps/mdq_ridetube/icon.png" width="36" height="36" align="left" alt="RideTube (fork by 7amoody1985)" />&nbsp;&nbsp;<strong>RideTube (fork by 7amoody1985)</strong><br>&nbsp;&nbsp;<code>v0.4.0</code> · <code>ID7</code></td>
 </tr>
 <tr>
+<td width="50%"><img src="docs/assets/apps/vizualyse_steam/icon.png" width="36" height="36" align="left" alt="Steam" />&nbsp;&nbsp;<strong>Steam</strong><br>&nbsp;&nbsp;<code>v0.2.1</code> · <code>ID7</code></td>
 <td width="50%"><img src="docs/assets/apps/oussem_youtube/icon.png" width="36" height="36" align="left" alt="YouTube (experimental)" />&nbsp;&nbsp;<strong>YouTube (experimental)</strong><br>&nbsp;&nbsp;<code>v0.2.2</code> · <code>ID7</code></td>
-<td width="50%"></td>
 </tr>
 </table>
 
@@ -779,6 +801,13 @@
 </tr></table>
 
 <table><tr>
+<td width="64" align="center"><img src="docs/assets/apps/robertn_store/icon.png" width="48" height="48" alt="Store" /></td>
+<td><strong>Store</strong> <code>v0.9.41</code> &nbsp;·&nbsp; <code>ID7 / ID8</code></td>
+</tr><tr>
+<td colspan="2"><img src="docs/assets/apps/robertn_store/preview-01.png" height="150" alt="Store" /> <img src="docs/assets/apps/robertn_store/screen_2.png" height="150" alt="Store" /> <img src="docs/assets/apps/robertn_store/screen_3.png" height="150" alt="Store" /></td>
+</tr></table>
+
+<table><tr>
 <td width="64" align="center"><img src="docs/assets/apps/sys_monitor/icon.png" width="48" height="48" alt="System Monitor" /></td>
 <td><strong>System Monitor</strong> <code>v1.0.4</code> &nbsp;·&nbsp; <code>ID7 / ID8</code></td>
 </tr><tr>
@@ -799,19 +828,27 @@
 </tr>
 <tr>
 <td width="50%"><img src="docs/assets/apps/driver_profiles/icon.png" width="36" height="36" align="left" alt="Driver Profiles" />&nbsp;&nbsp;<strong>Driver Profiles</strong><br>&nbsp;&nbsp;<code>v0.2.2</code> · <code>ID7</code></td>
+<td width="50%"><img src="docs/assets/apps/eldrive/icon.png" width="36" height="36" align="left" alt="elDrive" />&nbsp;&nbsp;<strong>elDrive</strong><br>&nbsp;&nbsp;<code>v1.1.0</code> · <code>ID7</code></td>
+</tr>
+<tr>
+<td width="50%"><img src="docs/assets/apps/aref_faultwatch/icon.png" width="36" height="36" align="left" alt="Fault Watch" />&nbsp;&nbsp;<strong>Fault Watch</strong><br>&nbsp;&nbsp;<code>v0.2.2</code> · <code>ID7</code></td>
 <td width="50%"><img src="docs/assets/apps/hotspot_studio/icon.png" width="36" height="36" align="left" alt="Hotspot Studio" />&nbsp;&nbsp;<strong>Hotspot Studio</strong><br>&nbsp;&nbsp;<code>v0.1.5</code> · <code>ID7</code></td>
 </tr>
 <tr>
 <td width="50%"><img src="docs/assets/apps/woodr_inputlab/icon.png" width="36" height="36" align="left" alt="Input Lab" />&nbsp;&nbsp;<strong>Input Lab</strong><br>&nbsp;&nbsp;<code>v0.1.3</code> · <code>ID7</code></td>
+<td width="50%"><img src="docs/assets/apps/kombikraft/icon.png" width="36" height="36" align="left" alt="KombiKraft Lab — Offline prototype" />&nbsp;&nbsp;<strong>KombiKraft Lab — Offline prototype</strong><br>&nbsp;&nbsp;<code>v0.1.0</code> · <code>ID7</code></td>
+</tr>
+<tr>
 <td width="50%"><img src="docs/assets/apps/kombikraft_test/icon.png" width="36" height="36" align="left" alt="KombiKraft Themes" />&nbsp;&nbsp;<strong>KombiKraft Themes</strong><br>&nbsp;&nbsp;<code>v0.1.28</code> · <code>ID7</code></td>
-</tr>
-<tr>
 <td width="50%"><img src="docs/assets/apps/woodr_link/icon.png" width="36" height="36" align="left" alt="Link" />&nbsp;&nbsp;<strong>Link</strong><br>&nbsp;&nbsp;<code>v0.1.1</code> · <code>ID7</code></td>
-<td width="50%"><img src="docs/assets/apps/aurelm_mediaprobe/icon.png" width="36" height="36" align="left" alt="Media Probe" />&nbsp;&nbsp;<strong>Media Probe</strong><br>&nbsp;&nbsp;<code>v0.1.3</code> · <code>ID7</code></td>
 </tr>
 <tr>
+<td width="50%"><img src="docs/assets/apps/aurelm_mediaprobe/icon.png" width="36" height="36" align="left" alt="Media Probe" />&nbsp;&nbsp;<strong>Media Probe</strong><br>&nbsp;&nbsp;<code>v0.1.3</code> · <code>ID7</code></td>
 <td width="50%"><img src="docs/assets/apps/ab_storage/icon.png" width="36" height="36" align="left" alt="MGU Storage Monitor" />&nbsp;&nbsp;<strong>MGU Storage Monitor</strong><br>&nbsp;&nbsp;<code>v1.2.4</code> · <code>ID7 / ID8</code></td>
+</tr>
+<tr>
 <td width="50%"><img src="docs/assets/apps/mgu_unified/icon.png" width="36" height="36" align="left" alt="MGU Tools" />&nbsp;&nbsp;<strong>MGU Tools</strong><br>&nbsp;&nbsp;<code>v0.1.11</code> · <code>ID7</code></td>
+<td width="50%"><img src="docs/assets/apps/aref_misfire/icon.png" width="36" height="36" align="left" alt="Misfire Watch" />&nbsp;&nbsp;<strong>Misfire Watch</strong><br>&nbsp;&nbsp;<code>v0.1.1</code> · <code>ID7</code></td>
 </tr>
 <tr>
 <td width="50%"><img src="docs/assets/apps/mgu_phone_terminal/icon.png" width="36" height="36" align="left" alt="Phone Terminal" />&nbsp;&nbsp;<strong>Phone Terminal</strong><br>&nbsp;&nbsp;<code>v0.1.7</code> · <code>ID7</code></td>
@@ -819,11 +856,11 @@
 </tr>
 <tr>
 <td width="50%"><img src="docs/assets/apps/signal_probe/icon.png" width="36" height="36" align="left" alt="Signal Probe" />&nbsp;&nbsp;<strong>Signal Probe</strong><br>&nbsp;&nbsp;<code>v0.4.0</code> · <code>ID7</code></td>
-<td width="50%"><img src="docs/assets/apps/turnkey_e_blend_id8/icon.png" width="36" height="36" align="left" alt="TurnKey E Blend" />&nbsp;&nbsp;<strong>TurnKey E Blend</strong><br>&nbsp;&nbsp;<code>v0.5.0</code> · <code>ID8</code></td>
+<td width="50%"><img src="docs/assets/apps/bcs_store/icon.png" width="36" height="36" align="left" alt="Store" />&nbsp;&nbsp;<strong>Store</strong><br>&nbsp;&nbsp;<code>v3.4.5</code> · <code>ID7 / ID8</code></td>
 </tr>
 <tr>
+<td width="50%"><img src="docs/assets/apps/turnkey_e_blend_id8/icon.png" width="36" height="36" align="left" alt="TurnKey E Blend" />&nbsp;&nbsp;<strong>TurnKey E Blend</strong><br>&nbsp;&nbsp;<code>v0.5.0</code> · <code>ID8</code></td>
 <td width="50%"><img src="docs/assets/apps/drake1804_checks/icon.png" width="36" height="36" align="left" alt="YouTube Checks" />&nbsp;&nbsp;<strong>YouTube Checks</strong><br>&nbsp;&nbsp;<code>v0.1.0</code> · <code>ID7</code></td>
-<td width="50%"></td>
 </tr>
 </table>
 
@@ -945,7 +982,7 @@
 ## Helper Tools
 
 <details>
-<summary><strong>Show all 78 helper tools</strong></summary>
+<summary><strong>Show all 80 helper tools</strong></summary>
 
 | Tool | Version | HMI |
 |---|---|---|
@@ -991,6 +1028,8 @@
 | **Engine Sound service** (`lfb-enginesound`) | `v1.2.2` | `ID7` |
 | **X3 Home bridge** (`marku-home-bridge`) | `v0.1.0` | `ID7` |
 | **Waze Strelka camera service** (`marku-kaluga-cameras`) | `v0.9.3` | `ID7` |
+| **Android Auto log (for CarLink)** (`mdq-aapd-log`) | `v0.1.1` | `ID7` |
+| **RideTube service (fork by 7amoody1985)** (`mdq-ridetube-d`) | `v0.4.2` | `ID7` |
 | **Browser runtime (experimental)** (`mgu-browser`) | `v0.16.1` | `ID7` |
 | **Browser Chromium engine (experimental)** (`mgu-browser-engine`) | `v0.1.0` | `ID7` |
 | **Custom Cluster Phone Port** (`mgu-cluster-net`) | `v0.1.0` | `ID7` |

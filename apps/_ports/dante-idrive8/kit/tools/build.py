@@ -22,7 +22,7 @@ from localize import unicode_resources, localize_spec, load_locale, languages, z
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, '..', '..'))
 KIT = os.path.join(ROOT, 'kit')
-_AQ_LOC_ROOT = KIT if os.path.isdir(os.path.join(_AQ_LOC_ROOT, 'localization')) else next((p for p in [os.path.abspath(os.path.join(KIT, '..', '..', 'idrive7-apps', 'kit')), os.path.abspath(os.path.join(KIT, '..', '..', '..', '_sources', 'idrive7-apps', 'kit'))] if os.path.isdir(os.path.join(p, 'localization'))), KIT)
+_AQ_LOC_ROOT = KIT if os.path.isdir(os.path.join(KIT, 'localization')) else next((p for p in [os.path.abspath(os.path.join(KIT, '..', '..', 'idrive7-apps', 'kit')), os.path.abspath(os.path.join(KIT, '..', '..', '..', '_sources', 'idrive7-apps', 'kit'))] if os.path.isdir(os.path.join(p, 'localization'))), KIT)
 
 APPS = os.path.join(ROOT, 'apps')
 DIST = os.path.join(ROOT, 'dist')

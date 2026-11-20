@@ -1,0 +1,3494 @@
+{
+  "schema": 1,
+  "baseline_commit": "6650ed577b48b80caeb7b708f60ca615f5a8aaa7",
+  "restored": [
+    {
+      "id": "advokat_live_adjustments",
+      "kind": "app",
+      "version": "10.17.1",
+      "channel": "mgu-repo.json",
+      "mguHmi": [
+        "ID7"
+      ],
+      "source_commit": "6650ed577b48b80caeb7b708f60ca615f5a8aaa7",
+      "runtime_status": "NOT_OBSERVED",
+      "preserved_original_description": true
+    },
+    {
+      "id": "aref_drivelog",
+      "kind": "app",
+      "version": "0.3.2",
+      "channel": "mgu-repo.json",
+      "mguHmi": [
+        "ID7"
+      ],
+      "source_commit": "6650ed577b48b80caeb7b708f60ca615f5a8aaa7",
+      "runtime_status": "NOT_OBSERVED",
+      "preserved_original_description": true
+    },
+    {
+      "id": "aref_faultwatch",
+      "kind": "app",
+      "version": "0.2.2",
+      "channel": "mgu-repo.json",
+      "mguHmi": [
+        "ID7"
+      ],
+      "source_commit": "6650ed577b48b80caeb7b708f60ca615f5a8aaa7",
+      "runtime_status": "NOT_OBSERVED",
+      "preserved_original_description": true
+    },
+    {
+      "id": "aref_misfire",
+      "kind": "app",
+      "version": "0.1.1",
+      "channel": "mgu-repo.json",
+      "mguHmi": [
+        "ID7"
+      ],
+      "source_commit": "6650ed577b48b80caeb7b708f60ca615f5a8aaa7",
+      "runtime_status": "NOT_OBSERVED",
+      "preserved_original_description": true
+    },
+    {
+      "id": "eldrive",
+      "kind": "app",
+      "version": "1.1.0",
+      "channel": "mgu-repo.json",
+      "mguHmi": [
+        "ID7"
+      ],
+      "source_commit": "6650ed577b48b80caeb7b708f60ca615f5a8aaa7",
+      "runtime_status": "NOT_OBSERVED",
+      "preserved_original_description": true
+    },
+    {
+      "id": "kombikraft",
+      "kind": "app",
+      "version": "0.1.0",
+      "channel": "mgu-repo.json",
+      "mguHmi": [
+        "ID7"
+      ],
+      "source_commit": "6650ed577b48b80caeb7b708f60ca615f5a8aaa7",
+      "runtime_status": "NOT_OBSERVED",
+      "preserved_original_description": true
+    },
+    {
+      "id": "perea_cluster_themes",
+      "kind": "app",
+      "version": "0.19.1",
+      "channel": "mgu-repo.json",
+      "mguHmi": [
+        "ID7"
+      ],
+      "source_commit": "6650ed577b48b80caeb7b708f60ca615f5a8aaa7",
+      "runtime_status": "NOT_OBSERVED",
+      "preserved_original_description": true
+    },
+    {
+      "id": "robertn_store",
+      "kind": "app",
+      "version": "0.9.41",
+      "channel": "mgu-repo.json",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "source_commit": "6650ed577b48b80caeb7b708f60ca615f5a8aaa7",
+      "runtime_status": "NOT_OBSERVED",
+      "preserved_original_description": true
+    },
+    {
+      "id": "bcs_store",
+      "kind": "app",
+      "version": "3.4.5",
+      "channel": "release/catalog.json",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "source_commit": "6650ed577b48b80caeb7b708f60ca615f5a8aaa7",
+      "runtime_status": "NOT_OBSERVED",
+      "preserved_original_description": true
+    },
+    {
+      "id": "mdq-aapd-log",
+      "kind": "tool",
+      "version": "0.1.1",
+      "channel": "release/catalog.json",
+      "mguHmi": [
+        "ID7"
+      ],
+      "source_commit": "6650ed577b48b80caeb7b708f60ca615f5a8aaa7",
+      "runtime_status": "NOT_OBSERVED",
+      "preserved_original_description": true
+    },
+    {
+      "id": "mdq-ridetube-d",
+      "kind": "tool",
+      "version": "0.4.2",
+      "channel": "release/catalog.json",
+      "mguHmi": [
+        "ID7"
+      ],
+      "source_commit": "6650ed577b48b80caeb7b708f60ca615f5a8aaa7",
+      "runtime_status": "NOT_OBSERVED",
+      "preserved_original_description": true
+    },
+    {
+      "id": "mdq_ridetube",
+      "kind": "app",
+      "version": "0.4.0",
+      "channel": "release/catalog.json",
+      "mguHmi": [
+        "ID7"
+      ],
+      "source_commit": "6650ed577b48b80caeb7b708f60ca615f5a8aaa7",
+      "runtime_status": "NOT_OBSERVED",
+      "preserved_original_description": true
+    }
+  ],
+  "restored_files": [
+    {
+      "path": "apps/_prebuilt/kombikraft/app.json",
+      "bytes": 344,
+      "sha256": "24b632cfd319bec70b54ed1d21875715eb76a37cfd5a7ae39553e2accf086840",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_prebuilt/kombikraft/icon.png",
+      "bytes": 404,
+      "sha256": "b575bfa83137efc1b6330b2b9e47ec162f202c6c6a92e90d06264c54cfde9a26",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_prebuilt/kombikraft/kombikraft@0.1.0.tgz",
+      "bytes": 9981,
+      "sha256": "a0f8ba03c893c1e4b216030cea6a8d05e9e8efea2b79c233b263bbf5f8bf85f7",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/NOTICE",
+      "bytes": 10845,
+      "sha256": "8b2d70d15d127e3a7dd62ecb922249370c3899262f7cff7777316ccc045febf6",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/README.md",
+      "bytes": 21045,
+      "sha256": "a32a9c38f2c37618601c84e5819a2a19be55d49c1bab0b897c6ef0d8a62f120b",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/app.json",
+      "bytes": 24142,
+      "sha256": "0764984847583e835b05e35a10d91e91c7afb5b54008716d35c279c91d526241",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/b_gear.json",
+      "bytes": 37901,
+      "sha256": "33660b0bb8d5c56d375100d1c70d0e42960a86342b075eee742c754fe6f652c2",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/b_label.json",
+      "bytes": 29603,
+      "sha256": "58afe6cc6b0f22b477acbd086f61ac83b6426a675a9d9fcb362caecc2dedd259",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/b_scale.json",
+      "bytes": 25233,
+      "sha256": "d981fce43373d66da9583776f4ef99ec40d6e6b6fd4f02b247fc8cc8447e4efa",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/b_speed.json",
+      "bytes": 495012,
+      "sha256": "4981a906f714616dc19cce21f825988f1c893c11cb4d8562fdd5c82df97d8e39",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/b_unit.json",
+      "bytes": 82212,
+      "sha256": "26709ff6d4cc78014ce6beb2d04e71fb862e667cc7708080082fa94e5637a49d",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/b_val.json",
+      "bytes": 126796,
+      "sha256": "91582b8ab28adb9d6db595c52b42d65b4d8fc0cbe81121248d32e83e6ef8cb03",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/badge.json",
+      "bytes": 96470,
+      "sha256": "09ec960ab49f6335709acc5f47eaf5165eca832b42c12a609e5628c8f0afd975",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/big.json",
+      "bytes": 127804,
+      "sha256": "2ef4c1c0ff9712015803eec6d66aee4aa52f0c53e59b008919159e0acf5f417d",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/c_speed.json",
+      "bytes": 153660,
+      "sha256": "4a86057304190f7b3f93d314f2e7c01dfffa4db64377a8c5eb4a0838862b69ff",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/c_val.json",
+      "bytes": 76045,
+      "sha256": "0802ebc704d31c1746530a64f66e1cb29449c56e5aa9ec12c940270445808bc1",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/d7_big.json",
+      "bytes": 478635,
+      "sha256": "ddaf4020f0bb4de146509320c7c0f4c4d1ff17253f6edfd7fc6c15afb8cb62d2",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/d7_gear.json",
+      "bytes": 799667,
+      "sha256": "7f717a0c438a12bb52c58de6762ffb6ef3493e46b16f9422f76221e2b56fad9d",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/d7_sm.json",
+      "bytes": 65002,
+      "sha256": "c7fc6bf8651ef81de1619f0cddf6b25a083cf5e5de5f3ce2dc53ebbe6c308419",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/d7_val.json",
+      "bytes": 88216,
+      "sha256": "0ea68ad58e4ccf0297a6ade65c783d55d5afd7a30f69b0294d4fb05d06737d32",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/gear.json",
+      "bytes": 1000424,
+      "sha256": "5ede91cf2bcfad97790938f803a6c799dd737e8e9f29438b0403b01a77dbafe8",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/head.json",
+      "bytes": 39444,
+      "sha256": "5898016270bdcf47d02528abab412d809562e320b6b9d2aae5e5828b181c3360",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/m_badge.json",
+      "bytes": 80081,
+      "sha256": "b1f237bc4b7d9588259fe7b1800fc6a4d01faff0efb7b4af5f6172eb8539e5a0",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/m_gear.json",
+      "bytes": 276913,
+      "sha256": "83d8b15f520bb7f67beacb9bccfc6a8d4a1b484c192a75b4a9ba4e224d2d40d3",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/m_gl.json",
+      "bytes": 32227,
+      "sha256": "f2504fa95a261c89fb209fbf988ccf8d06e41913026c563dc74907ad7a1ace6e",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/m_label.json",
+      "bytes": 31030,
+      "sha256": "9fece9d44c4f44dab3bc6732680f19bbf5c3b854c85b31977b84e99b6d6c4adc",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/m_mid.json",
+      "bytes": 40474,
+      "sha256": "2ca0e87dbce8e0b108dccc27d4ece2149855825e5cd6c4e2627fbecac4d623c2",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/m_num.json",
+      "bytes": 41620,
+      "sha256": "b87f76deb4e3e3d86fd12e5bd8a46b5e7464713aa5e57bbccc96da7cd0130464",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/m_speed.json",
+      "bytes": 90831,
+      "sha256": "d5195f89b04f86ee113937117788c790956e597dcbd52ad82b458692477867f7",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/m_tiny.json",
+      "bytes": 46157,
+      "sha256": "0d0b5d47e91119381c6be4c8a81d0754c3f64c9423928678e76030cee4c0b4c7",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/m_tyre.json",
+      "bytes": 32226,
+      "sha256": "023590801562a32c79b872a756d1ba80732b69aad1b764d9d2a1b3a006e5a262",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/m_unit.json",
+      "bytes": 101491,
+      "sha256": "5ea8ce55683eb5f22a909f1d50c9f9e8cef83e08a2f24f14953c60f9a1b09bf1",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/m_val.json",
+      "bytes": 58219,
+      "sha256": "bad708355fea5784282fff5d41e3b0cd5d166304bd6befd7199189582d9bc053",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/n_gear.json",
+      "bytes": 114381,
+      "sha256": "c3b710c6f87ecaab0e102a16cafdcf13513eb8def32b64923b15afae7123298b",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/n_speed.json",
+      "bytes": 525052,
+      "sha256": "b615be2018e2c0d8066ed031cb5bff7ece4b95c891dd4989972dee2438166851",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/n_unit.json",
+      "bytes": 101329,
+      "sha256": "346e999abfe70e2f124aa51eb84fe2688a1b15afb84d48e877649fa38d09788f",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/r_label.json",
+      "bytes": 85821,
+      "sha256": "038b3ba39f3e3cd6b011fef66c5537af6eaedd8b4db4c7b77cf55f356307027b",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/s_gear.json",
+      "bytes": 178552,
+      "sha256": "02ae114bbf751967425ea289da0ca4c6ac9922932f75c214e72e8e5f1c8ad9a4",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/s_gl.json",
+      "bytes": 30760,
+      "sha256": "0f4fdf2b99c2ae6778b78603a85668a3431de349d818abdb78b09fa59141e2fc",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/s_hero.json",
+      "bytes": 314792,
+      "sha256": "f329894f063709b57eec2fb39a6e229d02363c5821492342eb39d7958239a4f3",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/s_label.json",
+      "bytes": 41802,
+      "sha256": "129374cf3c0a75d9d0ab0294c02f2bd72a0844c12c017efc080cfca0294243c4",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/s_scale.json",
+      "bytes": 37529,
+      "sha256": "2a4779566d3e6a21e49e117aac99a087a099db8ef1149e50d451dcf172f2942c",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/s_speed.json",
+      "bytes": 93566,
+      "sha256": "f89e368bace5769811c114788d2cdb88884dc6a9269fff1d4a3639c14d6ff911",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/s_unit.json",
+      "bytes": 82970,
+      "sha256": "aa727fc41f91099dbef5fa48b183cf4aa2dbc038cf5dfd846231c6570b474da7",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/s_val.json",
+      "bytes": 36383,
+      "sha256": "4d8919a5f4aeabcdbff7a908893313e5f6bbd50dc4855d9be835cf640b76fc78",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/scale.json",
+      "bytes": 36169,
+      "sha256": "d4b1343bd841152aaa19a478de031d2d28f6d8b18a1373a208e18dca8dafa8f1",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/small.json",
+      "bytes": 62377,
+      "sha256": "03f6966cd760784fc45588de587a4c61f38b797de8ec0449e113df64da98c1dd",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/timer.json",
+      "bytes": 448641,
+      "sha256": "6d3b18679261f4b2794c91892aa75ffda9f6cfc6b180699d5e6aeffe53f67f94",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/unit.json",
+      "bytes": 53106,
+      "sha256": "71fa7355f9b41a3f1c37194161d71406409b3c632d0f80d161f44ec85a7ea159",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/v_artist.json",
+      "bytes": 89992,
+      "sha256": "a5a0478ee495bfda8d92071fd465732f60cbbfb5b04c087dcf046d50b9e7aed0",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/v_label.json",
+      "bytes": 36590,
+      "sha256": "971c9b93725b230fd06dc0f85e30e05011bdba1a09c93f9c455e9da6629e93b5",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/v_time.json",
+      "bytes": 25349,
+      "sha256": "fe13f33e036f1ee318748c293a297d796b17be858122edcea154af29e5b40f78",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/v_title.json",
+      "bytes": 120065,
+      "sha256": "1b9c082be3d410c21d25d4183c9bf05a82d7958c324e13b92e6d8b56ff66753c",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/v_val.json",
+      "bytes": 32233,
+      "sha256": "8fc2cedabfb6220be88281a34d7ac003d08640828c14af34796b309724773289",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/value.json",
+      "bytes": 96728,
+      "sha256": "ffe9e0f87df9d7236bc5d838042a475a4ee931e1d6a60ca99abcc68ed6b7bc07",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/y_gear.json",
+      "bytes": 910431,
+      "sha256": "8efac4308268d1d22ee6f9a22fe0d97577b6aabc9b612f68aaf9b06e0a69a64d",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/fonts/y_val.json",
+      "bytes": 82857,
+      "sha256": "6a7a7be6d09d4d38ca876ed6d68c6f07e7b0bc73b2f943faaf3034802a572f34",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/layouts/cruise.json",
+      "bytes": 8242,
+      "sha256": "4eb64282b634eefe6aac6b21a09b3b8688cc4484bb91b88676eb84e3560cb9b6",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/layouts/drag.json",
+      "bytes": 9540,
+      "sha256": "ab6540143b6b459ab89be25e418b1d37d1402c523bf70c51bc3370e15a465460",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/layouts/dyno.json",
+      "bytes": 24695,
+      "sha256": "47b1887804462e1cdce41eab1fcc2a494a22fdae223804673397b44c9b07de3a",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/layouts/grid.json",
+      "bytes": 5261,
+      "sha256": "7b0224f18ef818000a82c2cce4371e7f8c9109a24ec24b1a964e182628325f53",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/layouts/gt3.json",
+      "bytes": 15292,
+      "sha256": "5eb51f3aa06b993ce3f3c67820e195830b23c339fc86f0a81acc25ca4983e392",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/layouts/m.json",
+      "bytes": 29225,
+      "sha256": "a5a512e585025264cfda38b878033627eaedd0b7bf62b84dd6eabcfba8ae4894",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/layouts/mapcal.json",
+      "bytes": 2434,
+      "sha256": "efbd463e3a7823ea13dbedc4332a27959f6b6b87e7116e4e8f6be35de1808632",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/layouts/minimal.json",
+      "bytes": 5369,
+      "sha256": "5caddbf10e653cc406d66c51838c8003b86ce6190046b0d1d847639375ca14c4",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/layouts/mview.json",
+      "bytes": 17404,
+      "sha256": "93290a3a2dff7ed7b0a220a6d4134e32baaea346547dfa48be2d5e5c6463969d",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/layouts/rally.json",
+      "bytes": 8491,
+      "sha256": "d0fa33c70c2fc9485c6db73606a6eb847271db64e7327106c0624a39e01a2c4e",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/layouts/retro80s.json",
+      "bytes": 11248,
+      "sha256": "4c0f3c14485e1e84ee977b007d10acc3c6c6256fdf79064b36339059318876c7",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/layouts/ribbon.json",
+      "bytes": 20949,
+      "sha256": "6adecdefe19a544886262ad508b8427f5ff798db813d0f01ee9ed71e066bfec9",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/layouts/sport.json",
+      "bytes": 15622,
+      "sha256": "13f021094b42665dc18a797eaa24b6482755d0498838a2337391fb0174ff2216",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/layouts/track.json",
+      "bytes": 13154,
+      "sha256": "5e6a36fc06a27ed7fe5dec5bb901bf28bddf9de40f568e704ecd9298a4a4a0a4",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/layouts/vector.json",
+      "bytes": 17504,
+      "sha256": "a31c6f0714d4733a0a0189aae3d4342127d747d39fca0a52d4fb7086ed466ae9",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/previews/cruise.json",
+      "bytes": 35509,
+      "sha256": "48b7308fdb27e463d00acb470e7ccd806bad2db17c9a5c2c813a6231603848d6",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/previews/drag.json",
+      "bytes": 73325,
+      "sha256": "5b40d33ddf8858ece4ad5d35478c921ed530cb46b116eeb896a817af1fc75e30",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/previews/dyno.json",
+      "bytes": 120881,
+      "sha256": "596ce4289a5fbca48dc9839cb38b7965e6ff71ccbd69dbbeaa7f472c99a768fd",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/previews/gt3.json",
+      "bytes": 82085,
+      "sha256": "a4538daab3dbb73d42271ce6d243434273c0a281a25fab0700ac7705cf6b5ed2",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/previews/m.json",
+      "bytes": 130945,
+      "sha256": "9197cfa00299cd5b590c9e10703388bc6f3075d860a4c45318363d7b7fd64947",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/previews/minimal.json",
+      "bytes": 26293,
+      "sha256": "3c66db50ea6bf6516f00a53bc59a9441e2e0d656e978e4d4e3aed094717c011f",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/previews/mview.json",
+      "bytes": 178689,
+      "sha256": "c9786977f3170a0bddf4df1a59664bf342e032ce0ecba3fe1fc0a3f5b8576fd1",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/previews/rally.json",
+      "bytes": 92565,
+      "sha256": "30ddee5b9de911084e5f7ca1a495e1dbc5d62bab09d15b3f65b8e4164e8b2800",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/previews/retro80s.json",
+      "bytes": 75709,
+      "sha256": "077f8bb639e82f491daa642d0ae743f0b48d084bd42bf065c507a7c71d2b1bda",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/previews/ribbon.json",
+      "bytes": 69585,
+      "sha256": "7f046b732024ab6d2c93d48917613e4a73351b1309099db0f04c7d5af4dea797",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/previews/sport.json",
+      "bytes": 145225,
+      "sha256": "af2600c527b8c91c5667ab8cc82c8e66a552ccf34901362e27fb5a55384b96c9",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/previews/track.json",
+      "bytes": 90397,
+      "sha256": "0c9068d526478d789e9e2334a30c07f3558452b3d4b79018c20a545226b7403d",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/hud/previews/vector.json",
+      "bytes": 150485,
+      "sha256": "aeeac3a713bfbc1d54bb7953df76472a310f3fead038cd6fd83b52f56475e541",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/icon.png",
+      "bytes": 17047,
+      "sha256": "01689a8688cafb36e95954753f93d7f3f1070ee9d99352756007decae6f4c6c8",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/main.js",
+      "bytes": 2062,
+      "sha256": "5a854ab95cd250dd7a1b99e55e61ada2b8ada0698daea0cfa8095f792779b7a3",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/emu/wasm/README.md",
+      "bytes": 5235,
+      "sha256": "de338e256eb7b47872fd32667a9529f250116eb080908346e92073df828d4df7",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/emu/wasm/build.sh",
+      "bytes": 1821,
+      "sha256": "a1ea4eec5e4375cbd27ec9b460da7dad133feb7bc4ed7d08cabc345ac778cda3",
+      "mode": "0o775"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/emu/wasm/emu_gfx.c",
+      "bytes": 15921,
+      "sha256": "94dc94f58f8dd11cf819f842b3692047c6ff258b1a2fd0d5d53c83ad88f98a02",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/emu/wasm/emu_lib.js",
+      "bytes": 1046,
+      "sha256": "1cc814742d55f0d6bc176911362d59139004262904a17edce33134d0933eefae",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/emu/web/emu-app.js",
+      "bytes": 33955,
+      "sha256": "1d6d5364f2a56c69e8c4a1ef4060286fb3d61e51d2a0b25e6c123144b5a916a9",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/emu/web/emu.css",
+      "bytes": 15983,
+      "sha256": "225e766517d0c57b93c5754b0665e96c7e1b17b0e57ce84acd50f5123c3ed022",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/emu/web/gfx/gfx-test.html",
+      "bytes": 7591,
+      "sha256": "6ec8729a4f5899754b265951c2e06bcfa57bd62a66b53efd7d1fba781256e515",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/emu/web/gfx/mgu-gfx-wasm.js",
+      "bytes": 31300,
+      "sha256": "afd6d3d2edc0376b86f8e3921e9b8cea85251a69616c0b4557b7688f331fb04d",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/emu/web/gfx/mgu-gfx-wasm.wasm",
+      "bytes": 61907,
+      "sha256": "fbb13b6eb42a4d339bcc895bbb29075787794a873265d69b5f6d0115ebbe7af3",
+      "mode": "0o775"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/emu/web/gfx/mgu-gfx.js",
+      "bytes": 4319,
+      "sha256": "e60d8787e1627c25982618783ce14d7364299134396421fb49bed7455b9fec3f",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/emu/web/index.html",
+      "bytes": 7312,
+      "sha256": "d3f3f08383d743fd7423518d0fe9c75e719abe62506deba14d690b1043af45e0",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/renderd/LICENSE",
+      "bytes": 35149,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/renderd/LICENSE.mgu-renderd",
+      "bytes": 1077,
+      "sha256": "481b839c45d8426a0b561b5a4f8d7437dd22dc61e08c8a2817b16831fab1e86a",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/renderd/src/dialect.c",
+      "bytes": 2194,
+      "sha256": "6d0389a5d386cef8e75cc0d0add89df735d7506d70284f67167bfc58c8dbdccc",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/renderd/src/dialect.h",
+      "bytes": 1206,
+      "sha256": "9080f6513322adda75a3fa977deef45d8d54b962814a4666b8f9cc7783f29a49",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/renderd/src/gfx.c",
+      "bytes": 52871,
+      "sha256": "868cac2093a40a415221f910c16faff491ecd80a3847be21c35f3f8900cc9797",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/renderd/src/gfx.h",
+      "bytes": 5887,
+      "sha256": "b858d070d7f72af4fc311707affe6054ac19b0f417563dffe7ae10a8d68c5c2d",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/renderd/src/log.c",
+      "bytes": 618,
+      "sha256": "00ce604f24b5664a13b604259b6cdc6838618c0dc69e90946f8bd024c9db8b8c",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/renderd/src/log.h",
+      "bytes": 457,
+      "sha256": "6677f5495638c8fd3020ddb289fd1a1b105a7941a7964ef24548683e32b83b91",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/renderd/src/proto.h",
+      "bytes": 9207,
+      "sha256": "a06065ae41e4492d4dc569d309fa4a52c61c2be016093b8be082d13223cd4bd6",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/tools/bake_cjk.py",
+      "bytes": 2656,
+      "sha256": "eb6cd6cc1570e7c251839332d483ec1ac99c11d665e8f7d310890d680aba4c06",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/tools/bake_cyrillic.py",
+      "bytes": 1974,
+      "sha256": "0f2f1dabdb7c2abd2084c2cc4bc00e1df17519098d040776182c391db70dc05b",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/tools/bake_fonts.py",
+      "bytes": 3512,
+      "sha256": "cd486a1a00b386f94c7670c009ae369888e7af1b20fa60ccdba9380b0d3db376",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/tools/bake_korean.py",
+      "bytes": 3309,
+      "sha256": "8aedf34da14a943e02028bb16986ad31c45898231f25aca675274f40366c19d8",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/tools/emu.js",
+      "bytes": 44861,
+      "sha256": "fbc760e5dcffe191ea6e577102d0c31212e15d8364f10ccbbb5acd7df2151cd5",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/tools/hu-stub.js",
+      "bytes": 24631,
+      "sha256": "f827e088bad1384ad3f5d220492f406b0f1b5d315c9c2b56d31ee5dd689c8e31",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/tools/make_logo.py",
+      "bytes": 4379,
+      "sha256": "365617e2f639c816ac3cbd192eb7086814d33df624628e9eac1bb9044e523673",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/tools/prune_locales.py",
+      "bytes": 4202,
+      "sha256": "859aff11bc431701cb744e75f9f78106a3bfbbeb680fba9067017a9aedb3291e",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/tools/snapshots/perea_cluster_themes/ID7.application.xml",
+      "bytes": 4098,
+      "sha256": "fc1f3892aae6ee19675023ce15d75631d3b8fd2fbcb47ea5c27c4113a663a870",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/tools/snapshots/perea_cluster_themes/ID7.uiDescription.json",
+      "bytes": 48181,
+      "sha256": "5ae594cc43b41374e0ac6f9a6bd876a06f6fa41e4268d0fec7b17ce277cbd54a",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/tools/snapshots/perea_cluster_themes/manifest.ID7.json",
+      "bytes": 5721,
+      "sha256": "e494cb8a155a2ea9081783a7dbb57f8a13d957adf70d6a276b615bdc49018d25",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/tools/snapshots/perea_cluster_themes/strings.en.json",
+      "bytes": 19921,
+      "sha256": "1e4424807d31b390a4473c8fd3a16d109d3a553a1bfcc217c3e701be74dd97d5",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/tools/snapshots/perea_mhd_flex/ID7.application.xml",
+      "bytes": 2003,
+      "sha256": "22b161d110e67076fc63170747f86852e5b15b44e4cfe421b7ab20dcae644f23",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/tools/snapshots/perea_mhd_flex/ID7.uiDescription.json",
+      "bytes": 34259,
+      "sha256": "e53cc38c2608019ca60933b261110e4bdab640a2cc201f08d09e456925078c08",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/tools/snapshots/perea_mhd_flex/manifest.ID7.json",
+      "bytes": 4027,
+      "sha256": "a7b1c93879691eec316704b726d911b37a3ee28ab0c9904e84149ab5bbadfdd6",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/tools/snapshots/perea_mhd_flex/strings.en.json",
+      "bytes": 16128,
+      "sha256": "eda44886628b6bf15aa77e4240e3115a530b8d309a4e9c991a415dfb826063aa",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/tools/sync_locales.py",
+      "bytes": 1862,
+      "sha256": "c30d62973c1afcaeab86b063f50a6eeb194a97c24a27a0eaa3b6426ee97991c4",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/tools/test_build.py",
+      "bytes": 12990,
+      "sha256": "c0861402a718371ef44491f1457765bb9012e5809f5b708c9d705b945ef63b96",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/tools/test_cluster_themes.js",
+      "bytes": 6420,
+      "sha256": "5cd9e8f8d0beb9e623c90a77dd6a707132ad72242c1e0fb92b65d5452c909850",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/tools/test_fit_to_unit.py",
+      "bytes": 8225,
+      "sha256": "ecf30d69bdf5e0ecdac9bb134affbf76654d35a1025b03abc03fa4e47fc0be8a",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/tools/test_locales.js",
+      "bytes": 5144,
+      "sha256": "d0c701f4cf6a540877a5086b46266207b9d7cdcf09385b646110b8e7ecc22b2e",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/tools/test_mhd_flex.js",
+      "bytes": 43439,
+      "sha256": "1c524d9f1cdc4ebce251e588e271c8b122c1cbfad9f847d99376495488133aa1",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/tools/test_runtime.js",
+      "bytes": 26782,
+      "sha256": "ca524dd9472994bd50fcc8a7107b7ef7738640ef80bc6264ccc5cdd524ab0aa0",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/alexpereap-idrive7-apps/kit/tools/test_start.js",
+      "bytes": 11917,
+      "sha256": "3121406ab04053218e589fe6e289eaf908db6a9f8ccd02d4a29757043cbd0776",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_drivelog/README.md",
+      "bytes": 4213,
+      "sha256": "72dcf8f16052d6af18b78900f222ca7188f91bd5f625787a14ddcc290096336b",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_drivelog/app.json",
+      "bytes": 3662,
+      "sha256": "f941da3e26c189dfc3e2e8648cf919edba8bde24811f4665d951b7255af97f61",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_drivelog/icon.png",
+      "bytes": 6638,
+      "sha256": "51e3961d300d999d3ab79e77a9331b24b184672cae59187c1365dfa42b0ad23a",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_drivelog/log/dragy.js",
+      "bytes": 3551,
+      "sha256": "739037368d962a9019c04cf0c6c722f4b59a5ca38351f87a919f7e41d78030dd",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_drivelog/log/trip.js",
+      "bytes": 7306,
+      "sha256": "1cd12214255d32eaf0ddd87e34dac6400c201d57df0f125da950389e0aacfd96",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_drivelog/main.js",
+      "bytes": 16148,
+      "sha256": "73504e029eee5d7ffcf68a6209c717b50e12bbf8b7a52d50fcb1f9845032d570",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_faultwatch/README.md",
+      "bytes": 2902,
+      "sha256": "1598837f9a1cc84366a92393016511a213431b003f4ffc18efc68f795ee5c522",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_faultwatch/app.json",
+      "bytes": 3588,
+      "sha256": "ff3d2e61b57b97cdea61ef5b7d3529b0bcaf72981b16b00fba561b8a9e47eefc",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_faultwatch/faults/watch.js",
+      "bytes": 4115,
+      "sha256": "fe77d756295e4515ccd8dba1b4462e994c963cc30a845ce440e961b7d108a6d9",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_faultwatch/icon.png",
+      "bytes": 4476,
+      "sha256": "f690384973ba07e8d7fb46b3b63ed5d8b882069b32143cce897f537fc3ebd8d2",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_faultwatch/main.js",
+      "bytes": 10376,
+      "sha256": "6f59c9653b3a500dbc8f14817f6d4f623ea632a8ff33c5a701f0c4971c174948",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_misfire/LICENSE",
+      "bytes": 1268,
+      "sha256": "86f42b59ca567645ac26b213854731bf91a2747a19db1ec228aa1d8704f345f1",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_misfire/README.md",
+      "bytes": 3606,
+      "sha256": "9a3e9046788a40bfca64e1abd7cd126be4550cb0ff7eac8736e5932d161a439f",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_misfire/app.json",
+      "bytes": 3919,
+      "sha256": "cadad4a2047831447bc4efba8153c03630b8a82fd48a71d6ba875c1e3614b692",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_misfire/icon.png",
+      "bytes": 3582,
+      "sha256": "1fc5275a59f3edf23201da39ec30c0c158f2a7040f737616efea9bb293614e57",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_misfire/main.js",
+      "bytes": 17997,
+      "sha256": "fe1142106bb8372ae42104132722c5df3da0b1e2b504cee1c8e30259aca0a69a",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_misfire/misfire/track.js",
+      "bytes": 6246,
+      "sha256": "6c3af0d3581771c60f82cbb0b974c35df592e5109dac9e4504378d30314540ed",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_misfire/obd/dids.js",
+      "bytes": 7293,
+      "sha256": "a5a73df6aa4429c2e59fe3ec494ea972a6c016a969aca82e117e67c9b022d7c2",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/LICENSE",
+      "bytes": 1151,
+      "sha256": "7c813412dcaf1b9d18c28ca6b6199c4349e15e35beca44ab6cab8e4413fe0aa6",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/README.md",
+      "bytes": 5868,
+      "sha256": "5fb91ef36794ae368e79f401d1d9fc511677054ce60d3b7477772686969ec1a7",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/apps/eldrive/README.md",
+      "bytes": 4891,
+      "sha256": "995369f57eaf0d12c2f19d1e0797b415b916853ff3848df165fdf05391df7ed9",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/apps/eldrive/app.json",
+      "bytes": 31190,
+      "sha256": "c5f340ad94bcfda5cd92226d95c4cde3ab185c9073529dcbeb9d4974319ac030",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/apps/eldrive/icon.png",
+      "bytes": 15313,
+      "sha256": "5869ea41c3c995e8f085e2761277db3e5f5040b6042ad50ad185d9b3b52a824a",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/apps/eldrive/live.js",
+      "bytes": 72162,
+      "sha256": "7ea719d8080cc5b44fafb1647c0b8df7dbf02c20da86b9ed71311a2e1d6f5257",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/apps/eldrive/main.js",
+      "bytes": 98000,
+      "sha256": "5885a07c8555707d5d3ed093b7c407ff4e9cff79cc1a5b9f65544dad85ee2c24",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/apps/eldrive/range.js",
+      "bytes": 14534,
+      "sha256": "64b3f77fa49d4cf7cc54758d3faf871c45322001bda43ead53eed7db94217b34",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/localization/credit.ru.json",
+      "bytes": 448,
+      "sha256": "656d45a268efe4ae518b331a15b31a7194264b027466b416a77cfbf412fb86b2",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/localization/credit.zh-CN.json",
+      "bytes": 576,
+      "sha256": "c15e741d089c95575f0e8c4833489d6530980ced429672c9248ea8b6bc8fbd59",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/localization/fonts/OFL-NotoSansKR.txt",
+      "bytes": 4236,
+      "sha256": "77fe79c891328aee1528d3efa06f344798c180d0d4df0ea02efe243f63c865fe",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/localization/fonts/cyrillic-ru.json",
+      "bytes": 53292,
+      "sha256": "c847f70baaa6b2f12df1e5acebab0227d97f46c76a09248e66b57ae5686d5758",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/localization/fonts/diagnostic-zh-CN.json",
+      "bytes": 679189,
+      "sha256": "82e0ded0741e4fe402ef3fa7569d9c5a53f7684e4bc71f9d5ead36cfe280c8bd",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/localization/fonts/korean.json",
+      "bytes": 755507,
+      "sha256": "ae4c3c2728fd414d5b001d3c413cbfc3c4cc0588f983bc82d6d038b574273dc9",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/platform/permissions.json",
+      "bytes": 9142,
+      "sha256": "a03a2d7be452e89f9ce5361820361dded34ef36aa1e4a5afda95a4a1b1e26b01",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/runtime/canvas.js",
+      "bytes": 27276,
+      "sha256": "5ba26f725e46ef5bf4b47308f40365791d44b59e7d8424b43e1024514f0dfcc8",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/runtime/car.js",
+      "bytes": 12021,
+      "sha256": "a056c5b5af6b5e401ea1efcd0521e891936e6b89d234a3151719c3f91a430b39",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/runtime/credits.js",
+      "bytes": 529,
+      "sha256": "6074066bc6ae85794db9b844322264ad8aa73b89c850f6b03a3ee57c57d95084",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/runtime/diag.js",
+      "bytes": 10668,
+      "sha256": "337bec1fed75f5216de2a3ef1fbe5cbb1e183b152a8071142a1009441bcd7cba",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/runtime/dids.js",
+      "bytes": 7048,
+      "sha256": "cf6ae106099e64863a7806ad1db36cdd24f161c03a4d97fba1aa2d5b630c73f4",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/runtime/display.js",
+      "bytes": 53010,
+      "sha256": "ab9f171c53b4915a466f82bfd42c55b494793b8b58930dd18bb14a33f083da51",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/runtime/ecus.js",
+      "bytes": 1257,
+      "sha256": "f5ec3dbdece067f7eaa0080479dfde0d25b8a882f657df8b6f58f46f8622e149",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/runtime/engine.js",
+      "bytes": 4263,
+      "sha256": "58745a5ed7f39204b295e1f7b83b3c42592adb215d29fbfb185e9694ceb6de90",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/runtime/fonts.js",
+      "bytes": 1848,
+      "sha256": "32b44c27f72741fba695d9814b8026644b8e2eb00afe5da5989e7de67aeedc82",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/runtime/fonts/OFL-NotoSansSC.txt",
+      "bytes": 4387,
+      "sha256": "babcfe66c8a098b2fa279bc724a3a342f8124f77ce18941fbcc1bbb39823cded",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/runtime/fonts/UFL-Ubuntu.txt",
+      "bytes": 4991,
+      "sha256": "931ffbb2682c5661af5c50c792d66351a89e58c8142f6cb3b1b43b90c2f76f1d",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/runtime/fonts/bold.json",
+      "bytes": 101476,
+      "sha256": "c8185d6874a4ca1f79ffc2b73434d40426381b4bbf395f6f49733bd7020d7e76",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/runtime/fonts/cjk.json",
+      "bytes": 470342,
+      "sha256": "c2eb9fad6fa946810f1d5993ed1654fd44b76366d20a4b4cb2fcad7e365ae37f",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/runtime/fonts/gear.json",
+      "bytes": 65999,
+      "sha256": "d449f2afa02529e244a2499d294beb6ce20c887a56cb7ce8c9cf296413c6f592",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/runtime/fonts/label.json",
+      "bytes": 72561,
+      "sha256": "4dd985232ef36675f30ec855e8c4d5e6db5d44c8a0e04d82d50adc56c9eaf4cf",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/runtime/fonts/light.json",
+      "bytes": 91880,
+      "sha256": "961ac19e874ed013c4cdfaaf009e85977e47889cbf3d470901f3d33b4bf4e0df",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/runtime/fonts/num.json",
+      "bytes": 110925,
+      "sha256": "02a02e0c8e8da9c7bed35d66fce8c993998adf93080050e47511b602dbbcf9fc",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/runtime/gauges.js",
+      "bytes": 50921,
+      "sha256": "3eb52e936767eae6b881e8a4342e74a09dfb1d5414a31f3bd6a9106dc0556af0",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/runtime/hmi-text.js",
+      "bytes": 1163,
+      "sha256": "74d96fd26ec53f4dc55fd36e079901ed03994794c8b31ae37e93e095092814e0",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/runtime/i18n.js",
+      "bytes": 3756,
+      "sha256": "0600bbd7946fc5cda8155702c63d0a2c9c4422541daca4d353b52fe95a0b7768",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/runtime/locale.json",
+      "bytes": 31,
+      "sha256": "c37863ed4336c34a3868d150767644841256ee3ad6fc3dad6e223bcb5913f7e7",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/runtime/locales/ko.json",
+      "bytes": 90315,
+      "sha256": "dd9e8987cbe22299d7e354b2e69ffc275d486798a56e258f7c26f568e816110b",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/runtime/locales/ko.tsv",
+      "bytes": 75857,
+      "sha256": "1f88db4c3e29386641c73da96b014d85150184aa2e248b243935118b47155908",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/runtime/locales/ru.json",
+      "bytes": 127091,
+      "sha256": "791b34dcdfdf07fadb1c611536357c22c482045f8ff15d5ee4e3e0e0e699ded9",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/runtime/locales/ru.tsv",
+      "bytes": 114009,
+      "sha256": "edac49041d32bb305aa7c8ed81723241229d77320328a759ce6ab92bfa256b16",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/runtime/locales/zh-CN.json",
+      "bytes": 61275,
+      "sha256": "22fc36bc61ea4593a7791907231a9cb4235d300323a27cbeeea6d93ca316cf69",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/runtime/locales/zh-CN.tsv",
+      "bytes": 51790,
+      "sha256": "fa2cbe5686a30df35591368f20368bb8670cf14a9bdac71cb94ce48b440af7f7",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/runtime/mgu.js",
+      "bytes": 42839,
+      "sha256": "cc2e680edc2973f773034476a00911144e79a69dcfcffe2dc9d945c0932542d3",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/runtime/pack.js",
+      "bytes": 3758,
+      "sha256": "25e8270eb6b67045d8d9bbc225f6877dc54f9078036742e5adca687e1cf040c2",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/runtime/parked.js",
+      "bytes": 1571,
+      "sha256": "43f5517ad9badb0d23a11bb59a9c4501482891a23443861e3f5bdd10d1dcab57",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/runtime/readonly-diag.js",
+      "bytes": 9183,
+      "sha256": "e46d9e54020b7111d38447f8b58dd8af51777f04524d0051893e7e5aa658f733",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/runtime/record.js",
+      "bytes": 18706,
+      "sha256": "c0764f55676a99e33a614780ffb972c37371331b69e17e9200e6df627d107b31",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/runtime/renderd.js",
+      "bytes": 17565,
+      "sha256": "4bad1bb4e73c0b7719ed97125fd48db7779287d87f12f102343641854d8b10ef",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/runtime/sgbd.js",
+      "bytes": 5451,
+      "sha256": "799b35e09d558be20fa4fd6bacab0b6fd102fe49aaf34ae81dbadd7fcabfa37e",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/runtime/sheet.js",
+      "bytes": 14369,
+      "sha256": "27492de538f1ae034f572a6f8362599ddc4d318a02505ceed16fe2530ff58f05",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/runtime/signals.js",
+      "bytes": 6321,
+      "sha256": "156b11573e0dc3f694cd10473334eda9b11338524e9b9950eb58820533fe9c8d",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/runtime/sim.js",
+      "bytes": 3920,
+      "sha256": "b7d1ee492c017223e1f0726a69af0d8cff1aa44ae10557e2effae1e3249fa2d9",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/runtime/text-layout.js",
+      "bytes": 545,
+      "sha256": "0a36ff6e5b4d882a28d0689e0c110f007a53babc1fe9198be822823423d534d6",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/runtime/themes.js",
+      "bytes": 3158,
+      "sha256": "c24c641a0e82c4b9bc1ba91ebc2916044de9e160e40d0cf888943fc12d80fa58",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/tools/build.py",
+      "bytes": 36697,
+      "sha256": "6889ffb7df6eda7be84217a32b1c60d40c9d292a987dd4452ba4d68a17c480c9",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/tools/locale-revisions.json",
+      "bytes": 31,
+      "sha256": "8c6ff86fd251dcd03eb2f2c6ccf86cf26dc7cc8e4697993521b63f5363ee27a5",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/tools/localize.py",
+      "bytes": 3933,
+      "sha256": "3da5941a9b05f0f0318bdd48c7595dcac5b8145c24c3afc73a0a828d30910d34",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/tools/make_icon.js",
+      "bytes": 5323,
+      "sha256": "8fe3c6dfbb267ebd688355ce315e6a1cfecc81e8e4f94d1a6186ea8a3bce484e",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/tools/oapgen/gen.js",
+      "bytes": 2966,
+      "sha256": "03353755765fd356df9b22b5042e5cb2227e057bcc933713b2c16147684bae1a",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/kit/tools/pack_data.py",
+      "bytes": 3280,
+      "sha256": "f0795f6170588a11efb2db504bd6cee6fb58a5aefd689d05d926583eff05e0ce",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/beele-eldrive/mgu-repo.json",
+      "bytes": 1472,
+      "sha256": "5d5fe0eb5755c797b2212869135b2c26eac5eea7d4f1d4193d233024a3db5b10",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/LICENSE",
+      "bytes": 1151,
+      "sha256": "7c813412dcaf1b9d18c28ca6b6199c4349e15e35beca44ab6cab8e4413fe0aa6",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/README.md",
+      "bytes": 5552,
+      "sha256": "ca8c1565312b008f8a4ed9cf2b2c442349d6c3e18a8427cd8fec0bea8046e3bf",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/apps/advokat_live_adjustments/README.md",
+      "bytes": 16723,
+      "sha256": "c98d5052c4dd883f7ad92fe9a5b4abe2df71bb7a8dd502f5fe526aa0fb794da9",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/apps/advokat_live_adjustments/adapters.js",
+      "bytes": 7565,
+      "sha256": "75966db987b31f1d7da8b9d5d3eecd7e6900f043914d018c16692f9eb1fdd438",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/apps/advokat_live_adjustments/app.json",
+      "bytes": 6515,
+      "sha256": "1486aaa82cc1a0ec31ae5df8c45abebafcab55db88aa64c1858105e3da5f13ce",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/apps/advokat_live_adjustments/auto.js",
+      "bytes": 11880,
+      "sha256": "859171f13e761a9b7b33a21af74b098df632db68b7b808e6cd658cb8557af9d4",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/apps/advokat_live_adjustments/bm3_profiles.js",
+      "bytes": 5528,
+      "sha256": "53438f1dcad22486f162f38ef6a41d332c54a5d11827c7c157c7f38fd78b3cbb",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/apps/advokat_live_adjustments/bm3_protocol.js",
+      "bytes": 8268,
+      "sha256": "346e427ce89ced9fe3cac7bec7d6e746c34eec42e6446b7d40ee9ee56f2fc74f",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/apps/advokat_live_adjustments/controller.js",
+      "bytes": 12456,
+      "sha256": "fb9ce6215655ff69704ab7ad7fd74405a8452f3aabdeb0e70f89b5ffda6ad63e",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/apps/advokat_live_adjustments/diaglink.js",
+      "bytes": 6220,
+      "sha256": "535214c564fd93196fda826dcdd458fde2c4b9c953e3f5528c3280bb3ca2a025",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/apps/advokat_live_adjustments/icon.png",
+      "bytes": 3147,
+      "sha256": "a274ebbeb1cda6ed3e5af20cccaa6c4877ebd2e515880d20f81fa874606400c5",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/apps/advokat_live_adjustments/logsend.js",
+      "bytes": 7167,
+      "sha256": "51f18d852374758e793aac808a928987835dad140bbdbfffd512a6b0dd9c8366",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/apps/advokat_live_adjustments/main.js",
+      "bytes": 11087,
+      "sha256": "47accdc50e4f4b28e6812e0d6a98b783e7d847c9b3ef230eaf9ee35178eb42b3",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/apps/advokat_live_adjustments/muffler_img.js",
+      "bytes": 209156,
+      "sha256": "a801d5b65b6efe3bdc9159b55db74612a05d6e944220ebda72b6bab922a18694",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/apps/advokat_live_adjustments/real_adapters.js",
+      "bytes": 8555,
+      "sha256": "4eea9ff729e01e52b170c6270f6c3c4f8e4000db7bf9431fdbb0afd2bfd18d3f",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/apps/advokat_live_adjustments/tune.js",
+      "bytes": 13080,
+      "sha256": "f68b77c128e5d88b097c4d7315ff5f63fe15b28bfd7801bb128163f9d9beee4c",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/apps/advokat_live_adjustments/tuners.js",
+      "bytes": 14293,
+      "sha256": "a6c48b60f0640413876a926e7c17e1c04e50a4493dcfa065fd588d67f8957ab7",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/apps/advokat_live_adjustments/ui.js",
+      "bytes": 26312,
+      "sha256": "8bb0c5b87c4dd9c4e62836606bbcde823dfec026efa9b24fc4d28155fc39b1e0",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/apps/advokat_live_adjustments/xdrive.js",
+      "bytes": 36649,
+      "sha256": "342603e919980187c9a0bcc976d77bb8cb8135581e9223ecf1231a107f7f59b9",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/apps/advokat_live_adjustments/xdrive_live.js",
+      "bytes": 4645,
+      "sha256": "14ea910dc0032696fa3fa787fe101b9c72800d6ed8dd20c25da0f964cb9f8215",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/emu/wasm/README.md",
+      "bytes": 5235,
+      "sha256": "de338e256eb7b47872fd32667a9529f250116eb080908346e92073df828d4df7",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/emu/wasm/build.sh",
+      "bytes": 1821,
+      "sha256": "a1ea4eec5e4375cbd27ec9b460da7dad133feb7bc4ed7d08cabc345ac778cda3",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/emu/wasm/emu_gfx.c",
+      "bytes": 15921,
+      "sha256": "94dc94f58f8dd11cf819f842b3692047c6ff258b1a2fd0d5d53c83ad88f98a02",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/emu/wasm/emu_lib.js",
+      "bytes": 1046,
+      "sha256": "1cc814742d55f0d6bc176911362d59139004262904a17edce33134d0933eefae",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/emu/web/emu-app.js",
+      "bytes": 33286,
+      "sha256": "8c00629e8a680ee81f3fc38b94249331b0c2e345f1a3ed286d971ab3595693b2",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/emu/web/emu.css",
+      "bytes": 14914,
+      "sha256": "b8c7d7f005029176bc57de4828d0c05cff36335a8cc141ced26e52698f83b3a7",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/emu/web/gfx/gfx-test.html",
+      "bytes": 7591,
+      "sha256": "6ec8729a4f5899754b265951c2e06bcfa57bd62a66b53efd7d1fba781256e515",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/emu/web/gfx/mgu-gfx-wasm.js",
+      "bytes": 31300,
+      "sha256": "afd6d3d2edc0376b86f8e3921e9b8cea85251a69616c0b4557b7688f331fb04d",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/emu/web/gfx/mgu-gfx-wasm.wasm",
+      "bytes": 61907,
+      "sha256": "fbb13b6eb42a4d339bcc895bbb29075787794a873265d69b5f6d0115ebbe7af3",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/emu/web/gfx/mgu-gfx.js",
+      "bytes": 4319,
+      "sha256": "e60d8787e1627c25982618783ce14d7364299134396421fb49bed7455b9fec3f",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/emu/web/index.html",
+      "bytes": 7312,
+      "sha256": "d3f3f08383d743fd7423518d0fe9c75e719abe62506deba14d690b1043af45e0",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/icons/aa_cluster_companion.svg",
+      "bytes": 2099,
+      "sha256": "ef416963c47d6ab93702ce93f6d9754476069c2eebbc948ff4cc6835e83a2eea",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/localization/credit.ru.json",
+      "bytes": 448,
+      "sha256": "656d45a268efe4ae518b331a15b31a7194264b027466b416a77cfbf412fb86b2",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/localization/credit.zh-CN.json",
+      "bytes": 576,
+      "sha256": "c15e741d089c95575f0e8c4833489d6530980ced429672c9248ea8b6bc8fbd59",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/localization/diagnostic-full-manifest.json",
+      "bytes": 656,
+      "sha256": "0a59838fbcb318324925285784d9e8a559136a37694db6725d71f860c474dad8",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/localization/diagnostic-full-manifest.ru.json",
+      "bytes": 733,
+      "sha256": "7c01c38093ead7e2a5c0964c52b68c4c4e4f329f0b35356388fdb454fe6a9af1",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/localization/diagnostic-full-terms.tsv",
+      "bytes": 25028,
+      "sha256": "03bd61e16b7adc99ccaf9c1b9594eeb9c795b3ec2c5f7fe717ea4f50cd1a5fdb",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/localization/diagnostic-full.ru.json",
+      "bytes": 13580391,
+      "sha256": "8a0bdd031c635d7e0929d0d913caafbd9d174afde2d6de7e8b55c4255028eae5",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/localization/diagnostic-full.zh-CN.json",
+      "bytes": 11844672,
+      "sha256": "f1217e13b23b0a10db3a23a8b4d11f5e603b34fcafaf11cdd6544420a9101e9a",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/localization/diagnostic-overrides.ru.json",
+      "bytes": 1017,
+      "sha256": "2d9674d9658df2b6e2c64a30f48eba3f5e6283d0eb9692285147f717280afbe7",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/localization/diagnostic-overrides.zh-CN.json",
+      "bytes": 2568,
+      "sha256": "bce13aa67f5ae78caf65e5741c7f92ee6d4591aad1fb7874bdea78f97ff7a8a5",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/localization/diagnostic-terms.tsv",
+      "bytes": 19262,
+      "sha256": "856300a191ad8da43aeb4c532baf0a7a42736be8825eeecb0cf6ac9490e6b9b8",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/localization/fonts/OFL-NotoSansKR.txt",
+      "bytes": 4236,
+      "sha256": "77fe79c891328aee1528d3efa06f344798c180d0d4df0ea02efe243f63c865fe",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/localization/fonts/cyrillic-ru.json",
+      "bytes": 53292,
+      "sha256": "c847f70baaa6b2f12df1e5acebab0227d97f46c76a09248e66b57ae5686d5758",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/localization/fonts/diagnostic-zh-CN.json",
+      "bytes": 686955,
+      "sha256": "8f7d1314a570cd15317c4591fcbe5f9409c8b379bfc64616cda81b95e3dc2ff5",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/localization/fonts/korean.json",
+      "bytes": 755507,
+      "sha256": "ae4c3c2728fd414d5b001d3c413cbfc3c4cc0588f983bc82d6d038b574273dc9",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/platform/permissions.json",
+      "bytes": 9142,
+      "sha256": "a03a2d7be452e89f9ce5361820361dded34ef36aa1e4a5afda95a4a1b1e26b01",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/CHANGELOG.md",
+      "bytes": 16149,
+      "sha256": "2662733fb1a639b854aa9ec23bbc8fb8807dc35db83e6f38fc9477df5a89b95c",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/CHANGELOG.ru.md",
+      "bytes": 2949,
+      "sha256": "6a1073f6421e2842bacd67704c4ae6bffed430f6fda9975c7aedd379ebcc3dd0",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/LICENSE",
+      "bytes": 35149,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/LICENSE.mgu-renderd",
+      "bytes": 1077,
+      "sha256": "481b839c45d8426a0b561b5a4f8d7437dd22dc61e08c8a2817b16831fab1e86a",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/Makefile",
+      "bytes": 5553,
+      "sha256": "880c35bd0f949b9470f5e6f33de1be9a80b010c9296b68357eccef55bd5cecb7",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/PROTOCOL.md",
+      "bytes": 14359,
+      "sha256": "747749758758a05feb7a3b7cc3db899530a661a9079713bcafb1acc59d41020b",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/README.md",
+      "bytes": 20086,
+      "sha256": "9cbd80073dded5f75c57bf3192581802d2864a704f0196b47361d960ce0de3b3",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/README.mgu-render.md",
+      "bytes": 24051,
+      "sha256": "d428f065464745c2b95b18239479e8b7c546e0f973e4468fde80209858b69098",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/docker/Dockerfile",
+      "bytes": 399,
+      "sha256": "070c76ad4147833b6a6dc5ac12448d81fd19d57434d4300fde4364121e4307b2",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/docker/test/Dockerfile",
+      "bytes": 353,
+      "sha256": "b8a53fb742e06f24ba0475453e799b90212c4b667ae8710b8d839e47ffa2fa72",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/inputgate/mgu-inputgate.cpp",
+      "bytes": 5838,
+      "sha256": "54ab1974607e70433734db64d038640d1cc39367acc5fb22282e7034fce7dd4c",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/application.hpp",
+      "bytes": 45840,
+      "sha256": "c87e25f03043527a8dddf42dfbc9d9d5d55a64d0b25224c7f3a1010de622c441",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/constants.hpp",
+      "bytes": 2300,
+      "sha256": "4ca8c1f28f955895c89662c6b50ec7a2bbac2497444eba476c895062c961ee4d",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/defines.hpp",
+      "bytes": 1801,
+      "sha256": "77e7a4970a4cc865c386f3efafb2fd56c6563ee641181dea1dbb250da5a6d9b9",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/enumeration_types.hpp",
+      "bytes": 1948,
+      "sha256": "cd860bc32408ebe617495230cf42546b39da99ac02616d25ba7d15fa292d5376",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/error.hpp",
+      "bytes": 700,
+      "sha256": "2e28f062a6e5458875f5da21c3ffcc502524b7ce2c316e0319d9c55e5d443235",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/export.hpp",
+      "bytes": 926,
+      "sha256": "f9b64ea7b7e2d31bd942307ca8fd16ebc5c5b4c04a8f3c48897fdf16f279134a",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/function_types.hpp",
+      "bytes": 630,
+      "sha256": "154131c4268d3cde689f8fe1c744be4beb03ad5fefe2ae6f3e6be832c575380f",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/handler.hpp",
+      "bytes": 2647,
+      "sha256": "8fe38d2599b4ddaf870bf62c70eadbad2c858f58a2bfce9e925e5ecb9f092314",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/internal/deserializable.hpp",
+      "bytes": 660,
+      "sha256": "d2b7731ef7976d481cb99b54962c53427ec43158cce6b7fd13f3320bd8ae75f2",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/internal/serializable.hpp",
+      "bytes": 779,
+      "sha256": "5a3f4ee21c34e8061feb9011d218768415d3946610809d8995674a5232a2ab91",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/message.hpp",
+      "bytes": 1147,
+      "sha256": "677523c5030f29c783fad6affbf5c9a229f9870722aaca55a701023693499807",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/message_base.hpp",
+      "bytes": 6709,
+      "sha256": "41df143001c89de913e02fb326b8c33cb53790266f117f14b102fedeab557e57",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/payload.hpp",
+      "bytes": 2946,
+      "sha256": "43eedb4f584fc187454b5bfb43ed552ba32fd5ead92d230ab85227f609c10ba8",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/plugin.hpp",
+      "bytes": 2159,
+      "sha256": "debc6cc8a3293d8eb1137c0726beffad7976432e2610c4811f272e3337313611",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/plugins/application_plugin.hpp",
+      "bytes": 1307,
+      "sha256": "63e0e2846add004d26450b2bd13f1b3986867ef10e9cce561d725733f18d5df0",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/plugins/pre_configuration_plugin.hpp",
+      "bytes": 1027,
+      "sha256": "d2c54824834f2a85ad2f4a940a40da6d1f67428fb96c4299d500c072f3843395",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/primitive_types.hpp",
+      "bytes": 1485,
+      "sha256": "b99bd7551a9bd37b9a0ed6e4cacef834e594f96ac6d38cdf3dfb62c375f9bb34",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/runtime.hpp",
+      "bytes": 6881,
+      "sha256": "135cb8262c821c702d0567f81f630790f1508b90e91f2d380519d4381cc4f3e7",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/trace.hpp",
+      "bytes": 6298,
+      "sha256": "f74344c44392b4122ed6aac1dd74bbdaa209d201d832f9c1aac2c4e0b91a57d5",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/inputgate/vsomeip-include/interface/compat/vsomeip/vsomeip.hpp",
+      "bytes": 759,
+      "sha256": "029260e1d4a50f76e7e8af128775a41dfeeecf3055e322a9a338cbc158630edd",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/js/foreground_gate.js",
+      "bytes": 9519,
+      "sha256": "c0293481659e676e992e3b6668d7af7774f9661733e4fad54ae0db7be98ad3a6",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/js/hmi_template.js",
+      "bytes": 9121,
+      "sha256": "8d235b3ee11dbe538b005580d3b59f6afe54a4e38960d9b5c9015521d1c93bad",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/js/mgu_render_client.js",
+      "bytes": 21711,
+      "sha256": "a93e9ca6fc30550f49720cf703208429866b647c196759d69044956778d81df9",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/mgu-render.conf",
+      "bytes": 4980,
+      "sha256": "0e6614b24f09687fcc11ffd7109218fc97d7b186eaf4912b3e3bd6a3d3906e19",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/prebuilt/LICENSE",
+      "bytes": 35149,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/prebuilt/LICENSE.mgu-renderd",
+      "bytes": 1077,
+      "sha256": "481b839c45d8426a0b561b5a4f8d7437dd22dc61e08c8a2817b16831fab1e86a",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/prebuilt/SOURCE_SHA256",
+      "bytes": 199,
+      "sha256": "c618955d5398d39c4c9f66c8e8cfaeb15aa6f3441f490d95008796695cf7cf39",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/prebuilt/component.json",
+      "bytes": 1627,
+      "sha256": "6d4b0f75f1afe1351319601bb302e7b584e35791aa88ba479f370cdbc7a70f0e",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/prebuilt/display-bridge-standdown.conf",
+      "bytes": 273,
+      "sha256": "e9347db39cb83902f21c58269c7fc026d727438ceafa612efd9df6bc68bdfd51",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/prebuilt/foreground_gate.js",
+      "bytes": 9519,
+      "sha256": "c0293481659e676e992e3b6668d7af7774f9661733e4fad54ae0db7be98ad3a6",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/prebuilt/hmi_template.js",
+      "bytes": 9121,
+      "sha256": "8d235b3ee11dbe538b005580d3b59f6afe54a4e38960d9b5c9015521d1c93bad",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/prebuilt/idrive7-renderd-hmi.service",
+      "bytes": 991,
+      "sha256": "320dba5718ef0ba174e891a75432c7c0a5002bcced579b6358f8ba83a35e4514",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/prebuilt/idrive7-renderd-install.sh",
+      "bytes": 1619,
+      "sha256": "d0dc4f850a4d7c0bb12748b59e90e08d4fea220baddcd840f0b545f6d06c1b9b",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/prebuilt/idrive7-renderd.service",
+      "bytes": 1152,
+      "sha256": "5e036c40ff2ec633038367049e5dd0b8e1019813356edf87f293d92535a7b92b",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/prebuilt/mgu-inputgate.so",
+      "bytes": 14200,
+      "sha256": "64efa96f90f46926b69fec8edd1d768f4fe615d8abacf0f8138e468ff983efc4",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/prebuilt/mgu-render-hmi-guard.sh",
+      "bytes": 1409,
+      "sha256": "d83de0fb277df7aa1319df03e64e0b9fcafa43b8e7d303d072a49aa74a4b42b5",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/prebuilt/mgu-render-hmi.sh",
+      "bytes": 5726,
+      "sha256": "2f86fc690ff6d2537825251c07c72643f62adfdb3bf465b3636b680b1abef6b8",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/prebuilt/mgu-renderd",
+      "bytes": 143952,
+      "sha256": "f5eb04f37f71a1d4834809eefc009ebcc4ee43a231b38d421991725f17a7d514",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/protocol/ivi-application.xml",
+      "bytes": 2355,
+      "sha256": "459d05bd3473998060dd1a264b56647a8d1f5ee4d4613375184e181b3102e9bd",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/protocol/ivi-controller.xml",
+      "bytes": 8155,
+      "sha256": "67157d2c0fd22a71ef8b5166b7ca7b01b7eabd4aa613364c2623e0fa6f9bb797",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/protocol/wayland-drm.xml",
+      "bytes": 7827,
+      "sha256": "3607ee5a84beb2adbae6d9fb05ec893169020b083f31c1b6a13c03afe9b7d6ee",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/src/config.c",
+      "bytes": 7076,
+      "sha256": "178afda625f3e53690ee6c856653042b6936bad6203b7042924651656f783d0d",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/src/config.h",
+      "bytes": 3358,
+      "sha256": "78a66145a69c77294f049cf3735b0e4bf8ac793d2cb36bbfca6e2b8b3cee9cd4",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/src/dbr.c",
+      "bytes": 6824,
+      "sha256": "8c382a2cec34fbc19829bee78c5ea0b15c395d7ef7f707d274b8c98c529dd3ca",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/src/dbr.h",
+      "bytes": 5286,
+      "sha256": "c5d3a0e32dcc80c47c2798a8908cadba651c212279f2753434cb8c3fa2bfff08",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/src/dialect.c",
+      "bytes": 2194,
+      "sha256": "6d0389a5d386cef8e75cc0d0add89df735d7506d70284f67167bfc58c8dbdccc",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/src/dialect.h",
+      "bytes": 1206,
+      "sha256": "9080f6513322adda75a3fa977deef45d8d54b962814a4666b8f9cc7783f29a49",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/src/embed.c",
+      "bytes": 16931,
+      "sha256": "bd0deeb6537608dcda9eb781633f3c6f956f5beb00dd1e7db551e35e010158d2",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/src/embed.h",
+      "bytes": 3588,
+      "sha256": "ce90d280ea71b1ee38ac9740885f7f6ed574208002ecd4bf63911365a1309848",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/src/embed_gl.c",
+      "bytes": 13154,
+      "sha256": "c92e15fd19873b8b98c1504981784810d3d3bacfb1cf26e96bec0d1df8454b95",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/src/embed_gl.h",
+      "bytes": 1975,
+      "sha256": "871b7d65d90ec3de26cd6dd126196137a8d6bf500cddebce83192891bbf95b36",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/src/gate.c",
+      "bytes": 4381,
+      "sha256": "ff9a6c340af9fd5d22cbc4f077038bf82046748e000dfa0952e573b518e763f7",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/src/gate.h",
+      "bytes": 868,
+      "sha256": "8ad9b80fdfb71684d5877a232ead92d47fc898de6240f9a0aab3b5e1d4930bdf",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/src/gfx.c",
+      "bytes": 52871,
+      "sha256": "868cac2093a40a415221f910c16faff491ecd80a3847be21c35f3f8900cc9797",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/src/gfx.h",
+      "bytes": 5887,
+      "sha256": "b858d070d7f72af4fc311707affe6054ac19b0f417563dffe7ae10a8d68c5c2d",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/src/log.c",
+      "bytes": 618,
+      "sha256": "00ce604f24b5664a13b604259b6cdc6838618c0dc69e90946f8bd024c9db8b8c",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/src/log.h",
+      "bytes": 457,
+      "sha256": "6677f5495638c8fd3020ddb289fd1a1b105a7941a7964ef24548683e32b83b91",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/src/main.c",
+      "bytes": 85568,
+      "sha256": "8ce96013048cdf8e9dc8f56814acddb1cbcb852b5824eebeebce4d10a860ae71",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/src/proto.h",
+      "bytes": 9207,
+      "sha256": "a06065ae41e4492d4dc569d309fa4a52c61c2be016093b8be082d13223cd4bd6",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/src/share.c",
+      "bytes": 4593,
+      "sha256": "f0262c7fba577eb1b17089ebf4cee7d10f2d0c18ce86b2bc579694b04a1c1ab8",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/src/share.h",
+      "bytes": 1432,
+      "sha256": "53ee5130c2cbe9b8cff2ee893d1373b099f6a1b6923e05ac4dd69d1525abd0e6",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/src/touch.c",
+      "bytes": 12828,
+      "sha256": "f6a6b496f84412d14b7a53350846a0693201ce965f13b6c0259ef35b68a0a7f6",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/src/touch.h",
+      "bytes": 1858,
+      "sha256": "0615bfe82f83f98da95906477776182be472088de3fac960deb9983b300f8c79",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/systemd/mgu-render-hmi-guard.sh",
+      "bytes": 1409,
+      "sha256": "d83de0fb277df7aa1319df03e64e0b9fcafa43b8e7d303d072a49aa74a4b42b5",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/systemd/mgu-render-hmi.sh",
+      "bytes": 5726,
+      "sha256": "2f86fc690ff6d2537825251c07c72643f62adfdb3bf465b3636b680b1abef6b8",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/test/gen_sessions.js",
+      "bytes": 13235,
+      "sha256": "f7ae79ffc494413f79440522d8424ca9ec666bbe92c6e1e972c72c4e187a0af4",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/test/mock_hmi.c",
+      "bytes": 11472,
+      "sha256": "1ed53d3829f23807574bc02d33e39669e0981b24671431e1ae2365433069c584",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/test/pamdiff.py",
+      "bytes": 1056,
+      "sha256": "bc4e2b39b6bd66c1c01f5ead436c2f1b3717bd1d58842d9a3306a74eadb13d14",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/test/pixel_client.js",
+      "bytes": 3190,
+      "sha256": "ce7dd960587a7c56ba67fbb7a86959666bb84a00cea958efd9eea9595c2834b0",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/test/replay.sh",
+      "bytes": 6436,
+      "sha256": "4033950d569a7f38626a41d3cab894e8263010eec6739be55e1026bcb6b7b4e3",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/test/sessions/README.md",
+      "bytes": 2480,
+      "sha256": "f9857963bb7297ce55464c31d52db82232c562d0d338254ec1a1ba5addb64b5b",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/test/sessions/iterio/bad-len.bin.gz",
+      "bytes": 63,
+      "sha256": "8314baefdcc1ba87dec3e8df243fc0cc0e9a8202639d346ae52769896bce2f4a",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/test/sessions/iterio/bad-short.bin.gz",
+      "bytes": 59,
+      "sha256": "54d6fc19b24947065c775e1f8c46088368154af7ec55fecd65da3027e1bea734",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/test/sessions/iterio/bad-w0.bin.gz",
+      "bytes": 62,
+      "sha256": "b24768ceee95005bf73b6781010b5b939a4efd9e45a6e92cd4a2c3ea6be2cbca",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/test/sessions/iterio/bad-w5000.bin.gz",
+      "bytes": 64,
+      "sha256": "2c3d25b8e4b25c40b62b249ce014a3fb24664259a5ad543d08c7b8b4bb8bdc1c",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/test/sessions/iterio/over-count.bin.gz",
+      "bytes": 205,
+      "sha256": "4707211ae7680c971839fe8d3255612c91b6d6b22a96f044cb5029a1ec284b57",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/test/sessions/iterio/refused-dotdot.bin.gz",
+      "bytes": 112,
+      "sha256": "3fb096c302e412299edb03f5e8c1cd6ac40f1c0fdcd7571eb2ad0cd8ac149431",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/test/sessions/iterio/refused-path.bin.gz",
+      "bytes": 89,
+      "sha256": "452e4acd35f0c65e438386ce0f0c01c3ba2bbe6df882728f28c20fa2fe232d77",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/test/sessions/iterio/scene.bin.gz",
+      "bytes": 22027,
+      "sha256": "a7c479d3c4f87bce6d0e302ef7e45267f9ebc6e0ea91554c5be6d087c73b2d11",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/test/sessions/iterio/screen-appmanager2-app.bin.gz",
+      "bytes": 83764,
+      "sha256": "4f1266f8dd9515ea6150627f6b20b137268c24ea246df45c47096153f701ab99",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/test/sessions/iterio/screen-appmanager2-settings.bin.gz",
+      "bytes": 60681,
+      "sha256": "a12130820606b3274afff4e3feb41814316670e9fa7c7169f7a304324020adb7",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/test/sessions/iterio/screen-appmanager2-store.bin.gz",
+      "bytes": 108267,
+      "sha256": "b1d364d88799ba9a1faf2476396b5dd2dd61e6edb67f8548422bb283ee837a3e",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/test/sessions/iterio/screen-appmanager203-store-fps30.bin.gz",
+      "bytes": 91610,
+      "sha256": "1322635194a695b577a607ff7b5963c7705755a2a5be38e75727080fa1796bb9",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/test/sessions/iterio/screen-car-data-sketches-A_dash.bin.gz",
+      "bytes": 158654,
+      "sha256": "3c8f619e3cc00d7fb1918f3a9b027b7e85c3616a73675e509bdbbd6030328dfc",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/test/sessions/iterio/screen-drag-timer-home.bin.gz",
+      "bytes": 123632,
+      "sha256": "3a490fd4f3ef04291649d497034fcd0f60502bbab3f672cf9c4994f4c483a9f0",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/test/sessions/iterio/video.bin.gz",
+      "bytes": 98,
+      "sha256": "724b3aadab1e9e30b32c01f0e1ec9b5562607d3503e62f9880f84aea30a97d94",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/test/sessions/upstream/car_vitals.bin.gz",
+      "bytes": 141953,
+      "sha256": "3a399772c10032c905f2c41ac394938825c2b74aebe8a0a0a9ab4d2979a6f90b",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/test/sessions/upstream/doom.bin.gz",
+      "bytes": 365765,
+      "sha256": "cb30779e47c9b0580257cd5d25ab073997bae10ac70beb80a1de1be1971412f1",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/test/sessions/upstream/gforce.bin.gz",
+      "bytes": 136953,
+      "sha256": "6aeeacb10da60371db953d440061e8ae10a89b5061bfe5446070e5db59e77900",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/test/test_client_place.js",
+      "bytes": 4150,
+      "sha256": "daa9076748ecbdfe812318c6a1ddf00b06be8363868bc41a9069fea24269a671",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/test/test_client_read.c",
+      "bytes": 4520,
+      "sha256": "335290a396d4fbba1be56cf2324e5454819889f8680e11f8ac914db4b7a3fc46",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/test/test_client_reconnect.js",
+      "bytes": 1819,
+      "sha256": "89f573ddf39b7f89f8e3eb2eb8e06a05be6880065876387c2b401a1f1a602da4",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/test/test_dbr.c",
+      "bytes": 8302,
+      "sha256": "7c251c164fa3dd0f0aa30aa47173f68d6598e3e6e4dc0fe6da88ef6c16b1540d",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/test/test_dialect.c",
+      "bytes": 5352,
+      "sha256": "92629b2e3267e9c5e580b03af44d37a380e8fd273be34945453452ddbef6090f",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/test/test_embed.c",
+      "bytes": 11708,
+      "sha256": "d43b6eb0da858513585e5a2094d01b05a855c497bcb37b825d458e644861a5b7",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/test/test_gate.c",
+      "bytes": 2690,
+      "sha256": "d42822b9bc6e84e0f48e555949388f46f5580d585cec810e7a50008ca91dc88a",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/test/test_gate_apps.js",
+      "bytes": 2207,
+      "sha256": "3493b0e85d8d60738115d3b7ee7c5a29e98c9963d5354dd236aad7e57a976461",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/test/test_hmi.sh",
+      "bytes": 8159,
+      "sha256": "8114359721e3cd15b04082b0cefab90acf67916fa1e06b2676daa837f2ffeb8d",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/test/test_ramp.c",
+      "bytes": 3557,
+      "sha256": "0e94048fcac08bf29082fcf513d125accc6215723083500341657aac44597461",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/test/test_share.c",
+      "bytes": 7585,
+      "sha256": "4be9a4d110780be25cd71d3c097fc3c87e56e4dbcd7ebfc6404526f509c228f9",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/test/test_touch.c",
+      "bytes": 7478,
+      "sha256": "6c1d8e3e3de8278eb1fa975a7400f3036651a1e28ef14d1a0b8970ee2b254bbb",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/test/test_video.c",
+      "bytes": 5188,
+      "sha256": "a5979920cfbdd11de094fbff8260dd0c82b2932bd7c95cf37b7e809ba64cf827",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/tools/check_protocol_abi.py",
+      "bytes": 6986,
+      "sha256": "e2f37daa03c1130e81dc9f49f8734da655a9f29d78c14dbdbfc3653a926c94cf",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/tools/check_target.sh",
+      "bytes": 1273,
+      "sha256": "6e6a40d2b29de5b7bfb7e3f70dbc1997262da531de3b9c73f5fae029cdc20e29",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/renderd/tools/ivi-probe.c",
+      "bytes": 11451,
+      "sha256": "c310195e83c46ef6fc901ee428423702728e51935a8817886b3c3f9ce5b9d8af",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/canvas.js",
+      "bytes": 30074,
+      "sha256": "24c5c0a1532aa9552f7a659d8490d9dc83dfc84da7f9860c46b169e1e7cd3010",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/car.js",
+      "bytes": 12021,
+      "sha256": "a056c5b5af6b5e401ea1efcd0521e891936e6b89d234a3151719c3f91a430b39",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/credits.js",
+      "bytes": 529,
+      "sha256": "6074066bc6ae85794db9b844322264ad8aa73b89c850f6b03a3ee57c57d95084",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/diag.js",
+      "bytes": 10700,
+      "sha256": "399863b0f8b409cae7c6fb1f3f405932d94aebf7033363df7563c87bb7cd6aea",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/dids.js",
+      "bytes": 7048,
+      "sha256": "cf6ae106099e64863a7806ad1db36cdd24f161c03a4d97fba1aa2d5b630c73f4",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/display.js",
+      "bytes": 53010,
+      "sha256": "ab9f171c53b4915a466f82bfd42c55b494793b8b58930dd18bb14a33f083da51",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/ecus.js",
+      "bytes": 1257,
+      "sha256": "f5ec3dbdece067f7eaa0080479dfde0d25b8a882f657df8b6f58f46f8622e149",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/engine.js",
+      "bytes": 4520,
+      "sha256": "de6c7a05d041ec44743f46df1d442eaa43404d8f266a0e4e8a8ea3a8dc5fb88a",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/fonts.js",
+      "bytes": 1991,
+      "sha256": "d402329020befccbc81a2b50b663a7a358e6e70e9520735f61283296e690d303",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/fonts/OFL-Barlow.txt",
+      "bytes": 4377,
+      "sha256": "186d750eb496a4c17a76385f82be6aea2ac1cf2de074a811d63786cf374ea73f",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/fonts/OFL-NotoSansSC.txt",
+      "bytes": 4387,
+      "sha256": "babcfe66c8a098b2fa279bc724a3a342f8124f77ce18941fbcc1bbb39823cded",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/fonts/bold.json",
+      "bytes": 101476,
+      "sha256": "c8185d6874a4ca1f79ffc2b73434d40426381b4bbf395f6f49733bd7020d7e76",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/fonts/cjk.json",
+      "bytes": 499001,
+      "sha256": "dfd5484d32c3c133e15be35c0d211b53d14836c311c6306a2aa6e8ea962c0673",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/fonts/gear.json",
+      "bytes": 65999,
+      "sha256": "d449f2afa02529e244a2499d294beb6ce20c887a56cb7ce8c9cf296413c6f592",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/fonts/gear_barlow.json",
+      "bytes": 62705,
+      "sha256": "59e6059d2a82e900d85330de534e899b13ce1446bb8aa25326c140a14bde0b30",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/fonts/label.json",
+      "bytes": 72561,
+      "sha256": "4dd985232ef36675f30ec855e8c4d5e6db5d44c8a0e04d82d50adc56c9eaf4cf",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/fonts/light.json",
+      "bytes": 91880,
+      "sha256": "961ac19e874ed013c4cdfaaf009e85977e47889cbf3d470901f3d33b4bf4e0df",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/fonts/num.json",
+      "bytes": 110925,
+      "sha256": "02a02e0c8e8da9c7bed35d66fce8c993998adf93080050e47511b602dbbcf9fc",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/gauges.js",
+      "bytes": 50921,
+      "sha256": "3eb52e936767eae6b881e8a4342e74a09dfb1d5414a31f3bd6a9106dc0556af0",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/hmi-text.js",
+      "bytes": 1163,
+      "sha256": "74d96fd26ec53f4dc55fd36e079901ed03994794c8b31ae37e93e095092814e0",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/hud_claim.js",
+      "bytes": 5426,
+      "sha256": "02eb68db41e97662c972af90b30fe6d02d8e1d23e29e96250a093c3dcb7b33df",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/i18n.js",
+      "bytes": 3756,
+      "sha256": "0600bbd7946fc5cda8155702c63d0a2c9c4422541daca4d353b52fe95a0b7768",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/locale.json",
+      "bytes": 31,
+      "sha256": "c37863ed4336c34a3868d150767644841256ee3ad6fc3dad6e223bcb5913f7e7",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/locales/ko.json",
+      "bytes": 112859,
+      "sha256": "e32a64fbd96cb4a261aeba44a780be231db3d2f8d2e2c2cc29ef75bae1805c3a",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/locales/ko.tsv",
+      "bytes": 95873,
+      "sha256": "161f598bbd5cc02ca462557a90332442eb6e89ec35bbe49df8a193631714fd8f",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/locales/ru.json",
+      "bytes": 133358,
+      "sha256": "7d10873670fdcb86d8700607069207c0307c43c5cbed3707df3acd418966d161",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/locales/ru.tsv",
+      "bytes": 119729,
+      "sha256": "ad410597a9e0954de0c6d1250e8e09d6ee51c6903bf312fb1a1e1d135f35d6d7",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/locales/zh-CN.json",
+      "bytes": 84620,
+      "sha256": "63aee512ca01c5fbb772edc6e12178b2e8167f4c99077e376242ad71a853f436",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/locales/zh-CN.tsv",
+      "bytes": 71933,
+      "sha256": "f6c6e8ce9c24ea8ce61f950ae5694c5ba09c91e40cf86e4dea65c1c5efcb9a42",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/mgu.js",
+      "bytes": 44145,
+      "sha256": "93b2059e3b6f8b7358f212e708c77601b75e2278195a3b63eba2edd2d5f1d021",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/pack.js",
+      "bytes": 3758,
+      "sha256": "25e8270eb6b67045d8d9bbc225f6877dc54f9078036742e5adca687e1cf040c2",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/parked.js",
+      "bytes": 1571,
+      "sha256": "43f5517ad9badb0d23a11bb59a9c4501482891a23443861e3f5bdd10d1dcab57",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/readonly-diag.js",
+      "bytes": 9175,
+      "sha256": "8882a628ee5ab8040fda02b759beafc134eaa7a973ddd3d6ae5e6b5a8d640059",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/record.js",
+      "bytes": 18706,
+      "sha256": "c0764f55676a99e33a614780ffb972c37371331b69e17e9200e6df627d107b31",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/renderd.js",
+      "bytes": 17565,
+      "sha256": "4bad1bb4e73c0b7719ed97125fd48db7779287d87f12f102343641854d8b10ef",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/run_timer.js",
+      "bytes": 7859,
+      "sha256": "c168a0999cfdff407896649673e68bc14757749bcdf09da90386f0471183658e",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/sgbd.js",
+      "bytes": 5451,
+      "sha256": "799b35e09d558be20fa4fd6bacab0b6fd102fe49aaf34ae81dbadd7fcabfa37e",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/sheet.js",
+      "bytes": 14369,
+      "sha256": "27492de538f1ae034f572a6f8362599ddc4d318a02505ceed16fe2530ff58f05",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/signals.js",
+      "bytes": 5721,
+      "sha256": "92e3e397aef9cd44fcef989c3802af7980b7f3340028dba3fd4a1741bc940e23",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/sim.js",
+      "bytes": 3920,
+      "sha256": "b7d1ee492c017223e1f0726a69af0d8cff1aa44ae10557e2effae1e3249fa2d9",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/text-layout.js",
+      "bytes": 545,
+      "sha256": "0a36ff6e5b4d882a28d0689e0c110f007a53babc1fe9198be822823423d534d6",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/runtime/themes.js",
+      "bytes": 3158,
+      "sha256": "c24c641a0e82c4b9bc1ba91ebc2916044de9e160e40d0cf888943fc12d80fa58",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/tools/bake_cjk.py",
+      "bytes": 3082,
+      "sha256": "703045f2a9546bc18f8348169a96090b5878ff47fa6f57d7e82fb4236a7065fb",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/tools/bake_cyrillic.py",
+      "bytes": 2046,
+      "sha256": "ce8842d441dad4e8d42ff8eab07b060f866cd8ffd002a96e251d2f64adf688de",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/tools/bake_fonts.py",
+      "bytes": 4208,
+      "sha256": "985898ffbbd27eafe4254d446d59f1f881ff3ec2bc8d03a3ec57269559098e3f",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/tools/bake_korean.py",
+      "bytes": 3309,
+      "sha256": "8aedf34da14a943e02028bb16986ad31c45898231f25aca675274f40366c19d8",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/tools/build.py",
+      "bytes": 36056,
+      "sha256": "e5cedd7f7104db4aaff40af766acf57314cccd9429a31cc8649615e291e97307",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/tools/check_signals.py",
+      "bytes": 1408,
+      "sha256": "9ece2986bae4f0b5a9668c01fb7da049269f8c9418969ba111bc96b8977af5a0",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/tools/crtest_exclusive.js",
+      "bytes": 3871,
+      "sha256": "a0bb3b2a0e24076d9ecdd205b1ef47199885cd6439217586431996288e29b1e9",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/tools/emu.js",
+      "bytes": 43941,
+      "sha256": "387187cc948e77ced2cbef3beefa2b48f5744e76b3f5cad56ead909589b8de7c",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/tools/extract_sdk.js",
+      "bytes": 7008,
+      "sha256": "9b609e2467cef6809042c71d4f3f1fdaf32fc2e5307165d397546167c21bfb2a",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/tools/fixtures/redline-nav-carplay-2026-11-09.txt",
+      "bytes": 239104,
+      "sha256": "bcc0c1ef830d7e495001c0cfbb68901126949e9a0b36af59cb70463c48b70e67",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/tools/german_words.txt",
+      "bytes": 41892,
+      "sha256": "8276b649e6784ed4e91261f069e0b5130ce2696105a95fd70abc434f1002793a",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/tools/hu-stub.js",
+      "bytes": 22744,
+      "sha256": "5fc528f5ede34100ee590690f07a7c51cbfa588b90eb9a560750e2e50dfe8916",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/tools/locale-revisions.json",
+      "bytes": 31,
+      "sha256": "bca9269a5ebda7f4cb17548a2ed6c15da501a640bd7fb1ab4fe3506bbf19feb0",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/tools/localize.py",
+      "bytes": 3933,
+      "sha256": "3da5941a9b05f0f0318bdd48c7595dcac5b8145c24c3afc73a0a828d30910d34",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/tools/make_gif.sh",
+      "bytes": 2056,
+      "sha256": "032ac0e98ef95f06f25997978b61ea57eee60c5521c79ad2a802882123c0f060",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/tools/make_icon.js",
+      "bytes": 5621,
+      "sha256": "9ad2e9ddfd87912eef96ce7ecc6076bea6210021af99b3ae2f05c64010dc9759",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/tools/make_kit.py",
+      "bytes": 11730,
+      "sha256": "a1aeadb2323aad33cac06316d7e11fed39e714f71a3f09ffb75ea2c670ef7297",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/tools/oapgen/gen.js",
+      "bytes": 2966,
+      "sha256": "03353755765fd356df9b22b5042e5cb2227e057bcc933713b2c16147684bae1a",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/tools/pack_data.py",
+      "bytes": 3280,
+      "sha256": "f0795f6170588a11efb2db504bd6cee6fb58a5aefd689d05d926583eff05e0ce",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/tools/preview.js",
+      "bytes": 3794,
+      "sha256": "1819ceae601530ee521ff6c44b2ccdbd160f3e15f60e35d11691b72c068d68dc",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/tools/render_icons.py",
+      "bytes": 6476,
+      "sha256": "d99fb83c5a25f5b011c698c917b94dc19f91ba2ecfa4bbbd1d102a535c1e1bc1",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/tools/sgbd_catalog.py",
+      "bytes": 16162,
+      "sha256": "24d8e134cae0c2d1abf4496e1fff4a672b2ea50f0c5945a42400c72952ab2a23",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/tools/sigdoc.py",
+      "bytes": 1433,
+      "sha256": "69d883bf916d1d91ab48b2a04112b1151974f96893dba6594a6c5d630bd1dc1b",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/tools/sync_locales.py",
+      "bytes": 1862,
+      "sha256": "c30d62973c1afcaeab86b063f50a6eeb194a97c24a27a0eaa3b6426ee97991c4",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/tools/sync_zh.py",
+      "bytes": 899,
+      "sha256": "2cc1856a686aa44c640481ec6227d633a93a93ff8763d63e629caa9b2ab83b5f",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/tools/test_bm3_protocol.js",
+      "bytes": 10478,
+      "sha256": "cebfd39ebd0c98a8683eed89a20d52c9275490c4712d40ed6ca8823235cd3acd",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/tools/test_diag_options.js",
+      "bytes": 5008,
+      "sha256": "3cb40bcf7e46e9d4db766eba862854b692aa0a365c3a06e883b9f17dce057654",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/tools/test_diag_replies.js",
+      "bytes": 12921,
+      "sha256": "ec607df205b0325f48b7e9b3922b782fec5efdfd24edc6da06426307d4ae88ed",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/tools/test_dids.js",
+      "bytes": 3033,
+      "sha256": "14837cd45154a3aa766cad0d3be64d1cc98bc493c5365e2292cc1671b2c67941",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/tools/test_engine.js",
+      "bytes": 5364,
+      "sha256": "5cf4de1aa4f94ba014423d79a3359267eaf7bc64d5b2fc1d3d86f86e1374cadb",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/tools/test_live_adjustments.js",
+      "bytes": 52742,
+      "sha256": "e2877a36bf8e912023fb09665cc25abb9edd04bf7a5b29b975d8fdd4d4147f64",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/tools/test_live_adjustments_exhaust.js",
+      "bytes": 26494,
+      "sha256": "513cecd7a5e102e47af33d0049d0efc0e918a57fbf5ef0322212961dd566b28e",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/tools/test_logsend.js",
+      "bytes": 6354,
+      "sha256": "05c6c061cba9745b36c74b22389353fa25ab5c99a5e8e7f091d434011eb593d4",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/tools/test_runtime.js",
+      "bytes": 15651,
+      "sha256": "0e64411d5d31fea5d174d511acfdbc9b8ce31a9c569766e732ab1d0682694e38",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/tools/test_xdrive_live.js",
+      "bytes": 2580,
+      "sha256": "646a54ea80393c7746db53572405486743db25999f7ab5259711459e98b5df7e",
+      "mode": "0o664"
+    },
+    {
+      "path": "apps/_sources/mlurker-advokat/kit/tools/test_zh.js",
+      "bytes": 9882,
+      "sha256": "d29cf954d8c2ba1b98893ec83413db31997bc19ab1733d05db8c86eb270592fa",
+      "mode": "0o664"
+    },
+    {
+      "path": "docs/assets/apps/advokat_live_adjustments/icon.png",
+      "bytes": 3147,
+      "sha256": "a274ebbeb1cda6ed3e5af20cccaa6c4877ebd2e515880d20f81fa874606400c5",
+      "mode": "0o664"
+    },
+    {
+      "path": "docs/assets/apps/advokat_live_adjustments/screen_1.png",
+      "bytes": 237185,
+      "sha256": "023bac1d0b4e40de28ddf3860298fa3b7d9ce484aeddbb826ff62fc711b4ba5d",
+      "mode": "0o664"
+    },
+    {
+      "path": "docs/assets/apps/advokat_live_adjustments/screen_2.png",
+      "bytes": 49512,
+      "sha256": "ae75f1678cb3d8655d737cf78ace310e82172b1d90c26262507f8f1685bb85e7",
+      "mode": "0o664"
+    },
+    {
+      "path": "docs/assets/apps/advokat_live_adjustments/screen_3.png",
+      "bytes": 227244,
+      "sha256": "f639f41681c1cb9f952f440a3cb3208323ca09f305eadfdf243914a9a43c6776",
+      "mode": "0o664"
+    },
+    {
+      "path": "docs/assets/apps/aref_drivelog/icon.png",
+      "bytes": 6638,
+      "sha256": "51e3961d300d999d3ab79e77a9331b24b184672cae59187c1365dfa42b0ad23a",
+      "mode": "0o664"
+    },
+    {
+      "path": "docs/assets/apps/aref_faultwatch/icon.png",
+      "bytes": 4476,
+      "sha256": "f690384973ba07e8d7fb46b3b63ed5d8b882069b32143cce897f537fc3ebd8d2",
+      "mode": "0o664"
+    },
+    {
+      "path": "docs/assets/apps/aref_misfire/icon.png",
+      "bytes": 3582,
+      "sha256": "1fc5275a59f3edf23201da39ec30c0c158f2a7040f737616efea9bb293614e57",
+      "mode": "0o664"
+    },
+    {
+      "path": "docs/assets/apps/bcs_store/icon.png",
+      "bytes": 30557,
+      "sha256": "fde27bf6c3ccc15aaa779fa3726ab981bd50b781a9cc0f0d00cf2f5fabca611a",
+      "mode": "0o664"
+    },
+    {
+      "path": "docs/assets/apps/eldrive/icon.png",
+      "bytes": 15313,
+      "sha256": "5869ea41c3c995e8f085e2761277db3e5f5040b6042ad50ad185d9b3b52a824a",
+      "mode": "0o664"
+    },
+    {
+      "path": "docs/assets/apps/kombikraft/icon.png",
+      "bytes": 404,
+      "sha256": "b575bfa83137efc1b6330b2b9e47ec162f202c6c6a92e90d06264c54cfde9a26",
+      "mode": "0o664"
+    },
+    {
+      "path": "docs/assets/apps/mdq_ridetube/icon.png",
+      "bytes": 14570,
+      "sha256": "afbf63c28de964d4f249f062bdbddf853fe1e676cc8d62f59028ea0f1c6a9876",
+      "mode": "0o664"
+    },
+    {
+      "path": "docs/assets/apps/perea_cluster_themes/icon.png",
+      "bytes": 17047,
+      "sha256": "01689a8688cafb36e95954753f93d7f3f1070ee9d99352756007decae6f4c6c8",
+      "mode": "0o664"
+    },
+    {
+      "path": "docs/assets/apps/perea_cluster_themes/screen_1.png",
+      "bytes": 17047,
+      "sha256": "01689a8688cafb36e95954753f93d7f3f1070ee9d99352756007decae6f4c6c8",
+      "mode": "0o664"
+    },
+    {
+      "path": "docs/assets/apps/perea_cluster_themes/screen_2.png",
+      "bytes": 68566,
+      "sha256": "5f0e62e5a4856f5fa9724a58f7a84da35ece90e33c9e4e6756cae0b4eec1e732",
+      "mode": "0o664"
+    },
+    {
+      "path": "docs/assets/apps/robertn_store/icon.png",
+      "bytes": 1553,
+      "sha256": "7403c682c45c4ed1d009db4739285e0ff79f5fb98c095216d30791a19506848a",
+      "mode": "0o664"
+    },
+    {
+      "path": "docs/assets/apps/robertn_store/preview-01.png",
+      "bytes": 194317,
+      "sha256": "0e967503bd83b635ae43f7731a6295e0c5dd1416f0cc13ad62e9534566899889",
+      "mode": "0o664"
+    },
+    {
+      "path": "docs/assets/apps/robertn_store/screen_2.png",
+      "bytes": 194317,
+      "sha256": "0e967503bd83b635ae43f7731a6295e0c5dd1416f0cc13ad62e9534566899889",
+      "mode": "0o664"
+    },
+    {
+      "path": "docs/assets/apps/robertn_store/screen_3.png",
+      "bytes": 110799,
+      "sha256": "45caf30d69e2e242368ebfb791acb01c4742fc31956fc5facaae597dbebd33b7",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/LICENSE",
+      "bytes": 35149,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/lib/client.js",
+      "bytes": 4991,
+      "sha256": "31c0e3413fa82d0e1d78cd48a331e9313b11afe4250ca7095841279438dc7048",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/lib/mgu_render_client.js",
+      "bytes": 23236,
+      "sha256": "3a45d3529fc0b8dfc550df2ffdde3ac22864e8d2c457185f458295ef9b70374e",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/mgu-app.json",
+      "bytes": 910,
+      "sha256": "f65140dd9e747a627ca5c0f52bc17ebaca0fb29e6debf842becc6169b9fcc260",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/CHANGELOG.md",
+      "bytes": 20614,
+      "sha256": "d1845ac7ee78f67678e64a02e4006f4938303ec32d537c83d6d432707eb3169d",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/LICENSES.txt",
+      "bytes": 47006,
+      "sha256": "f8fd93c18925951e54ab4ce02623ad2f2901f6586b52ee4fff234fafefe723d4",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/config/base.json",
+      "bytes": 3,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/fonts/chinese-tc.json",
+      "bytes": 1643212,
+      "sha256": "427a347b8b96504648c47e986f9c497df7a1f9a4d72458a5677a05d0a10bff2b",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/fonts/chinese.json",
+      "bytes": 1275426,
+      "sha256": "9d8f45f045b4eb3e06e5edf63a3fe514d6a478b51042efdec6c26f45ae02ae09",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/fonts/cyrillic.json",
+      "bytes": 261120,
+      "sha256": "c3228cc1cd0a08ba4728cbd242537e44532fc49828fed4e3d893dd742ba7223f",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/fonts/greek.json",
+      "bytes": 227827,
+      "sha256": "8b3c6e5f985ee561b8a6ac8b1aef77cf03f5d679a022879a294b4d91acc8a8c3",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/fonts/japanese.json",
+      "bytes": 1062281,
+      "sha256": "e1ff7b9c0af86f941e07b796d38fa212a683da55bc7e594edb45caf7c7fdffeb",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/fonts/korean.json",
+      "bytes": 585184,
+      "sha256": "3dc79b263aea92455468f84fc37ac399f58ecabdbd64491864001b632fddb029",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/fonts/latin.json",
+      "bytes": 276719,
+      "sha256": "57df50d7b0b2c32aa369656e114f4ed1d600eba62df5d0dd20cfbc00eaca4569",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/fonts/vietnamese.json",
+      "bytes": 310581,
+      "sha256": "e9619c055401ebf2b3ded2df0499dd28237a11b547c9fcbd921261549ac7e025",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/manifest.json",
+      "bytes": 3478,
+      "sha256": "972f85f5281ce0d8526db56a48dab25ae3b6964126850d4f9474b0ef68ec84c8",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/npm-shrinkwrap.json",
+      "bytes": 119,
+      "sha256": "11ba259233b18c7f39722d779956b66f07d95bd7eba4c3728309d7517af4cc08",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/package.json",
+      "bytes": 1015,
+      "sha256": "44e1e72ef3ed10aa898cb6c90ac37b5b14ecaa5bde6772654323a11cdb609731",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/permissions.json",
+      "bytes": 3115,
+      "sha256": "257629fa5f71297eead5af84ea2f2195fd77a2311a06bb6fe7761263d4e66a0b",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/application.json",
+      "bytes": 1631,
+      "sha256": "7d30241201936401f843d774b82089fe3bd5bbe8a3c7cab9b2ed8e3d887f960a",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/uiDescriptions/ID7/application.xml",
+      "bytes": 49769,
+      "sha256": "7e97e683a27577b1b1e39bf673cb6914a4bdd3850a19a0cb69a05b6aaaa14347",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/uiDescriptions/ID7/uiDescription.json",
+      "bytes": 122442,
+      "sha256": "36a9966c8dd6d826e642e638839bcbdd444a25bdb80b7f2e2c1e87b6e79849cf",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/uiDescriptions/ID8/application.xml",
+      "bytes": 33556,
+      "sha256": "40060262260eb1097904db1f38b1f51d0dad7b3930c997874b53649802be0fe6",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/uiDescriptions/ID8/uiDescription.json",
+      "bytes": 145866,
+      "sha256": "772067c0d4b94a6c746720b6a95670ca985e66a7a85934f20bd0050686e2383a",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/variantGroups/Common/images/store_icon.png",
+      "bytes": 1553,
+      "sha256": "7403c682c45c4ed1d009db4739285e0ff79f5fb98c095216d30791a19506848a",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/variantGroups/Common/texts/ar_AE.json",
+      "bytes": 1469,
+      "sha256": "ec16ef8b2ce748b5525e3f7f82cba7021416a90be72f39c6c0c1176441c41164",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/variantGroups/Common/texts/cs_CZ.json",
+      "bytes": 1209,
+      "sha256": "02ef6178a9979f352078ce507a410b7b2a3b021b8f7f934bfe753074a2fc7c40",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/variantGroups/Common/texts/da_DK.json",
+      "bytes": 1158,
+      "sha256": "a990dfa8a035db6d2720e9a9e8b05d0404236fd17317f91c06e46f19f1359238",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/variantGroups/Common/texts/de_DE.json",
+      "bytes": 1201,
+      "sha256": "3840a0b37ce90dd8ef6065588a4439119ad30715c557bca6303fcb5361e63577",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/variantGroups/Common/texts/el_GR.json",
+      "bytes": 1491,
+      "sha256": "c42da7a9a58de3fa5a0c2463b688993477b373b81b2ac8beea1c39d86e898cc5",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/variantGroups/Common/texts/en_GB.json",
+      "bytes": 1135,
+      "sha256": "67a18687a454e6aaef7c8f5599f564db44818b70f966b1d650660051180e1e72",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/variantGroups/Common/texts/en_US.json",
+      "bytes": 1135,
+      "sha256": "67a18687a454e6aaef7c8f5599f564db44818b70f966b1d650660051180e1e72",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/variantGroups/Common/texts/es_ES.json",
+      "bytes": 1201,
+      "sha256": "51c8dc35ed88abaf4310527b95259186c5daf2089cdbce3d5bcb48ae876f9aad",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/variantGroups/Common/texts/es_MX.json",
+      "bytes": 1208,
+      "sha256": "f3c02c9e89175acd26f33e7123b5cfff450b1a5f5525b17df775253d2674c9ec",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/variantGroups/Common/texts/fi_FI.json",
+      "bytes": 1238,
+      "sha256": "5c254b6c03a620d4cc16097a6410dc40171fd02972f39e74123971f5304c37db",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/variantGroups/Common/texts/fr_CA.json",
+      "bytes": 1215,
+      "sha256": "42520c341cdb381b1481c825f10893b20f479d0264092681455dde19ca7c01c6",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/variantGroups/Common/texts/fr_FR.json",
+      "bytes": 1218,
+      "sha256": "55641b77ccca504b70e9a4c93d6107058bbf407c1240c62b26fb84552bcce758",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/variantGroups/Common/texts/he_IL.json",
+      "bytes": 1343,
+      "sha256": "0efe3e8a716ba56eba81ffd7edd7024f64a49149d92ea27c528151dfa35a85a0",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/variantGroups/Common/texts/hu_HU.json",
+      "bytes": 1287,
+      "sha256": "e141dac25f31238cd34803c5db5768e5be1cf5b82d9ed036e28097d98b3a180c",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/variantGroups/Common/texts/id_ID.json",
+      "bytes": 1142,
+      "sha256": "736c6ee740ab0adbe09c6560cde36c9c3d6cb1efbed049db2d9f3e480b180f9b",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/variantGroups/Common/texts/it_IT.json",
+      "bytes": 1185,
+      "sha256": "c3cf99c5910da920accf3369c2898ff327d995043cc2315cba6b16ad886c6acb",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/variantGroups/Common/texts/ja_JP.json",
+      "bytes": 1363,
+      "sha256": "4ed8d6f55553fcc57da1ba31640b3600211b6dfa7b3e161f69894e4ffacd29cb",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/variantGroups/Common/texts/ko_KR.json",
+      "bytes": 1225,
+      "sha256": "3095b09dc4b81c3618ef1bd81bd12b030f8a356d391e752a67d4d5acdb706aaf",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/variantGroups/Common/texts/nl_BE.json",
+      "bytes": 1200,
+      "sha256": "120825cbb7a8ee48ba3ca99251a834934e31c87d0f131cf34aa69ba793e0adbd",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/variantGroups/Common/texts/nl_NL.json",
+      "bytes": 1200,
+      "sha256": "120825cbb7a8ee48ba3ca99251a834934e31c87d0f131cf34aa69ba793e0adbd",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/variantGroups/Common/texts/no_NO.json",
+      "bytes": 1174,
+      "sha256": "8f10c52ec6b142c2bed6822dc3664db46835c695eed7eb78be9dc39f05a542b7",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/variantGroups/Common/texts/pl_PL.json",
+      "bytes": 1238,
+      "sha256": "5f8db492d504082d1bfdea9e7825576d6af3c9890c50d55f72a23ca4bc62ec81",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/variantGroups/Common/texts/pt_BR.json",
+      "bytes": 1192,
+      "sha256": "d6c71125e66b283164a161fc9b2e61bcb2fe865698a4468cbaec731504dcef6b",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/variantGroups/Common/texts/pt_PT.json",
+      "bytes": 1204,
+      "sha256": "21a60c21b2374196c9350cf4b8808dfc9c90ce84589774a95221aa2c688b9222",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/variantGroups/Common/texts/ro_RO.json",
+      "bytes": 1197,
+      "sha256": "d611bf4c52ead221607c9c96b73145da5d3e4b75942a390373c35ea4520b814f",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/variantGroups/Common/texts/ru_RU.json",
+      "bytes": 1482,
+      "sha256": "1582ee57049938d68ca1cc76900363e25b66539cebc692be96a4ebd74564e28c",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/variantGroups/Common/texts/sk_SK.json",
+      "bytes": 1231,
+      "sha256": "d0129c93059e06f6484214ab3ebc335c0536f2b02084827529fe66a71d21312b",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/variantGroups/Common/texts/sl_SI.json",
+      "bytes": 1165,
+      "sha256": "19a64ebf7aeae4ad92321673cd6ca937daf05cf2d156047ca0dd0b635710650e",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/variantGroups/Common/texts/sv_SE.json",
+      "bytes": 1180,
+      "sha256": "c99c71f5389b6e983a8d7e202bda7fdf405e3e22af87cb4e0797bc8523eb830e",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/variantGroups/Common/texts/th_TH.json",
+      "bytes": 1655,
+      "sha256": "67834cb0ab545a676c19d29996b8d4113889b1a7adbd7cbbea193965e4a351b9",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/variantGroups/Common/texts/tr_TR.json",
+      "bytes": 1238,
+      "sha256": "fb1020470690145a314c1c4c8355178c877a831676b4c5af86e2d866e346d748",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/variantGroups/Common/texts/uk_UA.json",
+      "bytes": 1513,
+      "sha256": "81c03b8224eb6f489d3b9c851ab30ea4b76ea232344ef86e9f2f869cdec7832c",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/variantGroups/Common/texts/vi_VN.json",
+      "bytes": 1255,
+      "sha256": "c68a53e2ef9322ad57754f2f1854fab1a07d791d0750e066ba6329d94b122dd1",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/variantGroups/Common/texts/zh_CN.json",
+      "bytes": 1151,
+      "sha256": "6b3a56db631023c343d2aacd678fc2d1c624f95f0135a24cb186469192a64f6f",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/variantGroups/Common/texts/zh_TW.json",
+      "bytes": 1161,
+      "sha256": "49cda0bc006b342466f4a1ae8a43bbe1ba533e481350f20d9eff9f429957e49d",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/variantGroups/Common/texts/zh_yue_Hans_CN.json",
+      "bytes": 1151,
+      "sha256": "6b3a56db631023c343d2aacd678fc2d1c624f95f0135a24cb186469192a64f6f",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/rhmiData/variantGroups/Common/texts/zh_yue_Hant_CN.json",
+      "bytes": 1161,
+      "sha256": "49cda0bc006b342466f4a1ae8a43bbe1ba533e481350f20d9eff9f429957e49d",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/src/am_elements.js",
+      "bytes": 23399,
+      "sha256": "54c9c7fd49b10c3f6a3eca6fd47c407f6195a1eb33ac7014fc4a02b9831de210",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/src/am_gpu.js",
+      "bytes": 7596,
+      "sha256": "e7be18e7afcacffc423f0183036778bb6c1a3c385ffbf3d88923513542fda7c0",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/src/am_screens.js",
+      "bytes": 36738,
+      "sha256": "b3c02c3d70a84e5326df2c1ae305459029327eddf05b231e82fd802d3eea861f",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/src/am_store_widgets.js",
+      "bytes": 21902,
+      "sha256": "0ac7b0b9a87e9282521c93fc546021dab0468af77a9ced5f84a44cd9315104fa",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/src/am_widgets.js",
+      "bytes": 30719,
+      "sha256": "5c44facbde86870752ed41df1cd377532da8225c3b6067a0e4954d0bd1a1b2f0",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/src/font_regular.js",
+      "bytes": 108375,
+      "sha256": "305a77d38220fa78a703b86550e6c4c9eefd45f2a29bba9ae6440782f71467fd",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/src/font_semibold.js",
+      "bytes": 240832,
+      "sha256": "b9ee5bdd3e3c7eda8070627566ba55e8ece91009925564a48cfc72c1092e36c3",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/src/i18n.js",
+      "bytes": 2799,
+      "sha256": "ae0c509d3c032800eb843bd40af7134875846857506775e1bb0cbc2c46a8405d",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/src/kit_canvas.js",
+      "bytes": 25330,
+      "sha256": "052b6cfdab834940d5d29d741e0822faed9a726ad2559e80e341591e9365ec34",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/src/kit_fonts.js",
+      "bytes": 5548,
+      "sha256": "db82543a7cb9ed3a499f0277b097b960f07896b9ef8cb182b55df724707c0d19",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/src/kit_png.js",
+      "bytes": 7658,
+      "sha256": "809fff082b000522b665bb5ebfe11c7c4da483813bb2f885e36860fead819b75",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/src/kit_record.js",
+      "bytes": 18707,
+      "sha256": "18aa3c8f0daf9b12f0f9858cbcaced13af6472f2412ac845d2964e3421dfa61d",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/src/kit_themes.js",
+      "bytes": 3158,
+      "sha256": "c24c641a0e82c4b9bc1ba91ebc2916044de9e160e40d0cf888943fc12d80fa58",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/src/kit_vicons.js",
+      "bytes": 7757,
+      "sha256": "1344b88f25aa3bb42e3ac2a99d1301436028ab7af08326863dcd4acd61b5da44",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/src/locales.js",
+      "bytes": 250661,
+      "sha256": "ea2812bbf3746105f5c9a95a28e5f19d8a40476cbe803a08bc1121c260bb17d4",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/src/qr.js",
+      "bytes": 5230,
+      "sha256": "7fedfcfbe82f462811cea040cf7f43b8f85ce9fce5e17c15bcc4cd90ba545121",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/src/qrcodegen.js",
+      "bytes": 42504,
+      "sha256": "68a09ec3aeee8d7115d0cdc615f2006b4fd8636e28442f316ea89b6e626f3916",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/src/speller.js",
+      "bytes": 3606,
+      "sha256": "95b22aae0e3c341c7696d60920b76e37f8ae2f29fec60f2db5cf9cba3ce005a3",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/src/store.js",
+      "bytes": 82502,
+      "sha256": "52b6ecc0e67c2948e576764312a2284142e51b9fd05c2fdfe55acc26fede8deb",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/src/store_compact.js",
+      "bytes": 14751,
+      "sha256": "81f9cf3321c5ecb9461dff106f6a8a77f5d43b97c901fc8ee8cd43a568ad7f9a",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/src/store_drawn.js",
+      "bytes": 37658,
+      "sha256": "73894c556b2fc07a4248525a1eaa41ab294d9f8d0cd06e5cd571229cf22b32cb",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/src/store_elements.js",
+      "bytes": 1217,
+      "sha256": "7666313cac0a94923584214224dfce9a04e642b7d3befb0d520f4f350077ad77",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/src/store_frame.js",
+      "bytes": 15508,
+      "sha256": "8ce1271936e1a895c7dc92097bc5cf322d767a802ffafba14410beaeb99e2235",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/src/store_ui.js",
+      "bytes": 45020,
+      "sha256": "bfd1466fd711ce92f956ce95905b3ddf01a45725344fc3a9b1ae6eae8683ac6e",
+      "mode": "0o664"
+    },
+    {
+      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/src/store_view.js",
+      "bytes": 21270,
+      "sha256": "88e8d2360e0e4072ef61455dff25e1278477d6ca04cb7dbb8af164040f076f0a",
+      "mode": "0o664"
+    }
+  ],
+  "existing_files_left_unchanged": 138,
+  "new_recipe_ids": [],
+  "remaining_missing_ids": [],
+  "runtime_status": "NOT_OBSERVED"
+}

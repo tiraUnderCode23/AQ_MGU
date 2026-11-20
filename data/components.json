@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-11-19",
+  "as_of": "2026-11-20",
   "components": [
     {
       "id": "ab_storage",
@@ -191,6 +191,33 @@
       "upstream_version": "0.1.0",
       "live_install_status": "NOT OBSERVED",
       "upstream_readme": "https://github.com/alexp50/bmw-apps/blob/4fb5a5dba1ec7c6a57545ae935a14cb91a194d19/README.md"
+    },
+    {
+      "id": "advokat_live_adjustments",
+      "kind": "app",
+      "category": "app",
+      "title": "Advokat Engine Config",
+      "version": "10.17.1",
+      "description": "Engine Config for BMW MGU ID7. Exhaust Flap: OEM, OPEN and CLOSE over the car's own diagnostic link, or following the driving mode (Sport open, Eco Pro closed); held against the DME's timeout, Close handed back above a set engine speed. With BM3, MHD or MG Flasher picked in Settings: engine map switching, burbles, ASD (BM3) and Max Cooling (MHD, MG Flasher). Experimental: xDrive off until the ignition cycle (DSC LMV_FUNKTION), behind its own setting",
+      "source_repository": "mlurker/bmw-idrive7-advokat",
+      "license": "MIT",
+      "source_path": "apps/_sources/mlurker-advokat/apps/advokat_live_adjustments",
+      "delivery": "branch source",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {},
+      "artifact": {},
+      "icon": "docs/assets/apps/advokat_live_adjustments/icon.png",
+      "images": [
+        "docs/assets/apps/advokat_live_adjustments/screen_1.png",
+        "docs/assets/apps/advokat_live_adjustments/screen_2.png",
+        "docs/assets/apps/advokat_live_adjustments/screen_3.png"
+      ],
+      "image_count": 3,
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/mlurker-advokat/README.md",
+      "live_install_status": "NOT OBSERVED"
     },
     {
       "id": "ahg_control_center",
@@ -714,6 +741,29 @@
       "live_install_status": "NOT OBSERVED"
     },
     {
+      "id": "aref_drivelog",
+      "kind": "app",
+      "category": "app",
+      "title": "Drive Log",
+      "description": "Replaced by Car Watch (install it, then remove this app). Records every drive in the background: distance, time moving, top speed, best 0-60 mph, peak rpm, the most acceleration, braking and cornering g, and the highest oil and coolant temperatures. Compare with Dragy (off by default): enter a Dragy's time after a run, and after 3 runs every 0-60 also shows a Dragy-adjusted time. History, 0-60 runs and Save CSV. Read-only. Starts with the car.",
+      "source_repository": "arefahmad/idrive7-apps",
+      "license": "MIT with per-app, runtime and font notices retained",
+      "source_path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_drivelog",
+      "delivery": "branch source",
+      "icon": "docs/assets/apps/aref_drivelog/icon.png",
+      "images": [],
+      "image_count": 0,
+      "upstream_readme": "apps/_sources/arefahmad-idrive7-apps/apps/aref_drivelog/README.md",
+      "version": "0.3.2",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {},
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "live_install_status": "NOT OBSERVED"
+    },
+    {
       "id": "aref_eta",
       "kind": "app",
       "category": "app",
@@ -751,7 +801,7 @@
       "icon": "docs/assets/apps/aref_explorer/icon.png",
       "images": [],
       "image_count": 0,
-      "upstream_readme": "apps/README.md",
+      "upstream_readme": "apps/_sources/arefahmad-idrive7-apps/apps/aref_explorer/README.md",
       "version": "0.2.3",
       "supported_hmi": [
         "ID7",
@@ -774,6 +824,52 @@
         "provenance": "apps/_ports/arefahmad-idrive8/PROVENANCE.json",
         "source_metadata": "apps/_ports/arefahmad-idrive8/PORT.json"
       }
+    },
+    {
+      "id": "aref_faultwatch",
+      "kind": "app",
+      "category": "app",
+      "title": "Fault Watch",
+      "description": "Replaced by Car Watch (install it, then remove this app). Reads every control unit's fault memory in the background every few minutes while the car is on, and keeps a timeline of what changed: new faults, faults that turn active, faults that clear. Each entry has the time and the drive at that moment (speed, gear, rpm, oil, drive mode), so an intermittent fault can be matched to when it happened. Read-only: it never clears or writes anything. Starts with the car.",
+      "source_repository": "arefahmad/idrive7-apps",
+      "license": "MIT with per-app, runtime and font notices retained",
+      "source_path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_faultwatch",
+      "delivery": "branch source",
+      "icon": "docs/assets/apps/aref_faultwatch/icon.png",
+      "images": [],
+      "image_count": 0,
+      "upstream_readme": "apps/_sources/arefahmad-idrive7-apps/apps/aref_faultwatch/README.md",
+      "version": "0.2.2",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {},
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "live_install_status": "NOT OBSERVED"
+    },
+    {
+      "id": "aref_misfire",
+      "kind": "app",
+      "category": "app",
+      "title": "Misfire Watch",
+      "description": "Replaced by Car Watch (install it, then remove this app). Logs every misfire the engine counts, per cylinder, across every drive. It reads the engine unit's own misfire counters every few seconds while the engine runs and records each new misfire with the conditions at that moment: rpm, speed, gear, torque, coolant and drive mode. Shows this drive per cylinder, all-time totals, the DME's 10-drive average, a misfire log and a list of drives, and exports CSV. Finds a weak coil or worn plug early. Read-only. Starts with the car.",
+      "source_repository": "arefahmad/idrive7-apps",
+      "license": "MIT with per-app, runtime and font notices retained",
+      "source_path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_misfire",
+      "delivery": "branch source",
+      "icon": "docs/assets/apps/aref_misfire/icon.png",
+      "images": [],
+      "image_count": 0,
+      "upstream_readme": "apps/_sources/arefahmad-idrive7-apps/apps/aref_misfire/README.md",
+      "version": "0.1.1",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {},
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "live_install_status": "NOT OBSERVED"
     },
     {
       "id": "aref_tires",
@@ -1607,6 +1703,40 @@
       "live_install_status": "NOT OBSERVED",
       "upstream_readme": "https://github.com/alex-base-pr/base-player/blob/8a90f22755fdf7468e74f3048258cc3af8c7c7a6/README.md",
       "icon": "docs/assets/apps/base_player/icon.png"
+    },
+    {
+      "id": "bcs_store",
+      "category": "app",
+      "images": [],
+      "image_count": 0,
+      "kind": "app",
+      "version": "3.4.5",
+      "title": "Store",
+      "description": "BCS Automotive Solutions: apps and head-unit tools for the BMW MGU, from BCS and community sources",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "mgu-deploy": "0.8.12",
+        "mgu-updater": "0.8.28",
+        "mgu-render": "0.3.1"
+      },
+      "source_repository": "bcs-asia/app-store",
+      "source_commit": "87b8d423854a39089809f360072057903a8ea3b5",
+      "license": "GPL-3.0",
+      "source_path": null,
+      "delivery": "original publisher artifact",
+      "artifact": {
+        "name": "bcs_store@3.4.5.tgz",
+        "size": 4729989,
+        "sha256": "656f3bd8cee577d531680cc399d13e4218a4e0e0eec3ac3d876dc265a4374dc8",
+        "url": "https://github.com/bcs-asia/app-store/releases/download/catalog/bcs_store@3.4.5.tgz"
+      },
+      "upstream_artifact_sha256": "656f3bd8cee577d531680cc399d13e4218a4e0e0eec3ac3d876dc265a4374dc8",
+      "live_install_status": "NOT OBSERVED",
+      "upstream_readme": "https://github.com/bcs-asia/app-store/blob/87b8d423854a39089809f360072057903a8ea3b5/README.md",
+      "icon": "docs/assets/apps/bcs_store/icon.png"
     },
     {
       "id": "benspa_vitals",
@@ -3063,6 +3193,40 @@
       "upstream_readme": "apps/_sources/idrive7-apps/README.md"
     },
     {
+      "id": "eldrive",
+      "kind": "app",
+      "category": "app",
+      "title": "elDrive",
+      "description": "eDrive with fully electric cars (BEV, e.g. the iX3): real range, live battery power, cells and climate power, HV battery health and energy, last charge, charge log, 12 V battery voltage and a home-screen widget; plug-in hybrids and 48 V mild hybrids as in eDrive",
+      "version": "1.1.0",
+      "source_repository": "beele/eldrive",
+      "source_path": "apps/_sources/beele-eldrive/apps/eldrive",
+      "delivery": "branch source",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0"
+      },
+      "license": "MIT original app and kit; retain Ubuntu/Noto and other bundled font notices",
+      "upstream_readme": "apps/_sources/beele-eldrive/README.md",
+      "icon": "docs/assets/apps/eldrive/icon.png",
+      "images": [],
+      "image_count": 0,
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "live_install_status": "NOT OBSERVED",
+      "packaging_recipe": "aq-original-source-notices/1",
+      "source_review_notes": "Original eDrive-based source with distinct BEV mode for iX3/G08, own app ID and data directory. Read-only diagnostics; the publisher identifies unconfirmed BEV readings separately. ID7 only, no ID8 claim. Use existing canonical renderer/inputgate, not this fork helper definitions.",
+      "source_limitations": [
+        "Functional eDrive fork with independent BEV/iX3 support, not an ID8 port.",
+        "Publisher documents confirmed versus unconfirmed BEV readings; no physical-unit validation by AQ.",
+        "Original packaging requires a target-provided SDK. Offline check used two inert fixture files, never real SDK code."
+      ],
+      "duplicate_classification": "functional-fork-with-new-BEV-support"
+    },
+    {
       "id": "equalizer",
       "kind": "app",
       "category": "app",
@@ -3760,7 +3924,7 @@
       "image_count": 0,
       "upstream_artifact_sha256": null,
       "live_install_status": "NOT OBSERVED",
-      "upstream_readme": "tools/README.md"
+      "upstream_readme": "apps/_sources/idrive7-apps/kit/renderd/README.md"
     },
     {
       "id": "idrive7_dpf_app",
@@ -4821,6 +4985,32 @@
       "live_install_status": "NOT OBSERVED"
     },
     {
+      "id": "kombikraft",
+      "category": "app",
+      "images": [],
+      "image_count": 0,
+      "kind": "app",
+      "version": "0.1.0",
+      "title": "KombiKraft Lab — Offline prototype",
+      "description": "Experimental native preferences app. No vehicle-validated release; factory menu injection, HUD rendering and KOMBI skin activation remain unavailable.",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.2.0"
+      },
+      "source_repository": "callan280/kombikraft",
+      "source_commit": "d5404f70c6bf694d26ec5ebbd51a1285d3792532",
+      "license": "MIT",
+      "source_path": "apps/_prebuilt/kombikraft",
+      "delivery": "branch source",
+      "artifact": {},
+      "upstream_artifact_sha256": null,
+      "live_install_status": "NOT OBSERVED",
+      "upstream_readme": "https://github.com/callan280/kombikraft/blob/d5404f70c6bf694d26ec5ebbd51a1285d3792532/README.md",
+      "icon": "docs/assets/apps/kombikraft/icon.png"
+    },
+    {
       "id": "kombikraft_test",
       "kind": "app",
       "category": "app",
@@ -5456,6 +5646,67 @@
       "live_install_status": "NOT OBSERVED"
     },
     {
+      "id": "mdq-aapd-log",
+      "kind": "tool",
+      "category": "tool",
+      "title": "Android Auto log (for CarLink)",
+      "version": "0.1.1",
+      "description": "Experimental. Copies the car's Android Auto daemon's log (journalctl -u aapd, the last 2000 lines) and a snapshot of its state (systemctl status, waze-on-cluster's aapd patch, /etc/aapd.conf against its backup, and the network: addresses, routes and the firewall rules) to /run/mdq-aapd-log, where CarLink shows it on the phone (Car log, Debug on). Runs as root but only reads; writes only that folder, which goes when it stops. Starts at the next head-unit start after its install.",
+      "source_repository": "7amoody1985/mgu-apps-lab",
+      "license": "Original publisher license",
+      "source_path": null,
+      "delivery": "original publisher artifact",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {},
+      "artifact": {
+        "name": "mdq-aapd-log@0.1.1.tgz",
+        "size": 4312,
+        "sha256": "486d898b32cf5a65c40c29115d960dd5b1d4aaa19c8e279c551486ddb5939510",
+        "url": "https://github.com/7amoody1985/mgu-apps-lab/releases/download/catalog/mdq-aapd-log@0.1.1.tgz"
+      },
+      "icon": "",
+      "images": [],
+      "image_count": 0,
+      "upstream_artifact_sha256": "486d898b32cf5a65c40c29115d960dd5b1d4aaa19c8e279c551486ddb5939510",
+      "upstream_readme": "https://raw.githubusercontent.com/7amoody1985/mgu-apps-lab/bcfda7e17c5f9562bbcca0c9c4109fb5ab46eda6/README.md",
+      "live_install_status": "NOT OBSERVED"
+    },
+    {
+      "id": "mdq-ridetube-d",
+      "kind": "tool",
+      "category": "tool",
+      "title": "RideTube service (fork by 7amoody1985)",
+      "version": "0.4.2",
+      "description": "The car side of the RideTube fork (JustAnotherPU's RideTube, modified, with its own ids): yt-dlp fetches on the car, the sound through the BMW MediaPlayer, the picture decoded by ytdec. The playing video streams in RAM (a 256 MB tmpfs) instead of being written whole to the head unit's flash; a debug report in /run/mdq-ridetube-d/status.json and log/sessions.jsonl. Needs Node.js 22 from the JustAnotherPU/mgu-apps source. Source: github.com/7amoody1985/ridetube",
+      "source_repository": "7amoody1985/mgu-apps-lab",
+      "license": "Original publisher license",
+      "source_path": null,
+      "delivery": "original publisher artifact",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.0",
+        "mgu-python": "1.0.2",
+        "jap-node22": "22.23.4",
+        "mgu-render": "0.6.11"
+      },
+      "artifact": {
+        "name": "mdq-ridetube-d@0.4.2.tgz",
+        "size": 8785229,
+        "sha256": "b27100a3de2c8d86dcc9fa89a3feaac29f8ade71d2ec92f4f9b4b82d8949b06f",
+        "url": "https://github.com/7amoody1985/mgu-apps-lab/releases/download/catalog/mdq-ridetube-d@0.4.2.tgz"
+      },
+      "icon": "",
+      "images": [],
+      "image_count": 0,
+      "upstream_artifact_sha256": "b27100a3de2c8d86dcc9fa89a3feaac29f8ade71d2ec92f4f9b4b82d8949b06f",
+      "upstream_readme": "https://raw.githubusercontent.com/7amoody1985/mgu-apps-lab/bcfda7e17c5f9562bbcca0c9c4109fb5ab46eda6/README.md",
+      "live_install_status": "NOT OBSERVED"
+    },
+    {
       "id": "mdq_carlink",
       "kind": "app",
       "category": "app",
@@ -5482,6 +5733,38 @@
       "images": [],
       "image_count": 0,
       "upstream_artifact_sha256": "c2e65a2f6ba71643e9f4e3b670462ab2a3f72b9f4e31ae35d8c50996e4d268ad",
+      "upstream_readme": "https://raw.githubusercontent.com/7amoody1985/mgu-apps-lab/bcfda7e17c5f9562bbcca0c9c4109fb5ab46eda6/README.md",
+      "live_install_status": "NOT OBSERVED"
+    },
+    {
+      "id": "mdq_ridetube",
+      "kind": "app",
+      "category": "app",
+      "title": "RideTube (fork by 7amoody1985)",
+      "version": "0.4.0",
+      "description": "A modified build of JustAnotherPU's RideTube (github.com/JustAnotherPU/ridetube), not endorsed by its developer, with its own ids: it installs beside the original and never over it (only one of them plays at a time). Fixes the Search menu (and the settings in it) closing right after it opens; its service streams the video in RAM instead of writing it to the head unit's flash. Source: github.com/7amoody1985/ridetube",
+      "source_repository": "7amoody1985/mgu-apps-lab",
+      "license": "Original publisher license",
+      "source_path": null,
+      "delivery": "original publisher artifact",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mdq-ridetube-d": "0.4.2",
+        "mgu-render": "0.6.11",
+        "mgu-inputgate": "1.0.0"
+      },
+      "artifact": {
+        "name": "mdq_ridetube@0.4.0.tgz",
+        "size": 1177863,
+        "sha256": "16c371e05d2470d26be9552395457133b51b1d3d94ad9f0b7ea49540baa99c5b",
+        "url": "https://github.com/7amoody1985/mgu-apps-lab/releases/download/catalog/mdq_ridetube@0.4.0.tgz"
+      },
+      "icon": "docs/assets/apps/mdq_ridetube/icon.png",
+      "images": [],
+      "image_count": 0,
+      "upstream_artifact_sha256": "16c371e05d2470d26be9552395457133b51b1d3d94ad9f0b7ea49540baa99c5b",
       "upstream_readme": "https://raw.githubusercontent.com/7amoody1985/mgu-apps-lab/bcfda7e17c5f9562bbcca0c9c4109fb5ab46eda6/README.md",
       "live_install_status": "NOT OBSERVED"
     },
@@ -6094,7 +6377,7 @@
       "images": [],
       "image_count": 0,
       "upstream_artifact_sha256": null,
-      "upstream_readme": "apps/README.md",
+      "upstream_readme": "apps/_sources/darkmuse-idrive7-apps-ru/README.md",
       "live_install_status": "NOT OBSERVED"
     },
     {
@@ -6503,6 +6786,34 @@
       "upstream_readme": "https://github.com/alexp50/bmw-apps/blob/4fb5a5dba1ec7c6a57545ae935a14cb91a194d19/README.md"
     },
     {
+      "id": "perea_cluster_themes",
+      "kind": "app",
+      "category": "app",
+      "title": "Cluster Themes",
+      "version": "0.19.1",
+      "description": "Redraws the instrument cluster: GT3 race dash, M-style, M view, Vector (with a music panel), Sport, Minimal, Track, Drag, Rally, Retro 80s, Cruise, Dyno (BMW-coloured readout tiles) or Ribbon (with holiday editions), with shift lights, boost, temps, tyres, a G-meter and a 0-60 timer",
+      "source_repository": "alexpereap/pereaperformance-idrive7-apps",
+      "license": "MIT",
+      "source_path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes",
+      "delivery": "branch source",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "requires": {
+        "cluster-render": "0.5.1"
+      },
+      "artifact": {},
+      "icon": "docs/assets/apps/perea_cluster_themes/icon.png",
+      "images": [
+        "docs/assets/apps/perea_cluster_themes/screen_1.png",
+        "docs/assets/apps/perea_cluster_themes/screen_2.png"
+      ],
+      "image_count": 2,
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/alexpereap-idrive7-apps/README.md",
+      "live_install_status": "NOT OBSERVED"
+    },
+    {
       "id": "perea_mhd_flex",
       "kind": "app",
       "category": "app",
@@ -6622,7 +6933,7 @@
       "images": [],
       "image_count": 0,
       "upstream_artifact_sha256": null,
-      "upstream_readme": "apps/README.md",
+      "upstream_readme": "apps/_sources/proven-apps/README.md",
       "live_install_status": "NOT OBSERVED"
     },
     {
@@ -6648,7 +6959,7 @@
       "images": [],
       "image_count": 0,
       "upstream_artifact_sha256": null,
-      "upstream_readme": "apps/README.md",
+      "upstream_readme": "apps/_sources/proven-apps/README.md",
       "live_install_status": "NOT OBSERVED"
     },
     {
@@ -6799,6 +7110,40 @@
       "upstream_version": "1.0.0",
       "live_install_status": "NOT OBSERVED",
       "upstream_readme": "https://github.com/alexp50/bmw-apps/blob/4fb5a5dba1ec7c6a57545ae935a14cb91a194d19/README.md"
+    },
+    {
+      "id": "robertn_store",
+      "kind": "app",
+      "category": "app",
+      "title": "Store",
+      "version": "0.9.41",
+      "description": "The apps and head-unit tools of every source with their state, and the sources; installs, updates and removes them through mgu-updater",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "mgu-deploy": "0.8.12",
+        "mgu-updater": "0.8.28",
+        "mgu-render": "0.3.1"
+      },
+      "source_repository": "robertnisipeanu/mgu-store",
+      "license": "GPL-3.0-or-later",
+      "source_path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store",
+      "delivery": "branch source",
+      "artifact": {},
+      "icon": "docs/assets/apps/robertn_store/icon.png",
+      "images": [
+        "docs/assets/apps/robertn_store/preview-01.png",
+        "docs/assets/apps/robertn_store/screen_2.png",
+        "docs/assets/apps/robertn_store/screen_3.png"
+      ],
+      "image_count": 3,
+      "upstream_artifact_sha256": null,
+      "live_install_status": "NOT OBSERVED",
+      "source_commit": "b42fdba837210899005b52b84f6bd00cd4ac7f8f",
+      "upstream_version": "0.9.41",
+      "upstream_readme": "https://github.com/robertnisipeanu/mgu-store/blob/b42fdba837210899005b52b84f6bd00cd4ac7f8f/README.md"
     },
     {
       "id": "robertn_waze_cluster",

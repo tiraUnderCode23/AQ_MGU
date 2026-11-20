@@ -1357,5 +1357,67 @@
     "size": 45556,
     "sha256": "1f8445933e97d432101ef4b665c9c0727c18fd9ce0db79851681b43c22f0e289",
     "distribution": "original-publisher-reference"
+  },
+  {
+    "id": "bcs_store",
+    "kind": "app",
+    "version": "3.4.5",
+    "upstream_repository": "bcs-asia/app-store",
+    "upstream_catalog": "https://github.com/bcs-asia/app-store/releases/download/catalog/catalog.json",
+    "upstream_catalog_commit": "87b8d423854a39089809f360072057903a8ea3b5",
+    "observed_repository_head": "87b8d423854a39089809f360072057903a8ea3b5",
+    "upstream_artifact_url": "https://github.com/bcs-asia/app-store/releases/download/catalog/bcs_store@3.4.5.tgz",
+    "artifact_name": "bcs_store@3.4.5.tgz",
+    "size": 4729989,
+    "sha256": "656f3bd8cee577d531680cc399d13e4218a4e0e0eec3ac3d876dc265a4374dc8",
+    "artifact_url": "https://github.com/bcs-asia/app-store/releases/download/catalog/bcs_store@3.4.5.tgz",
+    "distribution": "original-publisher-reference",
+    "license": "GPL-3.0",
+    "license_evidence_urls": [
+      "https://github.com/bcs-asia/app-store/blob/87b8d423854a39089809f360072057903a8ea3b5/LICENSE"
+    ],
+    "upstream_catalog_sha256": "afaa9de53f761ce1ff8c12de184a3d08ad15619037e797cc680357fe175d2599"
+  },
+  {
+    "id": "mdq-aapd-log",
+    "kind": "tool",
+    "version": "0.1.1",
+    "upstream_repository": "7amoody1985/mgu-apps-lab",
+    "upstream_catalog": "https://github.com/7amoody1985/mgu-apps-lab/releases/download/catalog/catalog.json",
+    "upstream_catalog_commit": null,
+    "upstream_artifact_url": "https://github.com/7amoody1985/mgu-apps-lab/releases/download/catalog/mdq-aapd-log@0.1.1.tgz",
+    "artifact_name": "mdq-aapd-log@0.1.1.tgz",
+    "size": 4312,
+    "sha256": "486d898b32cf5a65c40c29115d960dd5b1d4aaa19c8e279c551486ddb5939510",
+    "artifact_url": "https://github.com/7amoody1985/mgu-apps-lab/releases/download/catalog/mdq-aapd-log@0.1.1.tgz",
+    "distribution": "original-publisher-reference"
+  },
+  {
+    "id": "mdq-ridetube-d",
+    "kind": "tool",
+    "version": "0.4.2",
+    "upstream_repository": "7amoody1985/mgu-apps-lab",
+    "upstream_catalog": "https://github.com/7amoody1985/mgu-apps-lab/releases/download/catalog/catalog.json",
+    "upstream_catalog_commit": null,
+    "upstream_artifact_url": "https://github.com/7amoody1985/mgu-apps-lab/releases/download/catalog/mdq-ridetube-d@0.4.2.tgz",
+    "artifact_name": "mdq-ridetube-d@0.4.2.tgz",
+    "size": 8785229,
+    "sha256": "b27100a3de2c8d86dcc9fa89a3feaac29f8ade71d2ec92f4f9b4b82d8949b06f",
+    "artifact_url": "https://github.com/7amoody1985/mgu-apps-lab/releases/download/catalog/mdq-ridetube-d@0.4.2.tgz",
+    "distribution": "original-publisher-reference"
+  },
+  {
+    "id": "mdq_ridetube",
+    "kind": "app",
+    "version": "0.4.0",
+    "upstream_repository": "7amoody1985/mgu-apps-lab",
+    "upstream_catalog": "https://github.com/7amoody1985/mgu-apps-lab/releases/download/catalog/catalog.json",
+    "upstream_catalog_commit": null,
+    "upstream_artifact_url": "https://github.com/7amoody1985/mgu-apps-lab/releases/download/catalog/mdq_ridetube@0.4.0.tgz",
+    "artifact_name": "mdq_ridetube@0.4.0.tgz",
+    "size": 1177863,
+    "sha256": "16c371e05d2470d26be9552395457133b51b1d3d94ad9f0b7ea49540baa99c5b",
+    "artifact_url": "https://github.com/7amoody1985/mgu-apps-lab/releases/download/catalog/mdq_ridetube@0.4.0.tgz",
+    "distribution": "original-publisher-reference"
   }
 ]

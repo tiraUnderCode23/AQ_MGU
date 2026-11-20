@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "date": "2026-11-20",
+  "baseline_main": "e799da0cbe2a8a9b9f7b0dfcd844a69b85cf7334",
+  "historical_recovery_source": "6650ed577b48b80caeb7b708f60ca615f5a8aaa7",
+  "restored_apps": 10,
+  "restored_tools": 2,
+  "restored_payload_and_media_files": 556,
+  "existing_selected_files_preserved_without_overwrite": 138,
+  "original_readme_references_recovered": 5,
+  "source_components": 198,
+  "release_components": 90,
+  "original_external_helper_references": 6,
+  "inventory_components": 294,
+  "apps": 214,
+  "tools_including_external_references": 80,
+  "apps_with_images": 91,
+  "screenshots": 324,
+  "feed_validation": "PASS",
+  "localization_bootstrap_tests": {"passed": 4, "builders_checked": 11},
+  "readme_matrix_tests": {"passed": 5},
+  "physical_installation": "NOT_OBSERVED",
+  "physical_runtime": "NOT_OBSERVED",
+  "known_distribution_limit": "vizualyse-steam compressed artifact is 531211774 bytes; the current separate Manager package limit is 200 MiB. Preserved in inventory, not described as verified installable through that Manager.",
+  "notes": [
+    "This records offline validation; it does not certify installation on a target unit.",
+    "The ID8 distribution requires a separate exact-version eligibility and transitive dependency review.",
+    "The Git preservation bundle includes all original refs and the detached worktree commit; its receipt also preserves 65 local ignored files from the detached worktree."
+  ]
+}

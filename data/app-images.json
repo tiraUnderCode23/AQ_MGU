@@ -1422,5 +1422,66 @@
     "icon": "docs/assets/apps/woodr_screenlab/icon.png",
     "images": [],
     "image_count": 0
+  },
+  "advokat_live_adjustments": {
+    "icon": "docs/assets/apps/advokat_live_adjustments/icon.png",
+    "images": [
+      "docs/assets/apps/advokat_live_adjustments/screen_1.png",
+      "docs/assets/apps/advokat_live_adjustments/screen_2.png",
+      "docs/assets/apps/advokat_live_adjustments/screen_3.png"
+    ],
+    "image_count": 3
+  },
+  "aref_drivelog": {
+    "icon": "docs/assets/apps/aref_drivelog/icon.png",
+    "images": [],
+    "image_count": 0
+  },
+  "aref_faultwatch": {
+    "icon": "docs/assets/apps/aref_faultwatch/icon.png",
+    "images": [],
+    "image_count": 0
+  },
+  "aref_misfire": {
+    "icon": "docs/assets/apps/aref_misfire/icon.png",
+    "images": [],
+    "image_count": 0
+  },
+  "eldrive": {
+    "icon": "docs/assets/apps/eldrive/icon.png",
+    "images": [],
+    "image_count": 0
+  },
+  "kombikraft": {
+    "icon": "docs/assets/apps/kombikraft/icon.png",
+    "images": [],
+    "image_count": 0
+  },
+  "perea_cluster_themes": {
+    "icon": "docs/assets/apps/perea_cluster_themes/icon.png",
+    "images": [
+      "docs/assets/apps/perea_cluster_themes/screen_1.png",
+      "docs/assets/apps/perea_cluster_themes/screen_2.png"
+    ],
+    "image_count": 2
+  },
+  "robertn_store": {
+    "icon": "docs/assets/apps/robertn_store/icon.png",
+    "images": [
+      "docs/assets/apps/robertn_store/preview-01.png",
+      "docs/assets/apps/robertn_store/screen_2.png",
+      "docs/assets/apps/robertn_store/screen_3.png"
+    ],
+    "image_count": 3
+  },
+  "bcs_store": {
+    "icon": "docs/assets/apps/bcs_store/icon.png",
+    "images": [],
+    "image_count": 0
+  },
+  "mdq_ridetube": {
+    "icon": "docs/assets/apps/mdq_ridetube/icon.png",
+    "images": [],
+    "image_count": 0
   }
 }
