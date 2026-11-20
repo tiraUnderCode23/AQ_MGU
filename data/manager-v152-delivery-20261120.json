@@ -1,0 +1,132 @@
+{
+  "schema": 1,
+  "recordedAtUtc": "2026-11-20T14:55:12.350386+00:00",
+  "sourceCommit": "ae9b5ea4fee5d52ddbea57af0f52dfc06835e90a",
+  "package": "com.aqbimmer.mgu_aq_manager",
+  "versionName": "1.5.2",
+  "versionCode": 14,
+  "buildType": "debug",
+  "artifact": {
+    "filename": "MGU_AQ_Manager-1.5.2_14-debug.apk",
+    "sizeBytes": 234088683,
+    "sha256": "b41f21dd78da39a886ff214b70c307ee3cdf62b01d59ba8315a6f297a13c5c4e"
+  },
+  "phoneInstall": {
+    "model": "SM-F966B",
+    "before": {
+      "versionName": "1.5.1",
+      "versionCode": 13
+    },
+    "after": {
+      "versionName": "1.5.2",
+      "versionCode": 14
+    },
+    "installedAtUtc": "2026-11-20T14:44:34.901509+00:00",
+    "success": true,
+    "dataRetained": true,
+    "installMode": "adb --no-streaming -r"
+  },
+  "phoneUi": {
+    "schema": 1,
+    "observedAtUtc": "2026-11-20T14:54:48.864349+00:00",
+    "versionName": "1.5.2",
+    "versionCode": 14,
+    "activityStartOk": true,
+    "packageProcessObserved": true,
+    "unitActionDispatched": false,
+    "observed": {
+      "initialAppsGridRendered": true,
+      "initialAllHmiGridCount": 298,
+      "initialCountIncludesCachedSourceAndLocalRows": true,
+      "postRefreshScrolledGridRenderedWithoutVisibleFrameworkError": true,
+      "canonicalId8SourceRows": [
+        {
+          "title": "M Vitals",
+          "version": "2.27.9"
+        },
+        {
+          "title": "Redline",
+          "version": "2.0.45"
+        }
+      ],
+      "originalExternalSourceRows": [
+        {
+          "title": "Overlays",
+          "version": "0.6.0",
+          "hmi": [
+            "ID8"
+          ]
+        },
+        {
+          "title": "Screen share",
+          "version": "1.0.9",
+          "hmi": [
+            "ID7",
+            "ID8"
+          ]
+        },
+        {
+          "title": "Tailscale",
+          "version": "1.104.6",
+          "hmi": [
+            "ID7",
+            "ID8"
+          ]
+        },
+        {
+          "title": "Turn View",
+          "version": "0.9.1",
+          "hmi": [
+            "ID7",
+            "ID8"
+          ]
+        }
+      ],
+      "compactTwoLinePhoneHeaderVisible": true,
+      "existingVehicleProfilesRetained": true,
+      "githubOptionalSettingsCardVisible": true,
+      "githubSettingsNativeLoadErrorVisible": false,
+      "activityConsoleBarVisible": true,
+      "portraitAndLandscapeObserved": true
+    },
+    "automatedVerification": {
+      "focusedUiTestsPassed": 34,
+      "credentialTestsPassed": 33,
+      "fullTestsPassed": 1097,
+      "hmiFilterAndSourceIdentity": "passed",
+      "consoleExpandCopyAndScroll": "passed",
+      "githubFormExplicitSaveClearAndInputPrivacy": "passed",
+      "fourViewportVisualGate": "passed"
+    },
+    "manualChecksNotCompleted": [
+      "physical ID8 filter selection",
+      "physical all-source branch dropdown inspection",
+      "physical expanded console and expanded token form"
+    ],
+    "manualInspectionLimit": "The Manager repeatedly left foreground during active device use; a later UI automation snapshot returned exit 255. No foreground or input was forced into another app.",
+    "realTokenEnteredOrReadByAgent": false,
+    "physicalPhoneScreenshotsPublished": false
+  },
+  "fullTests": {
+    "passed": 1097,
+    "failed": 0,
+    "skipped": 1,
+    "skippedReason": "Opt-in dashboard visual capture; passed separately at four viewport/text-scale configurations."
+  },
+  "analyzer": "No issues found",
+  "prebuildPublication": {
+    "verifiedAtUtc": "2026-11-20T14:41:58.540505+00:00",
+    "heads": {
+      "main": "660753e9eafe96c57884dc5b38251dc1c881593b",
+      "id8": "748b05854ed661ae69ab1e827a29411169d69b71",
+      "games": "6d66b1996b486628d1ba1826f2fc72912ea058b0"
+    }
+  },
+  "catalogPayloadCodePin": "714b2edb37f1bac811444ead348509b2b2836745",
+  "unitActionsDispatched": false,
+  "sourceStorage": {
+    "managerRemotes": [],
+    "managerSourceCommittedLocally": true,
+    "privateIncrementalBundleBase": "69d3afed66caa35e6902bd1cf0542b9699b4a089"
+  }
+}
