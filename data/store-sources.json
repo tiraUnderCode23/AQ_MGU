@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "sources": [
+    {
+      "channel": "branch:games",
+      "id": "aq-mgu-apps",
+      "repo": "tiraUnderCode23/AQ_MGU",
+      "type": "github"
+    },
+    {
+      "id": "aq-mgu-catalog",
+      "type": "https",
+      "url": "https://raw.githubusercontent.com/tiraUnderCode23/AQ_MGU/games/release/catalog.json"
+    },
+    {
+      "channel": "branch:main",
+      "id": "aq-mgu-iteriodev",
+      "repo": "IterioDev/car-apps",
+      "type": "github"
+    }
+  ]
+}

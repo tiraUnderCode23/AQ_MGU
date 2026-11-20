@@ -1,0 +1,510 @@
+{
+  "schema": 1,
+  "observed_date": "2026-11-20",
+  "catalog_observation_commit": "044e4139b67683de4c64acd0644e20ac75599cb6",
+  "historical_reference_commit": "6650ed577b48b80caeb7b708f60ca615f5a8aaa7",
+  "scope": "Only the three original Vizualyse frontend app archives; no large helper tools. Passive HTTPS acquisition with exact compressed size/SHA-256 and bounded TAR member reads. No extraction or execution.",
+  "verification": "All archive member sizes and SHA-256 values are exact binary-byte observations. No newline normalization applies to artifact receipts.",
+  "archive_execution": "NOT_EXECUTED",
+  "runtime": "NOT_OBSERVED",
+  "artifacts": [
+    {
+      "id": "vizualyse_cast",
+      "version": "0.4.1",
+      "size": 43105,
+      "sha256": "fa406e6218e4f0da6f10c3d5268c9fabb42e8e76eebda823c3403f3729761987",
+      "url": "https://github.com/Vizualyse/idrive-apps/releases/download/vizualyse_cast%400.4.1/vizualyse_cast%400.4.1.tgz",
+      "status": "PASS",
+      "received_bytes": 43105,
+      "expanded_bytes": 165432,
+      "ui_hmi": [
+        "ID7"
+      ],
+      "manifests": [
+        {
+          "path": "mgu-app.json",
+          "sha256": "31b7056d2432b9b1574a1e1724917193abe510b6c14dff8f0b8bad1f25a78488",
+          "metadata": {
+            "schema": 1,
+            "id": "vizualyse_cast",
+            "name": null,
+            "version": "0.4.1",
+            "mguHmi": null,
+            "requires": null,
+            "mguRequires": null,
+            "modules": [
+              "src/vizualyse_cast.js",
+              "src/cast_control.js",
+              "src/touch_mode.js",
+              "src/vehicle_speed.js",
+              "src/qr_png.js",
+              "src/qrcode.js"
+            ],
+            "tree": "vizualyse_cast@0.4.1"
+          }
+        },
+        {
+          "path": "vizualyse_cast@0.4.1/manifest.json",
+          "sha256": "dce9b85b49043d11aeb98bd2c0b1958757f47fa5519b00134a8fb5951b07f6db",
+          "metadata": {
+            "schema": null,
+            "id": null,
+            "name": null,
+            "version": null,
+            "mguHmi": null,
+            "requires": null,
+            "mguRequires": null,
+            "modules": null,
+            "tree": null
+          }
+        },
+        {
+          "path": "vizualyse_cast@0.4.1/package.json",
+          "sha256": "820788327163f0a82a239959e6f80f228798d288631bd9e934bbd7b3fe50f2a6",
+          "metadata": {
+            "schema": null,
+            "id": null,
+            "name": "vizualyse_cast",
+            "version": "0.4.1",
+            "mguHmi": null,
+            "requires": null,
+            "mguRequires": null,
+            "modules": null,
+            "tree": null
+          }
+        }
+      ],
+      "files": [
+        {
+          "path": "mgu-app.json",
+          "bytes": 398,
+          "sha256": "31b7056d2432b9b1574a1e1724917193abe510b6c14dff8f0b8bad1f25a78488"
+        },
+        {
+          "path": "src/cast_control.js",
+          "bytes": 10140,
+          "sha256": "00898524e8c2cd2764aed96eba38a82d78029b3a6a7a512f12107f103ebd682f"
+        },
+        {
+          "path": "src/qr_png.js",
+          "bytes": 2463,
+          "sha256": "a81a9e138bf526b1095e37d37d1cd537b3026d6a7c34e56769d47e05ea57661a"
+        },
+        {
+          "path": "src/qrcode.js",
+          "bytes": 56694,
+          "sha256": "18ae399f81182bc9de916e9c77b195df20cc58d6f2d55a62b085a299f1bf1780"
+        },
+        {
+          "path": "src/touch_mode.js",
+          "bytes": 8389,
+          "sha256": "b1af9bf9057a0ba9ad47de33211e3ad67240bc40a47ff52e66328da9bdb7ae35"
+        },
+        {
+          "path": "src/vehicle_speed.js",
+          "bytes": 1987,
+          "sha256": "68cf60c2738ba30630e2ff5b914bdc5432310ae9c428e175443c0e8a4d4e1036"
+        },
+        {
+          "path": "src/vizualyse_cast.js",
+          "bytes": 19930,
+          "sha256": "39d85ff023cf44f3f91832b42d9df4b349bd4f7e8643a7f531d05492ccae07dc"
+        },
+        {
+          "path": "vizualyse_cast@0.4.1/CHANGELOG.md",
+          "bytes": 4209,
+          "sha256": "7e92e33fd666440f047848f9b1fc8100fe50a5f5dfb9b269d32248134454d07e"
+        },
+        {
+          "path": "vizualyse_cast@0.4.1/LICENSE",
+          "bytes": 35149,
+          "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+        },
+        {
+          "path": "vizualyse_cast@0.4.1/config/base.json",
+          "bytes": 3,
+          "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+        },
+        {
+          "path": "vizualyse_cast@0.4.1/manifest.json",
+          "bytes": 2044,
+          "sha256": "dce9b85b49043d11aeb98bd2c0b1958757f47fa5519b00134a8fb5951b07f6db"
+        },
+        {
+          "path": "vizualyse_cast@0.4.1/npm-shrinkwrap.json",
+          "bytes": 119,
+          "sha256": "bde907cd882ef0483a90a0b3b504bbfd214320e878ebff25372176a707e167ae"
+        },
+        {
+          "path": "vizualyse_cast@0.4.1/package.json",
+          "bytes": 1064,
+          "sha256": "820788327163f0a82a239959e6f80f228798d288631bd9e934bbd7b3fe50f2a6"
+        },
+        {
+          "path": "vizualyse_cast@0.4.1/permissions.json",
+          "bytes": 3115,
+          "sha256": "257629fa5f71297eead5af84ea2f2195fd77a2311a06bb6fe7761263d4e66a0b"
+        },
+        {
+          "path": "vizualyse_cast@0.4.1/rhmiData/application.json",
+          "bytes": 1422,
+          "sha256": "060c18a19aa49a0de7ff131dab468f429a4f0d4e9a6d5ff17c54e3d953776de1"
+        },
+        {
+          "path": "vizualyse_cast@0.4.1/rhmiData/uiDescriptions/ID7/application.xml",
+          "bytes": 5003,
+          "sha256": "38fb23959e16627fbb07264c4f37254e71b979af69c0fcea024ea936b26514d9"
+        },
+        {
+          "path": "vizualyse_cast@0.4.1/rhmiData/uiDescriptions/ID7/uiDescription.json",
+          "bytes": 11995,
+          "sha256": "035962f212bc2a6fa33bc590749f9a0af0fb30eaddf8c191dc60a067ddabbf61"
+        },
+        {
+          "path": "vizualyse_cast@0.4.1/rhmiData/variantGroups/Common/images/vizualyse_cast_icon.png",
+          "bytes": 1277,
+          "sha256": "81082c46e08a7a06bd0a3c30efe9efd308cb6072db641fb4cdf98e26f5777c69"
+        },
+        {
+          "path": "vizualyse_cast@0.4.1/rhmiData/variantGroups/Common/texts/en_GB.json",
+          "bytes": 31,
+          "sha256": "944c46da879829bc051f8da67ee0688e418be4bb4f5bbe4db920bb42840c6252"
+        }
+      ],
+      "archive_execution": "NOT_EXECUTED",
+      "runtime": "NOT_OBSERVED"
+    },
+    {
+      "id": "vizualyse_chromium",
+      "version": "0.3.1",
+      "size": 45464,
+      "sha256": "f6a9beea16936f94612de398b21051aa644eba4a7c598e6b7cddb33c06872d38",
+      "url": "https://github.com/Vizualyse/idrive-apps/releases/download/vizualyse_chromium%400.3.1/vizualyse_chromium%400.3.1.tgz",
+      "status": "PASS",
+      "received_bytes": 45464,
+      "expanded_bytes": 164005,
+      "ui_hmi": [
+        "ID7"
+      ],
+      "manifests": [
+        {
+          "path": "mgu-app.json",
+          "sha256": "d96787a0035978642db1120691035fc87eab223ef4ff49e61998567b49473b98",
+          "metadata": {
+            "schema": 1,
+            "id": "vizualyse_chromium",
+            "name": null,
+            "version": "0.3.1",
+            "mguHmi": null,
+            "requires": null,
+            "mguRequires": null,
+            "modules": [
+              "src/vizualyse_chromium.js",
+              "src/chromium_control.js",
+              "src/touch_mode.js",
+              "src/vehicle_speed.js",
+              "src/qr_png.js",
+              "src/qrcode.js"
+            ],
+            "tree": "vizualyse_chromium@0.3.1"
+          }
+        },
+        {
+          "path": "vizualyse_chromium@0.3.1/manifest.json",
+          "sha256": "23a253ac3b229b7755bb5e49532492f96827d59677608525af2d05a4db79132c",
+          "metadata": {
+            "schema": null,
+            "id": null,
+            "name": null,
+            "version": null,
+            "mguHmi": null,
+            "requires": null,
+            "mguRequires": null,
+            "modules": null,
+            "tree": null
+          }
+        },
+        {
+          "path": "vizualyse_chromium@0.3.1/package.json",
+          "sha256": "1aacb9c03b9c67a60aff94d7309880420268747cb28d5d5c1f3d955daacf6406",
+          "metadata": {
+            "schema": null,
+            "id": null,
+            "name": "vizualyse_chromium",
+            "version": "0.3.1",
+            "mguHmi": null,
+            "requires": null,
+            "mguRequires": null,
+            "modules": null,
+            "tree": null
+          }
+        }
+      ],
+      "files": [
+        {
+          "path": "mgu-app.json",
+          "bytes": 414,
+          "sha256": "d96787a0035978642db1120691035fc87eab223ef4ff49e61998567b49473b98"
+        },
+        {
+          "path": "src/chromium_control.js",
+          "bytes": 11599,
+          "sha256": "3124564094c78b63ecf4771ef854dd752b0e4b623a82e3dbe3286a81f81b6a0e"
+        },
+        {
+          "path": "src/qr_png.js",
+          "bytes": 2463,
+          "sha256": "a81a9e138bf526b1095e37d37d1cd537b3026d6a7c34e56769d47e05ea57661a"
+        },
+        {
+          "path": "src/qrcode.js",
+          "bytes": 56694,
+          "sha256": "18ae399f81182bc9de916e9c77b195df20cc58d6f2d55a62b085a299f1bf1780"
+        },
+        {
+          "path": "src/touch_mode.js",
+          "bytes": 8389,
+          "sha256": "b1af9bf9057a0ba9ad47de33211e3ad67240bc40a47ff52e66328da9bdb7ae35"
+        },
+        {
+          "path": "src/vehicle_speed.js",
+          "bytes": 1987,
+          "sha256": "68cf60c2738ba30630e2ff5b914bdc5432310ae9c428e175443c0e8a4d4e1036"
+        },
+        {
+          "path": "src/vizualyse_chromium.js",
+          "bytes": 20192,
+          "sha256": "affb039bdc8c4e4eafa06526a342fc57f4e752ddab543f238c41df2e8f5f3ce8"
+        },
+        {
+          "path": "vizualyse_chromium@0.3.1/CHANGELOG.md",
+          "bytes": 4012,
+          "sha256": "13aadf2361187e65421dd7d4d1bcc7fcd139e2619fb7bc97a8ab42d0d835ef0e"
+        },
+        {
+          "path": "vizualyse_chromium@0.3.1/LICENSE",
+          "bytes": 35149,
+          "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+        },
+        {
+          "path": "vizualyse_chromium@0.3.1/config/base.json",
+          "bytes": 3,
+          "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+        },
+        {
+          "path": "vizualyse_chromium@0.3.1/manifest.json",
+          "bytes": 2043,
+          "sha256": "23a253ac3b229b7755bb5e49532492f96827d59677608525af2d05a4db79132c"
+        },
+        {
+          "path": "vizualyse_chromium@0.3.1/npm-shrinkwrap.json",
+          "bytes": 123,
+          "sha256": "0484e40a4f786ec2e585280cce745f5cd85882591564cb19ceb21cf29030e4e5"
+        },
+        {
+          "path": "vizualyse_chromium@0.3.1/package.json",
+          "bytes": 1091,
+          "sha256": "1aacb9c03b9c67a60aff94d7309880420268747cb28d5d5c1f3d955daacf6406"
+        },
+        {
+          "path": "vizualyse_chromium@0.3.1/permissions.json",
+          "bytes": 3115,
+          "sha256": "257629fa5f71297eead5af84ea2f2195fd77a2311a06bb6fe7761263d4e66a0b"
+        },
+        {
+          "path": "vizualyse_chromium@0.3.1/rhmiData/application.json",
+          "bytes": 1438,
+          "sha256": "6607c44efeabc3d533cd72c132ad2b8034c56c8e7943b613c5d778a731f948ce"
+        },
+        {
+          "path": "vizualyse_chromium@0.3.1/rhmiData/uiDescriptions/ID7/application.xml",
+          "bytes": 3891,
+          "sha256": "feb3bf62116f10cad2367e05f6ac237e780e3b7b25c760e6fbe2d58c766377af"
+        },
+        {
+          "path": "vizualyse_chromium@0.3.1/rhmiData/uiDescriptions/ID7/uiDescription.json",
+          "bytes": 8870,
+          "sha256": "357839b2b2aa5524249bbd8ca3e34b634d44afdbac1f137ab2b785a78695b4f0"
+        },
+        {
+          "path": "vizualyse_chromium@0.3.1/rhmiData/variantGroups/Common/images/vizualyse_chromium_icon.png",
+          "bytes": 2494,
+          "sha256": "37f8a379c9af3d15f0487f78af453904d243b30d01972f87f1e3d98e76a8ad13"
+        },
+        {
+          "path": "vizualyse_chromium@0.3.1/rhmiData/variantGroups/Common/texts/en_GB.json",
+          "bytes": 38,
+          "sha256": "0d7fb7fc2261dd01700c54bd5e6c9143cb6fdb8b6546cc0e560732e561958eaf"
+        }
+      ],
+      "archive_execution": "NOT_EXECUTED",
+      "runtime": "NOT_OBSERVED"
+    },
+    {
+      "id": "vizualyse_steam",
+      "version": "0.2.1",
+      "size": 42638,
+      "sha256": "18b00da11c10fa19b548e871ef542b9786eee22ccd6bddd3b9f61339d77d801a",
+      "url": "https://github.com/Vizualyse/idrive-apps/releases/download/vizualyse_steam%400.2.1/vizualyse_steam%400.2.1.tgz",
+      "status": "PASS",
+      "received_bytes": 42638,
+      "expanded_bytes": 162167,
+      "ui_hmi": [
+        "ID7"
+      ],
+      "manifests": [
+        {
+          "path": "mgu-app.json",
+          "sha256": "1db2f9ffff9fc7bea6707521afa2021b853f0afd1aa5d592031d47a0c6ac6b20",
+          "metadata": {
+            "schema": 1,
+            "id": "vizualyse_steam",
+            "name": null,
+            "version": "0.2.1",
+            "mguHmi": null,
+            "requires": null,
+            "mguRequires": null,
+            "modules": [
+              "src/vizualyse_steam.js",
+              "src/steam_control.js",
+              "src/touch_mode.js",
+              "src/vehicle_speed.js",
+              "src/qr_png.js",
+              "src/qrcode.js"
+            ],
+            "tree": "vizualyse_steam@0.2.1"
+          }
+        },
+        {
+          "path": "vizualyse_steam@0.2.1/manifest.json",
+          "sha256": "23a253ac3b229b7755bb5e49532492f96827d59677608525af2d05a4db79132c",
+          "metadata": {
+            "schema": null,
+            "id": null,
+            "name": null,
+            "version": null,
+            "mguHmi": null,
+            "requires": null,
+            "mguRequires": null,
+            "modules": null,
+            "tree": null
+          }
+        },
+        {
+          "path": "vizualyse_steam@0.2.1/package.json",
+          "sha256": "b8a94ed889e161186f678e1667a59639c114660ca32bed8405dc1fa3a022de87",
+          "metadata": {
+            "schema": null,
+            "id": null,
+            "name": "vizualyse_steam",
+            "version": "0.2.1",
+            "mguHmi": null,
+            "requires": null,
+            "mguRequires": null,
+            "modules": null,
+            "tree": null
+          }
+        }
+      ],
+      "files": [
+        {
+          "path": "mgu-app.json",
+          "bytes": 402,
+          "sha256": "1db2f9ffff9fc7bea6707521afa2021b853f0afd1aa5d592031d47a0c6ac6b20"
+        },
+        {
+          "path": "src/qr_png.js",
+          "bytes": 2463,
+          "sha256": "a81a9e138bf526b1095e37d37d1cd537b3026d6a7c34e56769d47e05ea57661a"
+        },
+        {
+          "path": "src/qrcode.js",
+          "bytes": 56694,
+          "sha256": "18ae399f81182bc9de916e9c77b195df20cc58d6f2d55a62b085a299f1bf1780"
+        },
+        {
+          "path": "src/steam_control.js",
+          "bytes": 9813,
+          "sha256": "7ddc3a5b569d7dd71e96f58ad74da01d35d89f2820da95db9c98e507b8085f7d"
+        },
+        {
+          "path": "src/touch_mode.js",
+          "bytes": 8389,
+          "sha256": "b1af9bf9057a0ba9ad47de33211e3ad67240bc40a47ff52e66328da9bdb7ae35"
+        },
+        {
+          "path": "src/vehicle_speed.js",
+          "bytes": 1987,
+          "sha256": "68cf60c2738ba30630e2ff5b914bdc5432310ae9c428e175443c0e8a4d4e1036"
+        },
+        {
+          "path": "src/vizualyse_steam.js",
+          "bytes": 22624,
+          "sha256": "10bfd7fa488f9d11fd8703c133d86ea83c0493f4cdf9a3c96d56b3ff96ebac18"
+        },
+        {
+          "path": "vizualyse_steam@0.2.1/CHANGELOG.md",
+          "bytes": 2172,
+          "sha256": "50cb1458de63c34eabb551edb08c3c96a2e9c73615a1a3656fda49d2d5ee6696"
+        },
+        {
+          "path": "vizualyse_steam@0.2.1/LICENSE",
+          "bytes": 35149,
+          "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+        },
+        {
+          "path": "vizualyse_steam@0.2.1/config/base.json",
+          "bytes": 3,
+          "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+        },
+        {
+          "path": "vizualyse_steam@0.2.1/manifest.json",
+          "bytes": 2043,
+          "sha256": "23a253ac3b229b7755bb5e49532492f96827d59677608525af2d05a4db79132c"
+        },
+        {
+          "path": "vizualyse_steam@0.2.1/npm-shrinkwrap.json",
+          "bytes": 120,
+          "sha256": "4415b4b9f740332e9cd0d963c7a9fb98fe69739bda8d6e3500d174398ad67bef"
+        },
+        {
+          "path": "vizualyse_steam@0.2.1/package.json",
+          "bytes": 1112,
+          "sha256": "b8a94ed889e161186f678e1667a59639c114660ca32bed8405dc1fa3a022de87"
+        },
+        {
+          "path": "vizualyse_steam@0.2.1/permissions.json",
+          "bytes": 3115,
+          "sha256": "257629fa5f71297eead5af84ea2f2195fd77a2311a06bb6fe7761263d4e66a0b"
+        },
+        {
+          "path": "vizualyse_steam@0.2.1/rhmiData/application.json",
+          "bytes": 1426,
+          "sha256": "d6d85980a2316c1239f33769a558ec325c3f9803ed9ea28b931dd3463a800d57"
+        },
+        {
+          "path": "vizualyse_steam@0.2.1/rhmiData/uiDescriptions/ID7/application.xml",
+          "bytes": 4076,
+          "sha256": "fad9d282baded7d0525854e2ffa7f3714fb66f4689f946721f33c7d49fa08fee"
+        },
+        {
+          "path": "vizualyse_steam@0.2.1/rhmiData/uiDescriptions/ID7/uiDescription.json",
+          "bytes": 9279,
+          "sha256": "b023e0fbddf7fdd12ceac6eca41db3cacd61c998f6c23d022105f5864ad63139"
+        },
+        {
+          "path": "vizualyse_steam@0.2.1/rhmiData/variantGroups/Common/images/vizualyse_steam_icon.png",
+          "bytes": 1267,
+          "sha256": "148499d00a9daf821edad0a6d5d1b9417e8fe62250df9e01cdae8deb2f6809f6"
+        },
+        {
+          "path": "vizualyse_steam@0.2.1/rhmiData/variantGroups/Common/texts/en_GB.json",
+          "bytes": 33,
+          "sha256": "88edab10ffe9d025b3d9d2eb9b5929ece55976aa52ec11cc25f5b1ecf6309249"
+        }
+      ],
+      "archive_execution": "NOT_EXECUTED",
+      "runtime": "NOT_OBSERVED"
+    }
+  ]
+}

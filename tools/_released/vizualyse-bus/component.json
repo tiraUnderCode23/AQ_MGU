@@ -1,0 +1,75 @@
+{
+  "id": "vizualyse-bus",
+  "kind": "tool",
+  "version": "0.1.0",
+  "title": "Vizualyse bus",
+  "description": "EXPERIMENTAL. The shared bus the Vizualyse tools use to ask each other to switch things off while they need the car's resources (Steam pauses Cast's cluster and HUD video while a game runs). Mosquitto 2.0.21 (MQTT) on a Unix socket only root's tools can reach; no network listener. Installed with the tools that use it; about 0.2 MB.",
+  "files": [
+    {
+      "path": "mosquitto",
+      "mode": "0644",
+      "sha256": "119a5ea748d41cec8a7e140554f4bdfc8bdfe1f5da5b9c939be7f73a8c13a3c0",
+      "from": "files/mosquitto"
+    },
+    {
+      "path": "mosquitto.conf",
+      "mode": "0644",
+      "sha256": "2635b5a07efd46847983dfa350ffd8aa822e0e9b64b499e24b4f6453d62fb3f0",
+      "from": "files/mosquitto.conf"
+    },
+    {
+      "path": "mosquitto-LICENSE.txt",
+      "mode": "0644",
+      "sha256": "d3c4ccace4e5d3cc89d34cf2a0bc85b8596bfc0a32b815d0d77f9b7c41b5350c",
+      "from": "files/mosquitto-LICENSE.txt"
+    },
+    {
+      "path": "mosquitto-epl-v20",
+      "mode": "0644",
+      "sha256": "8c349f80764d0648e645f41ef23772a70c995a0924b5235f735f4a3d09df127c",
+      "from": "files/mosquitto-epl-v20"
+    },
+    {
+      "path": "mosquitto-edl-v10",
+      "mode": "0644",
+      "sha256": "86fc4a3f97cb769c04e8da557036c1066eb8bb22b2d0a5dd31464990fe84047c",
+      "from": "files/mosquitto-edl-v10"
+    },
+    {
+      "path": "THIRD-PARTY.md",
+      "mode": "0644",
+      "sha256": "93c8e3b17f066295e1729773ced2d853eec9f3a32f57bb91c8cddc2580d2a15f",
+      "from": "files/THIRD-PARTY.md"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "0644",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "from": "files/LICENSE"
+    }
+  ],
+  "units": [
+    {
+      "name": "vizualyse-bus.service",
+      "from": "units/vizualyse-bus.service"
+    }
+  ],
+  "enable": [
+    {
+      "unit": "vizualyse-bus.service",
+      "target": "multi-user.target"
+    }
+  ],
+  "recmgr": [
+    "vizualyse-bus"
+  ],
+  "restart": [
+    "vizualyse-bus.service"
+  ],
+  "mguHmi": [
+    "ID7"
+  ],
+  "crashNames": [
+    "mosquitto"
+  ]
+}

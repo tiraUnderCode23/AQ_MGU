@@ -1,250 +1,234 @@
 {
-  "schema": 1,
   "components": [
     {
-      "id": "bimmer_blocks",
-      "title": "Bimmer Blocks",
-      "version": "1.1.1",
-      "mguHmi": [
-        "ID7",
-        "ID8"
-      ],
-      "requires": {
-        "mgu-render": "0.6.24"
-      },
-      "mguNeeds": [
-        "renderer"
-      ],
-      "path": "apps/_ports/appstudio-idrive8/apps/bimmer_blocks",
-      "manifest": "app.json",
-      "icon": "icon.png",
-      "kind": "app",
-      "description": "Falling-block puzzle. Play only while stationary. Manual pause, next piece, ghost and local high score.",
       "build": {
-        "python": "apps/_ports/appstudio-idrive8/kit/tools/build.py",
         "args": [
           "{id}"
         ],
-        "sdk": "apps/_ports/appstudio-idrive8/oap-sdk",
         "output": "apps/_ports/appstudio-idrive8/dist/{id}@{version}.tgz",
+        "python": "apps/_ports/appstudio-idrive8/kit/tools/build.py",
+        "sdk": "apps/_ports/appstudio-idrive8/oap-sdk",
         "shared": [
           "apps/_ports/appstudio-idrive8/kit",
           "apps/_ports/appstudio-idrive8/LICENSE",
           "apps/_ports/appstudio-idrive8/THIRD-PARTY.txt",
           "apps/_ports/appstudio-idrive8/AQ_PORT.json"
         ]
-      }
-    },
-    {
-      "id": "cluster-render",
-      "kind": "tool",
-      "version": "0.6.9",
-      "title": "Cluster renderer",
-      "description": "Draws every app's layers on the instrument cluster and the HUD, sharing the display slots and one upload budget",
-      "path": "tools/_released/cluster-render",
-      "mguHmi": [
-        "ID7",
-        "ID8"
-      ],
-      "requires": {
-        "mgu-deploy": "0.4.0"
       },
-      "uninstallable": true
-    },
-    {
-      "id": "dk_backgammon",
+      "description": "Falling-block puzzle. Play only while stationary. Manual pause, next piece, ghost and local high score.",
+      "icon": "icon.png",
+      "id": "bimmer_blocks",
       "kind": "app",
-      "path": "apps/_sources/mistergahan-mgu-backgammon/apps/dk_backgammon",
-      "build": "unit",
-      "title": "Нарды",
-      "description": "Короткие и длинные нарды: вдвоём или с компьютером.",
-      "mguHmi": [
-        "ID7"
-      ],
-      "version": "0.1.1"
-    },
-    {
-      "id": "dk_tetris",
-      "kind": "app",
-      "path": "apps/_sources/mistergahan-mgu-backgammon/apps/dk_tetris",
-      "build": "unit",
-      "title": "Тетрис",
-      "description": "Тетрис для iDrive 7: семь фигур, уровни, рекорд и сохранение.",
-      "mguHmi": [
-        "ID7"
-      ],
-      "version": "0.1.1"
-    },
-    {
-      "id": "doom",
-      "kind": "app",
-      "version": "1.7.22",
-      "title": "Doom",
-      "description": "Doom (Freedoom: Phase 1) on the iDrive. Main menu with all settings; the game drawn in full resolution across the whole screen, on the controller; BACK returns to the menu and saves",
-      "path": "apps/_sources/idrive7-apps/apps/doom",
       "manifest": "app.json",
       "mguHmi": [
         "ID7",
         "ID8"
       ],
+      "mguNeeds": [
+        "renderer"
+      ],
+      "path": "apps/_ports/appstudio-idrive8/apps/bimmer_blocks",
       "requires": {
-        "idrive7-renderd": "2.1.18",
-        "mgu-inputgate": "1.1.0"
+        "mgu-render": "0.6.24"
       },
+      "title": "Bimmer Blocks",
+      "version": "1.1.1"
+    },
+    {
+      "description": "Draws every app's layers on the instrument cluster and the HUD, sharing the display slots and one upload budget",
+      "id": "cluster-render",
+      "kind": "tool",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "path": "tools/_released/cluster-render",
+      "requires": {
+        "mgu-deploy": "0.4.0"
+      },
+      "title": "Cluster renderer",
+      "uninstallable": true,
+      "version": "0.6.9"
+    },
+    {
+      "build": "unit",
+      "description": "Короткие и длинные нарды: вдвоём или с компьютером.",
+      "id": "dk_backgammon",
+      "kind": "app",
+      "mguHmi": [
+        "ID7"
+      ],
+      "path": "apps/_sources/mistergahan-mgu-backgammon/apps/dk_backgammon",
+      "title": "Нарды",
+      "version": "0.1.1"
+    },
+    {
+      "build": "unit",
+      "description": "Тетрис для iDrive 7: семь фигур, уровни, рекорд и сохранение.",
+      "id": "dk_tetris",
+      "kind": "app",
+      "mguHmi": [
+        "ID7"
+      ],
+      "path": "apps/_sources/mistergahan-mgu-backgammon/apps/dk_tetris",
+      "title": "Тетрис",
+      "version": "0.1.1"
+    },
+    {
       "build": {
-        "python": "apps/_sources/idrive7-apps/kit/tools/build.py",
         "args": [
           "{id}"
         ],
-        "sdk": "apps/_sources/idrive7-apps/oap-sdk",
         "output": "apps/_sources/idrive7-apps/dist/{id}@{version}.tgz",
+        "python": "apps/_sources/idrive7-apps/kit/tools/build.py",
+        "sdk": "apps/_sources/idrive7-apps/oap-sdk",
         "shared": [
           "apps/_sources/idrive7-apps/kit"
         ]
       },
-      "icon": "icon.png"
+      "description": "Doom (Freedoom: Phase 1) on the iDrive. Main menu with all settings; the game drawn in full resolution across the whole screen, on the controller; BACK returns to the menu and saves",
+      "icon": "icon.png",
+      "id": "doom",
+      "kind": "app",
+      "manifest": "app.json",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "path": "apps/_sources/idrive7-apps/apps/doom",
+      "requires": {
+        "idrive7-renderd": "2.1.18",
+        "mgu-inputgate": "1.1.0"
+      },
+      "title": "Doom",
+      "version": "1.7.22"
     },
     {
+      "build": "unit",
+      "description": "Six games in one controller-first arcade, with shared menus, progress and named records",
       "id": "iabadia_m_arcade",
       "kind": "app",
-      "title": "M Arcade",
-      "description": "Six games in one controller-first arcade, with shared menus, progress and named records",
-      "version": "0.1.3",
+      "mguHmi": [
+        "ID7"
+      ],
+      "path": "apps/_sources/iabadia-idrive-games/apps/iabadia_m_arcade",
       "requires": {
         "mgu-render": "0.6.9"
       },
-      "mguHmi": [
-        "ID7"
-      ],
+      "title": "M Arcade",
       "uninstallable": true,
-      "path": "apps/_sources/iabadia-idrive-games/apps/iabadia_m_arcade",
-      "build": "unit"
+      "version": "0.1.3"
     },
     {
+      "description": "The apps' own GPU renderer (mgu-render): draws them at 60 fps, beside the MGU Store's Renderer; installed with the apps (iDrive 7 and iDrive 8)",
       "id": "idrive7-renderd",
       "kind": "tool",
-      "version": "2.1.19",
-      "title": "GPU renderer",
-      "description": "The apps' own GPU renderer (mgu-render): draws them at 60 fps, beside the MGU Store's Renderer; installed with the apps (iDrive 7 and iDrive 8)",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "optional": true,
+      "path": "apps/_sources/idrive7-apps/kit/renderd/prebuilt",
+      "provides": "renderer",
       "requires": {
         "mgu-deploy": "0.6.1"
       },
-      "optional": true,
+      "title": "GPU renderer",
       "uninstallable": true,
-      "mguHmi": [
-        "ID7",
-        "ID8"
-      ],
-      "path": "apps/_sources/idrive7-apps/kit/renderd/prebuilt",
-      "provides": "renderer"
+      "version": "2.1.19"
     },
     {
+      "description": "Opens TCP 18878 on wlan_bridge for the GameStation phone controllers, only while GameStation listens",
       "id": "mgu-game-net",
       "kind": "tool",
-      "version": "0.1.0",
-      "title": "GameStation Phone Port",
-      "description": "Opens TCP 18878 on wlan_bridge for the GameStation phone controllers, only while GameStation listens",
-      "path": "apps/_sources/namels-mgu-apps-full/native/game-net",
       "mguHmi": [
         "ID7"
       ],
-      "requires": {}
+      "path": "apps/_sources/namels-mgu-apps-full/native/game-net",
+      "requires": {},
+      "title": "GameStation Phone Port",
+      "version": "0.1.0"
     },
     {
+      "description": "Lets the apps have the iDrive controller (tabs, page buttons, settings, Doom); loads into the HMI at the next start (iDrive 7 and iDrive 8)",
       "id": "mgu-inputgate",
       "kind": "tool",
-      "title": "Controller gate",
-      "description": "Lets the apps have the iDrive controller (tabs, page buttons, settings, Doom); loads into the HMI at the next start (iDrive 7 and iDrive 8)",
       "mguHmi": [
         "ID7",
         "ID8"
       ],
-      "version": "1.2.2",
       "path": "tools/_packages/mgu-inputgate",
       "requires": {
         "mgu-deploy": "0.3.2"
-      }
+      },
+      "title": "Controller gate",
+      "version": "1.2.2"
     },
     {
-      "id": "mgu_gamestation",
-      "kind": "app",
-      "version": "0.3.0",
-      "title": "MGU GameStation",
-      "description": "Offline retro games with iDrive or phone controllers, two players and in-game saves. Parked only.",
-      "path": "apps/_sources/namels-mgu-apps-full/apps/mgu_gamestation",
-      "manifest": "app.json",
-      "mguHmi": [
-        "ID7"
-      ],
-      "requires": {
-        "idrive7-renderd": "2.1.6",
-        "mgu-inputgate": "1.0.0",
-        "mgu-game-net": "0.1.0"
-      },
       "build": {
-        "python": "apps/_sources/namels-mgu-apps-full/tools/build_store_app.py",
         "args": [
           "{id}"
         ],
-        "sdk": "apps/_sources/namels-mgu-apps-full/oap-sdk",
         "output": "apps/_sources/namels-mgu-apps-full/dist/{id}@{version}.tgz",
+        "python": "apps/_sources/namels-mgu-apps-full/tools/build_store_app.py",
+        "sdk": "apps/_sources/namels-mgu-apps-full/oap-sdk",
         "shared": [
           "apps/_sources/namels-mgu-apps-full/kit",
           "apps/_sources/namels-mgu-apps-full/tools"
         ]
       },
-      "icon": "icon.png"
-    },
-    {
-      "id": "mx_road_hopper",
+      "description": "Offline retro games with iDrive or phone controllers, two players and in-game saves. Parked only.",
+      "icon": "icon.png",
+      "id": "mgu_gamestation",
       "kind": "app",
-      "version": "0.1.1",
-      "title": "Road Hopper",
-      "description": "Hop across the road and the river to fill five homes, played with the iDrive controller. Parked only by default",
-      "path": "apps/_sources/cruzen991-cluster/apps/mx_road_hopper",
       "manifest": "app.json",
       "mguHmi": [
         "ID7"
       ],
+      "path": "apps/_sources/namels-mgu-apps-full/apps/mgu_gamestation",
       "requires": {
-        "cluster-render": "0.4.0"
+        "idrive7-renderd": "2.1.6",
+        "mgu-game-net": "0.1.0",
+        "mgu-inputgate": "1.0.0"
       },
+      "title": "MGU GameStation",
+      "version": "0.3.0"
+    },
+    {
       "build": {
-        "python": "apps/_sources/cruzen991-cluster/kit/tools/build.py",
         "args": [
           "{id}"
         ],
-        "sdk": "apps/_sources/cruzen991-cluster/oap-sdk",
         "output": "apps/_sources/cruzen991-cluster/dist/{id}@{version}.tgz",
+        "python": "apps/_sources/cruzen991-cluster/kit/tools/build.py",
+        "sdk": "apps/_sources/cruzen991-cluster/oap-sdk",
         "shared": [
           "apps/_sources/cruzen991-cluster/kit",
           "apps/_sources/idrive7-apps/kit/localization"
         ]
-      }
+      },
+      "description": "Hop across the road and the river to fill five homes, played with the iDrive controller. Parked only by default",
+      "id": "mx_road_hopper",
+      "kind": "app",
+      "manifest": "app.json",
+      "mguHmi": [
+        "ID7"
+      ],
+      "path": "apps/_sources/cruzen991-cluster/apps/mx_road_hopper",
+      "requires": {
+        "cluster-render": "0.4.0"
+      },
+      "title": "Road Hopper",
+      "version": "0.1.1"
     },
     {
-      "path": "apps/_ports/maxxxfoka-idrive8/apps/parked_games",
-      "manifest": "app.json",
-      "icon": "icon.png",
-      "mguHmi": [
-        "ID7",
-        "ID8"
-      ],
-      "requires": {
-        "mgu-render": "0.6.24"
-      },
-      "id": "parked_games",
-      "kind": "app",
-      "version": "0.2.3",
-      "title": "Parked Games",
-      "description": "Small games for when the car is parked, played with the iDrive knob (and the touchscreen)",
       "build": {
-        "python": "apps/_ports/maxxxfoka-idrive8/kit/tools/build.py",
         "args": [
           "{id}"
         ],
-        "sdk": "apps/_ports/maxxxfoka-idrive8/oap-sdk",
         "output": "apps/_ports/maxxxfoka-idrive8/dist/{id}@{version}.tgz",
+        "python": "apps/_ports/maxxxfoka-idrive8/kit/tools/build.py",
+        "sdk": "apps/_ports/maxxxfoka-idrive8/oap-sdk",
         "shared": [
           "apps/_ports/maxxxfoka-idrive8/kit",
           "apps/_ports/maxxxfoka-idrive8/LICENSE",
@@ -253,9 +237,74 @@
           "apps/_ports/maxxxfoka-idrive8/PROVENANCE.json"
         ]
       },
+      "description": "Small games for when the car is parked, played with the iDrive knob (and the touchscreen)",
+      "icon": "icon.png",
+      "id": "parked_games",
+      "kind": "app",
+      "manifest": "app.json",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
       "mguNeeds": [
         "renderer"
-      ]
+      ],
+      "path": "apps/_ports/maxxxfoka-idrive8/apps/parked_games",
+      "requires": {
+        "mgu-render": "0.6.24"
+      },
+      "title": "Parked Games",
+      "version": "0.2.3"
+    },
+    {
+      "description": "EXPERIMENTAL. The shared bus the Vizualyse tools use to ask each other to switch things off while they need the car's resources (Steam pauses Cast's cluster and HUD video while a game runs). Mosquitto 2.0.21 (MQTT) on a Unix socket only root's tools can reach; no network listener. Installed with the tools that use it; about 0.2 MB.",
+      "id": "vizualyse-bus",
+      "kind": "tool",
+      "mguHmi": [
+        "ID7"
+      ],
+      "path": "tools/_released/vizualyse-bus",
+      "requires": {
+        "mgu-deploy": "0.7.0"
+      },
+      "title": "Vizualyse bus",
+      "uninstallable": true,
+      "version": "0.1.0"
+    },
+    {
+      "description": "EXPERIMENTAL. Streams games from a PC running Sunshine (GameStream) to the central screen (or the cluster or the HUD) while parked, decoded on the car's GPU, with the sound through the speakers and game controllers (a wired Xbox 360-style USB pad, or the phone as a pad; no Bluetooth pads). Pair the PC and pick a game on the phone page: scan the QR code on the iDrive Moonlight page.",
+      "id": "vizualyse-moonlight",
+      "kind": "tool",
+      "mguHmi": [
+        "ID7"
+      ],
+      "path": "tools/_released/vizualyse-moonlight",
+      "requires": {
+        "cluster-render": "0.4.2",
+        "mgu-deploy": "0.7.0",
+        "mgu-python": "1.0.0",
+        "mgu-render": "0.6.11"
+      },
+      "title": "Moonlight",
+      "uninstallable": true,
+      "version": "0.3.1"
+    },
+    {
+      "build": "unit",
+      "description": "Moonlight: shows the phone link and QR code for the Moonlight game streaming service, its status, and stops, quits or resumes the game streamed from a PC running Sunshine",
+      "id": "vizualyse_moonlight",
+      "kind": "app",
+      "mguHmi": [
+        "ID7"
+      ],
+      "path": "apps/_published/vizualyse_moonlight",
+      "requires": {
+        "vizualyse-moonlight": "0.3.0"
+      },
+      "title": "Moonlight",
+      "uninstallable": true,
+      "version": "0.3.1"
     }
-  ]
+  ],
+  "schema": 1
 }

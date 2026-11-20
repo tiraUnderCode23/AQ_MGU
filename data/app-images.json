@@ -1,0 +1,165 @@
+{
+  "aurelm_apex_chase": {
+    "icon": "docs/assets/apps/aurelm_apex_chase/icon.png",
+    "image_count": 2,
+    "images": [
+      "docs/assets/apps/aurelm_apex_chase/screen_1.png",
+      "docs/assets/apps/aurelm_apex_chase/screen_2.png"
+    ]
+  },
+  "aurelm_blackjack": {
+    "icon": "docs/assets/apps/aurelm_blackjack/icon.png",
+    "image_count": 2,
+    "images": [
+      "docs/assets/apps/aurelm_blackjack/screen_1.png",
+      "docs/assets/apps/aurelm_blackjack/screen_2.png"
+    ]
+  },
+  "aurelm_lap_record": {
+    "icon": "docs/assets/apps/aurelm_lap_record/icon.png",
+    "image_count": 2,
+    "images": [
+      "docs/assets/apps/aurelm_lap_record/screen_1.png",
+      "docs/assets/apps/aurelm_lap_record/screen_2.png"
+    ]
+  },
+  "aurelm_lucky_sevens": {
+    "icon": "docs/assets/apps/aurelm_lucky_sevens/icon.png",
+    "image_count": 3,
+    "images": [
+      "docs/assets/apps/aurelm_lucky_sevens/screen_1.png",
+      "docs/assets/apps/aurelm_lucky_sevens/screen_2.png",
+      "docs/assets/apps/aurelm_lucky_sevens/screen_3.png"
+    ]
+  },
+  "aurelm_pinball": {
+    "icon": "docs/assets/apps/aurelm_pinball/icon.png",
+    "image_count": 2,
+    "images": [
+      "docs/assets/apps/aurelm_pinball/screen_1.png",
+      "docs/assets/apps/aurelm_pinball/screen_2.png"
+    ]
+  },
+  "aurelm_pit_wall": {
+    "icon": "docs/assets/apps/aurelm_pit_wall/icon.png",
+    "image_count": 1,
+    "images": [
+      "docs/assets/apps/aurelm_pit_wall/screen_1.png"
+    ]
+  },
+  "aurelm_ridge_duel": {
+    "icon": "docs/assets/apps/aurelm_ridge_duel/icon.png",
+    "image_count": 3,
+    "images": [
+      "docs/assets/apps/aurelm_ridge_duel/screen_1.png",
+      "docs/assets/apps/aurelm_ridge_duel/screen_2.png",
+      "docs/assets/apps/aurelm_ridge_duel/screen_3.png"
+    ]
+  },
+  "aurelm_snake": {
+    "icon": "docs/assets/apps/aurelm_snake/icon.png",
+    "image_count": 1,
+    "images": [
+      "docs/assets/apps/aurelm_snake/screen_1.png"
+    ]
+  },
+  "aurelm_solitaire": {
+    "icon": "docs/assets/apps/aurelm_solitaire/icon.png",
+    "image_count": 2,
+    "images": [
+      "docs/assets/apps/aurelm_solitaire/screen_1.png",
+      "docs/assets/apps/aurelm_solitaire/screen_2.png"
+    ]
+  },
+  "aurelm_street_siege": {
+    "icon": "docs/assets/apps/aurelm_street_siege/icon.png",
+    "image_count": 2,
+    "images": [
+      "docs/assets/apps/aurelm_street_siege/screen_1.png",
+      "docs/assets/apps/aurelm_street_siege/screen_2.png"
+    ]
+  },
+  "aurelm_track_defender": {
+    "icon": "docs/assets/apps/aurelm_track_defender/icon.png",
+    "image_count": 1,
+    "images": [
+      "docs/assets/apps/aurelm_track_defender/screen_1.png"
+    ]
+  },
+  "bimmer_blocks": {
+    "icon": "docs/assets/apps/bimmer_blocks/icon.png",
+    "image_count": 0,
+    "images": []
+  },
+  "dk_backgammon": {
+    "icon": "docs/assets/apps/dk_backgammon/icon.png",
+    "image_count": 0,
+    "images": []
+  },
+  "dk_tetris": {
+    "icon": "docs/assets/apps/dk_tetris/icon.png",
+    "image_count": 0,
+    "images": []
+  },
+  "doom": {
+    "icon": "docs/assets/apps/doom/icon.png",
+    "image_count": 2,
+    "images": [
+      "docs/assets/apps/doom/preview-01.png",
+      "docs/assets/apps/doom/screen_2.png"
+    ]
+  },
+  "iabadia_m_arcade": {
+    "icon": "docs/assets/apps/iabadia_m_arcade/icon.png",
+    "image_count": 3,
+    "images": [
+      "docs/assets/apps/iabadia_m_arcade/screen_1.gif",
+      "docs/assets/apps/iabadia_m_arcade/screen_2.png",
+      "docs/assets/apps/iabadia_m_arcade/screen_3.png"
+    ]
+  },
+  "jap_moonride": {
+    "icon": "docs/assets/apps/jap_moonride/icon.png",
+    "image_count": 3,
+    "images": [
+      "docs/assets/apps/jap_moonride/screen_1.png",
+      "docs/assets/apps/jap_moonride/screen_2.png",
+      "docs/assets/apps/jap_moonride/screen_3.png"
+    ]
+  },
+  "kxrxh_doodle_jump": {
+    "icon": "docs/assets/apps/kxrxh_doodle_jump/icon.png",
+    "image_count": 0,
+    "images": []
+  },
+  "mgu_gamestation": {
+    "icon": "docs/assets/apps/mgu_gamestation/icon.png",
+    "image_count": 0,
+    "images": []
+  },
+  "mx_road_hopper": {
+    "icon": "docs/assets/apps/mx_road_hopper/icon.png",
+    "image_count": 1,
+    "images": [
+      "docs/assets/apps/mx_road_hopper/screen_1.png"
+    ]
+  },
+  "parked_games": {
+    "icon": "docs/assets/apps/parked_games/icon.png",
+    "image_count": 2,
+    "images": [
+      "docs/assets/apps/parked_games/screen_1.png",
+      "docs/assets/apps/parked_games/screen_2.png"
+    ]
+  },
+  "vizualyse_moonlight": {
+    "icon": "docs/assets/apps/vizualyse_moonlight/icon.png",
+    "image_count": 0,
+    "images": []
+  },
+  "vizualyse_steam": {
+    "icon": "docs/assets/apps/vizualyse_steam/icon.png",
+    "image_count": 0,
+    "images": []
+  }
+}

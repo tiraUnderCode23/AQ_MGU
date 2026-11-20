@@ -1,0 +1,739 @@
+{
+  "schema": 1,
+  "as_of": "2026-11-19",
+  "scope": "Native ID8 support already implemented by the pinned original cauli source; correct only AQ catalog HMI overrides for these 15 unchanged app identities. No new port is claimed.",
+  "source_repository": "cauliflowermossgrape/idrive7-apps",
+  "source_commit": "35bca28bc82b30482d73782877ebaf92c69dcb8c",
+  "source_root": "apps/_sources/idrive7-apps",
+  "latest_reviewed_commit": "5555ef3bd2195aae15a8cec6803beeb40ca16456",
+  "latest_imported": false,
+  "latest_review_note": "Latest builder and ID8 tests match the pinned source byte-for-byte; unrelated app behavior and helper updates were not imported.",
+  "source_sha256": {
+    "kit/tools/build.py": "c1d9a2c11501ef5ff8a1bb56dd9f955b72738deb3f0c1896b51d6ab65f96ad42",
+    "kit/tools/localize.py": "75b3b3e8d288ba0693e6331e313e5113d63ee9a434c1dfd826f9270bd03ef484",
+    "kit/runtime/mgu.js": "526baa3df2dbc422682c05a5f4ae595091185e123e5eae7a5d57e3a509292bcd",
+    "kit/platform/permissions.json": "a03a2d7be452e89f9ce5361820361dded34ef36aa1e4a5afda95a4a1b1e26b01",
+    "kit/tools/test_id8_ui.py": "8b5f46f48833fe85d6f55d90378b6b42bfbee96ea6553df69609be3815c1d019",
+    "kit/tools/test_fit_to_unit.py": "1979cdedb85f8a21230587b36818b4d95ac20c9a11a667808229c54065b4866a",
+    "LICENSE": "7c813412dcaf1b9d18c28ca6b6199c4349e15e35beca44ab6cab8e4413fe0aa6"
+  },
+  "upstream_offline_tests": {
+    "kit/tools/test_id8_ui.py": {
+      "checks": 436,
+      "failed": 0
+    },
+    "kit/tools/test_fit_to_unit.py": {
+      "checks": 12,
+      "failed": 0
+    }
+  },
+  "id8_platform_interfaces": [
+    "de.bmw.infotainment.hmi.entrypoint2.EntryPoint2",
+    "de.bmw.infotainment.hmi.entrypoint2.EntryPointManager2",
+    "de.bmw.infotainment.hmi.remote2.RemoteHmi2",
+    "de.bmw.infotainment.hmi.remote2.RemoteHmiApplication2",
+    "de.bmw.infotainment.hmi.resourcemanagement2.ResourceBundle2",
+    "de.bmw.infotainment.hmi.resourcemanagement2.ResourceManager2",
+    "de.bmw.infotainment.hmi.resourcemanagement2.StringBundle2",
+    "de.bmw.infotainment.hmi.usecasemanagement.UseCaseContext",
+    "de.bmw.infotainment.telematic.oap.PrivateEntryPoint2",
+    "de.bmw.infotainment.telematic.provisioning.Provisioning"
+  ],
+  "original_gateway_permission_domains": [
+    "com.bmwgroup.appgateway.entrypoint",
+    "com.bmwgroup.appgateway.provisioning",
+    "com.bmwgroup.appgateway.resourcemanager",
+    "com.bmwgroup.appgateway.rhmi",
+    "com.bmwgroup.appgateway.usecasecontext"
+  ],
+  "runtime_contract": {
+    "marker": "KIT_HMI_ID8",
+    "id8_button_cells": [
+      "PrimaryText",
+      "FrequencyText"
+    ],
+    "id7_settings": "native dropdown/checkbox",
+    "id8_settings": "button row cycles and displays current value"
+  },
+  "synthetic_package_test": {
+    "app": "brake_test",
+    "method": "Run original Python package assembler in a temporary directory with inert SDK-shaped test files; no OEM SDK, network, app execution or installation.",
+    "proves": [
+      "Both original-generated RHMI layouts are packaged",
+      "ID8 platform manifest and original permissions retained",
+      "SDK-loading config retained"
+    ],
+    "does_not_prove": [
+      "Genuine SDK50 execution",
+      "MainApp-21 registration",
+      "Target runtime or physical controls"
+    ],
+    "status": "PASS",
+    "observed_warnings": {
+      "category": "ResourceWarning",
+      "count": 82,
+      "source": "kit/tools/build.py",
+      "description": "Original upstream builder uses unclosed open() handles; warnings captured and retained. Complete resulting package resources were independently read and validated. Upstream source unchanged."
+    }
+  },
+  "real_sdk_build": "NOT OBSERVED",
+  "live_hu_install": "NOT OBSERVED",
+  "apps": [
+    {
+      "id": "ambient_config",
+      "version": "2.7.13",
+      "manifest": "apps/_sources/idrive7-apps/apps/ambient_config/app.json",
+      "manifest_sha256": "d284bd9889d5525e451ad10176884935adaac8025922e660abbe88719200939f",
+      "upstream_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "previous_aq_hmi": [
+        "ID7"
+      ],
+      "aligned_aq_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.18",
+        "mgu-inputgate": "1.1.0"
+      },
+      "generated_resources": {
+        "ID7": {
+          "application_xml_sha256": "07ca201a521c6c70fc287f3f36650aa0e7673a176c82ea865d39f27632977f6a",
+          "ui_description_sha256": "11c41c099d67bc6e33168a6b4cd996dc518edcaa3d64bb608170fc40fcfc6072",
+          "strings_sha256": "5405d54e69724a21c506b310de387ddb484d6f2a0d2daaba48dacef2e4c6bd31",
+          "states": {
+            "MAIN": 1,
+            "SETTINGS": 8
+          }
+        },
+        "ID8": {
+          "application_xml_sha256": "681aa0e606972c88ccf7a8f4d1b8ae58d9e388fe81316480607ec7eb548f9d87",
+          "ui_description_sha256": "cab09cdf4ee20da31aeae2235998f309e1be93ce484055a438a677f04e9948c3",
+          "strings_sha256": "fc1b0d0b9a82b4aa0183704ceb56914ea3a7249b24119af217b8a11910aebf91",
+          "states": {
+            "MAIN": 1,
+            "SETTINGS": 8
+          }
+        }
+      },
+      "real_sdk_build": "NOT OBSERVED",
+      "live_hu_install": "NOT OBSERVED"
+    },
+    {
+      "id": "brake_test",
+      "version": "1.5.21",
+      "manifest": "apps/_sources/idrive7-apps/apps/brake_test/app.json",
+      "manifest_sha256": "f7acb4186133906d12f1a5d4953e6832e323fff2cc34c70d75bb0d8537e9249e",
+      "upstream_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "previous_aq_hmi": [
+        "ID7"
+      ],
+      "aligned_aq_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.18",
+        "mgu-inputgate": "1.1.0"
+      },
+      "generated_resources": {
+        "ID7": {
+          "application_xml_sha256": "933b3321716cbe7893594da4c9613e2b812c2fbe121ecfc82f52974a10eb377a",
+          "ui_description_sha256": "b7ca28b989752c074f06b9057dd3806c50038b05e1f391269499d2695d3b3f6e",
+          "strings_sha256": "27c7153f4532fd08300109f032ad40ed4af39c231586e77693f54a6538039726",
+          "states": {
+            "MAIN": 1,
+            "SETTINGS": 11
+          }
+        },
+        "ID8": {
+          "application_xml_sha256": "02c2cbbeb22e5575c0cc7cf5754db425068400c20cf2f68df002f8b1829bd9d5",
+          "ui_description_sha256": "d9bc24673082769b25522baf454cc8a5ce3ac789a57f0612e495656dea3f1b55",
+          "strings_sha256": "0fe1b498dea2550f98fc2eb1fe062a223627446bb043b94b1f00ac0df1b68155",
+          "states": {
+            "MAIN": 1,
+            "SETTINGS": 11
+          }
+        }
+      },
+      "real_sdk_build": "NOT OBSERVED",
+      "live_hu_install": "NOT OBSERVED"
+    },
+    {
+      "id": "car_vitals",
+      "version": "2.27.9",
+      "manifest": "apps/_sources/idrive7-apps/apps/car_vitals/app.json",
+      "manifest_sha256": "4ed58b23b4a1a63df7375a51d121cd9beb6ba6d7441b8a6387b12caa3ad44cb6",
+      "upstream_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "previous_aq_hmi": [
+        "ID7"
+      ],
+      "aligned_aq_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.18",
+        "mgu-inputgate": "1.1.0"
+      },
+      "generated_resources": {
+        "ID7": {
+          "application_xml_sha256": "8d76be0e03d67aad41b5d432b0a52b9864d8b28acffce73f9f7944a0ce84a9ac",
+          "ui_description_sha256": "c04c40e6406c327c23c3386237ae0c3250bd07d3d00aab84acee60a4d56de97f",
+          "strings_sha256": "0384898c3b0af1e4333366a5f463e1049902a2c60b791cc5670089a146f306db",
+          "states": {
+            "MAIN": 1,
+            "SETTINGS": 10
+          }
+        },
+        "ID8": {
+          "application_xml_sha256": "90d0a1c2fab84ea3afa8ddd58a2eba4a5c5ea7af8be23fc5cb71ee2288256c3d",
+          "ui_description_sha256": "af8e48f104c62b7eff3459d6e8545bab3e87b41b45351f38058988356af063b6",
+          "strings_sha256": "f8e908ab0fbb68e8406f83f9e4060a3a0bba425d9f544cd8332d23b944c7e121",
+          "states": {
+            "MAIN": 1,
+            "SETTINGS": 10
+          }
+        }
+      },
+      "real_sdk_build": "NOT OBSERVED",
+      "live_hu_install": "NOT OBSERVED"
+    },
+    {
+      "id": "doom",
+      "version": "1.7.22",
+      "manifest": "apps/_sources/idrive7-apps/apps/doom/app.json",
+      "manifest_sha256": "3193b61f8864af07eff7a9654c8fab6493fdf16188bca31e569fc5ef9de07bd8",
+      "upstream_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "previous_aq_hmi": [
+        "ID7"
+      ],
+      "aligned_aq_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.18",
+        "mgu-inputgate": "1.1.0"
+      },
+      "generated_resources": {
+        "ID7": {
+          "application_xml_sha256": "054648fc9c1f234a316fba061fdb3c8ae39823bfeb79aefb3fd7c61d19e34da2",
+          "ui_description_sha256": "68bcf9d832fb62ca8268da01bca738798ea69db9a4323418b668f4c58cd1fc6e",
+          "strings_sha256": "46acc8bb9fac6b2da2e0efd97d04d529857ec638fa368b37afb2eebae93ffb10",
+          "states": {
+            "MAIN": 1,
+            "GAME": 16
+          }
+        },
+        "ID8": {
+          "application_xml_sha256": "63cf0ba074e7379bb0d0c8b24e054baa05e4c06722460ba8c23115325e1a9cb5",
+          "ui_description_sha256": "4f8c18e0dee92c8042907bb79c68c86881cc573ce591c85c298f02a362e0adb8",
+          "strings_sha256": "42a14db5ce1db3b34ce7e5fc8c4f42ab0c1a367dfd88e9862d61220e1cab334e",
+          "states": {
+            "MAIN": 1,
+            "GAME": 16
+          }
+        }
+      },
+      "real_sdk_build": "NOT OBSERVED",
+      "live_hu_install": "NOT OBSERVED"
+    },
+    {
+      "id": "draggy",
+      "version": "2.6.0",
+      "manifest": "apps/_sources/idrive7-apps/apps/draggy/app.json",
+      "manifest_sha256": "4a65ba7b4239808bd1b96d07c58854ee544b509dabbb1d677a8c72a7264e58cc",
+      "upstream_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "previous_aq_hmi": [
+        "ID7"
+      ],
+      "aligned_aq_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.18",
+        "mgu-inputgate": "1.1.0"
+      },
+      "generated_resources": {
+        "ID7": {
+          "application_xml_sha256": "3b6ae5f5af69d042c0a5ce8d00944f52edc294d2f99764f39a6338f1f538571c",
+          "ui_description_sha256": "730527c52c432fc020d4cff6bed21684dae3b0b14c421486b076be19139d6ca5",
+          "strings_sha256": "a35ffc7b5f006d73c0ce23debe2b7914573d314041f1c1d00e7ff5753487f428",
+          "states": {
+            "MAIN": 1,
+            "SETTINGS": 11
+          }
+        },
+        "ID8": {
+          "application_xml_sha256": "02755eb8755846094398689cc9e77bddd5e6d6c94c7b96ff7fe78fc980d61ac8",
+          "ui_description_sha256": "57a5c2854fcde11c0ab1bc72c7973cd2ea0d9a953c414072b7a1fcba0f53372a",
+          "strings_sha256": "f3e07cf317e2e0dc5683f9790479da39cc2051518c3b8df26cd2d0161a5cd169",
+          "states": {
+            "MAIN": 1,
+            "SETTINGS": 11
+          }
+        }
+      },
+      "real_sdk_build": "NOT OBSERVED",
+      "live_hu_install": "NOT OBSERVED"
+    },
+    {
+      "id": "dtc_scanner",
+      "version": "2.9.8",
+      "manifest": "apps/_sources/idrive7-apps/apps/dtc_scanner/app.json",
+      "manifest_sha256": "b24546002653dc978ae17da6212a184cdeb954d959063f75eaf35da5d3c7f8b1",
+      "upstream_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "previous_aq_hmi": [
+        "ID7"
+      ],
+      "aligned_aq_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.18",
+        "mgu-inputgate": "1.1.0"
+      },
+      "generated_resources": {
+        "ID7": {
+          "application_xml_sha256": "40945d5df31bf8a1c9ffbf3cd45a6fd75a7b797f6c60edd9c9dce7c8b90e4562",
+          "ui_description_sha256": "4e181eedf220a49694adef4ef326503df047c317e7a4b49f6c4bfeae849da21e",
+          "strings_sha256": "c016bfba2a1ea2553d158bfe2efa7147e080b2992d8c5f343d425b854999d93b",
+          "states": {
+            "MAIN": 1,
+            "SETTINGS": 11
+          }
+        },
+        "ID8": {
+          "application_xml_sha256": "02c2cbbeb22e5575c0cc7cf5754db425068400c20cf2f68df002f8b1829bd9d5",
+          "ui_description_sha256": "aff374160755db908e2da2b1cfe00a1baaaea137f7752ff91bce980957d64cfc",
+          "strings_sha256": "f1e9208de98dc7b270c8553ad0b598156b0f718a28fb975f5b04d63cbd65b38b",
+          "states": {
+            "MAIN": 1,
+            "SETTINGS": 11
+          }
+        }
+      },
+      "real_sdk_build": "NOT OBSERVED",
+      "live_hu_install": "NOT OBSERVED"
+    },
+    {
+      "id": "dyno",
+      "version": "1.6.3",
+      "manifest": "apps/_sources/idrive7-apps/apps/dyno/app.json",
+      "manifest_sha256": "577537d5f8170c1929088a49acc3c2f984322013ba19802d0a7c0290504d4b12",
+      "upstream_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "previous_aq_hmi": [
+        "ID7"
+      ],
+      "aligned_aq_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.15"
+      },
+      "generated_resources": {
+        "ID7": {
+          "application_xml_sha256": "8278908693a1373c72552f7c4f30f1982edcd3d4db568a8d5e17e03d69f62d22",
+          "ui_description_sha256": "9aa67a6eaa80466b3373d63004ec830f1ed897adc7a069d0e2e780c0e9432109",
+          "strings_sha256": "1d5902b6dc5be98904f6c76557a142c54e04cf37288bf39f86d9e0177c230455",
+          "states": {
+            "MAIN": 1,
+            "SETTINGS": 11
+          }
+        },
+        "ID8": {
+          "application_xml_sha256": "ec56f0c0da3d52d4483737b58ac623b9027d6eac0c88f37db7d2f00fef593a52",
+          "ui_description_sha256": "3ae9f382e0c4600523b24f906df55a28c0b6b01bedf20077c3658ce4209655a7",
+          "strings_sha256": "5be1ba8db1e03e05a995d2516910126866b006edb0459a7a6fbd292033e5fdee",
+          "states": {
+            "MAIN": 1,
+            "SETTINGS": 11
+          }
+        }
+      },
+      "real_sdk_build": "NOT OBSERVED",
+      "live_hu_install": "NOT OBSERVED"
+    },
+    {
+      "id": "edrive",
+      "version": "2.11.0",
+      "manifest": "apps/_sources/idrive7-apps/apps/edrive/app.json",
+      "manifest_sha256": "59c8b450009481e377f8e0682b5d3e66f0ba8279004f9734b094e98723d74e6f",
+      "upstream_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "previous_aq_hmi": [
+        "ID7"
+      ],
+      "aligned_aq_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.15"
+      },
+      "generated_resources": {
+        "ID7": {
+          "application_xml_sha256": "fd0dda2b9720c7d62d090fbf03f7a6f8a803c47090bc27a6ca8d2d7e2798ba74",
+          "ui_description_sha256": "3aa720d2154b4180c6adb09fe8c640a23caf924afdf32df6ebdd01bf1530c093",
+          "strings_sha256": "2a1f679aec837d921a4ddf994059810e147cfed701ffcc3303434588f50f27ff",
+          "states": {
+            "MAIN": 1,
+            "SETTINGS": 11
+          }
+        },
+        "ID8": {
+          "application_xml_sha256": "2ef3b0d88143dbfe8357b67c93fc92fad1f3a49316abe6c32f14cacc172a0033",
+          "ui_description_sha256": "ca462ae43aa5da0b10371f626c5aeeea21eba127209472e3942504d9b5082ad7",
+          "strings_sha256": "cbdbaf47b4592c70748c21625fe84e8dbd6061be8d406ed298efae0a9108ee54",
+          "states": {
+            "MAIN": 1,
+            "SETTINGS": 11
+          }
+        }
+      },
+      "real_sdk_build": "NOT OBSERVED",
+      "live_hu_install": "NOT OBSERVED"
+    },
+    {
+      "id": "gforce",
+      "version": "1.6.22",
+      "manifest": "apps/_sources/idrive7-apps/apps/gforce/app.json",
+      "manifest_sha256": "f82c7c2455a8125bf3f0c49765307e1ef51cf4c055b02898c398cc68722d6a42",
+      "upstream_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "previous_aq_hmi": [
+        "ID7"
+      ],
+      "aligned_aq_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.15"
+      },
+      "generated_resources": {
+        "ID7": {
+          "application_xml_sha256": "19689c3950f8a562804c595580566ef9c30a2e9cc06900840bcf9c5535709f6f",
+          "ui_description_sha256": "7ad9dc197444640cb1d7fbf78197ab9c9ccd13702e17ed8ea71c68a1e56ad2a2",
+          "strings_sha256": "2361d0479da9fa296586e5e56ea7f50dde0805e049e4faf937070eccac128794",
+          "states": {
+            "MAIN": 1,
+            "SETTINGS": 11
+          }
+        },
+        "ID8": {
+          "application_xml_sha256": "5ecb54ade4e8aeea19b7c5f574223e67f44f0ed8c7bf0f54610c90b9cf65d9c5",
+          "ui_description_sha256": "7abf8696d4b07667e055a5750b22728f3e81d240e6ff71727295a05f165913bb",
+          "strings_sha256": "24761729ac3b585bd2e2fa9bf7203d7e90dd3b2357b50bc65df21e82d3aa622d",
+          "states": {
+            "MAIN": 1,
+            "SETTINGS": 11
+          }
+        }
+      },
+      "real_sdk_build": "NOT OBSERVED",
+      "live_hu_install": "NOT OBSERVED"
+    },
+    {
+      "id": "live_adjustments",
+      "version": "0.9.10",
+      "manifest": "apps/_sources/idrive7-apps/apps/live_adjustments/app.json",
+      "manifest_sha256": "2917ea84f6414deba9d6aa19fed9a27606118e80d42048bd3e1f38ac39926e4d",
+      "upstream_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "previous_aq_hmi": [
+        "ID7"
+      ],
+      "aligned_aq_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.18",
+        "mgu-inputgate": "1.1.0"
+      },
+      "generated_resources": {
+        "ID7": {
+          "application_xml_sha256": "fb0bccb44c8344cc33b661fa2568e77b7fa50f8aa138e607767d2ad5a1b63e21",
+          "ui_description_sha256": "25e073052d931cc6fdf3705f9c157e2a6fffd8dffb41a6a077628e37e4bd3592",
+          "strings_sha256": "fc55c84298118b0dac80b9391aa3a6a1eaabe79d3bd60fe0af94255f8ff46e94",
+          "states": {
+            "MAIN": 1,
+            "SETTINGS": 13
+          }
+        },
+        "ID8": {
+          "application_xml_sha256": "bf9efe4f26613fe87586ce04748dea4eda32aa2e6a052050eaa20fb31b4acd2c",
+          "ui_description_sha256": "053a276bee7d38cb1597dd995a0db50abf5b39f0d349697efa9cf9ac9d172919",
+          "strings_sha256": "462b450da6d3477f21e27e312dfc0a1697b4d1d31a6370682d5f6ee44f534b9f",
+          "states": {
+            "MAIN": 1,
+            "SETTINGS": 13
+          }
+        }
+      },
+      "real_sdk_build": "NOT OBSERVED",
+      "live_hu_install": "NOT OBSERVED"
+    },
+    {
+      "id": "live_data",
+      "version": "1.0.18",
+      "manifest": "apps/_sources/idrive7-apps/apps/live_data/app.json",
+      "manifest_sha256": "7d9f58367e80351335b524c6fd3710a543a924d15cdcbeeaceb25146cd66914e",
+      "upstream_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "previous_aq_hmi": [
+        "ID7"
+      ],
+      "aligned_aq_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.18",
+        "mgu-inputgate": "1.1.0"
+      },
+      "generated_resources": {
+        "ID7": {
+          "application_xml_sha256": "3c7c7d5e5b7922f6b20613145aff8eed02b97eda67d469ea5e9a3d46cbdf8c07",
+          "ui_description_sha256": "fa03840542881449772903b89cc81e3d7492e2a2cab367ed6e5ffafc3ed073b4",
+          "strings_sha256": "38bb3ff2f85e742cce2d3ab9908691df932f2548c3846996bbb683ad980eb8af",
+          "states": {
+            "MAIN": 1,
+            "SETTINGS": 11
+          }
+        },
+        "ID8": {
+          "application_xml_sha256": "cb78b943f44ecbff68efb13e759fab37896a2f05d11776b9ab01bf1a47dcf4c9",
+          "ui_description_sha256": "257015ac7ef6b57eac3454bd24e1d118c9d9ca7a3a6829f6b4fb04902f099f58",
+          "strings_sha256": "742d3915604d97a0f8d387f66177e41d9127f48dbd152b79780ddf87307312b4",
+          "states": {
+            "MAIN": 1,
+            "SETTINGS": 11
+          }
+        }
+      },
+      "real_sdk_build": "NOT OBSERVED",
+      "live_hu_install": "NOT OBSERVED"
+    },
+    {
+      "id": "redline",
+      "version": "2.0.45",
+      "manifest": "apps/_sources/idrive7-apps/apps/redline/app.json",
+      "manifest_sha256": "e4d1b83f3fff23828463167fd32bc1eb224cfe90afb0a6f54dbcc86394feb5f2",
+      "upstream_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "previous_aq_hmi": [
+        "ID7"
+      ],
+      "aligned_aq_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.15"
+      },
+      "generated_resources": {
+        "ID7": {
+          "application_xml_sha256": "d3cda076e2b2d4edef70cb192e89d6afba7744fb51c44787a3294fff2c715b31",
+          "ui_description_sha256": "7aa196314e206f6e89ff0ac57503055dbbeb63ccd81f0fa69280186d934b9f47",
+          "strings_sha256": "45833258e41b6b55db568e4da6045515c9d0c57004a30509cd996ff73b10de79",
+          "states": {
+            "MAIN": 1,
+            "SETTINGS": 12
+          }
+        },
+        "ID8": {
+          "application_xml_sha256": "34d31c8d2cb7f78e5faf9139952b8dbdb9253c06226237883ad6c192c8595992",
+          "ui_description_sha256": "ca9f35c727fc05b3408321f8b0f64b5a8815e98e36f255bee0badfb3a25d2ba5",
+          "strings_sha256": "f7b6ca11ab788a2a34a0788da948094f10f809e56eb8710832631751ffd2b94f",
+          "states": {
+            "MAIN": 1,
+            "SETTINGS": 12
+          }
+        }
+      },
+      "real_sdk_build": "NOT OBSERVED",
+      "live_hu_install": "NOT OBSERVED"
+    },
+    {
+      "id": "service",
+      "version": "1.6.3",
+      "manifest": "apps/_sources/idrive7-apps/apps/service/app.json",
+      "manifest_sha256": "1b08b0d2bb1cfc5c614f9103e2b093fe91be66517efb845cd50cc69edffe27f0",
+      "upstream_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "previous_aq_hmi": [
+        "ID7"
+      ],
+      "aligned_aq_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.15"
+      },
+      "generated_resources": {
+        "ID7": {
+          "application_xml_sha256": "2ebfc9fce52320c57c8dd459198e936a645c8854c5629a4f7f0fafeb4f94186b",
+          "ui_description_sha256": "6b3daf75687ff01183344c68289cfc3da0e01862a4bd7eb823fa2dabba88bae5",
+          "strings_sha256": "00371d1a9a4d76955b743484f3d78cddca7a47189458182e0b00fba1648a04c3",
+          "states": {
+            "MAIN": 1,
+            "SETTINGS": 11
+          }
+        },
+        "ID8": {
+          "application_xml_sha256": "ebc87b35c46bb77676c55a2ce9f09d82a8023b8dab213bd645cf68cde4db4b50",
+          "ui_description_sha256": "c32f8cbded8b99d658955c8d727713d8fc4a484af5997b241dae356b488fdc0e",
+          "strings_sha256": "5e07d7c4cd14705583c6fd01699abad12746efa611c16116d239af44d22d410e",
+          "states": {
+            "MAIN": 1,
+            "SETTINGS": 11
+          }
+        }
+      },
+      "real_sdk_build": "NOT OBSERVED",
+      "live_hu_install": "NOT OBSERVED"
+    },
+    {
+      "id": "warmup",
+      "version": "1.9.0",
+      "manifest": "apps/_sources/idrive7-apps/apps/warmup/app.json",
+      "manifest_sha256": "52d979101d379d10dea6451da7fd4462c0c21ba74dc5744b4166d66dea1a7c78",
+      "upstream_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "previous_aq_hmi": [
+        "ID7"
+      ],
+      "aligned_aq_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.15"
+      },
+      "generated_resources": {
+        "ID7": {
+          "application_xml_sha256": "166f9784b1a5487214daf5eef4cb4ab6bc0494ed121e917b03573fdd7dd3c9ba",
+          "ui_description_sha256": "dad548d50b813098378d63d403daecbe379cb09852e03a47ad302c32efb1bdb7",
+          "strings_sha256": "f68f726c8859656ec85e3eb160c506adc32e05d53d9b8097877596e3d704b907",
+          "states": {
+            "MAIN": 1,
+            "SETTINGS": 8
+          }
+        },
+        "ID8": {
+          "application_xml_sha256": "0023f46a0bd40db0074327b8f432cefef8fb2f50e4011bd3c7b0e72f6fc16510",
+          "ui_description_sha256": "aff3d67791739155171b93c3626a87d65788ef0de0c16facb961063102fa8f86",
+          "strings_sha256": "7da39fd9f9e87eeffb3ec83354160f985e7daac9d2150882e71aeae20505929a",
+          "states": {
+            "MAIN": 1,
+            "SETTINGS": 8
+          }
+        }
+      },
+      "real_sdk_build": "NOT OBSERVED",
+      "live_hu_install": "NOT OBSERVED"
+    },
+    {
+      "id": "zf8hp",
+      "version": "1.5.8",
+      "manifest": "apps/_sources/idrive7-apps/apps/zf8hp/app.json",
+      "manifest_sha256": "24c3a7c1a613cfa7a62bb7df5a8d848e6d8ce233f48e8421682ad900e72a24c5",
+      "upstream_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "previous_aq_hmi": [
+        "ID7"
+      ],
+      "aligned_aq_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.18",
+        "mgu-inputgate": "1.1.0"
+      },
+      "generated_resources": {
+        "ID7": {
+          "application_xml_sha256": "67a1c5b44bd5e07b6d0fa7db9a61a1aeef2e41f3ee16e1f95a3de1886c002b97",
+          "ui_description_sha256": "25a7f92ce5e6a91f6973d0b7cc1bd4a5a4cff7204191fdb6f29c4f0e41670c12",
+          "strings_sha256": "c6252b9f0aa0286b3675cb25962a547af92718fdc76f2da2110e19e709df0c47",
+          "states": {
+            "MAIN": 1,
+            "SETTINGS": 11
+          }
+        },
+        "ID8": {
+          "application_xml_sha256": "30e0ae97b5e8c91d213aa836eedaab4d55ca90029cbcc40e8bf50ef5d90e24e8",
+          "ui_description_sha256": "745b9199d297fda5ccd2cd6c8184496fc0e5bca72f20fe26f443e89f7d31e637",
+          "strings_sha256": "7d9c719fbe061b1d5dc153019ec6cb43075c932c910fb02d7ed4ffb59324efda",
+          "states": {
+            "MAIN": 1,
+            "SETTINGS": 11
+          }
+        }
+      },
+      "real_sdk_build": "NOT OBSERVED",
+      "live_hu_install": "NOT OBSERVED"
+    }
+  ],
+  "regression_tests": {
+    "file": "tests/test_id8_native_apps.py",
+    "command": "python -B -m unittest discover -s tests -p test_id8_native_apps.py -v",
+    "tests": 9,
+    "failures": 0,
+    "errors": 0,
+    "status": "PASS"
+  },
+  "source_references": {
+    "native_hmi_manifests": "apps/*/app.json mguHmi",
+    "dual_platform_proxies": "kit/tools/build.py PLATFORM_PROXIES",
+    "native_ui_generation": "kit/tools/build.py build_ui, WIDGETS8, row8",
+    "dual_archive_resources": "kit/tools/build.py build: source/rhmiData/uiDescriptions/ID7 and ID8",
+    "native_runtime": "kit/runtime/mgu.js Ui, CELLS8, wireSettings",
+    "permissions": "kit/platform/permissions.json",
+    "source_license": "LICENSE"
+  }
+}

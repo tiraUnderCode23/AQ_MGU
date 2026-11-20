@@ -1,681 +1,1257 @@
 {
-  "schema": 2,
   "components": [
     {
-      "id": "aurelm_apex_chase",
-      "kind": "app",
-      "version": "1.0.0",
-      "title": "Apex Chase",
-      "description": "A maze chase in a city at night, drawn by the GPU renderer at 60 fps: the M car collects the fuel drops while four electric cars hunt it; a NITRO can drains their batteries. iDrive controller or swipes. Parked only.",
+      "artifact": {
+        "name": "app-privacy@1.7.2.tgz",
+        "sha256": "eea01214be305cec03a9cb8abeefa2ab543693376ab16a8d9639eb55e5191c5b",
+        "size": 19586,
+        "url": "https://github.com/robertnisipeanu/mgu-store/releases/download/app-privacy%401.7.2/app-privacy%401.7.2.tgz"
+      },
+      "description": "Keeps our apps out of the head unit's backend app reporting and restarts them after a crash",
+      "id": "app-privacy",
+      "kind": "tool",
       "mguHmi": [
-        "ID7"
+        "ID7",
+        "ID8"
       ],
+      "requires": {
+        "mgu-deploy": "0.6.3"
+      },
+      "texts": {
+        "cs": {
+          "description": "Vyřazuje naše aplikace z hlášení aplikací hlavní jednotky na server a po pádu je znovu spouští",
+          "title": "Soukromí aplikací"
+        },
+        "da": {
+          "description": "Holder vores apps ude af hovedenhedens app-rapportering til backend og genstarter dem efter et nedbrud",
+          "title": "App-privatliv"
+        },
+        "de": {
+          "description": "Hält unsere Apps aus der App-Meldung der Headunit an das Backend heraus und startet sie nach einem Absturz neu",
+          "title": "App-Datenschutz"
+        },
+        "el": {
+          "description": "Κρατά τις εφαρμογές μας εκτός της αναφοράς εφαρμογών της κεντρικής μονάδας προς το backend και τις επανεκκινεί μετά από σφάλμα",
+          "title": "Απόρρητο εφαρμογών"
+        },
+        "es": {
+          "description": "Mantiene nuestras apps fuera de los informes de apps del backend de la unidad principal y las reinicia tras un fallo",
+          "title": "Privacidad de apps"
+        },
+        "es-US": {
+          "description": "Mantiene nuestras apps fuera de los reportes de apps del backend de la unidad principal y las reinicia después de un fallo",
+          "title": "Privacidad de apps"
+        },
+        "fi": {
+          "description": "Pitää sovelluksemme poissa pääyksikön taustajärjestelmän sovellusraportoinnista ja käynnistää ne uudelleen kaatumisen jälkeen",
+          "title": "Sovellusten yksityisyys"
+        },
+        "fr": {
+          "description": "Exclut nos apps des signalements d'apps que le système envoie au serveur et les redémarre après un plantage",
+          "title": "Confidentialité des apps"
+        },
+        "fr-CA": {
+          "description": "Exclut nos applis des signalements d'applis que le système envoie au serveur et les redémarre après un plantage",
+          "title": "Confidentialité des applis"
+        },
+        "he": {
+          "description": "מוציא את האפליקציות שלנו מדיווח האפליקציות של המערכת לשרת ומפעיל אותן מחדש לאחר קריסה",
+          "title": "פרטיות אפליקציות"
+        },
+        "hu": {
+          "description": "Kizárja alkalmazásainkat a fejegység háttérrendszer felé küldött alkalmazásjelentéseiből, és összeomlás után újraindítja őket",
+          "title": "Alkalmazás-adatvédelem"
+        },
+        "id": {
+          "description": "Menjauhkan aplikasi kami dari pelaporan aplikasi head unit ke backend dan memulai ulang aplikasi setelah crash",
+          "title": "Privasi aplikasi"
+        },
+        "it": {
+          "description": "Esclude le nostre app dalle segnalazioni che il sistema invia al backend e le riavvia dopo un arresto anomalo",
+          "title": "Privacy app"
+        },
+        "ja": {
+          "description": "当方のアプリをヘッドユニットのバックエンドへのアプリ報告から除外し、クラッシュ後に再起動します",
+          "title": "アプリのプライバシー"
+        },
+        "ko": {
+          "description": "자체 앱을 헤드 유닛의 백엔드 앱 보고에서 제외하고 충돌 후 다시 시작합니다",
+          "title": "앱 개인정보 보호"
+        },
+        "nb": {
+          "description": "Holder appene våre utenfor hovedenhetens apprapportering til serveren og starter dem på nytt etter et krasj",
+          "title": "Personvern for apper"
+        },
+        "nl": {
+          "description": "Houdt onze apps buiten de apprapportage van de headunit naar de backend en herstart ze na een crash",
+          "title": "App-privacy"
+        },
+        "pl": {
+          "description": "Wyłącza nasze aplikacje z raportowania aplikacji przez jednostkę główną do serwera i uruchamia je ponownie po awarii",
+          "title": "Prywatność aplikacji"
+        },
+        "pt": {
+          "description": "Mantém as nossas apps fora dos relatórios de apps do backend da unidade principal e reinicia-as após uma falha",
+          "title": "Privacidade de apps"
+        },
+        "pt-BR": {
+          "description": "Mantém nossos apps fora dos relatórios de apps do backend da unidade principal e os reinicia após uma falha",
+          "title": "Privacidade de apps"
+        },
+        "ro": {
+          "description": "Exclude aplicațiile noastre din raportarea aplicațiilor către backendul unității principale și le repornește după o blocare",
+          "title": "Confidențialitate aplicații"
+        },
+        "ru": {
+          "description": "Исключает наши приложения из отчётов головного устройства о приложениях на сервер и перезапускает их после сбоя",
+          "title": "Приватность приложений"
+        },
+        "sk": {
+          "description": "Vylučuje naše aplikácie z hlásení aplikácií do backendu hlavnej jednotky a po páde ich reštartuje",
+          "title": "Súkromie aplikácií"
+        },
+        "sl": {
+          "description": "Naše aplikacije izključi iz poročanja o aplikacijah v zaledje glavne enote in jih po zrušitvi znova zažene",
+          "title": "Zasebnost aplikacij"
+        },
+        "sv": {
+          "description": "Håller våra appar utanför huvudenhetens apprapportering till backend och startar om dem efter en krasch",
+          "title": "App-integritet"
+        },
+        "th": {
+          "description": "ไม่ให้แอปของเราถูกรายงานไปยังระบบหลังบ้านของเฮดยูนิต และรีสตาร์ทแอปเหล่านั้นหลังจากแครช",
+          "title": "ความเป็นส่วนตัวของแอป"
+        },
+        "tr": {
+          "description": "Uygulamalarımızı ana ünitenin arka uca yaptığı uygulama raporlamasının dışında tutar ve çöktüklerinde yeniden başlatır",
+          "title": "Uygulama gizliliği"
+        },
+        "uk": {
+          "description": "Виключає наші програми зі звітів головного пристрою про програми на сервер і перезапускає їх після збою",
+          "title": "Приватність програм"
+        },
+        "vi": {
+          "description": "Giữ các ứng dụng của chúng tôi ngoài báo cáo ứng dụng gửi về máy chủ của hệ thống và khởi động lại chúng sau khi gặp sự cố",
+          "title": "Quyền riêng tư ứng dụng"
+        },
+        "zh-CN": {
+          "description": "让我们的应用不被主机上报给后台，并在崩溃后重新启动它们",
+          "title": "应用隐私"
+        },
+        "zh-TW": {
+          "description": "讓我們的應用程式不被主機回報給後端，並在當機後重新啟動它們",
+          "title": "應用程式隱私"
+        }
+      },
+      "title": "App privacy",
+      "version": "1.7.2"
+    },
+    {
       "artifact": {
         "name": "aurelm_apex_chase@1.0.0.tgz",
-        "size": 570128,
         "sha256": "21c78f14db74f9e08210862fa16d100e9af010244933c769bb9083764267c02b",
+        "size": 570128,
         "url": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/packages/aurelm_apex_chase@1.0.0.tgz"
       },
-      "uninstallable": true
-    },
-    {
-      "id": "aurelm_blackjack",
+      "description": "A maze chase in a city at night, drawn by the GPU renderer at 60 fps: the M car collects the fuel drops while four electric cars hunt it; a NITRO can drains their batteries. iDrive controller or swipes. Parked only.",
+      "id": "aurelm_apex_chase",
       "kind": "app",
-      "version": "1.0.1",
-      "title": "Blackjack",
-      "description": "Casino blackjack for play credits, drawn by the GPU renderer at 60 fps: a felt table with a leather rail, cards dealt from the shoe, chips, six decks, 3 to 2, double, split, insurance, a strategy hint, statistics. iDrive controller or touch. Parked only.",
       "mguHmi": [
         "ID7"
       ],
+      "title": "Apex Chase",
+      "uninstallable": true,
+      "version": "1.0.0"
+    },
+    {
       "artifact": {
         "name": "aurelm_blackjack@1.0.1.tgz",
-        "size": 573880,
         "sha256": "128e7261e22a43d3d441c998a694a3891cc171cec16d20aa1740bcfd5b6c6fd5",
+        "size": 573880,
         "url": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/packages/aurelm_blackjack@1.0.1.tgz"
       },
-      "uninstallable": true
-    },
-    {
-      "id": "aurelm_lap_record",
+      "description": "Casino blackjack for play credits, drawn by the GPU renderer at 60 fps: a felt table with a leather rail, cards dealt from the shoe, chips, six decks, 3 to 2, double, split, insurance, a strategy hint, statistics. iDrive controller or touch. Parked only.",
+      "id": "aurelm_blackjack",
       "kind": "app",
-      "version": "1.0.0",
-      "title": "Lap Record",
-      "description": "Time trial on a circuit seen from above, the camera on the car: the knob is the steering wheel, lap after lap against your best and its ghost, the gap live, sectors in purple, green and yellow. Two circuits, kerbs, gravel, tyre walls, grandstands, tyre smoke and marks. GPU renderer. Parked only.",
       "mguHmi": [
         "ID7"
       ],
+      "title": "Blackjack",
+      "uninstallable": true,
+      "version": "1.0.1"
+    },
+    {
       "artifact": {
         "name": "aurelm_lap_record@1.0.0.tgz",
-        "size": 574607,
         "sha256": "f3923efc0a55b9b08a1feb34ff8583de2a320d64a6472e26ce6e37539bef0b31",
+        "size": 574607,
         "url": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/packages/aurelm_lap_record@1.0.0.tgz"
       },
-      "uninstallable": true
-    },
-    {
-      "id": "aurelm_lucky_sevens",
+      "description": "Time trial on a circuit seen from above, the camera on the car: the knob is the steering wheel, lap after lap against your best and its ghost, the gap live, sectors in purple, green and yellow. Two circuits, kerbs, gravel, tyre walls, grandstands, tyre smoke and marks. GPU renderer. Parked only.",
+      "id": "aurelm_lap_record",
       "kind": "app",
-      "version": "1.1.0",
-      "title": "Lucky Sevens",
-      "description": "A five reel slot machine for play credits, drawn by the GPU renderer at 60 fps: glossy symbols, reels that bounce to a stop, ten paylines, WILD, free spins, a progressive jackpot, statistics. iDrive controller or touch. Parked only.",
       "mguHmi": [
         "ID7"
       ],
+      "title": "Lap Record",
+      "uninstallable": true,
+      "version": "1.0.0"
+    },
+    {
       "artifact": {
         "name": "aurelm_lucky_sevens@1.1.0.tgz",
-        "size": 573862,
         "sha256": "e5ab4ccce1f2f9159eaba91c251caa3c2485b4daf08ee812517000303557708a",
+        "size": 573862,
         "url": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/packages/aurelm_lucky_sevens@1.1.0.tgz"
       },
-      "uninstallable": true
-    },
-    {
-      "id": "aurelm_pinball",
+      "description": "A five reel slot machine for play credits, drawn by the GPU renderer at 60 fps: glossy symbols, reels that bounce to a stop, ten paylines, WILD, free spins, a progressive jackpot, statistics. iDrive controller or touch. Parked only.",
+      "id": "aurelm_lucky_sevens",
       "kind": "app",
-      "version": "1.0.1",
-      "title": "M Pinball",
-      "description": "A pinball table on the circuit: wheels for bumpers, the CHICANE ramp, the PIT LANE, the M-POWER targets and SAFETY CAR MULTIBALL, seen in perspective with real ball physics; drawn by the GPU renderer at 60 fps. Flippers on the controller or a finger on each half of the table. Parked only.",
       "mguHmi": [
         "ID7"
       ],
+      "title": "Lucky Sevens",
+      "uninstallable": true,
+      "version": "1.1.0"
+    },
+    {
       "artifact": {
         "name": "aurelm_pinball@1.0.1.tgz",
-        "size": 577802,
         "sha256": "3be0eccdcb00e908dc45d4c9597a56a3cd2e3be1a5d35218c2782aba8e50a374",
+        "size": 577802,
         "url": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/packages/aurelm_pinball@1.0.1.tgz"
       },
-      "uninstallable": true
-    },
-    {
-      "id": "aurelm_pit_wall",
+      "description": "A pinball table on the circuit: wheels for bumpers, the CHICANE ramp, the PIT LANE, the M-POWER targets and SAFETY CAR MULTIBALL, seen in perspective with real ball physics; drawn by the GPU renderer at 60 fps. Flippers on the controller or a finger on each half of the table. Parked only.",
+      "id": "aurelm_pinball",
       "kind": "app",
-      "version": "1.0.0",
-      "title": "Pit Wall",
-      "description": "Break the advertising panels off the pit wall: a night race scene drawn by the GPU renderer at 60 fps, the ball on an M front wing, start lights, combos and power-ups. iDrive controller or touch. Parked only.",
       "mguHmi": [
         "ID7"
       ],
+      "title": "M Pinball",
+      "uninstallable": true,
+      "version": "1.0.1"
+    },
+    {
       "artifact": {
         "name": "aurelm_pit_wall@1.0.0.tgz",
-        "size": 565262,
         "sha256": "63053576847bc45d1a76a43d77cc11cf33a7d1d4f64307eb8a48de6bc952de31",
+        "size": 565262,
         "url": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/packages/aurelm_pit_wall@1.0.0.tgz"
       },
-      "uninstallable": true
-    },
-    {
-      "id": "aurelm_ridge_duel",
+      "description": "Break the advertising panels off the pit wall: a night race scene drawn by the GPU renderer at 60 fps, the ball on an M front wing, start lights, combos and power-ups. iDrive controller or touch. Parked only.",
+      "id": "aurelm_pit_wall",
       "kind": "app",
-      "version": "1.0.1",
-      "title": "Ridge Duel",
-      "description": "Two armed cars on hills at dusk, a turn each: aim with the knob, hold for power, fire. Ground that shells bite into, wind, four kinds of shell, a rival aimed by the game. Your car: a sport sedan (agile) or a performance SUV (armoured), in your colour. GPU renderer. Parked only.",
       "mguHmi": [
         "ID7"
       ],
+      "title": "Pit Wall",
+      "uninstallable": true,
+      "version": "1.0.0"
+    },
+    {
       "artifact": {
         "name": "aurelm_ridge_duel@1.0.1.tgz",
-        "size": 577789,
         "sha256": "2c6d8790aa914dd935f0d96035a2616b0317473d87f4797e591d1004a548bcc9",
+        "size": 577789,
         "url": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/packages/aurelm_ridge_duel@1.0.1.tgz"
       },
-      "uninstallable": true
-    },
-    {
-      "id": "aurelm_snake",
+      "description": "Two armed cars on hills at dusk, a turn each: aim with the knob, hold for power, fire. Ground that shells bite into, wind, four kinds of shell, a rival aimed by the game. Your car: a sport sedan (agile) or a performance SUV (armoured), in your colour. GPU renderer. Parked only.",
+      "id": "aurelm_ridge_duel",
       "kind": "app",
-      "version": "1.0.0",
-      "title": "Snake",
-      "description": "Snake on the central display, drawn by the GPU renderer at 60 fps: steer with the iDrive controller (push or turn) or swipe on the screen. Parked only.",
       "mguHmi": [
         "ID7"
       ],
+      "title": "Ridge Duel",
+      "uninstallable": true,
+      "version": "1.0.1"
+    },
+    {
       "artifact": {
         "name": "aurelm_snake@1.0.0.tgz",
-        "size": 557582,
         "sha256": "bc2e4a76023e0b2a778e722d69aed4ad90a9b7eb21324d624f13fd54ef61c014",
+        "size": 557582,
         "url": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/packages/aurelm_snake@1.0.0.tgz"
       },
-      "uninstallable": true
-    },
-    {
-      "id": "aurelm_solitaire",
+      "description": "Snake on the central display, drawn by the GPU renderer at 60 fps: steer with the iDrive controller (push or turn) or swipe on the screen. Parked only.",
+      "id": "aurelm_snake",
       "kind": "app",
-      "version": "1.0.0",
-      "title": "Solitaire",
-      "description": "Klondike solitaire drawn by the GPU renderer at 60 fps: a felt card table, cards that fly, flip and bounce home. Tap or press for the best move, drag cards, draw one or three, undo, hint, auto finish, statistics. Parked only.",
       "mguHmi": [
         "ID7"
       ],
+      "title": "Snake",
+      "uninstallable": true,
+      "version": "1.0.0"
+    },
+    {
       "artifact": {
         "name": "aurelm_solitaire@1.0.0.tgz",
-        "size": 570552,
         "sha256": "742ed7f80b4169341a68675aa226b445398f24898f39906f53e6358aae980c3e",
+        "size": 570552,
         "url": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/packages/aurelm_solitaire@1.0.0.tgz"
       },
-      "uninstallable": true
-    },
-    {
-      "id": "aurelm_street_siege",
+      "description": "Klondike solitaire drawn by the GPU renderer at 60 fps: a felt card table, cards that fly, flip and bounce home. Tap or press for the best move, drag cards, draw one or three, undo, hint, auto finish, statistics. Parked only.",
+      "id": "aurelm_solitaire",
       "kind": "app",
-      "version": "1.1.0",
-      "title": "Street Siege",
-      "description": "Defend the M garage: cars storm the town by night and the M car stops them with its roof cannon. Five districts in turn (the yard, the docks, the warehouses, the parking, the scrapyard) laid out as mazes with wide streets: tyres, containers, warehouses, fences, pallets, wrecks, water, oil; power-ups; drawn by the GPU renderer at 60 fps. Parked only.",
       "mguHmi": [
         "ID7"
       ],
+      "title": "Solitaire",
+      "uninstallable": true,
+      "version": "1.0.0"
+    },
+    {
       "artifact": {
         "name": "aurelm_street_siege@1.1.0.tgz",
-        "size": 576692,
         "sha256": "2963f545b959e9d009a68bb19edcf0ae0fce5b53cff3768f1341f4911d6fc49e",
+        "size": 576692,
         "url": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/packages/aurelm_street_siege@1.1.0.tgz"
       },
-      "uninstallable": true
-    },
-    {
-      "id": "aurelm_track_defender",
+      "description": "Defend the M garage: cars storm the town by night and the M car stops them with its roof cannon. Five districts in turn (the yard, the docks, the warehouses, the parking, the scrapyard) laid out as mazes with wide streets: tyres, containers, warehouses, fences, pallets, wrecks, water, oil; power-ups; drawn by the GPU renderer at 60 fps. Parked only.",
+      "id": "aurelm_street_siege",
       "kind": "app",
-      "version": "1.0.0",
-      "title": "Track Defender",
-      "description": "Arcade shooter on the central display, drawn by the GPU renderer at 60 fps: drones attack the track in waves, the M car shoots them down. iDrive controller or touch. Parked only.",
       "mguHmi": [
         "ID7"
       ],
+      "title": "Street Siege",
+      "uninstallable": true,
+      "version": "1.1.0"
+    },
+    {
       "artifact": {
         "name": "aurelm_track_defender@1.0.0.tgz",
-        "size": 564807,
         "sha256": "14f972b3cd7e41e0addff451164226b90cf25ff69f27a71d63b2449018dec378",
+        "size": 564807,
         "url": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/packages/aurelm_track_defender@1.0.0.tgz"
       },
-      "uninstallable": true
-    },
-    {
-      "id": "doodle-gpu",
-      "kind": "tool",
-      "version": "1.0.0",
-      "title": "Doodle Jump GPU support",
-      "description": "Adds textured game scenes to the Store renderer",
+      "description": "Arcade shooter on the central display, drawn by the GPU renderer at 60 fps: drones attack the track in waves, the M car shoots them down. iDrive controller or touch. Parked only.",
+      "id": "aurelm_track_defender",
+      "kind": "app",
       "mguHmi": [
         "ID7"
       ],
+      "title": "Track Defender",
+      "uninstallable": true,
+      "version": "1.0.0"
+    },
+    {
+      "artifact": {
+        "name": "doodle-gpu@1.0.0.tgz",
+        "sha256": "877fa863a352a59d29853423273b4291d80f36f8385801d98a10c7f5cc7e4a52",
+        "size": 87513,
+        "url": "https://github.com/kxrxh/doodle-jump-mgu/releases/download/v0.9.0/doodle-gpu@1.0.0.tgz"
+      },
+      "author": "kxrxh",
+      "description": "Adds textured game scenes to the Store renderer",
+      "id": "doodle-gpu",
+      "kind": "tool",
+      "mguHmi": [
+        "ID7"
+      ],
+      "optional": true,
       "requires": {
         "mgu-render": "0.6.23"
       },
-      "optional": true,
+      "title": "Doodle Jump GPU support",
       "uninstallable": true,
-      "author": "kxrxh",
-      "artifact": {
-        "name": "doodle-gpu@1.0.0.tgz",
-        "url": "https://github.com/kxrxh/doodle-jump-mgu/releases/download/v0.9.0/doodle-gpu@1.0.0.tgz",
-        "size": 87513,
-        "sha256": "877fa863a352a59d29853423273b4291d80f36f8385801d98a10c7f5cc7e4a52"
-      }
+      "version": "1.0.0"
     },
     {
-      "id": "kxrxh_doodle_jump",
-      "kind": "app",
-      "version": "0.9.0",
-      "title": "Doodle Jump",
-      "description": "Doodle Jump for MGU7",
-      "author": "kxrxh",
+      "artifact": {
+        "name": "jap-moonride@0.3.4.tgz",
+        "sha256": "ef426b9b367c170becf76899306d584d899e34be4ef879aee71de04898dd24fb",
+        "size": 588700,
+        "url": "https://github.com/JustAnotherPU/moonride/releases/download/catalog/jap-moonride@0.3.4.tgz"
+      },
+      "author": "JustAnotherPU",
+      "description": "Moonride's background service: pairing, launch, the H.264/HEVC decoder (Intel MSDK) into mgu-render, the car's speakers, USB pads",
+      "id": "jap-moonride",
+      "kind": "tool",
       "mguHmi": [
         "ID7"
       ],
       "requires": {
-        "mgu-render": "0.6.23",
-        "mgu-python": "1.0.3",
-        "doodle-gpu": "1.0.0"
+        "jap-node22": "22.23.4",
+        "mgu-deploy": "0.7.0"
       },
-      "icon": "https://github.com/kxrxh/doodle-jump-mgu/releases/download/catalog/kxrxh_doodle_jump.png",
-      "iconSha256": "5eb833c388867f4d29701358f81687f6cf53a7140eb18376bdf491b679c7b581",
+      "title": "Moonride streaming service",
+      "uninstallable": true,
+      "version": "0.3.4"
+    },
+    {
+      "artifact": {
+        "name": "jap-node22@22.23.4.tgz",
+        "sha256": "c62a8e2a3803b858b4d1020cb19746c8bd9ae8b753145f80c5adf7d781692743",
+        "size": 49203293,
+        "url": "https://github.com/JustAnotherPU/mgu-apps/releases/download/catalog/jap-node22@22.23.4.tgz"
+      },
+      "author": "JustAnotherPU",
+      "description": "Node.js 22 LTS for the background services of Moonride and RideTube (BMW's apps keep the system Node 8)",
+      "id": "jap-node22",
+      "kind": "tool",
+      "mguHmi": [
+        "ID7"
+      ],
+      "optional": true,
+      "requires": {
+        "mgu-deploy": "0.7.0"
+      },
+      "title": "Node.js 22",
+      "uninstallable": true,
+      "version": "22.23.4"
+    },
+    {
+      "artifact": {
+        "name": "jap_moonride@0.3.4.tgz",
+        "sha256": "530bb9b0cb00c3f40726307d50305401fdc2ffc7a97ba1a296276d0e2f2d05a5",
+        "size": 1223456,
+        "url": "https://github.com/JustAnotherPU/moonride/releases/download/catalog/jap_moonride@0.3.4.tgz"
+      },
+      "author": "JustAnotherPU",
+      "description": "Moonlight game streaming from your PC (Sunshine / Apollo / Vibepollo) on the iDrive 7 screen, parked only by default. Needs a USB gamepad (XInput) or the touchscreen.",
+      "icon": "https://github.com/JustAnotherPU/moonride/releases/download/catalog/jap_moonride.png",
+      "iconSha256": "02f6374c9ccf1bb0f3d2d40015900b4442d93885e7757e65989c69577fceef71",
+      "id": "jap_moonride",
+      "kind": "app",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "jap-moonride": "0.3.4",
+        "mgu-render": "0.6.8"
+      },
+      "title": "Moonride",
+      "uninstallable": true,
+      "version": "0.3.4"
+    },
+    {
       "artifact": {
         "name": "kxrxh_doodle_jump@0.9.0.tgz",
-        "url": "https://github.com/kxrxh/doodle-jump-mgu/releases/download/v0.9.0/kxrxh_doodle_jump@0.9.0.tgz",
+        "sha256": "c672603efd96172b5d6cc26d95de674c6fc0b5c74fa156145904dc0ee9294334",
         "size": 24956148,
-        "sha256": "c672603efd96172b5d6cc26d95de674c6fc0b5c74fa156145904dc0ee9294334"
-      }
+        "url": "https://github.com/kxrxh/doodle-jump-mgu/releases/download/v0.9.0/kxrxh_doodle_jump@0.9.0.tgz"
+      },
+      "author": "kxrxh",
+      "description": "Doodle Jump for MGU7",
+      "icon": "https://github.com/kxrxh/doodle-jump-mgu/releases/download/catalog/kxrxh_doodle_jump.png",
+      "iconSha256": "5eb833c388867f4d29701358f81687f6cf53a7140eb18376bdf491b679c7b581",
+      "id": "kxrxh_doodle_jump",
+      "kind": "app",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "doodle-gpu": "1.0.0",
+        "mgu-python": "1.0.3",
+        "mgu-render": "0.6.23"
+      },
+      "title": "Doodle Jump",
+      "version": "0.9.0"
     },
     {
-      "id": "mgu-deploy",
-      "kind": "tool",
-      "title": "Deploy tool",
-      "description": "Installs, updates, rolls back and removes our tools and apps on the head unit, with a snapshot before every change",
-      "version": "0.8.27",
       "artifact": {
         "name": "mgu-deploy@0.8.27.tgz",
-        "size": 168362,
         "sha256": "57797407580d4f0c4be234e226d4f51972002adeb1ad718e3cf2ffcd00ea36b6",
+        "size": 168362,
         "url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-deploy%400.8.27/mgu-deploy%400.8.27.tgz"
       },
+      "description": "Installs, updates, rolls back and removes our tools and apps on the head unit, with a snapshot before every change",
+      "id": "mgu-deploy",
+      "kind": "tool",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {},
       "texts": {
         "ar": {
-          "title": "أداة النشر",
-          "description": "تثبّت أدواتنا وتطبيقاتنا على الوحدة الرئيسية وتحدّثها وتستعيد إصداراتها السابقة وتزيلها، مع لقطة قبل كل تغيير"
+          "description": "تثبّت أدواتنا وتطبيقاتنا على الوحدة الرئيسية وتحدّثها وتستعيد إصداراتها السابقة وتزيلها، مع لقطة قبل كل تغيير",
+          "title": "أداة النشر"
         },
         "cs": {
-          "title": "Nástroj nasazení",
-          "description": "Instaluje, aktualizuje, vrací zpět a odebírá naše nástroje a aplikace na hlavní jednotce a před každou změnou pořizuje snímek"
+          "description": "Instaluje, aktualizuje, vrací zpět a odebírá naše nástroje a aplikace na hlavní jednotce a před každou změnou pořizuje snímek",
+          "title": "Nástroj nasazení"
         },
         "da": {
-          "title": "Installationsværktøj",
-          "description": "Installerer, opdaterer, ruller tilbage og fjerner vores værktøjer og apps på hovedenheden, med et snapshot før hver ændring"
+          "description": "Installerer, opdaterer, ruller tilbage og fjerner vores værktøjer og apps på hovedenheden, med et snapshot før hver ændring",
+          "title": "Installationsværktøj"
         },
         "de": {
-          "title": "Deploy-Tool",
-          "description": "Installiert, aktualisiert, setzt zurück und entfernt unsere Tools und Apps auf der Headunit, mit einem Snapshot vor jeder Änderung"
+          "description": "Installiert, aktualisiert, setzt zurück und entfernt unsere Tools und Apps auf der Headunit, mit einem Snapshot vor jeder Änderung",
+          "title": "Deploy-Tool"
         },
         "el": {
-          "title": "Εργαλείο εγκατάστασης",
-          "description": "Εγκαθιστά, ενημερώνει, επαναφέρει και καταργεί τα εργαλεία και τις εφαρμογές μας στην κεντρική μονάδα, με στιγμιότυπο πριν από κάθε αλλαγή"
-        },
-        "es-US": {
-          "title": "Herramienta de implementación",
-          "description": "Instala, actualiza, revierte y elimina nuestras herramientas y apps en la unidad principal, con una instantánea antes de cada cambio"
+          "description": "Εγκαθιστά, ενημερώνει, επαναφέρει και καταργεί τα εργαλεία και τις εφαρμογές μας στην κεντρική μονάδα, με στιγμιότυπο πριν από κάθε αλλαγή",
+          "title": "Εργαλείο εγκατάστασης"
         },
         "es": {
-          "title": "Herramienta de despliegue",
-          "description": "Instala, actualiza, revierte y elimina nuestras herramientas y apps en la unidad principal, con una instantánea antes de cada cambio"
+          "description": "Instala, actualiza, revierte y elimina nuestras herramientas y apps en la unidad principal, con una instantánea antes de cada cambio",
+          "title": "Herramienta de despliegue"
+        },
+        "es-US": {
+          "description": "Instala, actualiza, revierte y elimina nuestras herramientas y apps en la unidad principal, con una instantánea antes de cada cambio",
+          "title": "Herramienta de implementación"
         },
         "fi": {
-          "title": "Asennustyökalu",
-          "description": "Asentaa, päivittää, palauttaa ja poistaa työkalumme ja sovelluksemme pääyksikössä ja ottaa tilannevedoksen ennen jokaista muutosta"
-        },
-        "fr-CA": {
-          "title": "Outil de déploiement",
-          "description": "Installe, met à jour, restaure et supprime nos outils et applis sur le système, avec un instantané avant chaque modification"
+          "description": "Asentaa, päivittää, palauttaa ja poistaa työkalumme ja sovelluksemme pääyksikössä ja ottaa tilannevedoksen ennen jokaista muutosta",
+          "title": "Asennustyökalu"
         },
         "fr": {
-          "title": "Outil de déploiement",
-          "description": "Installe, met à jour, restaure et supprime nos outils et apps sur le système, avec un instantané avant chaque modification"
+          "description": "Installe, met à jour, restaure et supprime nos outils et apps sur le système, avec un instantané avant chaque modification",
+          "title": "Outil de déploiement"
+        },
+        "fr-CA": {
+          "description": "Installe, met à jour, restaure et supprime nos outils et applis sur le système, avec un instantané avant chaque modification",
+          "title": "Outil de déploiement"
         },
         "he": {
-          "title": "כלי הפריסה",
-          "description": "מתקין, מעדכן, משחזר גרסה קודמת ומסיר את הכלים והאפליקציות שלנו במערכת, עם תמונת מצב לפני כל שינוי"
+          "description": "מתקין, מעדכן, משחזר גרסה קודמת ומסיר את הכלים והאפליקציות שלנו במערכת, עם תמונת מצב לפני כל שינוי",
+          "title": "כלי הפריסה"
         },
         "hu": {
-          "title": "Telepítőeszköz",
-          "description": "Telepíti, frissíti, visszaállítja és eltávolítja eszközeinket és alkalmazásainkat a fejegységen, minden változtatás előtt pillanatképet készítve"
+          "description": "Telepíti, frissíti, visszaállítja és eltávolítja eszközeinket és alkalmazásainkat a fejegységen, minden változtatás előtt pillanatképet készítve",
+          "title": "Telepítőeszköz"
         },
         "id": {
-          "title": "Alat deploy",
-          "description": "Menginstal, memperbarui, mengembalikan, dan menghapus alat serta aplikasi kami di head unit, dengan snapshot sebelum setiap perubahan"
+          "description": "Menginstal, memperbarui, mengembalikan, dan menghapus alat serta aplikasi kami di head unit, dengan snapshot sebelum setiap perubahan",
+          "title": "Alat deploy"
         },
         "it": {
-          "title": "Strumento di distribuzione",
-          "description": "Installa, aggiorna, ripristina e rimuove i nostri strumenti e app sul sistema, con uno snapshot prima di ogni modifica"
+          "description": "Installa, aggiorna, ripristina e rimuove i nostri strumenti e app sul sistema, con uno snapshot prima di ogni modifica",
+          "title": "Strumento di distribuzione"
         },
         "ja": {
-          "title": "デプロイツール",
-          "description": "ヘッドユニット上の当方のツールとアプリをインストール、アップデート、ロールバック、削除し、変更のたびに事前にスナップショットを作成します"
+          "description": "ヘッドユニット上の当方のツールとアプリをインストール、アップデート、ロールバック、削除し、変更のたびに事前にスナップショットを作成します",
+          "title": "デプロイツール"
         },
         "ko": {
-          "title": "배포 도구",
-          "description": "헤드 유닛에서 자체 도구와 앱을 설치, 업데이트, 롤백, 제거하며 변경할 때마다 먼저 스냅샷을 만듭니다"
+          "description": "헤드 유닛에서 자체 도구와 앱을 설치, 업데이트, 롤백, 제거하며 변경할 때마다 먼저 스냅샷을 만듭니다",
+          "title": "배포 도구"
         },
         "nb": {
-          "title": "Installasjonsverktøy",
-          "description": "Installerer, oppdaterer, ruller tilbake og fjerner verktøyene og appene våre på hovedenheten, med et øyeblikksbilde før hver endring"
+          "description": "Installerer, oppdaterer, ruller tilbake og fjerner verktøyene og appene våre på hovedenheten, med et øyeblikksbilde før hver endring",
+          "title": "Installasjonsverktøy"
         },
         "nl": {
-          "title": "Deploy-tool",
-          "description": "Installeert, werkt bij, zet terug en verwijdert onze tools en apps op de headunit, met een snapshot vóór elke wijziging"
+          "description": "Installeert, werkt bij, zet terug en verwijdert onze tools en apps op de headunit, met een snapshot vóór elke wijziging",
+          "title": "Deploy-tool"
         },
         "pl": {
-          "title": "Narzędzie wdrażania",
-          "description": "Instaluje, aktualizuje, przywraca i usuwa nasze narzędzia i aplikacje na jednostce głównej, tworząc migawkę przed każdą zmianą"
-        },
-        "pt-BR": {
-          "title": "Ferramenta de implantação",
-          "description": "Instala, atualiza, reverte e remove nossas ferramentas e apps na unidade principal, com um snapshot antes de cada alteração"
+          "description": "Instaluje, aktualizuje, przywraca i usuwa nasze narzędzia i aplikacje na jednostce głównej, tworząc migawkę przed każdą zmianą",
+          "title": "Narzędzie wdrażania"
         },
         "pt": {
-          "title": "Ferramenta de implementação",
-          "description": "Instala, atualiza, reverte e remove as nossas ferramentas e apps na unidade principal, com um instantâneo antes de cada alteração"
+          "description": "Instala, atualiza, reverte e remove as nossas ferramentas e apps na unidade principal, com um instantâneo antes de cada alteração",
+          "title": "Ferramenta de implementação"
+        },
+        "pt-BR": {
+          "description": "Instala, atualiza, reverte e remove nossas ferramentas e apps na unidade principal, com um snapshot antes de cada alteração",
+          "title": "Ferramenta de implantação"
         },
         "ro": {
-          "title": "Instrument de implementare",
-          "description": "Instalează, actualizează, readuce la versiunea anterioară și elimină instrumentele și aplicațiile noastre de pe unitatea principală, cu un snapshot înaintea fiecărei modificări"
+          "description": "Instalează, actualizează, readuce la versiunea anterioară și elimină instrumentele și aplicațiile noastre de pe unitatea principală, cu un snapshot înaintea fiecărei modificări",
+          "title": "Instrument de implementare"
         },
         "ru": {
-          "title": "Инструмент установки",
-          "description": "Устанавливает, обновляет, откатывает и удаляет наши утилиты и приложения на головном устройстве, создавая снимок перед каждым изменением"
+          "description": "Устанавливает, обновляет, откатывает и удаляет наши утилиты и приложения на головном устройстве, создавая снимок перед каждым изменением",
+          "title": "Инструмент установки"
         },
         "sk": {
-          "title": "Nástroj nasadenia",
-          "description": "Inštaluje, aktualizuje, vracia späť a odstraňuje naše nástroje a aplikácie na hlavnej jednotke, pred každou zmenou so snímkou stavu"
+          "description": "Inštaluje, aktualizuje, vracia späť a odstraňuje naše nástroje a aplikácie na hlavnej jednotke, pred každou zmenou so snímkou stavu",
+          "title": "Nástroj nasadenia"
         },
         "sl": {
-          "title": "Orodje za namestitev",
-          "description": "Namešča, posodablja, povrača in odstranjuje naša orodja in aplikacije na glavni enoti, pred vsako spremembo s posnetkom stanja"
+          "description": "Namešča, posodablja, povrača in odstranjuje naša orodja in aplikacije na glavni enoti, pred vsako spremembo s posnetkom stanja",
+          "title": "Orodje za namestitev"
         },
         "sv": {
-          "title": "Installationsverktyg",
-          "description": "Installerar, uppdaterar, återställer och tar bort våra verktyg och appar på huvudenheten, med en ögonblicksbild före varje ändring"
+          "description": "Installerar, uppdaterar, återställer och tar bort våra verktyg och appar på huvudenheten, med en ögonblicksbild före varje ändring",
+          "title": "Installationsverktyg"
         },
         "th": {
-          "title": "เครื่องมือติดตั้ง",
-          "description": "ติดตั้ง อัปเดต ย้อนกลับ และลบเครื่องมือและแอปของเราบนเฮดยูนิต พร้อมสแนปช็อตก่อนทุกการเปลี่ยนแปลง"
+          "description": "ติดตั้ง อัปเดต ย้อนกลับ และลบเครื่องมือและแอปของเราบนเฮดยูนิต พร้อมสแนปช็อตก่อนทุกการเปลี่ยนแปลง",
+          "title": "เครื่องมือติดตั้ง"
         },
         "tr": {
-          "title": "Dağıtım aracı",
-          "description": "Araçlarımızı ve uygulamalarımızı ana ünitede yükler, günceller, geri alır ve kaldırır; her değişiklikten önce anlık görüntü alır"
+          "description": "Araçlarımızı ve uygulamalarımızı ana ünitede yükler, günceller, geri alır ve kaldırır; her değişiklikten önce anlık görüntü alır",
+          "title": "Dağıtım aracı"
         },
         "uk": {
-          "title": "Інструмент встановлення",
-          "description": "Встановлює, оновлює, відкочує та видаляє наші утиліти й програми на головному пристрої, створюючи знімок перед кожною зміною"
+          "description": "Встановлює, оновлює, відкочує та видаляє наші утиліти й програми на головному пристрої, створюючи знімок перед кожною зміною",
+          "title": "Інструмент встановлення"
         },
         "vi": {
-          "title": "Công cụ triển khai",
-          "description": "Cài đặt, cập nhật, khôi phục bản trước và gỡ bỏ các công cụ và ứng dụng của chúng tôi trên hệ thống, kèm bản chụp nhanh trước mỗi thay đổi"
+          "description": "Cài đặt, cập nhật, khôi phục bản trước và gỡ bỏ các công cụ và ứng dụng của chúng tôi trên hệ thống, kèm bản chụp nhanh trước mỗi thay đổi",
+          "title": "Công cụ triển khai"
         },
         "zh-CN": {
-          "title": "部署工具",
-          "description": "在主机上安装、更新、回滚和移除我们的工具和应用，每次更改前都会创建快照"
+          "description": "在主机上安装、更新、回滚和移除我们的工具和应用，每次更改前都会创建快照",
+          "title": "部署工具"
         },
         "zh-TW": {
-          "title": "部署工具",
-          "description": "在主機上安裝、更新、回復及移除我們的工具與應用程式，每次變更前都會建立快照"
+          "description": "在主機上安裝、更新、回復及移除我們的工具與應用程式，每次變更前都會建立快照",
+          "title": "部署工具"
         }
       },
-      "mguHmi": [
-        "ID7",
-        "ID8"
-      ],
-      "requires": {}
+      "title": "Deploy tool",
+      "version": "0.8.27"
     },
     {
-      "id": "mgu-python",
-      "kind": "tool",
-      "title": "Python",
-      "description": "Python 3.12 for apps that build on the head unit with Python",
-      "version": "1.0.3",
       "artifact": {
         "name": "mgu-python@1.0.3.tgz",
-        "size": 14441404,
         "sha256": "98ce27bcee265ba6846446ad7867193fbdc9e0447195dbf22bcfaabf7e2f2533",
+        "size": 14441404,
         "url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-python%401.0.3/mgu-python%401.0.3.tgz"
       },
+      "description": "Python 3.12 for apps that build on the head unit with Python",
+      "id": "mgu-python",
+      "kind": "tool",
       "mguHmi": [
         "ID7",
         "ID8"
       ],
       "texts": {
         "cs": {
-          "title": "Python",
-          "description": "Python 3.12 pro aplikace, které se na hlavní jednotce sestavují v Pythonu"
+          "description": "Python 3.12 pro aplikace, které se na hlavní jednotce sestavují v Pythonu",
+          "title": "Python"
         },
         "da": {
-          "title": "Python",
-          "description": "Python 3.12 til apps, der bygges på hovedenheden med Python"
+          "description": "Python 3.12 til apps, der bygges på hovedenheden med Python",
+          "title": "Python"
         },
         "de": {
-          "title": "Python",
-          "description": "Python 3.12 für Apps, die auf der Headunit mit Python gebaut werden"
+          "description": "Python 3.12 für Apps, die auf der Headunit mit Python gebaut werden",
+          "title": "Python"
         },
         "el": {
-          "title": "Python",
-          "description": "Python 3.12 για εφαρμογές που μεταγλωττίζονται στην κεντρική μονάδα με Python"
-        },
-        "es-US": {
-          "title": "Python",
-          "description": "Python 3.12 para apps que se compilan en la unidad principal con Python"
+          "description": "Python 3.12 για εφαρμογές που μεταγλωττίζονται στην κεντρική μονάδα με Python",
+          "title": "Python"
         },
         "es": {
-          "title": "Python",
-          "description": "Python 3.12 para apps que se compilan en la unidad principal con Python"
+          "description": "Python 3.12 para apps que se compilan en la unidad principal con Python",
+          "title": "Python"
+        },
+        "es-US": {
+          "description": "Python 3.12 para apps que se compilan en la unidad principal con Python",
+          "title": "Python"
         },
         "fi": {
-          "title": "Python",
-          "description": "Python 3.12 sovelluksille, jotka koostetaan pääyksikössä Pythonilla"
-        },
-        "fr-CA": {
-          "title": "Python",
-          "description": "Python 3.12 pour les applis compilées sur le système avec Python"
+          "description": "Python 3.12 sovelluksille, jotka koostetaan pääyksikössä Pythonilla",
+          "title": "Python"
         },
         "fr": {
-          "title": "Python",
-          "description": "Python 3.12 pour les apps compilées sur le système avec Python"
+          "description": "Python 3.12 pour les apps compilées sur le système avec Python",
+          "title": "Python"
+        },
+        "fr-CA": {
+          "description": "Python 3.12 pour les applis compilées sur le système avec Python",
+          "title": "Python"
         },
         "he": {
-          "title": "Python",
-          "description": "Python 3.12 לאפליקציות שנבנות במערכת באמצעות Python"
+          "description": "Python 3.12 לאפליקציות שנבנות במערכת באמצעות Python",
+          "title": "Python"
         },
         "hu": {
-          "title": "Python",
-          "description": "Python 3.12 azokhoz az alkalmazásokhoz, amelyek Pythonnal épülnek a fejegységen"
+          "description": "Python 3.12 azokhoz az alkalmazásokhoz, amelyek Pythonnal épülnek a fejegységen",
+          "title": "Python"
         },
         "id": {
-          "title": "Python",
-          "description": "Python 3.12 untuk aplikasi yang dibangun di head unit dengan Python"
+          "description": "Python 3.12 untuk aplikasi yang dibangun di head unit dengan Python",
+          "title": "Python"
         },
         "it": {
-          "title": "Python",
-          "description": "Python 3.12 per le app che vengono compilate sul sistema con Python"
+          "description": "Python 3.12 per le app che vengono compilate sul sistema con Python",
+          "title": "Python"
         },
         "ja": {
-          "title": "Python",
-          "description": "ヘッドユニット上で Python を使ってビルドされるアプリ用の Python 3.12"
+          "description": "ヘッドユニット上で Python を使ってビルドされるアプリ用の Python 3.12",
+          "title": "Python"
         },
         "ko": {
-          "title": "Python",
-          "description": "헤드 유닛에서 Python으로 빌드되는 앱을 위한 Python 3.12"
+          "description": "헤드 유닛에서 Python으로 빌드되는 앱을 위한 Python 3.12",
+          "title": "Python"
         },
         "nb": {
-          "title": "Python",
-          "description": "Python 3.12 for apper som bygges på hovedenheten med Python"
+          "description": "Python 3.12 for apper som bygges på hovedenheten med Python",
+          "title": "Python"
         },
         "nl": {
-          "title": "Python",
-          "description": "Python 3.12 voor apps die op de headunit met Python worden gebouwd"
+          "description": "Python 3.12 voor apps die op de headunit met Python worden gebouwd",
+          "title": "Python"
         },
         "pl": {
-          "title": "Python",
-          "description": "Python 3.12 dla aplikacji budowanych na jednostce głównej w Pythonie"
-        },
-        "pt-BR": {
-          "title": "Python",
-          "description": "Python 3.12 para apps que são compilados na unidade principal com Python"
+          "description": "Python 3.12 dla aplikacji budowanych na jednostce głównej w Pythonie",
+          "title": "Python"
         },
         "pt": {
-          "title": "Python",
-          "description": "Python 3.12 para apps que são compiladas na unidade principal com Python"
+          "description": "Python 3.12 para apps que são compiladas na unidade principal com Python",
+          "title": "Python"
+        },
+        "pt-BR": {
+          "description": "Python 3.12 para apps que são compilados na unidade principal com Python",
+          "title": "Python"
         },
         "ro": {
-          "title": "Python",
-          "description": "Python 3.12 pentru aplicațiile care se compilează pe unitatea principală cu Python"
+          "description": "Python 3.12 pentru aplicațiile care se compilează pe unitatea principală cu Python",
+          "title": "Python"
         },
         "ru": {
-          "title": "Python",
-          "description": "Python 3.12 для приложений, которые собираются на головном устройстве с помощью Python"
+          "description": "Python 3.12 для приложений, которые собираются на головном устройстве с помощью Python",
+          "title": "Python"
         },
         "sk": {
-          "title": "Python",
-          "description": "Python 3.12 pre aplikácie, ktoré sa na hlavnej jednotke zostavujú pomocou Pythonu"
+          "description": "Python 3.12 pre aplikácie, ktoré sa na hlavnej jednotke zostavujú pomocou Pythonu",
+          "title": "Python"
         },
         "sl": {
-          "title": "Python",
-          "description": "Python 3.12 za aplikacije, ki se na glavni enoti gradijo s Pythonom"
+          "description": "Python 3.12 za aplikacije, ki se na glavni enoti gradijo s Pythonom",
+          "title": "Python"
         },
         "sv": {
-          "title": "Python",
-          "description": "Python 3.12 för appar som byggs på huvudenheten med Python"
+          "description": "Python 3.12 för appar som byggs på huvudenheten med Python",
+          "title": "Python"
         },
         "th": {
-          "title": "Python",
-          "description": "Python 3.12 สำหรับแอปที่บิลด์บนเฮดยูนิตด้วย Python"
+          "description": "Python 3.12 สำหรับแอปที่บิลด์บนเฮดยูนิตด้วย Python",
+          "title": "Python"
         },
         "tr": {
-          "title": "Python",
-          "description": "Ana ünitede Python ile derlenen uygulamalar için Python 3.12"
+          "description": "Ana ünitede Python ile derlenen uygulamalar için Python 3.12",
+          "title": "Python"
         },
         "uk": {
-          "title": "Python",
-          "description": "Python 3.12 для програм, які збираються на головному пристрої за допомогою Python"
+          "description": "Python 3.12 для програм, які збираються на головному пристрої за допомогою Python",
+          "title": "Python"
         },
         "vi": {
-          "title": "Python",
-          "description": "Python 3.12 cho các ứng dụng được dựng trên hệ thống bằng Python"
+          "description": "Python 3.12 cho các ứng dụng được dựng trên hệ thống bằng Python",
+          "title": "Python"
         },
         "zh-CN": {
-          "title": "Python",
-          "description": "为在主机上用 Python 构建的应用提供 Python 3.12"
+          "description": "为在主机上用 Python 构建的应用提供 Python 3.12",
+          "title": "Python"
         },
         "zh-TW": {
-          "title": "Python",
-          "description": "為在主機上以 Python 建置的應用程式提供 Python 3.12"
+          "description": "為在主機上以 Python 建置的應用程式提供 Python 3.12",
+          "title": "Python"
         }
-      }
+      },
+      "title": "Python",
+      "version": "1.0.3"
     },
     {
-      "id": "mgu-render",
-      "kind": "tool",
-      "title": "Renderer",
-      "description": "Draws apps' screens on the GPU, over the HMI or inside the app's page",
-      "version": "0.6.25",
       "artifact": {
         "name": "mgu-render@0.6.25.tgz",
-        "size": 103355,
         "sha256": "73b5444307aaf7a3a1b519cb14032869f18930749284aef557a2e0bd58d3fd61",
+        "size": 103355,
         "url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-render%400.6.25/mgu-render%400.6.25.tgz"
       },
-      "requires": {
-        "mgu-deploy": "0.6.9"
-      },
-      "optional": true,
+      "description": "Draws apps' screens on the GPU, over the HMI or inside the app's page",
+      "id": "mgu-render",
+      "kind": "tool",
       "mguHmi": [
         "ID7",
         "ID8"
       ],
       "mguProvides": "renderer",
+      "optional": true,
+      "requires": {
+        "mgu-deploy": "0.6.9"
+      },
       "texts": {
         "ar": {
-          "title": "العارض",
-          "description": "يرسم شاشات التطبيقات باستخدام وحدة معالجة الرسومات، فوق واجهة HMI أو داخل صفحة التطبيق"
+          "description": "يرسم شاشات التطبيقات باستخدام وحدة معالجة الرسومات، فوق واجهة HMI أو داخل صفحة التطبيق",
+          "title": "العارض"
         },
         "cs": {
-          "title": "Renderer",
-          "description": "Vykresluje obrazovky aplikací na GPU, nad HMI nebo uvnitř stránky aplikace"
+          "description": "Vykresluje obrazovky aplikací na GPU, nad HMI nebo uvnitř stránky aplikace",
+          "title": "Renderer"
         },
         "da": {
-          "title": "Renderer",
-          "description": "Tegner apps' skærme på GPU'en, oven på HMI'en eller inde på appens side"
+          "description": "Tegner apps' skærme på GPU'en, oven på HMI'en eller inde på appens side",
+          "title": "Renderer"
         },
         "de": {
-          "title": "Renderer",
-          "description": "Zeichnet die Bildschirme von Apps auf der GPU, über dem HMI oder in der Seite der App"
+          "description": "Zeichnet die Bildschirme von Apps auf der GPU, über dem HMI oder in der Seite der App",
+          "title": "Renderer"
         },
         "el": {
-          "title": "Απόδοση γραφικών",
-          "description": "Σχεδιάζει τις οθόνες των εφαρμογών στη GPU, πάνω από το HMI ή μέσα στη σελίδα της εφαρμογής"
-        },
-        "es-US": {
-          "title": "Renderizador",
-          "description": "Dibuja las pantallas de las apps en la GPU, sobre el HMI o dentro de la página de la app"
+          "description": "Σχεδιάζει τις οθόνες των εφαρμογών στη GPU, πάνω από το HMI ή μέσα στη σελίδα της εφαρμογής",
+          "title": "Απόδοση γραφικών"
         },
         "es": {
-          "title": "Renderizador",
-          "description": "Dibuja las pantallas de las apps en la GPU, sobre el HMI o dentro de la página de la app"
+          "description": "Dibuja las pantallas de las apps en la GPU, sobre el HMI o dentro de la página de la app",
+          "title": "Renderizador"
+        },
+        "es-US": {
+          "description": "Dibuja las pantallas de las apps en la GPU, sobre el HMI o dentro de la página de la app",
+          "title": "Renderizador"
         },
         "fi": {
-          "title": "Renderöijä",
-          "description": "Piirtää sovellusten näkymät GPU:lla HMI:n päälle tai sovelluksen sivulle"
-        },
-        "fr-CA": {
-          "title": "Moteur de rendu",
-          "description": "Dessine les écrans des applis sur le GPU, par-dessus l'IHM ou dans la page de l'appli"
+          "description": "Piirtää sovellusten näkymät GPU:lla HMI:n päälle tai sovelluksen sivulle",
+          "title": "Renderöijä"
         },
         "fr": {
-          "title": "Moteur de rendu",
-          "description": "Dessine les écrans des apps sur le GPU, par-dessus l'IHM ou dans la page de l'app"
+          "description": "Dessine les écrans des apps sur le GPU, par-dessus l'IHM ou dans la page de l'app",
+          "title": "Moteur de rendu"
+        },
+        "fr-CA": {
+          "description": "Dessine les écrans des applis sur le GPU, par-dessus l'IHM ou dans la page de l'appli",
+          "title": "Moteur de rendu"
         },
         "he": {
-          "title": "מנוע רינדור",
-          "description": "מצייר את מסכי האפליקציות במעבד הגרפי, מעל ממשק ה-HMI או בתוך דף האפליקציה"
+          "description": "מצייר את מסכי האפליקציות במעבד הגרפי, מעל ממשק ה-HMI או בתוך דף האפליקציה",
+          "title": "מנוע רינדור"
         },
         "hu": {
-          "title": "Renderelő",
-          "description": "Az alkalmazások képernyőit a GPU-n rajzolja, a HMI fölé vagy az alkalmazás oldalán belül"
+          "description": "Az alkalmazások képernyőit a GPU-n rajzolja, a HMI fölé vagy az alkalmazás oldalán belül",
+          "title": "Renderelő"
         },
         "id": {
-          "title": "Renderer",
-          "description": "Menggambar layar aplikasi di GPU, di atas HMI atau di dalam halaman aplikasi"
+          "description": "Menggambar layar aplikasi di GPU, di atas HMI atau di dalam halaman aplikasi",
+          "title": "Renderer"
         },
         "it": {
-          "title": "Renderer",
-          "description": "Disegna le schermate delle app sulla GPU, sopra l'HMI o nella pagina dell'app"
+          "description": "Disegna le schermate delle app sulla GPU, sopra l'HMI o nella pagina dell'app",
+          "title": "Renderer"
         },
         "ja": {
-          "title": "レンダラー",
-          "description": "アプリの画面を GPU で描画し、HMI の上またはアプリのページ内に表示します"
+          "description": "アプリの画面を GPU で描画し、HMI の上またはアプリのページ内に表示します",
+          "title": "レンダラー"
         },
         "ko": {
-          "title": "렌더러",
-          "description": "GPU로 앱 화면을 그려 HMI 위 또는 앱 페이지 안에 표시합니다"
+          "description": "GPU로 앱 화면을 그려 HMI 위 또는 앱 페이지 안에 표시합니다",
+          "title": "렌더러"
         },
         "nb": {
-          "title": "Gjengiver",
-          "description": "Tegner appenes skjermbilder med GPU-en, over HMI-en eller inne på appens side"
+          "description": "Tegner appenes skjermbilder med GPU-en, over HMI-en eller inne på appens side",
+          "title": "Gjengiver"
         },
         "nl": {
-          "title": "Renderer",
-          "description": "Tekent de schermen van apps op de GPU, over de HMI of binnen de pagina van de app"
+          "description": "Tekent de schermen van apps op de GPU, over de HMI of binnen de pagina van de app",
+          "title": "Renderer"
         },
         "pl": {
-          "title": "Renderer",
-          "description": "Rysuje ekrany aplikacji na GPU, nad HMI lub wewnątrz strony aplikacji"
-        },
-        "pt-BR": {
-          "title": "Renderizador",
-          "description": "Desenha as telas dos apps na GPU, sobre o HMI ou dentro da página do app"
+          "description": "Rysuje ekrany aplikacji na GPU, nad HMI lub wewnątrz strony aplikacji",
+          "title": "Renderer"
         },
         "pt": {
-          "title": "Renderizador",
-          "description": "Desenha os ecrãs das apps na GPU, sobre o HMI ou dentro da página da app"
+          "description": "Desenha os ecrãs das apps na GPU, sobre o HMI ou dentro da página da app",
+          "title": "Renderizador"
+        },
+        "pt-BR": {
+          "description": "Desenha as telas dos apps na GPU, sobre o HMI ou dentro da página do app",
+          "title": "Renderizador"
         },
         "ro": {
-          "title": "Renderer",
-          "description": "Desenează ecranele aplicațiilor pe GPU, peste HMI sau în pagina aplicației"
+          "description": "Desenează ecranele aplicațiilor pe GPU, peste HMI sau în pagina aplicației",
+          "title": "Renderer"
         },
         "ru": {
-          "title": "Рендерер",
-          "description": "Отрисовывает экраны приложений на GPU поверх HMI или внутри страницы приложения"
+          "description": "Отрисовывает экраны приложений на GPU поверх HMI или внутри страницы приложения",
+          "title": "Рендерер"
         },
         "sk": {
-          "title": "Renderer",
-          "description": "Vykresľuje obrazovky aplikácií na GPU, nad HMI alebo vnútri stránky aplikácie"
+          "description": "Vykresľuje obrazovky aplikácií na GPU, nad HMI alebo vnútri stránky aplikácie",
+          "title": "Renderer"
         },
         "sl": {
-          "title": "Renderer",
-          "description": "Riše zaslone aplikacij na GPU, nad HMI ali znotraj strani aplikacije"
+          "description": "Riše zaslone aplikacij na GPU, nad HMI ali znotraj strani aplikacije",
+          "title": "Renderer"
         },
         "sv": {
-          "title": "Renderare",
-          "description": "Ritar appars skärmar på GPU:n, ovanpå HMI:t eller inuti appens sida"
+          "description": "Ritar appars skärmar på GPU:n, ovanpå HMI:t eller inuti appens sida",
+          "title": "Renderare"
         },
         "th": {
-          "title": "ตัวเรนเดอร์",
-          "description": "วาดหน้าจอของแอปด้วย GPU บน HMI หรือภายในหน้าของแอป"
+          "description": "วาดหน้าจอของแอปด้วย GPU บน HMI หรือภายในหน้าของแอป",
+          "title": "ตัวเรนเดอร์"
         },
         "tr": {
-          "title": "Oluşturucu",
-          "description": "Uygulama ekranlarını GPU üzerinde, HMI'ın üstünde veya uygulamanın sayfasında çizer"
+          "description": "Uygulama ekranlarını GPU üzerinde, HMI'ın üstünde veya uygulamanın sayfasında çizer",
+          "title": "Oluşturucu"
         },
         "uk": {
-          "title": "Рендерер",
-          "description": "Відмальовує екрани програм на GPU поверх HMI або всередині сторінки програми"
+          "description": "Відмальовує екрани програм на GPU поверх HMI або всередині сторінки програми",
+          "title": "Рендерер"
         },
         "vi": {
-          "title": "Trình kết xuất",
-          "description": "Vẽ màn hình của ứng dụng bằng GPU, đè lên HMI hoặc bên trong trang của ứng dụng"
+          "description": "Vẽ màn hình của ứng dụng bằng GPU, đè lên HMI hoặc bên trong trang của ứng dụng",
+          "title": "Trình kết xuất"
         },
         "zh-CN": {
-          "title": "渲染器",
-          "description": "在 GPU 上绘制应用画面，叠加在 HMI 之上或显示在应用页面内"
+          "description": "在 GPU 上绘制应用画面，叠加在 HMI 之上或显示在应用页面内",
+          "title": "渲染器"
         },
         "zh-TW": {
-          "title": "渲染器",
-          "description": "在 GPU 上繪製應用程式畫面，疊加於 HMI 之上或顯示在應用程式頁面內"
+          "description": "在 GPU 上繪製應用程式畫面，疊加於 HMI 之上或顯示在應用程式頁面內",
+          "title": "渲染器"
         }
-      }
+      },
+      "title": "Renderer",
+      "version": "0.6.25"
+    },
+    {
+      "artifact": {
+        "name": "mgu-render-id7-touch@1.4.0.tgz",
+        "sha256": "74606000de4c70b4e81c72f39bfc7ff5d96b89cc22706e02d8fcb2bcd612df84",
+        "size": 3499,
+        "url": "https://github.com/JustAnotherPU/ridetube/releases/download/catalog/mgu-render-id7-touch@1.4.0.tgz"
+      },
+      "description": "Lets full-screen apps (RideTube, Moonride) use the screen's left edge: both renderers get the whole screen as their touch area, so a tap on the strip where the back arrow usually is reaches the app instead of closing it. Leave such an app with the BACK or MENU button. Other apps keep the back arrow. Removing it takes effect at the next start of the head unit.",
+      "id": "mgu-render-id7-touch",
+      "kind": "tool",
+      "mguHmi": [
+        "ID7"
+      ],
+      "optional": true,
+      "requires": {
+        "mgu-deploy": "0.7.0"
+      },
+      "title": "Full-width touch",
+      "uninstallable": true,
+      "version": "1.4.0"
+    },
+    {
+      "artifact": {
+        "name": "mgu-updater@0.8.51.tgz",
+        "sha256": "e38745a14fad5d34648c101e0d7eadd9a60d53fa1f4cda38462e3f77e08eeb95",
+        "size": 143205,
+        "url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-updater%400.8.51/mgu-updater%400.8.51.tgz"
+      },
+      "description": "Installs, updates and removes apps and head-unit tools from its sources",
+      "id": "mgu-updater",
+      "kind": "tool",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "mgu-deploy": "0.8.4",
+        "mgu-python": "1.0.2"
+      },
+      "texts": {
+        "ar": {
+          "description": "تثبّت التطبيقات وأدوات الوحدة الرئيسية من مصادرها وتحدّثها وتزيلها",
+          "title": "أداة التحديث"
+        },
+        "cs": {
+          "description": "Instaluje, aktualizuje a odebírá aplikace a nástroje hlavní jednotky ze svých zdrojů",
+          "title": "Služba aktualizací"
+        },
+        "da": {
+          "description": "Installerer, opdaterer og fjerner apps og hovedenhedsværktøjer fra sine kilder",
+          "title": "Updater"
+        },
+        "de": {
+          "description": "Installiert, aktualisiert und entfernt Apps und Headunit-Tools aus seinen Quellen",
+          "title": "Updater"
+        },
+        "el": {
+          "description": "Εγκαθιστά, ενημερώνει και καταργεί εφαρμογές και εργαλεία της κεντρικής μονάδας από τις πηγές του",
+          "title": "Πρόγραμμα ενημέρωσης"
+        },
+        "es": {
+          "description": "Instala, actualiza y elimina apps y herramientas de la unidad principal desde sus fuentes",
+          "title": "Actualizador"
+        },
+        "es-US": {
+          "description": "Instala, actualiza y elimina apps y herramientas de la unidad principal desde sus fuentes",
+          "title": "Actualizador"
+        },
+        "fi": {
+          "description": "Asentaa, päivittää ja poistaa sovelluksia ja pääyksikön työkaluja lähteistään",
+          "title": "Päivityspalvelu"
+        },
+        "fr": {
+          "description": "Installe, met à jour et supprime les apps et outils système depuis ses sources",
+          "title": "Service de mise à jour"
+        },
+        "fr-CA": {
+          "description": "Installe, met à jour et supprime les applis et outils système depuis ses sources",
+          "title": "Service de mise à jour"
+        },
+        "he": {
+          "description": "מתקין, מעדכן ומסיר אפליקציות וכלי מערכת מהמקורות שלו",
+          "title": "שירות העדכון"
+        },
+        "hu": {
+          "description": "Forrásaiból telepíti, frissíti és eltávolítja az alkalmazásokat és a fejegység-eszközöket",
+          "title": "Frissítő"
+        },
+        "id": {
+          "description": "Menginstal, memperbarui, dan menghapus aplikasi serta alat head unit dari sumbernya",
+          "title": "Updater"
+        },
+        "it": {
+          "description": "Installa, aggiorna e rimuove app e strumenti di sistema dalle sue fonti",
+          "title": "Servizio aggiornamenti"
+        },
+        "ja": {
+          "description": "ソースからアプリとヘッドユニットツールをインストール、アップデート、削除します",
+          "title": "アップデーター"
+        },
+        "ko": {
+          "description": "소스에서 앱과 헤드 유닛 도구를 설치, 업데이트, 제거합니다",
+          "title": "업데이터"
+        },
+        "nb": {
+          "description": "Installerer, oppdaterer og fjerner apper og hovedenhetsverktøy fra kildene sine",
+          "title": "Oppdateringstjeneste"
+        },
+        "nl": {
+          "description": "Installeert, werkt bij en verwijdert apps en headunit-tools uit zijn bronnen",
+          "title": "Updater"
+        },
+        "pl": {
+          "description": "Instaluje, aktualizuje i usuwa aplikacje oraz narzędzia jednostki głównej ze swoich źródeł",
+          "title": "Usługa aktualizacji"
+        },
+        "pt": {
+          "description": "Instala, atualiza e remove apps e ferramentas da unidade principal a partir das suas fontes",
+          "title": "Atualizador"
+        },
+        "pt-BR": {
+          "description": "Instala, atualiza e remove apps e ferramentas da unidade principal a partir das suas fontes",
+          "title": "Atualizador"
+        },
+        "ro": {
+          "description": "Instalează, actualizează și elimină aplicații și instrumente ale unității principale din sursele sale",
+          "title": "Actualizator"
+        },
+        "ru": {
+          "description": "Устанавливает, обновляет и удаляет приложения и системные утилиты головного устройства из своих источников",
+          "title": "Сервис обновлений"
+        },
+        "sk": {
+          "description": "Inštaluje, aktualizuje a odstraňuje aplikácie a nástroje hlavnej jednotky zo svojich zdrojov",
+          "title": "Aktualizátor"
+        },
+        "sl": {
+          "description": "Iz svojih virov namešča, posodablja in odstranjuje aplikacije in orodja glavne enote",
+          "title": "Posodobilnik"
+        },
+        "sv": {
+          "description": "Installerar, uppdaterar och tar bort appar och huvudenhetsverktyg från sina källor",
+          "title": "Updater"
+        },
+        "th": {
+          "description": "ติดตั้ง อัปเดต และลบแอปและเครื่องมือเฮดยูนิตจากแหล่งที่มา",
+          "title": "ตัวอัปเดต"
+        },
+        "tr": {
+          "description": "Uygulamaları ve ana ünite araçlarını kaynaklarından yükler, günceller ve kaldırır",
+          "title": "Güncelleyici"
+        },
+        "uk": {
+          "description": "Встановлює, оновлює та видаляє програми й системні утиліти головного пристрою зі своїх джерел",
+          "title": "Служба оновлень"
+        },
+        "vi": {
+          "description": "Cài đặt, cập nhật và gỡ bỏ ứng dụng và công cụ hệ thống từ các nguồn của nó",
+          "title": "Trình cập nhật"
+        },
+        "zh-CN": {
+          "description": "从其来源安装、更新和移除应用及主机工具",
+          "title": "更新服务"
+        },
+        "zh-TW": {
+          "description": "從其來源安裝、更新及移除應用程式與主機工具",
+          "title": "更新服務"
+        }
+      },
+      "title": "Updater",
+      "version": "0.8.51"
+    },
+    {
+      "artifact": {
+        "name": "mgu-uplink@0.7.13.tgz",
+        "sha256": "077e3200356df726a1e653fd67db9f9a1237e22b548f946b726c6eadd0f48d28",
+        "size": 3605106,
+        "url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-uplink%400.7.13/mgu-uplink%400.7.13.tgz"
+      },
+      "description": "Internet for selected apps through a USB network adapter, an LTE stick, a USB-tethered phone or Wi-Fi",
+      "id": "mgu-uplink",
+      "kind": "tool",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "optional": true,
+      "requires": {
+        "mgu-updater": "0.7.2"
+      },
+      "texts": {
+        "cs": {
+          "description": "Internet pro vybrané aplikace přes síťový adaptér USB, LTE modem, telefon sdílející internet přes USB nebo Wi-Fi",
+          "title": "Připojení k internetu"
+        },
+        "da": {
+          "description": "Internet til udvalgte apps via en USB-netværksadapter, en LTE-nøgle, en telefon med USB-tethering eller Wi-Fi",
+          "title": "Internetforbindelse"
+        },
+        "de": {
+          "description": "Internet für ausgewählte Apps über einen USB-Netzwerkadapter, einen LTE-Stick, ein per USB-Tethering verbundenes Telefon oder Wi-Fi",
+          "title": "Internet-Uplink"
+        },
+        "el": {
+          "description": "Internet για επιλεγμένες εφαρμογές μέσω προσαρμογέα δικτύου USB, USB stick LTE, τηλεφώνου που μοιράζεται τη σύνδεσή του μέσω USB ή δικτύου Wi-Fi",
+          "title": "Σύνδεση Internet"
+        },
+        "es": {
+          "description": "Internet para las apps seleccionadas mediante un adaptador de red USB, un módem LTE, un móvil con conexión compartida por USB o una red Wi-Fi",
+          "title": "Conexión a Internet"
+        },
+        "es-US": {
+          "description": "Internet para las apps seleccionadas mediante un adaptador de red USB, un módem LTE, un teléfono con conexión compartida por USB o una red Wi-Fi",
+          "title": "Conexión a Internet"
+        },
+        "fi": {
+          "description": "Internet valituille sovelluksille USB-verkkosovittimen, LTE-tikun, USB:llä internetyhteyttä jakavan puhelimen tai Wi-Fin kautta",
+          "title": "Internet-yhteys"
+        },
+        "fr": {
+          "description": "Internet pour certaines apps via un adaptateur réseau USB, une clé LTE, un téléphone en partage de connexion USB ou le Wi-Fi",
+          "title": "Accès Internet"
+        },
+        "fr-CA": {
+          "description": "Internet pour certaines applis via un adaptateur réseau USB, une clé LTE, un cellulaire en partage de connexion USB ou le Wi-Fi",
+          "title": "Accès Internet"
+        },
+        "he": {
+          "description": "אינטרנט לאפליקציות נבחרות דרך מתאם רשת USB, מודם LTE, טלפון בשיתוף USB או Wi-Fi",
+          "title": "חיבור לאינטרנט"
+        },
+        "hu": {
+          "description": "Internet a kiválasztott alkalmazásoknak USB-hálózati adapteren, LTE-modemen, USB-n csatlakoztatott telefonon vagy Wi-Fi-n keresztül",
+          "title": "Internetkapcsolat"
+        },
+        "id": {
+          "description": "Internet untuk aplikasi terpilih melalui adaptor jaringan USB, modem LTE, ponsel dengan tethering USB, atau Wi-Fi",
+          "title": "Koneksi internet"
+        },
+        "it": {
+          "description": "Internet per le app selezionate tramite un adattatore di rete USB, una chiavetta LTE, un telefono in tethering USB o il Wi-Fi",
+          "title": "Connessione Internet"
+        },
+        "ja": {
+          "description": "USB ネットワークアダプター、LTE スティック、USB テザリングしたスマートフォン、または Wi-Fi を通じて、選択したアプリにインターネットを提供します",
+          "title": "インターネット接続"
+        },
+        "ko": {
+          "description": "USB 네트워크 어댑터, LTE 동글, USB 테더링 휴대폰 또는 Wi-Fi를 통해 선택한 앱에 인터넷을 제공합니다",
+          "title": "인터넷 연결"
+        },
+        "nb": {
+          "description": "Internett for utvalgte apper via en USB-nettverksadapter, en LTE-pinne, en telefon som deler internett via USB, eller Wi-Fi",
+          "title": "Internettilkobling"
+        },
+        "nl": {
+          "description": "Internet voor geselecteerde apps via een USB-netwerkadapter, een LTE-stick, een via USB-tethering verbonden telefoon of Wi-Fi",
+          "title": "Internet-uplink"
+        },
+        "pl": {
+          "description": "Internet dla wybranych aplikacji przez kartę sieciową USB, modem LTE, telefon udostępniający internet przez USB lub Wi-Fi",
+          "title": "Łącze internetowe"
+        },
+        "pt": {
+          "description": "Internet para as apps selecionadas através de um adaptador de rede USB, uma pen LTE, um telemóvel com partilha de Internet por USB ou uma rede Wi-Fi",
+          "title": "Ligação à Internet"
+        },
+        "pt-BR": {
+          "description": "Internet para os apps selecionados por meio de um adaptador de rede USB, um modem LTE, um celular com compartilhamento de Internet via USB ou uma rede Wi-Fi",
+          "title": "Conexão à Internet"
+        },
+        "ro": {
+          "description": "Internet pentru aplicațiile selectate printr-un adaptor de rețea USB, un stick LTE, un telefon conectat prin USB sau Wi-Fi",
+          "title": "Conexiune la internet"
+        },
+        "ru": {
+          "description": "Интернет для выбранных приложений через сетевой USB-адаптер, LTE-модем, телефон в режиме USB-модема или Wi-Fi",
+          "title": "Интернет-канал"
+        },
+        "sk": {
+          "description": "Internet pre vybrané aplikácie cez sieťový USB adaptér, LTE modem, telefón pripojený cez USB alebo Wi-Fi",
+          "title": "Internetové pripojenie"
+        },
+        "sl": {
+          "description": "Internet za izbrane aplikacije prek omrežnega adapterja USB, ključka LTE, telefona, povezanega prek USB, ali Wi-Fi",
+          "title": "Internetna povezava"
+        },
+        "sv": {
+          "description": "Internet för valda appar via en USB-nätverksadapter, ett LTE-modem, en telefon med USB-delning eller Wi-Fi",
+          "title": "Internetanslutning"
+        },
+        "th": {
+          "description": "อินเทอร์เน็ตสำหรับแอปที่เลือก ผ่านอะแดปเตอร์เครือข่าย USB, ดองเกิล LTE, โทรศัพท์ที่แชร์เน็ตผ่าน USB หรือ Wi-Fi",
+          "title": "อินเทอร์เน็ต"
+        },
+        "tr": {
+          "description": "Seçili uygulamalara USB ağ adaptörü, LTE modem, USB ile internet paylaşan telefon veya Wi-Fi üzerinden internet sağlar",
+          "title": "İnternet bağlantısı"
+        },
+        "uk": {
+          "description": "Інтернет для вибраних програм через мережевий USB-адаптер, LTE-модем, телефон у режимі USB-модема або Wi-Fi",
+          "title": "Інтернет-канал"
+        },
+        "vi": {
+          "description": "Internet cho các ứng dụng được chọn qua bộ chuyển đổi mạng USB, USB LTE, điện thoại chia sẻ mạng qua USB hoặc Wi-Fi",
+          "title": "Kết nối Internet"
+        },
+        "zh-CN": {
+          "description": "通过 USB 网卡、LTE 上网卡、USB 共享网络的手机或 Wi-Fi，为选定的应用提供互联网连接",
+          "title": "互联网连接"
+        },
+        "zh-TW": {
+          "description": "透過 USB 網路卡、LTE 網卡、以 USB 網路共用的手機或 Wi-Fi，為選定的應用程式提供網際網路",
+          "title": "網際網路連線"
+        }
+      },
+      "title": "Internet uplink",
+      "version": "0.7.13"
+    },
+    {
+      "artifact": {
+        "name": "vizualyse-steam@0.4.0.tgz",
+        "sha256": "3719af147d3d2209f9e5fa93de0993a3c95f8df9ccc2f5f7e990c6d227f5eeb6",
+        "size": 531211774,
+        "url": "https://github.com/Vizualyse/idrive-apps/releases/download/vizualyse-steam%400.4.0/vizualyse-steam%400.4.0.tgz"
+      },
+      "id": "vizualyse-steam",
+      "kind": "tool",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.0",
+        "mgu-python": "1.0.0",
+        "mgu-render": "0.6.11",
+        "vizualyse-bus": "0.1.0"
+      },
+      "title": "Steam",
+      "uninstallable": true,
+      "version": "0.4.0"
+    },
+    {
+      "artifact": {
+        "name": "vizualyse_steam@0.2.1.tgz",
+        "sha256": "18b00da11c10fa19b548e871ef542b9786eee22ccd6bddd3b9f61339d77d801a",
+        "size": 42638,
+        "url": "https://github.com/Vizualyse/idrive-apps/releases/download/vizualyse_steam%400.2.1/vizualyse_steam%400.2.1.tgz"
+      },
+      "build": "unit",
+      "description": "Steam: plays Windows games from your Steam library on the car (the vizualyse-steam tool), shows the phone link and QR code for signing in and installing, and shows or hides the game on the central screen",
+      "id": "vizualyse_steam",
+      "kind": "app",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "vizualyse-steam": "0.3.0"
+      },
+      "title": "Steam",
+      "uninstallable": true,
+      "version": "0.2.1"
     }
-  ]
+  ],
+  "schema": 2
 }

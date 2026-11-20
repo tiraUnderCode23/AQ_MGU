@@ -1,0 +1,1363 @@
+{
+  "as_of": "2026-11-20",
+  "components": [
+    {
+      "artifact": {
+        "name": "app-privacy@1.7.2.tgz",
+        "sha256": "eea01214be305cec03a9cb8abeefa2ab543693376ab16a8d9639eb55e5191c5b",
+        "size": 19586,
+        "url": "https://github.com/robertnisipeanu/mgu-store/releases/download/app-privacy%401.7.2/app-privacy%401.7.2.tgz"
+      },
+      "build_requires": {},
+      "category": "tool",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "Keeps our apps out of the head unit's backend app reporting and restarts them after a crash",
+      "icon": null,
+      "id": "app-privacy",
+      "image_count": 0,
+      "images": [],
+      "kind": "tool",
+      "license": "GPL-3.0-or-later",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-deploy": "0.6.3"
+      },
+      "source_path": null,
+      "source_repository": "robertnisipeanu/mgu-store",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "App privacy",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "https://github.com/robertnisipeanu/mgu-store/blob/3ecfafd4b6b2492c1776f53e3b74add5653c5c61/README.md",
+      "variant_key": "release:app-privacy@1.7.2",
+      "version": "1.7.2"
+    },
+    {
+      "artifact": {
+        "name": "aurelm_apex_chase@1.0.0.tgz",
+        "sha256": "21c78f14db74f9e08210862fa16d100e9af010244933c769bb9083764267c02b",
+        "size": 570128,
+        "url": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/packages/aurelm_apex_chase@1.0.0.tgz"
+      },
+      "build_requires": {},
+      "category": "game",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "A maze chase in a city at night, drawn by the GPU renderer at 60 fps: the M car collects the fuel drops while four electric cars hunt it; a NITRO can drains their batteries. iDrive controller or swipes. Parked only.",
+      "icon": "docs/assets/apps/aurelm_apex_chase/icon.png",
+      "id": "aurelm_apex_chase",
+      "image_count": 2,
+      "images": [
+        "docs/assets/apps/aurelm_apex_chase/screen_1.png",
+        "docs/assets/apps/aurelm_apex_chase/screen_2.png"
+      ],
+      "kind": "app",
+      "license": "NOT ESTABLISHED from root LICENSE / LICENSE.md",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {},
+      "source_path": null,
+      "source_repository": "aurelmarius/bmw-games",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "title": "Apex Chase",
+      "upstream_artifact_sha256": "21c78f14db74f9e08210862fa16d100e9af010244933c769bb9083764267c02b",
+      "upstream_readme": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md",
+      "variant_key": "release:aurelm_apex_chase@1.0.0",
+      "version": "1.0.0"
+    },
+    {
+      "artifact": {
+        "name": "aurelm_blackjack@1.0.1.tgz",
+        "sha256": "128e7261e22a43d3d441c998a694a3891cc171cec16d20aa1740bcfd5b6c6fd5",
+        "size": 573880,
+        "url": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/packages/aurelm_blackjack@1.0.1.tgz"
+      },
+      "build_requires": {},
+      "category": "game",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "Casino blackjack for play credits, drawn by the GPU renderer at 60 fps: a felt table with a leather rail, cards dealt from the shoe, chips, six decks, 3 to 2, double, split, insurance, a strategy hint, statistics. iDrive controller or touch. Parked only.",
+      "icon": "docs/assets/apps/aurelm_blackjack/icon.png",
+      "id": "aurelm_blackjack",
+      "image_count": 2,
+      "images": [
+        "docs/assets/apps/aurelm_blackjack/screen_1.png",
+        "docs/assets/apps/aurelm_blackjack/screen_2.png"
+      ],
+      "kind": "app",
+      "license": "NOT ESTABLISHED from root LICENSE / LICENSE.md",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {},
+      "source_path": null,
+      "source_repository": "aurelmarius/bmw-games",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "title": "Blackjack",
+      "upstream_artifact_sha256": "128e7261e22a43d3d441c998a694a3891cc171cec16d20aa1740bcfd5b6c6fd5",
+      "upstream_readme": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md",
+      "variant_key": "release:aurelm_blackjack@1.0.1",
+      "version": "1.0.1"
+    },
+    {
+      "artifact": {
+        "name": "aurelm_lap_record@1.0.0.tgz",
+        "sha256": "f3923efc0a55b9b08a1feb34ff8583de2a320d64a6472e26ce6e37539bef0b31",
+        "size": 574607,
+        "url": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/packages/aurelm_lap_record@1.0.0.tgz"
+      },
+      "build_requires": {},
+      "category": "game",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "Time trial on a circuit seen from above, the camera on the car: the knob is the steering wheel, lap after lap against your best and its ghost, the gap live, sectors in purple, green and yellow. Two circuits, kerbs, gravel, tyre walls, grandstands, tyre smoke and marks. GPU renderer. Parked only.",
+      "icon": "docs/assets/apps/aurelm_lap_record/icon.png",
+      "id": "aurelm_lap_record",
+      "image_count": 2,
+      "images": [
+        "docs/assets/apps/aurelm_lap_record/screen_1.png",
+        "docs/assets/apps/aurelm_lap_record/screen_2.png"
+      ],
+      "kind": "app",
+      "license": "NOT ESTABLISHED from root LICENSE / LICENSE.md",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {},
+      "source_path": null,
+      "source_repository": "aurelmarius/bmw-games",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "title": "Lap Record",
+      "upstream_artifact_sha256": "f3923efc0a55b9b08a1feb34ff8583de2a320d64a6472e26ce6e37539bef0b31",
+      "upstream_readme": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md",
+      "variant_key": "release:aurelm_lap_record@1.0.0",
+      "version": "1.0.0"
+    },
+    {
+      "artifact": {
+        "name": "aurelm_lucky_sevens@1.1.0.tgz",
+        "sha256": "e5ab4ccce1f2f9159eaba91c251caa3c2485b4daf08ee812517000303557708a",
+        "size": 573862,
+        "url": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/packages/aurelm_lucky_sevens@1.1.0.tgz"
+      },
+      "build_requires": {},
+      "category": "game",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "A five reel slot machine for play credits, drawn by the GPU renderer at 60 fps: glossy symbols, reels that bounce to a stop, ten paylines, WILD, free spins, a progressive jackpot, statistics. iDrive controller or touch. Parked only.",
+      "icon": "docs/assets/apps/aurelm_lucky_sevens/icon.png",
+      "id": "aurelm_lucky_sevens",
+      "image_count": 3,
+      "images": [
+        "docs/assets/apps/aurelm_lucky_sevens/screen_1.png",
+        "docs/assets/apps/aurelm_lucky_sevens/screen_2.png",
+        "docs/assets/apps/aurelm_lucky_sevens/screen_3.png"
+      ],
+      "kind": "app",
+      "license": "NOT ESTABLISHED from root LICENSE / LICENSE.md",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {},
+      "source_path": null,
+      "source_repository": "aurelmarius/bmw-games",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "title": "Lucky Sevens",
+      "upstream_artifact_sha256": "e5ab4ccce1f2f9159eaba91c251caa3c2485b4daf08ee812517000303557708a",
+      "upstream_readme": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md",
+      "variant_key": "release:aurelm_lucky_sevens@1.1.0",
+      "version": "1.1.0"
+    },
+    {
+      "artifact": {
+        "name": "aurelm_pinball@1.0.1.tgz",
+        "sha256": "3be0eccdcb00e908dc45d4c9597a56a3cd2e3be1a5d35218c2782aba8e50a374",
+        "size": 577802,
+        "url": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/packages/aurelm_pinball@1.0.1.tgz"
+      },
+      "build_requires": {},
+      "category": "game",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "A pinball table on the circuit: wheels for bumpers, the CHICANE ramp, the PIT LANE, the M-POWER targets and SAFETY CAR MULTIBALL, seen in perspective with real ball physics; drawn by the GPU renderer at 60 fps. Flippers on the controller or a finger on each half of the table. Parked only.",
+      "icon": "docs/assets/apps/aurelm_pinball/icon.png",
+      "id": "aurelm_pinball",
+      "image_count": 2,
+      "images": [
+        "docs/assets/apps/aurelm_pinball/screen_1.png",
+        "docs/assets/apps/aurelm_pinball/screen_2.png"
+      ],
+      "kind": "app",
+      "license": "NOT ESTABLISHED from root LICENSE / LICENSE.md",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {},
+      "source_path": null,
+      "source_repository": "aurelmarius/bmw-games",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "title": "M Pinball",
+      "upstream_artifact_sha256": "3be0eccdcb00e908dc45d4c9597a56a3cd2e3be1a5d35218c2782aba8e50a374",
+      "upstream_readme": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md",
+      "variant_key": "release:aurelm_pinball@1.0.1",
+      "version": "1.0.1"
+    },
+    {
+      "artifact": {
+        "name": "aurelm_pit_wall@1.0.0.tgz",
+        "sha256": "63053576847bc45d1a76a43d77cc11cf33a7d1d4f64307eb8a48de6bc952de31",
+        "size": 565262,
+        "url": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/packages/aurelm_pit_wall@1.0.0.tgz"
+      },
+      "build_requires": {},
+      "category": "game",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "Break the advertising panels off the pit wall: a night race scene drawn by the GPU renderer at 60 fps, the ball on an M front wing, start lights, combos and power-ups. iDrive controller or touch. Parked only.",
+      "icon": "docs/assets/apps/aurelm_pit_wall/icon.png",
+      "id": "aurelm_pit_wall",
+      "image_count": 1,
+      "images": [
+        "docs/assets/apps/aurelm_pit_wall/screen_1.png"
+      ],
+      "kind": "app",
+      "license": "NOT ESTABLISHED from root LICENSE / LICENSE.md",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {},
+      "source_path": null,
+      "source_repository": "aurelmarius/bmw-games",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "title": "Pit Wall",
+      "upstream_artifact_sha256": "63053576847bc45d1a76a43d77cc11cf33a7d1d4f64307eb8a48de6bc952de31",
+      "upstream_readme": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md",
+      "variant_key": "release:aurelm_pit_wall@1.0.0",
+      "version": "1.0.0"
+    },
+    {
+      "artifact": {
+        "name": "aurelm_ridge_duel@1.0.1.tgz",
+        "sha256": "2c6d8790aa914dd935f0d96035a2616b0317473d87f4797e591d1004a548bcc9",
+        "size": 577789,
+        "url": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/packages/aurelm_ridge_duel@1.0.1.tgz"
+      },
+      "build_requires": {},
+      "category": "game",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "Two armed cars on hills at dusk, a turn each: aim with the knob, hold for power, fire. Ground that shells bite into, wind, four kinds of shell, a rival aimed by the game. Your car: a sport sedan (agile) or a performance SUV (armoured), in your colour. GPU renderer. Parked only.",
+      "icon": "docs/assets/apps/aurelm_ridge_duel/icon.png",
+      "id": "aurelm_ridge_duel",
+      "image_count": 3,
+      "images": [
+        "docs/assets/apps/aurelm_ridge_duel/screen_1.png",
+        "docs/assets/apps/aurelm_ridge_duel/screen_2.png",
+        "docs/assets/apps/aurelm_ridge_duel/screen_3.png"
+      ],
+      "kind": "app",
+      "license": "NOT ESTABLISHED from root LICENSE / LICENSE.md",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {},
+      "source_path": null,
+      "source_repository": "aurelmarius/bmw-games",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "title": "Ridge Duel",
+      "upstream_artifact_sha256": "2c6d8790aa914dd935f0d96035a2616b0317473d87f4797e591d1004a548bcc9",
+      "upstream_readme": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md",
+      "variant_key": "release:aurelm_ridge_duel@1.0.1",
+      "version": "1.0.1"
+    },
+    {
+      "artifact": {
+        "name": "aurelm_snake@1.0.0.tgz",
+        "sha256": "bc2e4a76023e0b2a778e722d69aed4ad90a9b7eb21324d624f13fd54ef61c014",
+        "size": 557582,
+        "url": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/packages/aurelm_snake@1.0.0.tgz"
+      },
+      "build_requires": {},
+      "category": "game",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "Snake on the central display, drawn by the GPU renderer at 60 fps: steer with the iDrive controller (push or turn) or swipe on the screen. Parked only.",
+      "icon": "docs/assets/apps/aurelm_snake/icon.png",
+      "id": "aurelm_snake",
+      "image_count": 1,
+      "images": [
+        "docs/assets/apps/aurelm_snake/screen_1.png"
+      ],
+      "kind": "app",
+      "license": "NOT ESTABLISHED from root LICENSE / LICENSE.md",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {},
+      "source_path": null,
+      "source_repository": "aurelmarius/bmw-games",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "title": "Snake",
+      "upstream_artifact_sha256": "bc2e4a76023e0b2a778e722d69aed4ad90a9b7eb21324d624f13fd54ef61c014",
+      "upstream_readme": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md",
+      "variant_key": "release:aurelm_snake@1.0.0",
+      "version": "1.0.0"
+    },
+    {
+      "artifact": {
+        "name": "aurelm_solitaire@1.0.0.tgz",
+        "sha256": "742ed7f80b4169341a68675aa226b445398f24898f39906f53e6358aae980c3e",
+        "size": 570552,
+        "url": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/packages/aurelm_solitaire@1.0.0.tgz"
+      },
+      "build_requires": {},
+      "category": "game",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "Klondike solitaire drawn by the GPU renderer at 60 fps: a felt card table, cards that fly, flip and bounce home. Tap or press for the best move, drag cards, draw one or three, undo, hint, auto finish, statistics. Parked only.",
+      "icon": "docs/assets/apps/aurelm_solitaire/icon.png",
+      "id": "aurelm_solitaire",
+      "image_count": 2,
+      "images": [
+        "docs/assets/apps/aurelm_solitaire/screen_1.png",
+        "docs/assets/apps/aurelm_solitaire/screen_2.png"
+      ],
+      "kind": "app",
+      "license": "NOT ESTABLISHED from root LICENSE / LICENSE.md",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {},
+      "source_path": null,
+      "source_repository": "aurelmarius/bmw-games",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "title": "Solitaire",
+      "upstream_artifact_sha256": "742ed7f80b4169341a68675aa226b445398f24898f39906f53e6358aae980c3e",
+      "upstream_readme": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md",
+      "variant_key": "release:aurelm_solitaire@1.0.0",
+      "version": "1.0.0"
+    },
+    {
+      "artifact": {
+        "name": "aurelm_street_siege@1.1.0.tgz",
+        "sha256": "2963f545b959e9d009a68bb19edcf0ae0fce5b53cff3768f1341f4911d6fc49e",
+        "size": 576692,
+        "url": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/packages/aurelm_street_siege@1.1.0.tgz"
+      },
+      "build_requires": {},
+      "category": "game",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "Defend the M garage: cars storm the town by night and the M car stops them with its roof cannon. Five districts in turn (the yard, the docks, the warehouses, the parking, the scrapyard) laid out as mazes with wide streets: tyres, containers, warehouses, fences, pallets, wrecks, water, oil; power-ups; drawn by the GPU renderer at 60 fps. Parked only.",
+      "icon": "docs/assets/apps/aurelm_street_siege/icon.png",
+      "id": "aurelm_street_siege",
+      "image_count": 2,
+      "images": [
+        "docs/assets/apps/aurelm_street_siege/screen_1.png",
+        "docs/assets/apps/aurelm_street_siege/screen_2.png"
+      ],
+      "kind": "app",
+      "license": "NOT ESTABLISHED from root LICENSE / LICENSE.md",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {},
+      "source_path": null,
+      "source_repository": "aurelmarius/bmw-games",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "title": "Street Siege",
+      "upstream_artifact_sha256": "2963f545b959e9d009a68bb19edcf0ae0fce5b53cff3768f1341f4911d6fc49e",
+      "upstream_readme": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md",
+      "variant_key": "release:aurelm_street_siege@1.1.0",
+      "version": "1.1.0"
+    },
+    {
+      "artifact": {
+        "name": "aurelm_track_defender@1.0.0.tgz",
+        "sha256": "14f972b3cd7e41e0addff451164226b90cf25ff69f27a71d63b2449018dec378",
+        "size": 564807,
+        "url": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/packages/aurelm_track_defender@1.0.0.tgz"
+      },
+      "build_requires": {},
+      "category": "game",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "Arcade shooter on the central display, drawn by the GPU renderer at 60 fps: drones attack the track in waves, the M car shoots them down. iDrive controller or touch. Parked only.",
+      "icon": "docs/assets/apps/aurelm_track_defender/icon.png",
+      "id": "aurelm_track_defender",
+      "image_count": 1,
+      "images": [
+        "docs/assets/apps/aurelm_track_defender/screen_1.png"
+      ],
+      "kind": "app",
+      "license": "NOT ESTABLISHED from root LICENSE / LICENSE.md",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {},
+      "source_path": null,
+      "source_repository": "aurelmarius/bmw-games",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "title": "Track Defender",
+      "upstream_artifact_sha256": "14f972b3cd7e41e0addff451164226b90cf25ff69f27a71d63b2449018dec378",
+      "upstream_readme": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/README.md",
+      "variant_key": "release:aurelm_track_defender@1.0.0",
+      "version": "1.0.0"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "game",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Falling-block puzzle. Play only while stationary. Manual pause, next piece, ghost and local high score.",
+      "icon": "docs/assets/apps/bimmer_blocks/icon.png",
+      "id": "bimmer_blocks",
+      "id8_limitations": [
+        "Original AppStudio 1.1.0 declares ID7 only; AQ 1.1.1 is separately derived, with offline ID8 evidence and no publisher claim.",
+        "Actual target SDK members and the native renderer protocol/application area must exist. Test doubles are not evidence of target availability.",
+        "Unknown/stale speed, read errors or provider loss pause Bimmer Blocks. No game operation is authorized by a cached stationary value on ID8.",
+        "If a getter never settles, it retains its slot and the game remains paused; no unbounded retry queue is created.",
+        "Vehicle Pass values are personal manual records, not live pressures, verified parts recommendations or CBS updates.",
+        "Target installation, registration and physical UI/controller/speed behavior have not been observed."
+      ],
+      "image_count": 0,
+      "images": [],
+      "kind": "app",
+      "license": "MIT for original App Studio custom code; retain drawing-kit, font and third-party notices",
+      "live_install_status": "NOT OBSERVED",
+      "local_source_provenance": "data/appstudio-source-imports-20261119.json",
+      "requires": {
+        "mgu-render": "0.6.24"
+      },
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
+      "source_git_commit": null,
+      "source_origin_path": "apps/_sources/app-studio-custom/projects/apps/apps/bimmer_blocks",
+      "source_path": "apps/_ports/appstudio-idrive8/apps/bimmer_blocks",
+      "source_port": {
+        "id": "appstudio-idrive8",
+        "path": "apps/_ports/appstudio-idrive8",
+        "provenance": "apps/_ports/appstudio-idrive8/AQ_PORT.json",
+        "revision": 1,
+        "source_metadata": "apps/_ports/appstudio-idrive8/AQ_PORT.json"
+      },
+      "source_repository": null,
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Bimmer Blocks",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/app-studio-custom/README-DE-EN.txt",
+      "upstream_version": "1.1.0",
+      "variant_key": "source:bimmer_blocks@1.1.1",
+      "version": "1.1.1"
+    },
+    {
+      "artifact": {},
+      "build_requires": {},
+      "category": "tool",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Draws every app's layers on the instrument cluster and the HUD, sharing the display slots and one upload budget",
+      "icon": null,
+      "id": "cluster-render",
+      "image_count": 0,
+      "images": [],
+      "kind": "tool",
+      "license": "GPL-3.0-or-later with per-file/component notices",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-deploy": "0.4.0"
+      },
+      "source_path": "tools/_released/cluster-render",
+      "source_repository": "robertnisipeanu/idrive-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Cluster renderer",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "https://github.com/robertnisipeanu/idrive-apps/blob/8de5d4999929be14732882afd81beb7382edb82f/README.md",
+      "variant_key": "source:cluster-render@0.6.9",
+      "version": "0.6.9"
+    },
+    {
+      "artifact": {},
+      "build_requires": {},
+      "category": "game",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Короткие и длинные нарды: вдвоём или с компьютером.",
+      "icon": "docs/assets/apps/dk_backgammon/icon.png",
+      "id": "dk_backgammon",
+      "image_count": 0,
+      "images": [],
+      "kind": "app",
+      "license": "GPL-3.0; see original LICENSE",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {},
+      "source_path": "apps/_sources/mistergahan-mgu-backgammon/apps/dk_backgammon",
+      "source_repository": "mistergahan/mgu-backgammon",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "title": "Нарды",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/mistergahan-mgu-backgammon/README.md",
+      "variant_key": "source:dk_backgammon@0.1.1",
+      "version": "0.1.1"
+    },
+    {
+      "artifact": {},
+      "build_requires": {},
+      "category": "game",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Тетрис для iDrive 7: семь фигур, уровни, рекорд и сохранение.",
+      "icon": "docs/assets/apps/dk_tetris/icon.png",
+      "id": "dk_tetris",
+      "image_count": 0,
+      "images": [],
+      "kind": "app",
+      "license": "GPL-3.0; see original LICENSE",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {},
+      "source_path": "apps/_sources/mistergahan-mgu-backgammon/apps/dk_tetris",
+      "source_repository": "mistergahan/mgu-backgammon",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "title": "Тетрис",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/mistergahan-mgu-backgammon/README.md",
+      "variant_key": "source:dk_tetris@0.1.1",
+      "version": "0.1.1"
+    },
+    {
+      "artifact": {
+        "name": "doodle-gpu@1.0.0.tgz",
+        "sha256": "877fa863a352a59d29853423273b4291d80f36f8385801d98a10c7f5cc7e4a52",
+        "size": 87513,
+        "url": "https://github.com/kxrxh/doodle-jump-mgu/releases/download/v0.9.0/doodle-gpu@1.0.0.tgz"
+      },
+      "build_requires": {},
+      "category": "tool",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "Adds textured game scenes to the Store renderer",
+      "icon": null,
+      "id": "doodle-gpu",
+      "image_count": 0,
+      "images": [],
+      "kind": "tool",
+      "license": "MIT (root license; component notices also apply)",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-render": "0.6.23"
+      },
+      "source_path": null,
+      "source_repository": "kxrxh/doodle-jump-mgu",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "title": "Doodle Jump GPU support",
+      "upstream_artifact_sha256": "877fa863a352a59d29853423273b4291d80f36f8385801d98a10c7f5cc7e4a52",
+      "upstream_readme": "https://raw.githubusercontent.com/kxrxh/doodle-jump-mgu/b3335710a22df83d415d0511cd6a5ac7e3be83ea/README.md",
+      "variant_key": "release:doodle-gpu@1.0.0",
+      "version": "1.0.0"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "game",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Doom (Freedoom: Phase 1) on the iDrive. Main menu with all settings; the game drawn in full resolution across the whole screen, on the controller; BACK returns to the menu and saves",
+      "icon": "docs/assets/apps/doom/icon.png",
+      "id": "doom",
+      "image_count": 2,
+      "images": [
+        "docs/assets/apps/doom/preview-01.png",
+        "docs/assets/apps/doom/screen_2.png"
+      ],
+      "kind": "app",
+      "license": "MIT",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "idrive7-renderd": "2.1.18",
+        "mgu-inputgate": "1.1.0"
+      },
+      "source_path": "apps/_sources/idrive7-apps/apps/doom",
+      "source_repository": "cauliflowermossgrape/idrive7-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Doom",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/idrive7-apps/README.md",
+      "variant_key": "source:doom@1.7.22",
+      "version": "1.7.22"
+    },
+    {
+      "artifact": {},
+      "build_requires": {},
+      "category": "game",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Six games in one controller-first arcade, with shared menus, progress and named records",
+      "icon": "docs/assets/apps/iabadia_m_arcade/icon.png",
+      "id": "iabadia_m_arcade",
+      "image_count": 3,
+      "images": [
+        "docs/assets/apps/iabadia_m_arcade/screen_1.gif",
+        "docs/assets/apps/iabadia_m_arcade/screen_2.png",
+        "docs/assets/apps/iabadia_m_arcade/screen_3.png"
+      ],
+      "kind": "app",
+      "license": "GPL-3.0-or-later; retain MIT drawing-kit and SIL OFL font notices",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-render": "0.6.9"
+      },
+      "source_path": "apps/_sources/iabadia-idrive-games/apps/iabadia_m_arcade",
+      "source_repository": "iAbadia/idrive-games",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "title": "M Arcade",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/iabadia-idrive-games/apps/iabadia_m_arcade/README.md",
+      "variant_key": "source:iabadia_m_arcade@0.1.3",
+      "version": "0.1.3"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.4.0"
+      },
+      "category": "tool",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "The apps' own GPU renderer (mgu-render): draws them at 60 fps, beside the MGU Store's Renderer; installed with the apps (iDrive 7 and iDrive 8)",
+      "icon": null,
+      "id": "idrive7-renderd",
+      "image_count": 0,
+      "images": [],
+      "kind": "tool",
+      "license": "MIT; retain per-component and third-party notices",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-deploy": "0.6.1"
+      },
+      "source_path": "apps/_sources/idrive7-apps/kit/renderd/prebuilt",
+      "source_repository": "cauliflowermossgrape/idrive7-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "GPU renderer",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/idrive7-apps/kit/renderd/README.md",
+      "variant_key": "source:idrive7-renderd@2.1.19",
+      "version": "2.1.19"
+    },
+    {
+      "artifact": {
+        "name": "jap-moonride@0.3.4.tgz",
+        "sha256": "ef426b9b367c170becf76899306d584d899e34be4ef879aee71de04898dd24fb",
+        "size": 588700,
+        "url": "https://github.com/JustAnotherPU/moonride/releases/download/catalog/jap-moonride@0.3.4.tgz"
+      },
+      "build_requires": {},
+      "category": "tool",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "Moonride's background service: pairing, launch, the H.264/HEVC decoder (Intel MSDK) into mgu-render, the car's speakers, USB pads",
+      "icon": null,
+      "id": "jap-moonride",
+      "image_count": 0,
+      "images": [],
+      "kind": "tool",
+      "license": "GPL-3.0 (root text; per-file license choice retained)",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "jap-node22": "22.23.4",
+        "mgu-deploy": "0.7.0"
+      },
+      "source_path": null,
+      "source_repository": "JustAnotherPU/moonride",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "title": "Moonride streaming service",
+      "upstream_artifact_sha256": "ef426b9b367c170becf76899306d584d899e34be4ef879aee71de04898dd24fb",
+      "upstream_readme": "https://raw.githubusercontent.com/JustAnotherPU/moonride/1a8e89f99ca17a95ff428b8959dcf379077143db/README.md",
+      "variant_key": "release:jap-moonride@0.3.4",
+      "version": "0.3.4"
+    },
+    {
+      "artifact": {
+        "name": "jap-node22@22.23.4.tgz",
+        "sha256": "c62a8e2a3803b858b4d1020cb19746c8bd9ae8b753145f80c5adf7d781692743",
+        "size": 49203293,
+        "url": "https://github.com/JustAnotherPU/mgu-apps/releases/download/catalog/jap-node22@22.23.4.tgz"
+      },
+      "build_requires": {},
+      "category": "tool",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "Node.js 22 LTS for the background services of Moonride and RideTube (BMW's apps keep the system Node 8)",
+      "icon": null,
+      "id": "jap-node22",
+      "image_count": 0,
+      "images": [],
+      "kind": "tool",
+      "license": "MIT (root license; component notices also apply)",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-deploy": "0.7.0"
+      },
+      "source_path": null,
+      "source_repository": "JustAnotherPU/mgu-apps",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "title": "Node.js 22",
+      "upstream_artifact_sha256": "c62a8e2a3803b858b4d1020cb19746c8bd9ae8b753145f80c5adf7d781692743",
+      "upstream_readme": "https://raw.githubusercontent.com/JustAnotherPU/mgu-apps/42cd2242d9e75c48aace6ee40274451a88c920a7/README.md",
+      "variant_key": "release:jap-node22@22.23.4",
+      "version": "22.23.4"
+    },
+    {
+      "artifact": {
+        "name": "jap_moonride@0.3.4.tgz",
+        "sha256": "530bb9b0cb00c3f40726307d50305401fdc2ffc7a97ba1a296276d0e2f2d05a5",
+        "size": 1223456,
+        "url": "https://github.com/JustAnotherPU/moonride/releases/download/catalog/jap_moonride@0.3.4.tgz"
+      },
+      "build_requires": {},
+      "category": "app",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "Moonlight game streaming from your PC (Sunshine / Apollo / Vibepollo) on the iDrive 7 screen, parked only by default. Needs a USB gamepad (XInput) or the touchscreen.",
+      "icon": "docs/assets/apps/jap_moonride/icon.png",
+      "id": "jap_moonride",
+      "image_count": 3,
+      "images": [
+        "docs/assets/apps/jap_moonride/screen_1.png",
+        "docs/assets/apps/jap_moonride/screen_2.png",
+        "docs/assets/apps/jap_moonride/screen_3.png"
+      ],
+      "kind": "app",
+      "license": "GPL-3.0 (root text; per-file license choice retained)",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "jap-moonride": "0.3.4",
+        "mgu-render": "0.6.8"
+      },
+      "source_path": null,
+      "source_repository": "JustAnotherPU/moonride",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "title": "Moonride",
+      "upstream_artifact_sha256": "530bb9b0cb00c3f40726307d50305401fdc2ffc7a97ba1a296276d0e2f2d05a5",
+      "upstream_readme": "https://raw.githubusercontent.com/JustAnotherPU/moonride/1a8e89f99ca17a95ff428b8959dcf379077143db/README.md",
+      "variant_key": "release:jap_moonride@0.3.4",
+      "version": "0.3.4"
+    },
+    {
+      "artifact": {
+        "name": "kxrxh_doodle_jump@0.9.0.tgz",
+        "sha256": "c672603efd96172b5d6cc26d95de674c6fc0b5c74fa156145904dc0ee9294334",
+        "size": 24956148,
+        "url": "https://github.com/kxrxh/doodle-jump-mgu/releases/download/v0.9.0/kxrxh_doodle_jump@0.9.0.tgz"
+      },
+      "build_requires": {},
+      "category": "game",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "Doodle Jump for MGU7",
+      "icon": "docs/assets/apps/kxrxh_doodle_jump/icon.png",
+      "id": "kxrxh_doodle_jump",
+      "image_count": 0,
+      "images": [],
+      "kind": "app",
+      "license": "MIT (root license; component notices also apply)",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "doodle-gpu": "1.0.0",
+        "mgu-python": "1.0.3",
+        "mgu-render": "0.6.23"
+      },
+      "source_path": null,
+      "source_repository": "kxrxh/doodle-jump-mgu",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "title": "Doodle Jump",
+      "upstream_artifact_sha256": "c672603efd96172b5d6cc26d95de674c6fc0b5c74fa156145904dc0ee9294334",
+      "upstream_readme": "https://raw.githubusercontent.com/kxrxh/doodle-jump-mgu/b3335710a22df83d415d0511cd6a5ac7e3be83ea/README.md",
+      "variant_key": "release:kxrxh_doodle_jump@0.9.0",
+      "version": "0.9.0"
+    },
+    {
+      "artifact": {
+        "name": "mgu-deploy@0.8.27.tgz",
+        "sha256": "57797407580d4f0c4be234e226d4f51972002adeb1ad718e3cf2ffcd00ea36b6",
+        "size": 168362,
+        "url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-deploy%400.8.27/mgu-deploy%400.8.27.tgz"
+      },
+      "build_requires": {},
+      "category": "tool",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "Installs, updates, rolls back and removes our tools and apps on the head unit, with a snapshot before every change",
+      "icon": null,
+      "id": "mgu-deploy",
+      "image_count": 0,
+      "images": [],
+      "kind": "tool",
+      "license": "GPL-3.0-or-later",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {},
+      "source_commit": "ef2b8a0463ed1e0c3b97c0461dbf033cf45a8412",
+      "source_path": null,
+      "source_repository": "robertnisipeanu/mgu-store",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Deploy tool",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "https://github.com/robertnisipeanu/mgu-store/blob/ef2b8a0463ed1e0c3b97c0461dbf033cf45a8412/README.md",
+      "variant_key": "release:mgu-deploy@0.8.27",
+      "version": "0.8.27"
+    },
+    {
+      "artifact": {},
+      "build_requires": {},
+      "category": "tool",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Opens TCP 18878 on wlan_bridge for the GameStation phone controllers, only while GameStation listens",
+      "icon": null,
+      "id": "mgu-game-net",
+      "image_count": 0,
+      "images": [],
+      "kind": "tool",
+      "license": "GPL-3.0",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {},
+      "source_path": "apps/_sources/namels-mgu-apps-full/native/game-net",
+      "source_repository": "NamelsMissing/mgu-apps",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "title": "GameStation Phone Port",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/namels-mgu-apps-full/README.md",
+      "variant_key": "source:mgu-game-net@0.1.0",
+      "version": "0.1.0"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2"
+      },
+      "category": "tool",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Lets the apps have the iDrive controller (tabs, page buttons, settings, Doom); loads into the HMI at the next start (iDrive 7 and iDrive 8)",
+      "icon": null,
+      "id": "mgu-inputgate",
+      "image_count": 0,
+      "images": [],
+      "kind": "tool",
+      "license": "Original MIT and GPL notices retained; vsomeip interface headers retain MPL-2.0 notices; see frozen source and packaged notices.",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-deploy": "0.3.2"
+      },
+      "source_origin_path": "tools/_sources/cauli-inputgate-1.2.1/kit/renderd/inputgate/tool",
+      "source_packaging": {
+        "id": "mgu-inputgate",
+        "path": "tools/_packages/mgu-inputgate",
+        "provenance": "data/extra-tool-packaging.json",
+        "scope": "AQ notice packaging of original publisher runtime/guards/services; no runtime modification.",
+        "upstream_version": "1.2.1",
+        "version": "1.2.2"
+      },
+      "source_path": "tools/_packages/mgu-inputgate",
+      "source_repository": "cauliflowermossgrape/idrive7-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Controller gate",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "tools/_sources/cauli-inputgate-1.2.1/kit/renderd/inputgate/tool/README.md",
+      "upstream_version": "1.2.1",
+      "variant_key": "source:mgu-inputgate@1.2.2",
+      "version": "1.2.2"
+    },
+    {
+      "artifact": {
+        "name": "mgu-python@1.0.3.tgz",
+        "sha256": "98ce27bcee265ba6846446ad7867193fbdc9e0447195dbf22bcfaabf7e2f2533",
+        "size": 14441404,
+        "url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-python%401.0.3/mgu-python%401.0.3.tgz"
+      },
+      "build_requires": {},
+      "category": "tool",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "Python 3.12 for apps that build on the head unit with Python",
+      "icon": null,
+      "id": "mgu-python",
+      "image_count": 0,
+      "images": [],
+      "kind": "tool",
+      "license": "GPL-3.0-or-later",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {},
+      "source_path": null,
+      "source_repository": "robertnisipeanu/mgu-store",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Python",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "https://github.com/robertnisipeanu/mgu-store/blob/3ecfafd4b6b2492c1776f53e3b74add5653c5c61/README.md",
+      "variant_key": "release:mgu-python@1.0.3",
+      "version": "1.0.3"
+    },
+    {
+      "artifact": {
+        "name": "mgu-render@0.6.25.tgz",
+        "sha256": "73b5444307aaf7a3a1b519cb14032869f18930749284aef557a2e0bd58d3fd61",
+        "size": 103355,
+        "url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-render%400.6.25/mgu-render%400.6.25.tgz"
+      },
+      "build_requires": {},
+      "category": "tool",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "Draws apps' screens on the GPU, over the HMI or inside the app's page",
+      "icon": null,
+      "id": "mgu-render",
+      "image_count": 0,
+      "images": [],
+      "kind": "tool",
+      "license": "GPL-3.0-or-later",
+      "live_install_status": "NOT OBSERVED",
+      "mguProvides": "renderer",
+      "requires": {
+        "mgu-deploy": "0.6.9"
+      },
+      "source_path": null,
+      "source_repository": "robertnisipeanu/mgu-store",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Renderer",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "https://raw.githubusercontent.com/robertnisipeanu/mgu-store/3ecfafd4b6b2492c1776f53e3b74add5653c5c61/README.md",
+      "variant_key": "release:mgu-render@0.6.25",
+      "version": "0.6.25"
+    },
+    {
+      "artifact": {
+        "name": "mgu-render-id7-touch@1.4.0.tgz",
+        "sha256": "74606000de4c70b4e81c72f39bfc7ff5d96b89cc22706e02d8fcb2bcd612df84",
+        "size": 3499,
+        "url": "https://github.com/JustAnotherPU/ridetube/releases/download/catalog/mgu-render-id7-touch@1.4.0.tgz"
+      },
+      "build_requires": {},
+      "category": "tool",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "Lets full-screen apps (RideTube, Moonride) use the screen's left edge: both renderers get the whole screen as their touch area, so a tap on the strip where the back arrow usually is reaches the app instead of closing it. Leave such an app with the BACK or MENU button. Other apps keep the back arrow. Removing it takes effect at the next start of the head unit.",
+      "icon": null,
+      "id": "mgu-render-id7-touch",
+      "image_count": 0,
+      "images": [],
+      "kind": "tool",
+      "license": "GPL-3.0-or-later",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-deploy": "0.7.0"
+      },
+      "source_commit": "959819b9fe14dac40a46ea83a40ebc70fe7eec5e",
+      "source_path": null,
+      "source_repository": "JustAnotherPU/ridetube",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "title": "Full-width touch",
+      "upstream_artifact_sha256": "74606000de4c70b4e81c72f39bfc7ff5d96b89cc22706e02d8fcb2bcd612df84",
+      "upstream_readme": "https://github.com/JustAnotherPU/ridetube/blob/959819b9fe14dac40a46ea83a40ebc70fe7eec5e/README.md",
+      "variant_key": "release:mgu-render-id7-touch@1.4.0",
+      "version": "1.4.0"
+    },
+    {
+      "artifact": {
+        "name": "mgu-updater@0.8.51.tgz",
+        "sha256": "e38745a14fad5d34648c101e0d7eadd9a60d53fa1f4cda38462e3f77e08eeb95",
+        "size": 143205,
+        "url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-updater%400.8.51/mgu-updater%400.8.51.tgz"
+      },
+      "build_requires": {},
+      "category": "tool",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "Installs, updates and removes apps and head-unit tools from its sources",
+      "icon": null,
+      "id": "mgu-updater",
+      "image_count": 0,
+      "images": [],
+      "kind": "tool",
+      "license": "GPL-3.0-or-later",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-deploy": "0.8.4",
+        "mgu-python": "1.0.2"
+      },
+      "source_commit": "ef2b8a0463ed1e0c3b97c0461dbf033cf45a8412",
+      "source_path": null,
+      "source_repository": "robertnisipeanu/mgu-store",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Updater",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "https://github.com/robertnisipeanu/mgu-store/blob/ef2b8a0463ed1e0c3b97c0461dbf033cf45a8412/README.md",
+      "variant_key": "release:mgu-updater@0.8.51",
+      "version": "0.8.51"
+    },
+    {
+      "artifact": {
+        "name": "mgu-uplink@0.7.13.tgz",
+        "sha256": "077e3200356df726a1e653fd67db9f9a1237e22b548f946b726c6eadd0f48d28",
+        "size": 3605106,
+        "url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-uplink%400.7.13/mgu-uplink%400.7.13.tgz"
+      },
+      "build_requires": {},
+      "category": "tool",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "Internet for selected apps through a USB network adapter, an LTE stick, a USB-tethered phone or Wi-Fi",
+      "icon": null,
+      "id": "mgu-uplink",
+      "image_count": 0,
+      "images": [],
+      "kind": "tool",
+      "license": "GPL-3.0-or-later",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-updater": "0.7.2"
+      },
+      "source_commit": "ef2b8a0463ed1e0c3b97c0461dbf033cf45a8412",
+      "source_path": null,
+      "source_repository": "robertnisipeanu/mgu-store",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Internet uplink",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "https://github.com/robertnisipeanu/mgu-store/blob/ef2b8a0463ed1e0c3b97c0461dbf033cf45a8412/README.md",
+      "variant_key": "release:mgu-uplink@0.7.13",
+      "version": "0.7.13"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "game",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Offline retro games with iDrive or phone controllers, two players and in-game saves. Parked only.",
+      "icon": "docs/assets/apps/mgu_gamestation/icon.png",
+      "id": "mgu_gamestation",
+      "image_count": 0,
+      "images": [],
+      "kind": "app",
+      "license": "GPL-3.0",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "idrive7-renderd": "2.1.6",
+        "mgu-game-net": "0.1.0",
+        "mgu-inputgate": "1.0.0"
+      },
+      "source_path": "apps/_sources/namels-mgu-apps-full/apps/mgu_gamestation",
+      "source_repository": "NamelsMissing/mgu-apps",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "title": "MGU GameStation",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/namels-mgu-apps-full/README.md",
+      "variant_key": "source:mgu_gamestation@0.3.0",
+      "version": "0.3.0"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "game",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Hop across the road and the river to fill five homes, played with the iDrive controller. Parked only by default",
+      "icon": "docs/assets/apps/mx_road_hopper/icon.png",
+      "id": "mx_road_hopper",
+      "image_count": 1,
+      "images": [
+        "docs/assets/apps/mx_road_hopper/screen_1.png"
+      ],
+      "kind": "app",
+      "license": "MIT",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "cluster-render": "0.4.0"
+      },
+      "source_path": "apps/_sources/cruzen991-cluster/apps/mx_road_hopper",
+      "source_repository": "cruzen991/Cluster",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "title": "Road Hopper",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/cruzen991-cluster/README.md",
+      "variant_key": "source:mx_road_hopper@0.1.1",
+      "version": "0.1.1"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "game",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Small games for when the car is parked, played with the iDrive knob (and the touchscreen)",
+      "icon": "docs/assets/apps/parked_games/icon.png",
+      "id": "parked_games",
+      "id8_limitations": [
+        "Compatible target SDK Vehicle2 read-only member/provider required",
+        "mgu-render >= 0.6.24 native rendering, touch and application area required",
+        "ID8 controller-dependent multiplayer needs a supported renderer gate",
+        "No actual target build, registration or live installation observed"
+      ],
+      "image_count": 2,
+      "images": [
+        "docs/assets/apps/parked_games/screen_1.png",
+        "docs/assets/apps/parked_games/screen_2.png"
+      ],
+      "kind": "app",
+      "license": "MIT; retain source and bundled third-party notices",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-render": "0.6.24"
+      },
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
+      "source_origin_path": "apps/_sources/maxxxfoka-idrive7games/apps/parked_games",
+      "source_path": "apps/_ports/maxxxfoka-idrive8/apps/parked_games",
+      "source_port": {
+        "id": "maxxxfoka-idrive8",
+        "path": "apps/_ports/maxxxfoka-idrive8",
+        "provenance": "apps/_ports/maxxxfoka-idrive8/PROVENANCE.json",
+        "revision": "aq-parked-games-id8-1",
+        "source_metadata": "apps/_ports/maxxxfoka-idrive8/PORT.json"
+      },
+      "source_repository": "MaxxxFoka/IDRIVE7GAMES",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Parked Games",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/maxxxfoka-idrive7games/README.md",
+      "upstream_version": "0.2.2",
+      "variant_key": "source:parked_games@0.2.3",
+      "version": "0.2.3"
+    },
+    {
+      "artifact": {},
+      "build_requires": {},
+      "category": "tool",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "EXPERIMENTAL. The shared bus the Vizualyse tools use to ask each other to switch things off while they need the car's resources (Steam pauses Cast's cluster and HUD video while a game runs). Mosquitto 2.0.21 (MQTT) on a Unix socket only root's tools can reach; no network listener. Installed with the tools that use it; about 0.2 MB.",
+      "icon": null,
+      "id": "vizualyse-bus",
+      "image_count": 0,
+      "images": [],
+      "kind": "tool",
+      "license": "GPL-3.0-or-later with third-party notices",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-deploy": "0.7.0"
+      },
+      "source_path": "tools/_released/vizualyse-bus",
+      "source_repository": "Vizualyse/idrive-apps",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "title": "Vizualyse bus",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "https://github.com/Vizualyse/idrive-apps/blob/9766d42b9c1250c7e78461ea070194fcd2ec6461/README.md",
+      "variant_key": "source:vizualyse-bus@0.1.0",
+      "version": "0.1.0"
+    },
+    {
+      "artifact": {},
+      "build_requires": {},
+      "category": "tool",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "EXPERIMENTAL. Streams games from a PC running Sunshine (GameStream) to the central screen (or the cluster or the HUD) while parked, decoded on the car's GPU, with the sound through the speakers and game controllers (a wired Xbox 360-style USB pad, or the phone as a pad; no Bluetooth pads). Pair the PC and pick a game on the phone page: scan the QR code on the iDrive Moonlight page.",
+      "icon": null,
+      "id": "vizualyse-moonlight",
+      "image_count": 0,
+      "images": [],
+      "kind": "tool",
+      "license": "GPL-3.0-or-later with third-party notices",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "cluster-render": "0.4.2",
+        "mgu-deploy": "0.7.0",
+        "mgu-python": "1.0.0",
+        "mgu-render": "0.6.11"
+      },
+      "source_path": "tools/_released/vizualyse-moonlight",
+      "source_repository": "Vizualyse/idrive-apps",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "title": "Moonlight",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "https://github.com/Vizualyse/idrive-apps/blob/9766d42b9c1250c7e78461ea070194fcd2ec6461/README.md",
+      "variant_key": "source:vizualyse-moonlight@0.3.1",
+      "version": "0.3.1"
+    },
+    {
+      "artifact": {
+        "name": "vizualyse-steam@0.4.0.tgz",
+        "sha256": "3719af147d3d2209f9e5fa93de0993a3c95f8df9ccc2f5f7e990c6d227f5eeb6",
+        "size": 531211774,
+        "url": "https://github.com/Vizualyse/idrive-apps/releases/download/vizualyse-steam%400.4.0/vizualyse-steam%400.4.0.tgz"
+      },
+      "build_requires": {},
+      "category": "tool",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "",
+      "icon": null,
+      "id": "vizualyse-steam",
+      "image_count": 0,
+      "images": [],
+      "kind": "tool",
+      "license": "GPL-3.0-or-later",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-deploy": "0.7.0",
+        "mgu-python": "1.0.0",
+        "mgu-render": "0.6.11",
+        "vizualyse-bus": "0.1.0"
+      },
+      "source_commit": "5c0629b3c6d2778c5524c609d294ba1a98a47191",
+      "source_path": null,
+      "source_repository": "Vizualyse/idrive-apps",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "title": "Steam",
+      "upstream_artifact_sha256": "3719af147d3d2209f9e5fa93de0993a3c95f8df9ccc2f5f7e990c6d227f5eeb6",
+      "upstream_readme": "https://github.com/Vizualyse/idrive-apps/blob/5c0629b3c6d2778c5524c609d294ba1a98a47191/README.md",
+      "variant_key": "release:vizualyse-steam@0.4.0",
+      "version": "0.4.0"
+    },
+    {
+      "artifact": {},
+      "build_requires": {},
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Moonlight: shows the phone link and QR code for the Moonlight game streaming service, its status, and stops, quits or resumes the game streamed from a PC running Sunshine",
+      "icon": "docs/assets/apps/vizualyse_moonlight/icon.png",
+      "id": "vizualyse_moonlight",
+      "image_count": 0,
+      "images": [],
+      "kind": "app",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "vizualyse-moonlight": "0.3.0"
+      },
+      "source_path": "apps/_published/vizualyse_moonlight",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "title": "Moonlight",
+      "variant_key": "source:vizualyse_moonlight@0.3.1",
+      "version": "0.3.1"
+    },
+    {
+      "artifact": {
+        "name": "vizualyse_steam@0.2.1.tgz",
+        "sha256": "18b00da11c10fa19b548e871ef542b9786eee22ccd6bddd3b9f61339d77d801a",
+        "size": 42638,
+        "url": "https://github.com/Vizualyse/idrive-apps/releases/download/vizualyse_steam%400.2.1/vizualyse_steam%400.2.1.tgz"
+      },
+      "build_requires": {},
+      "category": "app",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "Steam: plays Windows games from your Steam library on the car (the vizualyse-steam tool), shows the phone link and QR code for signing in and installing, and shows or hides the game on the central screen",
+      "icon": "docs/assets/apps/vizualyse_steam/icon.png",
+      "id": "vizualyse_steam",
+      "image_count": 0,
+      "images": [],
+      "kind": "app",
+      "license": "GPL-3.0-or-later with third-party notices",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "vizualyse-steam": "0.3.0"
+      },
+      "source_path": null,
+      "source_repository": "Vizualyse/idrive-apps",
+      "supported_hmi": [
+        "ID7"
+      ],
+      "title": "Steam",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "https://github.com/Vizualyse/idrive-apps/blob/9766d42b9c1250c7e78461ea070194fcd2ec6461/apps/vizualyse_steam/README.md",
+      "variant_key": "release:vizualyse_steam@0.2.1",
+      "version": "0.2.1"
+    }
+  ]
+}
