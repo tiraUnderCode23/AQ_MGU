@@ -142,7 +142,9 @@ class ArefId8PortTests(unittest.TestCase):
         minimum = self.spec["requires"]["mgu-render"]
         version = lambda text: tuple(map(int, text.split(".")))
         self.assertGreaterEqual(version(minimum), (0, 6, 24))
-        render = next(row for row in json.loads((ROOT / "release/catalog.json").read_text())["components"]
+        all_feeds = (json.loads((ROOT / "release/catalog.json").read_text())["components"]
+                     + json.loads((ROOT / "mgu-repo.json").read_text())["components"])
+        render = next(row for row in all_feeds
                       if row["id"] == "mgu-render")
         self.assertGreaterEqual(version(render["version"]), version(minimum))
         self.assertTrue({"ID7", "ID8"} <= set(render["mguHmi"]))

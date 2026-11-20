@@ -1,0 +1,13 @@
+{
+  "id": "rear_comfort",
+  "version": "0.5.6",
+  "title": "Rear Comfort",
+  "description": "G12 Executive Lounge control for rear climate, comfort seats, massage, shades and entertainment",
+  "mguHmi": [
+    "ID7"
+  ],
+  "requires": {
+    "idrive7-renderd": "2.1.7",
+    "mgu-inputgate": "1.0.0"
+  }
+}

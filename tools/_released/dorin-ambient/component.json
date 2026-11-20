@@ -1,0 +1,104 @@
+{
+  "id": "dorin-ambient",
+  "kind": "tool",
+  "version": "0.2.5",
+  "title": "Ambient Drive Service",
+  "description": "Aplică regulile de culoare și păstrează setările Ambient Drive între porniri. Componentă necesară aplicației Ambient Drive.",
+  "mguHmi": [
+    "ID7"
+  ],
+  "enable": [
+    {
+      "unit": "dorin-ambient.service",
+      "target": "oapcontroller.service"
+    }
+  ],
+  "recmgr": [
+    "dorin-ambient"
+  ],
+  "restart": [
+    "dorin-ambient.service"
+  ],
+  "check": [
+    "client.js",
+    "status"
+  ],
+  "deactivate": [
+    "node",
+    "deactivate.js"
+  ],
+  "files": [
+    {
+      "path": "daemon.js",
+      "mode": "0644",
+      "sha256": "667b95d412ac10664acd120430255ab8beea0c85d6ba8f8c3773295e49cc9e2c",
+      "from": "files/daemon.js"
+    },
+    {
+      "path": "controller.js",
+      "mode": "0644",
+      "sha256": "7257aa01dd9a5ee80262ef831f4d1b8ddf4f4755bbc430e84bf23b232b43ef90",
+      "from": "files/controller.js"
+    },
+    {
+      "path": "driver.js",
+      "mode": "0644",
+      "sha256": "7aaa35cf3b13bdf3c6e527b5247bad4e28f702fa696301d4d78fe5b34e257b7d",
+      "from": "files/driver.js"
+    },
+    {
+      "path": "client.js",
+      "mode": "0644",
+      "sha256": "08b7b2322351f7f821d62cdcab0f4c86f1e9af9a146741ec99b3299ad22b4c7b",
+      "from": "files/client.js"
+    },
+    {
+      "path": "deactivate.js",
+      "mode": "0644",
+      "sha256": "f8603aa6a02495c3fc13861a3c142d4d91120413b0381b5af96ff3f566d17843",
+      "from": "files/deactivate.js"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "0644",
+      "sha256": "f6f21930bc1e0bebd60efb491ea30acd92a08b1516104193d5e3abd1124decdc",
+      "from": "files/LICENSE"
+    },
+    {
+      "path": "model.js",
+      "mode": "0644",
+      "sha256": "947c28c65f243f5cc55d9c56805c2bbb3d18f4662e57f706889589c120e28a4c",
+      "from": "files/model.js"
+    },
+    {
+      "path": "profile.json",
+      "mode": "0644",
+      "sha256": "28a550f00a2cd5d757597d311440a4ca0710cfe6feb9a8aa84d3fa268632f5dc",
+      "from": "files/profile.json"
+    },
+    {
+      "path": "settings-store.js",
+      "mode": "0644",
+      "sha256": "9d4eea811159ab50195338962b2b69bb79db72b18967fe933bc37e1fe40592fc",
+      "from": "files/settings-store.js"
+    },
+    {
+      "path": "bootstrap.js",
+      "mode": "0644",
+      "sha256": "1367c8e3dbea3d8af13f79f369b4d4224954ad190305fcc745d6309520297caa",
+      "from": "files/bootstrap.js"
+    },
+    {
+      "path": "socket-group.js",
+      "mode": "0644",
+      "sha256": "8677faa20bfcdadfb6ddb54f97306f7142e0200397a6b0a0df494d003f182e70",
+      "from": "files/socket-group.js"
+    }
+  ],
+  "units": [
+    {
+      "name": "dorin-ambient.service",
+      "from": "units/dorin-ambient.service"
+    }
+  ]
+}

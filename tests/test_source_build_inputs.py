@@ -68,7 +68,7 @@ class SourceBuildInputTests(unittest.TestCase):
         self.assertGreaterEqual(inspected_modules, 56)
 
     def test_cluster_themes_declares_its_required_renderer(self):
-        releases = read_json("release/catalog.json")["components"]
+        releases = read_json("release/catalog.json")["components"] + self.catalog
         provider = next(item for item in releases if item["id"] == "cluster-render")
         metadata = {row["id"]: row for row in read_json("data/components.json")["components"]}
         for identifier in ("cluster_themes", "idrive_hud_widgets"):

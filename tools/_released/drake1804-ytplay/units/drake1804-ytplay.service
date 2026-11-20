@@ -1,0 +1,43 @@
+[Unit]
+Description=YouTube player for the YouTube app
+# avbstreamhandler: the player looks at the sound plugin's files when it drops root, so they had better be there. An After= of a unit
+# that does not exist changes nothing.
+After=network.target mgu-uplink.service avbstreamhandler.service
+
+[Service]
+# Starts as root for the frame file, the socket and the private resolv.conf, then drops to uid 3920 for good. 3920 has no
+# account (this systemd refuses User= without one) and is in no app range; the uplink lets it out (component.json "uids").
+# One child stays root, for the sound's lock files and nothing else: locks_start in ytplay.c.
+# --boot-wait: on a cold boot those files can come later than After= can promise, and a group not held at the drop is lost until the
+# next start. So for two minutes after boot the drop waits for the first client. No Type= here: systemd counts this as started
+# at once, so a boot never waits for it.
+ExecStart=/var/opt/drake1804-ytplay/current/ytplay --uid 3920 --gid 3920 \
+  --ffmpeg /var/opt/drake1804-ytplay/current/ffmpeg \
+  --resolver "/var/opt/mgu-python/current/bin/python3 /var/opt/drake1804-ytplay/current/resolve.py --cache /var/opt/drake1804-ytplay/cache --state /var/opt/drake1804-ytplay/state --ffmpeg /var/opt/drake1804-ytplay/current/ffmpeg --qjs /var/opt/drake1804-ytplay/current/qjs" \
+  --cache /var/opt/drake1804-ytplay/cache \
+  --state /var/opt/drake1804-ytplay/state \
+  --ca-file /var/opt/mgu-python/current/ssl/cacert.pem \
+  --audio-helper /var/opt/drake1804-ytplay/current/ytaudio \
+  --boot-wait 120 \
+  --log /var/opt/drake1804-ytplay/log \
+  --log-shipper "/var/opt/mgu-python/current/bin/python3 /var/opt/drake1804-ytplay/current/logship.py" \
+  --lease /run/mgu-uplink/lease.json \
+  --resolv /run/drake1804-ytplay/resolv.conf
+# after the drop the player cannot remove a file root made in /dev/shm
+ExecStopPost=-/bin/rm -f /dev/shm/mgu-video-yt
+RuntimeDirectory=drake1804-ytplay
+Environment=SSL_CERT_FILE=/var/opt/mgu-python/current/ssl/cacert.pem
+Environment=HOME=/var/opt/drake1804-ytplay/cache
+Environment=TMPDIR=/var/opt/drake1804-ytplay/cache
+Environment=PYTHONDONTWRITEBYTECODE=1
+Nice=5
+CPUQuota=250%
+# MemoryLimit= for the cgroup v1 hierarchy, MemoryMax= for v2: a runaway decode must not starve HmiMain3D
+MemoryLimit=400M
+MemoryMax=400M
+Restart=always
+RestartSec=3
+TimeoutStopSec=5
+
+[Install]
+WantedBy=multi-user.target

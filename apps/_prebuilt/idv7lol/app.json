@@ -1,0 +1,13 @@
+{
+  "id": "idv7lol",
+  "version": "0.2.15",
+  "title": "idv7lol",
+  "description": "Your own layout on the whole instrument cluster: themes made with idv7lol Studio, drawn by the cluster itself",
+  "mguHmi": [
+    "ID7"
+  ],
+  "requires": {
+    "cluster-render": "0.6.9",
+    "mgu-deploy": "0.8.27"
+  }
+}

@@ -1,0 +1,8 @@
+This tool ships:
+
+ytplay, resolve.py, ytplay_check.js   GPL-3.0-or-later, this repository
+ffmpeg 7.1.5    LGPL-2.1-or-later, https://ffmpeg.org/releases/ffmpeg-7.1.5.tar.xz (configure line: docker/build_ffmpeg.sh)
+OpenSSL 1.1.1   OpenSSL license, linked into ffmpeg, from Ubuntu 18.04's libssl-dev
+QuickJS 2026-06-04   MIT, https://bellard.org/quickjs/
+yt-dlp 2026.10.26    Unlicense, https://github.com/yt-dlp/yt-dlp, with yt-dlp-ejs (Unlicense; bundles MIT and ISC components)
+Python 3.12.15's standard library, compiled, in python-3.12.15.zip   PSF-2.0, https://www.python.org/downloads/release/python-31215/

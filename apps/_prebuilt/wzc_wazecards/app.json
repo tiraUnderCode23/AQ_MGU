@@ -1,0 +1,13 @@
+{
+  "id": "wzc_wazecards",
+  "version": "1.0.1",
+  "title": "Waze Cards",
+  "description": "Waze's turn and arrival cards, or Waze's map, on the instrument cluster while Waze guides in CarPlay.",
+  "mguHmi": [
+    "ID7"
+  ],
+  "requires": {
+    "mgu-deploy": "0.7.0",
+    "wazecard": "1.0.0"
+  }
+}

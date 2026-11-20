@@ -1,0 +1,130 @@
+{
+  "id": "mgu-updater",
+  "kind": "tool",
+  "version": "0.8.51",
+  "title": "Updater",
+  "description": "Installs, updates and removes apps and head-unit tools from its sources",
+  "files": [
+    {
+      "path": "mgu-updater",
+      "mode": "0755",
+      "sha256": "1ab78ed2435f5ff96d0d1e4eb65b81a9ac9b9037958554ca5d504dc5c915ae49",
+      "from": "files/mgu-updater"
+    },
+    {
+      "path": "updater.js",
+      "mode": "0644",
+      "sha256": "47b6a74f0eccb68d66f8232854a132bca037dbd0874bd9991c0fbba2021ca84b",
+      "from": "files/updater.js"
+    },
+    {
+      "path": "catalog.js",
+      "mode": "0644",
+      "sha256": "f27ab259c19bccbc5349e729ca9e55a17ab0b013ac9cda108d9fd0b2fbb23c68",
+      "from": "files/catalog.js"
+    },
+    {
+      "path": "client.js",
+      "mode": "0644",
+      "sha256": "31c0e3413fa82d0e1d78cd48a331e9313b11afe4250ca7095841279438dc7048",
+      "from": "files/client.js"
+    },
+    {
+      "path": "fetch.js",
+      "mode": "0644",
+      "sha256": "8d9ae8d50f9d5845fe3e1fda4e7deb3e200e11871d163796e053af0e7e30bade",
+      "from": "files/fetch.js"
+    },
+    {
+      "path": "certs.js",
+      "mode": "0644",
+      "sha256": "15f48ae67515c2381700ce57e7c9d294e5132d714b7301fd27a481bb1418d088",
+      "from": "files/certs.js"
+    },
+    {
+      "path": "sources.js",
+      "mode": "0644",
+      "sha256": "c426a4412147efc390b58f4f2f4b59cf38d3ff2fa875407352374d79376ad46b",
+      "from": "files/sources.js"
+    },
+    {
+      "path": "tar.js",
+      "mode": "0644",
+      "sha256": "3ba85b91a80ac2107d3847826eb2c2d119909ac40564950a01fe3a60889a6f83",
+      "from": "files/tar.js"
+    },
+    {
+      "path": "login.js",
+      "mode": "0644",
+      "sha256": "1839687668062b9772dfc4ee47fe3a610b6451fcf01a4d457c284c8903350251",
+      "from": "files/login.js"
+    },
+    {
+      "path": "tokens.js",
+      "mode": "0644",
+      "sha256": "7dab3a699c4afbe91ce5425bc8ffda8c5b6169b1a6469350a1dc3d07726f90f0",
+      "from": "files/tokens.js"
+    },
+    {
+      "path": "build.js",
+      "mode": "0644",
+      "sha256": "0ad24ab39a7a62c769d86ba60cde4bbf32ed94f553cdec7a370e600f55fbff1f",
+      "from": "files/build.js"
+    },
+    {
+      "path": "proxy.js",
+      "mode": "0644",
+      "sha256": "8cc68ecc040cbca380d49bee47f5d0889476a6345e313854d60c556f274771f1",
+      "from": "files/proxy.js"
+    },
+    {
+      "path": "tunnel.js",
+      "mode": "0644",
+      "sha256": "17a92bf568b348879588b5a555f926358a198fac430524ebbb34d81769f5beff",
+      "from": "files/tunnel.js"
+    },
+    {
+      "path": "py/sitecustomize.py",
+      "mode": "0644",
+      "sha256": "3de27b3b1d02a61a12e9f8d9eaa7d5b2be28e3e420ae234f5adc5cde147eea47",
+      "from": "files/py/sitecustomize.py"
+    },
+    {
+      "path": "web.js",
+      "mode": "0644",
+      "sha256": "2e1a99f73685f04da93b4f35f62ec249bcfee13318d3ef376ab1eda9ab3af2a1",
+      "from": "files/web.js"
+    },
+    {
+      "path": "uids.js",
+      "mode": "0644",
+      "sha256": "d692c714f2b0fc5750482b23f67210d59b52917ea017815a4344304ebb9159bb",
+      "from": "files/uids.js"
+    },
+    {
+      "path": "updater.conf",
+      "mode": "0644",
+      "sha256": "bc337e801872ef37ec64444f0b7d73d913df71f619217397c5553c73e6b7e1e2",
+      "from": "files/updater.conf"
+    }
+  ],
+  "units": [
+    {
+      "name": "mgu-updater.service",
+      "runsInSafeMode": true,
+      "from": "units/mgu-updater.service"
+    }
+  ],
+  "enable": [
+    {
+      "unit": "mgu-updater.service",
+      "target": "multi-user.target"
+    }
+  ],
+  "recmgr": [
+    "mgu-updater"
+  ],
+  "restart": [],
+  "internet": true,
+  "uids": "state/internet-uids"
+}

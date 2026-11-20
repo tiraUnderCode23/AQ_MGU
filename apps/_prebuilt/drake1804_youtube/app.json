@@ -1,0 +1,14 @@
+{
+  "id": "drake1804_youtube",
+  "version": "0.1.10",
+  "title": "Bube",
+  "description": "Search and watch YouTube at 720p on the centre screen. Sound is experimental and always on",
+  "mguHmi": [
+    "ID7"
+  ],
+  "requires": {
+    "mgu-deploy": "0.7.0",
+    "mgu-render": "0.4.0",
+    "drake1804-ytplay": "0.1.16"
+  }
+}

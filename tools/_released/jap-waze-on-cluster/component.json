@@ -1,0 +1,303 @@
+{
+  "id": "jap-waze-on-cluster",
+  "kind": "tool",
+  "version": "1.2.0",
+  "title": "Waze HUD on cluster",
+  "description": "Shows the CarPlay or Android Auto map on the instrument cluster and Waze's next turn on BMW's own HUD arrows: a root helper applies the reversible carplay and aapd patches where each is supported, and the capture, running from boot, decodes the map's H.264 and draws it through the cluster renderer whenever the stream flows. Stays off while robertnisipeanu's Waze on cluster is installed",
+  "files": [
+    {
+      "path": "jap-waze-on-cluster",
+      "mode": "0755",
+      "sha256": "2930de11febb735d061f5cfe09409b22a1e5346fa70a7ff09a12f5c6dc39a940",
+      "from": "files/jap-waze-on-cluster"
+    },
+    {
+      "path": "jap-waze-on-cluster.conf",
+      "mode": "0644",
+      "sha256": "22b9dfdb090383e1a6d398c6bd375dcc963cd5ca9d704db99f48a08c64b3e1aa",
+      "from": "files/jap-waze-on-cluster.conf"
+    },
+    {
+      "path": "carplay_patch.js",
+      "mode": "0644",
+      "sha256": "002c093a09948b2eee4367db96838e5cac30fca7abea37ee24c08b4aedbaa67a",
+      "from": "files/carplay_patch.js"
+    },
+    {
+      "path": "carplay_locate.js",
+      "mode": "0644",
+      "sha256": "28dd14f3152bec09be458078def482caf63dacc2d7653c15e32357becd642cfe",
+      "from": "files/carplay_locate.js"
+    },
+    {
+      "path": "aapd_patch.js",
+      "mode": "0644",
+      "sha256": "9bc8c1ffa1e47ac6f9273963dfe4107589604cc627cd7563cbe5f9bd79008bb2",
+      "from": "files/aapd_patch.js"
+    },
+    {
+      "path": "aapd_conf.js",
+      "mode": "0644",
+      "sha256": "65481c3a59544ea0195511ca0af40a8e04f36e85dbcf7f37437f3aea907e7451",
+      "from": "files/aapd_conf.js"
+    },
+    {
+      "path": "patchd.js",
+      "mode": "0644",
+      "sha256": "40ca4465de1a9cf9207d9fbcce926879599f8ae9752d454373f54ee1194c89d3",
+      "from": "files/patchd.js"
+    },
+    {
+      "path": "conflict.js",
+      "mode": "0644",
+      "sha256": "1cc21ed3ee97e9c1143d445a4512c7326df5779ff0575c28b360a4b939972efc",
+      "from": "files/conflict.js"
+    },
+    {
+      "path": "recovery.js",
+      "mode": "0644",
+      "sha256": "fff98e4f2e3d5d009f5c3821d9ce51c354324706ec36ae81f8846341600250df",
+      "from": "files/recovery.js"
+    },
+    {
+      "path": "remount_lock.js",
+      "mode": "0644",
+      "sha256": "d914e43bfa50e4fb4c76827eb9bafecfde855d51139c323ed35419c40a23a132",
+      "from": "files/remount_lock.js"
+    },
+    {
+      "path": "recmgr_list.js",
+      "mode": "0644",
+      "sha256": "27263f6d8c3d0daa4710ce642cedb596c0aa58195b75620bd70971fa0937bbe5",
+      "from": "files/recmgr_list.js"
+    },
+    {
+      "path": "shutdown_mark.sh",
+      "mode": "0755",
+      "sha256": "b0501a623b6091c0e14ae1b99ec1230f8d1bede61c640d84433113a965a04915",
+      "from": "files/shutdown_mark.sh"
+    },
+    {
+      "path": "woc-patch.sh",
+      "mode": "0755",
+      "sha256": "33a3ec1b4f8888f869f8412435bb3495a88a2eb92a387d3be1995eef895ec30e",
+      "from": "files/woc-patch.sh"
+    },
+    {
+      "path": "dlt_capture.js",
+      "mode": "0644",
+      "sha256": "6b33da25488973abe22e10665066a1f87fe6a4d3724a2fda04e630372adb553b",
+      "from": "files/dlt_capture.js"
+    },
+    {
+      "path": "journal_keep.js",
+      "mode": "0644",
+      "sha256": "124376a72be24ed164870cc374b9c0f90d426a93a603d062eca32caf6fc6331c",
+      "from": "files/journal_keep.js"
+    },
+    {
+      "path": "logs.js",
+      "mode": "0644",
+      "sha256": "dc544b876aa1917a1bc5250917b8b31bff66e29741b219a3eb283035aae13cf7",
+      "from": "files/logs.js"
+    },
+    {
+      "path": "logs_fw.js",
+      "mode": "0644",
+      "sha256": "a17d6a834ebb46000404ad17c51d7f9c066c29780a50afc2698eefdab1120386",
+      "from": "files/logs_fw.js"
+    },
+    {
+      "path": "group_dir.js",
+      "mode": "0644",
+      "sha256": "06e1fa946670bfd4969a595a4ed217ceda69836612bfbc618dfee4e457a7a9a2",
+      "from": "files/group_dir.js"
+    },
+    {
+      "path": "collect-logs.sh",
+      "mode": "0755",
+      "sha256": "594cb32fb3a022c196302acf0e5caa3fc0eb57eda2dc797dcdbc645dca2748fc",
+      "from": "files/collect-logs.sh"
+    },
+    {
+      "path": "hudguide.js",
+      "mode": "0644",
+      "sha256": "63b30021517e1b893b999f9b0bab7b93d8d4f26ebf469e04787e8c8b4e7b8495",
+      "from": "files/hudguide.js"
+    },
+    {
+      "path": "speedd.js",
+      "mode": "0644",
+      "sha256": "279eb5104fc905ec88dcbbcd1f2696a93e5605a3d717f9c24062288a56ca1d1b",
+      "from": "files/speedd.js"
+    },
+    {
+      "path": "pmg_schema.js",
+      "mode": "0644",
+      "sha256": "58177b32b33b4b9d3bfe9fc848e83eff00e3f6a050874b18b999647b7bf9a207",
+      "from": "files/pmg_schema.js"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "0644",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "from": "files/LICENSE"
+    }
+  ],
+  "units": [
+    {
+      "name": "jap-waze-on-cluster.socket",
+      "from": "units/jap-waze-on-cluster.socket"
+    },
+    {
+      "name": "jap-waze-on-cluster.service",
+      "from": "units/jap-waze-on-cluster.service"
+    },
+    {
+      "name": "jap-waze-on-cluster-patchd.service",
+      "from": "units/jap-waze-on-cluster-patchd.service"
+    },
+    {
+      "name": "jap-waze-on-cluster-boot.service",
+      "from": "units/jap-waze-on-cluster-boot.service"
+    },
+    {
+      "name": "jap-waze-on-cluster-aa-boot.service",
+      "from": "units/jap-waze-on-cluster-aa-boot.service"
+    },
+    {
+      "name": "jap-waze-on-cluster-recovery.service",
+      "from": "units/jap-waze-on-cluster-recovery.service"
+    },
+    {
+      "name": "jap-waze-on-cluster-capture.service",
+      "from": "units/jap-waze-on-cluster-capture.service"
+    },
+    {
+      "name": "jap-waze-on-cluster-journal.service",
+      "from": "units/jap-waze-on-cluster-journal.service"
+    },
+    {
+      "name": "jap-waze-on-cluster-journal.timer",
+      "from": "units/jap-waze-on-cluster-journal.timer"
+    },
+    {
+      "name": "jap-waze-on-cluster-logs.socket",
+      "from": "units/jap-waze-on-cluster-logs.socket"
+    },
+    {
+      "name": "jap-waze-on-cluster-logs.service",
+      "from": "units/jap-waze-on-cluster-logs.service"
+    },
+    {
+      "name": "jap-waze-on-cluster-logs-fw.service",
+      "from": "units/jap-waze-on-cluster-logs-fw.service"
+    },
+    {
+      "name": "jap-waze-on-cluster-hudguide.service",
+      "from": "units/jap-waze-on-cluster-hudguide.service"
+    },
+    {
+      "name": "jap-waze-on-cluster-speedd.service",
+      "from": "units/jap-waze-on-cluster-speedd.service"
+    }
+  ],
+  "enable": [
+    {
+      "unit": "jap-waze-on-cluster.socket",
+      "target": "sockets.target"
+    },
+    {
+      "unit": "jap-waze-on-cluster.service",
+      "target": "multi-user.target"
+    },
+    {
+      "unit": "jap-waze-on-cluster-patchd.service",
+      "target": "multi-user.target"
+    },
+    {
+      "unit": "jap-waze-on-cluster-boot.service",
+      "target": "multi-user.target"
+    },
+    {
+      "unit": "jap-waze-on-cluster-aa-boot.service",
+      "target": "multi-user.target"
+    },
+    {
+      "unit": "jap-waze-on-cluster-recovery.service",
+      "target": "multi-user.target"
+    },
+    {
+      "unit": "jap-waze-on-cluster-capture.service",
+      "target": "multi-user.target"
+    },
+    {
+      "unit": "jap-waze-on-cluster-journal.timer",
+      "target": "timers.target"
+    },
+    {
+      "unit": "jap-waze-on-cluster-logs.socket",
+      "target": "sockets.target"
+    },
+    {
+      "unit": "jap-waze-on-cluster-hudguide.service",
+      "target": "multi-user.target"
+    },
+    {
+      "unit": "jap-waze-on-cluster-speedd.service",
+      "target": "multi-user.target"
+    }
+  ],
+  "recmgr": [
+    "carplay",
+    "aapd",
+    "jap-waze-on-cluster",
+    "jap-waze-on-cluster-patchd",
+    "jap-waze-on-cluster-boot",
+    "jap-waze-on-cluster-aa-boot",
+    "jap-waze-on-cluster-recovery",
+    "jap-waze-on-cluster-capture",
+    "jap-waze-on-cluster-journal",
+    "jap-waze-on-cluster-logs",
+    "jap-waze-on-cluster-logs-fw",
+    "jap-waze-on-cluster-hudguide",
+    "jap-waze-on-cluster-speedd"
+  ],
+  "restart": [
+    "jap-waze-on-cluster.service",
+    "jap-waze-on-cluster-patchd.service",
+    "jap-waze-on-cluster-recovery.service",
+    "jap-waze-on-cluster-capture.service",
+    "jap-waze-on-cluster-journal.service",
+    "jap-waze-on-cluster-hudguide.service",
+    "jap-waze-on-cluster-speedd.service"
+  ],
+  "dropins": [
+    {
+      "unit": "var-opt-ro.service",
+      "name": "50-jap-waze-on-cluster.conf",
+      "from": "dropins/var-opt-ro.service.d/50-jap-waze-on-cluster.conf"
+    },
+    {
+      "unit": "carplay.service",
+      "name": "50-jap-waze-on-cluster.conf",
+      "from": "dropins/carplay.service.d/50-jap-waze-on-cluster.conf"
+    }
+  ],
+  "mguHmi": [
+    "ID7"
+  ],
+  "crashNames": [
+    "aapd"
+  ],
+  "activate": [
+    "node",
+    "patchd.js",
+    "activate"
+  ],
+  "deactivate": [
+    "node",
+    "patchd.js",
+    "deactivate"
+  ]
+}

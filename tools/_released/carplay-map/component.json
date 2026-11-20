@@ -1,0 +1,48 @@
+{
+  "id": "carplay-map",
+  "kind": "tool",
+  "version": "0.2.0",
+  "title": "CarPlay Map Producer",
+  "description": "Captures the CarPlay map stream and sends it to cluster-render for display on a compatible instrument cluster.",
+  "files": [
+    {
+      "path": "carplay-map-cluster.js",
+      "mode": "0755",
+      "sha256": "f4f92f5f2bd3b1127018a3189575847f6acf27c739cefc7b8304fd18daa47dcc",
+      "from": "files/carplay-map-cluster.js"
+    },
+    {
+      "path": "cluster_render_client.js",
+      "mode": "0644",
+      "sha256": "e199117e5b40b06cb9672bf32457bf2a4abd31f6359bc7b4487d0ba55a2a1a6c",
+      "from": "files/cluster_render_client.js"
+    },
+    {
+      "path": "cluster-render-LICENSE",
+      "mode": "0644",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "from": "files/cluster-render-LICENSE"
+    }
+  ],
+  "units": [
+    {
+      "name": "carplay-map.service",
+      "from": "units/carplay-map.service"
+    }
+  ],
+  "enable": [
+    {
+      "unit": "carplay-map.service",
+      "target": "multi-user.target"
+    }
+  ],
+  "recmgr": [
+    "carplay-map"
+  ],
+  "restart": [
+    "carplay-map.service"
+  ],
+  "mguHmi": [
+    "ID7"
+  ]
+}

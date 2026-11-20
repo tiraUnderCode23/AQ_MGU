@@ -166,6 +166,15 @@
       "evidence": "apps/_sources/markoni-e39-m5-cluster/apps/apex_dash/app.json"
     },
     {
+      "id": "apm_airplay",
+      "version": "1.0.6",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source/package declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_prebuilt/apm_airplay/app.json"
+    },
+    {
       "id": "aq_flap",
       "version": "2.6.1",
       "declared_hmi": [
@@ -704,6 +713,15 @@
       "source_repository": "NamelsMissing/mgu-apps"
     },
     {
+      "id": "cluster_metrics",
+      "version": "0.8.0",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source/package declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_prebuilt/cluster_metrics/app.json"
+    },
+    {
       "id": "cluster_nav_card",
       "version": "0.9.2",
       "declared_hmi": [
@@ -884,6 +902,15 @@
       "scope_note": "This describes missing ID8 work, not an ID7 installation failure."
     },
     {
+      "id": "dorin_ambientdrive",
+      "version": "0.2.7",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source/package declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_prebuilt/dorin_ambientdrive/app.json"
+    },
+    {
       "id": "dpf",
       "status": "ID8_PORT_NOT_IMPLEMENTED",
       "categories": [
@@ -947,6 +974,24 @@
         "ID7"
       ],
       "source_repository": "NamelsMissing/mgu-apps"
+    },
+    {
+      "id": "drake1804_checks",
+      "version": "0.1.0",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source/package declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_prebuilt/drake1804_checks/app.json"
+    },
+    {
+      "id": "drake1804_youtube",
+      "version": "0.1.10",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source/package declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_prebuilt/drake1804_youtube/app.json"
     },
     {
       "id": "drive_hud_full",
@@ -1255,6 +1300,24 @@
       "scope_note": "This describes missing ID8 work, not an ID7 installation failure."
     },
     {
+      "id": "idv7lol",
+      "version": "0.2.15",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source/package declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_prebuilt/idv7lol/app.json"
+    },
+    {
+      "id": "jap_sysmon",
+      "version": "1.0.6",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source/package declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_prebuilt/jap_sysmon/app.json"
+    },
+    {
       "id": "jap_waze_cluster",
       "version": "1.0.2",
       "kind": "app",
@@ -1295,6 +1358,24 @@
       "scope_note": "This describes missing ID8 work, not an ID7 installation failure."
     },
     {
+      "id": "kombikraft",
+      "version": "0.1.0",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source/package declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_prebuilt/kombikraft/app.json"
+    },
+    {
+      "id": "kombikraft_test",
+      "version": "0.1.28",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source/package declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_prebuilt/kombikraft_test/app.json"
+    },
+    {
       "id": "lfb_enginesound",
       "version": "1.2.2",
       "declared_hmi": [
@@ -1329,6 +1410,15 @@
       ],
       "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
       "evidence": "apps/_sources/tjmodsss-tjm-apps/apps/manuk_retro_cluster/app.json"
+    },
+    {
+      "id": "marku_kaluga_cameras",
+      "version": "0.9.3",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source/package declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_prebuilt/marku_kaluga_cameras/app.json"
     },
     {
       "id": "mdev_homeassistant",
@@ -1536,6 +1626,15 @@
       ],
       "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
       "evidence": "apps/_sources/alexpereap-idrive7-apps/apps/perea_mhd_flex/app.json"
+    },
+    {
+      "id": "rear_comfort",
+      "version": "0.5.6",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source/package declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_prebuilt/rear_comfort/app.json"
     },
     {
       "id": "ride_height",
@@ -2086,6 +2185,15 @@
       ],
       "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
       "evidence": "apps/_sources/woody-apps/apps/woodr_warmhud/app.json"
+    },
+    {
+      "id": "wzc_wazecards",
+      "version": "1.0.1",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source/package declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_prebuilt/wzc_wazecards/app.json"
     },
     {
       "id": "xdrive_studio",

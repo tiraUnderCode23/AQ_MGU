@@ -1,0 +1,302 @@
+{
+  "id": "marku-kaluga-cameras",
+  "kind": "tool",
+  "version": "0.9.3",
+  "title": "Waze Strelka camera service",
+  "description": "Local Kaluga OSM camera snapshot, strict GPS diagnostics and optional verified-road camera alerts",
+  "optional": true,
+  "uninstallable": true,
+  "internet": true,
+  "uids": [
+    5000
+  ],
+  "requires": {
+    "cluster-render": "0.4.0"
+  },
+  "mguHmi": [
+    "ID7"
+  ],
+  "files": [
+    {
+      "path": "marku-kaluga-cameras.js",
+      "mode": "0644",
+      "sha256": "bbc59b16b495d068576dfd5647537a69235ecb512df1d9eadac363e7e0e1b758",
+      "from": "files/marku-kaluga-cameras.js"
+    },
+    {
+      "path": "card-layout.js",
+      "mode": "0644",
+      "sha256": "a39add8fa13c90c35513d0b4411b3445073ee5b429eb0419eb9d9306ff7d15bf",
+      "from": "files/card-layout.js"
+    },
+    {
+      "path": "alert-preferences.js",
+      "mode": "0644",
+      "sha256": "3c472572ee45c6469f87b6b013246bd4efbc93f986846731607235d325b1698c",
+      "from": "files/alert-preferences.js"
+    },
+    {
+      "path": "warning-policy.js",
+      "mode": "0644",
+      "sha256": "7a89b2977326c158a7adec0d0c0846f7b2198e1721782718cd3b214c277935e5",
+      "from": "files/warning-policy.js"
+    },
+    {
+      "path": "camera-orientation.js",
+      "mode": "0644",
+      "sha256": "484bfff684b5ceeecbd779e8f850b144afa4030112e33a212856de2eae0c7922",
+      "from": "files/camera-orientation.js"
+    },
+    {
+      "path": "database-coverage.js",
+      "mode": "0644",
+      "sha256": "28887be5cd055860898d994892c10341c8626cfe52639bbaab7eb30b6a66637d",
+      "from": "files/database-coverage.js"
+    },
+    {
+      "path": "gps-source.js",
+      "mode": "0644",
+      "sha256": "e15e884e8fc5d7977350bc8dd7257f6af1ac798c070c361312e25c0980cb035c",
+      "from": "files/gps-source.js"
+    },
+    {
+      "path": "network-utc.js",
+      "mode": "0644",
+      "sha256": "a7a430d27549704d736170195dc047a79fd79bf255bfb99a2c2fd2b5c68cc50c",
+      "from": "files/network-utc.js"
+    },
+    {
+      "path": "gps-utc-clock.js",
+      "mode": "0644",
+      "sha256": "c5aca281e9f40ae644db197cf2fa5ae68fa0d2f86c0ebefa33fb435e485d4d7b",
+      "from": "files/gps-utc-clock.js"
+    },
+    {
+      "path": "kaluga-speed.json",
+      "mode": "0644",
+      "sha256": "3eddc77f8f358819a96cfac02e104b18ea904b926dca8143f2807122f4864fc3",
+      "from": "files/kaluga-speed.json"
+    },
+    {
+      "path": "road-zones.json",
+      "mode": "0644",
+      "sha256": "864e53ebd231777289c97083006a2b39685f02a956da598091fb1d34fe032498",
+      "from": "files/road-zones.json"
+    },
+    {
+      "path": "vehicle-guidance.js",
+      "mode": "0644",
+      "sha256": "ce5cd4f942a906ae986eca41edd38cfa1b5658b6fd5b719ce7785b965599391c",
+      "from": "files/vehicle-guidance.js"
+    },
+    {
+      "path": "camera-layers.js",
+      "mode": "0644",
+      "sha256": "78d1d4029c17f05654430b9ce770e1e2544171d3bf3ae1bc3870bc191e2fb175",
+      "from": "files/camera-layers.js"
+    },
+    {
+      "path": "cluster_render_client.js",
+      "mode": "0644",
+      "sha256": "632e4ff068476a93ce65679d4178dda92e6c5ab40f973cbfa676fd7bfee88f30",
+      "from": "files/cluster_render_client.js"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "0644",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "from": "files/LICENSE"
+    },
+    {
+      "path": "NOTICE-data.txt",
+      "mode": "0644",
+      "sha256": "5456e91d3f9494643c3064f230e07743db6903703cb65de80a92a62c9de9f228",
+      "from": "files/NOTICE-data.txt"
+    },
+    {
+      "path": "LICENSE.MPL-2.0",
+      "mode": "0644",
+      "sha256": "3f3d9e0024b1921b067d6f7f88deb4a60cbe7a78e76c64e3f1d7fc3b779b9d04",
+      "from": "files/LICENSE.MPL-2.0"
+    },
+    {
+      "path": "check.js",
+      "mode": "0644",
+      "sha256": "d7962ef00a9942084c3b92929de106fee04e3a923edec917c5978092eed5ed5f",
+      "from": "files/check.js"
+    },
+    {
+      "path": "prepare.js",
+      "mode": "0644",
+      "sha256": "554d0583938d3f2225c1256713dafbc96361f4f21ee5f80ec3aab1565011c16a",
+      "from": "files/prepare.js"
+    },
+    {
+      "path": "hud-dimmer.js",
+      "mode": "0644",
+      "sha256": "52991e4dbbb6ffc8f161ac21d8ac8f7c8847353be34e5a51c194b871d49c7611",
+      "from": "files/hud-dimmer.js"
+    },
+    {
+      "path": "camera-info.js",
+      "mode": "0644",
+      "sha256": "b4761f34932d242adc28796964a4ef22c7e9253a4d11b0694ad722ae43b79867",
+      "from": "files/camera-info.js"
+    },
+    {
+      "path": "camera-details.json",
+      "mode": "0644",
+      "sha256": "2e1412be3202377b702da8b8c753e14842b48af126e59c65d3c90a8ddf2ecb39",
+      "from": "files/camera-details.json"
+    },
+    {
+      "path": "alert-card.js",
+      "mode": "0644",
+      "sha256": "0a7617565f6676177ac746ed65d34bbf4d8200d19f22119b3ab0ff79725ebcef",
+      "from": "files/alert-card.js"
+    },
+    {
+      "path": "camera-font.json",
+      "mode": "0644",
+      "sha256": "4d30e55ec9668145efc5c46c48aea43f72bb9eb7951b4a44936cf94ad20fe79f",
+      "from": "files/camera-font.json"
+    },
+    {
+      "path": "LICENSE-Inter.txt",
+      "mode": "0644",
+      "sha256": "262481e844521b326f5ecd053e59b98c8b2da78c8ee1bdbb6e8174305e54935a",
+      "from": "files/LICENSE-Inter.txt"
+    },
+    {
+      "path": "reported-cameras.json",
+      "mode": "0644",
+      "sha256": "9cadb612e4ecaf0c5f0b298cfe1917e60e6f91c9ff4630290b69ee66d3bf83de",
+      "from": "files/reported-cameras.json"
+    },
+    {
+      "path": "action-policy.js",
+      "mode": "0644",
+      "sha256": "4bc26be7d8952a5262d138b34b38f27cd9e68a4c083fe0e5cc9fe65dd745f4a5",
+      "from": "files/action-policy.js"
+    },
+    {
+      "path": "database-store.js",
+      "mode": "0644",
+      "sha256": "360d92ae9b55ab5434d3e50084d59b9b60ef756edec62bbab8b068b448ec6cba",
+      "from": "files/database-store.js"
+    },
+    {
+      "path": "enforcement-relations.json",
+      "mode": "0644",
+      "sha256": "650bd584c7c87d26ab2fadc6a91f266c5b220cf629f4c938a09a12ce0bc82d12",
+      "from": "files/enforcement-relations.json"
+    },
+    {
+      "path": "warning-audio.js",
+      "mode": "0644",
+      "sha256": "7fec08fc42f8366e94a1bb1441bcbe21af6ae9cad239f25cbc25c652a75d67fc",
+      "from": "files/warning-audio.js"
+    },
+    {
+      "path": "official-camera-data.js",
+      "mode": "0644",
+      "sha256": "5c5c4042541f7afb4644960f8ff4577625ccadf2cb314ee3f61d6bd16e427df8",
+      "from": "files/official-camera-data.js"
+    },
+    {
+      "path": "gibdd-kaluga.json",
+      "mode": "0644",
+      "sha256": "b4a31da963211d7d5bb16deeab9014c100f584e44e71a8641dfa4e92fedb50a7",
+      "from": "files/gibdd-kaluga.json"
+    },
+    {
+      "path": "official-camera-quality.json",
+      "mode": "0644",
+      "sha256": "b2ab880f9b0afb0ebd55213adebb85995833eff417ca7787933c3db7fbe6d898",
+      "from": "files/official-camera-quality.json"
+    },
+    {
+      "path": "database-version.json",
+      "mode": "0644",
+      "sha256": "0ddd3631e46e31cb8c76cd0c9296e5f483f8b1a564dff7c524ae85aabf4809b1",
+      "from": "files/database-version.json"
+    },
+    {
+      "path": "speed-limits.js",
+      "mode": "0644",
+      "sha256": "f6e8222221ac8eac0906aa68daf1212895a55b40bec2b7091e42155428f56a3a",
+      "from": "files/speed-limits.js"
+    },
+    {
+      "path": "speed-limit-data.json",
+      "mode": "0644",
+      "sha256": "a48c6b2810961afff0ec64be90d0f18fcc0bf22c66f3c5e4ba1398a0ed2eff09",
+      "from": "files/speed-limit-data.json"
+    },
+    {
+      "path": "openspeedcam-data.js",
+      "mode": "0644",
+      "sha256": "7a02e4359b60863d13b53edf517d65afc2832c51100c99f7cdd3d011e746b427",
+      "from": "files/openspeedcam-data.js"
+    },
+    {
+      "path": "openspeedcam-kaluga.json",
+      "mode": "0644",
+      "sha256": "7b0b11610c496906d608dc17469d1b778409ddedcb9bf8ea817a177ee9968d4c",
+      "from": "files/openspeedcam-kaluga.json"
+    },
+    {
+      "path": "openspeedcam-central.json",
+      "mode": "0644",
+      "sha256": "087475833b66a6984b448e8a9a95716cacd14216e24df99d1493666526f76ff9",
+      "from": "files/openspeedcam-central.json"
+    },
+    {
+      "path": "moscow-osm.json",
+      "mode": "0644",
+      "sha256": "80f4d8dcb8eda0291a71e3b0f461b481ea72ff73cb5c23239feda8dee8ddf9ea",
+      "from": "files/moscow-osm.json"
+    },
+    {
+      "path": "region-osm.js",
+      "mode": "0644",
+      "sha256": "dd13fb91fac03a33024f578a7a30a097faaf4f57072933da22e911465acd18d6",
+      "from": "files/region-osm.js"
+    },
+    {
+      "path": "capture-data.js",
+      "mode": "0644",
+      "sha256": "2f812a1cde96e9177ed2c8a3e17c25eb1eb99547c1e508db8f5dc96091444f61",
+      "from": "files/capture-data.js"
+    }
+  ],
+  "units": [
+    {
+      "name": "marku-kaluga-cameras.service",
+      "from": "units/marku-kaluga-cameras.service"
+    },
+    {
+      "name": "marku-kaluga-cameras.socket",
+      "from": "units/marku-kaluga-cameras.socket"
+    }
+  ],
+  "enable": [
+    {
+      "unit": "marku-kaluga-cameras.service",
+      "target": "multi-user.target"
+    },
+    {
+      "unit": "marku-kaluga-cameras.socket",
+      "target": "sockets.target"
+    }
+  ],
+  "recmgr": [
+    "marku-kaluga-cameras"
+  ],
+  "restart": [
+    "marku-kaluga-cameras.service"
+  ],
+  "check": [
+    "check.js"
+  ]
+}

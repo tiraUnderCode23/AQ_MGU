@@ -1,0 +1,13 @@
+{
+  "id": "jap_sysmon",
+  "version": "1.0.6",
+  "title": "iDrive Monitor",
+  "description": "The head unit's CPU, memory and graphics load, and a short pop-up when the iDrive runs short of them (CPU busy for 30 s, little free memory, apps near their memory cap). Starts with the head unit; no pop-up in reverse.",
+  "mguHmi": [
+    "ID7"
+  ],
+  "requires": {
+    "mgu-render": "0.6.11",
+    "mgu-inputgate": "1.0.0"
+  }
+}

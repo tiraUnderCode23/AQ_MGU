@@ -4,7 +4,7 @@
 
 ![Apps](https://img.shields.io/badge/Apps-214-0066B1?style=for-the-badge) ![iDrive 8](https://img.shields.io/badge/iDrive_8_Ready-58-1C69D4?style=for-the-badge) ![Helper Tools](https://img.shields.io/badge/Helper_Tools-80-2B3137?style=for-the-badge)
 
-**Branches:** [All (`main`)](https://github.com/tiraUnderCode23/AQ_MGU/tree/main) · [iDrive 7 (`id7`)](https://github.com/tiraUnderCode23/AQ_MGU/tree/id7) · [iDrive 8 (`id8`)](https://github.com/tiraUnderCode23/AQ_MGU/tree/id8) · [Games (`games`)](https://github.com/tiraUnderCode23/AQ_MGU/tree/games)
+**Branches:** [`main` — All & iDrive 7](https://github.com/tiraUnderCode23/AQ_MGU) · [`id8` — iDrive 8](https://github.com/tiraUnderCode23/AQ_MGU/branches) · [`games` — Games](https://github.com/tiraUnderCode23/AQ_MGU/branches)
 
 [Cluster & HUD](#cluster--hud) · [Performance & Motorsport](#performance--motorsport) · [Diagnostics & Telemetry](#diagnostics--telemetry) · [Media, Video & Casting](#media-video--casting) · [Lighting, Cameras & Comfort](#lighting-cameras--comfort) · [Utilities & System](#utilities--system) · [Games](#games) · [Helper Tools](#helper-tools)
 
@@ -15,14 +15,13 @@
 <details>
 <summary><strong>➕ Add AQ MGU to MGU Store</strong></summary>
 
-| Branch / Source | URL |
-|---|---|
-| **iDrive 7 Only (`id7`)** | `https://github.com/tiraUnderCode23/AQ_MGU/tree/id7` |
-| **iDrive 8 Only (`id8`)** | `https://github.com/tiraUnderCode23/AQ_MGU/tree/id8` |
-| **Games Only (`games`)** | `https://github.com/tiraUnderCode23/AQ_MGU/tree/games` |
-| **Full Catalog (`main`)** | `https://github.com/tiraUnderCode23/AQ_MGU/tree/main` |
-| **Full Release Catalog (HTTPS)** | `https://raw.githubusercontent.com/tiraUnderCode23/AQ_MGU/main/release/catalog.json` |
-| **IterioDev Companion** | `https://github.com/IterioDev/car-apps/tree/main` |
+| Source | URL | Branch / Channel |
+|---|---|---|
+| **AQ MGU (iDrive 7 + All)** | `https://github.com/tiraUnderCode23/AQ_MGU` | `main` |
+| **AQ MGU (iDrive 8 Only)** | `https://github.com/tiraUnderCode23/AQ_MGU` | `id8` |
+| **AQ MGU (Games Only)** | `https://github.com/tiraUnderCode23/AQ_MGU` | `games` |
+| **AQ Extra Release Catalog** | `https://raw.githubusercontent.com/tiraUnderCode23/AQ_MGU/main/release/catalog.json` | HTTPS |
+| **IterioDev Companion** | `https://github.com/IterioDev/car-apps` | `main` |
 
 ```json
 {

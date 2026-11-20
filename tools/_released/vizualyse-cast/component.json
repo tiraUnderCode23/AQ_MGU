@@ -1,0 +1,207 @@
+{
+  "id": "vizualyse-cast",
+  "kind": "tool",
+  "version": "0.4.1",
+  "title": "Cast to cluster",
+  "description": "Plays a stream URL from your phone on the instrument cluster, the HUD or the media console, with its sound through the speakers: scan the QR code, paste a URL, pick where it goes. With hook111 armed, also CarPlay's own second screen (its cluster map) on the cluster or the HUD. Controlled by touch on the central screen too, parked or driving, where mgu-render is installed",
+  "files": [
+    {
+      "path": "mqtt_bus.js",
+      "mode": "0644",
+      "sha256": "63ee95c24a961cde38f95f69f83ce2d4b8652ce42848d207d06a668e6dc2bd13",
+      "from": "files/mqtt_bus.js"
+    },
+    {
+      "path": "server.js",
+      "mode": "0644",
+      "sha256": "c74f59870b44bec57ff3d6c35b10d259637167253b30615ab35a6734c1975009",
+      "from": "files/server.js"
+    },
+    {
+      "path": "proxy.js",
+      "mode": "0644",
+      "sha256": "55576424752ddf9718c257f11e9963b8373489d734d6e9223458eb338086f71f",
+      "from": "files/proxy.js"
+    },
+    {
+      "path": "firewall.js",
+      "mode": "0644",
+      "sha256": "8bde92a3fb638b671aa04a59752f9eff1c79df56c18161339340eb70c6f42794",
+      "from": "files/firewall.js"
+    },
+    {
+      "path": "console_out.js",
+      "mode": "0644",
+      "sha256": "061df64e0684e83e726b3ac71cad6cbe08fa2e243cc5a47af675a7fa85e01626",
+      "from": "files/console_out.js"
+    },
+    {
+      "path": "control.js",
+      "mode": "0644",
+      "sha256": "0177e256aa458a35a5b0b466e79f63880d3b9aa44dcc607f7a494c0c533df258",
+      "from": "files/control.js"
+    },
+    {
+      "path": "carplay_screen.js",
+      "mode": "0644",
+      "sha256": "1b8c89bb8660d1d249a8a2a8f61f86f7b93e55fe2ae498bef8de3474f17b0a92",
+      "from": "files/carplay_screen.js"
+    },
+    {
+      "path": "page.html",
+      "mode": "0644",
+      "sha256": "e30593ed176569c21c9e1d45f4462ba1d48add941163dbd73a281d6241c1480e",
+      "from": "files/page.html"
+    },
+    {
+      "path": "pcm_play.py",
+      "mode": "0644",
+      "sha256": "6c76cd25b032c7128300bc24e86f7048929118dafe6f5f0d124c24fc520ad8a7",
+      "from": "files/pcm_play.py"
+    },
+    {
+      "path": "speakers.js",
+      "mode": "0644",
+      "sha256": "efb7580b6690a22beb44626c0e082f22e4cb6589a5361c6b723ad4de734c2057",
+      "from": "files/speakers.js"
+    },
+    {
+      "path": "qrcode.js",
+      "mode": "0644",
+      "sha256": "18ae399f81182bc9de916e9c77b195df20cc58d6f2d55a62b085a299f1bf1780",
+      "from": "files/qrcode.js"
+    },
+    {
+      "path": "touch.js",
+      "mode": "0644",
+      "sha256": "b8c7f619187c3b1871773c94ba362050caa0e6fedab3b12f67d38a008686658e",
+      "from": "files/touch.js"
+    },
+    {
+      "path": "touch_view.js",
+      "mode": "0644",
+      "sha256": "bd0b85b3e3fd6c755233d72ce27f62359c87b100cd1a6434302e6ea0d0d36582",
+      "from": "files/touch_view.js"
+    },
+    {
+      "path": "touch_reader.py",
+      "mode": "0644",
+      "sha256": "b0f1eac3272c6ca80dc04fcfc6ee97bb1bebcd3f4951f8d925e7c6b743d6ced9",
+      "from": "files/touch_reader.py"
+    },
+    {
+      "path": "ui_canvas.js",
+      "mode": "0644",
+      "sha256": "f105fc70e64e20f5cb55ebefeb9717f0e600adc051929b56d70210c405b8990f",
+      "from": "files/ui_canvas.js"
+    },
+    {
+      "path": "ui_kit.js",
+      "mode": "0644",
+      "sha256": "18a6604ff6d21a845db3314c7357bc44da888da009e9a232d71f8e272006f93c",
+      "from": "files/ui_kit.js"
+    },
+    {
+      "path": "ui_host.js",
+      "mode": "0644",
+      "sha256": "e69a32a60fefe44e4a6e603e29e9ef87f5a06ee145fec41175380c62a552c755",
+      "from": "files/ui_host.js"
+    },
+    {
+      "path": "ui_png.js",
+      "mode": "0644",
+      "sha256": "93c0e416f2b4baf676a0274b56649771d3cde800c44513239271c0fd8b8b5ebb",
+      "from": "files/ui_png.js"
+    },
+    {
+      "path": "ui.fonts.json",
+      "mode": "0644",
+      "sha256": "c91267b1ba7b6a63d2d4f9a259ab57678b9d4da96dfe75508995877890d04440",
+      "from": "files/ui.fonts.json"
+    },
+    {
+      "path": "ui.f20.font.gz",
+      "mode": "0644",
+      "sha256": "fe9f0e35e81509c24ddec768cd570af8d21f12be6deaba8335d319a91cf314d4",
+      "from": "files/ui.f20.font.gz"
+    },
+    {
+      "path": "ui.f24.font.gz",
+      "mode": "0644",
+      "sha256": "1b482f1dadb95b3857a3c772485795973284e391199e112c076cf1335c5a5a31",
+      "from": "files/ui.f24.font.gz"
+    },
+    {
+      "path": "ui.f32.font.gz",
+      "mode": "0644",
+      "sha256": "3c00118f1d5360b1ad651ef4d5b865e3408c32efdd8a313dbc6ab0e4d5f7dbe5",
+      "from": "files/ui.f32.font.gz"
+    },
+    {
+      "path": "ui.f44.font.gz",
+      "mode": "0644",
+      "sha256": "71f87f34501a9c08fe88a940cf823decfde90c181dcbcbd087f71a8fba8f1a0c",
+      "from": "files/ui.f44.font.gz"
+    },
+    {
+      "path": "cluster_render_client.js",
+      "mode": "0644",
+      "sha256": "b01a4506e7c297e299793e4820ccac96acbda215f92486fa15a165a3e587683e",
+      "from": "files/cluster_render_client.js"
+    },
+    {
+      "path": "ffmpeg",
+      "mode": "0755",
+      "sha256": "e7e7fb30477f717e6f55f9180a70386c62677ef8a4d4d1a5d948f4098aa3eb99",
+      "from": "files/ffmpeg"
+    },
+    {
+      "path": "ffmpeg-GPLv3.txt",
+      "mode": "0644",
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+      "from": "files/ffmpeg-GPLv3.txt"
+    },
+    {
+      "path": "THIRD-PARTY.md",
+      "mode": "0644",
+      "sha256": "732ab08f3cff9d5972390d16001add37076c7ec02c852597412bef72d8682d2c",
+      "from": "files/THIRD-PARTY.md"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "0644",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "from": "files/LICENSE"
+    }
+  ],
+  "units": [
+    {
+      "name": "vizualyse-cast.service",
+      "from": "units/vizualyse-cast.service"
+    }
+  ],
+  "enable": [
+    {
+      "unit": "vizualyse-cast.service",
+      "target": "multi-user.target"
+    }
+  ],
+  "recmgr": [
+    "vizualyse-cast"
+  ],
+  "restart": [
+    "vizualyse-cast.service"
+  ],
+  "internet": true,
+  "uids": [
+    12999
+  ],
+  "mguHmi": [
+    "ID7"
+  ],
+  "deactivate": [
+    "node",
+    "firewall.js",
+    "remove"
+  ]
+}

@@ -273,6 +273,22 @@
       "icon": "icon.png"
     },
     {
+      "id": "airplay-rx",
+      "kind": "tool",
+      "version": "1.0.0",
+      "title": "AirPlay receiver",
+      "description": "Needed by the AirPlay app: receives the iPhone's screen (AirPlay screen mirroring).",
+      "path": "tools/_released/airplay-rx",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.0"
+      },
+      "optional": true,
+      "uninstallable": true
+    },
+    {
       "id": "ambient_config",
       "kind": "app",
       "version": "2.7.13",
@@ -505,6 +521,46 @@
           "apps/_sources/markoni-e39-m5-cluster/kit",
           "apps/_sources/markoni-e39-m5-cluster/shared"
         ]
+      }
+    },
+    {
+      "id": "apm_airplay",
+      "kind": "app",
+      "version": "1.0.6",
+      "title": "AirPlay",
+      "description": "Your iPhone's screen on the central display by AirPlay screen mirroring, parked only. Sound stays on Bluetooth. In Apps and Communication.",
+      "path": "apps/_prebuilt/apm_airplay",
+      "manifest": "app.json",
+      "icon": "icon.png",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.0",
+        "airplay-rx": "1.0.0"
+      },
+      "uninstallable": true,
+      "build": {
+        "node": "tools/prebuilt.js",
+        "output": "{dir}/{id}@{version}.tgz",
+        "shared": [
+          "tools/prebuilt.js"
+        ]
+      }
+    },
+    {
+      "id": "app-privacy",
+      "kind": "tool",
+      "version": "1.7.2",
+      "title": "App privacy",
+      "description": "Keeps our apps out of the head unit's backend app reporting and restarts them after a crash",
+      "path": "tools/_released/app-privacy",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "mgu-deploy": "0.6.3"
       }
     },
     {
@@ -915,6 +971,31 @@
       }
     },
     {
+      "id": "bm3_live_id8",
+      "kind": "app",
+      "version": "0.1.1",
+      "title": "MGU Bm3 Live Adjustments for IDrive 8",
+      "description": "Map switching, burble adjustments and vehicle data for supported BM3 CustomROM vehicles with iDrive 8.",
+      "path": "apps/_prebuilt/bm3_live_id8",
+      "manifest": "app.json",
+      "icon": "icon.png",
+      "mguHmi": [
+        "ID8"
+      ],
+      "requires": {
+        "mgu-deploy": "0.6.9",
+        "mgu-render": "0.6.12"
+      },
+      "uninstallable": true,
+      "build": {
+        "node": "tools/prebuilt.js",
+        "output": "{dir}/{id}@{version}.tgz",
+        "shared": [
+          "tools/prebuilt.js"
+        ]
+      }
+    },
+    {
       "id": "boostline",
       "kind": "app",
       "version": "1.0.1",
@@ -1080,6 +1161,22 @@
       "icon": "icon.png"
     },
     {
+      "id": "carplay-map",
+      "kind": "tool",
+      "version": "0.2.0",
+      "title": "CarPlay Map Producer",
+      "description": "Captures the CarPlay map stream and sends it to cluster-render for display on a compatible instrument cluster.",
+      "path": "tools/_released/carplay-map",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.6.3",
+        "cluster-render": "0.2.0"
+      },
+      "uninstallable": true
+    },
+    {
       "id": "carplay_map_toggle",
       "kind": "app",
       "title": "CarPlay Map Toggle",
@@ -1217,6 +1314,22 @@
       "icon": "icon.png"
     },
     {
+      "id": "cluster-render",
+      "kind": "tool",
+      "version": "0.6.9",
+      "title": "Cluster renderer",
+      "description": "Draws every app's layers on the instrument cluster and the HUD, sharing the display slots and one upload budget",
+      "path": "tools/_released/cluster-render",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "mgu-deploy": "0.4.0"
+      },
+      "uninstallable": true
+    },
+    {
       "id": "cluster_lyrics",
       "kind": "app",
       "title": "Cluster Lyrics",
@@ -1248,6 +1361,30 @@
       },
       "manifest": "app.json",
       "description": "Shows the synchronised lyrics of the song playing on your Spotify account, optionally in the instrument cluster's map window instead of the Waze map."
+    },
+    {
+      "id": "cluster_metrics",
+      "kind": "app",
+      "version": "0.8.0",
+      "title": "Cluster Metrics",
+      "description": "Real-time efficiency, HV battery %, powertrain temperatures, gear in D, full-wing Right-Wing Media/Charging/Trip widget, HUD turn-by-turn nav, and live DSC hydraulic brake indicator for BMW iDrive 7",
+      "path": "apps/_prebuilt/cluster_metrics",
+      "manifest": "app.json",
+      "icon": "icon.png",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "cluster-render": "0.4.0"
+      },
+      "uninstallable": true,
+      "build": {
+        "node": "tools/prebuilt.js",
+        "output": "{dir}/{id}@{version}.tgz",
+        "shared": [
+          "tools/prebuilt.js"
+        ]
+      }
     },
     {
       "id": "cluster_nav_card",
@@ -1484,6 +1621,46 @@
       "icon": "icon.png"
     },
     {
+      "id": "dorin-ambient",
+      "kind": "tool",
+      "version": "0.2.5",
+      "title": "Ambient Drive Service",
+      "description": "Aplică regulile de culoare și păstrează setările Ambient Drive între porniri. Componentă necesară aplicației Ambient Drive. Versiune de test.",
+      "path": "tools/_released/dorin-ambient",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.11"
+      },
+      "uninstallable": true
+    },
+    {
+      "id": "dorin_ambientdrive",
+      "kind": "app",
+      "version": "0.2.7",
+      "title": "Ambient Drive",
+      "description": "Schimbă automat lumina ambientală după modul de condus. Culori independente pentru Sport, Sport Plus, Sport Individual, Comfort, Adaptive, Eco Pro, Eco Pro Individual și M/S. STANDARD păstrează culoarea curentă; setările sunt memorate. Widget Home cu modul, culoarea setată și starea automatizării. Versiune de test.",
+      "path": "apps/_prebuilt/dorin_ambientdrive",
+      "manifest": "app.json",
+      "icon": "icon.png",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.11",
+        "dorin-ambient": "0.2.5"
+      },
+      "uninstallable": true,
+      "build": {
+        "node": "tools/prebuilt.js",
+        "output": "{dir}/{id}@{version}.tgz",
+        "shared": [
+          "tools/prebuilt.js"
+        ]
+      }
+    },
+    {
       "id": "dpf",
       "kind": "app",
       "path": "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/apps/dpf",
@@ -1656,6 +1833,92 @@
         ]
       },
       "icon": "icon.png"
+    },
+    {
+      "id": "drake1804-checks",
+      "kind": "tool",
+      "version": "0.1.2",
+      "title": "YouTube Checks helper",
+      "description": "Reads the logs and runs the tests for the YouTube Checks app. Remove it when you are done",
+      "path": "tools/_released/drake1804-checks",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.0"
+      },
+      "optional": true,
+      "uninstallable": true
+    },
+    {
+      "id": "drake1804-ytplay",
+      "kind": "tool",
+      "version": "0.1.16",
+      "title": "YouTube player",
+      "description": "Fetches and decodes YouTube video outside the app's limits, for the YouTube app; yt-dlp, QuickJS and ffmpeg",
+      "path": "tools/_released/drake1804-ytplay",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.0",
+        "mgu-render": "0.4.0",
+        "mgu-python": "1.0.0",
+        "mgu-uplink": "0.7.0"
+      },
+      "optional": true,
+      "uninstallable": true
+    },
+    {
+      "id": "drake1804_checks",
+      "kind": "app",
+      "version": "0.1.0",
+      "title": "YouTube Checks",
+      "description": "Tests the YouTube app's video and sound on this car, and prints the logs on the screen to take photos of. Remove it when you are done",
+      "path": "apps/_prebuilt/drake1804_checks",
+      "manifest": "app.json",
+      "icon": "icon.png",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.0",
+        "drake1804-checks": "0.1.0"
+      },
+      "uninstallable": true,
+      "build": {
+        "node": "tools/prebuilt.js",
+        "output": "{dir}/{id}@{version}.tgz",
+        "shared": [
+          "tools/prebuilt.js"
+        ]
+      }
+    },
+    {
+      "id": "drake1804_youtube",
+      "kind": "app",
+      "version": "0.1.10",
+      "title": "Bube",
+      "description": "Search and watch YouTube at 720p on the centre screen. Sound is experimental and always on",
+      "path": "apps/_prebuilt/drake1804_youtube",
+      "manifest": "app.json",
+      "icon": "icon.png",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.0",
+        "mgu-render": "0.4.0",
+        "drake1804-ytplay": "0.1.16"
+      },
+      "uninstallable": true,
+      "build": {
+        "node": "tools/prebuilt.js",
+        "output": "{dir}/{id}@{version}.tgz",
+        "shared": [
+          "tools/prebuilt.js"
+        ]
+      }
     },
     {
       "id": "drive_hud_full",
@@ -2058,6 +2321,22 @@
       "icon": "icon.png"
     },
     {
+      "id": "front-camera-cluster-helper",
+      "kind": "tool",
+      "version": "0.2.1",
+      "title": "Night Vision cluster helper",
+      "description": "Mirrors BMW's protected Night Vision or parking-camera surface into the instrument cluster",
+      "path": "tools/_released/front-camera-cluster-helper",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.11",
+        "cluster-render": "0.3.10"
+      },
+      "uninstallable": true
+    },
+    {
       "id": "front_camera_cluster",
       "kind": "app",
       "path": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/front_camera_cluster",
@@ -2270,6 +2549,23 @@
       "icon": "icon.png"
     },
     {
+      "id": "hotspot-studio-helper",
+      "kind": "tool",
+      "version": "0.1.7",
+      "title": "Hotspot Studio helper",
+      "description": "Shares the MGU LTE uplink with BMW's hotspot and provides a guarded single-client ENET gateway",
+      "path": "tools/_released/hotspot-studio-helper",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.11",
+        "mgu-python": "1.0.2",
+        "mgu-uplink": "0.7.3"
+      },
+      "uninstallable": true
+    },
+    {
       "id": "hotspot_studio",
       "kind": "app",
       "path": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/hotspot_studio",
@@ -2452,6 +2748,72 @@
       "description": "Gear, shift lights, boost, oil, coolant and intake temperatures, a G-meter, trip figures and the song playing on the windshield HUD, in Classic, M or Night themes"
     },
     {
+      "id": "idv7lol",
+      "kind": "app",
+      "version": "0.2.15",
+      "title": "idv7lol",
+      "description": "Your own layout on the whole instrument cluster: themes made with idv7lol Studio, drawn by the cluster itself",
+      "path": "apps/_prebuilt/idv7lol",
+      "manifest": "app.json",
+      "icon": "icon.png",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "cluster-render": "0.6.9",
+        "mgu-deploy": "0.8.27"
+      },
+      "uninstallable": true,
+      "build": {
+        "node": "tools/prebuilt.js",
+        "output": "{dir}/{id}@{version}.tgz",
+        "shared": [
+          "tools/prebuilt.js"
+        ]
+      }
+    },
+    {
+      "id": "jap-waze-on-cluster",
+      "kind": "tool",
+      "version": "1.2.0",
+      "title": "Waze HUD on cluster",
+      "description": "Shows the CarPlay or Android Auto map on the instrument cluster and Waze's next turn on BMW's own HUD arrows: a root helper applies the reversible carplay and aapd patches where each is supported, and the capture, running from boot, decodes the map's H.264 and draws it through the cluster renderer whenever the stream flows. Stays off while robertnisipeanu's Waze on cluster is installed",
+      "path": "tools/_released/jap-waze-on-cluster",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.11",
+        "cluster-render": "0.3.7"
+      },
+      "uninstallable": true
+    },
+    {
+      "id": "jap_sysmon",
+      "kind": "app",
+      "version": "1.0.6",
+      "title": "iDrive Monitor",
+      "description": "The head unit's CPU, memory and graphics load, and a short pop-up when the iDrive runs short of them (CPU busy for 30 s, little free memory, apps near their memory cap). Starts with the head unit; no pop-up in reverse.",
+      "path": "apps/_prebuilt/jap_sysmon",
+      "manifest": "app.json",
+      "icon": "icon.png",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-render": "0.6.11",
+        "mgu-inputgate": "1.0.0"
+      },
+      "uninstallable": true,
+      "build": {
+        "node": "tools/prebuilt.js",
+        "output": "{dir}/{id}@{version}.tgz",
+        "shared": [
+          "tools/prebuilt.js"
+        ]
+      }
+    },
+    {
       "id": "jap_waze_cluster",
       "kind": "app",
       "title": "Waze HUD",
@@ -2494,6 +2856,55 @@
         ]
       },
       "icon": "icon.png"
+    },
+    {
+      "id": "kombikraft",
+      "kind": "app",
+      "version": "0.1.0",
+      "title": "KombiKraft Lab · Offline prototype",
+      "description": "Experimental native preferences app. No vehicle-validated release; factory menu injection, HUD rendering and KOMBI skin activation remain unavailable.",
+      "path": "apps/_prebuilt/kombikraft",
+      "manifest": "app.json",
+      "icon": "icon.png",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.2.0"
+      },
+      "uninstallable": true,
+      "build": {
+        "node": "tools/prebuilt.js",
+        "output": "{dir}/{id}@{version}.tgz",
+        "shared": [
+          "tools/prebuilt.js"
+        ]
+      }
+    },
+    {
+      "id": "kombikraft_test",
+      "kind": "app",
+      "version": "0.1.28",
+      "title": "KombiKraft Themes",
+      "description": "F40 M Round test theme with mirrored main dials, BMW mini-gauge numerals, and shaded segmented rings. This build masks the factory model badge behind the M Round badge. Select while parked. Badge coverage awaiting on-car validation.",
+      "path": "apps/_prebuilt/kombikraft_test",
+      "manifest": "app.json",
+      "icon": "icon.png",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.4.0",
+        "cluster-render": "0.6.9"
+      },
+      "uninstallable": true,
+      "build": {
+        "node": "tools/prebuilt.js",
+        "output": "{dir}/{id}@{version}.tgz",
+        "shared": [
+          "tools/prebuilt.js"
+        ]
+      }
     },
     {
       "id": "lfb-enginesound",
@@ -2711,6 +3122,48 @@
       "icon": "icon.png"
     },
     {
+      "id": "marku-kaluga-cameras",
+      "kind": "tool",
+      "version": "0.9.3",
+      "title": "Waze Strelka camera service",
+      "description": "Local Kaluga OSM camera snapshot, strict GPS diagnostics and optional verified-road camera alerts",
+      "path": "tools/_released/marku-kaluga-cameras",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "cluster-render": "0.4.0"
+      },
+      "optional": true,
+      "uninstallable": true
+    },
+    {
+      "id": "marku_kaluga_cameras",
+      "kind": "app",
+      "version": "0.9.3",
+      "title": "Waze Стрелка",
+      "description": "Waze on Cluster с настройками карты, HUD, CarPlay, Android Auto и дополнительным разделом камер",
+      "path": "apps/_prebuilt/marku_kaluga_cameras",
+      "manifest": "app.json",
+      "icon": "icon.png",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "waze-on-cluster": "0.9.14",
+        "marku-kaluga-cameras": "0.9.3",
+        "mgu-deploy": "0.7.11"
+      },
+      "uninstallable": true,
+      "build": {
+        "node": "tools/prebuilt.js",
+        "output": "{dir}/{id}@{version}.tgz",
+        "shared": [
+          "tools/prebuilt.js"
+        ]
+      }
+    },
+    {
       "id": "mazzahaker_xdrive_remover",
       "kind": "app",
       "version": "0.1.26",
@@ -2761,6 +3214,19 @@
       "path": "apps/_sources/namels-mgu-apps-full/native/cluster-net",
       "mguHmi": [
         "ID7"
+      ],
+      "requires": {}
+    },
+    {
+      "id": "mgu-deploy",
+      "kind": "tool",
+      "version": "0.8.27",
+      "title": "Deploy tool",
+      "description": "Installs, updates, rolls back and removes our tools and apps on the head unit, with a snapshot before every change",
+      "path": "tools/_released/mgu-deploy",
+      "mguHmi": [
+        "ID7",
+        "ID8"
       ],
       "requires": {}
     },
@@ -2851,6 +3317,68 @@
         "ID7"
       ],
       "requires": {}
+    },
+    {
+      "id": "mgu-python",
+      "kind": "tool",
+      "version": "1.0.3",
+      "title": "Python",
+      "description": "Python 3.12 for apps that build on the head unit with Python",
+      "path": "tools/_released/mgu-python",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {}
+    },
+    {
+      "id": "mgu-render",
+      "kind": "tool",
+      "version": "0.6.25",
+      "title": "Renderer",
+      "description": "Draws apps' screens on the GPU, over the HMI or inside the app's page",
+      "path": "tools/_released/mgu-render",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "mgu-deploy": "0.6.9"
+      },
+      "provides": "renderer",
+      "optional": true
+    },
+    {
+      "id": "mgu-updater",
+      "kind": "tool",
+      "version": "0.8.51",
+      "title": "Updater",
+      "description": "Installs, updates and removes apps and head-unit tools from its sources",
+      "path": "tools/_released/mgu-updater",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "mgu-deploy": "0.8.4",
+        "mgu-python": "1.0.2"
+      }
+    },
+    {
+      "id": "mgu-uplink",
+      "kind": "tool",
+      "version": "0.7.13",
+      "title": "Internet uplink",
+      "description": "Internet for selected apps through a USB network adapter, an LTE stick, a USB-tethered phone or Wi-Fi",
+      "path": "tools/_released/mgu-uplink",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "mgu-updater": "0.7.2"
+      },
+      "optional": true
     },
     {
       "id": "mgu-video-net",
@@ -3348,6 +3876,31 @@
       "icon": "icon.png"
     },
     {
+      "id": "rear_comfort",
+      "kind": "app",
+      "version": "0.5.6",
+      "title": "Rear Comfort",
+      "description": "G12 Executive Lounge control for rear climate, comfort seats, massage, shades and entertainment",
+      "path": "apps/_prebuilt/rear_comfort",
+      "manifest": "app.json",
+      "icon": "icon.png",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0"
+      },
+      "uninstallable": true,
+      "build": {
+        "node": "tools/prebuilt.js",
+        "output": "{dir}/{id}@{version}.tgz",
+        "shared": [
+          "tools/prebuilt.js"
+        ]
+      }
+    },
+    {
       "id": "redline",
       "kind": "app",
       "version": "2.0.45",
@@ -3827,6 +4380,30 @@
       "manifest": "app.json"
     },
     {
+      "id": "turnkey_e_blend_id8",
+      "kind": "app",
+      "version": "0.5.0",
+      "title": "TurnKey E Blend",
+      "description": "Plan a petrol and E85 blend, read the remaining fuel from the car, or estimate tank ethanol.",
+      "path": "apps/_prebuilt/turnkey_e_blend_id8",
+      "manifest": "app.json",
+      "icon": "icon.png",
+      "mguHmi": [
+        "ID8"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.0"
+      },
+      "uninstallable": true,
+      "build": {
+        "node": "tools/prebuilt.js",
+        "output": "{dir}/{id}@{version}.tgz",
+        "shared": [
+          "tools/prebuilt.js"
+        ]
+      }
+    },
+    {
       "id": "twin_dial",
       "kind": "app",
       "version": "0.1.5",
@@ -3852,6 +4429,22 @@
           "apps/_sources/sergey-olefir-f30-cluster/shared"
         ]
       }
+    },
+    {
+      "id": "vehicle-network-observer",
+      "kind": "tool",
+      "version": "0.1.2",
+      "title": "Vehicle network observer",
+      "description": "Creates the passive network inventory consumed by the Vehicle Network app",
+      "path": "tools/_released/vehicle-network-observer",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.11",
+        "mgu-python": "1.0.2"
+      },
+      "uninstallable": true
     },
     {
       "id": "vehicle_health",
@@ -3959,6 +4552,76 @@
           "apps/_ports/appstudio-idrive8/AQ_PORT.json"
         ]
       }
+    },
+    {
+      "id": "vizualyse-bus",
+      "kind": "tool",
+      "version": "0.1.0",
+      "title": "Vizualyse bus",
+      "description": "EXPERIMENTAL. The shared bus the Vizualyse tools use to ask each other to switch things off while they need the car's resources (Steam pauses Cast's cluster and HUD video while a game runs). Mosquitto 2.0.21 (MQTT) on a Unix socket only root's tools can reach; no network listener. Installed with the tools that use it; about 0.2 MB.",
+      "path": "tools/_released/vizualyse-bus",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.0"
+      },
+      "uninstallable": true
+    },
+    {
+      "id": "vizualyse-cast",
+      "kind": "tool",
+      "version": "0.4.1",
+      "title": "Cast to cluster",
+      "description": "Plays a stream URL from your phone on the instrument cluster, the HUD or the media console, with its sound through the speakers: scan the QR code, paste a URL, pick where it goes. With hook111 armed, also CarPlay's own second screen (its cluster map) on the cluster or the HUD. Controlled by touch on the central screen too, parked or driving, where mgu-render is installed",
+      "path": "tools/_released/vizualyse-cast",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.0",
+        "cluster-render": "0.4.2",
+        "mgu-python": "1.0.0",
+        "mgu-uplink": "0.7.0",
+        "vizualyse-bus": "0.1.0"
+      },
+      "uninstallable": true
+    },
+    {
+      "id": "vizualyse-cluster",
+      "kind": "tool",
+      "version": "0.4.1",
+      "title": "Cluster themes",
+      "description": "EXPERIMENTAL, NOT YET TRIED ON A CAR. Whole-cluster themes drawn over the instrument cluster through cluster-render's panel target, under the car's own warning lights: eight families (G20 inspired 1 and 2, LCI inspired 1 and 2, Three-dial 1 and 2, Performance 1 and 2), each a Sport and a Comfort theme switched by the drive mode. Drawn by small shaders on the cluster with textures sent once (about 1.7-3.1 MB at start), so only a few KB/s of numbers cross the link while driving. Readings the car does not give show as --. Chosen on the central screen by touch, with a preview of each theme and a 10 s try on the cluster while parked (the Cluster themes iDrive app). About 12 MB.",
+      "path": "tools/_released/vizualyse-cluster",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.0",
+        "mgu-python": "1.0.0",
+        "mgu-render": "0.6.11",
+        "cluster-render": "0.5.4"
+      },
+      "uninstallable": true
+    },
+    {
+      "id": "vizualyse-moonlight",
+      "kind": "tool",
+      "version": "0.3.1",
+      "title": "Moonlight",
+      "description": "EXPERIMENTAL. Streams games from a PC running Sunshine (GameStream) to the central screen (or the cluster or the HUD) while parked, decoded on the car's GPU, with the sound through the speakers and game controllers (a wired Xbox 360-style USB pad, or the phone as a pad; no Bluetooth pads). Pair the PC and pick a game on the phone page: scan the QR code on the iDrive Moonlight page.",
+      "path": "tools/_released/vizualyse-moonlight",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.0",
+        "cluster-render": "0.4.2",
+        "mgu-python": "1.0.0",
+        "mgu-render": "0.6.11"
+      },
+      "uninstallable": true
     },
     {
       "id": "vizualyse_cast",
@@ -4102,6 +4765,39 @@
       "icon": "icon.png"
     },
     {
+      "id": "waze-hud-control",
+      "kind": "tool",
+      "version": "0.3.0",
+      "title": "Waze HUD controller",
+      "description": "Applies and persists the Waze HUD geometry selected in the Waze HUD app",
+      "path": "tools/_released/waze-hud-control",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.11",
+        "cluster-render": "0.3.10",
+        "waze-on-cluster": "0.8.3"
+      },
+      "uninstallable": true
+    },
+    {
+      "id": "waze-on-cluster",
+      "kind": "tool",
+      "version": "0.10.12",
+      "title": "Maps on cluster",
+      "description": "Runs the cluster map in the background. It is installed with the Maps on cluster app, which you use to control it.",
+      "path": "tools/_released/waze-on-cluster",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.17",
+        "cluster-render": "0.5.3"
+      },
+      "uninstallable": true
+    },
+    {
       "id": "waze_hud",
       "kind": "app",
       "path": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/waze_hud",
@@ -4137,6 +4833,23 @@
         ]
       },
       "icon": "icon.png"
+    },
+    {
+      "id": "wazecard",
+      "kind": "tool",
+      "version": "1.0.0",
+      "title": "Waze Cards service",
+      "description": "Needed by the Waze Cards app: draws Waze's cards or map on the instrument cluster.",
+      "path": "tools/_released/wazecard",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.0",
+        "cluster-render": "0.3.10"
+      },
+      "optional": true,
+      "uninstallable": true
     },
     {
       "id": "woodr-dashkeep",
@@ -4505,6 +5218,31 @@
         ]
       },
       "icon": "icon.png"
+    },
+    {
+      "id": "wzc_wazecards",
+      "kind": "app",
+      "version": "1.0.1",
+      "title": "Waze Cards",
+      "description": "Waze's turn and arrival cards, or Waze's map, on the instrument cluster while Waze guides in CarPlay.",
+      "path": "apps/_prebuilt/wzc_wazecards",
+      "manifest": "app.json",
+      "icon": "icon.png",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.0",
+        "wazecard": "1.0.0"
+      },
+      "uninstallable": true,
+      "build": {
+        "node": "tools/prebuilt.js",
+        "output": "{dir}/{id}@{version}.tgz",
+        "shared": [
+          "tools/prebuilt.js"
+        ]
+      }
     },
     {
       "id": "xdrive_studio",

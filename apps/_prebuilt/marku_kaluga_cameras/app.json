@@ -1,0 +1,14 @@
+{
+  "id": "marku_kaluga_cameras",
+  "version": "0.9.3",
+  "title": "Waze Стрелка",
+  "description": "Waze on Cluster с настройками карты, HUD, CarPlay, Android Auto и дополнительным разделом камер",
+  "mguHmi": [
+    "ID7"
+  ],
+  "requires": {
+    "waze-on-cluster": "0.9.14",
+    "marku-kaluga-cameras": "0.9.3",
+    "mgu-deploy": "0.7.11"
+  }
+}

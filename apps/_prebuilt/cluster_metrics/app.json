@@ -1,0 +1,12 @@
+{
+  "id": "cluster_metrics",
+  "version": "0.8.0",
+  "title": "Cluster Metrics",
+  "description": "Real-time efficiency, HV battery %, powertrain temperatures, gear in D, full-wing Right-Wing Media/Charging/Trip widget, HUD turn-by-turn nav, and live DSC hydraulic brake indicator for BMW iDrive 7",
+  "mguHmi": [
+    "ID7"
+  ],
+  "requires": {
+    "cluster-render": "0.4.0"
+  }
+}

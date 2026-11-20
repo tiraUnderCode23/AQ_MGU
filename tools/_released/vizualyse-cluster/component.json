@@ -1,0 +1,1530 @@
+{
+  "id": "vizualyse-cluster",
+  "kind": "tool",
+  "version": "0.4.1",
+  "title": "Cluster themes",
+  "description": "EXPERIMENTAL, NOT YET TRIED ON A CAR. Whole-cluster themes drawn over the instrument cluster through cluster-render's panel target, under the car's own warning lights: eight families (G20 inspired 1 and 2, LCI inspired 1 and 2, Three-dial 1 and 2, Performance 1 and 2), each a Sport and a Comfort theme switched by the drive mode. Drawn by small shaders on the cluster with textures sent once (about 1.7-3.1 MB at start), so only a few KB/s of numbers cross the link while driving. Readings the car does not give show as --. Chosen on the central screen by touch, with a preview of each theme and a 10 s try on the cluster while parked (the Cluster themes iDrive app). About 12 MB.",
+  "files": [
+    {
+      "path": "server.js",
+      "mode": "0644",
+      "sha256": "64b4bfb4e3f10ef12794a3858f4730439c22a8531d42d34798bb9f80ed092c37",
+      "from": "files/server.js"
+    },
+    {
+      "path": "control.js",
+      "mode": "0644",
+      "sha256": "ff6cf4d88284610b0b222d7b4dd3e7d6075c1d24ef88c6c5fea22adae3a3cb62",
+      "from": "files/control.js"
+    },
+    {
+      "path": "theme_runtime.js",
+      "mode": "0644",
+      "sha256": "6cf48db4c9fe360d799036b68f51d6066cf1b4c409cff289c1c153e11fc6fb1f",
+      "from": "files/theme_runtime.js"
+    },
+    {
+      "path": "theme_core.js",
+      "mode": "0644",
+      "sha256": "fc844c8f3176d1f3b807bcbd3b7af235964de91e345966b81732de8b6529d381",
+      "from": "files/theme_core.js"
+    },
+    {
+      "path": "sim.js",
+      "mode": "0644",
+      "sha256": "ef274614df8dbb83f1d23ad1f081992b7dee7c29eee28b4418d36bc9456528f0",
+      "from": "files/sim.js"
+    },
+    {
+      "path": "picker.js",
+      "mode": "0644",
+      "sha256": "7f2760e01ed093f68ec3e185b02552175f16d76ed7a3554e4af6fd637880f0a7",
+      "from": "files/picker.js"
+    },
+    {
+      "path": "picker_view.js",
+      "mode": "0644",
+      "sha256": "84dd1f2c34db6913ad41eac5bd7eb37d334c891e1788549b47d809ba90957bd9",
+      "from": "files/picker_view.js"
+    },
+    {
+      "path": "touch_reader.py",
+      "mode": "0644",
+      "sha256": "b0f1eac3272c6ca80dc04fcfc6ee97bb1bebcd3f4951f8d925e7c6b743d6ced9",
+      "from": "files/touch_reader.py"
+    },
+    {
+      "path": "ui_canvas.js",
+      "mode": "0644",
+      "sha256": "f105fc70e64e20f5cb55ebefeb9717f0e600adc051929b56d70210c405b8990f",
+      "from": "files/ui_canvas.js"
+    },
+    {
+      "path": "ui_kit.js",
+      "mode": "0644",
+      "sha256": "18a6604ff6d21a845db3314c7357bc44da888da009e9a232d71f8e272006f93c",
+      "from": "files/ui_kit.js"
+    },
+    {
+      "path": "ui_host.js",
+      "mode": "0644",
+      "sha256": "e69a32a60fefe44e4a6e603e29e9ef87f5a06ee145fec41175380c62a552c755",
+      "from": "files/ui_host.js"
+    },
+    {
+      "path": "ui_png.js",
+      "mode": "0644",
+      "sha256": "93c0e416f2b4baf676a0274b56649771d3cde800c44513239271c0fd8b8b5ebb",
+      "from": "files/ui_png.js"
+    },
+    {
+      "path": "ui.fonts.json",
+      "mode": "0644",
+      "sha256": "c91267b1ba7b6a63d2d4f9a259ab57678b9d4da96dfe75508995877890d04440",
+      "from": "files/ui.fonts.json"
+    },
+    {
+      "path": "ui.f20.font.gz",
+      "mode": "0644",
+      "sha256": "fe9f0e35e81509c24ddec768cd570af8d21f12be6deaba8335d319a91cf314d4",
+      "from": "files/ui.f20.font.gz"
+    },
+    {
+      "path": "ui.f24.font.gz",
+      "mode": "0644",
+      "sha256": "1b482f1dadb95b3857a3c772485795973284e391199e112c076cf1335c5a5a31",
+      "from": "files/ui.f24.font.gz"
+    },
+    {
+      "path": "ui.f32.font.gz",
+      "mode": "0644",
+      "sha256": "3c00118f1d5360b1ad651ef4d5b865e3408c32efdd8a313dbc6ab0e4d5f7dbe5",
+      "from": "files/ui.f32.font.gz"
+    },
+    {
+      "path": "ui.f44.font.gz",
+      "mode": "0644",
+      "sha256": "71f87f34501a9c08fe88a940cf823decfde90c181dcbcbd087f71a8fba8f1a0c",
+      "from": "files/ui.f44.font.gz"
+    },
+    {
+      "path": "cluster_render_client.js",
+      "mode": "0644",
+      "sha256": "b01a4506e7c297e299793e4820ccac96acbda215f92486fa15a165a3e587683e",
+      "from": "files/cluster_render_client.js"
+    },
+    {
+      "path": "THIRD-PARTY.md",
+      "mode": "0644",
+      "sha256": "ec3edd518927793d0f807762b72adb216450072ab1fca0a3860d7bef96afb296",
+      "from": "files/THIRD-PARTY.md"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "0644",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "from": "files/LICENSE"
+    },
+    {
+      "path": "fs_art.frag",
+      "mode": "0644",
+      "sha256": "6e0253a3b4de55956ea136408b922d1e201d4ac3c9576c5b1eca0330f9e79127",
+      "from": "files/fs_art.frag"
+    },
+    {
+      "path": "fs_gauge.frag",
+      "mode": "0644",
+      "sha256": "fd4cc0115f1ee10600c871e071edaa8bd8cd474826302c6e159c8a11bfcb0103",
+      "from": "files/fs_gauge.frag"
+    },
+    {
+      "path": "fs_text.frag",
+      "mode": "0644",
+      "sha256": "cdfe5db8189c7bedf0ec2df73158e07700aab00c3d3e14b3b79f2e4e1fbc0105",
+      "from": "files/fs_text.frag"
+    },
+    {
+      "path": "fs_leds.frag",
+      "mode": "0644",
+      "sha256": "9da7ffbf75f97f7714df623eebc115e962a4b94c9b0da816122a2f8f3d97951c",
+      "from": "files/fs_leds.frag"
+    },
+    {
+      "path": "fs_rect.frag",
+      "mode": "0644",
+      "sha256": "f0ea1d1f6d686364a241533b605a78801919cb277082a059010714738c78c8c9",
+      "from": "files/fs_rect.frag"
+    },
+    {
+      "path": "g20i1.art.tiles.gz",
+      "mode": "0644",
+      "sha256": "c9f233a72f72ba1cf7ef588a9706af8eda48b1bdf572a7bfbd1ba57fb58065f6",
+      "from": "files/g20i1.art.tiles.gz"
+    },
+    {
+      "path": "g20i1.chev.sprite.gz",
+      "mode": "0644",
+      "sha256": "e7e01f422dcd76b85916abfb688e47d5ec193830bcba84872a5759982a0f4f2f",
+      "from": "files/g20i1.chev.sprite.gz"
+    },
+    {
+      "path": "g20i1.engine.field.gz",
+      "mode": "0644",
+      "sha256": "504bf0306f126fbd2211fae8772e31d468cc3b470df6697fc6d20401197db49d",
+      "from": "files/g20i1.engine.field.gz"
+    },
+    {
+      "path": "g20i1.f184w500.font.gz",
+      "mode": "0644",
+      "sha256": "dda418f728e30dd924f71748fb97c6b9d902b5d60429a52e939eb1463cdc1180",
+      "from": "files/g20i1.f184w500.font.gz"
+    },
+    {
+      "path": "g20i1.f22w500.font.gz",
+      "mode": "0644",
+      "sha256": "4c0f4284cf7a6fec7fe3c1cb190383761912ec2327c4233140634d4c9be2ce01",
+      "from": "files/g20i1.f22w500.font.gz"
+    },
+    {
+      "path": "g20i1.f24w500.font.gz",
+      "mode": "0644",
+      "sha256": "86d7b1578fc4c1f9f7e6770425a98d059cee19e05fec4b24239c3b29e2b257c8",
+      "from": "files/g20i1.f24w500.font.gz"
+    },
+    {
+      "path": "g20i1.f30w500.font.gz",
+      "mode": "0644",
+      "sha256": "e807cf7bc3785b7798c954173c0f85d1dc8e715cbdcd45c832d511dfdec198fa",
+      "from": "files/g20i1.f30w500.font.gz"
+    },
+    {
+      "path": "g20i1.f33w500.font.gz",
+      "mode": "0644",
+      "sha256": "a054054d7580eca94a49bc000ccaa6b52178175c37f7267c0cc3a7aed13334d1",
+      "from": "files/g20i1.f33w500.font.gz"
+    },
+    {
+      "path": "g20i1.f76w400.font.gz",
+      "mode": "0644",
+      "sha256": "db81f6aff0af5ad18ddb12247e6160635d8e0a09ef44efc992ee673cc00f6243",
+      "from": "files/g20i1.f76w400.font.gz"
+    },
+    {
+      "path": "g20i1.fuel.field.gz",
+      "mode": "0644",
+      "sha256": "34d7b15c94afa6195116b587cbcd5e8fe9b742b7e425e828b0c492b879f18d25",
+      "from": "files/g20i1.fuel.field.gz"
+    },
+    {
+      "path": "g20i1.logic.js",
+      "mode": "0644",
+      "sha256": "b870967cf7451c1228859e0ebebb8ec559957321cfd1badd88c311c31a6bede1",
+      "from": "files/g20i1.logic.js"
+    },
+    {
+      "path": "g20i1.speed.field.gz",
+      "mode": "0644",
+      "sha256": "d4cac36b0a06f4c02ad39cc6344d16ab2fc8665637e45f6d4b3cb9f794d6f721",
+      "from": "files/g20i1.speed.field.gz"
+    },
+    {
+      "path": "g20i1.theme.json",
+      "mode": "0644",
+      "sha256": "8c2a670f0f66b933c7c88868d9407df5a6778f85bccf6749fb83474d6724136c",
+      "from": "files/g20i1.theme.json"
+    },
+    {
+      "path": "g20i1c.art.tiles.gz",
+      "mode": "0644",
+      "sha256": "373be4680c24d9deed5e0f7ee25b1862f9df705b678df8feba96ede849fb9094",
+      "from": "files/g20i1c.art.tiles.gz"
+    },
+    {
+      "path": "g20i1c.f26w500.font.gz",
+      "mode": "0644",
+      "sha256": "4fa491412712816f4b50faeeb0d63897779473f0472b1abf9e49d02a8f07feb1",
+      "from": "files/g20i1c.f26w500.font.gz"
+    },
+    {
+      "path": "g20i1c.f30w500.font.gz",
+      "mode": "0644",
+      "sha256": "a4e8a5e273d2056825c08c7c64f52431868a06fd9fecd59f3a7b1fe47fc4aac6",
+      "from": "files/g20i1c.f30w500.font.gz"
+    },
+    {
+      "path": "g20i1c.f33w500.font.gz",
+      "mode": "0644",
+      "sha256": "e4eab83730d986956e49560055ef66ffdc47d92a089174b36840bfd562cc4951",
+      "from": "files/g20i1c.f33w500.font.gz"
+    },
+    {
+      "path": "g20i1c.f36w600.font.gz",
+      "mode": "0644",
+      "sha256": "d261bca1040086a2c263b7e3eb23e39c225a4494df500f915026bbe2db9935be",
+      "from": "files/g20i1c.f36w600.font.gz"
+    },
+    {
+      "path": "g20i1c.logic.js",
+      "mode": "0644",
+      "sha256": "a082bc91bd02dba6da381c6dc03a51cd8e6bacf560b5e3f489a0e72ee3a0b105",
+      "from": "files/g20i1c.logic.js"
+    },
+    {
+      "path": "g20i1c.setPointer.field.gz",
+      "mode": "0644",
+      "sha256": "df9fc06898942116aed8f84aec3fba0b03465c5c65524d29a7acc310a8960690",
+      "from": "files/g20i1c.setPointer.field.gz"
+    },
+    {
+      "path": "g20i1c.theme.json",
+      "mode": "0644",
+      "sha256": "fcdca1aea56edd20b3f2eeb3204a99f843fce9fdaa9dd55b79f63b5bff5b423c",
+      "from": "files/g20i1c.theme.json"
+    },
+    {
+      "path": "g20i2.art.tiles.gz",
+      "mode": "0644",
+      "sha256": "8acdd4744c4f70840bcf728281be1fc7599c092071e5e4f0d09543bb33d93d9f",
+      "from": "files/g20i2.art.tiles.gz"
+    },
+    {
+      "path": "g20i2.eng.field.gz",
+      "mode": "0644",
+      "sha256": "52305ded1f06f456c8c698c9985f4bfa500e4954157d161a7699ecef3277df21",
+      "from": "files/g20i2.eng.field.gz"
+    },
+    {
+      "path": "g20i2.f16w600.font.gz",
+      "mode": "0644",
+      "sha256": "b2ff7c83d8ec7325f0b6fe598343ee09ad1dbd12bd9ba136d7edbd25ab139d99",
+      "from": "files/g20i2.f16w600.font.gz"
+    },
+    {
+      "path": "g20i2.f180w500.font.gz",
+      "mode": "0644",
+      "sha256": "7e6f47a88b7107beed3a11aa63c0bfb10d93d10f45d6fe173236b98ed2b99212",
+      "from": "files/g20i2.f180w500.font.gz"
+    },
+    {
+      "path": "g20i2.f19w500.font.gz",
+      "mode": "0644",
+      "sha256": "1a771c3892750f26727ff14c5c9835a24e8337b2144b8637a9381561630c379c",
+      "from": "files/g20i2.f19w500.font.gz"
+    },
+    {
+      "path": "g20i2.f214w500.font.gz",
+      "mode": "0644",
+      "sha256": "555876f81d3183aa8d40a0615a38206ef61f24e6a9312a4eb602c37e7eab2b23",
+      "from": "files/g20i2.f214w500.font.gz"
+    },
+    {
+      "path": "g20i2.f26w500.font.gz",
+      "mode": "0644",
+      "sha256": "9adfc3197b50e9fea36f7cfa4b7d17479d73e7751ce7fe9fedf44315ebe82ef9",
+      "from": "files/g20i2.f26w500.font.gz"
+    },
+    {
+      "path": "g20i2.f30w500.font.gz",
+      "mode": "0644",
+      "sha256": "cf3b4bc3ab2695c161437271d25e04a0baee777484d257190684c8e55e8faf00",
+      "from": "files/g20i2.f30w500.font.gz"
+    },
+    {
+      "path": "g20i2.f44w500.font.gz",
+      "mode": "0644",
+      "sha256": "ffbc16e06a3a0ac5a513999a6fb17c919875b306d562c64d8a5b3377e9014a6d",
+      "from": "files/g20i2.f44w500.font.gz"
+    },
+    {
+      "path": "g20i2.fuel.field.gz",
+      "mode": "0644",
+      "sha256": "7afe083bae8a9a82970c608f0ba5a1115ef45f44479f278d8ac52c71c3245e07",
+      "from": "files/g20i2.fuel.field.gz"
+    },
+    {
+      "path": "g20i2.lampsA.field.gz",
+      "mode": "0644",
+      "sha256": "aa2adc902a8c31dedf02566b9eb0bb8683894c0fc0490805da5a032b904d89a2",
+      "from": "files/g20i2.lampsA.field.gz"
+    },
+    {
+      "path": "g20i2.logic.js",
+      "mode": "0644",
+      "sha256": "2c83d177f2b471663b1a6a70184f6771342b5a742855ea4a7f5f126b6065c707",
+      "from": "files/g20i2.logic.js"
+    },
+    {
+      "path": "g20i2.speed.field.gz",
+      "mode": "0644",
+      "sha256": "b5ff023df195c8b6217d1bb63c805e428681de960dc5027242ad4d8b21f4e15f",
+      "from": "files/g20i2.speed.field.gz"
+    },
+    {
+      "path": "g20i2.theme.json",
+      "mode": "0644",
+      "sha256": "8c9242479c1192d837dd2b633b465d1b2e69fa34821092e64e0602c00e767929",
+      "from": "files/g20i2.theme.json"
+    },
+    {
+      "path": "g20i2c.arrowR.field.gz",
+      "mode": "0644",
+      "sha256": "bd931a2efedf231f694f8def38608e5b1e8184f816f755fcc36c5dc69d29c795",
+      "from": "files/g20i2c.arrowR.field.gz"
+    },
+    {
+      "path": "g20i2c.art.tiles.gz",
+      "mode": "0644",
+      "sha256": "f383b7cddab2cc420b34598da79511dd5b18128c8738e60abea1ab09dbaeb8b2",
+      "from": "files/g20i2c.art.tiles.gz"
+    },
+    {
+      "path": "g20i2c.f140w500.font.gz",
+      "mode": "0644",
+      "sha256": "77f5f43d657160d4df94a8edffd288137d482db294758ea3212af18659b67880",
+      "from": "files/g20i2c.f140w500.font.gz"
+    },
+    {
+      "path": "g20i2c.f16w600.font.gz",
+      "mode": "0644",
+      "sha256": "b3eebbf0f199066500ad2f92c110aaa334d42746965a1bd5f4c94b320476478a",
+      "from": "files/g20i2c.f16w600.font.gz"
+    },
+    {
+      "path": "g20i2c.f19w500.font.gz",
+      "mode": "0644",
+      "sha256": "9357518fe217c480c304a142079fdc7d9afa7df4b074ad599bc4dccbd5152502",
+      "from": "files/g20i2c.f19w500.font.gz"
+    },
+    {
+      "path": "g20i2c.f26w500.font.gz",
+      "mode": "0644",
+      "sha256": "fe73454ea2af846d582b220ba0c094517682d1d3c507aae54ca692e7475363a7",
+      "from": "files/g20i2c.f26w500.font.gz"
+    },
+    {
+      "path": "g20i2c.f30w600.font.gz",
+      "mode": "0644",
+      "sha256": "472f4eb2135e6d10673d73a9f8c2ac8d3d9ebd2ea17706360032c683b4070b93",
+      "from": "files/g20i2c.f30w600.font.gz"
+    },
+    {
+      "path": "g20i2c.f35w500.font.gz",
+      "mode": "0644",
+      "sha256": "6bd2d4ff4e70095fe7730e3b283ba796d232ba2693a569a08c431c3dc5994d91",
+      "from": "files/g20i2c.f35w500.font.gz"
+    },
+    {
+      "path": "g20i2c.logic.js",
+      "mode": "0644",
+      "sha256": "d2422fd0b474f542c40ce7c58c6f7eabd9945a25cccd7ae6d20ee810a5794029",
+      "from": "files/g20i2c.logic.js"
+    },
+    {
+      "path": "g20i2c.theme.json",
+      "mode": "0644",
+      "sha256": "c9db650f95cb5524b8fc460b4cba56c761195bec49ff24b26448a89b27a7fdef",
+      "from": "files/g20i2c.theme.json"
+    },
+    {
+      "path": "lci1.art.tiles.gz",
+      "mode": "0644",
+      "sha256": "e3cf4e7b43677a4a6120e81d740baa4b3639ea7506a583a0ea635a85ecf376b4",
+      "from": "files/lci1.art.tiles.gz"
+    },
+    {
+      "path": "lci1.f112w600.font.gz",
+      "mode": "0644",
+      "sha256": "a547a6017fb1d9cc5cce0bc4386988f5792fc22c9da56e21039b1d7f4d637c58",
+      "from": "files/lci1.f112w600.font.gz"
+    },
+    {
+      "path": "lci1.f18w600.font.gz",
+      "mode": "0644",
+      "sha256": "4c68bf746b2d27101c09f2d037a0cf7b6df9b9c8a85f701d6ce2c18030209e85",
+      "from": "files/lci1.f18w600.font.gz"
+    },
+    {
+      "path": "lci1.f22w500.font.gz",
+      "mode": "0644",
+      "sha256": "474b7d3ad3720f8d393f2da63337fb2f196e2efa5ffe0d3d3b27ff4f8c6b4e2c",
+      "from": "files/lci1.f22w500.font.gz"
+    },
+    {
+      "path": "lci1.f24w500.font.gz",
+      "mode": "0644",
+      "sha256": "d30ed7bc40bced5631c1093b4e82a5fe6a35a8361a6c022be50ed2f29a40faf9",
+      "from": "files/lci1.f24w500.font.gz"
+    },
+    {
+      "path": "lci1.f24w600.font.gz",
+      "mode": "0644",
+      "sha256": "0f0f3f164c274515d761dcdafac2eb03505c4658dda58f7f8d94b28c7ea45d06",
+      "from": "files/lci1.f24w600.font.gz"
+    },
+    {
+      "path": "lci1.f36w600.font.gz",
+      "mode": "0644",
+      "sha256": "83bf4ee7e3631d7f6fb8cde9d43ccae37eed9150eaf55c1579d9c17f1814b175",
+      "from": "files/lci1.f36w600.font.gz"
+    },
+    {
+      "path": "lci1.f40w500.font.gz",
+      "mode": "0644",
+      "sha256": "95434077a786df446d67672593b27dfaa2da7fd6d07d3d39a5c5cd0eaedc8d83",
+      "from": "files/lci1.f40w500.font.gz"
+    },
+    {
+      "path": "lci1.f44w600.font.gz",
+      "mode": "0644",
+      "sha256": "845cd85a8dd856d49270a42b28feabcac8cf071612ac61d9b4a54ae404e64e18",
+      "from": "files/lci1.f44w600.font.gz"
+    },
+    {
+      "path": "lci1.fuelBar.field.gz",
+      "mode": "0644",
+      "sha256": "aedfdf4a35e98855b4723446e95a908f1180cd6d1cb1dc52ec45d8520a1244b7",
+      "from": "files/lci1.fuelBar.field.gz"
+    },
+    {
+      "path": "lci1.gearOutline.field.gz",
+      "mode": "0644",
+      "sha256": "71091ad0ab751cf8eeafea8822971dc0ca731f76717c6c6ab014b8c59b0798f5",
+      "from": "files/lci1.gearOutline.field.gz"
+    },
+    {
+      "path": "lci1.logic.js",
+      "mode": "0644",
+      "sha256": "ad8b8797b0a07f35bb646bf231210fce5e61c61d6473962fecd022d1746ce7e9",
+      "from": "files/lci1.logic.js"
+    },
+    {
+      "path": "lci1.speedNum.field.gz",
+      "mode": "0644",
+      "sha256": "0a1ec1302d3d30eaca9704bafeca3718e030e0f995cdfb4a91abb675823cde59",
+      "from": "files/lci1.speedNum.field.gz"
+    },
+    {
+      "path": "lci1.theme.json",
+      "mode": "0644",
+      "sha256": "6599b3af9ece37c8040aec9a7a76520705808891ddf268cbcfdbf07d91b9b836",
+      "from": "files/lci1.theme.json"
+    },
+    {
+      "path": "lci1c.art.tiles.gz",
+      "mode": "0644",
+      "sha256": "a92972bde2f642b70dfcbe1b18a17a83db970402fbfe43f83348e197217eb428",
+      "from": "files/lci1c.art.tiles.gz"
+    },
+    {
+      "path": "lci1c.f112w600.font.gz",
+      "mode": "0644",
+      "sha256": "8c9305a9d2f113814240ddedd5c32d2b0d5fc9638ebd5f5bd20cd6bedb025fc7",
+      "from": "files/lci1c.f112w600.font.gz"
+    },
+    {
+      "path": "lci1c.f14w600.font.gz",
+      "mode": "0644",
+      "sha256": "a2674e972dbf6b401690a9267dcef73c3c8f139028b9d6f970a5f4cd7b94f1fa",
+      "from": "files/lci1c.f14w600.font.gz"
+    },
+    {
+      "path": "lci1c.f18w600.font.gz",
+      "mode": "0644",
+      "sha256": "bc7bd337502d7fd660a950f327af1a774d5289bcf28168f090d23fc1112b1d0c",
+      "from": "files/lci1c.f18w600.font.gz"
+    },
+    {
+      "path": "lci1c.f22w500.font.gz",
+      "mode": "0644",
+      "sha256": "24676afbdc5e93afa6d8658758019d2271e52cbbc046fe16f5cc109455a2177b",
+      "from": "files/lci1c.f22w500.font.gz"
+    },
+    {
+      "path": "lci1c.f24w500.font.gz",
+      "mode": "0644",
+      "sha256": "a654cd95262c3a46a10a0a09e9c194d3dfbb2188849319ac0d45dd7c4622eb20",
+      "from": "files/lci1c.f24w500.font.gz"
+    },
+    {
+      "path": "lci1c.f24w600.font.gz",
+      "mode": "0644",
+      "sha256": "cafad2e568162e22c8e8efb50434b7bd2fa1a799e6430d1bb9df3880b5d13e68",
+      "from": "files/lci1c.f24w600.font.gz"
+    },
+    {
+      "path": "lci1c.f34w700.font.gz",
+      "mode": "0644",
+      "sha256": "dd7ad8a8b607f425f83b97b5d8b0aad33e537d365d63d9b2fc36e7641e523a5d",
+      "from": "files/lci1c.f34w700.font.gz"
+    },
+    {
+      "path": "lci1c.f44w600.font.gz",
+      "mode": "0644",
+      "sha256": "97d30dfaf1bbaf3c9af7f02e5edb11af61e98e4eb459ffc6f661b1ec00d692fa",
+      "from": "files/lci1c.f44w600.font.gz"
+    },
+    {
+      "path": "lci1c.logic.js",
+      "mode": "0644",
+      "sha256": "a04572728a2a4317c421770a7555b6bf0ce50aa3778405cf7a981d6abdbb18c7",
+      "from": "files/lci1c.logic.js"
+    },
+    {
+      "path": "lci1c.theme.json",
+      "mode": "0644",
+      "sha256": "1c1808e75eb79053c8361276427839cfa6fa5e9071104815be49701797632d1f",
+      "from": "files/lci1c.theme.json"
+    },
+    {
+      "path": "lci2.art.tiles.gz",
+      "mode": "0644",
+      "sha256": "358feb992ba7dfa01ddfaada8d2010dc7f785fe42486a0041d81bc4b88c246d9",
+      "from": "files/lci2.art.tiles.gz"
+    },
+    {
+      "path": "lci2.f14w500.font.gz",
+      "mode": "0644",
+      "sha256": "92afcf7278ea69f4682b4367fce9c809d8ffda852c163ea90e41aff7fd1cb754",
+      "from": "files/lci2.f14w500.font.gz"
+    },
+    {
+      "path": "lci2.f16w400.font.gz",
+      "mode": "0644",
+      "sha256": "30f51661ce4c1651a507cd7a33c1d6e1cf1541d9cd3ee51620f755b43963c5ad",
+      "from": "files/lci2.f16w400.font.gz"
+    },
+    {
+      "path": "lci2.f180w600.font.gz",
+      "mode": "0644",
+      "sha256": "e0264f2b61ee4b744f8769026c3085650f06b603b7805d84ac751ec15e1cea5f",
+      "from": "files/lci2.f180w600.font.gz"
+    },
+    {
+      "path": "lci2.f200w600.font.gz",
+      "mode": "0644",
+      "sha256": "e71e829062e2567e19c85a220759342adf4ec4f9bd75184cd18ecc7d91a8c215",
+      "from": "files/lci2.f200w600.font.gz"
+    },
+    {
+      "path": "lci2.f20w700.font.gz",
+      "mode": "0644",
+      "sha256": "ab040f09ac2747860923507154295e56f862510960ef8ca24ea6b909d4dc8a69",
+      "from": "files/lci2.f20w700.font.gz"
+    },
+    {
+      "path": "lci2.f22w500.font.gz",
+      "mode": "0644",
+      "sha256": "f4cf6d201d4bc42d0736e8218725e79b6d90b8530c9e9953eebe10e51e714069",
+      "from": "files/lci2.f22w500.font.gz"
+    },
+    {
+      "path": "lci2.f30w500.font.gz",
+      "mode": "0644",
+      "sha256": "a2f98e92ae362e3b0105df01f4d640d635b84297317fc3f109f042a07b09f00a",
+      "from": "files/lci2.f30w500.font.gz"
+    },
+    {
+      "path": "lci2.f48w500.font.gz",
+      "mode": "0644",
+      "sha256": "fb0a38b239b70e7b45821e0df98379a137b4b1b402f84fb51c121e2d9c676756",
+      "from": "files/lci2.f48w500.font.gz"
+    },
+    {
+      "path": "lci2.logic.js",
+      "mode": "0644",
+      "sha256": "be703cef130ed214fd297a23ac7b768b81443fef28d9bc5f8d78d733b1ba5ae9",
+      "from": "files/lci2.logic.js"
+    },
+    {
+      "path": "lci2.speed.field.gz",
+      "mode": "0644",
+      "sha256": "0741329e6ed1bd50439d0fe8d9306c58f5a9435c29f02014c9bea7ad70463c45",
+      "from": "files/lci2.speed.field.gz"
+    },
+    {
+      "path": "lci2.theme.json",
+      "mode": "0644",
+      "sha256": "1802959a8eaf87ee22f6343386f47b786e0af9a3df1c97957dda2f2f4bd4abe2",
+      "from": "files/lci2.theme.json"
+    },
+    {
+      "path": "lci2c.arrowR.field.gz",
+      "mode": "0644",
+      "sha256": "3de0d2048517036ea794639a0a1381741a571cd5313d7c6b17522db2bd32c8f4",
+      "from": "files/lci2c.arrowR.field.gz"
+    },
+    {
+      "path": "lci2c.art.tiles.gz",
+      "mode": "0644",
+      "sha256": "ae32921f745bd938bed6ce98a08a61ad79e5b7de4dbad5838ac0cb16cddc3101",
+      "from": "files/lci2c.art.tiles.gz"
+    },
+    {
+      "path": "lci2c.f14w500.font.gz",
+      "mode": "0644",
+      "sha256": "32c6ffaf79f44bcf187570d870652749d0f3b7f15d2f8f602963fa14d45d0ecb",
+      "from": "files/lci2c.f14w500.font.gz"
+    },
+    {
+      "path": "lci2c.f16w400.font.gz",
+      "mode": "0644",
+      "sha256": "b92e9af60697ec77f2b81048657b251d459f430032a84c085185294cba59c6ea",
+      "from": "files/lci2c.f16w400.font.gz"
+    },
+    {
+      "path": "lci2c.f18w500.font.gz",
+      "mode": "0644",
+      "sha256": "c3399f29583519736d2d7bb6a41941a68b1c4c886fabe7da141fcc6fdf580389",
+      "from": "files/lci2c.f18w500.font.gz"
+    },
+    {
+      "path": "lci2c.f22w500.font.gz",
+      "mode": "0644",
+      "sha256": "8b512b25ea1872e40188f100461c23e643210c39c0e3258df7e4b188b8865902",
+      "from": "files/lci2c.f22w500.font.gz"
+    },
+    {
+      "path": "lci2c.f25w500.font.gz",
+      "mode": "0644",
+      "sha256": "a216331f35dc4a0226a723bcf3c5277a041eb92b79b1fcbd87fa30b4b64c4995",
+      "from": "files/lci2c.f25w500.font.gz"
+    },
+    {
+      "path": "lci2c.f30w500.font.gz",
+      "mode": "0644",
+      "sha256": "7922176ef9a9f448d52547109f455d6f4486db8ba6270b8525b0e9da5b12abed",
+      "from": "files/lci2c.f30w500.font.gz"
+    },
+    {
+      "path": "lci2c.f48w500.font.gz",
+      "mode": "0644",
+      "sha256": "dcfc4838458837fd05eee2b2ee23d5d0d022562b339c96e4c2eaaaa4b8ca0e65",
+      "from": "files/lci2c.f48w500.font.gz"
+    },
+    {
+      "path": "lci2c.f80w600.font.gz",
+      "mode": "0644",
+      "sha256": "3fd147196c8d5aacd03630146eed956a46bbf92be3b1cafadf96dc47ad05510e",
+      "from": "files/lci2c.f80w600.font.gz"
+    },
+    {
+      "path": "lci2c.logic.js",
+      "mode": "0644",
+      "sha256": "830fec8f932129655faf8e900f795b18d369d2f226071c870f63d7f16bf4bb6c",
+      "from": "files/lci2c.logic.js"
+    },
+    {
+      "path": "lci2c.theme.json",
+      "mode": "0644",
+      "sha256": "e51da1268987b6e7bf67be36de48099f76925d2424f58ae48960dc570396a69c",
+      "from": "files/lci2c.theme.json"
+    },
+    {
+      "path": "perf1.art.tiles.gz",
+      "mode": "0644",
+      "sha256": "9469cf3d109f9c227f77127613ed4e9d8b9a4c194dac9a32716c89add1f90537",
+      "from": "files/perf1.art.tiles.gz"
+    },
+    {
+      "path": "perf1.engBar.field.gz",
+      "mode": "0644",
+      "sha256": "35092f4edab8264bfd97442e5fac5f674b6fec31df8bd837bd2ac2efcaa5dea3",
+      "from": "files/perf1.engBar.field.gz"
+    },
+    {
+      "path": "perf1.f136w600.font.gz",
+      "mode": "0644",
+      "sha256": "610709e5e7ffb2a2c5d602a1b71e39e52dbfd6d563559b7749d82f0feaf5272b",
+      "from": "files/perf1.f136w600.font.gz"
+    },
+    {
+      "path": "perf1.f144w600.font.gz",
+      "mode": "0644",
+      "sha256": "a0d4fe1c450c325ad5460c99e6cbff4900135abfaaf2233a33a6e9d2b671e05b",
+      "from": "files/perf1.f144w600.font.gz"
+    },
+    {
+      "path": "perf1.f20w500.font.gz",
+      "mode": "0644",
+      "sha256": "e63e49b742474799d998d0f2c28b3e71203337db22b098bcb9b80ceb0061acac",
+      "from": "files/perf1.f20w500.font.gz"
+    },
+    {
+      "path": "perf1.f22w600.font.gz",
+      "mode": "0644",
+      "sha256": "46b76dd2e826fa8a6a1cd8028ed974592fb1da1a1484abd15256ea657fc5e2fb",
+      "from": "files/perf1.f22w600.font.gz"
+    },
+    {
+      "path": "perf1.f26w600.font.gz",
+      "mode": "0644",
+      "sha256": "a5cc42e852161a989454a92dacba40240a213f4543f45f985c56c3efe9abf516",
+      "from": "files/perf1.f26w600.font.gz"
+    },
+    {
+      "path": "perf1.f30w600.font.gz",
+      "mode": "0644",
+      "sha256": "42bca52dfcc1417659b7e70719d2a3f3d642d2792addc0f688749d92984cefed",
+      "from": "files/perf1.f30w600.font.gz"
+    },
+    {
+      "path": "perf1.f40w600.font.gz",
+      "mode": "0644",
+      "sha256": "03a5121e0d6e109b1afef3c86b84020c2ab6b4a3c764af7668b176bce72763e7",
+      "from": "files/perf1.f40w600.font.gz"
+    },
+    {
+      "path": "perf1.f88w600.font.gz",
+      "mode": "0644",
+      "sha256": "5b281edb394f2fafa3ed84e2521388eb2d430e8f2c966a65e8861cd616f5e1ba",
+      "from": "files/perf1.f88w600.font.gz"
+    },
+    {
+      "path": "perf1.logic.js",
+      "mode": "0644",
+      "sha256": "cc9b1c3ae0bc8be820982ca1ecfa54fc15f1d9725a094c86b6a33d02a7a018b2",
+      "from": "files/perf1.logic.js"
+    },
+    {
+      "path": "perf1.speedDial.field.gz",
+      "mode": "0644",
+      "sha256": "edebbac71635c5ab99e68ecd27c735fd11917db0ffc852376a2e94cdbcdace6b",
+      "from": "files/perf1.speedDial.field.gz"
+    },
+    {
+      "path": "perf1.theme.json",
+      "mode": "0644",
+      "sha256": "16814f0ca8182487b9e4357a238cd4826be3682b31b1fee03f9653a1422354b7",
+      "from": "files/perf1.theme.json"
+    },
+    {
+      "path": "perf1c.arrowR.field.gz",
+      "mode": "0644",
+      "sha256": "1974a0d758012c2998b74e9195add2c9e38e024f12c47b704ad3fc64c355bbad",
+      "from": "files/perf1c.arrowR.field.gz"
+    },
+    {
+      "path": "perf1c.art.tiles.gz",
+      "mode": "0644",
+      "sha256": "009ae6c0fb547eab02c242b0e6efdf669cb5d469e91053ba7c4fec57e17d7fcc",
+      "from": "files/perf1c.art.tiles.gz"
+    },
+    {
+      "path": "perf1c.f112w600.font.gz",
+      "mode": "0644",
+      "sha256": "0a6aa0a3898bda357b1bbb21c3522f9053b2fdc265013b7901e1fc35141a7c5a",
+      "from": "files/perf1c.f112w600.font.gz"
+    },
+    {
+      "path": "perf1c.f20w500.font.gz",
+      "mode": "0644",
+      "sha256": "e73d146c699bee9dbf8853f47acb7787c86537e8016830693baaa55b0307bdba",
+      "from": "files/perf1c.f20w500.font.gz"
+    },
+    {
+      "path": "perf1c.f24w600.font.gz",
+      "mode": "0644",
+      "sha256": "d11f9c1341fce56e9e5768e06228c0f1fc2faf5c37e61dd0c4d619aeb48c0692",
+      "from": "files/perf1c.f24w600.font.gz"
+    },
+    {
+      "path": "perf1c.f30w600.font.gz",
+      "mode": "0644",
+      "sha256": "b50df107c9b8b055244f40281a4669ede1f115200ab6043db254d00859057e42",
+      "from": "files/perf1c.f30w600.font.gz"
+    },
+    {
+      "path": "perf1c.f40w600.font.gz",
+      "mode": "0644",
+      "sha256": "a2063fc5c0b0c372c5fe021f4c3313dab7e86f53f260f1a0a4ebc3dc73a15703",
+      "from": "files/perf1c.f40w600.font.gz"
+    },
+    {
+      "path": "perf1c.f88w600.font.gz",
+      "mode": "0644",
+      "sha256": "320bd6c9423d6e60387071b86cbff3208385d26851cf7bc5d4531316fc111b6e",
+      "from": "files/perf1c.f88w600.font.gz"
+    },
+    {
+      "path": "perf1c.logic.js",
+      "mode": "0644",
+      "sha256": "a55370c5e3e51c73197d41cbdce6373a722745d3c16771a14d0ea8c8eb504a5b",
+      "from": "files/perf1c.logic.js"
+    },
+    {
+      "path": "perf1c.speedDial.field.gz",
+      "mode": "0644",
+      "sha256": "1345c9670e91c28a21b07944ab680e29f1b6027f10f4427a19b0051ff945858b",
+      "from": "files/perf1c.speedDial.field.gz"
+    },
+    {
+      "path": "perf1c.theme.json",
+      "mode": "0644",
+      "sha256": "d8b064f847ec36c53d3416f67599b90316087e0137b9b120cb63eb54edd1dcbd",
+      "from": "files/perf1c.theme.json"
+    },
+    {
+      "path": "perf2.art.tiles.gz",
+      "mode": "0644",
+      "sha256": "d559812b2517fecb86db56897b5dca589ace4b1e5beda73f31982136e2cbcbb1",
+      "from": "files/perf2.art.tiles.gz"
+    },
+    {
+      "path": "perf2.cue.sprite.gz",
+      "mode": "0644",
+      "sha256": "d97733b3369760e897a908794310293b9eff64729c2cd2da3e7264e3a024cca9",
+      "from": "files/perf2.cue.sprite.gz"
+    },
+    {
+      "path": "perf2.f156w600.font.gz",
+      "mode": "0644",
+      "sha256": "31e0cf2afb534baa60be1f9b81d8d1899948c11fb72650d418af7de686ac42a4",
+      "from": "files/perf2.f156w600.font.gz"
+    },
+    {
+      "path": "perf2.f16w700.font.gz",
+      "mode": "0644",
+      "sha256": "44b569404b62553d6badbaabb439a0dfded488909de288f183254b5672e53086",
+      "from": "files/perf2.f16w700.font.gz"
+    },
+    {
+      "path": "perf2.f176w600.font.gz",
+      "mode": "0644",
+      "sha256": "d15a10d995552e5ed326bd6d118ed860bb88821a107d6be155bd7bc52f79b2fa",
+      "from": "files/perf2.f176w600.font.gz"
+    },
+    {
+      "path": "perf2.f24w600.font.gz",
+      "mode": "0644",
+      "sha256": "15d7cb6b4ce42e5f2d416e9ab1613aed77694be550a97cbfc1d6bcb38549854d",
+      "from": "files/perf2.f24w600.font.gz"
+    },
+    {
+      "path": "perf2.f30w600.font.gz",
+      "mode": "0644",
+      "sha256": "b1547ea476ed8025c3af01fdeb41045f75d1fdf6886e3bdd359c1ba9c15f46c5",
+      "from": "files/perf2.f30w600.font.gz"
+    },
+    {
+      "path": "perf2.f34w600.font.gz",
+      "mode": "0644",
+      "sha256": "a2404d941f245e9ab8350c8b97b703c0ce1bcfeaa37dc4242ab20c72e8642428",
+      "from": "files/perf2.f34w600.font.gz"
+    },
+    {
+      "path": "perf2.f44w600.font.gz",
+      "mode": "0644",
+      "sha256": "f53c113e1fb17b0499d8f677b28eef9c863125874f8ffaad0ed35a0d046d14e5",
+      "from": "files/perf2.f44w600.font.gz"
+    },
+    {
+      "path": "perf2.f66w600.font.gz",
+      "mode": "0644",
+      "sha256": "808a4eec75dede2cb0c16ec932f79255e001fbc285123ce8140ead3750d81663",
+      "from": "files/perf2.f66w600.font.gz"
+    },
+    {
+      "path": "perf2.logic.js",
+      "mode": "0644",
+      "sha256": "756191a16b1f9b6ec85acd90aef4e598c8a6f2b9a4a99976e735074769518aad",
+      "from": "files/perf2.logic.js"
+    },
+    {
+      "path": "perf2.power.field.gz",
+      "mode": "0644",
+      "sha256": "0d67e47c52258cf83c978af9457299c77bdc15caff3117e8cef78c90629a9f82",
+      "from": "files/perf2.power.field.gz"
+    },
+    {
+      "path": "perf2.speed.field.gz",
+      "mode": "0644",
+      "sha256": "b3d02000c4bb7e590ace75f23719f036e4f9b755330ed2caad5bbce050d2bb40",
+      "from": "files/perf2.speed.field.gz"
+    },
+    {
+      "path": "perf2.theme.json",
+      "mode": "0644",
+      "sha256": "69f413a74a7332a0dd0da5bcd197814eff783ff629592ac830d9481c18cbf310",
+      "from": "files/perf2.theme.json"
+    },
+    {
+      "path": "perf2c.arrowTurn.field.gz",
+      "mode": "0644",
+      "sha256": "8ac508bf54f19ad3afc681482dfcd070af4a0df9902db1d58507752725127b70",
+      "from": "files/perf2c.arrowTurn.field.gz"
+    },
+    {
+      "path": "perf2c.art.tiles.gz",
+      "mode": "0644",
+      "sha256": "db814247ae4669c5e2efa2ade02325c8ace8bcd9c335f593e4c64621e27a222f",
+      "from": "files/perf2c.art.tiles.gz"
+    },
+    {
+      "path": "perf2c.f124w600.font.gz",
+      "mode": "0644",
+      "sha256": "5ac5a77390a3e437645524b137b16e60061f58fd3614784289bd833a2edc545d",
+      "from": "files/perf2c.f124w600.font.gz"
+    },
+    {
+      "path": "perf2c.f16w700.font.gz",
+      "mode": "0644",
+      "sha256": "43c7aaaf14fea5aa91a543f5bf2287659e08cd89a72a8eeb59f6218e45bf7ac0",
+      "from": "files/perf2c.f16w700.font.gz"
+    },
+    {
+      "path": "perf2c.f20w600.font.gz",
+      "mode": "0644",
+      "sha256": "6ad154b94839ac3cd70012a214786c5907ec3beb9d6d26e23bb274eff81d82f9",
+      "from": "files/perf2c.f20w600.font.gz"
+    },
+    {
+      "path": "perf2c.f30w600.font.gz",
+      "mode": "0644",
+      "sha256": "5d0781c06bf9c84f4bbb04c6e6d4c1751de4dc7e593809934fa1291145487231",
+      "from": "files/perf2c.f30w600.font.gz"
+    },
+    {
+      "path": "perf2c.f44w600.font.gz",
+      "mode": "0644",
+      "sha256": "b5a01d1562b36b8cf8bc5551885dede8a65583bc7ce4e5ca452507a443f29dbe",
+      "from": "files/perf2c.f44w600.font.gz"
+    },
+    {
+      "path": "perf2c.f48w600.font.gz",
+      "mode": "0644",
+      "sha256": "82f222ccf1f10fd34ecb832e5e1046c419aa103aade4aa68dd0a6fae65b609dd",
+      "from": "files/perf2c.f48w600.font.gz"
+    },
+    {
+      "path": "perf2c.f66w600.font.gz",
+      "mode": "0644",
+      "sha256": "ef1e85cd6b1c66c20add95c0aa2654e2f411fafc5221a78758d9b7c898f73170",
+      "from": "files/perf2c.f66w600.font.gz"
+    },
+    {
+      "path": "perf2c.logic.js",
+      "mode": "0644",
+      "sha256": "65c9bd7e31e74af21dd1861c2b8a9a7d533e74db3a6a9f525412f344cf61510c",
+      "from": "files/perf2c.logic.js"
+    },
+    {
+      "path": "perf2c.theme.json",
+      "mode": "0644",
+      "sha256": "39fd179f87c3573495652013e534ed5dfaa5948c9d779c829c95e0700c2fced8",
+      "from": "files/perf2c.theme.json"
+    },
+    {
+      "path": "tri1.art.tiles.gz",
+      "mode": "0644",
+      "sha256": "f706cf6fa2d437dfbacde63d33feae5450b0bef3d06694745a1e89022cfedac2",
+      "from": "files/tri1.art.tiles.gz"
+    },
+    {
+      "path": "tri1.eng.field.gz",
+      "mode": "0644",
+      "sha256": "7a5bf9b59d7a9eb994222124085d0514b7c65934b6aae8a05779eeb0de8106bf",
+      "from": "files/tri1.eng.field.gz"
+    },
+    {
+      "path": "tri1.f106w600.font.gz",
+      "mode": "0644",
+      "sha256": "97b507d7e242bb06aef75b4720de1d370688f6d640508e50750fc5d5fa40b66e",
+      "from": "files/tri1.f106w600.font.gz"
+    },
+    {
+      "path": "tri1.f186w500.font.gz",
+      "mode": "0644",
+      "sha256": "9b16c995b87864cb6870ecd687c4cadf1942d648962f4aa479df4d5ccba933e2",
+      "from": "files/tri1.f186w500.font.gz"
+    },
+    {
+      "path": "tri1.f24w400.font.gz",
+      "mode": "0644",
+      "sha256": "43da1f781d933c16bff10bb88f927f13f230043ea20aa9564d31f3f4f1caf29c",
+      "from": "files/tri1.f24w400.font.gz"
+    },
+    {
+      "path": "tri1.f24w500.font.gz",
+      "mode": "0644",
+      "sha256": "ea46c2f39ee060b31b50bfb1a8bb29458f9824bb4f86e86ec87ebd60b37dcfb5",
+      "from": "files/tri1.f24w500.font.gz"
+    },
+    {
+      "path": "tri1.f32w500.font.gz",
+      "mode": "0644",
+      "sha256": "6867e81e339d41b36f4358e9aea9445cf59561e61546906fd8960849c57accc4",
+      "from": "files/tri1.f32w500.font.gz"
+    },
+    {
+      "path": "tri1.f34w600.font.gz",
+      "mode": "0644",
+      "sha256": "b869d95c457239e95265cffc7b8c56bb6d3ccc64a9b029b2fb9671e21b052126",
+      "from": "files/tri1.f34w600.font.gz"
+    },
+    {
+      "path": "tri1.f40w600.font.gz",
+      "mode": "0644",
+      "sha256": "2ae608addb269078383d2507b444b2670bd5f59c8ec6164e4ebb84d0d1d91c21",
+      "from": "files/tri1.f40w600.font.gz"
+    },
+    {
+      "path": "tri1.f50w500.font.gz",
+      "mode": "0644",
+      "sha256": "f077cef2c274eec8fff5d4432bd87c793946f6ac5e2d7891f02ddcb894f626bf",
+      "from": "files/tri1.f50w500.font.gz"
+    },
+    {
+      "path": "tri1.f76w600.font.gz",
+      "mode": "0644",
+      "sha256": "aa45686f72a296769f8c19574bb5d4c4d4c9031a78f2e04f821275a0fa99e6f4",
+      "from": "files/tri1.f76w600.font.gz"
+    },
+    {
+      "path": "tri1.logic.js",
+      "mode": "0644",
+      "sha256": "b52c9282be102d0f61acf313b2f3ed7a8ebdfa18a3a7a7876e8a087406762ab8",
+      "from": "files/tri1.logic.js"
+    },
+    {
+      "path": "tri1.ribsL.field.gz",
+      "mode": "0644",
+      "sha256": "0d6c65d4bdd3e0815a621d482641f357ba704a96db25151dcd365933120944f3",
+      "from": "files/tri1.ribsL.field.gz"
+    },
+    {
+      "path": "tri1.theme.json",
+      "mode": "0644",
+      "sha256": "d919889b0c174a595446d801c951dd549098653f22a3a0bf6ac0f1678dc79f64",
+      "from": "files/tri1.theme.json"
+    },
+    {
+      "path": "tri1c.art.tiles.gz",
+      "mode": "0644",
+      "sha256": "a94d592f425871c57c80ddf92fb17f826060945c3436caf497a1469005b4e670",
+      "from": "files/tri1c.art.tiles.gz"
+    },
+    {
+      "path": "tri1c.f24w400.font.gz",
+      "mode": "0644",
+      "sha256": "37db197df26a48f2895f012c7d7aa6c33d4ab44abc7e747087e6650c44f5ca1b",
+      "from": "files/tri1c.f24w400.font.gz"
+    },
+    {
+      "path": "tri1c.f32w500.font.gz",
+      "mode": "0644",
+      "sha256": "b59a6bb7512398e907ba81609a292298e892222b5c1ebc5448596a2ea6dc8b57",
+      "from": "files/tri1c.f32w500.font.gz"
+    },
+    {
+      "path": "tri1c.f34w600.font.gz",
+      "mode": "0644",
+      "sha256": "ff1bff61b3b3542d8442003771f737ae38ff7848344f1d09125781312c1d33f3",
+      "from": "files/tri1c.f34w600.font.gz"
+    },
+    {
+      "path": "tri1c.f40w600.font.gz",
+      "mode": "0644",
+      "sha256": "8663353a56280e0f45fe6bd7ffd704e60048bf8a81d5cb3409f5bd8389dcebca",
+      "from": "files/tri1c.f40w600.font.gz"
+    },
+    {
+      "path": "tri1c.f41w500.font.gz",
+      "mode": "0644",
+      "sha256": "80e66c2634bf5b012ea0d10fc041da8bc2b9444249944b0c75a29677cb9bf5bb",
+      "from": "files/tri1c.f41w500.font.gz"
+    },
+    {
+      "path": "tri1c.f76w600.font.gz",
+      "mode": "0644",
+      "sha256": "7eae4903fe3560f2ff66c1db5abf896b0f5f64fa57c1bcb5f298d8399951bc15",
+      "from": "files/tri1c.f76w600.font.gz"
+    },
+    {
+      "path": "tri1c.f91w600.font.gz",
+      "mode": "0644",
+      "sha256": "3b1329719f9c697cd732d711fee33f3eddd9f30056baab7d9d06f876c2cf1c5a",
+      "from": "files/tri1c.f91w600.font.gz"
+    },
+    {
+      "path": "tri1c.logic.js",
+      "mode": "0644",
+      "sha256": "79c26d99a4b22bfd6b661ff5a018bcfa52d4eeb637671ced7f707c81a97a3e42",
+      "from": "files/tri1c.logic.js"
+    },
+    {
+      "path": "tri1c.theme.json",
+      "mode": "0644",
+      "sha256": "cd480ad15be84292b1d2f1f3adb9ff41cf263f7f6da06f500740b412f09ac800",
+      "from": "files/tri1c.theme.json"
+    },
+    {
+      "path": "tri2.art.tiles.gz",
+      "mode": "0644",
+      "sha256": "ae55a0c93ae9e22797e32f69e2ce1c88c64ad6a7079f54e04f3f1d8216a48bf9",
+      "from": "files/tri2.art.tiles.gz"
+    },
+    {
+      "path": "tri2.f13w600.font.gz",
+      "mode": "0644",
+      "sha256": "00328ac4f204734f71c2eeeae752a17e678c12591be5088920045ceeb628cc1c",
+      "from": "files/tri2.f13w600.font.gz"
+    },
+    {
+      "path": "tri2.f17w460.font.gz",
+      "mode": "0644",
+      "sha256": "10bc0d43dddd033ddab31e339cf7af3cd5da67633f9af7728ef8a734b5face83",
+      "from": "files/tri2.f17w460.font.gz"
+    },
+    {
+      "path": "tri2.f26w560.font.gz",
+      "mode": "0644",
+      "sha256": "3a6fefccd21ade88026d24b77ac27cbf56b4f3370bd0cbd80898c99d39a71bb0",
+      "from": "files/tri2.f26w560.font.gz"
+    },
+    {
+      "path": "tri2.f274w600.font.gz",
+      "mode": "0644",
+      "sha256": "501718a9a51b67e76448d88f12a7cc3f65fe55104a512eca1383ff2495288616",
+      "from": "files/tri2.f274w600.font.gz"
+    },
+    {
+      "path": "tri2.f274w600x.font.gz",
+      "mode": "0644",
+      "sha256": "636b2e1900b7c20de2d64a0417080710386477facbf75e227e3f3f76e13bf149",
+      "from": "files/tri2.f274w600x.font.gz"
+    },
+    {
+      "path": "tri2.f36w560.font.gz",
+      "mode": "0644",
+      "sha256": "bca875bc0afc8d3106c792fbf6cf535dcdfda9ba94786d7a88a04406e83358e5",
+      "from": "files/tri2.f36w560.font.gz"
+    },
+    {
+      "path": "tri2.f69w560.font.gz",
+      "mode": "0644",
+      "sha256": "25b361a135f7bb928972e09aebaf6cf37ce97736b90cc679c4a096277e881ed2",
+      "from": "files/tri2.f69w560.font.gz"
+    },
+    {
+      "path": "tri2.fuel.field.gz",
+      "mode": "0644",
+      "sha256": "011913e1937e7940947858e5212b1b1da04abf6a4c5cc93b0df37726861f7793",
+      "from": "files/tri2.fuel.field.gz"
+    },
+    {
+      "path": "tri2.ladder.field.gz",
+      "mode": "0644",
+      "sha256": "8913815e084811a31894470aa624479f8f69257b5ba1d4229e23eda5bda184e9",
+      "from": "files/tri2.ladder.field.gz"
+    },
+    {
+      "path": "tri2.logic.js",
+      "mode": "0644",
+      "sha256": "501353bb6e1fa88f4833a0cbd740454190743097370f9db343845b6c1d0e57bd",
+      "from": "files/tri2.logic.js"
+    },
+    {
+      "path": "tri2.pw.field.gz",
+      "mode": "0644",
+      "sha256": "5a1edcbbe95a8cd1be835ee3e94668fe5ac8fd4e22dcfb43fbbbd231d08fec4f",
+      "from": "files/tri2.pw.field.gz"
+    },
+    {
+      "path": "tri2.tach.field.gz",
+      "mode": "0644",
+      "sha256": "06be1376d6542f5d6b790c5559a236d4b88f680da8ae522b907ef7f6138b3e59",
+      "from": "files/tri2.tach.field.gz"
+    },
+    {
+      "path": "tri2.theme.json",
+      "mode": "0644",
+      "sha256": "f018717f687425f6c718d83a1aeaaff876bd4797e8bf3ec9dfbdff42eed6659a",
+      "from": "files/tri2.theme.json"
+    },
+    {
+      "path": "tri2c.arrow.field.gz",
+      "mode": "0644",
+      "sha256": "409f6be151d7d08daa04cdeeb64ee3f2052755a96a702f727a19422d0cbd44da",
+      "from": "files/tri2c.arrow.field.gz"
+    },
+    {
+      "path": "tri2c.art.tiles.gz",
+      "mode": "0644",
+      "sha256": "21edad884794f6eba546a959ee3709e49f50324e3a014505e35bbf622c90a6cd",
+      "from": "files/tri2c.art.tiles.gz"
+    },
+    {
+      "path": "tri2c.f14w600.font.gz",
+      "mode": "0644",
+      "sha256": "fb82a5b5ec83336e262f56d4d75c378cf39a8c2809caf50c39a98ae090019075",
+      "from": "files/tri2c.f14w600.font.gz"
+    },
+    {
+      "path": "tri2c.f17w460.font.gz",
+      "mode": "0644",
+      "sha256": "e4ba3d440167a1d3776004fb0468413531b5d61ec1efaa83af55d5c285b5f505",
+      "from": "files/tri2c.f17w460.font.gz"
+    },
+    {
+      "path": "tri2c.f206w600.font.gz",
+      "mode": "0644",
+      "sha256": "b32274247499261dfb127671b2bc3baca4af99e3068a1c7c7ad77e553d2322e7",
+      "from": "files/tri2c.f206w600.font.gz"
+    },
+    {
+      "path": "tri2c.f26w560.font.gz",
+      "mode": "0644",
+      "sha256": "e25daae47082f5a1f0afb41a38c4a703f589a200568fd6f67db058598b6ee05b",
+      "from": "files/tri2c.f26w560.font.gz"
+    },
+    {
+      "path": "tri2c.f31w700.font.gz",
+      "mode": "0644",
+      "sha256": "5b0b06c21e3f91d77887a40630c252c95f21d3ddbf5c0d22f45a91fcc9276473",
+      "from": "files/tri2c.f31w700.font.gz"
+    },
+    {
+      "path": "tri2c.f34w560.font.gz",
+      "mode": "0644",
+      "sha256": "675583ffb0341c10e206292b1b2b5060124affb75e25219bdc2c8fb41f2fdd2e",
+      "from": "files/tri2c.f34w560.font.gz"
+    },
+    {
+      "path": "tri2c.f54w560.font.gz",
+      "mode": "0644",
+      "sha256": "5d537566e3e0a8f1c72d2c96936344b4b0676c8c11d42c7ad6a308d276061612",
+      "from": "files/tri2c.f54w560.font.gz"
+    },
+    {
+      "path": "tri2c.logic.js",
+      "mode": "0644",
+      "sha256": "ded381a753c50d7fa69c5e259575dd93748e8afb543b9bdb45cfb67a1de70ea3",
+      "from": "files/tri2c.logic.js"
+    },
+    {
+      "path": "tri2c.pwTint.field.gz",
+      "mode": "0644",
+      "sha256": "b19f9f8905b43b44ad5d8efeacaeb227584b2f6dc8bcdcc6ba921d2e0a700301",
+      "from": "files/tri2c.pwTint.field.gz"
+    },
+    {
+      "path": "tri2c.theme.json",
+      "mode": "0644",
+      "sha256": "3ecca5b76f5031ad2afde57d768333fa5fc572accbf5f4c9a462a66674fd5ea8",
+      "from": "files/tri2c.theme.json"
+    },
+    {
+      "path": "picker.g20i1.png",
+      "mode": "0644",
+      "sha256": "3e7f6f1c13930b05f4bf48c32eee4d1c701e34a78f0d8fbbdf9609f7aac34e9a",
+      "from": "files/picker.g20i1.png"
+    },
+    {
+      "path": "picker.g20i1.thumb.png",
+      "mode": "0644",
+      "sha256": "ab8742b9040425f62b32e543e60243e6f36f0107f25c7e2174a2593cefe816f7",
+      "from": "files/picker.g20i1.thumb.png"
+    },
+    {
+      "path": "picker.g20i1c.png",
+      "mode": "0644",
+      "sha256": "2c805aec74b2f59f7dbfaab74656e701284a2264b791410d0a57a38f42ee517b",
+      "from": "files/picker.g20i1c.png"
+    },
+    {
+      "path": "picker.g20i1c.thumb.png",
+      "mode": "0644",
+      "sha256": "e4f1fd325cdb55baa7584c2d6293b9ec28e104022fc5452754eb527395604470",
+      "from": "files/picker.g20i1c.thumb.png"
+    },
+    {
+      "path": "picker.g20i2.png",
+      "mode": "0644",
+      "sha256": "6a4f1be8a1afd6285cd7b5ce34c0510e336152ff57103cce04800e4cdba2d766",
+      "from": "files/picker.g20i2.png"
+    },
+    {
+      "path": "picker.g20i2.thumb.png",
+      "mode": "0644",
+      "sha256": "9cc40573099770491a3694b91009efd76ace3b1bfab59dcb37eb41f2ca2b0c6e",
+      "from": "files/picker.g20i2.thumb.png"
+    },
+    {
+      "path": "picker.g20i2c.png",
+      "mode": "0644",
+      "sha256": "e977af9ada26ed594ab86073c12b2a85b41fb3350448283a7a4ad3cbea6eace9",
+      "from": "files/picker.g20i2c.png"
+    },
+    {
+      "path": "picker.g20i2c.thumb.png",
+      "mode": "0644",
+      "sha256": "a9cb4eaed8b2a61ff6d383ece347670932db419fe5d67f3a7bdbf29b04766475",
+      "from": "files/picker.g20i2c.thumb.png"
+    },
+    {
+      "path": "picker.lci1.png",
+      "mode": "0644",
+      "sha256": "95b8c3be2ff4026176d6b584c4263ef1ba024a3a320bf8c798abcd8b9df1ce0c",
+      "from": "files/picker.lci1.png"
+    },
+    {
+      "path": "picker.lci1.thumb.png",
+      "mode": "0644",
+      "sha256": "07ea7c619c9342f8bb31ccc74c4ce37b7ae365d4b65935b75626ca025ad900be",
+      "from": "files/picker.lci1.thumb.png"
+    },
+    {
+      "path": "picker.lci1c.png",
+      "mode": "0644",
+      "sha256": "2f348d2ea2278042463bc094dbe1dbdc5f5cc50de7a0d6b981e245ef3fa35900",
+      "from": "files/picker.lci1c.png"
+    },
+    {
+      "path": "picker.lci1c.thumb.png",
+      "mode": "0644",
+      "sha256": "48b32c67407cf8f9dc4a6545982d180a9994b16ff79abf29d052384d188c6b85",
+      "from": "files/picker.lci1c.thumb.png"
+    },
+    {
+      "path": "picker.lci2.png",
+      "mode": "0644",
+      "sha256": "2dae0f5d2a22842eb3851b9ede85cc37a2e829afd0aef23d5baf8efa9ba323fe",
+      "from": "files/picker.lci2.png"
+    },
+    {
+      "path": "picker.lci2.thumb.png",
+      "mode": "0644",
+      "sha256": "f6dc639f4c6edaf0c9695df6f3118f677917e2fde936cc28726e312f110ebbbc",
+      "from": "files/picker.lci2.thumb.png"
+    },
+    {
+      "path": "picker.lci2c.png",
+      "mode": "0644",
+      "sha256": "b9bea714d2454baebadd024f42112a801c14ed16eafa7c1f53a0b70ba8d34d50",
+      "from": "files/picker.lci2c.png"
+    },
+    {
+      "path": "picker.lci2c.thumb.png",
+      "mode": "0644",
+      "sha256": "c983f8bff9ba91c866fb8947015b36a88fce9efe859ec1ac9475dcecf331560b",
+      "from": "files/picker.lci2c.thumb.png"
+    },
+    {
+      "path": "picker.perf1.png",
+      "mode": "0644",
+      "sha256": "5782e7e38ec12b57b892abfcbac4789ae97bca08e0a1992b3f9c2dc8864143d5",
+      "from": "files/picker.perf1.png"
+    },
+    {
+      "path": "picker.perf1.thumb.png",
+      "mode": "0644",
+      "sha256": "757a797257fdbb748f6944fe8d5a642b58303a7a1b6ddb79c532a700b33ece95",
+      "from": "files/picker.perf1.thumb.png"
+    },
+    {
+      "path": "picker.perf1c.png",
+      "mode": "0644",
+      "sha256": "70a2174fdfd45dee6526e2e8230a049b300f1fa00f15ac7493cc58d896118dbb",
+      "from": "files/picker.perf1c.png"
+    },
+    {
+      "path": "picker.perf1c.thumb.png",
+      "mode": "0644",
+      "sha256": "1922be78f0dae83c7e55ac46c9d51843fc722d227385189548c0fe3fbd4fd088",
+      "from": "files/picker.perf1c.thumb.png"
+    },
+    {
+      "path": "picker.perf2.png",
+      "mode": "0644",
+      "sha256": "bdfdcf8eec8ae4b34bd6d7ec2e2015f23c2777640bdeab806c64cdac3733136c",
+      "from": "files/picker.perf2.png"
+    },
+    {
+      "path": "picker.perf2.thumb.png",
+      "mode": "0644",
+      "sha256": "caf6a4a712e4851e0ccf47cfccc166bf80fd1c5a8e17eaf278aa72ee9f5f68f7",
+      "from": "files/picker.perf2.thumb.png"
+    },
+    {
+      "path": "picker.perf2c.png",
+      "mode": "0644",
+      "sha256": "f086c548413924b2d8c1f9ef9a2cf6b51cc5aa1d3a10b72993344f37b0acd144",
+      "from": "files/picker.perf2c.png"
+    },
+    {
+      "path": "picker.perf2c.thumb.png",
+      "mode": "0644",
+      "sha256": "0ab69127b8a7180828c87c3e19430c78502e302911f3fbbd00fbf65eb6ba886a",
+      "from": "files/picker.perf2c.thumb.png"
+    },
+    {
+      "path": "picker.tri1.png",
+      "mode": "0644",
+      "sha256": "19f05cd16741d514bea27333317141d1d4e99d020a9e4888cc06534c0b1d7286",
+      "from": "files/picker.tri1.png"
+    },
+    {
+      "path": "picker.tri1.thumb.png",
+      "mode": "0644",
+      "sha256": "d19bf8101309ccd3473cf599fbc4953740e9ce8b1152dba4ecbe03fbd14e66ac",
+      "from": "files/picker.tri1.thumb.png"
+    },
+    {
+      "path": "picker.tri1c.png",
+      "mode": "0644",
+      "sha256": "29121775455d4de1ec6792988a57249beb243b8d924273468d87ab7d865cf34d",
+      "from": "files/picker.tri1c.png"
+    },
+    {
+      "path": "picker.tri1c.thumb.png",
+      "mode": "0644",
+      "sha256": "2b1801c1fb0d24e9f878cdc3d5def15d12ce72b6f5774faeb72f554139629e6b",
+      "from": "files/picker.tri1c.thumb.png"
+    },
+    {
+      "path": "picker.tri2.png",
+      "mode": "0644",
+      "sha256": "3cc9b9e57f07101e83729d5ed51003d552425dd9ab195948188343443c69e6ef",
+      "from": "files/picker.tri2.png"
+    },
+    {
+      "path": "picker.tri2.thumb.png",
+      "mode": "0644",
+      "sha256": "7dc4214ff31a6136c0e60c033f9d8aa3c5aefd7c020fd85bf38cdb2acdef98ca",
+      "from": "files/picker.tri2.thumb.png"
+    },
+    {
+      "path": "picker.tri2c.png",
+      "mode": "0644",
+      "sha256": "f77f48f22f108044d1d35fb3c9346148b6d3a4f160babe60e2fd5246c35eb4ba",
+      "from": "files/picker.tri2c.png"
+    },
+    {
+      "path": "picker.tri2c.thumb.png",
+      "mode": "0644",
+      "sha256": "c1c14412c0ff346a99d676855c00c1c1024ab21e7b2d75809688c743f0e8ea2c",
+      "from": "files/picker.tri2c.thumb.png"
+    }
+  ],
+  "units": [
+    {
+      "name": "vizualyse-cluster.service",
+      "from": "units/vizualyse-cluster.service"
+    }
+  ],
+  "enable": [
+    {
+      "unit": "vizualyse-cluster.service",
+      "target": "multi-user.target"
+    }
+  ],
+  "recmgr": [
+    "vizualyse-cluster"
+  ],
+  "restart": [
+    "vizualyse-cluster.service"
+  ],
+  "mguHmi": [
+    "ID7"
+  ]
+}

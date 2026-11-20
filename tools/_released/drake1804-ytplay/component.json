@@ -1,0 +1,115 @@
+{
+  "id": "drake1804-ytplay",
+  "kind": "tool",
+  "version": "0.1.16",
+  "title": "YouTube player",
+  "description": "Fetches and decodes YouTube video outside the app's limits, for the YouTube app; yt-dlp, QuickJS and ffmpeg",
+  "files": [
+    {
+      "path": "ytplay",
+      "mode": "0755",
+      "sha256": "e595dfac180b5f6815fd1212ad32d3a2e72b56d2d61972b3a075ac77b5bc3e49",
+      "from": "files/ytplay"
+    },
+    {
+      "path": "ytaudio",
+      "mode": "0755",
+      "sha256": "0ddf6ac845207dfeab3e856eefbe506794339f0fc45a7fe7b39c3486fab7e43f",
+      "from": "files/ytaudio"
+    },
+    {
+      "path": "ffmpeg",
+      "mode": "0755",
+      "sha256": "84cfdce824a07dc575697d1462a7fe64433d4ba0f791e87837366e6de6a24655",
+      "from": "files/ffmpeg"
+    },
+    {
+      "path": "qjs",
+      "mode": "0755",
+      "sha256": "54196d2712fe936c0ad26e0ecf8463beed1c721ead028536f6fd47d2833ada18",
+      "from": "files/qjs"
+    },
+    {
+      "path": "yt-dlp.zip",
+      "mode": "0644",
+      "sha256": "8912b0e710a7c6631b7476967d5221cf9449406648068dd060345437182545f3",
+      "from": "files/yt-dlp.zip"
+    },
+    {
+      "path": "python-3.12.15.zip",
+      "mode": "0644",
+      "sha256": "b65043714d23762707624fe1ea45b7a26711ec46e00514136fa631646c0c7a53",
+      "from": "files/python-3.12.15.zip"
+    },
+    {
+      "path": "resolve.py",
+      "mode": "0644",
+      "sha256": "f246394c0bafeff625250f55ffc814978341d362732bad893bcd79967076bbd1",
+      "from": "files/resolve.py"
+    },
+    {
+      "path": "logship.py",
+      "mode": "0644",
+      "sha256": "d0e971a6e6b6d75f34663aa8c5d18fd18e2190c99848a132b07283b7273ce73a",
+      "from": "files/logship.py"
+    },
+    {
+      "path": "ytplay_check.js",
+      "mode": "0644",
+      "sha256": "bc8c5f0fc74ddcf9e90ecb7738e1c0bce8db07be7e5896ed1aafe4186f424be7",
+      "from": "files/ytplay_check.js"
+    },
+    {
+      "path": "collect-logs.sh",
+      "mode": "0755",
+      "sha256": "3742e1701f66a7ba2aab523adf3cbb3639f590eaf9e4cd67545a23a2a60c1e5e",
+      "from": "files/collect-logs.sh"
+    },
+    {
+      "path": "probe.sh",
+      "mode": "0755",
+      "sha256": "69bd9b96fef1c200064aea1f43377e97240424f2ee6e5b9cee1a9b38399f4f29",
+      "from": "files/probe.sh"
+    },
+    {
+      "path": "LICENSES.txt",
+      "mode": "0644",
+      "sha256": "ed386b60f143bf58673f807605b8d2e26fa63e7985af917c1205728909494683",
+      "from": "files/LICENSES.txt"
+    }
+  ],
+  "units": [
+    {
+      "name": "drake1804-ytplay.service",
+      "from": "units/drake1804-ytplay.service"
+    }
+  ],
+  "enable": [
+    {
+      "unit": "drake1804-ytplay.service",
+      "target": "multi-user.target"
+    }
+  ],
+  "recmgr": [
+    "drake1804-ytplay"
+  ],
+  "restart": [
+    "drake1804-ytplay.service"
+  ],
+  "internet": true,
+  "uids": [
+    3920
+  ],
+  "mguHmi": [
+    "ID7"
+  ],
+  "crashNames": [
+    "ytplay",
+    "ytaudio",
+    "ffmpeg",
+    "qjs"
+  ],
+  "check": [
+    "ytplay_check.js"
+  ]
+}

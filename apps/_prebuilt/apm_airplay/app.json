@@ -1,0 +1,13 @@
+{
+  "id": "apm_airplay",
+  "version": "1.0.6",
+  "title": "AirPlay",
+  "description": "Your iPhone's screen on the central display by AirPlay screen mirroring, parked only. Sound stays on Bluetooth. In Apps and Communication.",
+  "mguHmi": [
+    "ID7"
+  ],
+  "requires": {
+    "mgu-deploy": "0.7.0",
+    "airplay-rx": "1.0.0"
+  }
+}
