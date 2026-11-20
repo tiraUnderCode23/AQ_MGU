@@ -1,0 +1,110 @@
+{
+  "status": "PASS",
+  "canonical_commit": "714b2edb37f1bac811444ead348509b2b2836745",
+  "original_store_module_sha256": {
+    "sources": {
+      "path": "tools/_sources/mgu-store/native/mgu-updater/js/sources.js",
+      "sha256": "2e42be2b968a6c19ba3fdaba3a51e300b9cddc443dfa60814f3043383f030893"
+    },
+    "catalog": {
+      "path": "tools/_sources/mgu-store/native/mgu-updater/js/catalog.js",
+      "sha256": "f27ab259c19bccbc5349e729ca9e55a17ab0b013ac9cda108d9fd0b2fbb23c68"
+    },
+    "updater": {
+      "path": "tools/_sources/mgu-store/native/mgu-updater/js/updater.js",
+      "sha256": "fb327cc6b6a70d9377212d030174a477b2d432827c080cd273fe8243a9797414"
+    },
+    "linker": {
+      "path": "tools/_sources/mgu-store/tools/oap_link.js",
+      "sha256": "774c0faed1eeac1820eef868d37c63a34404488ea076c94aecaa819eaa9091af"
+    }
+  },
+  "source_code_scope": "Original Store modules loaded from the specified canonical workspace; fingerprints reported for pin comparison.",
+  "no_transport_build_install_or_runtime": true,
+  "export_or_repository_mutated": false,
+  "distributions": [
+    {
+      "distribution": "id8",
+      "status": "PASS",
+      "canonical_commit": "714b2edb37f1bac811444ead348509b2b2836745",
+      "counts": {
+        "selected_variants": 75,
+        "active_index_rows": 75,
+        "original_index_rows": 294,
+        "source_declared": 50,
+        "source_parsed": 50,
+        "release_declared": 19,
+        "release_parsed": 19,
+        "external_selected_metadata": 6,
+        "external_metadata_reads": 7,
+        "apps": 58,
+        "tools": 17,
+        "native_unit_sources": 6,
+        "scripted_source_recipes_parsed": 39,
+        "release_unit_sources": 13,
+        "tool_payload_references_present": 55,
+        "source_input_paths_present": 272,
+        "minimum_dependency_edges": 179,
+        "original_plans_checked": 75,
+        "hmi_checks": {
+          "ID7": 0,
+          "ID8": 75
+        },
+        "capability_provider_references": 33,
+        "store_sources": 3,
+        "export_metadata_files_read": 67
+      },
+      "problems": [],
+      "warnings": [
+        "Scripted recipes were parsed and their declared input paths checked; no builder ran.",
+        "External helpers are selected pinned metadata references; their payloads were not fetched or verified.",
+        "Capability providers are offered catalog entries; this is not evidence they are installed or automatically selected."
+      ],
+      "scope": "original-parser and metadata/dependency contract; no transport, build, install or runtime proof",
+      "external_verification": "selected pinned metadata observations only; no payload proof",
+      "plan_sha256": "18cb00e376f989a0f4bb02efe38581f00360ae827fe58f33148f5095c66f49a9",
+      "problem_count": 0
+    },
+    {
+      "distribution": "games",
+      "status": "PASS",
+      "canonical_commit": "714b2edb37f1bac811444ead348509b2b2836745",
+      "counts": {
+        "selected_variants": 40,
+        "active_index_rows": 40,
+        "original_index_rows": 294,
+        "source_declared": 15,
+        "source_parsed": 15,
+        "release_declared": 25,
+        "release_parsed": 25,
+        "external_selected_metadata": 0,
+        "external_metadata_reads": 0,
+        "apps": 23,
+        "tools": 17,
+        "native_unit_sources": 4,
+        "scripted_source_recipes_parsed": 5,
+        "release_unit_sources": 1,
+        "tool_payload_references_present": 76,
+        "source_input_paths_present": 34,
+        "minimum_dependency_edges": 48,
+        "original_plans_checked": 26,
+        "hmi_checks": {
+          "ID7": 23,
+          "ID8": 3
+        },
+        "capability_provider_references": 4,
+        "store_sources": 3,
+        "export_metadata_files_read": 29
+      },
+      "problems": [],
+      "warnings": [
+        "Scripted recipes were parsed and their declared input paths checked; no builder ran.",
+        "Capability providers are offered catalog entries; this is not evidence they are installed or automatically selected."
+      ],
+      "scope": "original-parser and metadata/dependency contract; no transport, build, install or runtime proof",
+      "external_verification": "selected pinned metadata observations only; no payload proof",
+      "plan_sha256": "0c8c1aa3fdf18631aff90e837aa7f34560204ad6663106aad91a9f345604e0cf",
+      "problem_count": 0
+    }
+  ]
+}

@@ -1,0 +1,283 @@
+{
+  "status": "PASS",
+  "canonical_commit": "714b2edb37f1bac811444ead348509b2b2836745",
+  "scope": "Canonical feed and pinned metadata/dependency contract only; no payload transport, builds, installation or runtime observation.",
+  "counts": {
+    "variants": 294,
+    "source": 198,
+    "release": 90,
+    "external_metadata": 6,
+    "apps": 214,
+    "tools": 80,
+    "validated_variant_contracts": 294,
+    "routes": {
+      "source_unit_apps": 15,
+      "source_scripted_apps": 145,
+      "source_tools": 38,
+      "release_unit_apps": 16,
+      "release_packaged_apps": 38,
+      "release_tools": 36,
+      "external_reference_tools": 6
+    },
+    "minimum_dependency_edges": 701,
+    "python_recipes": 129,
+    "target_sdk_recipes": 125,
+    "explicit_provider_contracts": 2,
+    "original_plans": 350,
+    "hmi_plans": {
+      "ID7": 275,
+      "ID8": 75
+    },
+    "incompatible_hmi_rejections": 238,
+    "capability_availability_checks": 57
+  },
+  "pinned_store_implicit_minimums": {
+    "PYTHON_TOOL": "mgu-python",
+    "PYTHON_MIN": "1.0.2",
+    "DEPLOY_SDK_MIN": "0.3.2",
+    "DEPLOY_PROVIDES_MIN": "0.4.0"
+  },
+  "original_store_module_sha256": {
+    "sources": {
+      "path": "tools/_sources/mgu-store/native/mgu-updater/js/sources.js",
+      "sha256": "2e42be2b968a6c19ba3fdaba3a51e300b9cddc443dfa60814f3043383f030893"
+    },
+    "catalog": {
+      "path": "tools/_sources/mgu-store/native/mgu-updater/js/catalog.js",
+      "sha256": "f27ab259c19bccbc5349e729ca9e55a17ab0b013ac9cda108d9fd0b2fbb23c68"
+    },
+    "updater": {
+      "path": "tools/_sources/mgu-store/native/mgu-updater/js/updater.js",
+      "sha256": "fb327cc6b6a70d9377212d030174a477b2d432827c080cd273fe8243a9797414"
+    },
+    "linker": {
+      "path": "tools/_sources/mgu-store/tools/oap_link.js",
+      "sha256": "774c0faed1eeac1820eef868d37c63a34404488ea076c94aecaa819eaa9091af"
+    }
+  },
+  "evidence_sha256": "b5df73ecdb73171973632d0883ec4983dd08d9aa1edbb0e25e8a48ebb82a5e45",
+  "canonical_feed_sha256": {
+    "mgu-repo.json": "a6d3d8f07eb65ff17c41ed77d2a115ce853b1363883d80b55ca9849401c9ee47",
+    "release/catalog.json": "780b75dc5e55839103f8fe6a10319e5395e9cd6669aab29f28ed7c297bf4fe22",
+    "data/external-store-components.json": "12ad63499daa536fe6f0637b771df7aab7dc8d515caa223acff70a665e1b6b9f"
+  },
+  "validated_route_contracts_sha256": "07e9bd1ae0754d111b13d91d74ada6a0d0676b246d216e808a3048224377bed5",
+  "source_code_scope": "Original Store modules loaded from the specified workspace; fingerprints and feed anchors bind the reviewed files.",
+  "external": {
+    "verification": "exact selected pinned manifest metadata only; payload bytes and native provider operation are not verified",
+    "repository": "IterioDev/car-apps",
+    "source_commit": "f9ca32bd3cebd163fa16fbe17cc3473623be2c81",
+    "configured_channel": "branch:main",
+    "metadata_paths_read": 7,
+    "providers": [
+      {
+        "id": "iteriodev-comfort",
+        "version": "0.6.3",
+        "provides": null,
+        "needs": null,
+        "requires": {
+          "mgu-deploy": "0.7.11"
+        },
+        "hmi": [
+          "ID7",
+          "ID8"
+        ],
+        "payload_verified": false,
+        "native_operation": "NOT_OBSERVED"
+      },
+      {
+        "id": "iteriodev-drplay",
+        "version": "1.2.6",
+        "provides": null,
+        "needs": null,
+        "requires": {},
+        "hmi": [
+          "ID7",
+          "ID8"
+        ],
+        "payload_verified": false,
+        "native_operation": "NOT_OBSERVED"
+      },
+      {
+        "id": "iteriodev-overlays",
+        "version": "0.5.0",
+        "provides": null,
+        "needs": null,
+        "requires": {
+          "mgu-deploy": "0.7.11",
+          "mgu-render": "0.6.10"
+        },
+        "hmi": [
+          "ID8"
+        ],
+        "payload_verified": false,
+        "native_operation": "NOT_OBSERVED"
+      },
+      {
+        "id": "iteriodev-screencast",
+        "version": "1.0.9",
+        "provides": null,
+        "needs": null,
+        "requires": {
+          "iteriodev-tailscale": "1.104.4"
+        },
+        "hmi": [
+          "ID7",
+          "ID8"
+        ],
+        "payload_verified": false,
+        "native_operation": "NOT_OBSERVED"
+      },
+      {
+        "id": "iteriodev-tailscale",
+        "version": "1.104.6",
+        "provides": null,
+        "needs": null,
+        "requires": {
+          "mgu-uplink": "0.4.0"
+        },
+        "hmi": [
+          "ID7",
+          "ID8"
+        ],
+        "payload_verified": false,
+        "native_operation": "NOT_OBSERVED"
+      },
+      {
+        "id": "iteriodev-turnview",
+        "version": "0.9.1",
+        "provides": null,
+        "needs": null,
+        "requires": {
+          "cluster-render": "0.5.10",
+          "mgu-deploy": "0.7.11"
+        },
+        "hmi": [
+          "ID7",
+          "ID8"
+        ],
+        "payload_verified": false,
+        "native_operation": "NOT_OBSERVED"
+      }
+    ],
+    "unsupported_details": []
+  },
+  "bcs_store": {
+    "status": "PASS",
+    "id": "bcs_store",
+    "version": "3.4.5",
+    "route": "original publisher source archive; unit preparation and target SDK remain required",
+    "build": "unit",
+    "publisher": "bcs-asia/app-store",
+    "artifact": {
+      "name": "bcs_store@3.4.5.tgz",
+      "size": 4729989,
+      "sha256": "656f3bd8cee577d531680cc399d13e4218a4e0e0eec3ac3d876dc265a4374dc8",
+      "url": "https://github.com/bcs-asia/app-store/releases/download/catalog/bcs_store@3.4.5.tgz"
+    },
+    "observed_archive_receipt_bound": true,
+    "payload_read_by_this_audit": false,
+    "transport_performed_by_this_audit": false,
+    "hmi": [
+      "ID7",
+      "ID8"
+    ],
+    "direct_requirements": [
+      {
+        "id": "mgu-deploy",
+        "minimum": "0.8.12",
+        "offered": "0.8.27",
+        "hmi": [
+          "ID7",
+          "ID8"
+        ]
+      },
+      {
+        "id": "mgu-updater",
+        "minimum": "0.8.28",
+        "offered": "0.8.51",
+        "hmi": [
+          "ID7",
+          "ID8"
+        ]
+      },
+      {
+        "id": "mgu-render",
+        "minimum": "0.3.1",
+        "offered": "0.6.25",
+        "hmi": [
+          "ID7",
+          "ID8"
+        ]
+      }
+    ],
+    "original_plans": {
+      "ID7": [
+        {
+          "id": "mgu-deploy",
+          "version": "0.8.27",
+          "source": "aq-mgu-catalog"
+        },
+        {
+          "id": "mgu-python",
+          "version": "1.0.3",
+          "source": "aq-mgu-catalog"
+        },
+        {
+          "id": "mgu-updater",
+          "version": "0.8.51",
+          "source": "aq-mgu-catalog"
+        },
+        {
+          "id": "mgu-render",
+          "version": "0.6.25",
+          "source": "aq-mgu-catalog"
+        },
+        {
+          "id": "bcs_store",
+          "version": "3.4.5",
+          "source": "aq-mgu-catalog"
+        }
+      ],
+      "ID8": [
+        {
+          "id": "mgu-deploy",
+          "version": "0.8.27",
+          "source": "aq-mgu-catalog"
+        },
+        {
+          "id": "mgu-python",
+          "version": "1.0.3",
+          "source": "aq-mgu-catalog"
+        },
+        {
+          "id": "mgu-updater",
+          "version": "0.8.51",
+          "source": "aq-mgu-catalog"
+        },
+        {
+          "id": "mgu-render",
+          "version": "0.6.25",
+          "source": "aq-mgu-catalog"
+        },
+        {
+          "id": "bcs_store",
+          "version": "3.4.5",
+          "source": "aq-mgu-catalog"
+        }
+      ]
+    },
+    "prepared": "NOT_OBSERVED",
+    "installed": "NOT_OBSERVED",
+    "runtime": "NOT_OBSERVED"
+  },
+  "warnings": [
+    "The installed fixture is empty. Capability checks establish that a compatible catalog provider is offered, not installed or automatically selected.",
+    "Recorded artifact observations are reused only after exact identity, URL, size and SHA binding; this audit performs no new transport.",
+    "Scripted recipes are parsed only; no source, SDK donor, app or installer is executed."
+  ],
+  "problem_count": 0,
+  "problems": [],
+  "no_transport_build_install_or_runtime": true,
+  "export_or_repository_mutated": false
+}

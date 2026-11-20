@@ -1,0 +1,482 @@
+{
+  "acquisition": {
+    "final_host": "release-assets.githubusercontent.com",
+    "method": "downloaded_exact_publisher_tuple",
+    "network_used": true,
+    "redirects": 1
+  },
+  "actual_bytes": 531211774,
+  "actual_sha256": "3719af147d3d2209f9e5fa93de0993a3c95f8df9ccc2f5f7e990c6d227f5eeb6",
+  "artifact_code_executed": false,
+  "catalog_mguHmi": [
+    "ID7"
+  ],
+  "catalog_requires": {
+    "mgu-deploy": "0.7.0",
+    "mgu-python": "1.0.0",
+    "mgu-render": "0.6.11",
+    "vizualyse-bus": "0.1.0"
+  },
+  "catalog_sha256": "780b75dc5e55839103f8fe6a10319e5395e9cd6669aab29f28ed7c297bf4fe22",
+  "component_manifest": {
+    "crashNames": [
+      "wl-sink",
+      "steam-touch",
+      "steam-pads",
+      "wine",
+      "wine-preloader",
+      "wineserver",
+      "dotnet",
+      "steam.exe",
+      "explorer.exe",
+      "services.exe",
+      "winedevice.exe",
+      "plugplay.exe",
+      "svchost.exe",
+      "rpcss.exe",
+      "conhost.exe",
+      "start.exe",
+      "wineboot.exe"
+    ],
+    "deactivate": [
+      "node",
+      "deactivate.js"
+    ],
+    "description": "EXPERIMENTAL. Windows games from your Steam library running on the car through Proton (Wine), on the car's own graphics drivers (64-bit Direct3D 9-11 games on Vulkan through DXVK by default, the rest on OpenGL), shown on the central screen while parked, with sound. Sign in to Steam and install games on the phone page (scan the QR code on the iDrive Steam page); play them from the iDrive or the phone. Touch is the mouse (a tap clicks); wired Xbox 360-style (XInput) USB controllers, up to four; no keyboard yet. Games that need the Steam client get an optional Run without Steam (gbe_fork). About 440 MB to download, 1.35 GB on the unit, plus the games.",
+    "enable": [
+      {
+        "target": "multi-user.target",
+        "unit": "vizualyse-steam.service"
+      }
+    ],
+    "files": [
+      {
+        "mode": "0644",
+        "path": "server.js",
+        "sha256": "c1f6a0ba0d16c7e0958545fc3d3733b05d45b7f727497a8638a518a37538dfad"
+      },
+      {
+        "mode": "0644",
+        "path": "mqtt_bus.js",
+        "sha256": "63ee95c24a961cde38f95f69f83ce2d4b8652ce42848d207d06a668e6dc2bd13"
+      },
+      {
+        "mode": "0644",
+        "path": "env.js",
+        "sha256": "878a39be099cf0322a226489efae6d5fc9583c8b3b08432aeef7efc91edb973d"
+      },
+      {
+        "mode": "0644",
+        "path": "unpack.js",
+        "sha256": "08c8aaee36123a3cbff32fb294b705f3588cd4217329848bed0245eaf24de6a7"
+      },
+      {
+        "mode": "0644",
+        "path": "usb.js",
+        "sha256": "1574a7ce55bab12e8a046d5be04288d29bcbe099c5fa696bb2aac1b0cdd99b77"
+      },
+      {
+        "mode": "0644",
+        "path": "steam.js",
+        "sha256": "c8b644297d6a73e503977376015b015cd4e9c93c7ef34ee2466ae703010a0251"
+      },
+      {
+        "mode": "0644",
+        "path": "steamstub.js",
+        "sha256": "4715bd889d7a983ab4f842f44988b660ed0ce3b2f44fb36e20d233dea13ab381"
+      },
+      {
+        "mode": "0644",
+        "path": "client.js",
+        "sha256": "4b00a1f88f929af6b95b84dfd565ed2e597dfdb3294855d8120b1413ad2003a6"
+      },
+      {
+        "mode": "0644",
+        "path": "art.js",
+        "sha256": "095ca0e6e5dd5b2b6ddfc3ae29e08d23431d0ecec0c1442eb9f17325e8602cef"
+      },
+      {
+        "mode": "0644",
+        "path": "jpeg.js",
+        "sha256": "8a7055bb31403d719a540b83214673c9e22e96970188e404fc1df3ca9a6ff1dc"
+      },
+      {
+        "mode": "0644",
+        "path": "ico.js",
+        "sha256": "a332f010d2b2c615aefe28fb1a844e35c0d7e67b6034aca08376ff2af8dc776b"
+      },
+      {
+        "mode": "0644",
+        "path": "game.js",
+        "sha256": "4e9ae5fc8ed8f98eb2103abfe73bef8b5756cfcff619e694823136d2b46dd5ca"
+      },
+      {
+        "mode": "0644",
+        "path": "perf.js",
+        "sha256": "e153449bc4116e20da5b55b8a2e857c01d6411ecc543fdec2f79f3470aba5a3c"
+      },
+      {
+        "mode": "0644",
+        "path": "wine_log.js",
+        "sha256": "1230d5dca34f3320cbcb7da305afb85906822d4a15388926248b0e3bb1a1d7f3"
+      },
+      {
+        "mode": "0644",
+        "path": "screen.js",
+        "sha256": "4be5f0df578e9730d17773aae7eb7c1d600927f749e410bd0fe3d44c3ff4605e"
+      },
+      {
+        "mode": "0644",
+        "path": "firewall.js",
+        "sha256": "bb4c37af570ae5128979fb3123a9a476757031c996bb8088b4bd344d6667228d"
+      },
+      {
+        "mode": "0644",
+        "path": "swap.js",
+        "sha256": "dc19a10dba5327afded4f83bbbda91bbe32003e7a8e55c757de002b01093747d"
+      },
+      {
+        "mode": "0644",
+        "path": "tap.js",
+        "sha256": "b1077b950cba3c60fe2029bcba4100d9c9eaac2c50d4c3611a99b845b147d2f5"
+      },
+      {
+        "mode": "0644",
+        "path": "deactivate.js",
+        "sha256": "a183c9533babcf7073eb137e7a1341fcb66171737248be4828593cab0424ab25"
+      },
+      {
+        "mode": "0644",
+        "path": "control.js",
+        "sha256": "4fc10cdbd340bae454ec61e09f012bd03fe9cbc1ea9e3b98207c57abd7045e6e"
+      },
+      {
+        "mode": "0644",
+        "path": "touch_screen.js",
+        "sha256": "9260a166e80e2614491a9353cc32d7cce099abb01ea58208aa9cc9466355f582"
+      },
+      {
+        "mode": "0644",
+        "path": "touch_view.js",
+        "sha256": "1dfa17a00705cee947ad3a52b2f2e8530a4cb0f2232466ebb49a3c8759687e2e"
+      },
+      {
+        "mode": "0644",
+        "path": "qrcode.js",
+        "sha256": "18ae399f81182bc9de916e9c77b195df20cc58d6f2d55a62b085a299f1bf1780"
+      },
+      {
+        "mode": "0644",
+        "path": "ui_canvas.js",
+        "sha256": "f105fc70e64e20f5cb55ebefeb9717f0e600adc051929b56d70210c405b8990f"
+      },
+      {
+        "mode": "0644",
+        "path": "ui_kit.js",
+        "sha256": "18a6604ff6d21a845db3314c7357bc44da888da009e9a232d71f8e272006f93c"
+      },
+      {
+        "mode": "0644",
+        "path": "ui_host.js",
+        "sha256": "e69a32a60fefe44e4a6e603e29e9ef87f5a06ee145fec41175380c62a552c755"
+      },
+      {
+        "mode": "0644",
+        "path": "ui_png.js",
+        "sha256": "93c0e416f2b4baf676a0274b56649771d3cde800c44513239271c0fd8b8b5ebb"
+      },
+      {
+        "mode": "0644",
+        "path": "touch_reader.py",
+        "sha256": "b0f1eac3272c6ca80dc04fcfc6ee97bb1bebcd3f4951f8d925e7c6b743d6ced9"
+      },
+      {
+        "mode": "0644",
+        "path": "ui.fonts.json",
+        "sha256": "c91267b1ba7b6a63d2d4f9a259ab57678b9d4da96dfe75508995877890d04440"
+      },
+      {
+        "mode": "0644",
+        "path": "ui.f20.font.gz",
+        "sha256": "fe9f0e35e81509c24ddec768cd570af8d21f12be6deaba8335d319a91cf314d4"
+      },
+      {
+        "mode": "0644",
+        "path": "ui.f24.font.gz",
+        "sha256": "1b482f1dadb95b3857a3c772485795973284e391199e112c076cf1335c5a5a31"
+      },
+      {
+        "mode": "0644",
+        "path": "ui.f32.font.gz",
+        "sha256": "3c00118f1d5360b1ad651ef4d5b865e3408c32efdd8a313dbc6ab0e4d5f7dbe5"
+      },
+      {
+        "mode": "0644",
+        "path": "ui.f44.font.gz",
+        "sha256": "71f87f34501a9c08fe88a940cf823decfde90c181dcbcbd087f71a8fba8f1a0c"
+      },
+      {
+        "mode": "0644",
+        "path": "pcm_play.py",
+        "sha256": "6c76cd25b032c7128300bc24e86f7048929118dafe6f5f0d124c24fc520ad8a7"
+      },
+      {
+        "mode": "0644",
+        "path": "speakers.js",
+        "sha256": "efb7580b6690a22beb44626c0e082f22e4cb6589a5361c6b723ad4de734c2057"
+      },
+      {
+        "mode": "0644",
+        "path": "page.html",
+        "sha256": "e8ad0fe6ec0b6df0096050bcc331570df9832949ba1258e4878fbced25f05ec7"
+      },
+      {
+        "mode": "0644",
+        "path": "launch.json",
+        "sha256": "f6c503bfb4fc81672b7313ba9270124e21f8f9fd1293039065d81f11700be38f"
+      },
+      {
+        "mode": "0644",
+        "path": "runtime.tgz",
+        "sha256": "31aace3e3c3df1960c92df7ca2cf9170f4a2294bdfe557f99cb5b038ce09d1a0"
+      },
+      {
+        "mode": "0644",
+        "path": "proton.tgz",
+        "sha256": "56584e15fd98ceac9f798eb88de767c8ea5c6624512506c2c1727ab3cba920a2"
+      },
+      {
+        "mode": "0644",
+        "path": "prefix.tgz",
+        "sha256": "524ede7220a1b184af526a159c0fc65714dbc2f4dad18c8496987f4f694558db"
+      },
+      {
+        "mode": "0644",
+        "path": "vulkan.tgz",
+        "sha256": "d06d401807c4a3dd0bfa50703207d039c1c1426c9be56521a6bce3aa60ebfcd3"
+      },
+      {
+        "mode": "0644",
+        "path": "iris.tgz",
+        "sha256": "7e72a9ca3c04ef40456aa3f2d2da5585980eb73552e2e089cce2f35489f558e2"
+      },
+      {
+        "mode": "0644",
+        "path": "bundle-VERSION.txt",
+        "sha256": "54c2f8b1980f7e91cf83d56a88139632636d18c3ea597cff7dfc3988d08d6b67"
+      },
+      {
+        "mode": "0644",
+        "path": "THIRD-PARTY.md",
+        "sha256": "b541c852efb681b0eaa686928930ee05bb0ad61e95905116d0215b7d786f86b7"
+      },
+      {
+        "mode": "0644",
+        "path": "LICENSE",
+        "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+      }
+    ],
+    "id": "vizualyse-steam",
+    "internet": true,
+    "kind": "tool",
+    "mguHmi": [
+      "ID7"
+    ],
+    "recmgr": [
+      "vizualyse-steam"
+    ],
+    "restart": [
+      "vizualyse-steam.service"
+    ],
+    "title": "Steam",
+    "uids": [
+      12996
+    ],
+    "units": [
+      {
+        "name": "vizualyse-steam.service"
+      }
+    ],
+    "version": "0.4.0"
+  },
+  "component_manifest_sha256": "c9c142c4c644650bd7d6cceec93962f1ea977e3d07b33b6679efdd9c47988fdc",
+  "elapsed_seconds": 22.374,
+  "entry_inventory_sha256": "93f0b18b4f1a80fa5f3d1fe27165b02b957e4636a1e5e89a461cd6cb709716c3",
+  "expanded_tar_stream_bytes": 535869952,
+  "expected_bytes": 531211774,
+  "expected_sha256": "3719af147d3d2209f9e5fa93de0993a3c95f8df9ccc2f5f7e990c6d227f5eeb6",
+  "extracted": false,
+  "headers": 47,
+  "id": "vizualyse-steam",
+  "kind": "tool",
+  "largest_members": [
+    {
+      "path": "files/proton.tgz",
+      "sha256": "56584e15fd98ceac9f798eb88de767c8ea5c6624512506c2c1727ab3cba920a2",
+      "size": 389837959
+    },
+    {
+      "path": "files/prefix.tgz",
+      "sha256": "524ede7220a1b184af526a159c0fc65714dbc2f4dad18c8496987f4f694558db",
+      "size": 67191726
+    },
+    {
+      "path": "files/runtime.tgz",
+      "sha256": "31aace3e3c3df1960c92df7ca2cf9170f4a2294bdfe557f99cb5b038ce09d1a0",
+      "size": 57794676
+    },
+    {
+      "path": "files/vulkan.tgz",
+      "sha256": "d06d401807c4a3dd0bfa50703207d039c1c1426c9be56521a6bce3aa60ebfcd3",
+      "size": 13782710
+    },
+    {
+      "path": "files/iris.tgz",
+      "sha256": "7e72a9ca3c04ef40456aa3f2d2da5585980eb73552e2e089cce2f35489f558e2",
+      "size": 6611182
+    },
+    {
+      "path": "files/server.js",
+      "sha256": "c1f6a0ba0d16c7e0958545fc3d3733b05d45b7f727497a8638a518a37538dfad",
+      "size": 93992
+    },
+    {
+      "path": "files/qrcode.js",
+      "sha256": "18ae399f81182bc9de916e9c77b195df20cc58d6f2d55a62b085a299f1bf1780",
+      "size": 56694
+    },
+    {
+      "path": "files/LICENSE",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "size": 35149
+    },
+    {
+      "path": "files/steamstub.js",
+      "sha256": "4715bd889d7a983ab4f842f44988b660ed0ce3b2f44fb36e20d233dea13ab381",
+      "size": 33417
+    },
+    {
+      "path": "files/page.html",
+      "sha256": "e8ad0fe6ec0b6df0096050bcc331570df9832949ba1258e4878fbced25f05ec7",
+      "size": 30286
+    },
+    {
+      "path": "files/game.js",
+      "sha256": "4e9ae5fc8ed8f98eb2103abfe73bef8b5756cfcff619e694823136d2b46dd5ca",
+      "size": 25562
+    },
+    {
+      "path": "files/steam.js",
+      "sha256": "c8b644297d6a73e503977376015b015cd4e9c93c7ef34ee2466ae703010a0251",
+      "size": 22525
+    },
+    {
+      "path": "files/touch_view.js",
+      "sha256": "1dfa17a00705cee947ad3a52b2f2e8530a4cb0f2232466ebb49a3c8759687e2e",
+      "size": 22270
+    },
+    {
+      "path": "files/ui_kit.js",
+      "sha256": "18a6604ff6d21a845db3314c7357bc44da888da009e9a232d71f8e272006f93c",
+      "size": 21820
+    },
+    {
+      "path": "files/perf.js",
+      "sha256": "e153449bc4116e20da5b55b8a2e857c01d6411ecc543fdec2f79f3470aba5a3c",
+      "size": 21423
+    },
+    {
+      "path": "files/env.js",
+      "sha256": "878a39be099cf0322a226489efae6d5fc9583c8b3b08432aeef7efc91edb973d",
+      "size": 20708
+    },
+    {
+      "path": "files/client.js",
+      "sha256": "4b00a1f88f929af6b95b84dfd565ed2e597dfdb3294855d8120b1413ad2003a6",
+      "size": 20147
+    },
+    {
+      "path": "files/speakers.js",
+      "sha256": "efb7580b6690a22beb44626c0e082f22e4cb6589a5361c6b723ad4de734c2057",
+      "size": 15513
+    },
+    {
+      "path": "files/ui_canvas.js",
+      "sha256": "f105fc70e64e20f5cb55ebefeb9717f0e600adc051929b56d70210c405b8990f",
+      "size": 14311
+    },
+    {
+      "path": "files/art.js",
+      "sha256": "095ca0e6e5dd5b2b6ddfc3ae29e08d23431d0ecec0c1442eb9f17325e8602cef",
+      "size": 13120
+    },
+    {
+      "path": "files/ui_host.js",
+      "sha256": "e69a32a60fefe44e4a6e603e29e9ef87f5a06ee145fec41175380c62a552c755",
+      "size": 13019
+    },
+    {
+      "path": "files/jpeg.js",
+      "sha256": "8a7055bb31403d719a540b83214673c9e22e96970188e404fc1df3ca9a6ff1dc",
+      "size": 12709
+    },
+    {
+      "path": "files/pcm_play.py",
+      "sha256": "6c76cd25b032c7128300bc24e86f7048929118dafe6f5f0d124c24fc520ad8a7",
+      "size": 11828
+    },
+    {
+      "path": "files/ui.f44.font.gz",
+      "sha256": "71f87f34501a9c08fe88a940cf823decfde90c181dcbcbd087f71a8fba8f1a0c",
+      "size": 11292
+    },
+    {
+      "path": "files/mqtt_bus.js",
+      "sha256": "63ee95c24a961cde38f95f69f83ce2d4b8652ce42848d207d06a668e6dc2bd13",
+      "size": 10669
+    },
+    {
+      "path": "files/screen.js",
+      "sha256": "4be5f0df578e9730d17773aae7eb7c1d600927f749e410bd0fe3d44c3ff4605e",
+      "size": 8848
+    },
+    {
+      "path": "files/unpack.js",
+      "sha256": "08c8aaee36123a3cbff32fb294b705f3588cd4217329848bed0245eaf24de6a7",
+      "size": 8175
+    },
+    {
+      "path": "files/touch_screen.js",
+      "sha256": "9260a166e80e2614491a9353cc32d7cce099abb01ea58208aa9cc9466355f582",
+      "size": 8156
+    },
+    {
+      "path": "component.json",
+      "sha256": "c9c142c4c644650bd7d6cceec93962f1ea977e3d07b33b6679efdd9c47988fdc",
+      "size": 8096
+    },
+    {
+      "path": "files/ui.f32.font.gz",
+      "sha256": "3c00118f1d5360b1ad651ef4d5b865e3408c32efdd8a313dbc6ab0e4d5f7dbe5",
+      "size": 7805
+    }
+  ],
+  "limits": {
+    "compressed_bytes": 536870912,
+    "expanded_bytes": 2147483648,
+    "headers": 20000,
+    "metadata_bytes": 2097152,
+    "seconds": 1200
+  },
+  "member_types": {
+    "file": 47
+  },
+  "members": 47,
+  "regular_payload_bytes": 535833710,
+  "runtime": "NOT_OBSERVED",
+  "schema": 1,
+  "source_commit": "16b44f49f3451ff9f92ab326acedbf9f3a8d9303",
+  "state": "verified_passive_inventory",
+  "url": "https://github.com/Vizualyse/idrive-apps/releases/download/vizualyse-steam%400.4.0/vizualyse-steam%400.4.0.tgz",
+  "version": "0.4.0"
+}

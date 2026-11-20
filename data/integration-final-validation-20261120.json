@@ -1,0 +1,91 @@
+{
+  "schema": "aq-mgu.integration-final-validation/1",
+  "canonical_commit": "714b2edb37f1bac811444ead348509b2b2836745",
+  "publication": {
+    "state": "LOCAL_BRANCHES_VERIFIED",
+    "remote_verification": "not_yet_performed"
+  },
+  "inventory": {
+    "components": 294,
+    "apps": 214,
+    "tools": 80,
+    "source": 198,
+    "release": 90,
+    "external_references": 6
+  },
+  "offline_suite": {
+    "source_commit": "714b2edb37f1bac811444ead348509b2b2836745",
+    "working_tree_validation": true,
+    "tests": 298,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "elapsed_seconds": 116.438,
+    "successful": true,
+    "runtime_on_hu": "NOT_OBSERVED",
+    "log": "tests.log in local Git validation receipt",
+    "log_sha256": "f11a4d38db5e4b5d54a2cf9779e5a17710abe1aed4cd781770c791c1f27d1daf"
+  },
+  "native_contract": {
+    "path": "data/original-store-contract-validation-20261120.json",
+    "status": "PASS",
+    "variants": 294,
+    "minimum_dependency_edges": 701,
+    "original_plans": 350
+  },
+  "distribution_contract": {
+    "path": "data/distribution-store-validation-20261120.json",
+    "status": "PASS"
+  },
+  "branches": {
+    "id8": {
+      "old": "c1124f97c3598b70b4e1d377e8a78689a8ae4ccb",
+      "commit": "6061689d85d163e679ece605c689f1a6958d9954",
+      "tree": "33af7ec7fa13c41d948c9b64ba29a6335627c6b2",
+      "plan_sha256": "18cb00e376f989a0f4bb02efe38581f00360ae827fe58f33148f5095c66f49a9",
+      "selected_variants": 75,
+      "files": 2205
+    },
+    "games": {
+      "old": "e10090293bb8f5350f5b9c8c46947670486f503a",
+      "commit": "1f9afb3a4b83ab2536e196041c738385b8cbe776",
+      "tree": "7d5f5f4c73f55ea62f925acb5909eff7b7f0a5e6",
+      "plan_sha256": "0c8c1aa3fdf18631aff90e837aa7f34560204ad6663106aad91a9f345604e0cf",
+      "selected_variants": 40,
+      "files": 819
+    }
+  },
+  "export_totals": {
+    "id8": {
+      "files": 2205,
+      "bytes": 234703828
+    },
+    "games": {
+      "files": 819,
+      "bytes": 99060066
+    }
+  },
+  "upstream": {
+    "path": "data/upstream-availability-20261120.json",
+    "release_lengths_match": 90,
+    "external_manifests_available": 7,
+    "method": "HEAD",
+    "artifact_sha256_verified_by_HEAD": false
+  },
+  "steam_inspection": {
+    "path": "data/steam-artifact-inspection-20261120.json",
+    "compressed_bytes": 531211774,
+    "expanded_outer_tar_bytes": 535869952,
+    "files": 47,
+    "nested_payloads_expanded": false
+  },
+  "preservation": {
+    "git_bundle_sha256": "2c4664d15f9693fe560d1657f190647ce02b44806e239ba47a8597cec629fc2e",
+    "existing_worktrees_unchanged": true,
+    "force_push": false
+  },
+  "unit_install": "NOT_OBSERVED",
+  "unit_runtime": "NOT_OBSERVED",
+  "external_payloads": "NOT_VERIFIED",
+  "local_only_app_inventory": "data/local-app-artifacts-20261120.json"
+}
