@@ -1,0 +1,97 @@
+{
+  "schema": 1,
+  "managerVersion": "1.5.0+12",
+  "sourceCommit": "c05938fae66b4cb3671edbc2e1d7a3efa39e021c",
+  "sourceBaseline": "69d3afed66caa35e6902bd1cf0542b9699b4a089",
+  "recordedAtUtc": "2026-11-20T13:21:43.518182+00:00",
+  "managerHasConfiguredRemote": false,
+  "changedFileCount": 38,
+  "analysis": {
+    "exitCode": 0,
+    "result": "No issues found"
+  },
+  "fullFlutterSuite": {
+    "passed": 981,
+    "failed": 0,
+    "skipped": 1,
+    "skippedReason": "Opt-in dashboard visual capture; passed separately.",
+    "durationSeconds": 154
+  },
+  "independentVisualGate": {
+    "passed": true,
+    "includedIn27CaseUiGate": true,
+    "syntheticVehicleData": true,
+    "surfaces": [
+      {
+        "width": 390,
+        "height": 844,
+        "textScale": 1
+      },
+      {
+        "width": 320,
+        "height": 640,
+        "textScale": 2
+      },
+      {
+        "width": 720,
+        "height": 820,
+        "textScale": 1
+      }
+    ],
+    "normalTextFirstRowActionFullyVisible": true
+  },
+  "targetedCoverage": {
+    "repositoryBranches": 15,
+    "repositoryBranchService": 3,
+    "hmiProjection": 21,
+    "sessionHeader": 4,
+    "activityConsole": 5,
+    "dashboardUi": 10,
+    "channelPlanner": 51,
+    "channelService": 7,
+    "storeSessionAndManagedRemoval": 42,
+    "connectionLifecycle": 14,
+    "legacyArtifactReceiptMigration": 13
+  },
+  "catalog": {
+    "sourceCommit": "714b2edb37f1bac811444ead348509b2b2836745",
+    "channels": {
+      "main": {
+        "apps": 214,
+        "tools": 80,
+        "total": 294,
+        "sources": 198,
+        "releases": 90,
+        "external": 6
+      },
+      "id8": {
+        "apps": 58,
+        "tools": 17,
+        "total": 75,
+        "sources": 50,
+        "releases": 19,
+        "external": 6
+      },
+      "games": {
+        "apps": 23,
+        "tools": 17,
+        "total": 40,
+        "sources": 15,
+        "releases": 25,
+        "external": 0
+      }
+    },
+    "payloadsChangedByThisManagerPhase": false,
+    "historicalInventoryPreserved": true
+  },
+  "liveHeadUnitOperations": false,
+  "phoneBuildAndDelivery": "Recorded separately after publication and build.",
+  "testLogSha256": {
+    "final_analyze.log": "ba8067007f02edd4cba8758d02b77d12145dafcd57f3b8d93b897473b737a082",
+    "full_flutter_tests.log": "d0eebd39881887d5e8d5539c8d7d6d812f39e02aa71304bf36ab0ccd0150f09b",
+    "dashboard_final_tests.log": "7de8f1bd92455b01fdc965114ee2dd3f71a4dfcfc65cf81bd708b7441b18341b",
+    "legacy_receipt_final_tests.log": "bc77949b4b07eecf8aeacbe31ec62a2e673875cdd89c5488bdef414aac5cf138",
+    "lifecycle_final_tests.log": "6dbe6383d9fc1382a735e54b89650f82ab2c5ad636af35f201ce121c74244c0e",
+    "final_fixture_recheck.log": "5895a60a09ad32caaf15a25840e8c9920f7a1b2cec3d0c6e089f98ab488268c4"
+  }
+}
