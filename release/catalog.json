@@ -415,6 +415,149 @@
       "requires": {}
     },
     {
+      "id": "mgu-python",
+      "kind": "tool",
+      "title": "Python",
+      "description": "Python 3.12 for apps that build on the head unit with Python",
+      "version": "1.0.3",
+      "artifact": {
+        "name": "mgu-python@1.0.3.tgz",
+        "size": 14441404,
+        "sha256": "98ce27bcee265ba6846446ad7867193fbdc9e0447195dbf22bcfaabf7e2f2533",
+        "url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-python%401.0.3/mgu-python%401.0.3.tgz"
+      },
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "texts": {
+        "cs": {
+          "title": "Python",
+          "description": "Python 3.12 pro aplikace, které se na hlavní jednotce sestavují v Pythonu"
+        },
+        "da": {
+          "title": "Python",
+          "description": "Python 3.12 til apps, der bygges på hovedenheden med Python"
+        },
+        "de": {
+          "title": "Python",
+          "description": "Python 3.12 für Apps, die auf der Headunit mit Python gebaut werden"
+        },
+        "el": {
+          "title": "Python",
+          "description": "Python 3.12 για εφαρμογές που μεταγλωττίζονται στην κεντρική μονάδα με Python"
+        },
+        "es-US": {
+          "title": "Python",
+          "description": "Python 3.12 para apps que se compilan en la unidad principal con Python"
+        },
+        "es": {
+          "title": "Python",
+          "description": "Python 3.12 para apps que se compilan en la unidad principal con Python"
+        },
+        "fi": {
+          "title": "Python",
+          "description": "Python 3.12 sovelluksille, jotka koostetaan pääyksikössä Pythonilla"
+        },
+        "fr-CA": {
+          "title": "Python",
+          "description": "Python 3.12 pour les applis compilées sur le système avec Python"
+        },
+        "fr": {
+          "title": "Python",
+          "description": "Python 3.12 pour les apps compilées sur le système avec Python"
+        },
+        "he": {
+          "title": "Python",
+          "description": "Python 3.12 לאפליקציות שנבנות במערכת באמצעות Python"
+        },
+        "hu": {
+          "title": "Python",
+          "description": "Python 3.12 azokhoz az alkalmazásokhoz, amelyek Pythonnal épülnek a fejegységen"
+        },
+        "id": {
+          "title": "Python",
+          "description": "Python 3.12 untuk aplikasi yang dibangun di head unit dengan Python"
+        },
+        "it": {
+          "title": "Python",
+          "description": "Python 3.12 per le app che vengono compilate sul sistema con Python"
+        },
+        "ja": {
+          "title": "Python",
+          "description": "ヘッドユニット上で Python を使ってビルドされるアプリ用の Python 3.12"
+        },
+        "ko": {
+          "title": "Python",
+          "description": "헤드 유닛에서 Python으로 빌드되는 앱을 위한 Python 3.12"
+        },
+        "nb": {
+          "title": "Python",
+          "description": "Python 3.12 for apper som bygges på hovedenheten med Python"
+        },
+        "nl": {
+          "title": "Python",
+          "description": "Python 3.12 voor apps die op de headunit met Python worden gebouwd"
+        },
+        "pl": {
+          "title": "Python",
+          "description": "Python 3.12 dla aplikacji budowanych na jednostce głównej w Pythonie"
+        },
+        "pt-BR": {
+          "title": "Python",
+          "description": "Python 3.12 para apps que são compilados na unidade principal com Python"
+        },
+        "pt": {
+          "title": "Python",
+          "description": "Python 3.12 para apps que são compiladas na unidade principal com Python"
+        },
+        "ro": {
+          "title": "Python",
+          "description": "Python 3.12 pentru aplicațiile care se compilează pe unitatea principală cu Python"
+        },
+        "ru": {
+          "title": "Python",
+          "description": "Python 3.12 для приложений, которые собираются на головном устройстве с помощью Python"
+        },
+        "sk": {
+          "title": "Python",
+          "description": "Python 3.12 pre aplikácie, ktoré sa na hlavnej jednotke zostavujú pomocou Pythonu"
+        },
+        "sl": {
+          "title": "Python",
+          "description": "Python 3.12 za aplikacije, ki se na glavni enoti gradijo s Pythonom"
+        },
+        "sv": {
+          "title": "Python",
+          "description": "Python 3.12 för appar som byggs på huvudenheten med Python"
+        },
+        "th": {
+          "title": "Python",
+          "description": "Python 3.12 สำหรับแอปที่บิลด์บนเฮดยูนิตด้วย Python"
+        },
+        "tr": {
+          "title": "Python",
+          "description": "Ana ünitede Python ile derlenen uygulamalar için Python 3.12"
+        },
+        "uk": {
+          "title": "Python",
+          "description": "Python 3.12 для програм, які збираються на головному пристрої за допомогою Python"
+        },
+        "vi": {
+          "title": "Python",
+          "description": "Python 3.12 cho các ứng dụng được dựng trên hệ thống bằng Python"
+        },
+        "zh-CN": {
+          "title": "Python",
+          "description": "为在主机上用 Python 构建的应用提供 Python 3.12"
+        },
+        "zh-TW": {
+          "title": "Python",
+          "description": "為在主機上以 Python 建置的應用程式提供 Python 3.12"
+        }
+      }
+    },
+    {
       "id": "mgu-render",
       "kind": "tool",
       "title": "Renderer",
