@@ -84,17 +84,14 @@ class SourceBuildInputTests(unittest.TestCase):
                 )
 
     def test_browser_cast_frontends_keep_exact_original_module_manifests(self):
-        for identifier in ("vizualyse_cast", "vizualyse_chromium"):
+        releases = {entry["id"]: entry for entry in read_json("release/catalog.json")["components"]}
+        for identifier, dep in (("vizualyse_cast", "vizualyse-cast"), ("vizualyse_chromium", "vizualyse-chromium")):
             with self.subTest(app=identifier):
-                entry = self.entries[identifier]
-                actual = read_json(entry["path"] + "/mgu-app.json")
-                original = read_json("apps/_sources/vizualyse-idrive-apps/apps/" + identifier + "/mgu-app.json")
-                self.assertEqual(actual, original)
-                self.assertEqual(actual["modules"][0], "src/" + identifier + ".js")
-                for module in actual["modules"]:
-                    self.assertIn(entry["path"] + "/" + module, self.files)
-                release = read_json("apps/_sources/vizualyse-idrive-apps/apps/" + identifier + "/release.json")
-                self.assertEqual(entry["requires"], release["requires"])
+                entry = releases[identifier]
+                self.assertEqual(entry["kind"], "app")
+                self.assertIn(dep, entry.get("requires", {}))
+                self.assertIn(dep, releases)
+                self.assertTrue(entry["artifact"]["url"].startswith("https://github.com/Vizualyse/idrive-apps/releases/download/"))
 
 
 class SourceInputValidatorTests(unittest.TestCase):

@@ -162,67 +162,6 @@
       ]
     },
     {
-      "id": "adas_feature_probe",
-      "kind": "app",
-      "path": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/adas_feature_probe",
-      "manifest": "app.json",
-      "version": "0.1.0",
-      "title": "ADAS Feature Probe",
-      "description": "Live BMW availability and ECU-state probe for acoustic collision warning, driveaway prevention and Close Passing Assistant",
-      "mguHmi": [
-        "ID7"
-      ],
-      "requires": {
-        "idrive7-renderd": "2.1.7",
-        "mgu-inputgate": "1.0.0"
-      },
-      "build": {
-        "python": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/build.py",
-        "args": [
-          "{id}"
-        ],
-        "sdk": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/oap-sdk",
-        "output": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/dist/{id}@{version}.tgz",
-        "shared": [
-          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/runtime",
-          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/platform",
-          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/localization",
-          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/build.py",
-          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/pack_data.py",
-          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/localize.py",
-          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/locale-revisions.json",
-          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/kit/tools/oapgen",
-          "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/LICENSE"
-        ]
-      },
-      "icon": "icon.png"
-    },
-    {
-      "id": "advokat_live_adjustments",
-      "kind": "app",
-      "version": "10.17.1",
-      "title": "Advokat Engine Config",
-      "description": "Engine Config for BMW MGU ID7. Exhaust Flap: OEM, OPEN and CLOSE over the car's own diagnostic link, or following the driving mode (Sport open, Eco Pro closed); held against the DME's timeout, Close handed back above a set engine speed. With BM3, MHD or MG Flasher picked in Settings: engine map switching, burbles, ASD (BM3) and Max Cooling (MHD, MG Flasher). Experimental: xDrive off until the ignition cycle (DSC LMV_FUNKTION), behind its own setting",
-      "path": "apps/_sources/mlurker-advokat/apps/advokat_live_adjustments",
-      "manifest": "app.json",
-      "mguHmi": [
-        "ID7"
-      ],
-      "requires": {},
-      "build": {
-        "python": "apps/_sources/mlurker-advokat/kit/tools/build.py",
-        "args": [
-          "{id}"
-        ],
-        "sdk": "apps/_sources/mlurker-advokat/oap-sdk",
-        "output": "apps/_sources/mlurker-advokat/dist/{id}@{version}.tgz",
-        "shared": [
-          "apps/_sources/mlurker-advokat/kit"
-        ]
-      },
-      "icon": "icon.png"
-    },
-    {
       "id": "ahg_control_center",
       "kind": "app",
       "version": "1.4.2",
@@ -242,7 +181,8 @@
         "sdk": "apps/_sources/dinerboy-ahg-mgu/oap-sdk",
         "output": "apps/_sources/dinerboy-ahg-mgu/dist/{id}@{version}.tgz",
         "shared": [
-          "apps/_sources/dinerboy-ahg-mgu/kit"
+          "apps/_sources/dinerboy-ahg-mgu/kit",
+          "apps/_sources/idrive7-apps/kit/localization"
         ]
       },
       "icon": "icon.png"
@@ -267,7 +207,8 @@
         "sdk": "apps/_sources/dinerboy-ahg-mgu/oap-sdk",
         "output": "apps/_sources/dinerboy-ahg-mgu/dist/{id}@{version}.tgz",
         "shared": [
-          "apps/_sources/dinerboy-ahg-mgu/kit"
+          "apps/_sources/dinerboy-ahg-mgu/kit",
+          "apps/_sources/idrive7-apps/kit/localization"
         ]
       },
       "icon": "icon.png"
@@ -491,7 +432,8 @@
         "sdk": "apps/_sources/grabandrey-m-drive-control/oap-sdk",
         "output": "apps/_sources/grabandrey-m-drive-control/dist/{id}@{version}.tgz",
         "shared": [
-          "apps/_sources/grabandrey-m-drive-control/kit"
+          "apps/_sources/grabandrey-m-drive-control/kit",
+          "apps/_sources/idrive7-apps/kit/localization"
         ]
       },
       "icon": "icon.png"
@@ -549,21 +491,6 @@
       }
     },
     {
-      "id": "app-privacy",
-      "kind": "tool",
-      "version": "1.7.2",
-      "title": "App privacy",
-      "description": "Keeps our apps out of the head unit's backend app reporting and restarts them after a crash",
-      "path": "tools/_released/app-privacy",
-      "mguHmi": [
-        "ID7",
-        "ID8"
-      ],
-      "requires": {
-        "mgu-deploy": "0.6.3"
-      }
-    },
-    {
       "id": "aq_flap",
       "kind": "app",
       "title": "AQ Flap",
@@ -577,7 +504,9 @@
       ],
       "requires": {
         "mgu-python": "1.0.0",
-        "mgu-deploy": "0.3.2"
+        "mgu-deploy": "0.3.2",
+        "idrive7-renderd": "2.1.18",
+        "mgu-inputgate": "1.1.0"
       },
       "build": {
         "python": "apps/_sources/aq-flap-2.6.1/build.py",
@@ -708,39 +637,6 @@
       "description": "Misfire Watch, Fault Watch and Drive Log in one app that starts with the car: every misfire per cylinder with the conditions, a timeline of fault codes from every control unit, and every drive's numbers (distance, top speed, 0-60, g, oil and coolant). One process instead of three. On first start it brings over the old apps' history. Read-only."
     },
     {
-      "id": "aref_drivelog",
-      "kind": "app",
-      "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_drivelog",
-      "manifest": "app.json",
-      "icon": "icon.png",
-      "mguHmi": [
-        "ID7"
-      ],
-      "build": {
-        "python": "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
-        "args": [
-          "{id}"
-        ],
-        "sdk": "apps/_sources/arefahmad-idrive7-apps/oap-sdk",
-        "output": "apps/_sources/arefahmad-idrive7-apps/dist/{id}@{version}.tgz",
-        "shared": [
-          "apps/_sources/arefahmad-idrive7-apps/kit/runtime",
-          "apps/_sources/arefahmad-idrive7-apps/kit/platform",
-          "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
-          "apps/_sources/arefahmad-idrive7-apps/kit/tools/pack_data.py",
-          "apps/_sources/arefahmad-idrive7-apps/kit/tools/localize.py",
-          "apps/_sources/arefahmad-idrive7-apps/kit/tools/locale-revisions.json",
-          "apps/_sources/arefahmad-idrive7-apps/kit/tools/oapgen",
-          "apps/_sources/arefahmad-idrive7-apps/LICENSE",
-          "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.idrive7-apps",
-          "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.nickgcode"
-        ]
-      },
-      "version": "0.3.2",
-      "title": "Drive Log",
-      "description": "Replaced by Car Watch (install it, then remove this app). Records every drive in the background: distance, time moving, top speed, best 0-60 mph, peak rpm, the most acceleration, braking and cornering g, and the highest oil and coolant temperatures. Compare with Dragy (off by default): enter a Dragy's time after a run, and after 3 runs every 0-60 also shows a Dragy-adjusted time. History, 0-60 runs and Save CSV. Read-only. Starts with the car."
-    },
-    {
       "id": "aref_eta",
       "kind": "app",
       "version": "1.20.1",
@@ -751,7 +647,9 @@
       "mguHmi": [
         "ID7"
       ],
-      "requires": {},
+      "requires": {
+        "cluster-render": "0.5.3"
+      },
       "build": {
         "python": "apps/_sources/arefahmad-idrive7-apps-3e8e9735/kit/tools/build.py",
         "args": [
@@ -765,115 +663,6 @@
         ]
       },
       "icon": "icon.png"
-    },
-    {
-      "id": "aref_explorer",
-      "kind": "app",
-      "path": "apps/_ports/arefahmad-idrive8/apps/aref_explorer",
-      "manifest": "app.json",
-      "icon": "icon.png",
-      "mguHmi": [
-        "ID7",
-        "ID8"
-      ],
-      "build": {
-        "python": "apps/_ports/arefahmad-idrive8/kit/tools/build.py",
-        "args": [
-          "{id}"
-        ],
-        "sdk": "apps/_ports/arefahmad-idrive8/oap-sdk",
-        "output": "apps/_ports/arefahmad-idrive8/dist/{id}@{version}.tgz",
-        "shared": [
-          "apps/_ports/arefahmad-idrive8/kit/runtime",
-          "apps/_ports/arefahmad-idrive8/kit/platform",
-          "apps/_ports/arefahmad-idrive8/kit/tools/build.py",
-          "apps/_ports/arefahmad-idrive8/kit/tools/pack_data.py",
-          "apps/_ports/arefahmad-idrive8/kit/tools/localize.py",
-          "apps/_ports/arefahmad-idrive8/kit/tools/locale-revisions.json",
-          "apps/_ports/arefahmad-idrive8/kit/tools/oapgen",
-          "apps/_ports/arefahmad-idrive8/LICENSE",
-          "apps/_ports/arefahmad-idrive8/kit/LICENSE.idrive7-apps",
-          "apps/_ports/arefahmad-idrive8/kit/LICENSE.nickgcode",
-          "apps/_ports/arefahmad-idrive8/kit/LICENSE.alexpereap",
-          "apps/_ports/arefahmad-idrive8/kit/NOTICE.AQ-ID8",
-          "apps/_ports/arefahmad-idrive8/PORT.json"
-        ]
-      },
-      "version": "0.2.3",
-      "title": "Car Explorer",
-      "description": "Finds the head unit's services behind a car feature (ambient light, route guidance and ETA, GPS position, now playing, climate, lights, doors, fuel) in its interface catalog and shows what each offers. Writes everything to explorer-report.txt, which new apps are designed from. Read-only: it reads two platform files and sends nothing to the car. For developers and curious owners.",
-      "requires": {
-        "mgu-render": "0.6.24"
-      },
-      "mguNeeds": [
-        "renderer"
-      ]
-    },
-    {
-      "id": "aref_faultwatch",
-      "kind": "app",
-      "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_faultwatch",
-      "manifest": "app.json",
-      "icon": "icon.png",
-      "mguHmi": [
-        "ID7"
-      ],
-      "build": {
-        "python": "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
-        "args": [
-          "{id}"
-        ],
-        "sdk": "apps/_sources/arefahmad-idrive7-apps/oap-sdk",
-        "output": "apps/_sources/arefahmad-idrive7-apps/dist/{id}@{version}.tgz",
-        "shared": [
-          "apps/_sources/arefahmad-idrive7-apps/kit/runtime",
-          "apps/_sources/arefahmad-idrive7-apps/kit/platform",
-          "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
-          "apps/_sources/arefahmad-idrive7-apps/kit/tools/pack_data.py",
-          "apps/_sources/arefahmad-idrive7-apps/kit/tools/localize.py",
-          "apps/_sources/arefahmad-idrive7-apps/kit/tools/locale-revisions.json",
-          "apps/_sources/arefahmad-idrive7-apps/kit/tools/oapgen",
-          "apps/_sources/arefahmad-idrive7-apps/LICENSE",
-          "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.idrive7-apps",
-          "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.nickgcode"
-        ]
-      },
-      "version": "0.2.2",
-      "title": "Fault Watch",
-      "description": "Replaced by Car Watch (install it, then remove this app). Reads every control unit's fault memory in the background every few minutes while the car is on, and keeps a timeline of what changed: new faults, faults that turn active, faults that clear. Each entry has the time and the drive at that moment (speed, gear, rpm, oil, drive mode), so an intermittent fault can be matched to when it happened. Read-only: it never clears or writes anything. Starts with the car."
-    },
-    {
-      "id": "aref_misfire",
-      "kind": "app",
-      "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_misfire",
-      "manifest": "app.json",
-      "icon": "icon.png",
-      "mguHmi": [
-        "ID7"
-      ],
-      "build": {
-        "python": "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
-        "args": [
-          "{id}"
-        ],
-        "sdk": "apps/_sources/arefahmad-idrive7-apps/oap-sdk",
-        "output": "apps/_sources/arefahmad-idrive7-apps/dist/{id}@{version}.tgz",
-        "shared": [
-          "apps/_sources/arefahmad-idrive7-apps/kit/runtime",
-          "apps/_sources/arefahmad-idrive7-apps/kit/platform",
-          "apps/_sources/arefahmad-idrive7-apps/kit/tools/build.py",
-          "apps/_sources/arefahmad-idrive7-apps/kit/tools/pack_data.py",
-          "apps/_sources/arefahmad-idrive7-apps/kit/tools/localize.py",
-          "apps/_sources/arefahmad-idrive7-apps/kit/tools/locale-revisions.json",
-          "apps/_sources/arefahmad-idrive7-apps/kit/tools/oapgen",
-          "apps/_sources/arefahmad-idrive7-apps/LICENSE",
-          "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.idrive7-apps",
-          "apps/_sources/arefahmad-idrive7-apps/kit/LICENSE.nickgcode"
-        ]
-      },
-      "version": "0.1.1",
-      "title": "Misfire Watch",
-      "description": "Replaced by Car Watch (install it, then remove this app). Logs every misfire the engine counts, per cylinder, across every drive. It reads the engine unit's own misfire counters every few seconds while the engine runs and records each new misfire with the conditions at that moment: rpm, speed, gear, torque, coolant and drive mode. Shows this drive per cylinder, all-time totals, the DME's 10-drive average, a misfire log and a list of drives, and exports CSV. Finds a weak coil or worn plug early. Read-only. Starts with the car."
     },
     {
       "id": "aref_tires",
@@ -931,7 +720,8 @@
         "sdk": "apps/_sources/benspa900-mon-vitals/oap-sdk",
         "output": "apps/_sources/benspa900-mon-vitals/dist/{id}@{version}.tgz",
         "shared": [
-          "apps/_sources/benspa900-mon-vitals/kit"
+          "apps/_sources/benspa900-mon-vitals/kit",
+          "apps/_sources/idrive7-apps/kit/localization"
         ]
       },
       "icon": "icon.png"
@@ -1022,50 +812,6 @@
         "output": "apps/_sources/giuseppe-mgu-apps/vendor/idrive7-apps/dist/{id}@{version}.tgz"
       },
       "icon": "icon.png"
-    },
-    {
-      "id": "boostline_id8",
-      "kind": "app",
-      "path": "apps/_sources/giuseppe-mgu-apps-id8/ecu-live-data/app",
-      "title": "ECU Live Data (iDrive 8, untested)",
-      "description": "NOT YET TESTED ON AN iDRIVE 8 CAR. Needs the MGU Store's Renderer (mgu-render): the Store installs it first if it is missing. Live engine data from the DDE (diesel) or DME (petrol), CSV logs, road dyno and drag timer. Read-only: it never writes to a control unit.",
-      "texts": {
-        "it": {
-          "title": "ECU Live Data (iDrive 8, non testata)",
-          "description": "NON ANCORA TESTATA SU UN'AUTO CON iDRIVE 8. Richiede il Renderer dello Store (mgu-render): se manca, lo Store lo installa prima. Dati motore in tempo reale dalla DDE (diesel) o dalla DME (benzina), log CSV, banco prova su strada e drag timer. Sola lettura: non scrive mai su una centralina."
-        }
-      },
-      "mguHmi": [
-        "ID8"
-      ],
-      "needs": [
-        "renderer"
-      ],
-      "requires": {
-        "mgu-render": "0.3.1"
-      },
-      "icon": "icon.png",
-      "build": {
-        "python": "tools/build_extra_source_app.py",
-        "args": [
-          "{id}"
-        ],
-        "sdk": "apps/_sources/giuseppe-mgu-apps-id8/vendor/idrive7-apps/oap-sdk",
-        "output": "apps/_sources/giuseppe-mgu-apps-id8/vendor/idrive7-apps/dist/{id}@{version}.tgz",
-        "shared": [
-          "apps/_sources/giuseppe-mgu-apps-id8/tools",
-          "apps/_sources/giuseppe-mgu-apps-id8/vendor/idrive7-apps",
-          "apps/_sources/giuseppe-mgu-apps-id8/LICENSE",
-          "apps/_sources/giuseppe-mgu-apps-id8/README.md",
-          "apps/_sources/giuseppe-mgu-apps-id8/dpf-monitoring/LICENSE",
-          "apps/_sources/giuseppe-mgu-apps-id8/ecu-live-data/LICENSE",
-          "apps/_sources/giuseppe-mgu-apps-id8/true-time/LICENSE",
-          "tools/build_extra_source_app.py",
-          "data/extra-source-builds.json"
-        ]
-      },
-      "version": "1.0.0",
-      "manifest": "app.json"
     },
     {
       "id": "brake_test",
@@ -1191,41 +937,6 @@
         "ID7"
       ],
       "uninstallable": true
-    },
-    {
-      "id": "climate-comfort",
-      "kind": "app",
-      "path": "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/apps/climate-comfort",
-      "manifest": "app.json",
-      "version": "0.1.60",
-      "title": "Climate Comfort",
-      "description": "Development preview. Development preview of seat heating, seat ventilation and steering wheel heating rules for BMW iDrive 7.",
-      "mguHmi": [
-        "ID7"
-      ],
-      "requires": {
-        "idrive7-renderd": "2.1.19",
-        "mgu-inputgate": "1.2.1"
-      },
-      "build": {
-        "python": "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/build.py",
-        "args": [
-          "{id}"
-        ],
-        "sdk": "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/oap-sdk",
-        "shared": [
-          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/runtime",
-          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/platform",
-          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/localization",
-          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/build.py",
-          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/pack_data.py",
-          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/localize.py",
-          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/locale-revisions.json",
-          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/oapgen",
-          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/LICENSE"
-        ]
-      },
-      "icon": "icon.png"
     },
     {
       "id": "clucraft-jellyfin",
@@ -1408,7 +1119,8 @@
         "sdk": "apps/_sources/tjmodsss-tjm-apps/oap-sdk",
         "output": "apps/_sources/tjmodsss-tjm-apps/dist/{id}@{version}.tgz",
         "shared": [
-          "apps/_sources/tjmodsss-tjm-apps/kit"
+          "apps/_sources/tjmodsss-tjm-apps/kit",
+          "apps/_sources/idrive7-apps/kit/localization"
         ]
       },
       "icon": "icon.png"
@@ -1439,31 +1151,6 @@
       "path": "apps/_sources/bimmer-lab-apps/apps/cluster_themes",
       "manifest": "app.json",
       "description": "Redraws the instrument cluster: GT3 race dash, M-style, M view, Vector (with a music panel), Sport, Minimal, Track, Drag, Rally, Retro 80s, Cruise, Dyno (BMW-coloured readout tiles) or Ribbon (with holiday editions), with shift lights, boost, temps, tyres, a G-meter and a 0-60 timer"
-    },
-    {
-      "id": "custom_cluster",
-      "kind": "app",
-      "version": "0.6.10",
-      "title": "Custom Cluster",
-      "description": "KOMBI-only selected-layout parked tests and reliable text diagnostics.",
-      "path": "apps/_sources/namels-mgu-apps-full/apps/custom_cluster",
-      "manifest": "app.json",
-      "mguHmi": [
-        "ID7"
-      ],
-      "requires": {
-        "cluster-render": "0.4.0",
-        "mgu-cluster-net": "0.1.0"
-      },
-      "build": {
-        "python": "apps/_sources/namels-mgu-apps-full/tools/build_store_app.py",
-        "args": [
-          "{id}"
-        ],
-        "sdk": "apps/_sources/namels-mgu-apps-full/oap-sdk",
-        "output": "apps/_sources/namels-mgu-apps-full/dist/{id}@{version}.tgz"
-      },
-      "icon": "icon.png"
     },
     {
       "id": "custom_hud",
@@ -1518,7 +1205,7 @@
         "shared": [
           "apps/_sources/dimonprograms-apps/kit/runtime",
           "apps/_sources/dimonprograms-apps/kit/platform",
-          "apps/_sources/dimonprograms-apps/kit/localization",
+          "apps/_sources/idrive7-apps/kit/localization",
           "apps/_sources/dimonprograms-apps/kit/tools/build.py",
           "apps/_sources/dimonprograms-apps/kit/tools/pack_data.py",
           "apps/_sources/dimonprograms-apps/kit/tools/localize.py",
@@ -1560,7 +1247,8 @@
           "apps/_ports/dimonprograms-idrive8/LICENSE",
           "apps/_ports/dimonprograms-idrive8/NOTICE.zh-CN.md",
           "apps/_ports/dimonprograms-idrive8/PORT.json",
-          "apps/_ports/dimonprograms-idrive8/PROVENANCE.json"
+          "apps/_ports/dimonprograms-idrive8/PROVENANCE.json",
+          "apps/_sources/idrive7-apps/kit/localization"
         ]
       },
       "mguNeeds": [
@@ -1724,50 +1412,6 @@
       "icon": "icon.png"
     },
     {
-      "id": "dpf_id8",
-      "kind": "app",
-      "path": "apps/_sources/giuseppe-mgu-apps-id8/dpf-monitoring/app",
-      "title": "DPF Monitoring (iDrive 8, untested)",
-      "description": "NOT YET TESTED ON AN iDRIVE 8 CAR. Needs the MGU Store's Renderer (mgu-render): the Store installs it first if it is missing. The diesel particulate filter: soot and ash load, regenerations, differential pressure and exhaust temperatures from the diesel engine unit (DDE). Read-only.",
-      "texts": {
-        "it": {
-          "title": "DPF Monitoring (iDrive 8, non testata)",
-          "description": "NON ANCORA TESTATA SU UN'AUTO CON iDRIVE 8. Richiede il Renderer dello Store (mgu-render): se manca, lo Store lo installa prima. Il filtro antiparticolato: carico di fuliggine e cenere, rigenerazioni, pressione differenziale e temperature dei gas di scarico dalla centralina diesel (DDE). Sola lettura."
-        }
-      },
-      "mguHmi": [
-        "ID8"
-      ],
-      "needs": [
-        "renderer"
-      ],
-      "requires": {
-        "mgu-render": "0.3.1"
-      },
-      "icon": "icon.png",
-      "build": {
-        "python": "tools/build_extra_source_app.py",
-        "args": [
-          "{id}"
-        ],
-        "sdk": "apps/_sources/giuseppe-mgu-apps-id8/vendor/idrive7-apps/oap-sdk",
-        "output": "apps/_sources/giuseppe-mgu-apps-id8/vendor/idrive7-apps/dist/{id}@{version}.tgz",
-        "shared": [
-          "apps/_sources/giuseppe-mgu-apps-id8/tools",
-          "apps/_sources/giuseppe-mgu-apps-id8/vendor/idrive7-apps",
-          "apps/_sources/giuseppe-mgu-apps-id8/LICENSE",
-          "apps/_sources/giuseppe-mgu-apps-id8/README.md",
-          "apps/_sources/giuseppe-mgu-apps-id8/dpf-monitoring/LICENSE",
-          "apps/_sources/giuseppe-mgu-apps-id8/ecu-live-data/LICENSE",
-          "apps/_sources/giuseppe-mgu-apps-id8/true-time/LICENSE",
-          "tools/build_extra_source_app.py",
-          "data/extra-source-builds.json"
-        ]
-      },
-      "version": "1.0.0",
-      "manifest": "app.json"
-    },
-    {
       "id": "dpf_monitor",
       "kind": "app",
       "title": "DPF Monitor",
@@ -1835,22 +1479,6 @@
       "icon": "icon.png"
     },
     {
-      "id": "drake1804-checks",
-      "kind": "tool",
-      "version": "0.1.2",
-      "title": "YouTube Checks helper",
-      "description": "Reads the logs and runs the tests for the YouTube Checks app. Remove it when you are done",
-      "path": "tools/_released/drake1804-checks",
-      "mguHmi": [
-        "ID7"
-      ],
-      "requires": {
-        "mgu-deploy": "0.7.0"
-      },
-      "optional": true,
-      "uninstallable": true
-    },
-    {
       "id": "drake1804-ytplay",
       "kind": "tool",
       "version": "0.1.16",
@@ -1868,31 +1496,6 @@
       },
       "optional": true,
       "uninstallable": true
-    },
-    {
-      "id": "drake1804_checks",
-      "kind": "app",
-      "version": "0.1.0",
-      "title": "YouTube Checks",
-      "description": "Tests the YouTube app's video and sound on this car, and prints the logs on the screen to take photos of. Remove it when you are done",
-      "path": "apps/_prebuilt/drake1804_checks",
-      "manifest": "app.json",
-      "icon": "icon.png",
-      "mguHmi": [
-        "ID7"
-      ],
-      "requires": {
-        "mgu-deploy": "0.7.0",
-        "drake1804-checks": "0.1.0"
-      },
-      "uninstallable": true,
-      "build": {
-        "node": "tools/prebuilt.js",
-        "output": "{dir}/{id}@{version}.tgz",
-        "shared": [
-          "tools/prebuilt.js"
-        ]
-      }
     },
     {
       "id": "drake1804_youtube",
@@ -2067,7 +1670,8 @@
           "apps/_ports/dante-idrive8/LICENSE",
           "apps/_ports/dante-idrive8/NOTICE.zh-CN.md",
           "apps/_ports/dante-idrive8/PORT.json",
-          "apps/_ports/dante-idrive8/PROVENANCE.json"
+          "apps/_ports/dante-idrive8/PROVENANCE.json",
+          "apps/_sources/idrive7-apps/kit/localization"
         ]
       },
       "mguNeeds": [
@@ -2103,47 +1707,6 @@
       "icon": "icon.png"
     },
     {
-      "id": "eldrive",
-      "kind": "app",
-      "version": "1.1.0",
-      "title": "elDrive",
-      "description": "eDrive with fully electric cars (BEV, e.g. the iX3): real range, live battery power, cells and climate power, HV battery health and energy, last charge, charge log, 12 V battery voltage and a home-screen widget; plug-in hybrids and 48 V mild hybrids as in eDrive",
-      "path": "apps/_sources/beele-eldrive/apps/eldrive",
-      "manifest": "app.json",
-      "icon": "icon.png",
-      "mguHmi": [
-        "ID7"
-      ],
-      "requires": {
-        "idrive7-renderd": "2.1.7",
-        "mgu-inputgate": "1.0.0"
-      },
-      "build": {
-        "python": "tools/build_extra_source_app.py",
-        "args": [
-          "{id}"
-        ],
-        "output": "apps/_sources/beele-eldrive/dist/{id}@{version}.tgz",
-        "shared": [
-          "apps/_sources/beele-eldrive/kit/runtime",
-          "apps/_sources/beele-eldrive/kit/platform",
-          "apps/_sources/beele-eldrive/kit/localization",
-          "apps/_sources/beele-eldrive/kit/tools/build.py",
-          "apps/_sources/beele-eldrive/kit/tools/pack_data.py",
-          "apps/_sources/beele-eldrive/kit/tools/localize.py",
-          "apps/_sources/beele-eldrive/kit/tools/locale-revisions.json",
-          "apps/_sources/beele-eldrive/kit/tools/oapgen",
-          "apps/_sources/beele-eldrive/kit/tools/make_icon.js",
-          "apps/_sources/beele-eldrive/LICENSE",
-          "apps/_sources/beele-eldrive/README.md",
-          "apps/_sources/beele-eldrive/mgu-repo.json",
-          "tools/build_extra_source_app.py",
-          "data/extra-source-builds.json"
-        ],
-        "sdk": "apps/_sources/beele-eldrive/oap-sdk"
-      }
-    },
-    {
       "id": "equalizer",
       "kind": "app",
       "version": "0.2.4",
@@ -2165,7 +1728,11 @@
           "{id}"
         ],
         "sdk": "apps/_sources/namels-mgu-apps-full/oap-sdk",
-        "output": "apps/_sources/namels-mgu-apps-full/dist/{id}@{version}.tgz"
+        "output": "apps/_sources/namels-mgu-apps-full/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/namels-mgu-apps-full/kit",
+          "apps/_sources/namels-mgu-apps-full/tools"
+        ]
       },
       "icon": "icon.png"
     },
@@ -2281,46 +1848,6 @@
       }
     },
     {
-      "id": "f44-hud-bridge",
-      "kind": "tool",
-      "version": "0.12.0",
-      "title": "F44 HUD experimental",
-      "description": "F44 HUD experimental - minimal renderer 0.6.4",
-      "path": "apps/_sources/benspa900-mon-vitals/f44-hud",
-      "mguHmi": [
-        "ID7"
-      ],
-      "requires": {}
-    },
-    {
-      "id": "f44_traffic_diag",
-      "kind": "app",
-      "version": "0.1.0",
-      "title": "Diagnostic panneaux F44",
-      "description": "Recherche en lecture seule des interfaces de panneaux et de feux",
-      "path": "apps/_sources/benspa900-mon-vitals/apps/f44_traffic_diag",
-      "manifest": "app.json",
-      "mguHmi": [
-        "ID7"
-      ],
-      "requires": {
-        "idrive7-renderd": "2.1.7",
-        "mgu-inputgate": "1.0.0"
-      },
-      "build": {
-        "python": "apps/_sources/benspa900-mon-vitals/kit/tools/build.py",
-        "args": [
-          "{id}"
-        ],
-        "sdk": "apps/_sources/benspa900-mon-vitals/oap-sdk",
-        "output": "apps/_sources/benspa900-mon-vitals/dist/{id}@{version}.tgz",
-        "shared": [
-          "apps/_sources/benspa900-mon-vitals/kit"
-        ]
-      },
-      "icon": "icon.png"
-    },
-    {
       "id": "front-camera-cluster-helper",
       "kind": "tool",
       "version": "0.2.1",
@@ -2394,7 +1921,11 @@
           "{id}"
         ],
         "sdk": "apps/_sources/namels-mgu-apps-full/oap-sdk",
-        "output": "apps/_sources/namels-mgu-apps-full/dist/{id}@{version}.tgz"
+        "output": "apps/_sources/namels-mgu-apps-full/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/namels-mgu-apps-full/kit",
+          "apps/_sources/namels-mgu-apps-full/tools"
+        ]
       },
       "icon": "icon.png"
     },
@@ -2419,7 +1950,11 @@
           "{id}"
         ],
         "sdk": "apps/_sources/namels-mgu-apps-full/oap-sdk",
-        "output": "apps/_sources/namels-mgu-apps-full/dist/{id}@{version}.tgz"
+        "output": "apps/_sources/namels-mgu-apps-full/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/namels-mgu-apps-full/kit",
+          "apps/_sources/namels-mgu-apps-full/tools"
+        ]
       },
       "icon": "icon.png"
     },
@@ -2543,7 +2078,8 @@
         "sdk": "apps/_sources/tjmodsss-tjm-apps/oap-sdk",
         "output": "apps/_sources/tjmodsss-tjm-apps/dist/{id}@{version}.tgz",
         "shared": [
-          "apps/_sources/tjmodsss-tjm-apps/kit"
+          "apps/_sources/tjmodsss-tjm-apps/kit",
+          "apps/_sources/idrive7-apps/kit/localization"
         ]
       },
       "icon": "icon.png"
@@ -2634,20 +2170,6 @@
       }
     },
     {
-      "id": "ida_lightlog",
-      "kind": "app",
-      "path": "apps/_sources/grabandrey-idrive-apps/packages/lightlog/app",
-      "build": "unit",
-      "title": "Light Logger",
-      "description": "Finds what switches the seat logos off: the RGB light modules, the body controller's lamp outputs, and a finder that compares everything the body controller and seat modules report with the logos on and off. Keep on (off until you switch it on) holds the logos' lamp output on while the car is on. EXPERIMENTAL, untested on a car.",
-      "uninstallable": true,
-      "mguHmi": [
-        "ID8"
-      ],
-      "version": "1.3.1",
-      "requires": {}
-    },
-    {
       "id": "ida_seatlights",
       "kind": "app",
       "path": "apps/_sources/grabandrey-idrive-apps/packages/seatlights/app",
@@ -2659,7 +2181,12 @@
         "ID8"
       ],
       "version": "1.3.2",
-      "requires": {}
+      "requires": {
+        "mgu-render": "0.6.11"
+      },
+      "mguNeeds": [
+        "renderer"
+      ]
     },
     {
       "id": "ida_vitals",
@@ -2669,13 +2196,17 @@
       "title": "Vitals",
       "description": "Water, engine oil, gearbox oil and tyre temperatures in the iDrive 8 cluster: reads the car's data for the Vitals widget and holds its settings.",
       "requires": {
-        "ida-vitals-cluster": "1.3.0"
+        "ida-vitals-cluster": "1.3.0",
+        "mgu-render": "0.6.11"
       },
       "uninstallable": true,
       "mguHmi": [
         "ID8"
       ],
-      "version": "1.3.1"
+      "version": "1.3.1",
+      "mguNeeds": [
+        "renderer"
+      ]
     },
     {
       "id": "idrive7-renderd",
@@ -2852,59 +2383,11 @@
         "sdk": "apps/_sources/prototype019-idrive7-motordaten/oap-sdk",
         "output": "apps/_sources/prototype019-idrive7-motordaten/dist/{id}@{version}.tgz",
         "shared": [
-          "apps/_sources/prototype019-idrive7-motordaten/kit"
+          "apps/_sources/prototype019-idrive7-motordaten/kit",
+          "apps/_sources/idrive7-apps/kit/localization"
         ]
       },
       "icon": "icon.png"
-    },
-    {
-      "id": "kombikraft",
-      "kind": "app",
-      "version": "0.1.0",
-      "title": "KombiKraft Lab · Offline prototype",
-      "description": "Experimental native preferences app. No vehicle-validated release; factory menu injection, HUD rendering and KOMBI skin activation remain unavailable.",
-      "path": "apps/_prebuilt/kombikraft",
-      "manifest": "app.json",
-      "icon": "icon.png",
-      "mguHmi": [
-        "ID7"
-      ],
-      "requires": {
-        "mgu-deploy": "0.2.0"
-      },
-      "uninstallable": true,
-      "build": {
-        "node": "tools/prebuilt.js",
-        "output": "{dir}/{id}@{version}.tgz",
-        "shared": [
-          "tools/prebuilt.js"
-        ]
-      }
-    },
-    {
-      "id": "kombikraft_test",
-      "kind": "app",
-      "version": "0.1.28",
-      "title": "KombiKraft Themes",
-      "description": "F40 M Round test theme with mirrored main dials, BMW mini-gauge numerals, and shaded segmented rings. This build masks the factory model badge behind the M Round badge. Select while parked. Badge coverage awaiting on-car validation.",
-      "path": "apps/_prebuilt/kombikraft_test",
-      "manifest": "app.json",
-      "icon": "icon.png",
-      "mguHmi": [
-        "ID7"
-      ],
-      "requires": {
-        "mgu-deploy": "0.4.0",
-        "cluster-render": "0.6.9"
-      },
-      "uninstallable": true,
-      "build": {
-        "node": "tools/prebuilt.js",
-        "output": "{dir}/{id}@{version}.tgz",
-        "shared": [
-          "tools/prebuilt.js"
-        ]
-      }
     },
     {
       "id": "lfb-enginesound",
@@ -2966,7 +2449,11 @@
           "{id}"
         ],
         "sdk": "apps/_sources/namels-mgu-apps-full/oap-sdk",
-        "output": "apps/_sources/namels-mgu-apps-full/dist/{id}@{version}.tgz"
+        "output": "apps/_sources/namels-mgu-apps-full/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/namels-mgu-apps-full/kit",
+          "apps/_sources/namels-mgu-apps-full/tools"
+        ]
       }
     },
     {
@@ -2989,7 +2476,11 @@
           "{id}"
         ],
         "sdk": "apps/_sources/namels-mgu-apps-full/oap-sdk",
-        "output": "apps/_sources/namels-mgu-apps-full/dist/{id}@{version}.tgz"
+        "output": "apps/_sources/namels-mgu-apps-full/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/namels-mgu-apps-full/kit",
+          "apps/_sources/namels-mgu-apps-full/tools"
+        ]
       },
       "icon": "icon.png"
     },
@@ -3116,7 +2607,8 @@
         "sdk": "apps/_sources/tjmodsss-tjm-apps/oap-sdk",
         "output": "apps/_sources/tjmodsss-tjm-apps/dist/{id}@{version}.tgz",
         "shared": [
-          "apps/_sources/tjmodsss-tjm-apps/kit"
+          "apps/_sources/tjmodsss-tjm-apps/kit",
+          "apps/_sources/idrive7-apps/kit/localization"
         ]
       },
       "icon": "icon.png"
@@ -3175,7 +2667,12 @@
         "ID7",
         "ID8"
       ],
-      "requires": {}
+      "requires": {
+        "mgu-render": "0.6.11"
+      },
+      "mguNeeds": [
+        "renderer"
+      ]
     },
     {
       "id": "mdev_homeassistant",
@@ -3200,35 +2697,11 @@
         "sdk": "apps/_sources/markoni-homeassistant/oap-sdk",
         "output": "apps/_sources/markoni-homeassistant/dist/{id}@{version}.tgz",
         "shared": [
-          "apps/_sources/markoni-homeassistant/kit"
+          "apps/_sources/markoni-homeassistant/kit",
+          "apps/_sources/idrive7-apps/kit/localization"
         ]
       },
       "icon": "icon.png"
-    },
-    {
-      "id": "mgu-cluster-net",
-      "kind": "tool",
-      "version": "0.1.0",
-      "title": "Custom Cluster Phone Port",
-      "description": "Opens TCP 18977 on wlan_bridge for the Custom Cluster phone status link, only while that link is listening",
-      "path": "apps/_sources/namels-mgu-apps-full/native/cluster-net",
-      "mguHmi": [
-        "ID7"
-      ],
-      "requires": {}
-    },
-    {
-      "id": "mgu-deploy",
-      "kind": "tool",
-      "version": "0.8.27",
-      "title": "Deploy tool",
-      "description": "Installs, updates, rolls back and removes our tools and apps on the head unit, with a snapshot before every change",
-      "path": "tools/_released/mgu-deploy",
-      "mguHmi": [
-        "ID7",
-        "ID8"
-      ],
-      "requires": {}
     },
     {
       "id": "mgu-equalizer-dsp",
@@ -3251,7 +2724,10 @@
       },
       "title": "FSC patch service",
       "description": "FSC verifier patch service.",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "mguHmi": [
+        "ID7"
+      ]
     },
     {
       "id": "mgu-game-net",
@@ -3319,68 +2795,6 @@
       "requires": {}
     },
     {
-      "id": "mgu-python",
-      "kind": "tool",
-      "version": "1.0.3",
-      "title": "Python",
-      "description": "Python 3.12 for apps that build on the head unit with Python",
-      "path": "tools/_released/mgu-python",
-      "mguHmi": [
-        "ID7",
-        "ID8"
-      ],
-      "requires": {}
-    },
-    {
-      "id": "mgu-render",
-      "kind": "tool",
-      "version": "0.6.25",
-      "title": "Renderer",
-      "description": "Draws apps' screens on the GPU, over the HMI or inside the app's page",
-      "path": "tools/_released/mgu-render",
-      "mguHmi": [
-        "ID7",
-        "ID8"
-      ],
-      "requires": {
-        "mgu-deploy": "0.6.9"
-      },
-      "provides": "renderer",
-      "optional": true
-    },
-    {
-      "id": "mgu-updater",
-      "kind": "tool",
-      "version": "0.8.51",
-      "title": "Updater",
-      "description": "Installs, updates and removes apps and head-unit tools from its sources",
-      "path": "tools/_released/mgu-updater",
-      "mguHmi": [
-        "ID7",
-        "ID8"
-      ],
-      "requires": {
-        "mgu-deploy": "0.8.4",
-        "mgu-python": "1.0.2"
-      }
-    },
-    {
-      "id": "mgu-uplink",
-      "kind": "tool",
-      "version": "0.7.13",
-      "title": "Internet uplink",
-      "description": "Internet for selected apps through a USB network adapter, an LTE stick, a USB-tethered phone or Wi-Fi",
-      "path": "tools/_released/mgu-uplink",
-      "mguHmi": [
-        "ID7",
-        "ID8"
-      ],
-      "requires": {
-        "mgu-updater": "0.7.2"
-      },
-      "optional": true
-    },
-    {
       "id": "mgu-video-net",
       "kind": "tool",
       "version": "0.1.0",
@@ -3391,31 +2805,6 @@
         "ID7"
       ],
       "requires": {}
-    },
-    {
-      "id": "mgu_audio_diagnostics",
-      "kind": "app",
-      "version": "0.1.2",
-      "title": "MGU Audio Diagnostics",
-      "description": "Read-only SmartX, ALSA and DSP diagnostics; no music playback.",
-      "path": "apps/_sources/namels-mgu-apps-full/apps/mgu_audio_diagnostics",
-      "manifest": "app.json",
-      "mguHmi": [
-        "ID7"
-      ],
-      "requires": {
-        "idrive7-renderd": "2.1.6",
-        "mgu-inputgate": "1.0.0",
-        "mgu-equalizer-dsp": "0.2.1"
-      },
-      "build": {
-        "python": "apps/_sources/namels-mgu-apps-full/tools/build_store_app.py",
-        "args": [
-          "{id}"
-        ],
-        "sdk": "apps/_sources/namels-mgu-apps-full/oap-sdk",
-        "output": "apps/_sources/namels-mgu-apps-full/dist/{id}@{version}.tgz"
-      }
     },
     {
       "id": "mgu_gamestation",
@@ -3439,7 +2828,11 @@
           "{id}"
         ],
         "sdk": "apps/_sources/namels-mgu-apps-full/oap-sdk",
-        "output": "apps/_sources/namels-mgu-apps-full/dist/{id}@{version}.tgz"
+        "output": "apps/_sources/namels-mgu-apps-full/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/namels-mgu-apps-full/kit",
+          "apps/_sources/namels-mgu-apps-full/tools"
+        ]
       },
       "icon": "icon.png"
     },
@@ -3463,38 +2856,10 @@
           "{id}"
         ],
         "sdk": "apps/_sources/namels-mgu-apps-full/oap-sdk",
-        "output": "apps/_sources/namels-mgu-apps-full/dist/{id}@{version}.tgz"
-      },
-      "icon": "icon.png"
-    },
-    {
-      "id": "mgu_unified",
-      "kind": "app",
-      "version": "0.1.11",
-      "title": "MGU Tools",
-      "description": "Unified MGU shell — integration phase",
-      "path": "apps/_sources/darkmuse-idrive7-apps-ru/apps/mgu_unified",
-      "manifest": "app.json",
-      "mguHmi": [
-        "ID7"
-      ],
-      "requires": {
-        "idrive7-renderd": "2.1.10",
-        "mgu-inputgate": "1.0.0"
-      },
-      "build": {
-        "python": "apps/_sources/darkmuse-idrive7-apps-ru/tools/build_protected_auto.py",
-        "args": [
-          "{id}",
-          "--language",
-          "auto"
-        ],
-        "sdk": "apps/_sources/darkmuse-idrive7-apps-ru/oap-sdk",
-        "output": "apps/_sources/darkmuse-idrive7-apps-ru/dist/{id}@{version}.tgz",
+        "output": "apps/_sources/namels-mgu-apps-full/dist/{id}@{version}.tgz",
         "shared": [
-          "apps/_sources/darkmuse-idrive7-apps-ru/tools/build_protected_auto.py",
-          "apps/_sources/darkmuse-idrive7-apps-ru/tools/auto-language",
-          "apps/_sources/darkmuse-idrive7-apps-ru/tools/protected-apps/kit"
+          "apps/_sources/namels-mgu-apps-full/kit",
+          "apps/_sources/namels-mgu-apps-full/tools"
         ]
       },
       "icon": "icon.png"
@@ -3522,7 +2887,11 @@
           "{id}"
         ],
         "sdk": "apps/_sources/namels-mgu-apps-full/oap-sdk",
-        "output": "apps/_sources/namels-mgu-apps-full/dist/{id}@{version}.tgz"
+        "output": "apps/_sources/namels-mgu-apps-full/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/namels-mgu-apps-full/kit",
+          "apps/_sources/namels-mgu-apps-full/tools"
+        ]
       },
       "icon": "icon.png"
     },
@@ -3548,7 +2917,8 @@
         "sdk": "apps/_sources/cruzen991-cluster/oap-sdk",
         "output": "apps/_sources/cruzen991-cluster/dist/{id}@{version}.tgz",
         "shared": [
-          "apps/_sources/cruzen991-cluster/kit"
+          "apps/_sources/cruzen991-cluster/kit",
+          "apps/_sources/idrive7-apps/kit/localization"
         ]
       },
       "icon": "icon.png"
@@ -3575,7 +2945,8 @@
         "sdk": "apps/_sources/cruzen991-cluster/oap-sdk",
         "output": "apps/_sources/cruzen991-cluster/dist/{id}@{version}.tgz",
         "shared": [
-          "apps/_sources/cruzen991-cluster/kit"
+          "apps/_sources/cruzen991-cluster/kit",
+          "apps/_sources/idrive7-apps/kit/localization"
         ]
       }
     },
@@ -3597,7 +2968,10 @@
           "{id}",
           "{version}"
         ],
-        "output": "{dir}/prebuilt/{id}@{version}.tgz"
+        "output": "{dir}/prebuilt/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/noahg-mgu-apps/tools/prebuilt.js"
+        ]
       },
       "title": "FSC Patch",
       "description": "Patch or restore the FSC verifier.",
@@ -3765,34 +3139,6 @@
       "icon": "icon.png"
     },
     {
-      "id": "perea_cluster_themes",
-      "kind": "app",
-      "version": "0.19.1",
-      "title": "Cluster Themes",
-      "description": "Redraws the instrument cluster: GT3 race dash, M-style, M view, Vector (with a music panel), Sport, Minimal, Track, Drag, Rally, Retro 80s, Cruise, Dyno (BMW-coloured readout tiles) or Ribbon (with holiday editions), with shift lights, boost, temps, tyres, a G-meter and a 0-60 timer",
-      "path": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes",
-      "manifest": "app.json",
-      "mguHmi": [
-        "ID7"
-      ],
-      "requires": {
-        "cluster-render": "0.5.1"
-      },
-      "build": {
-        "python": "apps/_sources/alexpereap-idrive7-apps/kit/tools/build.py",
-        "args": [
-          "{id}"
-        ],
-        "sdk": "apps/_sources/alexpereap-idrive7-apps/oap-sdk",
-        "output": "apps/_sources/alexpereap-idrive7-apps/dist/{id}@{version}.tgz",
-        "shared": [
-          "apps/_sources/alexpereap-idrive7-apps/kit",
-          "apps/_sources/alexpereap-idrive7-apps/shared"
-        ]
-      },
-      "icon": "icon.png"
-    },
-    {
       "id": "perea_mhd_flex",
       "kind": "app",
       "version": "1.6.0",
@@ -3814,63 +3160,6 @@
         "shared": [
           "apps/_sources/alexpereap-idrive7-apps/kit",
           "apps/_sources/alexpereap-idrive7-apps/shared"
-        ]
-      },
-      "icon": "icon.png"
-    },
-    {
-      "id": "pps_gauges",
-      "kind": "app",
-      "version": "1.0.3",
-      "title": "Proven Gauges",
-      "description": "BETA, not yet tested on a car. Proven Performance Solutions gauge sets: Street, Track, Boost, Thermal and Tyres. A guide only: check against a gauge you trust",
-      "path": "apps/_sources/proven-apps/apps/pps_gauges",
-      "manifest": "app.json",
-      "mguHmi": [
-        "ID7",
-        "ID8"
-      ],
-      "requires": {
-        "idrive7-renderd": "2.1.18",
-        "mgu-inputgate": "1.1.0"
-      },
-      "build": {
-        "python": "apps/_sources/proven-apps/kit/tools/build.py",
-        "args": [
-          "{id}"
-        ],
-        "sdk": "apps/_sources/proven-apps/oap-sdk",
-        "output": "apps/_sources/proven-apps/dist/{id}@{version}.tgz",
-        "shared": [
-          "apps/_sources/proven-apps/kit"
-        ]
-      },
-      "icon": "icon.png"
-    },
-    {
-      "id": "pps_warmup",
-      "kind": "app",
-      "version": "1.2.1",
-      "title": "Proven Warm-Up",
-      "description": "BETA, not yet tested on a car. Shows when engine oil, gearbox oil and coolant reach the warm-up temperatures set by Proven Performance Solutions. A guide only: it does not replace the car's own warnings",
-      "path": "apps/_sources/proven-apps/apps/pps_warmup",
-      "manifest": "app.json",
-      "mguHmi": [
-        "ID7",
-        "ID8"
-      ],
-      "requires": {
-        "idrive7-renderd": "2.1.15"
-      },
-      "build": {
-        "python": "apps/_sources/proven-apps/kit/tools/build.py",
-        "args": [
-          "{id}"
-        ],
-        "sdk": "apps/_sources/proven-apps/oap-sdk",
-        "output": "apps/_sources/proven-apps/dist/{id}@{version}.tgz",
-        "shared": [
-          "apps/_sources/proven-apps/kit"
         ]
       },
       "icon": "icon.png"
@@ -4001,24 +3290,6 @@
       "icon": "icon.png"
     },
     {
-      "id": "robertn_store",
-      "kind": "app",
-      "title": "Store",
-      "description": "The apps and head-unit tools of every source with their state, and the sources; installs, updates and removes them through mgu-updater",
-      "version": "0.9.41",
-      "requires": {
-        "mgu-deploy": "0.8.12",
-        "mgu-updater": "0.8.28",
-        "mgu-render": "0.3.1"
-      },
-      "mguHmi": [
-        "ID7",
-        "ID8"
-      ],
-      "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store",
-      "build": "unit"
-    },
-    {
       "id": "robertn_waze_cluster",
       "kind": "app",
       "path": "apps/_sources/idrive-apps/apps/robertn_waze_cluster",
@@ -4087,31 +3358,6 @@
         ]
       },
       "icon": "icon.png"
-    },
-    {
-      "id": "signal_probe",
-      "kind": "app",
-      "version": "0.4.0",
-      "title": "Signal Probe",
-      "description": "Read-only, log-only: subscribes the car's signals set by set and logs what arrives (numbers, enum names, text lengths). Draws nothing on the cluster.",
-      "path": "apps/_sources/sergey-olefir-f30-cluster/apps/signal_probe",
-      "manifest": "app.json",
-      "mguHmi": [
-        "ID7"
-      ],
-      "requires": {},
-      "build": {
-        "python": "apps/_sources/sergey-olefir-f30-cluster/kit/tools/build.py",
-        "args": [
-          "{id}"
-        ],
-        "sdk": "apps/_sources/sergey-olefir-f30-cluster/oap-sdk",
-        "output": "apps/_sources/sergey-olefir-f30-cluster/dist/{id}@{version}.tgz",
-        "shared": [
-          "apps/_sources/sergey-olefir-f30-cluster/kit",
-          "apps/_sources/sergey-olefir-f30-cluster/shared"
-        ]
-      }
     },
     {
       "id": "spotify",
@@ -4336,50 +3582,6 @@
       "icon": "icon.png"
     },
     {
-      "id": "true_time_id8",
-      "kind": "app",
-      "path": "apps/_sources/giuseppe-mgu-apps-id8/true-time/app",
-      "title": "True Time (iDrive 8, untested)",
-      "description": "NOT YET TESTED ON AN iDRIVE 8 CAR. Needs the MGU Store's Renderer (mgu-render): the Store installs it first if it is missing. Acceleration and braking times, measured and corrected for the road's slope (the DSC's acceleration sensor). Read-only. Performance runs only on closed courses.",
-      "texts": {
-        "it": {
-          "title": "True Time (iDrive 8, non testata)",
-          "description": "NON ANCORA TESTATA SU UN'AUTO CON iDRIVE 8. Richiede il Renderer dello Store (mgu-render): se manca, lo Store lo installa prima. Tempi di accelerazione e frenata, misurati e corretti per la pendenza della strada (sensore di accelerazione del DSC). Sola lettura. Prove di prestazioni solo su circuiti chiusi."
-        }
-      },
-      "mguHmi": [
-        "ID8"
-      ],
-      "needs": [
-        "renderer"
-      ],
-      "requires": {
-        "mgu-render": "0.3.1"
-      },
-      "icon": "icon.png",
-      "build": {
-        "python": "tools/build_extra_source_app.py",
-        "args": [
-          "{id}"
-        ],
-        "sdk": "apps/_sources/giuseppe-mgu-apps-id8/vendor/idrive7-apps/oap-sdk",
-        "output": "apps/_sources/giuseppe-mgu-apps-id8/vendor/idrive7-apps/dist/{id}@{version}.tgz",
-        "shared": [
-          "apps/_sources/giuseppe-mgu-apps-id8/tools",
-          "apps/_sources/giuseppe-mgu-apps-id8/vendor/idrive7-apps",
-          "apps/_sources/giuseppe-mgu-apps-id8/LICENSE",
-          "apps/_sources/giuseppe-mgu-apps-id8/README.md",
-          "apps/_sources/giuseppe-mgu-apps-id8/dpf-monitoring/LICENSE",
-          "apps/_sources/giuseppe-mgu-apps-id8/ecu-live-data/LICENSE",
-          "apps/_sources/giuseppe-mgu-apps-id8/true-time/LICENSE",
-          "tools/build_extra_source_app.py",
-          "data/extra-source-builds.json"
-        ]
-      },
-      "version": "1.0.0",
-      "manifest": "app.json"
-    },
-    {
       "id": "turnkey_e_blend_id8",
       "kind": "app",
       "version": "0.5.0",
@@ -4569,25 +3771,6 @@
       "uninstallable": true
     },
     {
-      "id": "vizualyse-cast",
-      "kind": "tool",
-      "version": "0.4.1",
-      "title": "Cast to cluster",
-      "description": "Plays a stream URL from your phone on the instrument cluster, the HUD or the media console, with its sound through the speakers: scan the QR code, paste a URL, pick where it goes. With hook111 armed, also CarPlay's own second screen (its cluster map) on the cluster or the HUD. Controlled by touch on the central screen too, parked or driving, where mgu-render is installed",
-      "path": "tools/_released/vizualyse-cast",
-      "mguHmi": [
-        "ID7"
-      ],
-      "requires": {
-        "mgu-deploy": "0.7.0",
-        "cluster-render": "0.4.2",
-        "mgu-python": "1.0.0",
-        "mgu-uplink": "0.7.0",
-        "vizualyse-bus": "0.1.0"
-      },
-      "uninstallable": true
-    },
-    {
       "id": "vizualyse-cluster",
       "kind": "tool",
       "version": "0.4.1",
@@ -4624,38 +3807,6 @@
       "uninstallable": true
     },
     {
-      "id": "vizualyse_cast",
-      "kind": "app",
-      "title": "Cast",
-      "description": "Cast to cluster: shows the phone link and QR code for the cast service, its status, and replays the last stream on the cluster, the HUD or the media console",
-      "version": "0.4.1",
-      "requires": {
-        "vizualyse-cast": "0.4.0"
-      },
-      "mguHmi": [
-        "ID7"
-      ],
-      "uninstallable": true,
-      "path": "apps/_published/vizualyse_cast",
-      "build": "unit"
-    },
-    {
-      "id": "vizualyse_chromium",
-      "kind": "app",
-      "title": "Browser",
-      "description": "Browser: shows the phone link and QR code for the vizualyse-chromium web browser, what its GPU offers (WebGPU, WebGL 2, JSPI), and shows or hides the browser on the central screen",
-      "version": "0.3.1",
-      "requires": {
-        "vizualyse-chromium": "0.3.0"
-      },
-      "mguHmi": [
-        "ID7"
-      ],
-      "uninstallable": true,
-      "path": "apps/_published/vizualyse_chromium",
-      "build": "unit"
-    },
-    {
       "id": "vizualyse_cluster",
       "kind": "app",
       "title": "Cluster themes",
@@ -4685,22 +3836,6 @@
       ],
       "uninstallable": true,
       "path": "apps/_published/vizualyse_moonlight",
-      "build": "unit"
-    },
-    {
-      "id": "vizualyse_steam",
-      "kind": "app",
-      "title": "Steam",
-      "description": "Steam: plays Windows games from your Steam library on the car (the vizualyse-steam tool), shows the phone link and QR code for signing in and installing, and shows or hides the game on the central screen",
-      "version": "0.2.1",
-      "requires": {
-        "vizualyse-steam": "0.3.0"
-      },
-      "mguHmi": [
-        "ID7"
-      ],
-      "uninstallable": true,
-      "path": "apps/_published/vizualyse_steam",
       "build": "unit"
     },
     {
@@ -4937,34 +4072,6 @@
       "icon": "icon.png"
     },
     {
-      "id": "woodr_devhud",
-      "kind": "app",
-      "version": "0.1.4",
-      "title": "Dev HUD",
-      "description": "Progress bars on the head-up display while you work on the car: Store installs, the battery's charge, the network, and any bar pushed from the laptop. Hidden while driving. Read-only.",
-      "path": "apps/_sources/woody-apps/apps/woodr_devhud",
-      "manifest": "app.json",
-      "mguHmi": [
-        "ID7"
-      ],
-      "requires": {
-        "idrive7-renderd": "2.1.7",
-        "mgu-inputgate": "1.0.0"
-      },
-      "build": {
-        "python": "apps/_sources/woody-apps/kit/tools/build.py",
-        "args": [
-          "{id}"
-        ],
-        "sdk": "apps/_sources/woody-apps/oap-sdk",
-        "output": "apps/_sources/woody-apps/dist/{id}@{version}.tgz",
-        "shared": [
-          "apps/_sources/woody-apps/kit"
-        ]
-      },
-      "icon": "icon.png"
-    },
-    {
       "id": "woodr_diag",
       "kind": "app",
       "version": "0.2.2",
@@ -5033,7 +4140,8 @@
       ],
       "requires": {
         "idrive7-renderd": "2.1.7",
-        "mgu-inputgate": "1.0.0"
+        "mgu-inputgate": "1.0.0",
+        "cluster-render": "0.5.3"
       },
       "build": {
         "python": "apps/_sources/woody-apps/kit/tools/build.py",
@@ -5078,34 +4186,6 @@
       "icon": "icon.png"
     },
     {
-      "id": "woodr_inputlab",
-      "kind": "app",
-      "version": "0.1.3",
-      "title": "Input Lab",
-      "description": "Shows which steering-wheel, stalk, console and gesture inputs the head unit sees, live, so apps can use them. Listens only: nothing is sent to the car.",
-      "path": "apps/_sources/woody-apps/apps/woodr_inputlab",
-      "manifest": "app.json",
-      "mguHmi": [
-        "ID7"
-      ],
-      "requires": {
-        "idrive7-renderd": "2.1.7",
-        "mgu-inputgate": "1.0.0"
-      },
-      "build": {
-        "python": "apps/_sources/woody-apps/kit/tools/build.py",
-        "args": [
-          "{id}"
-        ],
-        "sdk": "apps/_sources/woody-apps/oap-sdk",
-        "output": "apps/_sources/woody-apps/dist/{id}@{version}.tgz",
-        "shared": [
-          "apps/_sources/woody-apps/kit"
-        ]
-      },
-      "icon": "icon.png"
-    },
-    {
       "id": "woodr_launch",
       "kind": "app",
       "version": "0.7.1",
@@ -5118,7 +4198,8 @@
       ],
       "requires": {
         "idrive7-renderd": "2.1.7",
-        "mgu-inputgate": "1.0.0"
+        "mgu-inputgate": "1.0.0",
+        "cluster-render": "0.5.3"
       },
       "build": {
         "python": "apps/_sources/woody-apps/kit/tools/build.py",
@@ -5148,34 +4229,6 @@
         "idrive7-renderd": "2.1.7",
         "mgu-inputgate": "1.0.0",
         "woodr-link": "0.1.0"
-      },
-      "build": {
-        "python": "apps/_sources/woody-apps/kit/tools/build.py",
-        "args": [
-          "{id}"
-        ],
-        "sdk": "apps/_sources/woody-apps/oap-sdk",
-        "output": "apps/_sources/woody-apps/dist/{id}@{version}.tgz",
-        "shared": [
-          "apps/_sources/woody-apps/kit"
-        ]
-      },
-      "icon": "icon.png"
-    },
-    {
-      "id": "woodr_screenlab",
-      "kind": "app",
-      "version": "0.2.3",
-      "title": "Screen Lab",
-      "description": "Calibration patterns for the head-up display, instrument cluster and centre screen: grids, rulers and a movable probe box to measure what is really visible",
-      "path": "apps/_sources/woody-apps/apps/woodr_screenlab",
-      "manifest": "app.json",
-      "mguHmi": [
-        "ID7"
-      ],
-      "requires": {
-        "idrive7-renderd": "2.1.7",
-        "mgu-inputgate": "1.0.0"
       },
       "build": {
         "python": "apps/_sources/woody-apps/kit/tools/build.py",
@@ -5300,7 +4353,8 @@
         "sdk": "apps/_sources/tjmodsss-tjm-apps/oap-sdk",
         "output": "apps/_sources/tjmodsss-tjm-apps/dist/{id}@{version}.tgz",
         "shared": [
-          "apps/_sources/tjmodsss-tjm-apps/kit"
+          "apps/_sources/tjmodsss-tjm-apps/kit",
+          "apps/_sources/idrive7-apps/kit/localization"
         ]
       },
       "icon": "icon.png"
@@ -5327,7 +4381,8 @@
         "sdk": "apps/_sources/tjmodsss-tjm-apps/oap-sdk",
         "output": "apps/_sources/tjmodsss-tjm-apps/dist/{id}@{version}.tgz",
         "shared": [
-          "apps/_sources/tjmodsss-tjm-apps/kit"
+          "apps/_sources/tjmodsss-tjm-apps/kit",
+          "apps/_sources/idrive7-apps/kit/localization"
         ]
       },
       "icon": "icon.png"

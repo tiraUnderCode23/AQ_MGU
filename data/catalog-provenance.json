@@ -1,5 +1,20 @@
 [
   {
+    "id": "app-privacy",
+    "kind": "tool",
+    "version": "1.7.2",
+    "upstream_repository": "robertnisipeanu/mgu-store",
+    "upstream_catalog": "https://github.com/robertnisipeanu/mgu-store/releases/download/catalog/catalog.json",
+    "upstream_catalog_commit": "7956321fd40bceafffa8842719155e6176652720",
+    "upstream_artifact_url": "https://github.com/robertnisipeanu/mgu-store/releases/download/app-privacy%401.7.2/app-privacy%401.7.2.tgz",
+    "artifact_name": "app-privacy@1.7.2.tgz",
+    "size": 19586,
+    "sha256": "eea01214be305cec03a9cb8abeefa2ab543693376ab16a8d9639eb55e5191c5b",
+    "artifact_url": "https://github.com/robertnisipeanu/mgu-store/releases/download/app-privacy%401.7.2/app-privacy%401.7.2.tgz",
+    "distribution": "original-publisher-reference",
+    "legacy_aq_mirror_url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/app-privacy%401.7.2.tgz"
+  },
+  {
     "id": "aurelm-emby",
     "kind": "tool",
     "version": "0.3.13",
@@ -16,26 +31,6 @@
     "license": "GPL-3.0-or-later",
     "license_evidence_urls": [
       "https://github.com/aurelmarius/bmw-test-apps/blob/0db3728df278d9233253a13a7ecdc3b63b34ddf9/native/aurelm-emby/component.json"
-    ],
-    "upstream_catalog_sha256": "85bbf29abf13e93b84bce62d28693bd7fd48c1fd4a99bfdcd5fb85f4cdcc98cd"
-  },
-  {
-    "id": "aurelm-mediaprobe",
-    "kind": "tool",
-    "version": "0.1.3",
-    "upstream_repository": "aurelmarius/bmw-test-apps",
-    "upstream_catalog": "https://github.com/aurelmarius/bmw-test-apps/releases/download/catalog/catalog.json",
-    "upstream_catalog_commit": "0db3728df278d9233253a13a7ecdc3b63b34ddf9",
-    "observed_repository_head": "0db3728df278d9233253a13a7ecdc3b63b34ddf9",
-    "upstream_artifact_url": "https://github.com/aurelmarius/bmw-test-apps/releases/download/catalog/aurelm-mediaprobe@0.1.3.tgz",
-    "artifact_name": "aurelm-mediaprobe@0.1.3.tgz",
-    "size": 979949,
-    "sha256": "3108e7b1bb9e9a35fd3e7c31642a7d4fdbe4627eb49ad2ccab88145251e7da9e",
-    "artifact_url": "https://github.com/aurelmarius/bmw-test-apps/releases/download/catalog/aurelm-mediaprobe@0.1.3.tgz",
-    "distribution": "original-publisher-reference",
-    "license": "GPL-3.0-or-later",
-    "license_evidence_urls": [
-      "https://github.com/aurelmarius/bmw-test-apps/blob/0db3728df278d9233253a13a7ecdc3b63b34ddf9/native/aurelm-mediaprobe/component.json"
     ],
     "upstream_catalog_sha256": "85bbf29abf13e93b84bce62d28693bd7fd48c1fd4a99bfdcd5fb85f4cdcc98cd"
   },
@@ -191,20 +186,6 @@
     "artifact_name": "aurelm_lucky_sevens@1.1.0.tgz",
     "size": 573862,
     "sha256": "e5ab4ccce1f2f9159eaba91c251caa3c2485b4daf08ee812517000303557708a",
-    "distribution": "original-publisher-reference"
-  },
-  {
-    "id": "aurelm_mediaprobe",
-    "kind": "app",
-    "version": "0.1.3",
-    "upstream_repository": "aurelmarius/bmw-test-apps",
-    "upstream_catalog": "https://github.com/aurelmarius/bmw-test-apps/releases/download/catalog/catalog.json",
-    "upstream_catalog_commit": null,
-    "upstream_artifact_url": "https://github.com/aurelmarius/bmw-test-apps/releases/download/catalog/aurelm_mediaprobe@0.1.3.tgz",
-    "artifact_name": "aurelm_mediaprobe@0.1.3.tgz",
-    "size": 557548,
-    "sha256": "8b648e708ee074a4b995a211889f683ad061763cb814b4db9120e5392f097966",
-    "artifact_url": "https://github.com/aurelmarius/bmw-test-apps/releases/download/catalog/aurelm_mediaprobe@0.1.3.tgz",
     "distribution": "original-publisher-reference"
   },
   {
@@ -412,26 +393,6 @@
     "upstream_catalog_sha256": "36150a3233c98abcbda41e211a335226440f23bdd1944f125cd7aae5048812a5"
   },
   {
-    "id": "bcs_store",
-    "kind": "app",
-    "version": "3.4.5",
-    "upstream_repository": "bcs-asia/app-store",
-    "upstream_catalog": "https://github.com/bcs-asia/app-store/releases/download/catalog/catalog.json",
-    "upstream_catalog_commit": "87b8d423854a39089809f360072057903a8ea3b5",
-    "observed_repository_head": "87b8d423854a39089809f360072057903a8ea3b5",
-    "upstream_artifact_url": "https://github.com/bcs-asia/app-store/releases/download/catalog/bcs_store@3.4.5.tgz",
-    "artifact_name": "bcs_store@3.4.5.tgz",
-    "size": 4729989,
-    "sha256": "656f3bd8cee577d531680cc399d13e4218a4e0e0eec3ac3d876dc265a4374dc8",
-    "artifact_url": "https://github.com/bcs-asia/app-store/releases/download/catalog/bcs_store@3.4.5.tgz",
-    "distribution": "original-publisher-reference",
-    "license": "GPL-3.0",
-    "license_evidence_urls": [
-      "https://github.com/bcs-asia/app-store/blob/87b8d423854a39089809f360072057903a8ea3b5/LICENSE"
-    ],
-    "upstream_catalog_sha256": "afaa9de53f761ce1ff8c12de184a3d08ad15619037e797cc680357fe175d2599"
-  },
-  {
     "id": "bimmervision",
     "kind": "app",
     "version": "0.2.78",
@@ -457,21 +418,6 @@
     "size": 3390563,
     "sha256": "9aaa401a86ac55aa9959e6870ca65c3ddc89aaf1d3508f9c895422995cc72657",
     "artifact_url": "https://github.com/Hexphase/BimmerVision/releases/download/v0.2.78/bimmervision-recorder@0.2.78.tgz",
-    "distribution": "original-publisher-reference"
-  },
-  {
-    "id": "camera-inspect",
-    "kind": "tool",
-    "version": "0.1.1",
-    "upstream_repository": "eroobeeroo/idrive-apps",
-    "upstream_catalog": "https://github.com/eroobeeroo/idrive-apps/releases/download/catalog/catalog.json",
-    "upstream_catalog_commit": null,
-    "observed_repository_head": "3b7ce93045294dd8f0e60b3a239b4a1cfb4a405f",
-    "upstream_artifact_url": "https://github.com/eroobeeroo/idrive-apps/releases/download/camera-inspect%400.1.1/camera-inspect%400.1.1.tgz",
-    "artifact_url": "https://github.com/eroobeeroo/idrive-apps/releases/download/camera-inspect%400.1.1/camera-inspect%400.1.1.tgz",
-    "artifact_name": "camera-inspect@0.1.1.tgz",
-    "size": 45556,
-    "sha256": "1f8445933e97d432101ef4b665c9c0727c18fd9ce0db79851681b43c22f0e289",
     "distribution": "original-publisher-reference"
   },
   {
@@ -916,34 +862,6 @@
     "distribution": "original-publisher-reference"
   },
   {
-    "id": "mdq-aapd-log",
-    "kind": "tool",
-    "version": "0.1.1",
-    "upstream_repository": "7amoody1985/mgu-apps-lab",
-    "upstream_catalog": "https://github.com/7amoody1985/mgu-apps-lab/releases/download/catalog/catalog.json",
-    "upstream_catalog_commit": null,
-    "upstream_artifact_url": "https://github.com/7amoody1985/mgu-apps-lab/releases/download/catalog/mdq-aapd-log@0.1.1.tgz",
-    "artifact_name": "mdq-aapd-log@0.1.1.tgz",
-    "size": 4312,
-    "sha256": "486d898b32cf5a65c40c29115d960dd5b1d4aaa19c8e279c551486ddb5939510",
-    "artifact_url": "https://github.com/7amoody1985/mgu-apps-lab/releases/download/catalog/mdq-aapd-log@0.1.1.tgz",
-    "distribution": "original-publisher-reference"
-  },
-  {
-    "id": "mdq-ridetube-d",
-    "kind": "tool",
-    "version": "0.4.2",
-    "upstream_repository": "7amoody1985/mgu-apps-lab",
-    "upstream_catalog": "https://github.com/7amoody1985/mgu-apps-lab/releases/download/catalog/catalog.json",
-    "upstream_catalog_commit": null,
-    "upstream_artifact_url": "https://github.com/7amoody1985/mgu-apps-lab/releases/download/catalog/mdq-ridetube-d@0.4.2.tgz",
-    "artifact_name": "mdq-ridetube-d@0.4.2.tgz",
-    "size": 8785229,
-    "sha256": "b27100a3de2c8d86dcc9fa89a3feaac29f8ade71d2ec92f4f9b4b82d8949b06f",
-    "artifact_url": "https://github.com/7amoody1985/mgu-apps-lab/releases/download/catalog/mdq-ridetube-d@0.4.2.tgz",
-    "distribution": "original-publisher-reference"
-  },
-  {
     "id": "mdq_carlink",
     "kind": "app",
     "version": "0.1.4",
@@ -955,20 +873,6 @@
     "size": 900818,
     "sha256": "c2e65a2f6ba71643e9f4e3b670462ab2a3f72b9f4e31ae35d8c50996e4d268ad",
     "artifact_url": "https://github.com/7amoody1985/mgu-apps-lab/releases/download/catalog/mdq_carlink@0.1.4.tgz",
-    "distribution": "original-publisher-reference"
-  },
-  {
-    "id": "mdq_ridetube",
-    "kind": "app",
-    "version": "0.4.0",
-    "upstream_repository": "7amoody1985/mgu-apps-lab",
-    "upstream_catalog": "https://github.com/7amoody1985/mgu-apps-lab/releases/download/catalog/catalog.json",
-    "upstream_catalog_commit": null,
-    "upstream_artifact_url": "https://github.com/7amoody1985/mgu-apps-lab/releases/download/catalog/mdq_ridetube@0.4.0.tgz",
-    "artifact_name": "mdq_ridetube@0.4.0.tgz",
-    "size": 1177863,
-    "sha256": "16c371e05d2470d26be9552395457133b51b1d3d94ad9f0b7ea49540baa99c5b",
-    "artifact_url": "https://github.com/7amoody1985/mgu-apps-lab/releases/download/catalog/mdq_ridetube@0.4.0.tgz",
     "distribution": "original-publisher-reference"
   },
   {
@@ -1002,6 +906,56 @@
     "distribution": "original-publisher-reference"
   },
   {
+    "id": "mgu-deploy",
+    "kind": "tool",
+    "version": "0.8.27",
+    "upstream_repository": "robertnisipeanu/mgu-store",
+    "upstream_catalog": "https://github.com/robertnisipeanu/mgu-store/releases/download/catalog/catalog.json",
+    "upstream_catalog_commit": "ef2b8a0463ed1e0c3b97c0461dbf033cf45a8412",
+    "observed_repository_head": "ef2b8a0463ed1e0c3b97c0461dbf033cf45a8412",
+    "upstream_artifact_url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-deploy%400.8.27/mgu-deploy%400.8.27.tgz",
+    "artifact_name": "mgu-deploy@0.8.27.tgz",
+    "size": 168362,
+    "sha256": "57797407580d4f0c4be234e226d4f51972002adeb1ad718e3cf2ffcd00ea36b6",
+    "artifact_url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-deploy%400.8.27/mgu-deploy%400.8.27.tgz",
+    "distribution": "original-publisher-reference",
+    "license": "GPL-3.0-or-later",
+    "license_evidence_urls": [
+      "https://github.com/robertnisipeanu/mgu-store/blob/ef2b8a0463ed1e0c3b97c0461dbf033cf45a8412/LICENSE"
+    ],
+    "legacy_aq_mirror_url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/mgu-deploy%400.8.22.tgz"
+  },
+  {
+    "id": "mgu-python",
+    "kind": "tool",
+    "version": "1.0.3",
+    "upstream_repository": "robertnisipeanu/mgu-store",
+    "upstream_catalog": "https://github.com/robertnisipeanu/mgu-store/releases/download/catalog/catalog.json",
+    "upstream_catalog_commit": "7956321fd40bceafffa8842719155e6176652720",
+    "upstream_artifact_url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-python%401.0.3/mgu-python%401.0.3.tgz",
+    "artifact_name": "mgu-python@1.0.3.tgz",
+    "size": 14441404,
+    "sha256": "98ce27bcee265ba6846446ad7867193fbdc9e0447195dbf22bcfaabf7e2f2533",
+    "artifact_url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-python%401.0.3/mgu-python%401.0.3.tgz",
+    "distribution": "original-publisher-reference",
+    "legacy_aq_mirror_url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/mgu-python%401.0.3.tgz"
+  },
+  {
+    "id": "mgu-render",
+    "kind": "tool",
+    "version": "0.6.25",
+    "upstream_repository": "robertnisipeanu/mgu-store",
+    "upstream_catalog": "https://github.com/robertnisipeanu/mgu-store/releases/download/catalog/catalog.json",
+    "upstream_catalog_commit": null,
+    "upstream_artifact_url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-render%400.6.25/mgu-render%400.6.25.tgz",
+    "artifact_name": "mgu-render@0.6.25.tgz",
+    "size": 103355,
+    "sha256": "73b5444307aaf7a3a1b519cb14032869f18930749284aef557a2e0bd58d3fd61",
+    "artifact_url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-render%400.6.25/mgu-render%400.6.25.tgz",
+    "distribution": "original-publisher-reference",
+    "legacy_aq_mirror_url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/mgu-render%400.6.23.tgz"
+  },
+  {
     "id": "mgu-render-id7-touch",
     "kind": "tool",
     "version": "1.4.0",
@@ -1020,6 +974,46 @@
       "https://github.com/JustAnotherPU/ridetube/blob/959819b9fe14dac40a46ea83a40ebc70fe7eec5e/LICENSE"
     ],
     "upstream_catalog_sha256": "3d071d1ce52ea582025b27ac16d47aa16979283d01d1bd20fe6d898dd79c1c5f"
+  },
+  {
+    "id": "mgu-updater",
+    "kind": "tool",
+    "version": "0.8.51",
+    "upstream_repository": "robertnisipeanu/mgu-store",
+    "upstream_catalog": "https://github.com/robertnisipeanu/mgu-store/releases/download/catalog/catalog.json",
+    "upstream_catalog_commit": "ef2b8a0463ed1e0c3b97c0461dbf033cf45a8412",
+    "observed_repository_head": "ef2b8a0463ed1e0c3b97c0461dbf033cf45a8412",
+    "upstream_artifact_url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-updater%400.8.51/mgu-updater%400.8.51.tgz",
+    "artifact_name": "mgu-updater@0.8.51.tgz",
+    "size": 143205,
+    "sha256": "e38745a14fad5d34648c101e0d7eadd9a60d53fa1f4cda38462e3f77e08eeb95",
+    "artifact_url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-updater%400.8.51/mgu-updater%400.8.51.tgz",
+    "distribution": "original-publisher-reference",
+    "license": "GPL-3.0-or-later",
+    "license_evidence_urls": [
+      "https://github.com/robertnisipeanu/mgu-store/blob/ef2b8a0463ed1e0c3b97c0461dbf033cf45a8412/LICENSE"
+    ],
+    "legacy_aq_mirror_url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/mgu-updater%400.8.47.tgz"
+  },
+  {
+    "id": "mgu-uplink",
+    "kind": "tool",
+    "version": "0.7.13",
+    "upstream_repository": "robertnisipeanu/mgu-store",
+    "upstream_catalog": "https://github.com/robertnisipeanu/mgu-store/releases/download/catalog/catalog.json",
+    "upstream_catalog_commit": "ef2b8a0463ed1e0c3b97c0461dbf033cf45a8412",
+    "observed_repository_head": "ef2b8a0463ed1e0c3b97c0461dbf033cf45a8412",
+    "upstream_artifact_url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-uplink%400.7.13/mgu-uplink%400.7.13.tgz",
+    "artifact_name": "mgu-uplink@0.7.13.tgz",
+    "size": 3605106,
+    "sha256": "077e3200356df726a1e653fd67db9f9a1237e22b548f946b726c6eadd0f48d28",
+    "artifact_url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-uplink%400.7.13/mgu-uplink%400.7.13.tgz",
+    "distribution": "original-publisher-reference",
+    "license": "GPL-3.0-or-later",
+    "license_evidence_urls": [
+      "https://github.com/robertnisipeanu/mgu-store/blob/ef2b8a0463ed1e0c3b97c0461dbf033cf45a8412/LICENSE"
+    ],
+    "legacy_aq_mirror_url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/mgu-uplink%400.7.12.tgz"
   },
   {
     "id": "mgu_browser",
@@ -1188,6 +1182,21 @@
     "aq_compatibility_correction": "Publisher declares ID7/ID8, but the exact archive contains only ID7 RHMI and ID7 variantGroups; AQ offers ID7 until an actual ID8 package is available."
   },
   {
+    "id": "vizualyse-cast",
+    "kind": "tool",
+    "version": "0.4.1",
+    "upstream_repository": "Vizualyse/idrive-apps",
+    "upstream_catalog": "https://github.com/Vizualyse/idrive-apps/releases/download/catalog/catalog.json",
+    "upstream_catalog_commit": "13a766b520f17d7871fb9bb0713f658e5e14641b",
+    "upstream_artifact_url": "https://github.com/Vizualyse/idrive-apps/releases/download/vizualyse-cast%400.4.1/vizualyse-cast%400.4.1.tgz",
+    "artifact_name": "vizualyse-cast@0.4.1.tgz",
+    "size": 30059154,
+    "sha256": "cc08afd33d7ea50210a022cf0001be9a088331c0d3ce59ee12023a349eee500a",
+    "artifact_url": "https://github.com/Vizualyse/idrive-apps/releases/download/vizualyse-cast%400.4.1/vizualyse-cast%400.4.1.tgz",
+    "distribution": "original-publisher-reference",
+    "legacy_aq_mirror_url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/vizualyse-cast%400.4.1.tgz"
+  },
+  {
     "id": "vizualyse-chromium",
     "kind": "tool",
     "version": "0.3.1",
@@ -1221,6 +1230,42 @@
       "https://github.com/Vizualyse/idrive-apps/blob/5c0629b3c6d2778c5524c609d294ba1a98a47191/LICENSE"
     ],
     "legacy_aq_mirror_url": "https://github.com/tiraUnderCode23/AQ_MGU/releases/download/catalog/vizualyse-steam%400.3.2.tgz"
+  },
+  {
+    "id": "vizualyse_cast",
+    "kind": "app",
+    "version": "0.4.1",
+    "distribution": "original-publisher-reference",
+    "upstream_repository": "Vizualyse/idrive-apps",
+    "upstream_artifact_url": "https://github.com/Vizualyse/idrive-apps/releases/download/vizualyse_cast%400.4.1/vizualyse_cast%400.4.1.tgz",
+    "artifact_url": "https://github.com/Vizualyse/idrive-apps/releases/download/vizualyse_cast%400.4.1/vizualyse_cast%400.4.1.tgz",
+    "artifact_name": "vizualyse_cast@0.4.1.tgz",
+    "size": 43105,
+    "sha256": "fa406e6218e4f0da6f10c3d5268c9fabb42e8e76eebda823c3403f3729761987"
+  },
+  {
+    "id": "vizualyse_chromium",
+    "kind": "app",
+    "version": "0.3.1",
+    "distribution": "original-publisher-reference",
+    "upstream_repository": "Vizualyse/idrive-apps",
+    "upstream_artifact_url": "https://github.com/Vizualyse/idrive-apps/releases/download/vizualyse_chromium%400.3.1/vizualyse_chromium%400.3.1.tgz",
+    "artifact_url": "https://github.com/Vizualyse/idrive-apps/releases/download/vizualyse_chromium%400.3.1/vizualyse_chromium%400.3.1.tgz",
+    "artifact_name": "vizualyse_chromium@0.3.1.tgz",
+    "size": 45464,
+    "sha256": "f6a9beea16936f94612de398b21051aa644eba4a7c598e6b7cddb33c06872d38"
+  },
+  {
+    "id": "vizualyse_steam",
+    "kind": "app",
+    "version": "0.2.1",
+    "distribution": "original-publisher-reference",
+    "upstream_repository": "Vizualyse/idrive-apps",
+    "upstream_artifact_url": "https://github.com/Vizualyse/idrive-apps/releases/download/vizualyse_steam%400.2.1/vizualyse_steam%400.2.1.tgz",
+    "artifact_url": "https://github.com/Vizualyse/idrive-apps/releases/download/vizualyse_steam%400.2.1/vizualyse_steam%400.2.1.tgz",
+    "artifact_name": "vizualyse_steam@0.2.1.tgz",
+    "size": 42638,
+    "sha256": "18b00da11c10fa19b548e871ef542b9786eee22ccd6bddd3b9f61339d77d801a"
   },
   {
     "id": "xdrive_offroad_pro",

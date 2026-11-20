@@ -113,7 +113,7 @@ class ComponentReadmeMatrixTests(unittest.TestCase):
                 for img in app_imgs[cid]["images"][:3]:
                     self.assertTrue((ROOT / img).is_file(), f"missing screenshot {img} for {cid}")
                     self.assertIn(f'src="{img}"', text, f"screenshot {img} not rendered in README")
-        self.assertGreaterEqual(len(apps), 200)
+        self.assertGreaterEqual(len(apps), 180)
 
 
 if __name__ == "__main__":

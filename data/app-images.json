@@ -21,20 +21,6 @@
     ],
     "image_count": 1
   },
-  "adas_feature_probe": {
-    "icon": "docs/assets/apps/adas_feature_probe/icon.png",
-    "images": [],
-    "image_count": 0
-  },
-  "advokat_live_adjustments": {
-    "icon": "docs/assets/apps/advokat_live_adjustments/icon.png",
-    "images": [
-      "docs/assets/apps/advokat_live_adjustments/screen_1.png",
-      "docs/assets/apps/advokat_live_adjustments/screen_2.png",
-      "docs/assets/apps/advokat_live_adjustments/screen_3.png"
-    ],
-    "image_count": 3
-  },
   "ahg_control_center": {
     "icon": "docs/assets/apps/ahg_control_center/icon.png",
     "images": [
@@ -125,28 +111,8 @@
     "images": [],
     "image_count": 0
   },
-  "aref_drivelog": {
-    "icon": "docs/assets/apps/aref_drivelog/icon.png",
-    "images": [],
-    "image_count": 0
-  },
   "aref_eta": {
     "icon": "docs/assets/apps/aref_eta/icon.png",
-    "images": [],
-    "image_count": 0
-  },
-  "aref_explorer": {
-    "icon": "docs/assets/apps/aref_explorer/icon.png",
-    "images": [],
-    "image_count": 0
-  },
-  "aref_faultwatch": {
-    "icon": "docs/assets/apps/aref_faultwatch/icon.png",
-    "images": [],
-    "image_count": 0
-  },
-  "aref_misfire": {
-    "icon": "docs/assets/apps/aref_misfire/icon.png",
     "images": [],
     "image_count": 0
   },
@@ -210,11 +176,6 @@
       "docs/assets/apps/aurelm_lucky_sevens/screen_3.png"
     ],
     "image_count": 3
-  },
-  "aurelm_mediaprobe": {
-    "icon": "docs/assets/apps/aurelm_mediaprobe/icon.png",
-    "images": [],
-    "image_count": 0
   },
   "aurelm_music": {
     "icon": "docs/assets/apps/aurelm_music/icon.png",
@@ -305,11 +266,6 @@
     "images": [],
     "image_count": 0
   },
-  "bcs_store": {
-    "icon": "docs/assets/apps/bcs_store/icon.png",
-    "images": [],
-    "image_count": 0
-  },
   "benspa_vitals": {
     "icon": "docs/assets/apps/benspa_vitals/icon.png",
     "images": [],
@@ -340,11 +296,6 @@
   },
   "boostline": {
     "icon": "docs/assets/apps/boostline/icon.png",
-    "images": [],
-    "image_count": 0
-  },
-  "boostline_id8": {
-    "icon": "docs/assets/apps/boostline_id8/icon.png",
     "images": [],
     "image_count": 0
   },
@@ -379,14 +330,6 @@
     "images": [
       "docs/assets/apps/carplay_map_toggle/preview-01.webp",
       "docs/assets/apps/carplay_map_toggle/screen_2.webp"
-    ],
-    "image_count": 2
-  },
-  "climate-comfort": {
-    "icon": "docs/assets/apps/climate-comfort/icon.png",
-    "images": [
-      "docs/assets/apps/climate-comfort/screen_1.png",
-      "docs/assets/apps/climate-comfort/screen_2.png"
     ],
     "image_count": 2
   },
@@ -448,11 +391,6 @@
     ],
     "image_count": 19
   },
-  "custom_cluster": {
-    "icon": "docs/assets/apps/custom_cluster/icon.png",
-    "images": [],
-    "image_count": 0
-  },
   "custom_hud": {
     "icon": "docs/assets/apps/custom_hud/icon.png",
     "images": [
@@ -512,11 +450,6 @@
     "images": [],
     "image_count": 0
   },
-  "dpf_id8": {
-    "icon": "docs/assets/apps/dpf_id8/icon.png",
-    "images": [],
-    "image_count": 0
-  },
   "dpf_monitor": {
     "icon": "docs/assets/apps/dpf_monitor/icon.png",
     "images": [],
@@ -530,11 +463,6 @@
       "docs/assets/apps/draggy/screen_3.gif"
     ],
     "image_count": 3
-  },
-  "drake1804_checks": {
-    "icon": "docs/assets/apps/drake1804_checks/icon.png",
-    "images": [],
-    "image_count": 0
   },
   "drake1804_youtube": {
     "icon": "docs/assets/apps/drake1804_youtube/icon.png",
@@ -590,11 +518,6 @@
     ],
     "image_count": 7
   },
-  "eldrive": {
-    "icon": "docs/assets/apps/eldrive/icon.png",
-    "images": [],
-    "image_count": 0
-  },
   "equalizer": {
     "icon": "docs/assets/apps/equalizer/icon.png",
     "images": [],
@@ -633,11 +556,6 @@
       "docs/assets/apps/f30_cluster/screen_3.png"
     ],
     "image_count": 3
-  },
-  "f44_traffic_diag": {
-    "icon": "docs/assets/apps/f44_traffic_diag/icon.png",
-    "images": [],
-    "image_count": 0
   },
   "front_camera_cluster": {
     "icon": "docs/assets/apps/front_camera_cluster/icon.png",
@@ -693,11 +611,6 @@
       "docs/assets/apps/iabadia_m_arcade/screen_3.png"
     ],
     "image_count": 3
-  },
-  "ida_lightlog": {
-    "icon": "docs/assets/apps/ida_lightlog/icon.png",
-    "images": [],
-    "image_count": 0
   },
   "ida_seatlights": {
     "icon": "docs/assets/apps/ida_seatlights/icon.png",
@@ -908,16 +821,6 @@
     "images": [],
     "image_count": 0
   },
-  "kombikraft": {
-    "icon": "docs/assets/apps/kombikraft/icon.png",
-    "images": [],
-    "image_count": 0
-  },
-  "kombikraft_test": {
-    "icon": "docs/assets/apps/kombikraft_test/icon.png",
-    "images": [],
-    "image_count": 0
-  },
   "kxrxh_doodle_jump": {
     "icon": "docs/assets/apps/kxrxh_doodle_jump/icon.png",
     "images": [],
@@ -1046,16 +949,6 @@
     "images": [],
     "image_count": 0
   },
-  "mdq_ridetube": {
-    "icon": "docs/assets/apps/mdq_ridetube/icon.png",
-    "images": [],
-    "image_count": 0
-  },
-  "mgu_audio_diagnostics": {
-    "icon": "docs/assets/apps/mgu_audio_diagnostics/icon.png",
-    "images": [],
-    "image_count": 0
-  },
   "mgu_browser": {
     "icon": "docs/assets/apps/mgu_browser/icon.png",
     "images": [],
@@ -1068,11 +961,6 @@
   },
   "mgu_phone_terminal": {
     "icon": "docs/assets/apps/mgu_phone_terminal/icon.png",
-    "images": [],
-    "image_count": 0
-  },
-  "mgu_unified": {
-    "icon": "docs/assets/apps/mgu_unified/icon.png",
     "images": [],
     "image_count": 0
   },
@@ -1146,14 +1034,6 @@
     "images": [],
     "image_count": 0
   },
-  "perea_cluster_themes": {
-    "icon": "docs/assets/apps/perea_cluster_themes/icon.png",
-    "images": [
-      "docs/assets/apps/perea_cluster_themes/screen_1.png",
-      "docs/assets/apps/perea_cluster_themes/screen_2.png"
-    ],
-    "image_count": 2
-  },
   "perea_mhd_flex": {
     "icon": "docs/assets/apps/perea_mhd_flex/icon.png",
     "images": [
@@ -1169,16 +1049,6 @@
       "docs/assets/apps/pllana_airplay/screen_1.png"
     ],
     "image_count": 1
-  },
-  "pps_gauges": {
-    "icon": "docs/assets/apps/pps_gauges/icon.png",
-    "images": [],
-    "image_count": 0
-  },
-  "pps_warmup": {
-    "icon": "docs/assets/apps/pps_warmup/icon.png",
-    "images": [],
-    "image_count": 0
   },
   "rear_comfort": {
     "icon": "docs/assets/apps/rear_comfort/icon.png",
@@ -1206,15 +1076,6 @@
     "icon": "docs/assets/apps/road_trip_computer/icon.png",
     "images": [],
     "image_count": 0
-  },
-  "robertn_store": {
-    "icon": "docs/assets/apps/robertn_store/icon.png",
-    "images": [
-      "docs/assets/apps/robertn_store/preview-01.png",
-      "docs/assets/apps/robertn_store/screen_2.png",
-      "docs/assets/apps/robertn_store/screen_3.png"
-    ],
-    "image_count": 3
   },
   "robertn_waze_cluster": {
     "icon": "docs/assets/apps/robertn_waze_cluster/icon.png",
@@ -1266,11 +1127,6 @@
     ],
     "image_count": 3
   },
-  "signal_probe": {
-    "icon": "docs/assets/apps/signal_probe/icon.png",
-    "images": [],
-    "image_count": 0
-  },
   "spotify": {
     "icon": "docs/assets/apps/spotify/icon.png",
     "images": [
@@ -1313,11 +1169,6 @@
   },
   "true_time": {
     "icon": "docs/assets/apps/true_time/icon.png",
-    "images": [],
-    "image_count": 0
-  },
-  "true_time_id8": {
-    "icon": "docs/assets/apps/true_time_id8/icon.png",
     "images": [],
     "image_count": 0
   },
@@ -1400,11 +1251,6 @@
     "images": [],
     "image_count": 0
   },
-  "woodr_devhud": {
-    "icon": "docs/assets/apps/woodr_devhud/icon.png",
-    "images": [],
-    "image_count": 0
-  },
   "woodr_diag": {
     "icon": "docs/assets/apps/woodr_diag/icon.png",
     "images": [],
@@ -1425,11 +1271,6 @@
     "images": [],
     "image_count": 0
   },
-  "woodr_inputlab": {
-    "icon": "docs/assets/apps/woodr_inputlab/icon.png",
-    "images": [],
-    "image_count": 0
-  },
   "woodr_launch": {
     "icon": "docs/assets/apps/woodr_launch/icon.png",
     "images": [],
@@ -1437,11 +1278,6 @@
   },
   "woodr_link": {
     "icon": "docs/assets/apps/woodr_link/icon.png",
-    "images": [],
-    "image_count": 0
-  },
-  "woodr_screenlab": {
-    "icon": "docs/assets/apps/woodr_screenlab/icon.png",
     "images": [],
     "image_count": 0
   },
