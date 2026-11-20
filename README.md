@@ -6,7 +6,7 @@
 
 ![Apps](https://img.shields.io/badge/Apps-23-0066B1?style=for-the-badge) ![Tools](https://img.shields.io/badge/Helper_Tools-17-2B3137?style=for-the-badge) ![Branch](https://img.shields.io/badge/Branch-games-1C69D4?style=for-the-badge)
 
-[All (`main`)](https://github.com/tiraUnderCode23/AQ_MGU/tree/main) · [iDrive 7 (`id7`)](https://github.com/tiraUnderCode23/AQ_MGU/tree/id7) · [iDrive 8 (`id8`)](https://github.com/tiraUnderCode23/AQ_MGU/tree/id8) · [Games (`games`)](https://github.com/tiraUnderCode23/AQ_MGU/tree/games)
+[`main` — All & iDrive 7](https://github.com/tiraUnderCode23/AQ_MGU) · [`id8` — iDrive 8](https://github.com/tiraUnderCode23/AQ_MGU/branches) · [`games` — Games](https://github.com/tiraUnderCode23/AQ_MGU/branches)
 
 </div>
 
@@ -15,10 +15,10 @@
 <details>
 <summary><strong>➕ Add <code>games</code> to MGU Store</strong></summary>
 
-| Source | URL |
-|---|---|
-| **AQ `games` Branch (Apps + Tools)** | `https://github.com/tiraUnderCode23/AQ_MGU/tree/games` |
-| **AQ `games` Release Catalog (Extra Prebuilt)** | `https://raw.githubusercontent.com/tiraUnderCode23/AQ_MGU/games/release/catalog.json` |
+| Source | URL | Branch / Channel |
+|---|---|---|
+| **AQ MGU (`games`)** | `https://github.com/tiraUnderCode23/AQ_MGU` | `games` |
+| **AQ `games` Extra Catalog** | `https://raw.githubusercontent.com/tiraUnderCode23/AQ_MGU/games/release/catalog.json` | HTTPS |
 
 </details>
 
