@@ -1,6 +1,6 @@
 {
   "schema": "aq.manager.v141-delivery/1",
-  "recorded_utc": "2026-11-20T11:20:28Z",
+  "recorded_utc": "2026-11-20T11:29:44.096717+00:00",
   "code_commit": "cb3ebda4d1a9b80b14ae299b2e9d9866a85c01f6",
   "build_source_commit": "c422b23770aee21ab13941ee15ce2f761c1ae865",
   "source_publication": "LOCAL_GIT_ONLY_NO_REMOTE_CONFIGURED",
@@ -15,10 +15,10 @@
   },
   "apk": {
     "relative_path": "build/app/outputs/flutter-apk/app-debug.apk",
-    "versioned_relative_path": "build/app/outputs/flutter-apk/MGU_AQ_Manager-1.4.1_11-debug.apk",
     "bytes": 233860755,
     "sha256": "524578a1d4d71daa5d3dcf71c8104711b58b415d8e69e2d5991f3974dd471f9a",
-    "variant": "debug"
+    "variant": "debug",
+    "versioned_relative_path": "build/app/outputs/flutter-apk/MGU_AQ_Manager-1.4.1_11-debug.apk"
   },
   "package_verification": {
     "exit_code": 0,
@@ -30,18 +30,35 @@
     "verified": true
   },
   "phone_update": {
-    "status": "BLOCKED_CONNECTION",
-    "install_command_dispatched": false,
-    "reason": "Previously identified phone no longer appears in adb devices or discovered mDNS services.",
+    "status": "PASS",
+    "install_command_dispatched": true,
+    "verified_installed": true,
+    "connection_interruption_resolved": true,
     "target_model": "SM-F966B",
     "package": "com.aqbimmer.mgu_aq_manager",
     "expected_version_name": "1.4.1",
     "expected_version_code": 11,
-    "last_verified_installed_version_name": "1.4.0",
-    "last_verified_installed_version_code": 10,
-    "last_verified_apk_sha256": "f2dd3aa66e03ee2abfe1a9f3bbc8eed274f15ec4f7eeb3f3ed74c433a697787f"
+    "installed_version_name": "1.4.1",
+    "installed_version_code": 11,
+    "previous_verified_version_name": "1.4.0",
+    "previous_verified_version_code": 10,
+    "mode": "ADB no-streaming replace; application data retained",
+    "started_at_utc": "2026-11-20T11:28:38.605484+00:00",
+    "finished_at_utc": "2026-11-20T11:29:44.096717+00:00",
+    "install": {
+      "exit_code": 0,
+      "result": "Success"
+    },
+    "verification": {
+      "exit_code": 0,
+      "fields": [
+        "versionCode=11 minSdk=24 targetSdk=36",
+        "versionName=1.4.1",
+        "lastUpdateTime=2026-11-20 13:29:43"
+      ]
+    }
   },
-  "next_step": "When the same previously authorized phone is already connected, recheck exact APK hash/package and phone identity, perform an in-place update, and verify installed version. Do not rebuild unchanged code merely to retry connection.",
+  "next_step": "Delivery criteria completed. Record COMPLETE, release the writer lease and pause the goal automation. Unit installation and runtime remain NOT_OBSERVED.",
   "hu_preparation": "NOT_OBSERVED",
   "hu_installation": "NOT_OBSERVED",
   "hu_runtime": "NOT_OBSERVED",
