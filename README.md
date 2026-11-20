@@ -2,7 +2,7 @@
 
 # AQ MGU — BMW iDrive 8 App Store
 
-![Apps](https://img.shields.io/badge/Apps-49-0066B1?style=for-the-badge) ![Helper Tools](https://img.shields.io/badge/Helper_Tools-7-2B3137?style=for-the-badge)
+![Apps](https://img.shields.io/badge/Apps-56-0066B1?style=for-the-badge) ![Helper Tools](https://img.shields.io/badge/Helper_Tools-7-2B3137?style=for-the-badge)
 
 **Branches:** [`main` — All & iDrive 7](https://github.com/tiraUnderCode23/AQ_MGU) · [`id8` — iDrive 8](https://github.com/tiraUnderCode23/AQ_MGU/branches) · [`games` — Games](https://github.com/tiraUnderCode23/AQ_MGU/branches) · [`Releases` — Prebuilt Catalog](https://github.com/tiraUnderCode23/AQ_MGU/releases/tag/catalog)
 
@@ -289,10 +289,18 @@
 </tr>
 <tr>
 <td width="50%"><img src="docs/assets/apps/aref_carcare/icon.png" width="36" height="36" align="left" alt="Car Care" />&nbsp;&nbsp;<strong>Car Care</strong><br>&nbsp;&nbsp;<code>v0.2.4</code> · <code>ID7 / ID8</code></td>
+<td width="50%"><img src="docs/assets/apps/aref_explorer/icon.png" width="36" height="36" align="left" alt="Car Explorer" />&nbsp;&nbsp;<strong>Car Explorer</strong><br>&nbsp;&nbsp;<code>v0.2.3</code> · <code>ID7 / ID8</code></td>
+</tr>
+<tr>
 <td width="50%"><img src="docs/assets/apps/aref_carlyrics/icon.png" width="36" height="36" align="left" alt="Car Lyrics" />&nbsp;&nbsp;<strong>Car Lyrics</strong><br>&nbsp;&nbsp;<code>v0.3.10</code> · <code>ID7 / ID8</code></td>
+<td width="50%"><img src="docs/assets/apps/dpf_id8/icon.png" width="36" height="36" align="left" alt="DPF Monitoring (iDrive 8, untested)" />&nbsp;&nbsp;<strong>DPF Monitoring (iDrive 8, untested)</strong><br>&nbsp;&nbsp;<code>v1.0.0</code> · <code>ID8</code></td>
 </tr>
 <tr>
 <td width="50%"><img src="docs/assets/apps/c365_drive/icon.png" width="36" height="36" align="left" alt="Drive" />&nbsp;&nbsp;<strong>Drive</strong><br>&nbsp;&nbsp;<code>v1.9.3</code> · <code>ID7 / ID8</code></td>
+<td width="50%"><img src="docs/assets/apps/boostline_id8/icon.png" width="36" height="36" align="left" alt="ECU Live Data (iDrive 8, untested)" />&nbsp;&nbsp;<strong>ECU Live Data (iDrive 8, untested)</strong><br>&nbsp;&nbsp;<code>v1.0.0</code> · <code>ID8</code></td>
+</tr>
+<tr>
+<td width="50%"><img src="docs/assets/apps/ida_lightlog/icon.png" width="36" height="36" align="left" alt="Light Logger" />&nbsp;&nbsp;<strong>Light Logger</strong><br>&nbsp;&nbsp;<code>v1.3.1</code> · <code>ID8</code></td>
 <td width="50%"><img src="docs/assets/apps/mazzahaker_xdrive_remover/icon.png" width="36" height="36" align="left" alt="mazzahaker_xdrive_remover" />&nbsp;&nbsp;<strong>mazzahaker_xdrive_remover</strong><br>&nbsp;&nbsp;<code>v0.1.26</code> · <code>ID7 / ID8</code></td>
 </tr>
 <tr>
@@ -300,12 +308,20 @@
 <td width="50%"><img src="docs/assets/apps/km_motordaten/icon.png" width="36" height="36" align="left" alt="Motordaten" />&nbsp;&nbsp;<strong>Motordaten</strong><br>&nbsp;&nbsp;<code>v0.4.1</code> · <code>ID7 / ID8</code></td>
 </tr>
 <tr>
+<td width="50%"><img src="docs/assets/apps/pps_gauges/icon.png" width="36" height="36" align="left" alt="Proven Gauges" />&nbsp;&nbsp;<strong>Proven Gauges</strong><br>&nbsp;&nbsp;<code>v1.0.3</code> · <code>ID7 / ID8</code></td>
+<td width="50%"><img src="docs/assets/apps/pps_warmup/icon.png" width="36" height="36" align="left" alt="Proven Warm-Up" />&nbsp;&nbsp;<strong>Proven Warm-Up</strong><br>&nbsp;&nbsp;<code>v1.2.1</code> · <code>ID7 / ID8</code></td>
+</tr>
+<tr>
 <td width="50%"><img src="docs/assets/apps/ida_seatlights/icon.png" width="36" height="36" align="left" alt="Seat Lights" />&nbsp;&nbsp;<strong>Seat Lights</strong><br>&nbsp;&nbsp;<code>v1.3.2</code> · <code>ID8</code></td>
 <td width="50%"><img src="docs/assets/apps/adam_shiftlights/icon.png" width="36" height="36" align="left" alt="Shift Lights" />&nbsp;&nbsp;<strong>Shift Lights</strong><br>&nbsp;&nbsp;<code>v0.4.6</code> · <code>ID7 / ID8</code></td>
 </tr>
 <tr>
 <td width="50%"><img src="docs/assets/apps/dimon_track_mode/icon.png" width="36" height="36" align="left" alt="Track Mode" />&nbsp;&nbsp;<strong>Track Mode</strong><br>&nbsp;&nbsp;<code>v1.0.1</code> · <code>ID7 / ID8</code></td>
+<td width="50%"><img src="docs/assets/apps/true_time_id8/icon.png" width="36" height="36" align="left" alt="True Time (iDrive 8, untested)" />&nbsp;&nbsp;<strong>True Time (iDrive 8, untested)</strong><br>&nbsp;&nbsp;<code>v1.0.0</code> · <code>ID8</code></td>
+</tr>
+<tr>
 <td width="50%"><img src="docs/assets/apps/turnkey_e_blend_id8/icon.png" width="36" height="36" align="left" alt="TurnKey E Blend" />&nbsp;&nbsp;<strong>TurnKey E Blend</strong><br>&nbsp;&nbsp;<code>v0.5.0</code> · <code>ID8</code></td>
+<td width="50%"></td>
 </tr>
 </table>
 
