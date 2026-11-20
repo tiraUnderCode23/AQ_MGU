@@ -1,0 +1,87 @@
+{
+  "schema": "aq.manager.v141-validation/1",
+  "version_name": "1.4.1",
+  "version_code": 11,
+  "implementation_base_commit": "a4035e411e7de58ebcbbc03db3c82fd67cd97e30",
+  "validation_date": "2026-11-20",
+  "full_tests": {
+    "status": "PASS",
+    "tests": 796,
+    "passed": 796,
+    "failed": 0,
+    "skipped": 0,
+    "command": "flutter test --no-pub --reporter=json --concurrency=4",
+    "event_log_sha256": "e7c9830dc1db398ccff658c57f486a790b4d8707f1edac3ac5688eafe728d747"
+  },
+  "focused_tests": {
+    "status": "PASS",
+    "tests": 144,
+    "passed": 144,
+    "failed": 0,
+    "skipped": 0,
+    "event_log_sha256": "55d14fb3c0065a7a87ccaae877595616ef18e64c5f301cac76961850a86b2a50"
+  },
+  "analyzer": {
+    "status": "PASS",
+    "command": "flutter analyze --no-pub",
+    "issues": 0,
+    "log_sha256": "c6c8adf2db8d934cc3ad2077022201a62678f4c32551f49d8e63aa72fff7a3ca"
+  },
+  "actual_publisher_artifact_inspection": {
+    "schema": 1,
+    "status": "PASS",
+    "inspected_at_utc": "2026-11-20T10:55:09.955705Z",
+    "expected_id": "vizualyse-steam",
+    "expected_version": "0.4.0",
+    "expected_kind": "tool",
+    "expected_bytes": 531211774,
+    "expected_sha256": "3719af147d3d2209f9e5fa93de0993a3c95f8df9ccc2f5f7e990c6d227f5eeb6",
+    "publisher_url": "https://github.com/Vizualyse/idrive-apps/releases/download/vizualyse-steam%400.4.0/vizualyse-steam%400.4.0.tgz",
+    "network_used": false,
+    "extracted": false,
+    "nested_payloads_expanded": false,
+    "artifact_code_executed": false,
+    "hu_operations": false,
+    "runtime": "NOT_OBSERVED",
+    "limits": {
+      "compressed_bytes": 536870912,
+      "expanded_bytes": 805306368,
+      "members_and_path_nodes": 20000,
+      "manifest_bytes": 2097152,
+      "icon_bytes": 524288
+    },
+    "id": "vizualyse-steam",
+    "version": "0.4.0",
+    "kind": "tool",
+    "title": "Steam",
+    "size_bytes": 531211774,
+    "sha256": "3719af147d3d2209f9e5fa93de0993a3c95f8df9ccc2f5f7e990c6d227f5eeb6",
+    "outer_expanded_bytes": 535869952,
+    "members": 47,
+    "embedded_requires": {},
+    "embedded_hmi": [
+      "ID7"
+    ],
+    "build": null,
+    "first_tar_header_flavor": "USTAR",
+    "first_tar_header_magic_hex": "757374617200",
+    "elapsed_ms": 13091
+  },
+  "supported_route": "Verified file-backed catalog tool TGZ; exact configured source, catalog URI, identity, version, URL, size and SHA-256 binding.",
+  "limits": {
+    "large_catalog_tool_compressed_bytes": 536870912,
+    "large_catalog_tool_outer_expanded_bytes": 805306368,
+    "legacy_byte_backed_compressed_bytes": 209715200,
+    "legacy_byte_backed_expanded_bytes": 419430400,
+    "legacy_transfer_bundle_large_export": "REJECTED_BEFORE_BYTE_READ"
+  },
+  "installation_runtime_evidence": {
+    "hu_preparation": "NOT_OBSERVED",
+    "hu_installation": "NOT_OBSERVED",
+    "hu_runtime": "NOT_OBSERVED"
+  },
+  "source_publication": {
+    "remote_configured": false,
+    "location": "Local mgu_aq_apk Git repository"
+  }
+}

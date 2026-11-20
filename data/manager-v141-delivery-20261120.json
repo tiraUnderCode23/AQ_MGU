@@ -1,0 +1,49 @@
+{
+  "schema": "aq.manager.v141-delivery/1",
+  "recorded_utc": "2026-11-20T11:20:28Z",
+  "code_commit": "cb3ebda4d1a9b80b14ae299b2e9d9866a85c01f6",
+  "build_source_commit": "c422b23770aee21ab13941ee15ce2f761c1ae865",
+  "source_publication": "LOCAL_GIT_ONLY_NO_REMOTE_CONFIGURED",
+  "version_name": "1.4.1",
+  "version_code": 11,
+  "build": {
+    "status": "PASS",
+    "started_utc": "2026-11-20T11:18:13.8813451Z",
+    "finished_utc": "2026-11-20T11:18:57.547642+00:00",
+    "command": "flutter build apk --debug --no-pub",
+    "log_sha256": "53ef4ecac7c9b41717cb2baf897dd5551d7638cbcb9f5754e0a079d0789d86af"
+  },
+  "apk": {
+    "relative_path": "build/app/outputs/flutter-apk/app-debug.apk",
+    "versioned_relative_path": "build/app/outputs/flutter-apk/MGU_AQ_Manager-1.4.1_11-debug.apk",
+    "bytes": 233860755,
+    "sha256": "524578a1d4d71daa5d3dcf71c8104711b58b415d8e69e2d5991f3974dd471f9a",
+    "variant": "debug"
+  },
+  "package_verification": {
+    "exit_code": 0,
+    "fields": [
+      "package: name='com.aqbimmer.mgu_aq_manager' versionCode='11' versionName='1.4.1' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'",
+      "sdkVersion:'24'",
+      "targetSdkVersion:'36'"
+    ],
+    "verified": true
+  },
+  "phone_update": {
+    "status": "BLOCKED_CONNECTION",
+    "install_command_dispatched": false,
+    "reason": "Previously identified phone no longer appears in adb devices or discovered mDNS services.",
+    "target_model": "SM-F966B",
+    "package": "com.aqbimmer.mgu_aq_manager",
+    "expected_version_name": "1.4.1",
+    "expected_version_code": 11,
+    "last_verified_installed_version_name": "1.4.0",
+    "last_verified_installed_version_code": 10,
+    "last_verified_apk_sha256": "f2dd3aa66e03ee2abfe1a9f3bbc8eed274f15ec4f7eeb3f3ed74c433a697787f"
+  },
+  "next_step": "When the same previously authorized phone is already connected, recheck exact APK hash/package and phone identity, perform an in-place update, and verify installed version. Do not rebuild unchanged code merely to retry connection.",
+  "hu_preparation": "NOT_OBSERVED",
+  "hu_installation": "NOT_OBSERVED",
+  "hu_runtime": "NOT_OBSERVED",
+  "app_launch": "NOT_PERFORMED"
+}
