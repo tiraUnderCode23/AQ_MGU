@@ -1,0 +1,468 @@
+{
+  "ab_storage": {
+    "icon": "docs/assets/apps/ab_storage/icon.png",
+    "image_count": 0,
+    "images": []
+  },
+  "adam_shiftlights": {
+    "icon": "docs/assets/apps/adam_shiftlights/icon.png",
+    "image_count": 0,
+    "images": []
+  },
+  "adam_vitals": {
+    "icon": "docs/assets/apps/adam_vitals/icon.png",
+    "image_count": 1,
+    "images": [
+      "docs/assets/apps/adam_vitals/screen_1.png"
+    ]
+  },
+  "ambient_config": {
+    "icon": "docs/assets/apps/ambient_config/icon.png",
+    "image_count": 2,
+    "images": [
+      "docs/assets/apps/ambient_config/preview-01.png",
+      "docs/assets/apps/ambient_config/screen_2.png"
+    ]
+  },
+  "andrei_mdrive": {
+    "icon": "docs/assets/apps/andrei_mdrive/icon.png",
+    "image_count": 2,
+    "images": [
+      "docs/assets/apps/andrei_mdrive/screen_1.png",
+      "docs/assets/apps/andrei_mdrive/screen_2.png"
+    ]
+  },
+  "aref_carcare": {
+    "icon": "docs/assets/apps/aref_carcare/icon.png",
+    "image_count": 0,
+    "images": []
+  },
+  "aref_carlyrics": {
+    "icon": "docs/assets/apps/aref_carlyrics/icon.png",
+    "image_count": 0,
+    "images": []
+  },
+  "aref_explorer": {
+    "icon": "docs/assets/apps/aref_explorer/icon.png",
+    "image_count": 0,
+    "images": []
+  },
+  "bcs_store": {
+    "icon": "docs/assets/apps/bcs_store/icon.png",
+    "image_count": 0,
+    "images": []
+  },
+  "bimmer_blocks": {
+    "icon": "docs/assets/apps/bimmer_blocks/icon.png",
+    "image_count": 0,
+    "images": []
+  },
+  "bm3_live_id8": {
+    "icon": "docs/assets/apps/bm3_live_id8/icon.png",
+    "image_count": 3,
+    "images": [
+      "docs/assets/apps/bm3_live_id8/screen_1.png",
+      "docs/assets/apps/bm3_live_id8/screen_2.png",
+      "docs/assets/apps/bm3_live_id8/screen_3.png"
+    ]
+  },
+  "boostline_id8": {
+    "icon": "docs/assets/apps/boostline_id8/icon.png",
+    "image_count": 0,
+    "images": []
+  },
+  "brake_test": {
+    "icon": "docs/assets/apps/brake_test/icon.png",
+    "image_count": 3,
+    "images": [
+      "docs/assets/apps/brake_test/preview-01.png",
+      "docs/assets/apps/brake_test/preview-02.gif",
+      "docs/assets/apps/brake_test/screen_3.gif"
+    ]
+  },
+  "c365_drive": {
+    "icon": "docs/assets/apps/c365_drive/icon.png",
+    "image_count": 0,
+    "images": []
+  },
+  "car_vitals": {
+    "icon": "docs/assets/apps/car_vitals/icon.png",
+    "image_count": 6,
+    "images": [
+      "docs/assets/apps/car_vitals/preview-01.png",
+      "docs/assets/apps/car_vitals/preview-02.png",
+      "docs/assets/apps/car_vitals/preview-03.png",
+      "docs/assets/apps/car_vitals/preview-04.gif",
+      "docs/assets/apps/car_vitals/preview-05.gif",
+      "docs/assets/apps/car_vitals/preview-06.png"
+    ]
+  },
+  "dimon_track_mode": {
+    "icon": "docs/assets/apps/dimon_track_mode/icon.png",
+    "image_count": 0,
+    "images": []
+  },
+  "doom": {
+    "icon": "docs/assets/apps/doom/icon.png",
+    "image_count": 2,
+    "images": [
+      "docs/assets/apps/doom/preview-01.png",
+      "docs/assets/apps/doom/screen_2.png"
+    ]
+  },
+  "dpf_id8": {
+    "icon": "docs/assets/apps/dpf_id8/icon.png",
+    "image_count": 0,
+    "images": []
+  },
+  "draggy": {
+    "icon": "docs/assets/apps/draggy/icon.png",
+    "image_count": 3,
+    "images": [
+      "docs/assets/apps/draggy/preview-01.png",
+      "docs/assets/apps/draggy/preview-02.gif",
+      "docs/assets/apps/draggy/screen_3.gif"
+    ]
+  },
+  "dtc_scanner": {
+    "icon": "docs/assets/apps/dtc_scanner/icon.png",
+    "image_count": 3,
+    "images": [
+      "docs/assets/apps/dtc_scanner/preview-01.png",
+      "docs/assets/apps/dtc_scanner/preview-02.png",
+      "docs/assets/apps/dtc_scanner/screen_3.png"
+    ]
+  },
+  "dyno": {
+    "icon": "docs/assets/apps/dyno/icon.png",
+    "image_count": 2,
+    "images": [
+      "docs/assets/apps/dyno/preview-01.png",
+      "docs/assets/apps/dyno/screen_2.png"
+    ]
+  },
+  "e85": {
+    "icon": "docs/assets/apps/e85/icon.png",
+    "image_count": 3,
+    "images": [
+      "docs/assets/apps/e85/screen_1.gif",
+      "docs/assets/apps/e85/screen_2.gif",
+      "docs/assets/apps/e85/screen_3.gif"
+    ]
+  },
+  "edrive": {
+    "icon": "docs/assets/apps/edrive/icon.png",
+    "image_count": 7,
+    "images": [
+      "docs/assets/apps/edrive/preview-01.png",
+      "docs/assets/apps/edrive/preview-02.png",
+      "docs/assets/apps/edrive/preview-03.png",
+      "docs/assets/apps/edrive/preview-04.png",
+      "docs/assets/apps/edrive/preview-05.png",
+      "docs/assets/apps/edrive/preview-06.png",
+      "docs/assets/apps/edrive/preview-07.png"
+    ]
+  },
+  "esagono_settings": {
+    "icon": "docs/assets/apps/esagono_settings/icon.png",
+    "image_count": 1,
+    "images": [
+      "docs/assets/apps/esagono_settings/screen_1.png"
+    ]
+  },
+  "gforce": {
+    "icon": "docs/assets/apps/gforce/icon.png",
+    "image_count": 3,
+    "images": [
+      "docs/assets/apps/gforce/preview-01.png",
+      "docs/assets/apps/gforce/preview-02.gif",
+      "docs/assets/apps/gforce/screen_3.gif"
+    ]
+  },
+  "ida_lightlog": {
+    "icon": "docs/assets/apps/ida_lightlog/icon.png",
+    "image_count": 0,
+    "images": []
+  },
+  "ida_seatlights": {
+    "icon": "docs/assets/apps/ida_seatlights/icon.png",
+    "image_count": 0,
+    "images": []
+  },
+  "ida_vitals": {
+    "icon": "docs/assets/apps/ida_vitals/icon.png",
+    "image_count": 1,
+    "images": [
+      "docs/assets/apps/ida_vitals/screen_1.png"
+    ]
+  },
+  "iteriodev_ambient": {
+    "icon": "docs/assets/apps/iteriodev_ambient/icon.png",
+    "image_count": 3,
+    "images": [
+      "docs/assets/apps/iteriodev_ambient/screen_1.png",
+      "docs/assets/apps/iteriodev_ambient/screen_2.png",
+      "docs/assets/apps/iteriodev_ambient/screen_3.png"
+    ]
+  },
+  "iteriodev_cardash": {
+    "icon": "docs/assets/apps/iteriodev_cardash/icon.png",
+    "image_count": 3,
+    "images": [
+      "docs/assets/apps/iteriodev_cardash/screen_1.png",
+      "docs/assets/apps/iteriodev_cardash/screen_2.png",
+      "docs/assets/apps/iteriodev_cardash/screen_3.png"
+    ]
+  },
+  "iteriodev_draggy": {
+    "icon": "docs/assets/apps/iteriodev_draggy/icon.png",
+    "image_count": 3,
+    "images": [
+      "docs/assets/apps/iteriodev_draggy/screen_1.png",
+      "docs/assets/apps/iteriodev_draggy/screen_2.png",
+      "docs/assets/apps/iteriodev_draggy/screen_3.png"
+    ]
+  },
+  "iteriodev_dtcscan": {
+    "icon": "docs/assets/apps/iteriodev_dtcscan/icon.png",
+    "image_count": 3,
+    "images": [
+      "docs/assets/apps/iteriodev_dtcscan/screen_1.png",
+      "docs/assets/apps/iteriodev_dtcscan/screen_2.png",
+      "docs/assets/apps/iteriodev_dtcscan/screen_3.png"
+    ]
+  },
+  "iteriodev_edrive": {
+    "icon": "docs/assets/apps/iteriodev_edrive/icon.png",
+    "image_count": 3,
+    "images": [
+      "docs/assets/apps/iteriodev_edrive/screen_1.png",
+      "docs/assets/apps/iteriodev_edrive/screen_2.png",
+      "docs/assets/apps/iteriodev_edrive/screen_3.png"
+    ]
+  },
+  "iteriodev_liveadjust": {
+    "icon": "docs/assets/apps/iteriodev_liveadjust/icon.png",
+    "image_count": 3,
+    "images": [
+      "docs/assets/apps/iteriodev_liveadjust/screen_1.png",
+      "docs/assets/apps/iteriodev_liveadjust/screen_2.png",
+      "docs/assets/apps/iteriodev_liveadjust/screen_3.png"
+    ]
+  },
+  "iteriodev_overlays": {
+    "icon": "docs/assets/apps/iteriodev_overlays/icon.png",
+    "image_count": 3,
+    "images": [
+      "docs/assets/apps/iteriodev_overlays/screen_1.png",
+      "docs/assets/apps/iteriodev_overlays/screen_2.png",
+      "docs/assets/apps/iteriodev_overlays/screen_3.png"
+    ]
+  },
+  "iteriodev_seats": {
+    "icon": "docs/assets/apps/iteriodev_seats/icon.png",
+    "image_count": 3,
+    "images": [
+      "docs/assets/apps/iteriodev_seats/screen_1.png",
+      "docs/assets/apps/iteriodev_seats/screen_2.png",
+      "docs/assets/apps/iteriodev_seats/screen_3.png"
+    ]
+  },
+  "iteriodev_service": {
+    "icon": "docs/assets/apps/iteriodev_service/icon.png",
+    "image_count": 3,
+    "images": [
+      "docs/assets/apps/iteriodev_service/screen_1.png",
+      "docs/assets/apps/iteriodev_service/screen_2.png",
+      "docs/assets/apps/iteriodev_service/screen_3.png"
+    ]
+  },
+  "iteriodev_tailscale": {
+    "icon": "docs/assets/apps/iteriodev_tailscale/icon.png",
+    "image_count": 3,
+    "images": [
+      "docs/assets/apps/iteriodev_tailscale/screen_1.png",
+      "docs/assets/apps/iteriodev_tailscale/screen_2.png",
+      "docs/assets/apps/iteriodev_tailscale/screen_3.png"
+    ]
+  },
+  "iteriodev_turnview": {
+    "icon": "docs/assets/apps/iteriodev_turnview/icon.png",
+    "image_count": 3,
+    "images": [
+      "docs/assets/apps/iteriodev_turnview/screen_1.png",
+      "docs/assets/apps/iteriodev_turnview/screen_2.png",
+      "docs/assets/apps/iteriodev_turnview/screen_3.png"
+    ]
+  },
+  "km_motordaten": {
+    "icon": "docs/assets/apps/km_motordaten/icon.png",
+    "image_count": 0,
+    "images": []
+  },
+  "live_adjustments": {
+    "icon": "docs/assets/apps/live_adjustments/icon.png",
+    "image_count": 14,
+    "images": [
+      "docs/assets/apps/live_adjustments/preview-01.png",
+      "docs/assets/apps/live_adjustments/preview-02.png",
+      "docs/assets/apps/live_adjustments/preview-03.png",
+      "docs/assets/apps/live_adjustments/preview-04.png",
+      "docs/assets/apps/live_adjustments/preview-05.png",
+      "docs/assets/apps/live_adjustments/preview-06.png",
+      "docs/assets/apps/live_adjustments/preview-07.png",
+      "docs/assets/apps/live_adjustments/preview-08.png",
+      "docs/assets/apps/live_adjustments/preview-09.png",
+      "docs/assets/apps/live_adjustments/preview-10.png",
+      "docs/assets/apps/live_adjustments/preview-11.png",
+      "docs/assets/apps/live_adjustments/preview-12.png",
+      "docs/assets/apps/live_adjustments/preview-13.png",
+      "docs/assets/apps/live_adjustments/preview-14.png"
+    ]
+  },
+  "live_data": {
+    "icon": "docs/assets/apps/live_data/icon.png",
+    "image_count": 12,
+    "images": [
+      "docs/assets/apps/live_data/preview-01.png",
+      "docs/assets/apps/live_data/preview-02.png",
+      "docs/assets/apps/live_data/preview-03.png",
+      "docs/assets/apps/live_data/preview-04.png",
+      "docs/assets/apps/live_data/preview-05.png",
+      "docs/assets/apps/live_data/preview-06.png",
+      "docs/assets/apps/live_data/preview-07.png",
+      "docs/assets/apps/live_data/preview-08.png",
+      "docs/assets/apps/live_data/preview-09.png",
+      "docs/assets/apps/live_data/preview-10.png",
+      "docs/assets/apps/live_data/preview-11.png",
+      "docs/assets/apps/live_data/preview-12.png"
+    ]
+  },
+  "m_copilot": {
+    "icon": "docs/assets/apps/m_copilot/icon.png",
+    "image_count": 5,
+    "images": [
+      "docs/assets/apps/m_copilot/preview-01.png",
+      "docs/assets/apps/m_copilot/preview-02.png",
+      "docs/assets/apps/m_copilot/preview-03.png",
+      "docs/assets/apps/m_copilot/preview-04.png",
+      "docs/assets/apps/m_copilot/preview-05.png"
+    ]
+  },
+  "mazzahaker_xdrive_remover": {
+    "icon": "docs/assets/apps/mazzahaker_xdrive_remover/icon.png",
+    "image_count": 0,
+    "images": []
+  },
+  "oap-driverecorder-next": {
+    "icon": "docs/assets/apps/oap-driverecorder-next/icon.png",
+    "image_count": 3,
+    "images": [
+      "docs/assets/apps/oap-driverecorder-next/screen_1.png",
+      "docs/assets/apps/oap-driverecorder-next/screen_2.png",
+      "docs/assets/apps/oap-driverecorder-next/screen_3.png"
+    ]
+  },
+  "parked_games": {
+    "icon": "docs/assets/apps/parked_games/icon.png",
+    "image_count": 2,
+    "images": [
+      "docs/assets/apps/parked_games/screen_1.png",
+      "docs/assets/apps/parked_games/screen_2.png"
+    ]
+  },
+  "pps_gauges": {
+    "icon": "docs/assets/apps/pps_gauges/icon.png",
+    "image_count": 0,
+    "images": []
+  },
+  "pps_warmup": {
+    "icon": "docs/assets/apps/pps_warmup/icon.png",
+    "image_count": 0,
+    "images": []
+  },
+  "redline": {
+    "icon": "docs/assets/apps/redline/icon.png",
+    "image_count": 6,
+    "images": [
+      "docs/assets/apps/redline/preview-01.png",
+      "docs/assets/apps/redline/preview-02.png",
+      "docs/assets/apps/redline/preview-03.gif",
+      "docs/assets/apps/redline/preview-04.gif",
+      "docs/assets/apps/redline/preview-05.webp",
+      "docs/assets/apps/redline/preview-06.png"
+    ]
+  },
+  "robertn_store": {
+    "icon": "docs/assets/apps/robertn_store/icon.png",
+    "image_count": 3,
+    "images": [
+      "docs/assets/apps/robertn_store/preview-01.png",
+      "docs/assets/apps/robertn_store/screen_2.png",
+      "docs/assets/apps/robertn_store/screen_3.png"
+    ]
+  },
+  "service": {
+    "icon": "docs/assets/apps/service/icon.png",
+    "image_count": 2,
+    "images": [
+      "docs/assets/apps/service/preview-01.png",
+      "docs/assets/apps/service/screen_2.png"
+    ]
+  },
+  "spotify": {
+    "icon": "docs/assets/apps/spotify/icon.png",
+    "image_count": 6,
+    "images": [
+      "docs/assets/apps/spotify/preview-01.png",
+      "docs/assets/apps/spotify/preview-02.png",
+      "docs/assets/apps/spotify/preview-03.png",
+      "docs/assets/apps/spotify/preview-04.png",
+      "docs/assets/apps/spotify/preview-05.png",
+      "docs/assets/apps/spotify/preview-06.png"
+    ]
+  },
+  "sys_monitor": {
+    "icon": "docs/assets/apps/sys_monitor/icon.png",
+    "image_count": 4,
+    "images": [
+      "docs/assets/apps/sys_monitor/preview-01.png",
+      "docs/assets/apps/sys_monitor/preview-02.png",
+      "docs/assets/apps/sys_monitor/preview-03.png",
+      "docs/assets/apps/sys_monitor/preview-04.png"
+    ]
+  },
+  "true_time_id8": {
+    "icon": "docs/assets/apps/true_time_id8/icon.png",
+    "image_count": 0,
+    "images": []
+  },
+  "turnkey_e_blend_id8": {
+    "icon": "docs/assets/apps/turnkey_e_blend_id8/icon.png",
+    "image_count": 0,
+    "images": []
+  },
+  "vehicle_pass": {
+    "icon": "docs/assets/apps/vehicle_pass/icon.png",
+    "image_count": 0,
+    "images": []
+  },
+  "warmup": {
+    "icon": "docs/assets/apps/warmup/icon.png",
+    "image_count": 3,
+    "images": [
+      "docs/assets/apps/warmup/preview-01.png",
+      "docs/assets/apps/warmup/preview-02.gif",
+      "docs/assets/apps/warmup/preview-03.png"
+    ]
+  },
+  "zf8hp": {
+    "icon": "docs/assets/apps/zf8hp/icon.png",
+    "image_count": 3,
+    "images": [
+      "docs/assets/apps/zf8hp/preview-01.png",
+      "docs/assets/apps/zf8hp/preview-02.png",
+      "docs/assets/apps/zf8hp/preview-03.png"
+    ]
+  }
+}

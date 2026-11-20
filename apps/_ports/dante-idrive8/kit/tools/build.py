@@ -22,8 +22,6 @@ from localize import unicode_resources, localize_spec, load_locale, languages, z
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, '..', '..'))
 KIT = os.path.join(ROOT, 'kit')
-_AQ_LOC_ROOT = KIT if os.path.isdir(os.path.join(_AQ_LOC_ROOT, 'localization')) else next((p for p in [os.path.abspath(os.path.join(KIT, '..', '..', 'idrive7-apps', 'kit')), os.path.abspath(os.path.join(KIT, '..', '..', '..', '_sources', 'idrive7-apps', 'kit'))] if os.path.isdir(os.path.join(p, 'localization'))), KIT)
-
 APPS = os.path.join(ROOT, 'apps')
 DIST = os.path.join(ROOT, 'dist')
 SDK = os.path.join(ROOT, 'oap-sdk')
@@ -560,7 +558,7 @@ def build(app_id, language='en', preview_only=False, target_hmi=None):
     if language == 'zh-CN':
         # Diagnostic glyphs are Chinese-only; keep the English runtime atlas intact.
         if app_id == 'dtc_scanner':
-            shutil.copy(os.path.join(_AQ_LOC_ROOT, 'localization', 'fonts', 'diagnostic-zh-CN.json'),
+            shutil.copy(os.path.join(KIT, 'localization', 'fonts', 'diagnostic-zh-CN.json'),
                         os.path.join(src, 'javascript', 'kit', 'fonts', 'cjk.json'))
         # The translation credit in the installed Chinese entry code, as plain comments.
         entry = os.path.join(src, 'javascript', 'app.js')

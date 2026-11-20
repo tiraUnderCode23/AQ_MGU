@@ -1,0 +1,1098 @@
+{
+  "external:IterioDev/car-apps:iteriodev-comfort@0.6.3": {
+    "branch_membership": [],
+    "build_requires": {},
+    "catalog_entry_sha256": "bb92d8aa03eda914ed4b66a03b19b3b8de6b43c611ee2668b7b384f46012a52b",
+    "channel": "external",
+    "declared_hmi_layers": [
+      {
+        "path": "data/external-store-components.json",
+        "value": [
+          "ID7",
+          "ID8"
+        ]
+      }
+    ],
+    "dependencies": {
+      "mgu-deploy": "release:mgu-deploy@0.8.27"
+    },
+    "dependency_issues": [],
+    "effective_requires": {
+      "mgu-deploy": "0.7.11"
+    },
+    "evidence": [
+      {
+        "commit": "714b2edb37f1bac811444ead348509b2b2836745",
+        "detail": "Exact identity, version, declared HMI and requirements in the pinned inventory.",
+        "kind": "catalog_entry",
+        "path": "data/external-store-components.json",
+        "sha256": "12ad63499daa536fe6f0637b771df7aab7dc8d515caa223acff70a665e1b6b9f"
+      }
+    ],
+    "evidence_level": "pinned_external_component_contract",
+    "external_manifest_proof": {
+      "bytes": 1618,
+      "id": "iteriodev-comfort",
+      "manifest": {
+        "crashNames": [
+          "hmictl"
+        ],
+        "description": "The service behind the Ambient Light and Seats apps: any color on the ambient light (per zone), front seat moves, three memories per seat, the Gentleman function (passenger seat out of the way and back) and easy exit for both front seats (to your own getting-out position when its door opens with someone in the seat, back once the door is shut: the driver with the car on, the passenger seated; the driver's electric steering column too). Through the car's own body and seat modules; seats move at any speed, Make room, easy exit and the steering column only standing.",
+        "enable": [
+          {
+            "target": "multi-user.target",
+            "unit": "iteriodev-comfort.service"
+          }
+        ],
+        "files": [
+          {
+            "from": "comfort.js",
+            "mode": "0644",
+            "path": "comfort.js"
+          },
+          {
+            "from": "uds.js",
+            "mode": "0644",
+            "path": "uds.js"
+          },
+          {
+            "from": "ambient.js",
+            "mode": "0644",
+            "path": "ambient.js"
+          },
+          {
+            "from": "seat.js",
+            "mode": "0644",
+            "path": "seat.js"
+          },
+          {
+            "from": "hmictl",
+            "mode": "0755",
+            "path": "hmictl"
+          }
+        ],
+        "id": "iteriodev-comfort",
+        "kind": "tool",
+        "mguHmi": [
+          "ID7",
+          "ID8"
+        ],
+        "optional": true,
+        "recmgr": [
+          "iteriodev-comfort"
+        ],
+        "requires": {
+          "mgu-deploy": "0.7.11"
+        },
+        "restart": [
+          "iteriodev-comfort.service"
+        ],
+        "title": "Comfort",
+        "uninstallable": true,
+        "units": [
+          {
+            "from": "iteriodev-comfort.service",
+            "name": "iteriodev-comfort.service"
+          }
+        ],
+        "version": "0.6.3"
+      },
+      "payload_fetched": false,
+      "repository": "IterioDev/car-apps",
+      "runtime": "NOT_OBSERVED",
+      "sha256": "b660bc470d17d74881871400d6414e4aad011a13d3a67889335ace85ffe76c34",
+      "status": "PASS",
+      "upstream_commit": "f9ca32bd3cebd163fa16fbe17cc3473623be2c81",
+      "url": "https://raw.githubusercontent.com/IterioDev/car-apps/f9ca32bd3cebd163fa16fbe17cc3473623be2c81/tools/iteriodev-comfort/component.json",
+      "version": "0.6.3"
+    },
+    "extra_paths": [],
+    "hmi": [
+      "ID7",
+      "ID8"
+    ],
+    "id": "iteriodev-comfort",
+    "kind": "tool",
+    "limitations": [
+      "The pinned original component manifest was read; helper payload bytes were not downloaded, rehosted, installed or run. Acquisition must verify original source bytes.",
+      "Static platform contract only. Genuine target SDK preparation, ABI/provider availability, install, launch and feature behavior were not observed. Existing suite/active-input failures must pass the separate publication gate."
+    ],
+    "manifest_url": "https://raw.githubusercontent.com/IterioDev/car-apps/f9ca32bd3cebd163fa16fbe17cc3473623be2c81/tools/iteriodev-comfort/component.json",
+    "reference_only": true,
+    "repository": "IterioDev/car-apps",
+    "requires": {
+      "mgu-deploy": "0.7.11"
+    },
+    "runtime": "NOT_OBSERVED",
+    "source_commit": "714b2edb37f1bac811444ead348509b2b2836745",
+    "source_path": "tools/iteriodev-comfort",
+    "stages": {
+      "downloadable": "EXTERNAL_REFERENCE_ONLY",
+      "installable_on_target": "NOT_ESTABLISHED",
+      "installed": "NOT_OBSERVED",
+      "listed": true,
+      "prepared": "NOT_OBSERVED",
+      "runtime": "NOT_OBSERVED",
+      "transport_verified": false
+    },
+    "status": "eligible_static",
+    "target_inputs": [],
+    "upstream_channel": "branch:main",
+    "upstream_commit": "f9ca32bd3cebd163fa16fbe17cc3473623be2c81",
+    "version": "0.6.3"
+  },
+  "external:IterioDev/car-apps:iteriodev-drplay@1.2.6": {
+    "branch_membership": [],
+    "build_requires": {},
+    "catalog_entry_sha256": "ae084a0ee3791d9323db1c0d31ae8d04f3c68f2e8ecc3ea43e2bd85de9c8e186",
+    "channel": "external",
+    "declared_hmi_layers": [
+      {
+        "path": "data/external-store-components.json",
+        "value": [
+          "ID7",
+          "ID8"
+        ]
+      }
+    ],
+    "dependencies": {},
+    "dependency_issues": [],
+    "effective_requires": {},
+    "evidence": [
+      {
+        "commit": "714b2edb37f1bac811444ead348509b2b2836745",
+        "detail": "Exact identity, version, declared HMI and requirements in the pinned inventory.",
+        "kind": "catalog_entry",
+        "path": "data/external-store-components.json",
+        "sha256": "12ad63499daa536fe6f0637b771df7aab7dc8d515caa223acff70a665e1b6b9f"
+      }
+    ],
+    "evidence_level": "pinned_external_component_contract",
+    "external_manifest_proof": {
+      "bytes": 2142,
+      "id": "iteriodev-drplay",
+      "manifest": {
+        "crashNames": [
+          "mgu-drplay",
+          "mgu-driverec-rx",
+          "hmictl"
+        ],
+        "description": "Plays and manages the Drive Recorder's clips for the Drive Recorder app: the picture through the GPU renderer, thumbnails, lock, delete, the oldest clips replaced at 4 GB, Copy to USB (the whole clip, or one camera as an MP4 with date, time and speed on it); on iDrive 7 and 8 it also starts the Drive Recorder app at every start of the car when its Start with the car is on (1.2.6)",
+        "enable": [
+          {
+            "target": "multi-user.target",
+            "unit": "iteriodev-drplay.service"
+          },
+          {
+            "target": "multi-user.target",
+            "unit": "iteriodev-driverec-rx.service"
+          }
+        ],
+        "files": [
+          {
+            "from": "mgu-drplay",
+            "mode": "0755",
+            "path": "mgu-drplay"
+          },
+          {
+            "from": "mgu-driverec-rx",
+            "mode": "0755",
+            "path": "mgu-driverec-rx"
+          },
+          {
+            "from": "setup.sh",
+            "mode": "0755",
+            "path": "setup.sh"
+          },
+          {
+            "from": "usb-rw.sh",
+            "mode": "0755",
+            "path": "usb-rw.sh"
+          },
+          {
+            "from": "autostart.sh",
+            "mode": "0755",
+            "path": "autostart.sh"
+          },
+          {
+            "from": "hmictl",
+            "mode": "0755",
+            "path": "hmictl"
+          },
+          {
+            "from": "LICENSE.openh264",
+            "mode": "0644",
+            "path": "LICENSE.openh264"
+          },
+          {
+            "from": "LICENSE.ffmpeg",
+            "mode": "0644",
+            "path": "LICENSE.ffmpeg"
+          },
+          {
+            "from": "LICENSE.libjpeg-turbo",
+            "mode": "0644",
+            "path": "LICENSE.libjpeg-turbo"
+          }
+        ],
+        "id": "iteriodev-drplay",
+        "kind": "tool",
+        "mguHmi": [
+          "ID7",
+          "ID8"
+        ],
+        "optional": true,
+        "recmgr": [
+          "iteriodev-drplay",
+          "iteriodev-driverec-rx"
+        ],
+        "requires": {},
+        "restart": [
+          "iteriodev-drplay.service",
+          "iteriodev-driverec-rx.service"
+        ],
+        "title": "Drive Recorder player",
+        "uninstallable": true,
+        "units": [
+          {
+            "from": "iteriodev-drplay.service",
+            "name": "iteriodev-drplay.service"
+          },
+          {
+            "from": "iteriodev-driverec-rx.service",
+            "name": "iteriodev-driverec-rx.service"
+          }
+        ],
+        "version": "1.2.6"
+      },
+      "payload_fetched": false,
+      "repository": "IterioDev/car-apps",
+      "runtime": "NOT_OBSERVED",
+      "sha256": "b22ecd619964cc5295d69987393bbfc1bddba2993429163c8be1d2e8f871bd9a",
+      "status": "PASS",
+      "upstream_commit": "f9ca32bd3cebd163fa16fbe17cc3473623be2c81",
+      "url": "https://raw.githubusercontent.com/IterioDev/car-apps/f9ca32bd3cebd163fa16fbe17cc3473623be2c81/tools/iteriodev-drplay/component.json",
+      "version": "1.2.6"
+    },
+    "extra_paths": [],
+    "hmi": [
+      "ID7",
+      "ID8"
+    ],
+    "id": "iteriodev-drplay",
+    "kind": "tool",
+    "limitations": [
+      "The pinned original component manifest was read; helper payload bytes were not downloaded, rehosted, installed or run. Acquisition must verify original source bytes.",
+      "Static platform contract only. Genuine target SDK preparation, ABI/provider availability, install, launch and feature behavior were not observed. Existing suite/active-input failures must pass the separate publication gate."
+    ],
+    "manifest_url": "https://raw.githubusercontent.com/IterioDev/car-apps/f9ca32bd3cebd163fa16fbe17cc3473623be2c81/tools/iteriodev-drplay/component.json",
+    "reference_only": true,
+    "repository": "IterioDev/car-apps",
+    "requires": {},
+    "runtime": "NOT_OBSERVED",
+    "source_commit": "714b2edb37f1bac811444ead348509b2b2836745",
+    "source_path": "tools/iteriodev-drplay",
+    "stages": {
+      "downloadable": "EXTERNAL_REFERENCE_ONLY",
+      "installable_on_target": "NOT_ESTABLISHED",
+      "installed": "NOT_OBSERVED",
+      "listed": true,
+      "prepared": "NOT_OBSERVED",
+      "runtime": "NOT_OBSERVED",
+      "transport_verified": false
+    },
+    "status": "eligible_static",
+    "target_inputs": [],
+    "upstream_channel": "branch:main",
+    "upstream_commit": "f9ca32bd3cebd163fa16fbe17cc3473623be2c81",
+    "version": "1.2.6"
+  },
+  "external:IterioDev/car-apps:iteriodev-overlays@0.5.0": {
+    "branch_membership": [],
+    "build_requires": {},
+    "catalog_entry_sha256": "ce94c865d8fd714b25ff298b315c9476d719a8120401128e121a1cfd970de369",
+    "channel": "external",
+    "declared_hmi_layers": [
+      {
+        "path": "data/external-store-components.json",
+        "value": [
+          "ID8"
+        ]
+      }
+    ],
+    "dependencies": {
+      "mgu-deploy": "release:mgu-deploy@0.8.27",
+      "mgu-render": "release:mgu-render@0.6.25"
+    },
+    "dependency_issues": [],
+    "effective_requires": {
+      "mgu-deploy": "0.7.11",
+      "mgu-render": "0.6.10"
+    },
+    "evidence": [
+      {
+        "commit": "714b2edb37f1bac811444ead348509b2b2836745",
+        "detail": "Exact identity, version, declared HMI and requirements in the pinned inventory.",
+        "kind": "catalog_entry",
+        "path": "data/external-store-components.json",
+        "sha256": "12ad63499daa536fe6f0637b771df7aab7dc8d515caa223acff70a665e1b6b9f"
+      }
+    ],
+    "evidence_level": "pinned_external_component_contract",
+    "external_manifest_proof": {
+      "bytes": 3172,
+      "id": "iteriodev-overlays",
+      "manifest": {
+        "crashNames": [
+          "hmictl"
+        ],
+        "description": "QuickSelect strip (iDrive 8.5 style) in the climate bar: four shortcuts (tap opens, hold 1 s saves the screen you are on, any of the head unit's own icons per shortcut), seat heating / ventilation in the HMI's own spots, steering wheel heating, M1 / M2 switch the M Mode; shift lights on the cluster for cars without their own (not M cars; with Cluster renderer 0.3.6 or newer). Set up in the Overlays app. Needs Renderer (mgu-render) 0.6.10 or newer.",
+        "dropins": [
+          {
+            "from": "mgu-render-overlays.conf",
+            "name": "iteriodev-overlays.conf",
+            "unit": "mgu-render.service"
+          }
+        ],
+        "enable": [
+          {
+            "target": "multi-user.target",
+            "unit": "iteriodev-overlays.service"
+          }
+        ],
+        "files": [
+          {
+            "from": "overlays.js",
+            "mode": "0644",
+            "path": "overlays.js"
+          },
+          {
+            "from": "png.js",
+            "mode": "0644",
+            "path": "png.js"
+          },
+          {
+            "from": "seats.js",
+            "mode": "0644",
+            "path": "seats.js"
+          },
+          {
+            "from": "shiftlights.js",
+            "mode": "0644",
+            "path": "shiftlights.js"
+          },
+          {
+            "from": "hmiicons.js",
+            "mode": "0644",
+            "path": "hmiicons.js"
+          },
+          {
+            "from": "hmictl",
+            "mode": "0755",
+            "path": "hmictl"
+          },
+          {
+            "from": "icons/media.png",
+            "mode": "0644",
+            "path": "icons/media.png"
+          },
+          {
+            "from": "icons/nav.png",
+            "mode": "0644",
+            "path": "icons/nav.png"
+          },
+          {
+            "from": "icons/phone.png",
+            "mode": "0644",
+            "path": "icons/phone.png"
+          },
+          {
+            "from": "icons/apps.png",
+            "mode": "0644",
+            "path": "icons/apps.png"
+          },
+          {
+            "from": "icons/home.png",
+            "mode": "0644",
+            "path": "icons/home.png"
+          },
+          {
+            "from": "icons/climate.png",
+            "mode": "0644",
+            "path": "icons/climate.png"
+          },
+          {
+            "from": "icons/screen.png",
+            "mode": "0644",
+            "path": "icons/screen.png"
+          },
+          {
+            "from": "icons/app.png",
+            "mode": "0644",
+            "path": "icons/app.png"
+          },
+          {
+            "from": "icons/hmi-heat-driver.png",
+            "mode": "0644",
+            "path": "icons/hmi-heat-driver.png"
+          },
+          {
+            "from": "icons/hmi-heat-passenger.png",
+            "mode": "0644",
+            "path": "icons/hmi-heat-passenger.png"
+          },
+          {
+            "from": "icons/hmi-cool-driver.png",
+            "mode": "0644",
+            "path": "icons/hmi-cool-driver.png"
+          },
+          {
+            "from": "icons/hmi-cool-passenger.png",
+            "mode": "0644",
+            "path": "icons/hmi-cool-passenger.png"
+          },
+          {
+            "from": "icons/hmi-wheel.png",
+            "mode": "0644",
+            "path": "icons/hmi-wheel.png"
+          }
+        ],
+        "id": "iteriodev-overlays",
+        "kind": "tool",
+        "mguHmi": [
+          "ID8"
+        ],
+        "optional": true,
+        "recmgr": [
+          "iteriodev-overlays"
+        ],
+        "requires": {
+          "mgu-deploy": "0.7.11",
+          "mgu-render": "0.6.10"
+        },
+        "restart": [
+          "iteriodev-overlays.service"
+        ],
+        "title": "Overlays",
+        "uninstallable": true,
+        "units": [
+          {
+            "from": "iteriodev-overlays.service",
+            "name": "iteriodev-overlays.service"
+          }
+        ],
+        "version": "0.5.0"
+      },
+      "payload_fetched": false,
+      "repository": "IterioDev/car-apps",
+      "runtime": "NOT_OBSERVED",
+      "sha256": "f2932421d70f7a0055f1695c644c30e78bc712303936f8fc319e247cca5774f7",
+      "status": "PASS",
+      "upstream_commit": "f9ca32bd3cebd163fa16fbe17cc3473623be2c81",
+      "url": "https://raw.githubusercontent.com/IterioDev/car-apps/f9ca32bd3cebd163fa16fbe17cc3473623be2c81/tools/iteriodev-overlays/component.json",
+      "version": "0.5.0"
+    },
+    "extra_paths": [],
+    "hmi": [
+      "ID8"
+    ],
+    "id": "iteriodev-overlays",
+    "kind": "tool",
+    "limitations": [
+      "The pinned original component manifest was read; helper payload bytes were not downloaded, rehosted, installed or run. Acquisition must verify original source bytes.",
+      "Static platform contract only. Genuine target SDK preparation, ABI/provider availability, install, launch and feature behavior were not observed. Existing suite/active-input failures must pass the separate publication gate."
+    ],
+    "manifest_url": "https://raw.githubusercontent.com/IterioDev/car-apps/f9ca32bd3cebd163fa16fbe17cc3473623be2c81/tools/iteriodev-overlays/component.json",
+    "reference_only": true,
+    "repository": "IterioDev/car-apps",
+    "requires": {
+      "mgu-deploy": "0.7.11",
+      "mgu-render": "0.6.10"
+    },
+    "runtime": "NOT_OBSERVED",
+    "source_commit": "714b2edb37f1bac811444ead348509b2b2836745",
+    "source_path": "tools/iteriodev-overlays",
+    "stages": {
+      "downloadable": "EXTERNAL_REFERENCE_ONLY",
+      "installable_on_target": "NOT_ESTABLISHED",
+      "installed": "NOT_OBSERVED",
+      "listed": true,
+      "prepared": "NOT_OBSERVED",
+      "runtime": "NOT_OBSERVED",
+      "transport_verified": false
+    },
+    "status": "eligible_static",
+    "target_inputs": [],
+    "upstream_channel": "branch:main",
+    "upstream_commit": "f9ca32bd3cebd163fa16fbe17cc3473623be2c81",
+    "version": "0.5.0"
+  },
+  "external:IterioDev/car-apps:iteriodev-screencast@1.0.9": {
+    "branch_membership": [],
+    "build_requires": {},
+    "catalog_entry_sha256": "859796394965498be2d3d675d29061b39ac0ed98248e98061dc2148e970853cb",
+    "channel": "external",
+    "declared_hmi_layers": [
+      {
+        "path": "data/external-store-components.json",
+        "value": [
+          "ID7",
+          "ID8"
+        ]
+      }
+    ],
+    "dependencies": {
+      "iteriodev-tailscale": "external:IterioDev/car-apps:iteriodev-tailscale@1.104.6"
+    },
+    "dependency_issues": [],
+    "effective_requires": {
+      "iteriodev-tailscale": "1.104.4"
+    },
+    "evidence": [
+      {
+        "commit": "714b2edb37f1bac811444ead348509b2b2836745",
+        "detail": "Exact identity, version, declared HMI and requirements in the pinned inventory.",
+        "kind": "catalog_entry",
+        "path": "data/external-store-components.json",
+        "sha256": "12ad63499daa536fe6f0637b771df7aab7dc8d515caa223acff70a665e1b6b9f"
+      }
+    ],
+    "evidence_level": "pinned_external_component_contract",
+    "external_manifest_proof": {
+      "bytes": 903,
+      "id": "iteriodev-screencast",
+      "manifest": {
+        "description": "The centre display in a browser (http://<head unit>:5880/ over your tailnet, or an SSH -L tunnel), clicks and drags become touches. Auto-sizes to any panel (ID7/ID8)",
+        "enable": [
+          {
+            "target": "multi-user.target",
+            "unit": "iteriodev-screencast.service"
+          }
+        ],
+        "files": [
+          {
+            "from": "screencast.js",
+            "mode": "0644",
+            "path": "screencast.js"
+          },
+          {
+            "from": "index.html",
+            "mode": "0644",
+            "path": "index.html"
+          },
+          {
+            "from": "mux.js",
+            "mode": "0644",
+            "path": "mux.js"
+          }
+        ],
+        "id": "iteriodev-screencast",
+        "kind": "tool",
+        "mguHmi": [
+          "ID7",
+          "ID8"
+        ],
+        "optional": true,
+        "recmgr": [
+          "iteriodev-screencast"
+        ],
+        "requires": {
+          "iteriodev-tailscale": "1.104.4"
+        },
+        "restart": [
+          "iteriodev-screencast.service"
+        ],
+        "title": "Screen share",
+        "uninstallable": true,
+        "units": [
+          {
+            "from": "iteriodev-screencast.service",
+            "name": "iteriodev-screencast.service"
+          }
+        ],
+        "version": "1.0.9"
+      },
+      "payload_fetched": false,
+      "repository": "IterioDev/car-apps",
+      "runtime": "NOT_OBSERVED",
+      "sha256": "e725a5b106afab1dbb876c6ad4676000902343af01f6471eb3168dffa21471fd",
+      "status": "PASS",
+      "upstream_commit": "f9ca32bd3cebd163fa16fbe17cc3473623be2c81",
+      "url": "https://raw.githubusercontent.com/IterioDev/car-apps/f9ca32bd3cebd163fa16fbe17cc3473623be2c81/tools/iteriodev-screencast/component.json",
+      "version": "1.0.9"
+    },
+    "extra_paths": [],
+    "hmi": [
+      "ID7",
+      "ID8"
+    ],
+    "id": "iteriodev-screencast",
+    "kind": "tool",
+    "limitations": [
+      "The pinned original component manifest was read; helper payload bytes were not downloaded, rehosted, installed or run. Acquisition must verify original source bytes.",
+      "Static platform contract only. Genuine target SDK preparation, ABI/provider availability, install, launch and feature behavior were not observed. Existing suite/active-input failures must pass the separate publication gate."
+    ],
+    "manifest_url": "https://raw.githubusercontent.com/IterioDev/car-apps/f9ca32bd3cebd163fa16fbe17cc3473623be2c81/tools/iteriodev-screencast/component.json",
+    "reference_only": true,
+    "repository": "IterioDev/car-apps",
+    "requires": {
+      "iteriodev-tailscale": "1.104.4"
+    },
+    "runtime": "NOT_OBSERVED",
+    "source_commit": "714b2edb37f1bac811444ead348509b2b2836745",
+    "source_path": "tools/iteriodev-screencast",
+    "stages": {
+      "downloadable": "EXTERNAL_REFERENCE_ONLY",
+      "installable_on_target": "NOT_ESTABLISHED",
+      "installed": "NOT_OBSERVED",
+      "listed": true,
+      "prepared": "NOT_OBSERVED",
+      "runtime": "NOT_OBSERVED",
+      "transport_verified": false
+    },
+    "status": "eligible_static",
+    "target_inputs": [],
+    "upstream_channel": "branch:main",
+    "upstream_commit": "f9ca32bd3cebd163fa16fbe17cc3473623be2c81",
+    "version": "1.0.9"
+  },
+  "external:IterioDev/car-apps:iteriodev-tailscale@1.104.6": {
+    "branch_membership": [],
+    "build_requires": {},
+    "catalog_entry_sha256": "0174674e095bb9134e7e0f93273bb0fe551095a9b51809341245c96d28b33856",
+    "channel": "external",
+    "declared_hmi_layers": [
+      {
+        "path": "data/external-store-components.json",
+        "value": [
+          "ID7",
+          "ID8"
+        ]
+      }
+    ],
+    "dependencies": {
+      "mgu-uplink": "release:mgu-uplink@0.7.13"
+    },
+    "dependency_issues": [],
+    "effective_requires": {
+      "mgu-uplink": "0.4.0"
+    },
+    "evidence": [
+      {
+        "commit": "714b2edb37f1bac811444ead348509b2b2836745",
+        "detail": "Exact identity, version, declared HMI and requirements in the pinned inventory.",
+        "kind": "catalog_entry",
+        "path": "data/external-store-components.json",
+        "sha256": "12ad63499daa536fe6f0637b771df7aab7dc8d515caa223acff70a665e1b6b9f"
+      }
+    ],
+    "evidence_level": "pinned_external_component_contract",
+    "external_manifest_proof": {
+      "bytes": 1080,
+      "id": "iteriodev-tailscale",
+      "manifest": {
+        "crashNames": [
+          "tailscaled",
+          "runas"
+        ],
+        "description": "Remote access to the head unit over your tailnet (Tailscale in userspace networking, through the internet uplink)",
+        "enable": [
+          {
+            "target": "multi-user.target",
+            "unit": "iteriodev-tailscale.service"
+          }
+        ],
+        "files": [
+          {
+            "from": "tailscaled",
+            "mode": "0755",
+            "path": "tailscaled"
+          },
+          {
+            "from": "runas/runas",
+            "mode": "0755",
+            "path": "runas"
+          },
+          {
+            "from": "run.sh",
+            "mode": "0755",
+            "path": "run.sh"
+          },
+          {
+            "from": "setup.sh",
+            "mode": "0755",
+            "path": "setup.sh"
+          },
+          {
+            "from": "ts",
+            "mode": "0755",
+            "path": "ts"
+          },
+          {
+            "from": "LICENSE",
+            "mode": "0644",
+            "path": "LICENSE"
+          }
+        ],
+        "id": "iteriodev-tailscale",
+        "internet": true,
+        "kind": "tool",
+        "mguHmi": [
+          "ID7",
+          "ID8"
+        ],
+        "optional": true,
+        "recmgr": [
+          "iteriodev-tailscale"
+        ],
+        "requires": {
+          "mgu-uplink": "0.4.0"
+        },
+        "restart": [
+          "iteriodev-tailscale.service"
+        ],
+        "title": "Tailscale",
+        "uids": [
+          3910
+        ],
+        "uninstallable": true,
+        "units": [
+          {
+            "from": "iteriodev-tailscale.service",
+            "name": "iteriodev-tailscale.service"
+          }
+        ],
+        "version": "1.104.6"
+      },
+      "payload_fetched": false,
+      "repository": "IterioDev/car-apps",
+      "runtime": "NOT_OBSERVED",
+      "sha256": "1d4d2a3a60192140da6a8223139264c72e33c4cb896e1a77f5ca03b8794a419f",
+      "status": "PASS",
+      "upstream_commit": "f9ca32bd3cebd163fa16fbe17cc3473623be2c81",
+      "url": "https://raw.githubusercontent.com/IterioDev/car-apps/f9ca32bd3cebd163fa16fbe17cc3473623be2c81/tools/iteriodev-tailscale/component.json",
+      "version": "1.104.6"
+    },
+    "extra_paths": [],
+    "hmi": [
+      "ID7",
+      "ID8"
+    ],
+    "id": "iteriodev-tailscale",
+    "kind": "tool",
+    "limitations": [
+      "The pinned original component manifest was read; helper payload bytes were not downloaded, rehosted, installed or run. Acquisition must verify original source bytes.",
+      "Static platform contract only. Genuine target SDK preparation, ABI/provider availability, install, launch and feature behavior were not observed. Existing suite/active-input failures must pass the separate publication gate."
+    ],
+    "manifest_url": "https://raw.githubusercontent.com/IterioDev/car-apps/f9ca32bd3cebd163fa16fbe17cc3473623be2c81/tools/iteriodev-tailscale/component.json",
+    "reference_only": true,
+    "repository": "IterioDev/car-apps",
+    "requires": {
+      "mgu-uplink": "0.4.0"
+    },
+    "runtime": "NOT_OBSERVED",
+    "source_commit": "714b2edb37f1bac811444ead348509b2b2836745",
+    "source_path": "tools/iteriodev-tailscale",
+    "stages": {
+      "downloadable": "EXTERNAL_REFERENCE_ONLY",
+      "installable_on_target": "NOT_ESTABLISHED",
+      "installed": "NOT_OBSERVED",
+      "listed": true,
+      "prepared": "NOT_OBSERVED",
+      "runtime": "NOT_OBSERVED",
+      "transport_verified": false
+    },
+    "status": "eligible_static",
+    "target_inputs": [],
+    "upstream_channel": "branch:main",
+    "upstream_commit": "f9ca32bd3cebd163fa16fbe17cc3473623be2c81",
+    "version": "1.104.6"
+  },
+  "external:IterioDev/car-apps:iteriodev-turnview@0.9.1": {
+    "branch_membership": [],
+    "build_requires": {},
+    "catalog_entry_sha256": "850a177b1c2cbad08b72b866a6645c784317b656cfffd96a268429c24df15ba1",
+    "channel": "external",
+    "declared_hmi_layers": [
+      {
+        "path": "data/external-store-components.json",
+        "value": [
+          "ID7",
+          "ID8"
+        ]
+      }
+    ],
+    "dependencies": {
+      "cluster-render": "source:cluster-render@0.6.9",
+      "mgu-deploy": "release:mgu-deploy@0.8.27"
+    },
+    "dependency_issues": [],
+    "effective_requires": {
+      "cluster-render": "0.5.10",
+      "mgu-deploy": "0.7.11"
+    },
+    "evidence": [
+      {
+        "commit": "714b2edb37f1bac811444ead348509b2b2836745",
+        "detail": "Exact identity, version, declared HMI and requirements in the pinned inventory.",
+        "kind": "catalog_entry",
+        "path": "data/external-store-components.json",
+        "sha256": "12ad63499daa536fe6f0637b771df7aab7dc8d515caa223acff70a665e1b6b9f"
+      }
+    ],
+    "evidence_level": "pinned_external_component_contract",
+    "external_manifest_proof": {
+      "bytes": 5303,
+      "id": "iteriodev-turnview",
+      "manifest": {
+        "crashNames": [
+          "hmictl",
+          "mgu-camcluster"
+        ],
+        "description": "The front camera in the instrument cluster with a turn card and, near each turn, a blue turn sign (three chevrons pointing the way), from BMW navigation, CarPlay or Android Auto; the camera alone without a route. Or on the head unit instead (0.9.0, the Turn View app's Camera page: Picture on Head unit), at any speed: the camera's whole picture with the same card and sign, a kerb-parking aid. iDrive 8: pick \"Turn View AR\" in the cluster widget menu (from the car's next start after installing). iDrive 7: off at every start of the car; switch it on in the Turn View app and set Instrument cluster > Central display area to Map view; the camera takes the map area there. Not together with Waze on cluster on the cluster: set Waze on cluster to HUD only (the cluster and the HUD show 2 videos at most). Set up and calibrated in the Turn View app. Drawn by Cluster renderer (robertnisipeanu/idrive-apps) 0.5.10 or newer. No coding needed.",
+        "enable": [
+          {
+            "target": "multi-user.target",
+            "unit": "iteriodev-turnview.service"
+          }
+        ],
+        "files": [
+          {
+            "from": "turnview.js",
+            "mode": "0644",
+            "path": "turnview.js"
+          },
+          {
+            "from": "wire.js",
+            "mode": "0644",
+            "path": "wire.js"
+          },
+          {
+            "from": "nav.js",
+            "mode": "0644",
+            "path": "nav.js"
+          },
+          {
+            "from": "track.js",
+            "mode": "0644",
+            "path": "track.js"
+          },
+          {
+            "from": "scene.js",
+            "mode": "0644",
+            "path": "scene.js"
+          },
+          {
+            "from": "shaders.js",
+            "mode": "0644",
+            "path": "shaders.js"
+          },
+          {
+            "from": "card.js",
+            "mode": "0644",
+            "path": "card.js"
+          },
+          {
+            "from": "cluster_render_client.js",
+            "mode": "0644",
+            "path": "cluster_render_client.js"
+          },
+          {
+            "from": "kit/canvas.js",
+            "mode": "0644",
+            "path": "kit/canvas.js"
+          },
+          {
+            "from": "kit/fonts.js",
+            "mode": "0644",
+            "path": "kit/fonts.js"
+          },
+          {
+            "from": "kit/LICENSE",
+            "mode": "0644",
+            "path": "kit/LICENSE"
+          },
+          {
+            "from": "kit/SOURCE",
+            "mode": "0644",
+            "path": "kit/SOURCE"
+          },
+          {
+            "from": "kit/fonts/num.json",
+            "mode": "0644",
+            "path": "kit/fonts/num.json"
+          },
+          {
+            "from": "kit/fonts/bold.json",
+            "mode": "0644",
+            "path": "kit/fonts/bold.json"
+          },
+          {
+            "from": "kit/fonts/label.json",
+            "mode": "0644",
+            "path": "kit/fonts/label.json"
+          },
+          {
+            "from": "schemas/guidance-conclusiveDart.json",
+            "mode": "0644",
+            "path": "schemas/guidance-conclusiveDart.json"
+          },
+          {
+            "from": "schemas/guidance-state.json",
+            "mode": "0644",
+            "path": "schemas/guidance-state.json"
+          },
+          {
+            "from": "schemas/guidance-provider.json",
+            "mode": "0644",
+            "path": "schemas/guidance-provider.json"
+          },
+          {
+            "from": "schemas/vehicle2-speed.json",
+            "mode": "0644",
+            "path": "schemas/vehicle2-speed.json"
+          },
+          {
+            "from": "schemas/eventlist-query-in.json",
+            "mode": "0644",
+            "path": "schemas/eventlist-query-in.json"
+          },
+          {
+            "from": "schemas/eventlist-query-out.json",
+            "mode": "0644",
+            "path": "schemas/eventlist-query-out.json"
+          },
+          {
+            "from": "schemas/id7/guidance-conclusiveDart.json",
+            "mode": "0644",
+            "path": "schemas/id7/guidance-conclusiveDart.json"
+          },
+          {
+            "from": "schemas/id7/guidance-state.json",
+            "mode": "0644",
+            "path": "schemas/id7/guidance-state.json"
+          },
+          {
+            "from": "schemas/id7/guidance-provider.json",
+            "mode": "0644",
+            "path": "schemas/id7/guidance-provider.json"
+          },
+          {
+            "from": "schemas/id7/vehicle2-speed.json",
+            "mode": "0644",
+            "path": "schemas/id7/vehicle2-speed.json"
+          },
+          {
+            "from": "schemas/id7/eventlist-query-in.json",
+            "mode": "0644",
+            "path": "schemas/id7/eventlist-query-in.json"
+          },
+          {
+            "from": "schemas/id7/eventlist-query-out.json",
+            "mode": "0644",
+            "path": "schemas/id7/eventlist-query-out.json"
+          },
+          {
+            "from": "hmictl",
+            "mode": "0755",
+            "path": "hmictl"
+          },
+          {
+            "from": "cluster-render.d/turnview.conf",
+            "mode": "0644",
+            "path": "cluster-render.d/turnview.conf"
+          },
+          {
+            "from": "cluster-render.d/turnview.png",
+            "mode": "0644",
+            "path": "cluster-render.d/turnview.png"
+          },
+          {
+            "from": "mgu-camcluster",
+            "mode": "0755",
+            "path": "mgu-camcluster"
+          },
+          {
+            "from": "LICENSE.camcluster",
+            "mode": "0644",
+            "path": "LICENSE.camcluster"
+          },
+          {
+            "from": "LICENSE.ffmpeg",
+            "mode": "0644",
+            "path": "LICENSE.ffmpeg"
+          }
+        ],
+        "id": "iteriodev-turnview",
+        "kind": "tool",
+        "mguHmi": [
+          "ID7",
+          "ID8"
+        ],
+        "optional": true,
+        "recmgr": [
+          "iteriodev-turnview"
+        ],
+        "requires": {
+          "cluster-render": "0.5.10",
+          "mgu-deploy": "0.7.11"
+        },
+        "restart": [
+          "iteriodev-turnview.service"
+        ],
+        "title": "Turn View",
+        "uninstallable": true,
+        "units": [
+          {
+            "from": "iteriodev-turnview.service",
+            "name": "iteriodev-turnview.service"
+          }
+        ],
+        "version": "0.9.1"
+      },
+      "payload_fetched": false,
+      "repository": "IterioDev/car-apps",
+      "runtime": "NOT_OBSERVED",
+      "sha256": "54fc408e3fceb0333e02721cc6d9aa265130be7e4d8e25ec1a3acab5ba26beb7",
+      "status": "PASS",
+      "upstream_commit": "f9ca32bd3cebd163fa16fbe17cc3473623be2c81",
+      "url": "https://raw.githubusercontent.com/IterioDev/car-apps/f9ca32bd3cebd163fa16fbe17cc3473623be2c81/tools/iteriodev-turnview/component.json",
+      "version": "0.9.1"
+    },
+    "extra_paths": [],
+    "hmi": [
+      "ID7",
+      "ID8"
+    ],
+    "id": "iteriodev-turnview",
+    "kind": "tool",
+    "limitations": [
+      "The pinned original component manifest was read; helper payload bytes were not downloaded, rehosted, installed or run. Acquisition must verify original source bytes.",
+      "Static platform contract only. Genuine target SDK preparation, ABI/provider availability, install, launch and feature behavior were not observed. Existing suite/active-input failures must pass the separate publication gate."
+    ],
+    "manifest_url": "https://raw.githubusercontent.com/IterioDev/car-apps/f9ca32bd3cebd163fa16fbe17cc3473623be2c81/tools/iteriodev-turnview/component.json",
+    "reference_only": true,
+    "repository": "IterioDev/car-apps",
+    "requires": {
+      "cluster-render": "0.5.10",
+      "mgu-deploy": "0.7.11"
+    },
+    "runtime": "NOT_OBSERVED",
+    "source_commit": "714b2edb37f1bac811444ead348509b2b2836745",
+    "source_path": "tools/iteriodev-turnview",
+    "stages": {
+      "downloadable": "EXTERNAL_REFERENCE_ONLY",
+      "installable_on_target": "NOT_ESTABLISHED",
+      "installed": "NOT_OBSERVED",
+      "listed": true,
+      "prepared": "NOT_OBSERVED",
+      "runtime": "NOT_OBSERVED",
+      "transport_verified": false
+    },
+    "status": "eligible_static",
+    "target_inputs": [],
+    "upstream_channel": "branch:main",
+    "upstream_commit": "f9ca32bd3cebd163fa16fbe17cc3473623be2c81",
+    "version": "0.9.1"
+  }
+}

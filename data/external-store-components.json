@@ -1,0 +1,102 @@
+{
+  "schema": 1,
+  "reference_only": true,
+  "source_id": "aq-mgu-iteriodev",
+  "repository": "IterioDev/car-apps",
+  "channel": "branch:main",
+  "source_commit": "f9ca32bd3cebd163fa16fbe17cc3473623be2c81",
+  "source_manifest_url": "https://raw.githubusercontent.com/IterioDev/car-apps/f9ca32bd3cebd163fa16fbe17cc3473623be2c81/mgu-repo.json",
+  "scope": "Metadata observations for dependency validation only; no tool payload or executable AQ feed. Original Store must have this native source added explicitly.",
+  "live_hu_install": "NOT OBSERVED",
+  "components": [
+    {
+      "id": "iteriodev-comfort",
+      "kind": "tool",
+      "version": "0.6.3",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.11"
+      },
+      "path": "tools/iteriodev-comfort",
+      "source_manifest_url": "https://raw.githubusercontent.com/IterioDev/car-apps/f9ca32bd3cebd163fa16fbe17cc3473623be2c81/tools/iteriodev-comfort/component.json",
+      "source_commit": "f9ca32bd3cebd163fa16fbe17cc3473623be2c81"
+    },
+    {
+      "id": "iteriodev-drplay",
+      "kind": "tool",
+      "version": "1.2.6",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {},
+      "path": "tools/iteriodev-drplay",
+      "source_manifest_url": "https://raw.githubusercontent.com/IterioDev/car-apps/f9ca32bd3cebd163fa16fbe17cc3473623be2c81/tools/iteriodev-drplay/component.json",
+      "source_commit": "f9ca32bd3cebd163fa16fbe17cc3473623be2c81"
+    },
+    {
+      "id": "iteriodev-overlays",
+      "kind": "tool",
+      "version": "0.5.0",
+      "mguHmi": [
+        "ID8"
+      ],
+      "requires": {
+        "mgu-render": "0.6.10",
+        "mgu-deploy": "0.7.11"
+      },
+      "path": "tools/iteriodev-overlays",
+      "source_manifest_url": "https://raw.githubusercontent.com/IterioDev/car-apps/f9ca32bd3cebd163fa16fbe17cc3473623be2c81/tools/iteriodev-overlays/component.json",
+      "source_commit": "f9ca32bd3cebd163fa16fbe17cc3473623be2c81"
+    },
+    {
+      "id": "iteriodev-screencast",
+      "kind": "tool",
+      "version": "1.0.9",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "iteriodev-tailscale": "1.104.4"
+      },
+      "path": "tools/iteriodev-screencast",
+      "source_manifest_url": "https://raw.githubusercontent.com/IterioDev/car-apps/f9ca32bd3cebd163fa16fbe17cc3473623be2c81/tools/iteriodev-screencast/component.json",
+      "source_commit": "f9ca32bd3cebd163fa16fbe17cc3473623be2c81"
+    },
+    {
+      "id": "iteriodev-tailscale",
+      "kind": "tool",
+      "version": "1.104.6",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "mgu-uplink": "0.4.0"
+      },
+      "path": "tools/iteriodev-tailscale",
+      "source_manifest_url": "https://raw.githubusercontent.com/IterioDev/car-apps/f9ca32bd3cebd163fa16fbe17cc3473623be2c81/tools/iteriodev-tailscale/component.json",
+      "source_commit": "f9ca32bd3cebd163fa16fbe17cc3473623be2c81"
+    },
+    {
+      "id": "iteriodev-turnview",
+      "kind": "tool",
+      "version": "0.9.1",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "requires": {
+        "cluster-render": "0.5.10",
+        "mgu-deploy": "0.7.11"
+      },
+      "path": "tools/iteriodev-turnview",
+      "source_manifest_url": "https://raw.githubusercontent.com/IterioDev/car-apps/f9ca32bd3cebd163fa16fbe17cc3473623be2c81/tools/iteriodev-turnview/component.json",
+      "source_commit": "f9ca32bd3cebd163fa16fbe17cc3473623be2c81"
+    }
+  ]
+}

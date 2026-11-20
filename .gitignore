@@ -1,4 +1,0 @@
-# Local validation caches, never Store source inputs.
-__pycache__/
-*.py[cod]
-.pytest_cache/

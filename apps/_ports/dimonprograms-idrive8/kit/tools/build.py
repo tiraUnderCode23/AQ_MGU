@@ -22,8 +22,6 @@ from localize import unicode_resources, localize_spec, load_locale, languages, c
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, '..', '..'))
 KIT = os.path.join(ROOT, 'kit')
-_AQ_LOC_ROOT = KIT if os.path.isdir(os.path.join(_AQ_LOC_ROOT, 'localization')) else next((p for p in [os.path.abspath(os.path.join(KIT, '..', '..', 'idrive7-apps', 'kit')), os.path.abspath(os.path.join(KIT, '..', '..', '..', '_sources', 'idrive7-apps', 'kit'))] if os.path.isdir(os.path.join(p, 'localization'))), KIT)
-
 APPS = os.path.join(ROOT, 'apps')
 DIST = os.path.join(ROOT, 'dist')
 SDK = os.path.join(ROOT, 'oap-sdk')
@@ -598,19 +596,19 @@ def build(app_id, language='en', preview_only=False, target_hmi=None):
             if os.path.exists(p):
                 os.remove(p)
     if language == 'ru':
-        shutil.copy(os.path.join(_AQ_LOC_ROOT, 'localization', 'fonts', 'cyrillic-ru.json'),
+        shutil.copy(os.path.join(KIT, 'localization', 'fonts', 'cyrillic-ru.json'),
                     os.path.join(src, 'javascript', 'kit', 'fonts', 'cyrillic.json'))
     if language == 'ko':
         # Korean and Chinese are separate fixed-language packages. Loading both large
         # atlases could fragment the renderer's two 1024x4096 glyph shelves.
         os.remove(os.path.join(src, 'javascript', 'kit', 'fonts', 'cjk.json'))
         for name in ('korean.json', 'OFL-NotoSansKR.txt'):
-            shutil.copy(os.path.join(_AQ_LOC_ROOT, 'localization', 'fonts', name),
+            shutil.copy(os.path.join(KIT, 'localization', 'fonts', name),
                         os.path.join(src, 'javascript', 'kit', 'fonts', name))
     if language == 'zh-CN':
         # Diagnostic glyphs are Chinese-only; keep the English runtime atlas intact.
         if app_id == 'dimon_dtc_scanner':
-            shutil.copy(os.path.join(_AQ_LOC_ROOT, 'localization', 'fonts', 'diagnostic-zh-CN.json'),
+            shutil.copy(os.path.join(KIT, 'localization', 'fonts', 'diagnostic-zh-CN.json'),
                         os.path.join(src, 'javascript', 'kit', 'fonts', 'cjk.json'))
     if credit(language):
         # The translation credit in the installed entry code, as plain comments.

@@ -1,0 +1,2946 @@
+{
+  "as_of": "2026-11-20",
+  "components": [
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Read-only MGU filesystem space monitor",
+      "duplicate_classification": "new-functional-app-or-explicit-id8-sibling",
+      "icon": "docs/assets/apps/ab_storage/icon.png",
+      "id": "ab_storage",
+      "id8_limitations": [
+        "No actual target SDK build, registration or live installation observed",
+        "Native mgu-render >= 0.6.24 with usable application area required",
+        "Target must permit the original bounded read-only df process and filesystem access",
+        "Filesystem space is not guaranteed application-install capacity"
+      ],
+      "image_count": 0,
+      "images": [],
+      "kind": "app",
+      "license": "MIT; retain JustAnotherPU and app-kit attribution",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-render": "0.6.24"
+      },
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
+      "source_origin_path": "apps/_sources/bmwenthusiast-storage-monitor/apps/ab_storage",
+      "source_path": "apps/_ports/bmwenthusiast-idrive8/apps/ab_storage",
+      "source_port": {
+        "id": "bmwenthusiast-idrive8",
+        "path": "apps/_ports/bmwenthusiast-idrive8",
+        "provenance": "apps/_ports/bmwenthusiast-idrive8/PROVENANCE.json",
+        "revision": "aq-storage-id8-1",
+        "source_metadata": "apps/_ports/bmwenthusiast-idrive8/PORT.json"
+      },
+      "source_repository": "BMWEnthusiastUK/mgu-storage-monitor",
+      "source_review_notes": "Filesystem-only app. AQ source adaptation adds target-specific ID8 RHMI, display/touch and lifecycle while preserving original manual-start and filesystem parser. Original publisher ID7 report is distinct from AQ ID8 verification.",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "MGU Storage Monitor",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/bmwenthusiast-storage-monitor/README.md",
+      "upstream_version": "1.2.3",
+      "variant_key": "source:ab_storage@1.2.4",
+      "version": "1.2.4"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "RPM shift lights on the instrument cluster and HUD, with per-drive-mode thresholds and a cold-engine limit",
+      "icon": "docs/assets/apps/adam_shiftlights/icon.png",
+      "id": "adam_shiftlights",
+      "id8_limitations": [
+        "Manual opening after every unit start; no ID8 headless autostart.",
+        "Renderer must advertise valid ID8 map/HUD targets and dimensions.",
+        "Real unit build, physical cluster/HUD visibility, and actual SDK providers remain unobserved."
+      ],
+      "image_count": 0,
+      "images": [],
+      "kind": "app",
+      "license": "MIT; bundled MPL-2.0 client and SIL-OFL-1.1 art notices retained",
+      "live_install_status": "NOT OBSERVED for AQ 0.4.6",
+      "prior_install_observation": {
+        "note": "User log for the earlier upstream version; not an observation of AQ 0.4.6.",
+        "result": "UNCONFIRMED_TRANSPORT_RESET",
+        "source": "data/install-observations-20261119.json",
+        "version": "0.4.5"
+      },
+      "requires": {
+        "cluster-render": "0.6.9",
+        "mgu-inputgate": "1.0.0",
+        "mgu-render": "0.6.24"
+      },
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
+      "source_origin_path": "apps/_sources/pinguinooo-idrive7-apps/apps/adam_shiftlights",
+      "source_path": "apps/_ports/pinguinooo-idrive8/apps/adam_shiftlights",
+      "source_port": {
+        "id": "pinguinooo-idrive8",
+        "path": "apps/_ports/pinguinooo-idrive8",
+        "provenance": "apps/_ports/pinguinooo-idrive8/AQ_PORT.json",
+        "revision": 2,
+        "source_metadata": "apps/_ports/pinguinooo-idrive8/AQ_PORT.json"
+      },
+      "source_repository": "pinguinooo/idrive7-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Shift Lights",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/pinguinooo-idrive7-apps/apps/adam_shiftlights/README.md",
+      "upstream_version": "0.4.5",
+      "variant_key": "source:adam_shiftlights@0.4.6",
+      "version": "0.4.6"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Boost, power, torque, gear, oil, coolant and transmission temperatures, with a warm-up guide and turbo cool-down",
+      "icon": "docs/assets/apps/adam_vitals/icon.png",
+      "id": "adam_vitals",
+      "image_count": 1,
+      "images": [
+        "docs/assets/apps/adam_vitals/screen_1.png"
+      ],
+      "kind": "app",
+      "license": "MIT; bundled MPL-2.0 client and SIL-OFL-1.1 art notices retained",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-render": "0.6.24"
+      },
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
+      "source_origin_path": "apps/_sources/pinguinooo-idrive7-apps/apps/adam_vitals",
+      "source_path": "apps/_ports/pinguinooo-idrive8/apps/adam_vitals",
+      "source_port": {
+        "id": "pinguinooo-idrive8",
+        "path": "apps/_ports/pinguinooo-idrive8",
+        "provenance": "apps/_ports/pinguinooo-idrive8/AQ_PORT.json",
+        "revision": "1",
+        "source_metadata": "apps/_ports/pinguinooo-idrive8/AQ_PORT.json"
+      },
+      "source_repository": "pinguinooo/idrive7-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Engine Vitals",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/pinguinooo-idrive7-apps/apps/adam_vitals/README.md",
+      "variant_key": "source:adam_vitals@0.2.0",
+      "version": "0.2.0"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Any colour on the ambient light, animations, and a look for each driving mode",
+      "icon": "docs/assets/apps/ambient_config/icon.png",
+      "id": "ambient_config",
+      "image_count": 2,
+      "images": [
+        "docs/assets/apps/ambient_config/preview-01.png",
+        "docs/assets/apps/ambient_config/screen_2.png"
+      ],
+      "kind": "app",
+      "license": "MIT",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "idrive7-renderd": "2.1.18",
+        "mgu-inputgate": "1.1.0"
+      },
+      "source_commit": "8d4aa0ef8ef7ae2a007a24acdbda095f219fc7b4",
+      "source_path": "apps/_sources/idrive7-apps/apps/ambient_config",
+      "source_repository": "cauliflowermossgrape/idrive7-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Ambient config",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/idrive7-apps/README.md",
+      "upstream_version": "2.7.13",
+      "variant_key": "source:ambient_config@2.7.13",
+      "version": "2.7.13"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Motorsport RPM strip, MHD controls, four temperature gauges and turbo pressure in bar.",
+      "icon": "docs/assets/apps/andrei_mdrive/icon.png",
+      "id": "andrei_mdrive",
+      "image_count": 2,
+      "images": [
+        "docs/assets/apps/andrei_mdrive/screen_1.png",
+        "docs/assets/apps/andrei_mdrive/screen_2.png"
+      ],
+      "kind": "app",
+      "license": "MIT",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "idrive7-renderd": "2.1.18",
+        "mgu-inputgate": "1.1.0"
+      },
+      "source_path": "apps/_sources/grabandrey-m-drive-control/apps/andrei_mdrive",
+      "source_repository": "grabandrey/m-drive-control",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "M Drive",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/grabandrey-m-drive-control/README.md",
+      "variant_key": "source:andrei_mdrive@0.4.0",
+      "version": "0.4.0"
+    },
+    {
+      "artifact": {
+        "name": "app-privacy@1.7.2.tgz",
+        "sha256": "eea01214be305cec03a9cb8abeefa2ab543693376ab16a8d9639eb55e5191c5b",
+        "size": 19586,
+        "url": "https://github.com/robertnisipeanu/mgu-store/releases/download/app-privacy%401.7.2/app-privacy%401.7.2.tgz"
+      },
+      "build_requires": {},
+      "category": "tool",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "Keeps our apps out of the head unit's backend app reporting and restarts them after a crash",
+      "icon": null,
+      "id": "app-privacy",
+      "image_count": 0,
+      "images": [],
+      "kind": "tool",
+      "license": "GPL-3.0-or-later",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-deploy": "0.6.3"
+      },
+      "source_path": null,
+      "source_repository": "robertnisipeanu/mgu-store",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "App privacy",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "https://github.com/robertnisipeanu/mgu-store/blob/3ecfafd4b6b2492c1776f53e3b74add5653c5c61/README.md",
+      "variant_key": "release:app-privacy@1.7.2",
+      "version": "1.7.2"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Your own service intervals, apart from BMW's: engine oil (3,000 mi by default), spark plugs, coils, diff, transfer case and transmission fluid, brake fluid, air and cabin filters, each with how much is left. Done today records the odometer and the date; Done earlier sets a service from before. It never resets BMW's own service reminders, so a dealer's free service still comes due on BMW's schedule. Read-only toward the car.",
+      "icon": "docs/assets/apps/aref_carcare/icon.png",
+      "id": "aref_carcare",
+      "id8_limitations": [
+        "No ID8 home-screen widget; ID7 target retains the original widget.",
+        "Target provider and actual HU runtime not observed."
+      ],
+      "image_count": 0,
+      "images": [],
+      "kind": "app",
+      "license": "MIT with per-app, runtime and font notices retained",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-render": "0.6.24"
+      },
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
+      "source_origin_path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_carcare",
+      "source_path": "apps/_ports/arefahmad-idrive8/apps/aref_carcare",
+      "source_port": {
+        "id": "arefahmad-idrive8",
+        "path": "apps/_ports/arefahmad-idrive8",
+        "provenance": "apps/_ports/arefahmad-idrive8/PROVENANCE.json",
+        "revision": "aq-aref-id8-2",
+        "source_metadata": "apps/_ports/arefahmad-idrive8/PORT.json"
+      },
+      "source_repository": "arefahmad/idrive7-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Car Care",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/arefahmad-idrive7-apps/apps/aref_carcare/README.md",
+      "upstream_version": "0.2.3",
+      "variant_key": "source:aref_carcare@0.2.4",
+      "version": "0.2.4"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Synced lyrics for whatever the car plays: Apple Music over CarPlay, Bluetooth or USB, no Spotify needed. A full-screen page drawn like Apple Music's: the album art blurred behind, the cover and a progress line on the left, and the lyrics gliding line by line on the right, timed to the song from the car's own clock. Lyrics from LRCLIB, artwork from Apple's iTunes search. A Probe tab shows what the car reports. Read-only toward the car. Needs internet through the Store's uplink.",
+      "icon": "docs/assets/apps/aref_carlyrics/icon.png",
+      "id": "aref_carlyrics",
+      "id8_limitations": [
+        "No ID8 home-screen widget; ID7 target retains the original widget.",
+        "Target provider and actual HU runtime not observed."
+      ],
+      "image_count": 0,
+      "images": [],
+      "kind": "app",
+      "license": "MIT with per-app, runtime and font notices retained",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-render": "0.6.24"
+      },
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
+      "source_origin_path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_carlyrics",
+      "source_path": "apps/_ports/arefahmad-idrive8/apps/aref_carlyrics",
+      "source_port": {
+        "id": "arefahmad-idrive8",
+        "path": "apps/_ports/arefahmad-idrive8",
+        "provenance": "apps/_ports/arefahmad-idrive8/PROVENANCE.json",
+        "revision": "aq-aref-id8-2",
+        "source_metadata": "apps/_ports/arefahmad-idrive8/PORT.json"
+      },
+      "source_repository": "arefahmad/idrive7-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Car Lyrics",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/arefahmad-idrive7-apps/apps/aref_carlyrics/README.md",
+      "upstream_version": "0.3.9",
+      "variant_key": "source:aref_carlyrics@0.3.10",
+      "version": "0.3.10"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Finds the head unit's services behind a car feature (ambient light, route guidance and ETA, GPS position, now playing, climate, lights, doors, fuel) in its interface catalog and shows what each offers. Writes everything to explorer-report.txt, which new apps are designed from. Read-only: it reads two platform files and sends nothing to the car. For developers and curious owners.",
+      "icon": "docs/assets/apps/aref_explorer/icon.png",
+      "id": "aref_explorer",
+      "image_count": 0,
+      "images": [],
+      "kind": "app",
+      "license": "MIT with per-app, runtime and font notices retained",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-render": "0.6.24"
+      },
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
+      "source_origin_path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_explorer",
+      "source_path": "apps/_ports/arefahmad-idrive8/apps/aref_explorer",
+      "source_port": {
+        "id": "arefahmad-idrive8",
+        "path": "apps/_ports/arefahmad-idrive8",
+        "provenance": "apps/_ports/arefahmad-idrive8/PROVENANCE.json",
+        "revision": "aq-aref-id8-2",
+        "source_metadata": "apps/_ports/arefahmad-idrive8/PORT.json"
+      },
+      "source_repository": "arefahmad/idrive7-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Car Explorer",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/arefahmad-idrive7-apps/apps/aref_explorer/README.md",
+      "variant_key": "source:aref_explorer@0.2.3",
+      "version": "0.2.3"
+    },
+    {
+      "artifact": {
+        "name": "bcs_store@3.4.5.tgz",
+        "sha256": "656f3bd8cee577d531680cc399d13e4218a4e0e0eec3ac3d876dc265a4374dc8",
+        "size": 4729989,
+        "url": "https://github.com/bcs-asia/app-store/releases/download/catalog/bcs_store@3.4.5.tgz"
+      },
+      "build_requires": {},
+      "category": "app",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "BCS Automotive Solutions: apps and head-unit tools for the BMW MGU, from BCS and community sources",
+      "icon": "docs/assets/apps/bcs_store/icon.png",
+      "id": "bcs_store",
+      "image_count": 0,
+      "images": [],
+      "kind": "app",
+      "license": "GPL-3.0",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-deploy": "0.8.12",
+        "mgu-render": "0.3.1",
+        "mgu-updater": "0.8.28"
+      },
+      "source_commit": "87b8d423854a39089809f360072057903a8ea3b5",
+      "source_path": null,
+      "source_repository": "bcs-asia/app-store",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Store",
+      "upstream_artifact_sha256": "656f3bd8cee577d531680cc399d13e4218a4e0e0eec3ac3d876dc265a4374dc8",
+      "upstream_readme": "https://github.com/bcs-asia/app-store/blob/87b8d423854a39089809f360072057903a8ea3b5/README.md",
+      "variant_key": "release:bcs_store@3.4.5",
+      "version": "3.4.5"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "game",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Falling-block puzzle. Play only while stationary. Manual pause, next piece, ghost and local high score.",
+      "icon": "docs/assets/apps/bimmer_blocks/icon.png",
+      "id": "bimmer_blocks",
+      "id8_limitations": [
+        "Original AppStudio 1.1.0 declares ID7 only; AQ 1.1.1 is separately derived, with offline ID8 evidence and no publisher claim.",
+        "Actual target SDK members and the native renderer protocol/application area must exist. Test doubles are not evidence of target availability.",
+        "Unknown/stale speed, read errors or provider loss pause Bimmer Blocks. No game operation is authorized by a cached stationary value on ID8.",
+        "If a getter never settles, it retains its slot and the game remains paused; no unbounded retry queue is created.",
+        "Vehicle Pass values are personal manual records, not live pressures, verified parts recommendations or CBS updates.",
+        "Target installation, registration and physical UI/controller/speed behavior have not been observed."
+      ],
+      "image_count": 0,
+      "images": [],
+      "kind": "app",
+      "license": "MIT for original App Studio custom code; retain drawing-kit, font and third-party notices",
+      "live_install_status": "NOT OBSERVED",
+      "local_source_provenance": "data/appstudio-source-imports-20261119.json",
+      "requires": {
+        "mgu-render": "0.6.24"
+      },
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
+      "source_git_commit": null,
+      "source_origin_path": "apps/_sources/app-studio-custom/projects/apps/apps/bimmer_blocks",
+      "source_path": "apps/_ports/appstudio-idrive8/apps/bimmer_blocks",
+      "source_port": {
+        "id": "appstudio-idrive8",
+        "path": "apps/_ports/appstudio-idrive8",
+        "provenance": "apps/_ports/appstudio-idrive8/AQ_PORT.json",
+        "revision": 1,
+        "source_metadata": "apps/_ports/appstudio-idrive8/AQ_PORT.json"
+      },
+      "source_repository": null,
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Bimmer Blocks",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/app-studio-custom/README-DE-EN.txt",
+      "upstream_version": "1.1.0",
+      "variant_key": "source:bimmer_blocks@1.1.1",
+      "version": "1.1.1"
+    },
+    {
+      "artifact": {},
+      "build_requires": {},
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Map switching, burble adjustments and vehicle data for supported BM3 CustomROM vehicles with iDrive 8.",
+      "icon": "docs/assets/apps/bm3_live_id8/icon.png",
+      "id": "bm3_live_id8",
+      "image_count": 3,
+      "images": [
+        "docs/assets/apps/bm3_live_id8/screen_1.png",
+        "docs/assets/apps/bm3_live_id8/screen_2.png",
+        "docs/assets/apps/bm3_live_id8/screen_3.png"
+      ],
+      "kind": "app",
+      "license": "GPL-3.0-or-later",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-deploy": "0.6.9",
+        "mgu-render": "0.6.12"
+      },
+      "source_commit": "ddabe74bab848aadabba349c6991ed4db0a824c2",
+      "source_path": "apps/_prebuilt/bm3_live_id8",
+      "source_repository": "danny67999/mgu-bm3-live-adjustments-idrive-8",
+      "supported_hmi": [
+        "ID8"
+      ],
+      "title": "MGU Bm3 Live Adjustments for IDrive 8",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "https://github.com/danny67999/mgu-bm3-live-adjustments-idrive-8/blob/ddabe74bab848aadabba349c6991ed4db0a824c2/README.md",
+      "variant_key": "source:bm3_live_id8@0.1.1",
+      "version": "0.1.1"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "NOT YET TESTED ON AN iDRIVE 8 CAR. Needs the MGU Store's Renderer (mgu-render): the Store installs it first if it is missing. Live engine data from the DDE (diesel) or DME (petrol), CSV logs, road dyno and drag timer. Read-only: it never writes to a control unit.",
+      "duplicate_classification": "new-functional-app-or-explicit-id8-sibling",
+      "icon": "docs/assets/apps/boostline_id8/icon.png",
+      "id": "boostline_id8",
+      "id8_limitations": [
+        "Original raw-only signal backend; compatible target provider required. Actual ID8 execution not observed."
+      ],
+      "image_count": 0,
+      "images": [],
+      "kind": "app",
+      "license": "MIT with the original MIT app-kit notices retained",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-render": "0.3.1"
+      },
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
+      "source_path": "apps/_sources/giuseppe-mgu-apps-id8/ecu-live-data/app",
+      "source_repository": "giuseppesalatino-boop/mgu-apps-id8",
+      "source_review_notes": "Publisher ID8 ports, versions1.0.0, with real ID8 widget generator and authoritative KIT_HMI_ID8 marker. Publisher explicitly says no car validation. Signals backend is raw-only (no typed fallback); it requires a compatible target backend. Do not count the ID7 sibling variants again as new functionality or infer a live data result.",
+      "supported_hmi": [
+        "ID8"
+      ],
+      "title": "ECU Live Data (iDrive 8, untested)",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/giuseppe-mgu-apps-id8/README.md",
+      "variant_key": "source:boostline_id8@1.0.0",
+      "version": "1.0.0"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "100-0 and 200-0 braking distance, peak decel and brake-fade tracking",
+      "icon": "docs/assets/apps/brake_test/icon.png",
+      "id": "brake_test",
+      "image_count": 3,
+      "images": [
+        "docs/assets/apps/brake_test/preview-01.png",
+        "docs/assets/apps/brake_test/preview-02.gif",
+        "docs/assets/apps/brake_test/screen_3.gif"
+      ],
+      "kind": "app",
+      "license": "MIT",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "idrive7-renderd": "2.1.18",
+        "mgu-inputgate": "1.1.0"
+      },
+      "source_path": "apps/_sources/idrive7-apps/apps/brake_test",
+      "source_repository": "cauliflowermossgrape/idrive7-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Brake Test",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/idrive7-apps/README.md",
+      "variant_key": "source:brake_test@1.5.21",
+      "version": "1.5.21"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Speed, gear, oil and coolant, and the trip since you opened the app",
+      "duplicate_classification": "new-functional-app-or-explicit-id8-sibling",
+      "icon": "docs/assets/apps/c365_drive/icon.png",
+      "id": "c365_drive",
+      "id8_limitations": [
+        "Original raw-only signal backend; compatible target provider required. Actual ID8 execution not observed."
+      ],
+      "image_count": 0,
+      "images": [],
+      "kind": "app",
+      "license": "MIT with original kit notices retained",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-render": "0.6.24"
+      },
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
+      "source_path": "apps/_sources/c365-mgu-drive/apps/c365_drive",
+      "source_repository": "ivanivanov23022005-pixel/mgu-drive",
+      "source_review_notes": "Distinct compact drive-data dashboard. Original source really generates ID7 and ID8 RHMI and has marker-based cells and geometry; raw signal backend only, with no typed fallback. Original feed omits renderer dependency despite ID8 rendering requirement. Resolve the dependency contract and test synthetic packaging before acceptance; no target result observed.",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Drive",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/c365-mgu-drive/README.md",
+      "variant_key": "source:c365_drive@1.9.3",
+      "version": "1.9.3"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Live engine, thermal, intake / fuel / ignition, tyre and chassis gauges",
+      "icon": "docs/assets/apps/car_vitals/icon.png",
+      "id": "car_vitals",
+      "image_count": 6,
+      "images": [
+        "docs/assets/apps/car_vitals/preview-01.png",
+        "docs/assets/apps/car_vitals/preview-02.png",
+        "docs/assets/apps/car_vitals/preview-03.png",
+        "docs/assets/apps/car_vitals/preview-04.gif",
+        "docs/assets/apps/car_vitals/preview-05.gif",
+        "docs/assets/apps/car_vitals/preview-06.png"
+      ],
+      "kind": "app",
+      "license": "MIT",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "idrive7-renderd": "2.1.18",
+        "mgu-inputgate": "1.1.0"
+      },
+      "source_commit": "8d4aa0ef8ef7ae2a007a24acdbda095f219fc7b4",
+      "source_path": "apps/_sources/idrive7-apps/apps/car_vitals",
+      "source_repository": "cauliflowermossgrape/idrive7-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "M Vitals",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/idrive7-apps/README.md",
+      "upstream_version": "2.27.9",
+      "variant_key": "source:car_vitals@2.27.9",
+      "version": "2.27.9"
+    },
+    {
+      "artifact": {},
+      "build_requires": {},
+      "category": "tool",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Draws every app's layers on the instrument cluster and the HUD, sharing the display slots and one upload budget",
+      "icon": null,
+      "id": "cluster-render",
+      "image_count": 0,
+      "images": [],
+      "kind": "tool",
+      "license": "GPL-3.0-or-later with per-file/component notices",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-deploy": "0.4.0"
+      },
+      "source_path": "tools/_released/cluster-render",
+      "source_repository": "robertnisipeanu/idrive-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Cluster renderer",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "https://github.com/robertnisipeanu/idrive-apps/blob/8de5d4999929be14732882afd81beb7382edb82f/README.md",
+      "variant_key": "source:cluster-render@0.6.9",
+      "version": "0.6.9"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Lap timer with sectors, best lap and live delta",
+      "icon": "docs/assets/apps/dimon_track_mode/icon.png",
+      "id": "dimon_track_mode",
+      "id8_limitations": [
+        "Compatible Vehicle2 typed/raw read-only member and provider required for speed",
+        "Speed is not GPS position; lap boundaries remain manual",
+        "No speed statistics asserted for laps with observed reading loss or no samples",
+        "Native mgu-render >= 0.6.24 with touch and valid application area required",
+        "Dimon Battery diagnostic backend remains unported",
+        "No actual target build, registration or live installation observed"
+      ],
+      "image_count": 0,
+      "images": [],
+      "kind": "app",
+      "license": "MIT; retain source and bundled third-party notices",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-render": "0.6.24"
+      },
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
+      "source_origin_path": "apps/_sources/dimonprograms-apps/apps/dimon_track_mode",
+      "source_path": "apps/_ports/dimonprograms-idrive8/apps/dimon_track_mode",
+      "source_port": {
+        "id": "dimonprograms-idrive8",
+        "path": "apps/_ports/dimonprograms-idrive8",
+        "provenance": "apps/_ports/dimonprograms-idrive8/PROVENANCE.json",
+        "revision": "aq-dimon-track-id8-1",
+        "source_metadata": "apps/_ports/dimonprograms-idrive8/PORT.json"
+      },
+      "source_repository": "DimonPrograms/dimonprograms-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Track Mode",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/dimonprograms-apps/apps/dimon_track_mode/README.md",
+      "upstream_version": "1.0.0",
+      "variant_key": "source:dimon_track_mode@1.0.1",
+      "version": "1.0.1"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "game",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Doom (Freedoom: Phase 1) on the iDrive. Main menu with all settings; the game drawn in full resolution across the whole screen, on the controller; BACK returns to the menu and saves",
+      "icon": "docs/assets/apps/doom/icon.png",
+      "id": "doom",
+      "image_count": 2,
+      "images": [
+        "docs/assets/apps/doom/preview-01.png",
+        "docs/assets/apps/doom/screen_2.png"
+      ],
+      "kind": "app",
+      "license": "MIT",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "idrive7-renderd": "2.1.18",
+        "mgu-inputgate": "1.1.0"
+      },
+      "source_path": "apps/_sources/idrive7-apps/apps/doom",
+      "source_repository": "cauliflowermossgrape/idrive7-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Doom",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/idrive7-apps/README.md",
+      "variant_key": "source:doom@1.7.22",
+      "version": "1.7.22"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "NOT YET TESTED ON AN iDRIVE 8 CAR. Needs the MGU Store's Renderer (mgu-render): the Store installs it first if it is missing. The diesel particulate filter: soot and ash load, regenerations, differential pressure and exhaust temperatures from the diesel engine unit (DDE). Read-only.",
+      "duplicate_classification": "new-functional-app-or-explicit-id8-sibling",
+      "icon": "docs/assets/apps/dpf_id8/icon.png",
+      "id": "dpf_id8",
+      "id8_limitations": [
+        "Original raw-only signal backend; compatible target provider required. Actual ID8 execution not observed."
+      ],
+      "image_count": 0,
+      "images": [],
+      "kind": "app",
+      "license": "MIT with the original MIT app-kit notices retained",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-render": "0.3.1"
+      },
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
+      "source_path": "apps/_sources/giuseppe-mgu-apps-id8/dpf-monitoring/app",
+      "source_repository": "giuseppesalatino-boop/mgu-apps-id8",
+      "source_review_notes": "Publisher ID8 ports, versions1.0.0, with real ID8 widget generator and authoritative KIT_HMI_ID8 marker. Publisher explicitly says no car validation. Signals backend is raw-only (no typed fallback); it requires a compatible target backend. Do not count the ID7 sibling variants again as new functionality or infer a live data result.",
+      "supported_hmi": [
+        "ID8"
+      ],
+      "title": "DPF Monitoring (iDrive 8, untested)",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/giuseppe-mgu-apps-id8/README.md",
+      "variant_key": "source:dpf_id8@1.0.0",
+      "version": "1.0.0"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "0-100, 100-200 and 1/4 mile timer with best times",
+      "icon": "docs/assets/apps/draggy/icon.png",
+      "id": "draggy",
+      "image_count": 3,
+      "images": [
+        "docs/assets/apps/draggy/preview-01.png",
+        "docs/assets/apps/draggy/preview-02.gif",
+        "docs/assets/apps/draggy/screen_3.gif"
+      ],
+      "kind": "app",
+      "license": "MIT",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "idrive7-renderd": "2.1.18",
+        "mgu-inputgate": "1.1.0"
+      },
+      "source_path": "apps/_sources/idrive7-apps/apps/draggy",
+      "source_repository": "cauliflowermossgrape/idrive7-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Drag Timer",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/idrive7-apps/README.md",
+      "variant_key": "source:draggy@2.6.0",
+      "version": "2.6.0"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Read and clear fault memory of every control unit, plus active Check Control messages",
+      "icon": "docs/assets/apps/dtc_scanner/icon.png",
+      "id": "dtc_scanner",
+      "image_count": 3,
+      "images": [
+        "docs/assets/apps/dtc_scanner/preview-01.png",
+        "docs/assets/apps/dtc_scanner/preview-02.png",
+        "docs/assets/apps/dtc_scanner/screen_3.png"
+      ],
+      "kind": "app",
+      "license": "MIT",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "idrive7-renderd": "2.1.18",
+        "mgu-inputgate": "1.1.0"
+      },
+      "source_path": "apps/_sources/idrive7-apps/apps/dtc_scanner",
+      "source_repository": "cauliflowermossgrape/idrive7-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Fault Scanner",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/idrive7-apps/README.md",
+      "variant_key": "source:dtc_scanner@2.9.8",
+      "version": "2.9.8"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Power and torque curves from a full-throttle pull, saved and compared",
+      "icon": "docs/assets/apps/dyno/icon.png",
+      "id": "dyno",
+      "image_count": 2,
+      "images": [
+        "docs/assets/apps/dyno/preview-01.png",
+        "docs/assets/apps/dyno/screen_2.png"
+      ],
+      "kind": "app",
+      "license": "MIT",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "idrive7-renderd": "2.1.15"
+      },
+      "source_path": "apps/_sources/idrive7-apps/apps/dyno",
+      "source_repository": "cauliflowermossgrape/idrive7-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Virtual Dyno",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/idrive7-apps/README.md",
+      "variant_key": "source:dyno@1.6.3",
+      "version": "1.6.3"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "The ethanol content in your tank from the fills you book and the car's own tank level, and how many litres of E85 or 98 hit your target: a top-up or a full tank, step by step at the pump. Warns before your tune's safe limit, and tracks what fuel costs you",
+      "icon": "docs/assets/apps/e85/icon.png",
+      "id": "e85",
+      "id8_limitations": [
+        "DME tank diagnostics unavailable on ID8; explicit Kombi or manual input only",
+        "Compatible target SDK KombiIF member/provider required for live gauge",
+        "mgu-render >= 0.6.24 with native rendering, touch and valid application area required",
+        "No actual target build, registration or live installation observed"
+      ],
+      "image_count": 3,
+      "images": [
+        "docs/assets/apps/e85/screen_1.gif",
+        "docs/assets/apps/e85/screen_2.gif",
+        "docs/assets/apps/e85/screen_3.gif"
+      ],
+      "kind": "app",
+      "license": "MIT; retain source and bundled third-party notices",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-render": "0.6.24"
+      },
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
+      "source_origin_path": "apps/_sources/dante-idrive-apps/apps/e85",
+      "source_path": "apps/_ports/dante-idrive8/apps/e85",
+      "source_port": {
+        "id": "dante-idrive8",
+        "path": "apps/_ports/dante-idrive8",
+        "provenance": "apps/_ports/dante-idrive8/PROVENANCE.json",
+        "revision": "aq-dante-e85-id8-1",
+        "source_metadata": "apps/_ports/dante-idrive8/PORT.json"
+      },
+      "source_repository": "Dante1243/dante-idrive-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "E85 Blend",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/dante-idrive-apps/README.md",
+      "upstream_version": "1.2.1",
+      "variant_key": "source:e85@1.2.2",
+      "version": "1.2.2"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Real electric range (plug-in hybrids and fully electric cars such as the iX3), live battery power, cells and climate power, HV battery health (SOH) and energy, last charge, charge log, the 12 V battery (charge, voltage, what it does, regen, history) and a home-screen widget; on a 48 V mild hybrid its 48 V battery and DC/DC converter",
+      "icon": "docs/assets/apps/edrive/icon.png",
+      "id": "edrive",
+      "image_count": 7,
+      "images": [
+        "docs/assets/apps/edrive/preview-01.png",
+        "docs/assets/apps/edrive/preview-02.png",
+        "docs/assets/apps/edrive/preview-03.png",
+        "docs/assets/apps/edrive/preview-04.png",
+        "docs/assets/apps/edrive/preview-05.png",
+        "docs/assets/apps/edrive/preview-06.png",
+        "docs/assets/apps/edrive/preview-07.png"
+      ],
+      "kind": "app",
+      "license": "MIT",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "idrive7-renderd": "2.1.15"
+      },
+      "source_commit": "8d4aa0ef8ef7ae2a007a24acdbda095f219fc7b4",
+      "source_path": "apps/_sources/idrive7-apps/apps/edrive",
+      "source_repository": "cauliflowermossgrape/idrive7-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "eDrive",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/idrive7-apps/README.md",
+      "upstream_version": "2.11.0",
+      "variant_key": "source:edrive@2.11.0",
+      "version": "2.11.0"
+    },
+    {
+      "artifact": {},
+      "build_requires": {},
+      "category": "tool",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Supercar-style hexagon rev ring for the middle of the iDrive 8 cluster: 72-segment rev ring, redline and shift flash, big digital rpm readout, Comfort / Sport / Track colours. Pick 'Esagono' in the cluster's widget menu; change its settings in the Esagono Settings app. Live rpm needs an hmictl helper (IterioDev Overlays); EXPERIMENTAL, untested on a car.",
+      "icon": null,
+      "id": "esagono-cluster",
+      "image_count": 0,
+      "images": [],
+      "kind": "tool",
+      "license": "MIT; retain any original per-file notices",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "cluster-render": "0.6.9",
+        "iteriodev-overlays": "0.5.0",
+        "mgu-deploy": "0.7.0"
+      },
+      "source_origin_path": "apps/_sources/grabandrey-esagono-cluster/tools/esagono-cluster",
+      "source_packaging": {
+        "path": "tools/_packages/esagono-cluster",
+        "provenance": "data/extra-tool-packaging.json",
+        "revision": "aq-helper-notices-1"
+      },
+      "source_path": "tools/_packages/esagono-cluster",
+      "source_repository": "grabandrey/esagono-cluster",
+      "supported_hmi": [
+        "ID8"
+      ],
+      "title": "Esagono Cluster",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/grabandrey-esagono-cluster/README.md",
+      "upstream_version": "0.2.0",
+      "variant_key": "source:esagono-cluster@0.2.1",
+      "version": "0.2.1"
+    },
+    {
+      "artifact": {},
+      "build_requires": {},
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Settings for the Esagono cluster widget: drive mode colours, redline, shift flash, scale, backdrop and demo.",
+      "duplicate_classification": "new-functional-app",
+      "icon": "docs/assets/apps/esagono_settings/icon.png",
+      "id": "esagono_settings",
+      "image_count": 1,
+      "images": [
+        "docs/assets/apps/esagono_settings/screen_1.png"
+      ],
+      "kind": "app",
+      "license": "MIT; retain any original per-file notices",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "esagono-cluster": "0.2.0"
+      },
+      "source_path": "apps/_sources/grabandrey-esagono-cluster/apps/esagono_settings",
+      "source_repository": "grabandrey/esagono-cluster",
+      "source_review_notes": "Committed apps/esagono_settings/package/rhmiData/uiDescriptions/ID8/application.xml and ID8 package declaration; helper explicitly targets cluster-render ID8 widget.",
+      "supported_hmi": [
+        "ID8"
+      ],
+      "title": "Esagono Settings",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/grabandrey-esagono-cluster/README.md",
+      "variant_key": "source:esagono_settings@0.1.0",
+      "version": "0.1.0"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Friction circle with grip envelope, peak g per direction and session records",
+      "icon": "docs/assets/apps/gforce/icon.png",
+      "id": "gforce",
+      "image_count": 3,
+      "images": [
+        "docs/assets/apps/gforce/preview-01.png",
+        "docs/assets/apps/gforce/preview-02.gif",
+        "docs/assets/apps/gforce/screen_3.gif"
+      ],
+      "kind": "app",
+      "license": "MIT",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "idrive7-renderd": "2.1.15"
+      },
+      "source_path": "apps/_sources/idrive7-apps/apps/gforce",
+      "source_repository": "cauliflowermossgrape/idrive7-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "G-Force",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/idrive7-apps/README.md",
+      "variant_key": "source:gforce@1.6.22",
+      "version": "1.6.22"
+    },
+    {
+      "artifact": {},
+      "build_requires": {},
+      "category": "tool",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "iDrive 8-style widget for the middle of the cluster: water, engine oil and gearbox oil temperature bars, and each tyre's temperature and pressure. Pick 'Vitals' in the cluster's widget menu; the Vitals app feeds it the car's data and holds its settings. EXPERIMENTAL, untested on a car.",
+      "icon": null,
+      "id": "ida-vitals-cluster",
+      "image_count": 0,
+      "images": [],
+      "kind": "tool",
+      "license": "MIT; Barlow font atlas carries SIL-OFL-1.1",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "cluster-render": "0.6.9",
+        "mgu-deploy": "0.7.0"
+      },
+      "source_origin_path": "apps/_sources/grabandrey-idrive-apps/packages/vitals/tool",
+      "source_packaging": {
+        "path": "tools/_packages/ida-vitals-cluster",
+        "provenance": "data/extra-tool-packaging.json",
+        "revision": "aq-helper-notices-1"
+      },
+      "source_path": "tools/_packages/ida-vitals-cluster",
+      "source_repository": "grabandrey/idrive-apps",
+      "supported_hmi": [
+        "ID8"
+      ],
+      "title": "Vitals Cluster",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/grabandrey-idrive-apps/README.md",
+      "upstream_version": "1.3.2",
+      "variant_key": "source:ida-vitals-cluster@1.3.3",
+      "version": "1.3.3"
+    },
+    {
+      "artifact": {},
+      "build_requires": {},
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Finds what switches the seat logos off: the RGB light modules, the body controller's lamp outputs, and a finder that compares everything the body controller and seat modules report with the logos on and off. Keep on (off until you switch it on) holds the logos' lamp output on while the car is on. EXPERIMENTAL, untested on a car.",
+      "duplicate_classification": "new-functional-app-or-explicit-id8-sibling",
+      "icon": "docs/assets/apps/ida_lightlog/icon.png",
+      "id": "ida_lightlog",
+      "image_count": 0,
+      "images": [],
+      "kind": "app",
+      "license": "MIT; Barlow font atlas carries SIL-OFL-1.1",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {},
+      "source_path": "apps/_sources/grabandrey-idrive-apps/packages/lightlog/app",
+      "source_repository": "grabandrey/idrive-apps",
+      "source_review_notes": "Original unit-built apps with committed ID8 RHMI descriptions. Vitals has a new publisher-owned JS/config/service helper, not a renamed canonical tool. Light Logger and Seat Lights contain original vehicle lighting controls; unchanged, not executed. Publisher labels these experimental; only the seat-light hold has a limited publisher-reported G87 observation.",
+      "supported_hmi": [
+        "ID8"
+      ],
+      "title": "Light Logger",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/grabandrey-idrive-apps/README.md",
+      "variant_key": "source:ida_lightlog@1.3.1",
+      "version": "1.3.1"
+    },
+    {
+      "artifact": {},
+      "build_requires": {},
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "One switch: keeps the seat (headrest) logos lit, no timer, until you switch it off; off while the car is locked with the engine off (G87 M2: the body controller's lamp output 45). The switch is kept across drives. EXPERIMENTAL.",
+      "duplicate_classification": "new-functional-app-or-explicit-id8-sibling",
+      "icon": "docs/assets/apps/ida_seatlights/icon.png",
+      "id": "ida_seatlights",
+      "image_count": 0,
+      "images": [],
+      "kind": "app",
+      "license": "MIT; Barlow font atlas carries SIL-OFL-1.1",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-render": "0.6.11"
+      },
+      "source_path": "apps/_sources/grabandrey-idrive-apps/packages/seatlights/app",
+      "source_repository": "grabandrey/idrive-apps",
+      "source_review_notes": "Original unit-built apps with committed ID8 RHMI descriptions. Vitals has a new publisher-owned JS/config/service helper, not a renamed canonical tool. Light Logger and Seat Lights contain original vehicle lighting controls; unchanged, not executed. Publisher labels these experimental; only the seat-light hold has a limited publisher-reported G87 observation.",
+      "supported_hmi": [
+        "ID8"
+      ],
+      "title": "Seat Lights",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/grabandrey-idrive-apps/README.md",
+      "variant_key": "source:ida_seatlights@1.3.2",
+      "version": "1.3.2"
+    },
+    {
+      "artifact": {},
+      "build_requires": {},
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Water, engine oil, gearbox oil and tyre temperatures in the iDrive 8 cluster: reads the car's data for the Vitals widget and holds its settings.",
+      "duplicate_classification": "new-functional-app-or-explicit-id8-sibling",
+      "icon": "docs/assets/apps/ida_vitals/icon.png",
+      "id": "ida_vitals",
+      "image_count": 1,
+      "images": [
+        "docs/assets/apps/ida_vitals/screen_1.png"
+      ],
+      "kind": "app",
+      "license": "MIT; Barlow font atlas carries SIL-OFL-1.1",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "ida-vitals-cluster": "1.3.0",
+        "mgu-render": "0.6.11"
+      },
+      "source_path": "apps/_sources/grabandrey-idrive-apps/packages/vitals/app",
+      "source_repository": "grabandrey/idrive-apps",
+      "source_review_notes": "Original unit-built apps with committed ID8 RHMI descriptions. Vitals has a new publisher-owned JS/config/service helper, not a renamed canonical tool. Light Logger and Seat Lights contain original vehicle lighting controls; unchanged, not executed. Publisher labels these experimental; only the seat-light hold has a limited publisher-reported G87 observation.",
+      "supported_hmi": [
+        "ID8"
+      ],
+      "title": "Vitals",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/grabandrey-idrive-apps/README.md",
+      "variant_key": "source:ida_vitals@1.3.1",
+      "version": "1.3.1"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.4.0"
+      },
+      "category": "tool",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "The apps' own GPU renderer (mgu-render): draws them at 60 fps, beside the MGU Store's Renderer; installed with the apps (iDrive 7 and iDrive 8)",
+      "icon": null,
+      "id": "idrive7-renderd",
+      "image_count": 0,
+      "images": [],
+      "kind": "tool",
+      "license": "MIT; retain per-component and third-party notices",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-deploy": "0.6.1"
+      },
+      "source_path": "apps/_sources/idrive7-apps/kit/renderd/prebuilt",
+      "source_repository": "cauliflowermossgrape/idrive7-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "GPU renderer",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/idrive7-apps/kit/renderd/README.md",
+      "variant_key": "source:idrive7-renderd@2.1.19",
+      "version": "2.1.19"
+    },
+    {
+      "artifact": {},
+      "build_requires": {},
+      "category": "tool",
+      "channel": "external",
+      "delivery": "external original source",
+      "description": "Unchanged original companion tool, fetched by the configured IterioDev Store source.",
+      "external_source_id": "aq-mgu-iteriodev",
+      "icon": null,
+      "id": "iteriodev-comfort",
+      "image_count": 0,
+      "images": [],
+      "kind": "tool",
+      "license": "PolyForm Strict with direct-install permission; original source only",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-deploy": "0.7.11"
+      },
+      "source_path": null,
+      "source_repository": "IterioDev/car-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "iteriodev-comfort",
+      "upstream_artifact_sha256": null,
+      "upstream_channel": "branch:main",
+      "upstream_commit": "f9ca32bd3cebd163fa16fbe17cc3473623be2c81",
+      "upstream_readme": "https://raw.githubusercontent.com/IterioDev/car-apps/f9ca32bd3cebd163fa16fbe17cc3473623be2c81/README.md",
+      "variant_key": "external:IterioDev/car-apps:iteriodev-comfort@0.6.3",
+      "version": "0.6.3"
+    },
+    {
+      "artifact": {},
+      "build_requires": {},
+      "category": "tool",
+      "channel": "external",
+      "delivery": "external original source",
+      "description": "Unchanged original companion tool, fetched by the configured IterioDev Store source.",
+      "external_source_id": "aq-mgu-iteriodev",
+      "icon": null,
+      "id": "iteriodev-drplay",
+      "image_count": 0,
+      "images": [],
+      "kind": "tool",
+      "license": "PolyForm Strict with direct-install permission; original source only",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {},
+      "source_path": null,
+      "source_repository": "IterioDev/car-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "iteriodev-drplay",
+      "upstream_artifact_sha256": null,
+      "upstream_channel": "branch:main",
+      "upstream_commit": "f9ca32bd3cebd163fa16fbe17cc3473623be2c81",
+      "upstream_readme": "https://raw.githubusercontent.com/IterioDev/car-apps/f9ca32bd3cebd163fa16fbe17cc3473623be2c81/README.md",
+      "variant_key": "external:IterioDev/car-apps:iteriodev-drplay@1.2.6",
+      "version": "1.2.6"
+    },
+    {
+      "artifact": {},
+      "build_requires": {},
+      "category": "tool",
+      "channel": "external",
+      "delivery": "external original source",
+      "description": "Unchanged original companion tool, fetched by the configured IterioDev Store source.",
+      "external_source_id": "aq-mgu-iteriodev",
+      "icon": null,
+      "id": "iteriodev-overlays",
+      "image_count": 0,
+      "images": [],
+      "kind": "tool",
+      "license": "PolyForm Strict with direct-install permission; original source only",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-deploy": "0.7.11",
+        "mgu-render": "0.6.10"
+      },
+      "source_path": null,
+      "source_repository": "IterioDev/car-apps",
+      "supported_hmi": [
+        "ID8"
+      ],
+      "title": "iteriodev-overlays",
+      "upstream_artifact_sha256": null,
+      "upstream_channel": "branch:main",
+      "upstream_commit": "f9ca32bd3cebd163fa16fbe17cc3473623be2c81",
+      "upstream_readme": "https://raw.githubusercontent.com/IterioDev/car-apps/f9ca32bd3cebd163fa16fbe17cc3473623be2c81/README.md",
+      "variant_key": "external:IterioDev/car-apps:iteriodev-overlays@0.5.0",
+      "version": "0.5.0"
+    },
+    {
+      "artifact": {},
+      "build_requires": {},
+      "category": "tool",
+      "channel": "external",
+      "delivery": "external original source",
+      "description": "Unchanged original companion tool, fetched by the configured IterioDev Store source.",
+      "external_source_id": "aq-mgu-iteriodev",
+      "icon": null,
+      "id": "iteriodev-screencast",
+      "image_count": 0,
+      "images": [],
+      "kind": "tool",
+      "license": "PolyForm Strict with direct-install permission; original source only",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "iteriodev-tailscale": "1.104.4"
+      },
+      "source_path": null,
+      "source_repository": "IterioDev/car-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "iteriodev-screencast",
+      "upstream_artifact_sha256": null,
+      "upstream_channel": "branch:main",
+      "upstream_commit": "f9ca32bd3cebd163fa16fbe17cc3473623be2c81",
+      "upstream_readme": "https://raw.githubusercontent.com/IterioDev/car-apps/f9ca32bd3cebd163fa16fbe17cc3473623be2c81/README.md",
+      "variant_key": "external:IterioDev/car-apps:iteriodev-screencast@1.0.9",
+      "version": "1.0.9"
+    },
+    {
+      "artifact": {},
+      "build_requires": {},
+      "category": "tool",
+      "channel": "external",
+      "delivery": "external original source",
+      "description": "Unchanged original companion tool, fetched by the configured IterioDev Store source.",
+      "external_source_id": "aq-mgu-iteriodev",
+      "icon": null,
+      "id": "iteriodev-tailscale",
+      "image_count": 0,
+      "images": [],
+      "kind": "tool",
+      "license": "PolyForm Strict with direct-install permission; original source only",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-uplink": "0.4.0"
+      },
+      "source_path": null,
+      "source_repository": "IterioDev/car-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "iteriodev-tailscale",
+      "upstream_artifact_sha256": null,
+      "upstream_channel": "branch:main",
+      "upstream_commit": "f9ca32bd3cebd163fa16fbe17cc3473623be2c81",
+      "upstream_readme": "https://raw.githubusercontent.com/IterioDev/car-apps/f9ca32bd3cebd163fa16fbe17cc3473623be2c81/README.md",
+      "variant_key": "external:IterioDev/car-apps:iteriodev-tailscale@1.104.6",
+      "version": "1.104.6"
+    },
+    {
+      "artifact": {},
+      "build_requires": {},
+      "category": "tool",
+      "channel": "external",
+      "delivery": "external original source",
+      "description": "Unchanged original companion tool, fetched by the configured IterioDev Store source.",
+      "external_source_id": "aq-mgu-iteriodev",
+      "icon": null,
+      "id": "iteriodev-turnview",
+      "image_count": 0,
+      "images": [],
+      "kind": "tool",
+      "license": "PolyForm Strict with direct-install permission; original source only",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "cluster-render": "0.5.10",
+        "mgu-deploy": "0.7.11"
+      },
+      "source_path": null,
+      "source_repository": "IterioDev/car-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "iteriodev-turnview",
+      "upstream_artifact_sha256": null,
+      "upstream_channel": "branch:main",
+      "upstream_commit": "f9ca32bd3cebd163fa16fbe17cc3473623be2c81",
+      "upstream_readme": "https://raw.githubusercontent.com/IterioDev/car-apps/f9ca32bd3cebd163fa16fbe17cc3473623be2c81/README.md",
+      "variant_key": "external:IterioDev/car-apps:iteriodev-turnview@0.9.1",
+      "version": "0.9.1"
+    },
+    {
+      "artifact": {
+        "name": "iteriodev_ambient@1.4.3.tgz",
+        "sha256": "ba1f7a12d46cd611bd7c3d868fafe195bfdfca6d3a490fcc39c2a01a360c5519",
+        "size": 744650,
+        "url": "https://raw.githubusercontent.com/IterioDev/car-apps/f9ca32bd3cebd163fa16fbe17cc3473623be2c81/apps/iteriodev_ambient/iteriodev_ambient@1.4.3.tgz"
+      },
+      "build_requires": {},
+      "category": "app",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "Any color on the interior ambient light. Your car's zones in a list (the ones your car has): give each the main color, its own or the car's, or pick All zones. Color bars for any shade, brightness (or follow the car's), the car's nine colors, and six presets that keep the whole look. Drive modes: a color for each drive mode (Sport, Comfort, Eco Pro, their Plus and Individual, Adaptive) that the light switches to with the mode, on or off. Works while the car's own ambient light is on. Needs the Comfort tool from the same source. Works with the touchscreen or the iDrive controller. iDrive 7 and ",
+      "icon": "docs/assets/apps/iteriodev_ambient/icon.png",
+      "id": "iteriodev_ambient",
+      "image_count": 3,
+      "images": [
+        "docs/assets/apps/iteriodev_ambient/screen_1.png",
+        "docs/assets/apps/iteriodev_ambient/screen_2.png",
+        "docs/assets/apps/iteriodev_ambient/screen_3.png"
+      ],
+      "kind": "app",
+      "license": "PolyForm-Strict-1.0.0 with additional direct-install permission",
+      "live_install_status": "NOT OBSERVED",
+      "needs": [
+        "renderer"
+      ],
+      "requires": {
+        "iteriodev-comfort": "0.6.3",
+        "mgu-deploy": "0.7.5"
+      },
+      "source_path": null,
+      "source_repository": "IterioDev/car-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Ambient Light",
+      "upstream_artifact_sha256": "ba1f7a12d46cd611bd7c3d868fafe195bfdfca6d3a490fcc39c2a01a360c5519",
+      "upstream_readme": "https://raw.githubusercontent.com/IterioDev/car-apps/f9ca32bd3cebd163fa16fbe17cc3473623be2c81/README.md",
+      "variant_key": "release:iteriodev_ambient@1.4.3",
+      "version": "1.4.3"
+    },
+    {
+      "artifact": {
+        "name": "iteriodev_cardash@1.4.1.tgz",
+        "sha256": "95fe3980a5d9552bec03693233a23d928663f6a7655d02a16edb15519d631a4f",
+        "size": 775221,
+        "url": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/apps/iteriodev_cardash/iteriodev_cardash@1.4.1.tgz"
+      },
+      "build_requires": {},
+      "category": "app",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "",
+      "icon": "docs/assets/apps/iteriodev_cardash/icon.png",
+      "id": "iteriodev_cardash",
+      "image_count": 3,
+      "images": [
+        "docs/assets/apps/iteriodev_cardash/screen_1.png",
+        "docs/assets/apps/iteriodev_cardash/screen_2.png",
+        "docs/assets/apps/iteriodev_cardash/screen_3.png"
+      ],
+      "kind": "app",
+      "license": "PolyForm-Strict-1.0.0 with additional direct-install permission",
+      "live_install_status": "NOT OBSERVED",
+      "needs": [
+        "renderer"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.5"
+      },
+      "source_path": null,
+      "source_repository": "IterioDev/car-apps",
+      "supported_hmi": [
+        "ID8"
+      ],
+      "title": "Car Data",
+      "upstream_artifact_sha256": "95fe3980a5d9552bec03693233a23d928663f6a7655d02a16edb15519d631a4f",
+      "upstream_readme": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md",
+      "variant_key": "release:iteriodev_cardash@1.4.1",
+      "version": "1.4.1"
+    },
+    {
+      "artifact": {
+        "name": "iteriodev_draggy@1.2.0.tgz",
+        "sha256": "d2520d168bd9af27a2b50e7cf7535bcccf76d7d4910cb12d303445d84c518f80",
+        "size": 738700,
+        "url": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/apps/iteriodev_draggy/iteriodev_draggy@1.2.0.tgz"
+      },
+      "build_requires": {},
+      "category": "app",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "",
+      "icon": "docs/assets/apps/iteriodev_draggy/icon.png",
+      "id": "iteriodev_draggy",
+      "image_count": 3,
+      "images": [
+        "docs/assets/apps/iteriodev_draggy/screen_1.png",
+        "docs/assets/apps/iteriodev_draggy/screen_2.png",
+        "docs/assets/apps/iteriodev_draggy/screen_3.png"
+      ],
+      "kind": "app",
+      "license": "PolyForm-Strict-1.0.0 with additional direct-install permission",
+      "live_install_status": "NOT OBSERVED",
+      "needs": [
+        "renderer"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.5"
+      },
+      "source_path": null,
+      "source_repository": "IterioDev/car-apps",
+      "supported_hmi": [
+        "ID8"
+      ],
+      "title": "Drag Timer",
+      "upstream_artifact_sha256": "d2520d168bd9af27a2b50e7cf7535bcccf76d7d4910cb12d303445d84c518f80",
+      "upstream_readme": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md",
+      "variant_key": "release:iteriodev_draggy@1.2.0",
+      "version": "1.2.0"
+    },
+    {
+      "artifact": {
+        "name": "iteriodev_dtcscan@1.2.0.tgz",
+        "sha256": "7c9e16ccd8b299ac5a8a733717e29136e0de15041d6a05b51267730c6b65a7b2",
+        "size": 2762057,
+        "url": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/apps/iteriodev_dtcscan/iteriodev_dtcscan@1.2.0.tgz"
+      },
+      "build_requires": {},
+      "category": "app",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "",
+      "icon": "docs/assets/apps/iteriodev_dtcscan/icon.png",
+      "id": "iteriodev_dtcscan",
+      "image_count": 3,
+      "images": [
+        "docs/assets/apps/iteriodev_dtcscan/screen_1.png",
+        "docs/assets/apps/iteriodev_dtcscan/screen_2.png",
+        "docs/assets/apps/iteriodev_dtcscan/screen_3.png"
+      ],
+      "kind": "app",
+      "license": "PolyForm-Strict-1.0.0 with additional direct-install permission",
+      "live_install_status": "NOT OBSERVED",
+      "needs": [
+        "renderer"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.5"
+      },
+      "source_path": null,
+      "source_repository": "IterioDev/car-apps",
+      "supported_hmi": [
+        "ID8"
+      ],
+      "title": "Fault Codes",
+      "upstream_artifact_sha256": "7c9e16ccd8b299ac5a8a733717e29136e0de15041d6a05b51267730c6b65a7b2",
+      "upstream_readme": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md",
+      "variant_key": "release:iteriodev_dtcscan@1.2.0",
+      "version": "1.2.0"
+    },
+    {
+      "artifact": {
+        "name": "iteriodev_edrive@1.1.0.tgz",
+        "sha256": "6537d98218b92756a851911ab275d8f93c06e40322742798cb3bebbfaf184b03",
+        "size": 750535,
+        "url": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/apps/iteriodev_edrive/iteriodev_edrive@1.1.0.tgz"
+      },
+      "build_requires": {},
+      "category": "app",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "",
+      "icon": "docs/assets/apps/iteriodev_edrive/icon.png",
+      "id": "iteriodev_edrive",
+      "image_count": 3,
+      "images": [
+        "docs/assets/apps/iteriodev_edrive/screen_1.png",
+        "docs/assets/apps/iteriodev_edrive/screen_2.png",
+        "docs/assets/apps/iteriodev_edrive/screen_3.png"
+      ],
+      "kind": "app",
+      "license": "PolyForm-Strict-1.0.0 with additional direct-install permission",
+      "live_install_status": "NOT OBSERVED",
+      "needs": [
+        "renderer"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.5"
+      },
+      "source_path": null,
+      "source_repository": "IterioDev/car-apps",
+      "supported_hmi": [
+        "ID8"
+      ],
+      "title": "eDrive",
+      "upstream_artifact_sha256": "6537d98218b92756a851911ab275d8f93c06e40322742798cb3bebbfaf184b03",
+      "upstream_readme": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md",
+      "variant_key": "release:iteriodev_edrive@1.1.0",
+      "version": "1.1.0"
+    },
+    {
+      "artifact": {
+        "name": "iteriodev_liveadjust@1.2.0.tgz",
+        "sha256": "9c2d6f10a849102fa7dc1e0225804af9c549738d905185be6ea81fe8c71cc08e",
+        "size": 741641,
+        "url": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/apps/iteriodev_liveadjust/iteriodev_liveadjust@1.2.0.tgz"
+      },
+      "build_requires": {},
+      "category": "app",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "",
+      "icon": "docs/assets/apps/iteriodev_liveadjust/icon.png",
+      "id": "iteriodev_liveadjust",
+      "image_count": 3,
+      "images": [
+        "docs/assets/apps/iteriodev_liveadjust/screen_1.png",
+        "docs/assets/apps/iteriodev_liveadjust/screen_2.png",
+        "docs/assets/apps/iteriodev_liveadjust/screen_3.png"
+      ],
+      "kind": "app",
+      "license": "PolyForm-Strict-1.0.0 with additional direct-install permission",
+      "live_install_status": "NOT OBSERVED",
+      "needs": [
+        "renderer"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.5"
+      },
+      "source_path": null,
+      "source_repository": "IterioDev/car-apps",
+      "supported_hmi": [
+        "ID8"
+      ],
+      "title": "Live Adjustments",
+      "upstream_artifact_sha256": "9c2d6f10a849102fa7dc1e0225804af9c549738d905185be6ea81fe8c71cc08e",
+      "upstream_readme": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md",
+      "variant_key": "release:iteriodev_liveadjust@1.2.0",
+      "version": "1.2.0"
+    },
+    {
+      "artifact": {
+        "name": "iteriodev_overlays@1.4.0.tgz",
+        "sha256": "300db4ea936fa70ad3aa3d39bf23ad4be5a2df112b715d8d3fc4300bd2ce020e",
+        "size": 728911,
+        "url": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/apps/iteriodev_overlays/iteriodev_overlays@1.4.0.tgz"
+      },
+      "build_requires": {},
+      "category": "app",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "",
+      "icon": "docs/assets/apps/iteriodev_overlays/icon.png",
+      "id": "iteriodev_overlays",
+      "image_count": 3,
+      "images": [
+        "docs/assets/apps/iteriodev_overlays/screen_1.png",
+        "docs/assets/apps/iteriodev_overlays/screen_2.png",
+        "docs/assets/apps/iteriodev_overlays/screen_3.png"
+      ],
+      "kind": "app",
+      "license": "PolyForm-Strict-1.0.0 with additional direct-install permission",
+      "live_install_status": "NOT OBSERVED",
+      "needs": [
+        "renderer"
+      ],
+      "requires": {
+        "iteriodev-overlays": "0.5.0",
+        "mgu-deploy": "0.7.5"
+      },
+      "source_path": null,
+      "source_repository": "IterioDev/car-apps",
+      "supported_hmi": [
+        "ID8"
+      ],
+      "title": "Overlays",
+      "upstream_artifact_sha256": "300db4ea936fa70ad3aa3d39bf23ad4be5a2df112b715d8d3fc4300bd2ce020e",
+      "upstream_readme": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md",
+      "variant_key": "release:iteriodev_overlays@1.4.0",
+      "version": "1.4.0"
+    },
+    {
+      "artifact": {
+        "name": "iteriodev_seats@1.6.3.tgz",
+        "sha256": "33e9dd466af2eb3fbef93fcb8bce0b4be4746df65ba020af8f051c844a66b535",
+        "size": 1156820,
+        "url": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/apps/iteriodev_seats/iteriodev_seats@1.6.3.tgz"
+      },
+      "build_requires": {},
+      "category": "app",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "",
+      "icon": "docs/assets/apps/iteriodev_seats/icon.png",
+      "id": "iteriodev_seats",
+      "image_count": 3,
+      "images": [
+        "docs/assets/apps/iteriodev_seats/screen_1.png",
+        "docs/assets/apps/iteriodev_seats/screen_2.png",
+        "docs/assets/apps/iteriodev_seats/screen_3.png"
+      ],
+      "kind": "app",
+      "license": "PolyForm-Strict-1.0.0 with additional direct-install permission",
+      "live_install_status": "NOT OBSERVED",
+      "needs": [
+        "renderer"
+      ],
+      "requires": {
+        "iteriodev-comfort": "0.6.1",
+        "mgu-deploy": "0.7.5"
+      },
+      "source_path": null,
+      "source_repository": "IterioDev/car-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Seats",
+      "upstream_artifact_sha256": "33e9dd466af2eb3fbef93fcb8bce0b4be4746df65ba020af8f051c844a66b535",
+      "upstream_readme": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md",
+      "variant_key": "release:iteriodev_seats@1.6.3",
+      "version": "1.6.3"
+    },
+    {
+      "artifact": {
+        "name": "iteriodev_service@1.0.0.tgz",
+        "sha256": "7a2e25ed39e9cbab1dff0da433ad36ecb3edf03f72f364cc29f72e83fb09786d",
+        "size": 721275,
+        "url": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/apps/iteriodev_service/iteriodev_service@1.0.0.tgz"
+      },
+      "build_requires": {},
+      "category": "app",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "",
+      "icon": "docs/assets/apps/iteriodev_service/icon.png",
+      "id": "iteriodev_service",
+      "image_count": 3,
+      "images": [
+        "docs/assets/apps/iteriodev_service/screen_1.png",
+        "docs/assets/apps/iteriodev_service/screen_2.png",
+        "docs/assets/apps/iteriodev_service/screen_3.png"
+      ],
+      "kind": "app",
+      "license": "PolyForm-Strict-1.0.0 with additional direct-install permission",
+      "live_install_status": "NOT OBSERVED",
+      "needs": [
+        "renderer"
+      ],
+      "requires": {
+        "mgu-deploy": "0.7.5"
+      },
+      "source_path": null,
+      "source_repository": "IterioDev/car-apps",
+      "supported_hmi": [
+        "ID8"
+      ],
+      "title": "Service",
+      "upstream_artifact_sha256": "7a2e25ed39e9cbab1dff0da433ad36ecb3edf03f72f364cc29f72e83fb09786d",
+      "upstream_readme": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md",
+      "variant_key": "release:iteriodev_service@1.0.0",
+      "version": "1.0.0"
+    },
+    {
+      "artifact": {
+        "name": "iteriodev_tailscale@1.2.0.tgz",
+        "sha256": "0e4a0deef88e2254cff3d25fb0962c67d38fc86533c3e27df14c107fa5cca838",
+        "size": 747267,
+        "url": "https://raw.githubusercontent.com/IterioDev/car-apps/f9ca32bd3cebd163fa16fbe17cc3473623be2c81/apps/iteriodev_tailscale/iteriodev_tailscale@1.2.0.tgz"
+      },
+      "build_requires": {},
+      "category": "app",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "Log the head unit in to your tailnet without a computer: shows Tailscale's state, the login link as a QR code to scan with your phone, the head unit's tailnet name and address, Rename (default mgu), Disconnect / Connect (switched off, still logged in) and Log out. Works with the iDrive controller too. Needs the Tailscale tool from the same source.",
+      "icon": "docs/assets/apps/iteriodev_tailscale/icon.png",
+      "id": "iteriodev_tailscale",
+      "image_count": 3,
+      "images": [
+        "docs/assets/apps/iteriodev_tailscale/screen_1.png",
+        "docs/assets/apps/iteriodev_tailscale/screen_2.png",
+        "docs/assets/apps/iteriodev_tailscale/screen_3.png"
+      ],
+      "kind": "app",
+      "license": "PolyForm-Strict-1.0.0 with additional direct-install permission",
+      "live_install_status": "NOT OBSERVED",
+      "needs": [
+        "renderer"
+      ],
+      "requires": {
+        "iteriodev-tailscale": "1.104.4",
+        "mgu-deploy": "0.7.5"
+      },
+      "source_path": null,
+      "source_repository": "IterioDev/car-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Tailscale",
+      "upstream_artifact_sha256": "0e4a0deef88e2254cff3d25fb0962c67d38fc86533c3e27df14c107fa5cca838",
+      "upstream_readme": "https://raw.githubusercontent.com/IterioDev/car-apps/f9ca32bd3cebd163fa16fbe17cc3473623be2c81/README.md",
+      "variant_key": "release:iteriodev_tailscale@1.2.0",
+      "version": "1.2.0"
+    },
+    {
+      "artifact": {
+        "name": "iteriodev_turnview@1.6.0.tgz",
+        "sha256": "ae2e8fbfdfd57878669cfaaf787f6af9908f05fbd67479b7399ff9498d079351",
+        "size": 735720,
+        "url": "https://raw.githubusercontent.com/IterioDev/car-apps/f9ca32bd3cebd163fa16fbe17cc3473623be2c81/apps/iteriodev_turnview/iteriodev_turnview@1.6.0.tgz"
+      },
+      "build_requires": {},
+      "category": "app",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "The front camera in the instrument cluster with a turn card and, near each turn, a blue turn sign (three chevrons pointing the way), from BMW Maps, Apple CarPlay or Android Auto; the camera shows with or without a route. Or on the head unit instead: the Camera button opens the camera's whole picture with the same card and sign, at any speed (Picture on: Head unit), for kerbs and tight gaps. iDrive 8: pick \"Turn View AR\" in the cluster's widget menu (from the car's next start after installing). iDrive 7: off at every start of the car; switch it on in this app and set Instrument cluster > Centra",
+      "icon": "docs/assets/apps/iteriodev_turnview/icon.png",
+      "id": "iteriodev_turnview",
+      "image_count": 3,
+      "images": [
+        "docs/assets/apps/iteriodev_turnview/screen_1.png",
+        "docs/assets/apps/iteriodev_turnview/screen_2.png",
+        "docs/assets/apps/iteriodev_turnview/screen_3.png"
+      ],
+      "kind": "app",
+      "license": "PolyForm-Strict-1.0.0 with additional direct-install permission",
+      "live_install_status": "NOT OBSERVED",
+      "needs": [
+        "renderer"
+      ],
+      "requires": {
+        "iteriodev-turnview": "0.9.0",
+        "mgu-deploy": "0.7.5"
+      },
+      "source_path": null,
+      "source_repository": "IterioDev/car-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Turn View",
+      "upstream_artifact_sha256": "ae2e8fbfdfd57878669cfaaf787f6af9908f05fbd67479b7399ff9498d079351",
+      "upstream_readme": "https://raw.githubusercontent.com/IterioDev/car-apps/f9ca32bd3cebd163fa16fbe17cc3473623be2c81/README.md",
+      "variant_key": "release:iteriodev_turnview@1.6.0",
+      "version": "1.6.0"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Live-Motordaten der DME wie die M2-App: Temperaturen, Drücke, Drehzahl, Leistung, Klopfen; Maximalwerte, Logs, Fehlerspeicher lesen/löschen; MHD Max Cooling (wird automatisch erkannt).",
+      "icon": "docs/assets/apps/km_motordaten/icon.png",
+      "id": "km_motordaten",
+      "image_count": 0,
+      "images": [],
+      "kind": "app",
+      "license": "MIT",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "idrive7-renderd": "2.1.18"
+      },
+      "source_path": "apps/_sources/prototype019-idrive7-motordaten/apps/km_motordaten",
+      "source_repository": "Prototype019/idrive7-motordaten",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Motordaten",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/prototype019-idrive7-motordaten/README.md",
+      "variant_key": "source:km_motordaten@0.4.1",
+      "version": "0.4.1"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Engine Config for BMW MGU ID7. Exhaust Flap: OEM, OPEN and CLOSE over the car's own diagnostic link, or following the driving mode (Sport open, Eco Pro closed); held against the DME's timeout, Close handed back above a set engine speed. With BM3 or MHD picked in Settings: engine map switching, burbles, ASD and Max Cooling. Experimental: xDrive off until the ignition cycle (DSC LMV_FUNKTION), behind its own setting",
+      "icon": "docs/assets/apps/live_adjustments/icon.png",
+      "id": "live_adjustments",
+      "image_count": 14,
+      "images": [
+        "docs/assets/apps/live_adjustments/preview-01.png",
+        "docs/assets/apps/live_adjustments/preview-02.png",
+        "docs/assets/apps/live_adjustments/preview-03.png",
+        "docs/assets/apps/live_adjustments/preview-04.png",
+        "docs/assets/apps/live_adjustments/preview-05.png",
+        "docs/assets/apps/live_adjustments/preview-06.png",
+        "docs/assets/apps/live_adjustments/preview-07.png",
+        "docs/assets/apps/live_adjustments/preview-08.png",
+        "docs/assets/apps/live_adjustments/preview-09.png",
+        "docs/assets/apps/live_adjustments/preview-10.png",
+        "docs/assets/apps/live_adjustments/preview-11.png",
+        "docs/assets/apps/live_adjustments/preview-12.png",
+        "docs/assets/apps/live_adjustments/preview-13.png",
+        "docs/assets/apps/live_adjustments/preview-14.png"
+      ],
+      "kind": "app",
+      "license": "MIT",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "idrive7-renderd": "2.1.18",
+        "mgu-inputgate": "1.1.0"
+      },
+      "source_commit": "8d4aa0ef8ef7ae2a007a24acdbda095f219fc7b4",
+      "source_path": "apps/_sources/idrive7-apps/apps/live_adjustments",
+      "source_repository": "cauliflowermossgrape/idrive7-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Engine Config",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/idrive7-apps/README.md",
+      "upstream_version": "0.9.10",
+      "variant_key": "source:live_adjustments@0.9.10",
+      "version": "0.9.10"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Read-only live values from the car and its control units, a trip computer with fuel cost, and gauge screens of your own, one of them as the home-screen widget",
+      "icon": "docs/assets/apps/live_data/icon.png",
+      "id": "live_data",
+      "image_count": 12,
+      "images": [
+        "docs/assets/apps/live_data/preview-01.png",
+        "docs/assets/apps/live_data/preview-02.png",
+        "docs/assets/apps/live_data/preview-03.png",
+        "docs/assets/apps/live_data/preview-04.png",
+        "docs/assets/apps/live_data/preview-05.png",
+        "docs/assets/apps/live_data/preview-06.png",
+        "docs/assets/apps/live_data/preview-07.png",
+        "docs/assets/apps/live_data/preview-08.png",
+        "docs/assets/apps/live_data/preview-09.png",
+        "docs/assets/apps/live_data/preview-10.png",
+        "docs/assets/apps/live_data/preview-11.png",
+        "docs/assets/apps/live_data/preview-12.png"
+      ],
+      "kind": "app",
+      "license": "MIT",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "idrive7-renderd": "2.1.18",
+        "mgu-inputgate": "1.1.0"
+      },
+      "source_commit": "8d4aa0ef8ef7ae2a007a24acdbda095f219fc7b4",
+      "source_path": "apps/_sources/idrive7-apps/apps/live_data",
+      "source_repository": "cauliflowermossgrape/idrive7-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Live Data",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/idrive7-apps/README.md",
+      "upstream_version": "1.0.18",
+      "variant_key": "source:live_data@1.0.18",
+      "version": "1.0.18"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "AI co-driver that answers with your car's own data: live readings, service list, fault memory, model and engine from the car, plus your tune and mods. Read-only.",
+      "icon": "docs/assets/apps/m_copilot/icon.png",
+      "id": "m_copilot",
+      "image_count": 5,
+      "images": [
+        "docs/assets/apps/m_copilot/preview-01.png",
+        "docs/assets/apps/m_copilot/preview-02.png",
+        "docs/assets/apps/m_copilot/preview-03.png",
+        "docs/assets/apps/m_copilot/preview-04.png",
+        "docs/assets/apps/m_copilot/preview-05.png"
+      ],
+      "kind": "app",
+      "license": "GPL-3.0-or-later; retain third-party notices",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-inputgate": "1.0.0",
+        "mgu-render": "0.6.24"
+      },
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
+      "source_origin_path": "apps/_sources/hexlay-idrive7-apps/apps/m_copilot",
+      "source_path": "apps/_ports/hexlay-idrive8/apps/m_copilot",
+      "source_port": {
+        "id": "hexlay-idrive8",
+        "path": "apps/_ports/hexlay-idrive8",
+        "provenance": "apps/_ports/hexlay-idrive8/PROVENANCE.json",
+        "revision": "aq-hexlay-id8-2",
+        "source_metadata": "apps/_ports/hexlay-idrive8/PORT.json"
+      },
+      "source_repository": "hexlay/idrive7-custom-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "M-Copilot",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_ports/hexlay-idrive8/README.md",
+      "variant_key": "source:m_copilot@1.0.31",
+      "version": "1.0.31"
+    },
+    {
+      "artifact": {},
+      "build_requires": {},
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Transfer case diagnostics for BMW iDrive 7 and 8, with an experimental front drive off command (until ignition cycle).",
+      "icon": "docs/assets/apps/mazzahaker_xdrive_remover/icon.png",
+      "id": "mazzahaker_xdrive_remover",
+      "image_count": 0,
+      "images": [],
+      "kind": "app",
+      "license": "GPL-3.0",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-render": "0.6.11"
+      },
+      "source_path": "apps/_sources/mazzahaker-idrive8-features/apps/mazzahaker_xdrive_remover",
+      "source_repository": "mazzahaker/idrive8-features",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "mazzahaker_xdrive_remover",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/mazzahaker-idrive8-features/README.md",
+      "variant_key": "source:mazzahaker_xdrive_remover@0.1.26",
+      "version": "0.1.26"
+    },
+    {
+      "artifact": {
+        "name": "mgu-deploy@0.8.27.tgz",
+        "sha256": "57797407580d4f0c4be234e226d4f51972002adeb1ad718e3cf2ffcd00ea36b6",
+        "size": 168362,
+        "url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-deploy%400.8.27/mgu-deploy%400.8.27.tgz"
+      },
+      "build_requires": {},
+      "category": "tool",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "Installs, updates, rolls back and removes our tools and apps on the head unit, with a snapshot before every change",
+      "icon": null,
+      "id": "mgu-deploy",
+      "image_count": 0,
+      "images": [],
+      "kind": "tool",
+      "license": "GPL-3.0-or-later",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {},
+      "source_commit": "ef2b8a0463ed1e0c3b97c0461dbf033cf45a8412",
+      "source_path": null,
+      "source_repository": "robertnisipeanu/mgu-store",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Deploy tool",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "https://github.com/robertnisipeanu/mgu-store/blob/ef2b8a0463ed1e0c3b97c0461dbf033cf45a8412/README.md",
+      "variant_key": "release:mgu-deploy@0.8.27",
+      "version": "0.8.27"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2"
+      },
+      "category": "tool",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Lets the apps have the iDrive controller (tabs, page buttons, settings, Doom); loads into the HMI at the next start (iDrive 7 and iDrive 8)",
+      "icon": null,
+      "id": "mgu-inputgate",
+      "image_count": 0,
+      "images": [],
+      "kind": "tool",
+      "license": "Original MIT and GPL notices retained; vsomeip interface headers retain MPL-2.0 notices; see frozen source and packaged notices.",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-deploy": "0.3.2"
+      },
+      "source_origin_path": "tools/_sources/cauli-inputgate-1.2.1/kit/renderd/inputgate/tool",
+      "source_packaging": {
+        "id": "mgu-inputgate",
+        "path": "tools/_packages/mgu-inputgate",
+        "provenance": "data/extra-tool-packaging.json",
+        "scope": "AQ notice packaging of original publisher runtime/guards/services; no runtime modification.",
+        "upstream_version": "1.2.1",
+        "version": "1.2.2"
+      },
+      "source_path": "tools/_packages/mgu-inputgate",
+      "source_repository": "cauliflowermossgrape/idrive7-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Controller gate",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "tools/_sources/cauli-inputgate-1.2.1/kit/renderd/inputgate/tool/README.md",
+      "upstream_version": "1.2.1",
+      "variant_key": "source:mgu-inputgate@1.2.2",
+      "version": "1.2.2"
+    },
+    {
+      "artifact": {
+        "name": "mgu-python@1.0.3.tgz",
+        "sha256": "98ce27bcee265ba6846446ad7867193fbdc9e0447195dbf22bcfaabf7e2f2533",
+        "size": 14441404,
+        "url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-python%401.0.3/mgu-python%401.0.3.tgz"
+      },
+      "build_requires": {},
+      "category": "tool",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "Python 3.12 for apps that build on the head unit with Python",
+      "icon": null,
+      "id": "mgu-python",
+      "image_count": 0,
+      "images": [],
+      "kind": "tool",
+      "license": "GPL-3.0-or-later",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {},
+      "source_path": null,
+      "source_repository": "robertnisipeanu/mgu-store",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Python",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "https://github.com/robertnisipeanu/mgu-store/blob/3ecfafd4b6b2492c1776f53e3b74add5653c5c61/README.md",
+      "variant_key": "release:mgu-python@1.0.3",
+      "version": "1.0.3"
+    },
+    {
+      "artifact": {
+        "name": "mgu-render@0.6.25.tgz",
+        "sha256": "73b5444307aaf7a3a1b519cb14032869f18930749284aef557a2e0bd58d3fd61",
+        "size": 103355,
+        "url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-render%400.6.25/mgu-render%400.6.25.tgz"
+      },
+      "build_requires": {},
+      "category": "tool",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "Draws apps' screens on the GPU, over the HMI or inside the app's page",
+      "icon": null,
+      "id": "mgu-render",
+      "image_count": 0,
+      "images": [],
+      "kind": "tool",
+      "license": "GPL-3.0-or-later",
+      "live_install_status": "NOT OBSERVED",
+      "mguProvides": "renderer",
+      "requires": {
+        "mgu-deploy": "0.6.9"
+      },
+      "source_path": null,
+      "source_repository": "robertnisipeanu/mgu-store",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Renderer",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "https://raw.githubusercontent.com/robertnisipeanu/mgu-store/3ecfafd4b6b2492c1776f53e3b74add5653c5c61/README.md",
+      "variant_key": "release:mgu-render@0.6.25",
+      "version": "0.6.25"
+    },
+    {
+      "artifact": {
+        "name": "mgu-updater@0.8.51.tgz",
+        "sha256": "e38745a14fad5d34648c101e0d7eadd9a60d53fa1f4cda38462e3f77e08eeb95",
+        "size": 143205,
+        "url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-updater%400.8.51/mgu-updater%400.8.51.tgz"
+      },
+      "build_requires": {},
+      "category": "tool",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "Installs, updates and removes apps and head-unit tools from its sources",
+      "icon": null,
+      "id": "mgu-updater",
+      "image_count": 0,
+      "images": [],
+      "kind": "tool",
+      "license": "GPL-3.0-or-later",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-deploy": "0.8.4",
+        "mgu-python": "1.0.2"
+      },
+      "source_commit": "ef2b8a0463ed1e0c3b97c0461dbf033cf45a8412",
+      "source_path": null,
+      "source_repository": "robertnisipeanu/mgu-store",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Updater",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "https://github.com/robertnisipeanu/mgu-store/blob/ef2b8a0463ed1e0c3b97c0461dbf033cf45a8412/README.md",
+      "variant_key": "release:mgu-updater@0.8.51",
+      "version": "0.8.51"
+    },
+    {
+      "artifact": {
+        "name": "mgu-uplink@0.7.13.tgz",
+        "sha256": "077e3200356df726a1e653fd67db9f9a1237e22b548f946b726c6eadd0f48d28",
+        "size": 3605106,
+        "url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-uplink%400.7.13/mgu-uplink%400.7.13.tgz"
+      },
+      "build_requires": {},
+      "category": "tool",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "Internet for selected apps through a USB network adapter, an LTE stick, a USB-tethered phone or Wi-Fi",
+      "icon": null,
+      "id": "mgu-uplink",
+      "image_count": 0,
+      "images": [],
+      "kind": "tool",
+      "license": "GPL-3.0-or-later",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-updater": "0.7.2"
+      },
+      "source_commit": "ef2b8a0463ed1e0c3b97c0461dbf033cf45a8412",
+      "source_path": null,
+      "source_repository": "robertnisipeanu/mgu-store",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Internet uplink",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "https://github.com/robertnisipeanu/mgu-store/blob/ef2b8a0463ed1e0c3b97c0461dbf033cf45a8412/README.md",
+      "variant_key": "release:mgu-uplink@0.7.13",
+      "version": "0.7.13"
+    },
+    {
+      "artifact": {
+        "name": "oap-driverecorder-next@2.5.1.tgz",
+        "sha256": "7707bd677bff3073ca6e71edcaf3ade94ac0f5be00476d75ec1f084331b754e0",
+        "size": 767988,
+        "url": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/apps/oap-driverecorder-next/oap-driverecorder-next@2.5.1.tgz"
+      },
+      "build_requires": {},
+      "category": "app",
+      "channel": "release",
+      "delivery": "original publisher artifact",
+      "description": "",
+      "icon": "docs/assets/apps/oap-driverecorder-next/icon.png",
+      "id": "oap-driverecorder-next",
+      "image_count": 3,
+      "images": [
+        "docs/assets/apps/oap-driverecorder-next/screen_1.png",
+        "docs/assets/apps/oap-driverecorder-next/screen_2.png",
+        "docs/assets/apps/oap-driverecorder-next/screen_3.png"
+      ],
+      "kind": "app",
+      "license": "PolyForm-Strict-1.0.0 with additional direct-install permission",
+      "live_install_status": "NOT OBSERVED",
+      "needs": [
+        "renderer"
+      ],
+      "requires": {
+        "iteriodev-drplay": "1.2.0",
+        "mgu-deploy": "0.7.5"
+      },
+      "source_path": null,
+      "source_repository": "IterioDev/car-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Drive Recorder",
+      "upstream_artifact_sha256": "7707bd677bff3073ca6e71edcaf3ade94ac0f5be00476d75ec1f084331b754e0",
+      "upstream_readme": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md",
+      "variant_key": "release:oap-driverecorder-next@2.5.1",
+      "version": "2.5.1"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "game",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Small games for when the car is parked, played with the iDrive knob (and the touchscreen)",
+      "icon": "docs/assets/apps/parked_games/icon.png",
+      "id": "parked_games",
+      "id8_limitations": [
+        "Compatible target SDK Vehicle2 read-only member/provider required",
+        "mgu-render >= 0.6.24 native rendering, touch and application area required",
+        "ID8 controller-dependent multiplayer needs a supported renderer gate",
+        "No actual target build, registration or live installation observed"
+      ],
+      "image_count": 2,
+      "images": [
+        "docs/assets/apps/parked_games/screen_1.png",
+        "docs/assets/apps/parked_games/screen_2.png"
+      ],
+      "kind": "app",
+      "license": "MIT; retain source and bundled third-party notices",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-render": "0.6.24"
+      },
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
+      "source_origin_path": "apps/_sources/maxxxfoka-idrive7games/apps/parked_games",
+      "source_path": "apps/_ports/maxxxfoka-idrive8/apps/parked_games",
+      "source_port": {
+        "id": "maxxxfoka-idrive8",
+        "path": "apps/_ports/maxxxfoka-idrive8",
+        "provenance": "apps/_ports/maxxxfoka-idrive8/PROVENANCE.json",
+        "revision": "aq-parked-games-id8-1",
+        "source_metadata": "apps/_ports/maxxxfoka-idrive8/PORT.json"
+      },
+      "source_repository": "MaxxxFoka/IDRIVE7GAMES",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Parked Games",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/maxxxfoka-idrive7games/README.md",
+      "upstream_version": "0.2.2",
+      "variant_key": "source:parked_games@0.2.3",
+      "version": "0.2.3"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "BETA, not yet tested on a car. Proven Performance Solutions gauge sets: Street, Track, Boost, Thermal and Tyres. A guide only: check against a gauge you trust",
+      "icon": "docs/assets/apps/pps_gauges/icon.png",
+      "id": "pps_gauges",
+      "image_count": 0,
+      "images": [],
+      "kind": "app",
+      "license": "MIT",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "idrive7-renderd": "2.1.18",
+        "mgu-inputgate": "1.1.0"
+      },
+      "source_path": "apps/_sources/proven-apps/apps/pps_gauges",
+      "source_repository": "Provenperformancesolutions/proven-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Proven Gauges",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/proven-apps/README.md",
+      "variant_key": "source:pps_gauges@1.0.3",
+      "version": "1.0.3"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "BETA, not yet tested on a car. Shows when engine oil, gearbox oil and coolant reach the warm-up temperatures set by Proven Performance Solutions. A guide only: it does not replace the car's own warnings",
+      "icon": "docs/assets/apps/pps_warmup/icon.png",
+      "id": "pps_warmup",
+      "image_count": 0,
+      "images": [],
+      "kind": "app",
+      "license": "MIT",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "idrive7-renderd": "2.1.15"
+      },
+      "source_path": "apps/_sources/proven-apps/apps/pps_warmup",
+      "source_repository": "Provenperformancesolutions/proven-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Proven Warm-Up",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/proven-apps/README.md",
+      "variant_key": "source:pps_warmup@1.2.1",
+      "version": "1.2.1"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Full-screen rev tach with shift lights, gear, shift scoring and cold-engine rev guard; HUD by @biscotit",
+      "icon": "docs/assets/apps/redline/icon.png",
+      "id": "redline",
+      "image_count": 6,
+      "images": [
+        "docs/assets/apps/redline/preview-01.png",
+        "docs/assets/apps/redline/preview-02.png",
+        "docs/assets/apps/redline/preview-03.gif",
+        "docs/assets/apps/redline/preview-04.gif",
+        "docs/assets/apps/redline/preview-05.webp",
+        "docs/assets/apps/redline/preview-06.png"
+      ],
+      "kind": "app",
+      "license": "MIT",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "idrive7-renderd": "2.1.15"
+      },
+      "source_commit": "8d4aa0ef8ef7ae2a007a24acdbda095f219fc7b4",
+      "source_path": "apps/_sources/idrive7-apps/apps/redline",
+      "source_repository": "cauliflowermossgrape/idrive7-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Redline",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/idrive7-apps/README.md",
+      "upstream_version": "2.0.45",
+      "variant_key": "source:redline@2.0.45",
+      "version": "2.0.45"
+    },
+    {
+      "artifact": {},
+      "build_requires": {},
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "The apps and head-unit tools of every source with their state, and the sources; installs, updates and removes them through mgu-updater",
+      "icon": "docs/assets/apps/robertn_store/icon.png",
+      "id": "robertn_store",
+      "image_count": 3,
+      "images": [
+        "docs/assets/apps/robertn_store/preview-01.png",
+        "docs/assets/apps/robertn_store/screen_2.png",
+        "docs/assets/apps/robertn_store/screen_3.png"
+      ],
+      "kind": "app",
+      "license": "GPL-3.0-or-later",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-deploy": "0.8.12",
+        "mgu-render": "0.3.1",
+        "mgu-updater": "0.8.28"
+      },
+      "source_commit": "b42fdba837210899005b52b84f6bd00cd4ac7f8f",
+      "source_path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store",
+      "source_repository": "robertnisipeanu/mgu-store",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Store",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "https://github.com/robertnisipeanu/mgu-store/blob/b42fdba837210899005b52b84f6bd00cd4ac7f8f/README.md",
+      "upstream_version": "0.9.41",
+      "variant_key": "source:robertn_store@0.9.41",
+      "version": "0.9.41"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Service requirements from the instrument cluster: oil, brakes, brake fluid, vehicle check, inspection - distance, date, details; brake fluid and vehicle check reset",
+      "icon": "docs/assets/apps/service/icon.png",
+      "id": "service",
+      "image_count": 2,
+      "images": [
+        "docs/assets/apps/service/preview-01.png",
+        "docs/assets/apps/service/screen_2.png"
+      ],
+      "kind": "app",
+      "license": "MIT",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "idrive7-renderd": "2.1.15"
+      },
+      "source_commit": "8d4aa0ef8ef7ae2a007a24acdbda095f219fc7b4",
+      "source_path": "apps/_sources/idrive7-apps/apps/service",
+      "source_repository": "cauliflowermossgrape/idrive7-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Service",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/idrive7-apps/README.md",
+      "upstream_version": "1.6.3",
+      "variant_key": "source:service@1.6.3",
+      "version": "1.6.3"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Spotify Connect cockpit player and library browser for BMW iDrive 7",
+      "icon": "docs/assets/apps/spotify/icon.png",
+      "id": "spotify",
+      "image_count": 6,
+      "images": [
+        "docs/assets/apps/spotify/preview-01.png",
+        "docs/assets/apps/spotify/preview-02.png",
+        "docs/assets/apps/spotify/preview-03.png",
+        "docs/assets/apps/spotify/preview-04.png",
+        "docs/assets/apps/spotify/preview-05.png",
+        "docs/assets/apps/spotify/preview-06.png"
+      ],
+      "kind": "app",
+      "license": "GPL-3.0-or-later; retain third-party notices",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-inputgate": "1.0.0",
+        "mgu-render": "0.6.24"
+      },
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
+      "source_origin_path": "apps/_sources/hexlay-idrive7-apps/apps/spotify",
+      "source_path": "apps/_ports/hexlay-idrive8/apps/spotify",
+      "source_port": {
+        "id": "hexlay-idrive8",
+        "path": "apps/_ports/hexlay-idrive8",
+        "provenance": "apps/_ports/hexlay-idrive8/PROVENANCE.json",
+        "revision": "aq-hexlay-id8-2",
+        "source_metadata": "apps/_ports/hexlay-idrive8/PORT.json"
+      },
+      "source_repository": "hexlay/idrive7-custom-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Spotify",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_ports/hexlay-idrive8/README.md",
+      "variant_key": "source:spotify@1.0.30",
+      "version": "1.0.30"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "What uses the head unit's memory and processor: free RAM, a live history, and every app and program with the memory it takes. Read only.",
+      "icon": "docs/assets/apps/sys_monitor/icon.png",
+      "id": "sys_monitor",
+      "image_count": 4,
+      "images": [
+        "docs/assets/apps/sys_monitor/preview-01.png",
+        "docs/assets/apps/sys_monitor/preview-02.png",
+        "docs/assets/apps/sys_monitor/preview-03.png",
+        "docs/assets/apps/sys_monitor/preview-04.png"
+      ],
+      "kind": "app",
+      "license": "GPL-3.0-or-later; retain third-party notices",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-inputgate": "1.0.0",
+        "mgu-render": "0.6.24"
+      },
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
+      "source_origin_path": "apps/_sources/hexlay-idrive7-apps/apps/sys_monitor",
+      "source_path": "apps/_ports/hexlay-idrive8/apps/sys_monitor",
+      "source_port": {
+        "id": "hexlay-idrive8",
+        "path": "apps/_ports/hexlay-idrive8",
+        "provenance": "apps/_ports/hexlay-idrive8/PROVENANCE.json",
+        "revision": "aq-hexlay-id8-2",
+        "source_metadata": "apps/_ports/hexlay-idrive8/PORT.json"
+      },
+      "source_repository": "hexlay/idrive7-custom-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "System Monitor",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_ports/hexlay-idrive8/README.md",
+      "variant_key": "source:sys_monitor@1.0.4",
+      "version": "1.0.4"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "NOT YET TESTED ON AN iDRIVE 8 CAR. Needs the MGU Store's Renderer (mgu-render): the Store installs it first if it is missing. Acceleration and braking times, measured and corrected for the road's slope (the DSC's acceleration sensor). Read-only. Performance runs only on closed courses.",
+      "duplicate_classification": "new-functional-app-or-explicit-id8-sibling",
+      "icon": "docs/assets/apps/true_time_id8/icon.png",
+      "id": "true_time_id8",
+      "id8_limitations": [
+        "Original raw-only signal backend; compatible target provider required. Actual ID8 execution not observed."
+      ],
+      "image_count": 0,
+      "images": [],
+      "kind": "app",
+      "license": "MIT with the original MIT app-kit notices retained",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-render": "0.3.1"
+      },
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
+      "source_path": "apps/_sources/giuseppe-mgu-apps-id8/true-time/app",
+      "source_repository": "giuseppesalatino-boop/mgu-apps-id8",
+      "source_review_notes": "Publisher ID8 ports, versions1.0.0, with real ID8 widget generator and authoritative KIT_HMI_ID8 marker. Publisher explicitly says no car validation. Signals backend is raw-only (no typed fallback); it requires a compatible target backend. Do not count the ID7 sibling variants again as new functionality or infer a live data result.",
+      "supported_hmi": [
+        "ID8"
+      ],
+      "title": "True Time (iDrive 8, untested)",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/giuseppe-mgu-apps-id8/README.md",
+      "variant_key": "source:true_time_id8@1.0.0",
+      "version": "1.0.0"
+    },
+    {
+      "artifact": {},
+      "build_requires": {},
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Plan a petrol and E85 blend, read the remaining fuel from the car, or estimate tank ethanol.",
+      "duplicate_classification": "id8-port-of-existing-function",
+      "icon": "docs/assets/apps/turnkey_e_blend_id8/icon.png",
+      "id": "turnkey_e_blend_id8",
+      "image_count": 0,
+      "images": [],
+      "kind": "app",
+      "license": "GPL-3.0-or-later application with original MIT TurnKey formula attribution",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "mgu-deploy": "0.7.0"
+      },
+      "source_path": "apps/_prebuilt/turnkey_e_blend_id8",
+      "source_repository": "vecyoroleg-lgtm/turnkey-e-blend-id8",
+      "supported_hmi": [
+        "ID8"
+      ],
+      "title": "TurnKey E Blend",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "https://raw.githubusercontent.com/vecyoroleg-lgtm/turnkey-e-blend-id8/918b336fbad09b8b49c0dd2914523c0ef1633d8a/README.md",
+      "variant_key": "source:turnkey_e_blend_id8@0.5.0",
+      "version": "0.5.0"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Personal maintenance log, tyre sizes and own target pressures, vehicle profile, modifications, engine oil and part numbers.",
+      "icon": "docs/assets/apps/vehicle_pass/icon.png",
+      "id": "vehicle_pass",
+      "id8_limitations": [
+        "Original AppStudio 1.1.0 declares ID7 only; AQ 1.1.1 is separately derived, with offline ID8 evidence and no publisher claim.",
+        "Actual target SDK members and the native renderer protocol/application area must exist. Test doubles are not evidence of target availability.",
+        "Unknown/stale speed, read errors or provider loss pause Bimmer Blocks. No game operation is authorized by a cached stationary value on ID8.",
+        "If a getter never settles, it retains its slot and the game remains paused; no unbounded retry queue is created.",
+        "Vehicle Pass values are personal manual records, not live pressures, verified parts recommendations or CBS updates.",
+        "Target installation, registration and physical UI/controller/speed behavior have not been observed."
+      ],
+      "image_count": 0,
+      "images": [],
+      "kind": "app",
+      "license": "MIT for original App Studio custom code; retain drawing-kit, font and third-party notices",
+      "live_install_status": "NOT OBSERVED",
+      "local_source_provenance": "data/appstudio-source-imports-20261119.json",
+      "requires": {
+        "mgu-render": "0.6.24"
+      },
+      "requires_installed_capabilities": [
+        "renderer"
+      ],
+      "source_git_commit": null,
+      "source_origin_path": "apps/_sources/app-studio-custom/projects/apps/apps/vehicle_pass",
+      "source_path": "apps/_ports/appstudio-idrive8/apps/vehicle_pass",
+      "source_port": {
+        "id": "appstudio-idrive8",
+        "path": "apps/_ports/appstudio-idrive8",
+        "provenance": "apps/_ports/appstudio-idrive8/AQ_PORT.json",
+        "revision": 1,
+        "source_metadata": "apps/_ports/appstudio-idrive8/AQ_PORT.json"
+      },
+      "source_repository": null,
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Bimmer Pass",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/app-studio-custom/README-DE-EN.txt",
+      "upstream_version": "1.1.0",
+      "variant_key": "source:vehicle_pass@1.1.1",
+      "version": "1.1.1"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Oil and coolant warm-up calculator (time to ready), safe rev limit, turbo cool-down and a cold start counter",
+      "icon": "docs/assets/apps/warmup/icon.png",
+      "id": "warmup",
+      "image_count": 3,
+      "images": [
+        "docs/assets/apps/warmup/preview-01.png",
+        "docs/assets/apps/warmup/preview-02.gif",
+        "docs/assets/apps/warmup/preview-03.png"
+      ],
+      "kind": "app",
+      "license": "MIT",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "idrive7-renderd": "2.1.15"
+      },
+      "source_path": "apps/_sources/idrive7-apps/apps/warmup",
+      "source_repository": "cauliflowermossgrape/idrive7-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Warm-Up",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/idrive7-apps/README.md",
+      "variant_key": "source:warmup@1.9.0",
+      "version": "1.9.0"
+    },
+    {
+      "artifact": {},
+      "build_requires": {
+        "mgu-deploy": "0.3.2",
+        "mgu-python": "1.0.2"
+      },
+      "category": "app",
+      "channel": "source",
+      "delivery": "branch source",
+      "description": "Transmission Config, experimental ZF 8HP monitor: live data, clutch fill adaptations, shift maps and temperature history",
+      "icon": "docs/assets/apps/zf8hp/icon.png",
+      "id": "zf8hp",
+      "image_count": 3,
+      "images": [
+        "docs/assets/apps/zf8hp/preview-01.png",
+        "docs/assets/apps/zf8hp/preview-02.png",
+        "docs/assets/apps/zf8hp/preview-03.png"
+      ],
+      "kind": "app",
+      "license": "MIT",
+      "live_install_status": "NOT OBSERVED",
+      "requires": {
+        "idrive7-renderd": "2.1.18",
+        "mgu-inputgate": "1.1.0"
+      },
+      "source_commit": "8d4aa0ef8ef7ae2a007a24acdbda095f219fc7b4",
+      "source_path": "apps/_sources/idrive7-apps/apps/zf8hp",
+      "source_repository": "cauliflowermossgrape/idrive7-apps",
+      "supported_hmi": [
+        "ID7",
+        "ID8"
+      ],
+      "title": "Transmission Config",
+      "upstream_artifact_sha256": null,
+      "upstream_readme": "apps/_sources/idrive7-apps/README.md",
+      "upstream_version": "1.5.8",
+      "variant_key": "source:zf8hp@1.5.8",
+      "version": "1.5.8"
+    }
+  ]
+}
