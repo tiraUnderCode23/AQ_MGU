@@ -25,7 +25,8 @@ Evidence schema 1:
     historical_migrations: {historical_variant_key: {
       to: selected_variant_key, reason: nonempty reviewed migration explanation
     }},
-    eligibility_policy: "strict" | "preservation"
+    eligibility_policy: "strict" | "preservation",
+    export_budget_bytes: reviewed integer byte budget (default 200 MiB; max 512 MiB)
   }}
 
 "eligible_static" is a reviewed evidence classification, never a live test.
@@ -55,6 +56,8 @@ from urllib.parse import quote, urlsplit
 
 MAX_FILES = 20_000
 MAX_TOTAL_BYTES = 200 * 1024 * 1024
+MAX_EXPORT_BYTES = 512 * 1024 * 1024
+SIZE_ACCOUNTING_PASSES = 16
 MAX_JSON_BYTES = 8 * 1024 * 1024
 COMMIT_RE = re.compile(r"[0-9a-f]{40}")
 SHA_RE = re.compile(r"[0-9a-f]{64}")
@@ -82,6 +85,14 @@ def json_bytes(value: Any) -> bytes:
 
 def sha256(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
+
+
+def checked_export_budget(value: Any) -> int:
+    if type(value) is not int or not 0 < value <= MAX_EXPORT_BYTES:
+        raise PlanningError(
+            f"export_budget_bytes must be an integer from 1 to {MAX_EXPORT_BYTES} (512 MiB)"
+        )
+    return value
 
 
 def readme_text(value: Any) -> str:
@@ -242,7 +253,7 @@ class GitSnapshot:
         blob = self.files.get(path)
         if blob is None or blob.mode not in {"100644", "100755"}:
             raise PlanningError(f"Missing/non-regular committed input: {path}")
-        if blob.size > MAX_TOTAL_BYTES:
+        if blob.size > MAX_EXPORT_BYTES:
             raise PlanningError(f"Committed input exceeds the byte limit: {path}")
         data = self._git("cat-file", "blob", blob.oid)
         if len(data) != blob.size:
@@ -288,6 +299,9 @@ class PlanBuilder:
         if not isinstance(distributions, dict) or not isinstance(distributions.get(distribution), dict):
             raise PlanningError(f"Missing distribution evidence: {distribution}")
         self.configuration = distributions[distribution]
+        self.export_budget_bytes = checked_export_budget(
+            self.configuration.get("export_budget_bytes", MAX_TOTAL_BYTES)
+        )
         self.target_hmi = self.configuration.get("target_hmi")
         if self.target_hmi not in (None, "ID7", "ID8"):
             raise PlanningError("target_hmi must be ID7, ID8, or null")
@@ -341,8 +355,10 @@ class PlanBuilder:
                 record["reasons"].append(reason)
         if len(self.files) > MAX_FILES:
             raise PlanningError("Selected inputs exceed the file-count budget")
-        if sum(item["size"] for item in self.files.values()) > MAX_TOTAL_BYTES:
-            raise PlanningError("Selected inputs exceed the 200 MiB byte budget; split the distribution")
+        if sum(item["size"] for item in self.files.values()) > self.export_budget_bytes:
+            raise PlanningError(
+                f"Selected inputs exceed the reviewed export byte budget ({self.export_budget_bytes} bytes)"
+            )
 
     def citations(self, key: str, record: dict):
         citations = record.get("evidence")
@@ -1012,9 +1028,6 @@ class PlanBuilder:
             item["owners"].sort()
             item["reasons"].sort()
             files.append(item)
-        total = sum(item["size"] for item in files) + sum(len(text.encode("utf-8")) for text in generated.values())
-        if total > MAX_TOTAL_BYTES:
-            raise PlanningError("Inputs plus generated metadata exceed the 200 MiB distribution budget")
         if len(files) + len(generated) + 2 > MAX_FILES:
             raise PlanningError("Inputs plus generated receipts exceed the file-count budget")
         for path in generated:
@@ -1035,17 +1048,130 @@ class PlanBuilder:
             "store_source_configuration": store_config_proof,
             "external_media": self.external_media, "target_inputs": self.target_inputs,
             "warnings": sorted(set(self.warnings)),
-            "totals": {"files": len(files) + len(generated), "bytes": total},
-            "limits": {"files": MAX_FILES, "bytes": MAX_TOTAL_BYTES},
+            "limits": {
+                "files": MAX_FILES, "bytes": self.export_budget_bytes,
+                "hard_bytes": MAX_EXPORT_BYTES,
+            },
         }
-        plan["plan_sha256"] = sha256(json_bytes(plan))
-        return plan
+        return finalize_export_accounting(plan)
 
 
 def plan_distribution(snapshot, evidence: dict, distribution: str) -> dict:
     if not isinstance(evidence, dict):
         raise PlanningError("Evidence must be a JSON object")
     return PlanBuilder(snapshot, evidence, distribution).build()
+
+
+def completion_artifacts(plan: dict) -> tuple[bytes, bytes]:
+    """Render both completion files from verified descriptors, without I/O.
+
+    The receipt lists every other file; its own bytes are included in totals,
+    without making a self-referential checksum claim.
+    """
+    raw_plan = json_bytes(plan)
+    written = [
+        {field: item[field] for field in ("path", "size", "sha256", "mode")}
+        for item in plan["files"]
+    ]
+    for path, text in sorted(plan["generated_files"].items()):
+        raw = text.encode("utf-8")
+        written.append({"path": path, "size": len(raw), "sha256": sha256(raw), "mode": "100644"})
+    written.append({
+        "path": ".distribution/plan.json", "size": len(raw_plan),
+        "sha256": sha256(raw_plan), "mode": "100644",
+    })
+    receipt = {
+        "schema": 1, "state": "complete", "source_commit": plan["source_commit"],
+        "plan_sha256": plan["plan_sha256"], "evidence_sha256": plan["evidence_sha256"],
+        "source_manifest_sha256": plan["source_manifest_sha256"],
+        "historical_preservation": plan["historical_preservation"],
+        "store_source_configuration": plan["store_source_configuration"],
+        "totals": plan["totals"], "limits": plan["limits"],
+        "files": written, "runtime": "NOT_OBSERVED",
+        "external_payloads_downloaded": False,
+    }
+    return raw_plan, json_bytes(receipt)
+
+
+def export_content_totals(plan: dict) -> dict[str, int]:
+    sizes = [item["size"] for item in plan["files"]]
+    if any(type(size) is not int or size < 0 for size in sizes):
+        raise PlanningError("Export input sizes must be nonnegative integers")
+    return {
+        "files": len(plan["files"]) + len(plan["generated_files"]) + 2,
+        "bytes": sum(sizes) + sum(len(text.encode("utf-8")) for text in plan["generated_files"].values()),
+    }
+
+
+def enforce_export_limits(totals: dict[str, int], limits: dict) -> None:
+    budget = checked_export_budget(limits.get("bytes"))
+    if (type(limits.get("files")) is not int or limits["files"] != MAX_FILES
+            or type(limits.get("hard_bytes")) is not int or limits["hard_bytes"] != MAX_EXPORT_BYTES):
+        raise PlanningError("Export limits must retain the fixed file-count and hard byte ceilings")
+    if totals["files"] > MAX_FILES:
+        raise PlanningError("Inputs plus completion files exceed the file-count budget")
+    if totals["bytes"] > budget:
+        raise PlanningError(
+            f"Export including plan and receipt exceeds the reviewed export byte budget "
+            f"({totals['bytes']} > {budget} bytes)"
+        )
+
+
+def finalize_export_accounting(plan: dict) -> dict:
+    """Count exact UTF-8 output bytes, including both completion files.
+
+    Only decimal counter widths can change the serialized lengths; SHA-256
+    values always have 64 characters. Under the hard ceiling the counters have
+    at most nine digits. A fixed sixteen-pass bound prevents an unbounded
+    fixed-point loop, and failure never permits materialization.
+    """
+    content = export_content_totals(plan)
+    enforce_export_limits(content, plan["limits"])
+    plan["totals"] = dict(content)
+    for _ in range(SIZE_ACCOUNTING_PASSES):
+        unsigned = {key: value for key, value in plan.items() if key != "plan_sha256"}
+        plan["plan_sha256"] = sha256(json_bytes(unsigned))
+        raw_plan, raw_receipt = completion_artifacts(plan)
+        actual = {
+            "files": content["files"],
+            "bytes": content["bytes"] + len(raw_plan) + len(raw_receipt),
+        }
+        enforce_export_limits(actual, plan["limits"])
+        if actual == plan["totals"]:
+            return plan
+        plan["totals"] = actual
+    raise PlanningError("Completion-file byte accounting did not converge within its fixed bound")
+
+
+def checked_completion_artifacts(plan: dict) -> tuple[bytes, bytes]:
+    """Recheck approved accounting and its evidence budget before any write."""
+    content = export_content_totals(plan)
+    enforce_export_limits(content, plan["limits"])
+    evidence = parse_json(
+        plan["generated_files"][".distribution/eligibility-evidence.json"].encode("utf-8"),
+        "export eligibility evidence",
+    )
+    if (not isinstance(evidence, dict) or evidence.get("source_commit") != plan["source_commit"]
+            or sha256(json_bytes(evidence)) != plan["evidence_sha256"]):
+        raise PlanningError("Export budget evidence differs from the approved plan")
+    distributions = evidence.get("distributions", {})
+    configuration = distributions.get(plan["distribution"]) if isinstance(distributions, dict) else None
+    if not isinstance(configuration, dict):
+        raise PlanningError("Export budget lacks its distribution evidence")
+    budget = checked_export_budget(configuration.get("export_budget_bytes", MAX_TOTAL_BYTES))
+    if plan["limits"]["bytes"] != budget:
+        raise PlanningError("Export byte budget differs from its distribution evidence")
+    raw_plan, raw_receipt = completion_artifacts(plan)
+    actual = {
+        "files": content["files"],
+        "bytes": content["bytes"] + len(raw_plan) + len(raw_receipt),
+    }
+    enforce_export_limits(actual, plan["limits"])
+    totals = plan.get("totals")
+    if (not isinstance(totals, dict) or any(type(totals.get(field)) is not int for field in actual)
+            or totals != actual):
+        raise PlanningError("Approved export totals must include the exact plan and receipt bytes and files")
+    return raw_plan, raw_receipt
 
 
 def materialize_distribution(snapshot, plan: dict, output: Path, approved_plan_sha256: str) -> Path:
@@ -1058,6 +1184,7 @@ def materialize_distribution(snapshot, plan: dict, output: Path, approved_plan_s
         raise PlanningError("Approved plan SHA-256 does not match; review a fresh plan")
     if plan.get("source_commit") != snapshot.commit:
         raise PlanningError("Snapshot commit differs from the approved plan")
+    raw_plan, raw_receipt = checked_completion_artifacts(plan)
     output = output.absolute()
     if output.exists() or output.is_symlink():
         raise PlanningError("Export target already exists; it will never be cleared or reused")
@@ -1076,7 +1203,8 @@ def materialize_distribution(snapshot, plan: dict, output: Path, approved_plan_s
             raise PlanningError(f"Output collision in approved plan: {path}")
         destinations.add(folded)
         blob = snapshot.files.get(item["source_path"])
-        if blob is None or blob.mode not in {"100644", "100755"} or blob.mode != item["mode"] or blob.oid != item["oid"]:
+        if (blob is None or blob.mode not in {"100644", "100755"} or blob.mode != item["mode"]
+                or blob.oid != item["oid"] or blob.size != item["size"]):
             raise PlanningError(f"Source object differs from approved plan: {item['source_path']}")
         data = snapshot.read(item["source_path"])
         if len(data) != item["size"] or sha256(data) != item["sha256"]:
@@ -1107,30 +1235,16 @@ def materialize_distribution(snapshot, plan: dict, output: Path, approved_plan_s
         if executable:
             destination.chmod(destination.stat().st_mode | stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
 
-    written = []
     for item in plan["files"]:
         data = snapshot.read(item["source_path"])
         if len(data) != item["size"] or sha256(data) != item["sha256"]:
             raise PlanningError("Input changed during export; incomplete output retained for review")
         write_new(item["path"], data, item["mode"] == "100755")
-        written.append({"path": item["path"], "size": len(data), "sha256": sha256(data), "mode": item["mode"]})
     for path, text in sorted(plan["generated_files"].items()):
         raw = text.encode("utf-8")
         write_new(path, raw)
-        written.append({"path": path, "size": len(raw), "sha256": sha256(raw), "mode": "100644"})
-    raw_plan = json_bytes(plan)
     write_new(".distribution/plan.json", raw_plan)
-    written.append({"path": ".distribution/plan.json", "size": len(raw_plan), "sha256": sha256(raw_plan), "mode": "100644"})
-    receipt = {
-        "schema": 1, "state": "complete", "source_commit": snapshot.commit,
-        "plan_sha256": digest, "evidence_sha256": plan["evidence_sha256"],
-        "source_manifest_sha256": plan["source_manifest_sha256"],
-        "historical_preservation": plan["historical_preservation"],
-        "store_source_configuration": plan["store_source_configuration"],
-        "files": written, "runtime": "NOT_OBSERVED",
-        "external_payloads_downloaded": False,
-    }
-    write_new(".distribution/receipt.json", json_bytes(receipt))
+    write_new(".distribution/receipt.json", raw_receipt)
     return output
 
 

@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "basis_commit": "2a0e23fded8aecf0b7345754ceae4da6992821b1",
+  "purpose": "Bounded local export accounting, default transport caveats, complete historical source preservation and game documentation classification.",
+  "targeted_tests": {
+    "source_commit": "2a0e23fded8aecf0b7345754ceae4da6992821b1",
+    "working_tree_validation": true,
+    "modules": [
+      "test_distribution_branch_plan",
+      "test_component_readme_matrix"
+    ],
+    "tests": 65,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "elapsed_seconds": 0.502,
+    "successful": true,
+    "runtime_on_hu": "NOT_OBSERVED"
+  },
+  "previous_full_offline_suite": {
+    "commit": "2a0e23fded8aecf0b7345754ceae4da6992821b1",
+    "tests": 282,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "archive_files": 30,
+  "archive_bytes_sha256_verified": 459382,
+  "active_component_source_or_runtime_changes": false,
+  "game_metadata_category_count": 20,
+  "reviewed_files_sha256": {
+    ".gitattributes": "9c7154c2204af05518218c335e2b4572f88e5fa70ee8ecce919fc4d8ab65e736",
+    "README.md": "1904ce7a951fc7cfbdfd2574199233dec1a6bc4357282d1cba45287c736bdadf",
+    "data/components.json": "14ee252701564fe0acd5fce6c98142b7ce36480cd151428f49b871b5955e0218",
+    "tools/render_catalog_docs.py": "15fb1d6128e69f2322c671e0b5732ad669ba739f64198109864fdcb3570c4285",
+    "tools/plan_distribution_branches.py": "10f5b6eca21304f33a8c856a31dacd7881d742fdf9b8a08b308f601e498d736c",
+    "tests/test_distribution_branch_plan.py": "156ef162447b94bb0944ab4c997afb87b2f48c41f37e5e20521d955323e64ed2",
+    "data/games-source-preservation-20261120.json": "a3c0085d5d24168ecdfc7da4240e2197f59845ac65c9976741d245ab62c8adc3",
+    "docs/GAMES_SOURCE_PRESERVATION_20261120_AR.md": "07dbfd9a58a9ba1315536f47ea6c25a357c527ccd70fd2cae2da2a994f057eae",
+    "docs/DISTRIBUTION_EXPORT_BUDGET_AR.md": "ffc66e847ec8d329ef442f236f78f1f7454d7ce6d310ebf7c78b1c824f0da46c",
+    "data/distribution-size-measurement-20261120.json": "0a5c93f172d179390612ed530e18007e5daf3bbe14dc7476cc6aa06ae4d98ec5",
+    "data/distribution-native-partials-20261120.json": "d175eff50a77fe8ebaf49dec6e9274ce37decd9de18b4e8d66efa0814d689bd6"
+  },
+  "measurement": "data/distribution-size-measurement-20261120.json",
+  "native_partial_measurement": "data/distribution-native-partials-20261120.json",
+  "runtime": "NOT_OBSERVED"
+}

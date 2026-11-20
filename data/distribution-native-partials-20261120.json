@@ -1,0 +1,1318 @@
+{
+  "contract": "Static transcription of original sources.js partPaths/contentSpec/partFiles SKIP; no builders or original JS executed. Only selected runtime/build paths are counted, not export-only docs, evidence, media, or preservation archives.",
+  "distributions": {
+    "games": {
+      "components": [
+        {
+          "bytes": 2065820,
+          "files": 66,
+          "key": "source:bimmer_blocks@1.1.1",
+          "largest_file": {
+            "oid": "9d282dda640553986e0bfea365c1aea01adfc916",
+            "path": "apps/_ports/appstudio-idrive8/kit/runtime/fonts/cjk.json",
+            "size": 470342
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_ports/appstudio-idrive8/apps/bimmer_blocks",
+            "apps/_ports/appstudio-idrive8/kit",
+            "apps/_ports/appstudio-idrive8/LICENSE",
+            "apps/_ports/appstudio-idrive8/THIRD-PARTY.txt",
+            "apps/_ports/appstudio-idrive8/AQ_PORT.json",
+            "apps/_ports/appstudio-idrive8/kit/tools/build.py"
+          ]
+        },
+        {
+          "bytes": 34107354,
+          "files": 8,
+          "key": "source:cluster-render@0.6.9",
+          "largest_file": {
+            "oid": "792c313c107c484c70b0559291d1bda6b1635123",
+            "path": "tools/_released/cluster-render/files/cluster-render-idrive7",
+            "size": 16007400
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "tools/_released/cluster-render"
+          ]
+        },
+        {
+          "bytes": 42170,
+          "files": 29,
+          "key": "source:dk_backgammon@0.1.1",
+          "largest_file": {
+            "oid": "c80dfe610695c3d27cff3672b42ef753bb2d2fdf",
+            "path": "apps/_sources/mistergahan-mgu-backgammon/apps/dk_backgammon/src/engine.js",
+            "size": 6876
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_sources/mistergahan-mgu-backgammon/apps/dk_backgammon"
+          ]
+        },
+        {
+          "bytes": 38709,
+          "files": 29,
+          "key": "source:dk_tetris@0.1.1",
+          "largest_file": {
+            "oid": "b85cfa91b747226300e07c68e6086ef2303e3ae1",
+            "path": "apps/_sources/mistergahan-mgu-backgammon/apps/dk_tetris/src/app.js",
+            "size": 7035
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_sources/mistergahan-mgu-backgammon/apps/dk_tetris"
+          ]
+        },
+        {
+          "bytes": 32264183,
+          "files": 104,
+          "key": "source:doom@1.7.22",
+          "largest_file": {
+            "oid": "96cd0760f4f2ee5b910812ca782208ef7101e330",
+            "path": "apps/_sources/idrive7-apps/kit/localization/diagnostic-full.ru.json",
+            "size": 13580391
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_sources/idrive7-apps/apps/doom",
+            "apps/_sources/idrive7-apps/kit",
+            "apps/_sources/idrive7-apps/kit/tools/build.py"
+          ]
+        },
+        {
+          "bytes": 1918889,
+          "files": 126,
+          "key": "source:iabadia_m_arcade@0.1.3",
+          "largest_file": {
+            "oid": "c1cd0b7d8ca2a79cbfc6a3449ef99ae8b6b00e0f",
+            "path": "apps/_sources/iabadia-idrive-games/apps/iabadia_m_arcade/preview/carousel.gif",
+            "size": 456725
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_sources/iabadia-idrive-games/apps/iabadia_m_arcade"
+          ]
+        },
+        {
+          "bytes": 235207,
+          "files": 14,
+          "key": "source:idrive7-renderd@2.1.19",
+          "largest_file": {
+            "oid": "fdc594a2d611c91e296107d27420cb25cf3d7124",
+            "path": "apps/_sources/idrive7-apps/kit/renderd/prebuilt/mgu-renderd",
+            "size": 148048
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_sources/idrive7-apps/kit/renderd/prebuilt"
+          ]
+        },
+        {
+          "bytes": 8938,
+          "files": 5,
+          "key": "source:mgu-game-net@0.1.0",
+          "largest_file": {
+            "oid": "18791904b88107e5f54bfbcd3a6bb8943273a465",
+            "path": "apps/_sources/namels-mgu-apps-full/native/game-net/server.js",
+            "size": 4194
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_sources/namels-mgu-apps-full/native/game-net"
+          ]
+        },
+        {
+          "bytes": 130765,
+          "files": 16,
+          "key": "source:mgu-inputgate@1.2.2",
+          "largest_file": {
+            "oid": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
+            "path": "tools/_packages/mgu-inputgate/licenses/LICENSE.renderd",
+            "size": 35149
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "tools/_packages/mgu-inputgate"
+          ]
+        },
+        {
+          "bytes": 1920177,
+          "files": 68,
+          "key": "source:mgu_gamestation@0.3.0",
+          "largest_file": {
+            "oid": "1f70bad7869dd890a3bf482858b9c5e29ea82cd5",
+            "path": "apps/_sources/namels-mgu-apps-full/apps/mgu_gamestation/gb_vendor.js",
+            "size": 425205
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_sources/namels-mgu-apps-full/apps/mgu_gamestation",
+            "apps/_sources/namels-mgu-apps-full/kit",
+            "apps/_sources/namels-mgu-apps-full/tools",
+            "apps/_sources/namels-mgu-apps-full/tools/build_store_app.py"
+          ]
+        },
+        {
+          "bytes": 29372398,
+          "files": 75,
+          "key": "source:mx_road_hopper@0.1.1",
+          "largest_file": {
+            "oid": "96cd0760f4f2ee5b910812ca782208ef7101e330",
+            "path": "apps/_sources/idrive7-apps/kit/localization/diagnostic-full.ru.json",
+            "size": 13580391
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_sources/cruzen991-cluster/apps/mx_road_hopper",
+            "apps/_sources/cruzen991-cluster/kit",
+            "apps/_sources/idrive7-apps/kit/localization",
+            "apps/_sources/cruzen991-cluster/kit/tools/build.py"
+          ]
+        },
+        {
+          "bytes": 3911123,
+          "files": 111,
+          "key": "source:parked_games@0.2.3",
+          "largest_file": {
+            "oid": "377fd27591bed0ec6b4e8d4ffd74201e87feb78c",
+            "path": "apps/_ports/maxxxfoka-idrive8/kit/localization/fonts/korean.json",
+            "size": 755507
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_ports/maxxxfoka-idrive8/apps/parked_games",
+            "apps/_ports/maxxxfoka-idrive8/kit",
+            "apps/_ports/maxxxfoka-idrive8/LICENSE",
+            "apps/_ports/maxxxfoka-idrive8/NOTICE.zh-CN.md",
+            "apps/_ports/maxxxfoka-idrive8/PORT.json",
+            "apps/_ports/maxxxfoka-idrive8/PROVENANCE.json",
+            "apps/_ports/maxxxfoka-idrive8/kit/tools/build.py"
+          ]
+        },
+        {
+          "bytes": 267485,
+          "files": 9,
+          "key": "source:vizualyse-bus@0.1.0",
+          "largest_file": {
+            "oid": "4ee86f97586a8f1d7e1e4f30f700fe348d1bbea7",
+            "path": "tools/_released/vizualyse-bus/files/mosquitto",
+            "size": 210992
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "tools/_released/vizualyse-bus"
+          ]
+        },
+        {
+          "bytes": 2709718,
+          "files": 29,
+          "key": "source:vizualyse-moonlight@0.3.1",
+          "largest_file": {
+            "oid": "c95b04a792a2dfad6a2361fd0b6e3ccbf397471f",
+            "path": "tools/_released/vizualyse-moonlight/files/moonlight-core",
+            "size": 1965816
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "tools/_released/vizualyse-moonlight"
+          ]
+        },
+        {
+          "bytes": 188853,
+          "files": 20,
+          "key": "source:vizualyse_moonlight@0.3.1",
+          "largest_file": {
+            "oid": "76889b589ec831dd9b791601f6592793356ce9cd",
+            "path": "apps/_published/vizualyse_moonlight/src/qrcode.js",
+            "size": 56694
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_published/vizualyse_moonlight"
+          ]
+        }
+      ],
+      "max_bytes": {
+        "bytes": 34107354,
+        "files": 8,
+        "key": "source:cluster-render@0.6.9",
+        "largest_file": {
+          "oid": "792c313c107c484c70b0559291d1bda6b1635123",
+          "path": "tools/_released/cluster-render/files/cluster-render-idrive7",
+          "size": 16007400
+        },
+        "missing_paths": [],
+        "mode": "partial",
+        "paths": [
+          "tools/_released/cluster-render"
+        ]
+      },
+      "max_files": {
+        "bytes": 1918889,
+        "files": 126,
+        "key": "source:iabadia_m_arcade@0.1.3",
+        "largest_file": {
+          "oid": "c1cd0b7d8ca2a79cbfc6a3449ef99ae8b6b00e0f",
+          "path": "apps/_sources/iabadia-idrive-games/apps/iabadia_m_arcade/preview/carousel.gif",
+          "size": 456725
+        },
+        "missing_paths": [],
+        "mode": "partial",
+        "paths": [
+          "apps/_sources/iabadia-idrive-games/apps/iabadia_m_arcade"
+        ]
+      },
+      "missing_paths": [],
+      "over_200_mib": [],
+      "over_400_files": [],
+      "partial_components": 15,
+      "selected_variants": 40,
+      "source_components": 15,
+      "whole_repository_required": []
+    },
+    "id8": {
+      "components": [
+        {
+          "bytes": 1844772,
+          "files": 46,
+          "key": "source:ab_storage@1.2.4",
+          "largest_file": {
+            "oid": "9d282dda640553986e0bfea365c1aea01adfc916",
+            "path": "apps/_ports/bmwenthusiast-idrive8/kit/runtime/fonts/cjk.json",
+            "size": 470342
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_ports/bmwenthusiast-idrive8/apps/ab_storage",
+            "apps/_ports/bmwenthusiast-idrive8/kit",
+            "apps/_ports/bmwenthusiast-idrive8/LICENSE",
+            "apps/_ports/bmwenthusiast-idrive8/THIRD_PARTY_LICENSES",
+            "apps/_ports/bmwenthusiast-idrive8/PORT.json",
+            "apps/_ports/bmwenthusiast-idrive8/PROVENANCE.json",
+            "apps/_ports/bmwenthusiast-idrive8/kit/tools/build.py"
+          ]
+        },
+        {
+          "bytes": 1958505,
+          "files": 70,
+          "key": "source:adam_shiftlights@0.4.6",
+          "largest_file": {
+            "oid": "9d282dda640553986e0bfea365c1aea01adfc916",
+            "path": "apps/_ports/pinguinooo-idrive8/kit/runtime/fonts/cjk.json",
+            "size": 470342
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_ports/pinguinooo-idrive8/apps/adam_shiftlights",
+            "apps/_ports/pinguinooo-idrive8/kit/runtime",
+            "apps/_ports/pinguinooo-idrive8/kit/platform",
+            "apps/_ports/pinguinooo-idrive8/kit/tools/build.py",
+            "apps/_ports/pinguinooo-idrive8/kit/tools/pack_data.py",
+            "apps/_ports/pinguinooo-idrive8/kit/tools/localize.py",
+            "apps/_ports/pinguinooo-idrive8/kit/tools/locale-revisions.json",
+            "apps/_ports/pinguinooo-idrive8/kit/tools/oapgen",
+            "apps/_ports/pinguinooo-idrive8/LICENSE",
+            "apps/_ports/pinguinooo-idrive8/kit/LICENSE",
+            "apps/_ports/pinguinooo-idrive8/kit/NOTICE",
+            "apps/_ports/pinguinooo-idrive8/kit/NOTICE.zh-CN.md",
+            "apps/_ports/pinguinooo-idrive8/AQ_PORT.json",
+            "apps/_ports/pinguinooo-idrive8/kit/tools/build.py"
+          ]
+        },
+        {
+          "bytes": 1851785,
+          "files": 62,
+          "key": "source:adam_vitals@0.2.0",
+          "largest_file": {
+            "oid": "9d282dda640553986e0bfea365c1aea01adfc916",
+            "path": "apps/_ports/pinguinooo-idrive8/kit/runtime/fonts/cjk.json",
+            "size": 470342
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_ports/pinguinooo-idrive8/apps/adam_vitals",
+            "apps/_ports/pinguinooo-idrive8/kit/runtime",
+            "apps/_ports/pinguinooo-idrive8/kit/platform",
+            "apps/_ports/pinguinooo-idrive8/kit/tools/build.py",
+            "apps/_ports/pinguinooo-idrive8/kit/tools/pack_data.py",
+            "apps/_ports/pinguinooo-idrive8/kit/tools/localize.py",
+            "apps/_ports/pinguinooo-idrive8/kit/tools/locale-revisions.json",
+            "apps/_ports/pinguinooo-idrive8/kit/tools/oapgen",
+            "apps/_ports/pinguinooo-idrive8/LICENSE",
+            "apps/_ports/pinguinooo-idrive8/kit/LICENSE",
+            "apps/_ports/pinguinooo-idrive8/kit/NOTICE",
+            "apps/_ports/pinguinooo-idrive8/kit/NOTICE.zh-CN.md",
+            "apps/_ports/pinguinooo-idrive8/AQ_PORT.json",
+            "apps/_ports/pinguinooo-idrive8/kit/tools/build.py"
+          ]
+        },
+        {
+          "bytes": 30273856,
+          "files": 108,
+          "key": "source:ambient_config@2.7.13",
+          "largest_file": {
+            "oid": "96cd0760f4f2ee5b910812ca782208ef7101e330",
+            "path": "apps/_sources/idrive7-apps/kit/localization/diagnostic-full.ru.json",
+            "size": 13580391
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_sources/idrive7-apps/apps/ambient_config",
+            "apps/_sources/idrive7-apps/kit",
+            "apps/_sources/idrive7-apps/kit/tools/build.py"
+          ]
+        },
+        {
+          "bytes": 29531575,
+          "files": 84,
+          "key": "source:andrei_mdrive@0.4.0",
+          "largest_file": {
+            "oid": "96cd0760f4f2ee5b910812ca782208ef7101e330",
+            "path": "apps/_sources/idrive7-apps/kit/localization/diagnostic-full.ru.json",
+            "size": 13580391
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_sources/grabandrey-m-drive-control/apps/andrei_mdrive",
+            "apps/_sources/grabandrey-m-drive-control/kit",
+            "apps/_sources/idrive7-apps/kit/localization",
+            "apps/_sources/grabandrey-m-drive-control/kit/tools/build.py"
+          ]
+        },
+        {
+          "bytes": 1994073,
+          "files": 68,
+          "key": "source:aref_carcare@0.2.4",
+          "largest_file": {
+            "oid": "d435820f945874bcb63e40383d4c0a20507ed8d4",
+            "path": "apps/_ports/arefahmad-idrive8/kit/runtime/fonts/arabic.json",
+            "size": 440854
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_ports/arefahmad-idrive8/apps/aref_carcare",
+            "apps/_ports/arefahmad-idrive8/kit/runtime",
+            "apps/_ports/arefahmad-idrive8/kit/platform",
+            "apps/_ports/arefahmad-idrive8/kit/tools/build.py",
+            "apps/_ports/arefahmad-idrive8/kit/tools/pack_data.py",
+            "apps/_ports/arefahmad-idrive8/kit/tools/localize.py",
+            "apps/_ports/arefahmad-idrive8/kit/tools/locale-revisions.json",
+            "apps/_ports/arefahmad-idrive8/kit/tools/oapgen",
+            "apps/_ports/arefahmad-idrive8/LICENSE",
+            "apps/_ports/arefahmad-idrive8/kit/LICENSE.idrive7-apps",
+            "apps/_ports/arefahmad-idrive8/kit/LICENSE.nickgcode",
+            "apps/_ports/arefahmad-idrive8/kit/LICENSE.alexpereap",
+            "apps/_ports/arefahmad-idrive8/kit/NOTICE.AQ-ID8",
+            "apps/_ports/arefahmad-idrive8/PORT.json",
+            "apps/_ports/arefahmad-idrive8/kit/tools/build.py"
+          ]
+        },
+        {
+          "bytes": 2405436,
+          "files": 76,
+          "key": "source:aref_carlyrics@0.3.10",
+          "largest_file": {
+            "oid": "d435820f945874bcb63e40383d4c0a20507ed8d4",
+            "path": "apps/_ports/arefahmad-idrive8/kit/runtime/fonts/arabic.json",
+            "size": 440854
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_ports/arefahmad-idrive8/apps/aref_carlyrics",
+            "apps/_ports/arefahmad-idrive8/kit/runtime",
+            "apps/_ports/arefahmad-idrive8/kit/platform",
+            "apps/_ports/arefahmad-idrive8/kit/tools/build.py",
+            "apps/_ports/arefahmad-idrive8/kit/tools/pack_data.py",
+            "apps/_ports/arefahmad-idrive8/kit/tools/localize.py",
+            "apps/_ports/arefahmad-idrive8/kit/tools/locale-revisions.json",
+            "apps/_ports/arefahmad-idrive8/kit/tools/oapgen",
+            "apps/_ports/arefahmad-idrive8/LICENSE",
+            "apps/_ports/arefahmad-idrive8/kit/LICENSE.idrive7-apps",
+            "apps/_ports/arefahmad-idrive8/kit/LICENSE.nickgcode",
+            "apps/_ports/arefahmad-idrive8/kit/LICENSE.alexpereap",
+            "apps/_ports/arefahmad-idrive8/kit/NOTICE.AQ-ID8",
+            "apps/_ports/arefahmad-idrive8/PORT.json",
+            "apps/_ports/arefahmad-idrive8/kit/tools/build.py"
+          ]
+        },
+        {
+          "bytes": 1986031,
+          "files": 68,
+          "key": "source:aref_explorer@0.2.3",
+          "largest_file": {
+            "oid": "d435820f945874bcb63e40383d4c0a20507ed8d4",
+            "path": "apps/_ports/arefahmad-idrive8/kit/runtime/fonts/arabic.json",
+            "size": 440854
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_ports/arefahmad-idrive8/apps/aref_explorer",
+            "apps/_ports/arefahmad-idrive8/kit/runtime",
+            "apps/_ports/arefahmad-idrive8/kit/platform",
+            "apps/_ports/arefahmad-idrive8/kit/tools/build.py",
+            "apps/_ports/arefahmad-idrive8/kit/tools/pack_data.py",
+            "apps/_ports/arefahmad-idrive8/kit/tools/localize.py",
+            "apps/_ports/arefahmad-idrive8/kit/tools/locale-revisions.json",
+            "apps/_ports/arefahmad-idrive8/kit/tools/oapgen",
+            "apps/_ports/arefahmad-idrive8/LICENSE",
+            "apps/_ports/arefahmad-idrive8/kit/LICENSE.idrive7-apps",
+            "apps/_ports/arefahmad-idrive8/kit/LICENSE.nickgcode",
+            "apps/_ports/arefahmad-idrive8/kit/LICENSE.alexpereap",
+            "apps/_ports/arefahmad-idrive8/kit/NOTICE.AQ-ID8",
+            "apps/_ports/arefahmad-idrive8/PORT.json",
+            "apps/_ports/arefahmad-idrive8/kit/tools/build.py"
+          ]
+        },
+        {
+          "bytes": 2065820,
+          "files": 66,
+          "key": "source:bimmer_blocks@1.1.1",
+          "largest_file": {
+            "oid": "9d282dda640553986e0bfea365c1aea01adfc916",
+            "path": "apps/_ports/appstudio-idrive8/kit/runtime/fonts/cjk.json",
+            "size": 470342
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_ports/appstudio-idrive8/apps/bimmer_blocks",
+            "apps/_ports/appstudio-idrive8/kit",
+            "apps/_ports/appstudio-idrive8/LICENSE",
+            "apps/_ports/appstudio-idrive8/THIRD-PARTY.txt",
+            "apps/_ports/appstudio-idrive8/AQ_PORT.json",
+            "apps/_ports/appstudio-idrive8/kit/tools/build.py"
+          ]
+        },
+        {
+          "bytes": 198769,
+          "files": 4,
+          "key": "source:bm3_live_id8@0.1.1",
+          "largest_file": {
+            "oid": "bf846623f4bdbf255acb83c653d44c5664a68502",
+            "path": "apps/_prebuilt/bm3_live_id8/bm3_live_id8@0.1.1.tgz",
+            "size": 197934
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_prebuilt/bm3_live_id8",
+            "tools/prebuilt.js",
+            "tools/prebuilt.js"
+          ]
+        },
+        {
+          "bytes": 4143868,
+          "files": 86,
+          "key": "source:boostline_id8@1.0.0",
+          "largest_file": {
+            "oid": "377fd27591bed0ec6b4e8d4ffd74201e87feb78c",
+            "path": "apps/_sources/giuseppe-mgu-apps-id8/vendor/idrive7-apps/kit/localization/fonts/korean.json",
+            "size": 755507
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_sources/giuseppe-mgu-apps-id8/ecu-live-data/app",
+            "apps/_sources/giuseppe-mgu-apps-id8/tools",
+            "apps/_sources/giuseppe-mgu-apps-id8/vendor/idrive7-apps",
+            "apps/_sources/giuseppe-mgu-apps-id8/LICENSE",
+            "apps/_sources/giuseppe-mgu-apps-id8/README.md",
+            "apps/_sources/giuseppe-mgu-apps-id8/dpf-monitoring/LICENSE",
+            "apps/_sources/giuseppe-mgu-apps-id8/ecu-live-data/LICENSE",
+            "apps/_sources/giuseppe-mgu-apps-id8/true-time/LICENSE",
+            "tools/build_extra_source_app.py",
+            "data/extra-source-builds.json",
+            "tools/build_extra_source_app.py"
+          ]
+        },
+        {
+          "bytes": 30137772,
+          "files": 99,
+          "key": "source:brake_test@1.5.21",
+          "largest_file": {
+            "oid": "96cd0760f4f2ee5b910812ca782208ef7101e330",
+            "path": "apps/_sources/idrive7-apps/kit/localization/diagnostic-full.ru.json",
+            "size": 13580391
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_sources/idrive7-apps/apps/brake_test",
+            "apps/_sources/idrive7-apps/kit",
+            "apps/_sources/idrive7-apps/kit/tools/build.py"
+          ]
+        },
+        {
+          "bytes": 29242020,
+          "files": 78,
+          "key": "source:c365_drive@1.9.3",
+          "largest_file": {
+            "oid": "96cd0760f4f2ee5b910812ca782208ef7101e330",
+            "path": "apps/_sources/c365-mgu-drive/kit/localization/diagnostic-full.ru.json",
+            "size": 13580391
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_sources/c365-mgu-drive/apps/c365_drive",
+            "apps/_sources/c365-mgu-drive/kit",
+            "apps/_sources/c365-mgu-drive/LICENSE",
+            "apps/_sources/c365-mgu-drive/README.md",
+            "tools/build_extra_source_app.py",
+            "data/extra-source-builds.json",
+            "tools/build_extra_source_app.py"
+          ]
+        },
+        {
+          "bytes": 30224248,
+          "files": 101,
+          "key": "source:car_vitals@2.27.9",
+          "largest_file": {
+            "oid": "96cd0760f4f2ee5b910812ca782208ef7101e330",
+            "path": "apps/_sources/idrive7-apps/kit/localization/diagnostic-full.ru.json",
+            "size": 13580391
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_sources/idrive7-apps/apps/car_vitals",
+            "apps/_sources/idrive7-apps/kit",
+            "apps/_sources/idrive7-apps/kit/tools/build.py"
+          ]
+        },
+        {
+          "bytes": 34107354,
+          "files": 8,
+          "key": "source:cluster-render@0.6.9",
+          "largest_file": {
+            "oid": "792c313c107c484c70b0559291d1bda6b1635123",
+            "path": "tools/_released/cluster-render/files/cluster-render-idrive7",
+            "size": 16007400
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "tools/_released/cluster-render"
+          ]
+        },
+        {
+          "bytes": 28870363,
+          "files": 76,
+          "key": "source:dimon_track_mode@1.0.1",
+          "largest_file": {
+            "oid": "96cd0760f4f2ee5b910812ca782208ef7101e330",
+            "path": "apps/_ports/dimonprograms-idrive8/kit/localization/diagnostic-full.ru.json",
+            "size": 13580391
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_ports/dimonprograms-idrive8/apps/dimon_track_mode",
+            "apps/_ports/dimonprograms-idrive8/kit",
+            "apps/_ports/dimonprograms-idrive8/LICENSE",
+            "apps/_ports/dimonprograms-idrive8/NOTICE.zh-CN.md",
+            "apps/_ports/dimonprograms-idrive8/PORT.json",
+            "apps/_ports/dimonprograms-idrive8/PROVENANCE.json",
+            "apps/_ports/dimonprograms-idrive8/kit/tools/build.py"
+          ]
+        },
+        {
+          "bytes": 32264183,
+          "files": 104,
+          "key": "source:doom@1.7.22",
+          "largest_file": {
+            "oid": "96cd0760f4f2ee5b910812ca782208ef7101e330",
+            "path": "apps/_sources/idrive7-apps/kit/localization/diagnostic-full.ru.json",
+            "size": 13580391
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_sources/idrive7-apps/apps/doom",
+            "apps/_sources/idrive7-apps/kit",
+            "apps/_sources/idrive7-apps/kit/tools/build.py"
+          ]
+        },
+        {
+          "bytes": 3763279,
+          "files": 81,
+          "key": "source:dpf_id8@1.0.0",
+          "largest_file": {
+            "oid": "377fd27591bed0ec6b4e8d4ffd74201e87feb78c",
+            "path": "apps/_sources/giuseppe-mgu-apps-id8/vendor/idrive7-apps/kit/localization/fonts/korean.json",
+            "size": 755507
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_sources/giuseppe-mgu-apps-id8/dpf-monitoring/app",
+            "apps/_sources/giuseppe-mgu-apps-id8/tools",
+            "apps/_sources/giuseppe-mgu-apps-id8/vendor/idrive7-apps",
+            "apps/_sources/giuseppe-mgu-apps-id8/LICENSE",
+            "apps/_sources/giuseppe-mgu-apps-id8/README.md",
+            "apps/_sources/giuseppe-mgu-apps-id8/dpf-monitoring/LICENSE",
+            "apps/_sources/giuseppe-mgu-apps-id8/ecu-live-data/LICENSE",
+            "apps/_sources/giuseppe-mgu-apps-id8/true-time/LICENSE",
+            "tools/build_extra_source_app.py",
+            "data/extra-source-builds.json",
+            "tools/build_extra_source_app.py"
+          ]
+        },
+        {
+          "bytes": 30140450,
+          "files": 101,
+          "key": "source:draggy@2.6.0",
+          "largest_file": {
+            "oid": "96cd0760f4f2ee5b910812ca782208ef7101e330",
+            "path": "apps/_sources/idrive7-apps/kit/localization/diagnostic-full.ru.json",
+            "size": 13580391
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_sources/idrive7-apps/apps/draggy",
+            "apps/_sources/idrive7-apps/kit",
+            "apps/_sources/idrive7-apps/kit/tools/build.py"
+          ]
+        },
+        {
+          "bytes": 33596890,
+          "files": 103,
+          "key": "source:dtc_scanner@2.9.8",
+          "largest_file": {
+            "oid": "96cd0760f4f2ee5b910812ca782208ef7101e330",
+            "path": "apps/_sources/idrive7-apps/kit/localization/diagnostic-full.ru.json",
+            "size": 13580391
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_sources/idrive7-apps/apps/dtc_scanner",
+            "apps/_sources/idrive7-apps/kit",
+            "apps/_sources/idrive7-apps/kit/tools/build.py"
+          ]
+        },
+        {
+          "bytes": 30132342,
+          "files": 99,
+          "key": "source:dyno@1.6.3",
+          "largest_file": {
+            "oid": "96cd0760f4f2ee5b910812ca782208ef7101e330",
+            "path": "apps/_sources/idrive7-apps/kit/localization/diagnostic-full.ru.json",
+            "size": 13580391
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_sources/idrive7-apps/apps/dyno",
+            "apps/_sources/idrive7-apps/kit",
+            "apps/_sources/idrive7-apps/kit/tools/build.py"
+          ]
+        },
+        {
+          "bytes": 14103902,
+          "files": 65,
+          "key": "source:e85@1.2.2",
+          "largest_file": {
+            "oid": "a7aed0e8954c908ab4a99eaba9e88ecad763befc",
+            "path": "apps/_ports/dante-idrive8/kit/localization/diagnostic-full.zh-CN.json",
+            "size": 11844672
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_ports/dante-idrive8/apps/e85",
+            "apps/_ports/dante-idrive8/kit",
+            "apps/_ports/dante-idrive8/LICENSE",
+            "apps/_ports/dante-idrive8/NOTICE.zh-CN.md",
+            "apps/_ports/dante-idrive8/PORT.json",
+            "apps/_ports/dante-idrive8/PROVENANCE.json",
+            "apps/_ports/dante-idrive8/kit/tools/build.py"
+          ]
+        },
+        {
+          "bytes": 30381509,
+          "files": 104,
+          "key": "source:edrive@2.11.0",
+          "largest_file": {
+            "oid": "96cd0760f4f2ee5b910812ca782208ef7101e330",
+            "path": "apps/_sources/idrive7-apps/kit/localization/diagnostic-full.ru.json",
+            "size": 13580391
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_sources/idrive7-apps/apps/edrive",
+            "apps/_sources/idrive7-apps/kit",
+            "apps/_sources/idrive7-apps/kit/tools/build.py"
+          ]
+        },
+        {
+          "bytes": 173688,
+          "files": 8,
+          "key": "source:esagono-cluster@0.2.1",
+          "largest_file": {
+            "oid": "24c794cd577c595222ad9f07e4604c29368d34d3",
+            "path": "tools/_packages/esagono-cluster/preview.png",
+            "size": 143927
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "tools/_packages/esagono-cluster"
+          ]
+        },
+        {
+          "bytes": 51264,
+          "files": 54,
+          "key": "source:esagono_settings@0.1.0",
+          "largest_file": {
+            "oid": "3d2a2c312cc7d700b4a07dd4a295088594f895d5",
+            "path": "apps/_sources/grabandrey-esagono-cluster/apps/esagono_settings/tools/gen_package.js",
+            "size": 10270
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_sources/grabandrey-esagono-cluster/apps/esagono_settings"
+          ]
+        },
+        {
+          "bytes": 30133016,
+          "files": 99,
+          "key": "source:gforce@1.6.22",
+          "largest_file": {
+            "oid": "96cd0760f4f2ee5b910812ca782208ef7101e330",
+            "path": "apps/_sources/idrive7-apps/kit/localization/diagnostic-full.ru.json",
+            "size": 13580391
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_sources/idrive7-apps/apps/gforce",
+            "apps/_sources/idrive7-apps/kit",
+            "apps/_sources/idrive7-apps/kit/tools/build.py"
+          ]
+        },
+        {
+          "bytes": 425536,
+          "files": 13,
+          "key": "source:ida-vitals-cluster@1.3.3",
+          "largest_file": {
+            "oid": "ba2652a7cb1e76681f68dfb7537bc0fc89502c88",
+            "path": "tools/_packages/ida-vitals-cluster/font.js",
+            "size": 349383
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "tools/_packages/ida-vitals-cluster"
+          ]
+        },
+        {
+          "bytes": 582215,
+          "files": 65,
+          "key": "source:ida_lightlog@1.3.1",
+          "largest_file": {
+            "oid": "675c89cee110ad941e2599200ccea6e2c4926546",
+            "path": "apps/_sources/grabandrey-idrive-apps/packages/lightlog/app/src/ui_font.js",
+            "size": 313634
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_sources/grabandrey-idrive-apps/packages/lightlog/app"
+          ]
+        },
+        {
+          "bytes": 2382141,
+          "files": 62,
+          "key": "source:ida_seatlights@1.3.2",
+          "largest_file": {
+            "oid": "01210bfe340353712398472905bd48ce622b5783",
+            "path": "apps/_sources/grabandrey-idrive-apps/packages/seatlights/app/src/seat_images.js",
+            "size": 1922779
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_sources/grabandrey-idrive-apps/packages/seatlights/app"
+          ]
+        },
+        {
+          "bytes": 589514,
+          "files": 61,
+          "key": "source:ida_vitals@1.3.1",
+          "largest_file": {
+            "oid": "bbe609e2ef256f4e042f21e973908f45d8b6387a",
+            "path": "apps/_sources/grabandrey-idrive-apps/packages/vitals/app/src/ui_font.js",
+            "size": 456656
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_sources/grabandrey-idrive-apps/packages/vitals/app"
+          ]
+        },
+        {
+          "bytes": 235207,
+          "files": 14,
+          "key": "source:idrive7-renderd@2.1.19",
+          "largest_file": {
+            "oid": "fdc594a2d611c91e296107d27420cb25cf3d7124",
+            "path": "apps/_sources/idrive7-apps/kit/renderd/prebuilt/mgu-renderd",
+            "size": 148048
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_sources/idrive7-apps/kit/renderd/prebuilt"
+          ]
+        },
+        {
+          "bytes": 30110980,
+          "files": 95,
+          "key": "source:km_motordaten@0.4.1",
+          "largest_file": {
+            "oid": "96cd0760f4f2ee5b910812ca782208ef7101e330",
+            "path": "apps/_sources/idrive7-apps/kit/localization/diagnostic-full.ru.json",
+            "size": 13580391
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_sources/prototype019-idrive7-motordaten/apps/km_motordaten",
+            "apps/_sources/prototype019-idrive7-motordaten/kit",
+            "apps/_sources/idrive7-apps/kit/localization",
+            "apps/_sources/prototype019-idrive7-motordaten/kit/tools/build.py"
+          ]
+        },
+        {
+          "bytes": 30489431,
+          "files": 114,
+          "key": "source:live_adjustments@0.9.10",
+          "largest_file": {
+            "oid": "96cd0760f4f2ee5b910812ca782208ef7101e330",
+            "path": "apps/_sources/idrive7-apps/kit/localization/diagnostic-full.ru.json",
+            "size": 13580391
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_sources/idrive7-apps/apps/live_adjustments",
+            "apps/_sources/idrive7-apps/kit",
+            "apps/_sources/idrive7-apps/kit/tools/build.py"
+          ]
+        },
+        {
+          "bytes": 30369598,
+          "files": 116,
+          "key": "source:live_data@1.0.18",
+          "largest_file": {
+            "oid": "96cd0760f4f2ee5b910812ca782208ef7101e330",
+            "path": "apps/_sources/idrive7-apps/kit/localization/diagnostic-full.ru.json",
+            "size": 13580391
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_sources/idrive7-apps/apps/live_data",
+            "apps/_sources/idrive7-apps/kit",
+            "apps/_sources/idrive7-apps/kit/tools/build.py"
+          ]
+        },
+        {
+          "bytes": 5530895,
+          "files": 65,
+          "key": "source:m_copilot@1.0.31",
+          "largest_file": {
+            "oid": "d9a55564f9dfb861cf26187119e11c9693d57f17",
+            "path": "apps/_ports/hexlay-idrive8/apps/m_copilot/dtc_db.pack",
+            "size": 3453973
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_ports/hexlay-idrive8/apps/m_copilot",
+            "apps/_ports/hexlay-idrive8/LICENSE",
+            "apps/_ports/hexlay-idrive8/LICENSE.MIT",
+            "apps/_ports/hexlay-idrive8/kit/runtime",
+            "apps/_ports/hexlay-idrive8/kit/platform",
+            "apps/_ports/hexlay-idrive8/kit/localization",
+            "apps/_ports/hexlay-idrive8/kit/tools/build.py",
+            "apps/_ports/hexlay-idrive8/kit/tools/pack_data.py",
+            "apps/_ports/hexlay-idrive8/kit/tools/localize.py",
+            "apps/_ports/hexlay-idrive8/kit/tools/locale-revisions.json",
+            "apps/_ports/hexlay-idrive8/kit/tools/oapgen",
+            "apps/_ports/hexlay-idrive8/LICENSE.PEREA",
+            "apps/_ports/hexlay-idrive8/PORT.json",
+            "apps/_ports/hexlay-idrive8/kit/tools/build.py"
+          ]
+        },
+        {
+          "bytes": 779079,
+          "files": 30,
+          "key": "source:mazzahaker_xdrive_remover@0.1.26",
+          "largest_file": {
+            "oid": "720d56799f8c62bc6796caffa0f58f0cb7125e1a",
+            "path": "apps/_sources/mazzahaker-idrive8-features/apps/mazzahaker_xdrive_remover/src/locales.js",
+            "size": 246427
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_sources/mazzahaker-idrive8-features/apps/mazzahaker_xdrive_remover"
+          ]
+        },
+        {
+          "bytes": 130765,
+          "files": 16,
+          "key": "source:mgu-inputgate@1.2.2",
+          "largest_file": {
+            "oid": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
+            "path": "tools/_packages/mgu-inputgate/licenses/LICENSE.renderd",
+            "size": 35149
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "tools/_packages/mgu-inputgate"
+          ]
+        },
+        {
+          "bytes": 3911123,
+          "files": 111,
+          "key": "source:parked_games@0.2.3",
+          "largest_file": {
+            "oid": "377fd27591bed0ec6b4e8d4ffd74201e87feb78c",
+            "path": "apps/_ports/maxxxfoka-idrive8/kit/localization/fonts/korean.json",
+            "size": 755507
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_ports/maxxxfoka-idrive8/apps/parked_games",
+            "apps/_ports/maxxxfoka-idrive8/kit",
+            "apps/_ports/maxxxfoka-idrive8/LICENSE",
+            "apps/_ports/maxxxfoka-idrive8/NOTICE.zh-CN.md",
+            "apps/_ports/maxxxfoka-idrive8/PORT.json",
+            "apps/_ports/maxxxfoka-idrive8/PROVENANCE.json",
+            "apps/_ports/maxxxfoka-idrive8/kit/tools/build.py"
+          ]
+        },
+        {
+          "bytes": 7349173,
+          "files": 297,
+          "key": "source:pps_gauges@1.0.3",
+          "largest_file": {
+            "oid": "377fd27591bed0ec6b4e8d4ffd74201e87feb78c",
+            "path": "apps/_sources/proven-apps/kit/localization/fonts/korean.json",
+            "size": 755507
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_sources/proven-apps/apps/pps_gauges",
+            "apps/_sources/proven-apps/kit",
+            "apps/_sources/proven-apps/kit/tools/build.py"
+          ]
+        },
+        {
+          "bytes": 7331128,
+          "files": 298,
+          "key": "source:pps_warmup@1.2.1",
+          "largest_file": {
+            "oid": "377fd27591bed0ec6b4e8d4ffd74201e87feb78c",
+            "path": "apps/_sources/proven-apps/kit/localization/fonts/korean.json",
+            "size": 755507
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_sources/proven-apps/apps/pps_warmup",
+            "apps/_sources/proven-apps/kit",
+            "apps/_sources/proven-apps/kit/tools/build.py"
+          ]
+        },
+        {
+          "bytes": 30670740,
+          "files": 123,
+          "key": "source:redline@2.0.45",
+          "largest_file": {
+            "oid": "96cd0760f4f2ee5b910812ca782208ef7101e330",
+            "path": "apps/_sources/idrive7-apps/kit/localization/diagnostic-full.ru.json",
+            "size": 13580391
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_sources/idrive7-apps/apps/redline",
+            "apps/_sources/idrive7-apps/kit",
+            "apps/_sources/idrive7-apps/kit/tools/build.py"
+          ]
+        },
+        {
+          "bytes": 7243419,
+          "files": 87,
+          "key": "source:robertn_store@0.9.41",
+          "largest_file": {
+            "oid": "b7104195d20bcdd5034ee276a66cf7fa63e2c773",
+            "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/fonts/chinese-tc.json",
+            "size": 1643212
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store"
+          ]
+        },
+        {
+          "bytes": 30162288,
+          "files": 99,
+          "key": "source:service@1.6.3",
+          "largest_file": {
+            "oid": "96cd0760f4f2ee5b910812ca782208ef7101e330",
+            "path": "apps/_sources/idrive7-apps/kit/localization/diagnostic-full.ru.json",
+            "size": 13580391
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_sources/idrive7-apps/apps/service",
+            "apps/_sources/idrive7-apps/kit",
+            "apps/_sources/idrive7-apps/kit/tools/build.py"
+          ]
+        },
+        {
+          "bytes": 2051413,
+          "files": 60,
+          "key": "source:spotify@1.0.30",
+          "largest_file": {
+            "oid": "9d282dda640553986e0bfea365c1aea01adfc916",
+            "path": "apps/_ports/hexlay-idrive8/kit/runtime/fonts/cjk.json",
+            "size": 470342
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_ports/hexlay-idrive8/apps/spotify",
+            "apps/_ports/hexlay-idrive8/LICENSE",
+            "apps/_ports/hexlay-idrive8/LICENSE.MIT",
+            "apps/_ports/hexlay-idrive8/kit/runtime",
+            "apps/_ports/hexlay-idrive8/kit/platform",
+            "apps/_ports/hexlay-idrive8/kit/localization",
+            "apps/_ports/hexlay-idrive8/kit/tools/build.py",
+            "apps/_ports/hexlay-idrive8/kit/tools/pack_data.py",
+            "apps/_ports/hexlay-idrive8/kit/tools/localize.py",
+            "apps/_ports/hexlay-idrive8/kit/tools/locale-revisions.json",
+            "apps/_ports/hexlay-idrive8/kit/tools/oapgen",
+            "apps/_ports/hexlay-idrive8/LICENSE.PEREA",
+            "apps/_ports/hexlay-idrive8/PORT.json",
+            "apps/_ports/hexlay-idrive8/kit/tools/build.py"
+          ]
+        },
+        {
+          "bytes": 1924338,
+          "files": 58,
+          "key": "source:sys_monitor@1.0.4",
+          "largest_file": {
+            "oid": "9d282dda640553986e0bfea365c1aea01adfc916",
+            "path": "apps/_ports/hexlay-idrive8/kit/runtime/fonts/cjk.json",
+            "size": 470342
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_ports/hexlay-idrive8/apps/sys_monitor",
+            "apps/_ports/hexlay-idrive8/LICENSE",
+            "apps/_ports/hexlay-idrive8/LICENSE.MIT",
+            "apps/_ports/hexlay-idrive8/kit/runtime",
+            "apps/_ports/hexlay-idrive8/kit/platform",
+            "apps/_ports/hexlay-idrive8/kit/localization",
+            "apps/_ports/hexlay-idrive8/kit/tools/build.py",
+            "apps/_ports/hexlay-idrive8/kit/tools/pack_data.py",
+            "apps/_ports/hexlay-idrive8/kit/tools/localize.py",
+            "apps/_ports/hexlay-idrive8/kit/tools/locale-revisions.json",
+            "apps/_ports/hexlay-idrive8/kit/tools/oapgen",
+            "apps/_ports/hexlay-idrive8/kit/tools/make_icon.js",
+            "apps/_ports/hexlay-idrive8/LICENSE.PEREA",
+            "apps/_ports/hexlay-idrive8/PORT.json",
+            "apps/_ports/hexlay-idrive8/kit/tools/build.py"
+          ]
+        },
+        {
+          "bytes": 3802055,
+          "files": 83,
+          "key": "source:true_time_id8@1.0.0",
+          "largest_file": {
+            "oid": "377fd27591bed0ec6b4e8d4ffd74201e87feb78c",
+            "path": "apps/_sources/giuseppe-mgu-apps-id8/vendor/idrive7-apps/kit/localization/fonts/korean.json",
+            "size": 755507
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_sources/giuseppe-mgu-apps-id8/true-time/app",
+            "apps/_sources/giuseppe-mgu-apps-id8/tools",
+            "apps/_sources/giuseppe-mgu-apps-id8/vendor/idrive7-apps",
+            "apps/_sources/giuseppe-mgu-apps-id8/LICENSE",
+            "apps/_sources/giuseppe-mgu-apps-id8/README.md",
+            "apps/_sources/giuseppe-mgu-apps-id8/dpf-monitoring/LICENSE",
+            "apps/_sources/giuseppe-mgu-apps-id8/ecu-live-data/LICENSE",
+            "apps/_sources/giuseppe-mgu-apps-id8/true-time/LICENSE",
+            "tools/build_extra_source_app.py",
+            "data/extra-source-builds.json",
+            "tools/build_extra_source_app.py"
+          ]
+        },
+        {
+          "bytes": 25815,
+          "files": 4,
+          "key": "source:turnkey_e_blend_id8@0.5.0",
+          "largest_file": {
+            "oid": "5c9f9ff46572e0f8d72a4dc73dcdb0fb8e0208ad",
+            "path": "apps/_prebuilt/turnkey_e_blend_id8/turnkey_e_blend_id8@0.5.0.tgz",
+            "size": 24766
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_prebuilt/turnkey_e_blend_id8",
+            "tools/prebuilt.js",
+            "tools/prebuilt.js"
+          ]
+        },
+        {
+          "bytes": 2233285,
+          "files": 68,
+          "key": "source:vehicle_pass@1.1.1",
+          "largest_file": {
+            "oid": "9d282dda640553986e0bfea365c1aea01adfc916",
+            "path": "apps/_ports/appstudio-idrive8/kit/runtime/fonts/cjk.json",
+            "size": 470342
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_ports/appstudio-idrive8/apps/vehicle_pass",
+            "apps/_ports/appstudio-idrive8/kit",
+            "apps/_ports/appstudio-idrive8/LICENSE",
+            "apps/_ports/appstudio-idrive8/THIRD-PARTY.txt",
+            "apps/_ports/appstudio-idrive8/AQ_PORT.json",
+            "apps/_ports/appstudio-idrive8/kit/tools/build.py"
+          ]
+        },
+        {
+          "bytes": 30143690,
+          "files": 101,
+          "key": "source:warmup@1.9.0",
+          "largest_file": {
+            "oid": "96cd0760f4f2ee5b910812ca782208ef7101e330",
+            "path": "apps/_sources/idrive7-apps/kit/localization/diagnostic-full.ru.json",
+            "size": 13580391
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_sources/idrive7-apps/apps/warmup",
+            "apps/_sources/idrive7-apps/kit",
+            "apps/_sources/idrive7-apps/kit/tools/build.py"
+          ]
+        },
+        {
+          "bytes": 30172412,
+          "files": 104,
+          "key": "source:zf8hp@1.5.8",
+          "largest_file": {
+            "oid": "96cd0760f4f2ee5b910812ca782208ef7101e330",
+            "path": "apps/_sources/idrive7-apps/kit/localization/diagnostic-full.ru.json",
+            "size": 13580391
+          },
+          "missing_paths": [],
+          "mode": "partial",
+          "paths": [
+            "apps/_sources/idrive7-apps/apps/zf8hp",
+            "apps/_sources/idrive7-apps/kit",
+            "apps/_sources/idrive7-apps/kit/tools/build.py"
+          ]
+        }
+      ],
+      "max_bytes": {
+        "bytes": 34107354,
+        "files": 8,
+        "key": "source:cluster-render@0.6.9",
+        "largest_file": {
+          "oid": "792c313c107c484c70b0559291d1bda6b1635123",
+          "path": "tools/_released/cluster-render/files/cluster-render-idrive7",
+          "size": 16007400
+        },
+        "missing_paths": [],
+        "mode": "partial",
+        "paths": [
+          "tools/_released/cluster-render"
+        ]
+      },
+      "max_files": {
+        "bytes": 7331128,
+        "files": 298,
+        "key": "source:pps_warmup@1.2.1",
+        "largest_file": {
+          "oid": "377fd27591bed0ec6b4e8d4ffd74201e87feb78c",
+          "path": "apps/_sources/proven-apps/kit/localization/fonts/korean.json",
+          "size": 755507
+        },
+        "missing_paths": [],
+        "mode": "partial",
+        "paths": [
+          "apps/_sources/proven-apps/apps/pps_warmup",
+          "apps/_sources/proven-apps/kit",
+          "apps/_sources/proven-apps/kit/tools/build.py"
+        ]
+      },
+      "missing_paths": [],
+      "over_200_mib": [],
+      "over_400_files": [],
+      "partial_components": 50,
+      "selected_variants": 74,
+      "source_components": 50,
+      "whole_repository_required": []
+    }
+  },
+  "evidence_sha256": "68e149089e19e2da1004adb75bef0b64f672fd5540add56a884cebeead43ccc6",
+  "limits": {
+    "partial_files": 400,
+    "whole_download_bytes": 67108864,
+    "whole_expanded_bytes": 209715200
+  },
+  "materialized": false,
+  "measurement_only": true,
+  "network_used": false,
+  "schema": 1,
+  "source_commit": "2a0e23fded8aecf0b7345754ceae4da6992821b1",
+  "source_manifest_sha256": "f694cc9326e67a9a23f442f8d0558f4348e91c925cb85004c3faed52c44dcc8f",
+  "upstream_code_executed": false
+}

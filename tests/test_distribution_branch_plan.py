@@ -890,6 +890,134 @@ class DistributionStoreConfigurationTests(unittest.TestCase):
         self.assertIn("external-helper", plan["generated_files"]["README.md"])
 
 
+class DistributionExportBudgetTests(unittest.TestCase):
+    def test_default_remains_200_mib_and_completion_files_are_accounted_exactly(self):
+        snapshot, evidence = fixture(images=True)
+        plan = planner.plan_distribution(snapshot, evidence, "id8")
+        self.assertEqual(plan["limits"]["bytes"], 200 * 1024 * 1024)
+        self.assertEqual(plan["limits"]["hard_bytes"], 512 * 1024 * 1024)
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "distribution"
+            planner.materialize_distribution(snapshot, plan, output, plan["plan_sha256"])
+            actual_files = [path for path in output.rglob("*") if path.is_file()]
+            self.assertEqual(plan["totals"]["files"], len(actual_files))
+            self.assertEqual(plan["totals"]["bytes"], sum(path.stat().st_size for path in actual_files))
+            receipt = json.loads((output / ".distribution/receipt.json").read_bytes())
+            self.assertEqual(receipt["totals"], plan["totals"])
+            self.assertEqual(receipt["limits"], plan["limits"])
+            self.assertEqual(len(receipt["files"]) + 1, plan["totals"]["files"])
+            self.assertEqual(
+                (output / ".distribution/plan.json").read_bytes(), planner.json_bytes(plan)
+            )
+
+    def test_default_rejects_oversized_inputs_before_reading_their_payload(self):
+        snapshot, evidence = fixture()
+        path = "family/apps/demo/main.js"
+        blob = snapshot.files[path]
+        snapshot.files[path] = planner.Blob(path, blob.oid, blob.mode, 201 * 1024 * 1024)
+        original_read = snapshot.read
+
+        def checked_read(relative):
+            if relative == path:
+                self.fail("An input over the effective budget must be rejected before its payload is read")
+            return original_read(relative)
+
+        with mock.patch.object(snapshot, "read", side_effect=checked_read):
+            with self.assertRaisesRegex(planner.PlanningError, "Selected inputs exceed.*209715200"):
+                planner.plan_distribution(snapshot, evidence, "id8")
+
+    def test_reviewed_256_mib_budget_accepts_201_mib_descriptors_without_large_allocations(self):
+        snapshot, evidence = fixture()
+        evidence["distributions"]["id8"]["export_budget_bytes"] = 256 * 1024 * 1024
+        plan = planner.plan_distribution(snapshot, evidence, "id8")
+        # Exercise aggregate accounting with descriptors only. This is not an
+        # export and does not pretend that synthetic large payloads were read.
+        plan["files"][0]["size"] = 101 * 1024 * 1024
+        plan["files"][1]["size"] = 100 * 1024 * 1024
+        plan = planner.finalize_export_accounting(plan)
+        self.assertGreater(plan["totals"]["bytes"], 200 * 1024 * 1024)
+        self.assertLess(plan["totals"]["bytes"], 256 * 1024 * 1024)
+        self.assertEqual(plan["limits"]["bytes"], 268435456)
+        receipt = json.loads(planner.completion_artifacts(plan)[1])
+        self.assertEqual(receipt["limits"]["bytes"], 268435456)
+
+    def test_budget_is_an_explicit_integer_below_the_hard_ceiling(self):
+        for value in (None, True, False, 0, -1, "268435456", 268435456.0, 512 * 1024 * 1024 + 1):
+            snapshot, evidence = fixture()
+            evidence["distributions"]["id8"]["export_budget_bytes"] = value
+            with self.subTest(value=value):
+                with self.assertRaisesRegex(planner.PlanningError, "export_budget_bytes must be an integer"):
+                    planner.plan_distribution(snapshot, evidence, "id8")
+        snapshot, evidence = fixture()
+        evidence["distributions"]["id8"]["export_budget_bytes"] = 512 * 1024 * 1024
+        self.assertEqual(
+            planner.plan_distribution(snapshot, evidence, "id8")["limits"]["bytes"],
+            512 * 1024 * 1024,
+        )
+
+    def test_explicit_budget_does_not_raise_other_distributions_default(self):
+        snapshot, evidence = fixture()
+        evidence["distributions"]["other"] = copy.deepcopy(evidence["distributions"]["id8"])
+        evidence["distributions"]["id8"]["export_budget_bytes"] = 256 * 1024 * 1024
+        self.assertEqual(planner.plan_distribution(snapshot, evidence, "id8")["limits"]["bytes"], 268435456)
+        self.assertEqual(planner.plan_distribution(snapshot, evidence, "other")["limits"]["bytes"], 209715200)
+
+    def test_completion_overhead_can_exceed_an_otherwise_sufficient_budget(self):
+        snapshot, evidence = fixture()
+        baseline = planner.plan_distribution(snapshot, evidence, "id8")
+        content_bytes = sum(item["size"] for item in baseline["files"]) + sum(
+            len(text.encode("utf-8")) for text in baseline["generated_files"].values()
+        )
+        raw_plan = planner.json_bytes(baseline)
+        evidence["distributions"]["id8"]["export_budget_bytes"] = content_bytes + len(raw_plan) // 2
+        with self.assertRaisesRegex(planner.PlanningError, "Export including plan and receipt exceeds"):
+            planner.plan_distribution(snapshot, evidence, "id8")
+
+    def test_both_completion_files_consume_the_file_budget(self):
+        snapshot, evidence = fixture()
+        baseline = planner.plan_distribution(snapshot, evidence, "id8")
+        with mock.patch.object(planner, "MAX_FILES", baseline["totals"]["files"] - 1):
+            with self.assertRaisesRegex(planner.PlanningError, "file-count budget"):
+                planner.plan_distribution(snapshot, evidence, "id8")
+
+    def test_approved_but_underreported_completion_totals_create_no_directory(self):
+        for field in ("files", "bytes"):
+            snapshot, evidence = fixture()
+            plan = planner.plan_distribution(snapshot, evidence, "id8")
+            plan["totals"][field] -= 1
+            unsigned = {key: value for key, value in plan.items() if key != "plan_sha256"}
+            plan["plan_sha256"] = planner.sha256(planner.json_bytes(unsigned))
+            with tempfile.TemporaryDirectory() as directory, self.subTest(field=field):
+                output = Path(directory) / "unwritten"
+                with self.assertRaisesRegex(planner.PlanningError, "exact plan and receipt bytes and files"):
+                    planner.materialize_distribution(snapshot, plan, output, plan["plan_sha256"])
+                self.assertFalse(output.exists())
+
+    def test_export_rechecks_evidence_budget_and_hard_ceiling_before_writing(self):
+        for value, diagnostic in (
+            (256 * 1024 * 1024, "differs from its distribution evidence"),
+            (512 * 1024 * 1024 + 1, "export_budget_bytes must be an integer"),
+        ):
+            snapshot, evidence = fixture()
+            plan = planner.plan_distribution(snapshot, evidence, "id8")
+            plan["limits"]["bytes"] = value
+            unsigned = {key: item for key, item in plan.items() if key != "plan_sha256"}
+            plan["plan_sha256"] = planner.sha256(planner.json_bytes(unsigned))
+            with tempfile.TemporaryDirectory() as directory, self.subTest(value=value):
+                output = Path(directory) / "unwritten"
+                with self.assertRaisesRegex(planner.PlanningError, diagnostic):
+                    planner.materialize_distribution(snapshot, plan, output, plan["plan_sha256"])
+                self.assertFalse(output.exists())
+
+    def test_completion_accounting_remains_deterministic(self):
+        snapshot, evidence = fixture(images=True)
+        evidence["distributions"]["id8"]["export_budget_bytes"] = 256 * 1024 * 1024
+        first = planner.plan_distribution(snapshot, evidence, "id8")
+        second = planner.plan_distribution(snapshot, evidence, "id8")
+        self.assertEqual(planner.completion_artifacts(first), planner.completion_artifacts(second))
+        self.assertEqual(first["plan_sha256"], second["plan_sha256"])
+
+
 class DistributionExportTests(unittest.TestCase):
     def test_plan_only_cli_does_not_create_output_or_invoke_export(self):
         snapshot, evidence = fixture()

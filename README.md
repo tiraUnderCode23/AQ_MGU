@@ -300,13 +300,6 @@ Restored legacy versions, forks and prototypes remain listed with their original
 </tr></table>
 
 <table><tr>
-<td width="64" align="center"><img src="docs/assets/apps/aurelm_track_defender/icon.png" width="48" height="48" alt="Track Defender" /></td>
-<td><strong>Track Defender</strong> <code>v1.0.0</code> &nbsp;·&nbsp; <code>ID7</code></td>
-</tr><tr>
-<td colspan="2"><img src="docs/assets/apps/aurelm_track_defender/screen_1.png" height="150" alt="Track Defender" /></td>
-</tr></table>
-
-<table><tr>
 <td width="64" align="center"><img src="docs/assets/apps/zf8hp/icon.png" width="48" height="48" alt="Transmission Config" /></td>
 <td><strong>Transmission Config</strong> <code>v1.5.8</code> &nbsp;·&nbsp; <code>ID7 / ID8</code></td>
 </tr><tr>
@@ -962,6 +955,13 @@ Restored legacy versions, forks and prototypes remain listed with their original
 <td><strong>Street Siege</strong> <code>v1.1.0</code> &nbsp;·&nbsp; <code>ID7</code></td>
 </tr><tr>
 <td colspan="2"><img src="docs/assets/apps/aurelm_street_siege/screen_1.png" height="150" alt="Street Siege" /> <img src="docs/assets/apps/aurelm_street_siege/screen_2.png" height="150" alt="Street Siege" /></td>
+</tr></table>
+
+<table><tr>
+<td width="64" align="center"><img src="docs/assets/apps/aurelm_track_defender/icon.png" width="48" height="48" alt="Track Defender" /></td>
+<td><strong>Track Defender</strong> <code>v1.0.0</code> &nbsp;·&nbsp; <code>ID7</code></td>
+</tr><tr>
+<td colspan="2"><img src="docs/assets/apps/aurelm_track_defender/screen_1.png" height="150" alt="Track Defender" /></td>
 </tr></table>
 
 <table>

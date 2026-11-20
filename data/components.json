@@ -6306,7 +6306,7 @@
     {
       "id": "mgu_gamestation",
       "kind": "app",
-      "category": "app",
+      "category": "game",
       "title": "MGU GameStation",
       "version": "0.3.0",
       "description": "Offline retro games with iDrive or phone controllers, two players and in-game saves. Parked only.",
@@ -6471,7 +6471,7 @@
     {
       "id": "mx_road_hopper",
       "kind": "app",
-      "category": "app",
+      "category": "game",
       "title": "Road Hopper",
       "version": "0.1.1",
       "description": "Hop across the road and the river to fill five homes, played with the iDrive controller. Parked only by default",

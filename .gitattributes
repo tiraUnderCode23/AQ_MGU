@@ -16,3 +16,5 @@ tools/_sources/collection-mgu-store-b42fdba/** -text
 /apps/_sources/** -text
 /tools/_released/** -text
 /apps/_prebuilt/** -text
+# Historical game toolkit copies retain their pinned Git bytes.
+/archive/games-1965ef4/** -text

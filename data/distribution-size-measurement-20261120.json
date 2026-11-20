@@ -1,0 +1,1110 @@
+{
+  "schema": 1,
+  "source_commit": "2a0e23fded8aecf0b7345754ceae4da6992821b1",
+  "planner_sha256": "7839a881ff8b33c6a1bd425b26750c65e053549deb5821f4a5b9a16760d39529",
+  "evidence_sha256": "68e149089e19e2da1004adb75bef0b64f672fd5540add56a884cebeead43ccc6",
+  "production_limit_bytes": 209715200,
+  "measurement_ceiling_bytes": 536870912,
+  "measurement_only": true,
+  "materialized": false,
+  "network_used": false,
+  "distributions": {
+    "id8": {
+      "selected_variants": 74,
+      "external_dependencies": 5,
+      "input_files": 2163,
+      "input_bytes": 226266502,
+      "generated_files": 7,
+      "generated_bytes": 2746810,
+      "generated_by_path": {
+        "mgu-repo.json": 52044,
+        "release/catalog.json": 55083,
+        "data/app-images.json": 14314,
+        ".distribution/external-dependencies.json": 32249,
+        ".distribution/eligibility-evidence.json": 2490651,
+        "data/store-sources.json": 470,
+        "README.md": 101999
+      },
+      "planned_total_bytes": 229013312,
+      "plan_json_bytes": 4170244,
+      "receipt_json_bytes": 483202,
+      "actual_export_bytes_if_materialized": 233666758,
+      "actual_export_file_count_if_materialized": 2172,
+      "exclusive_input_groups": {
+        "additional_documentation_and_licenses": {
+          "files": 72,
+          "bytes": 1354424
+        },
+        "other_manifests_and_configuration": {
+          "files": 2,
+          "bytes": 45815
+        },
+        "additional_eligibility_evidence": {
+          "files": 8,
+          "bytes": 702906
+        },
+        "source_build_inputs": {
+          "files": 1885,
+          "bytes": 191846609
+        },
+        "additional_declared_media": {
+          "files": 196,
+          "bytes": 32316748
+        }
+      },
+      "overlapping_reason_bytes": {
+        "ancestor documentation/license": 1373059,
+        "original README/install documentation": 484229,
+        "original media metadata": 45343,
+        "original Store source configuration": 472,
+        "original source manifest": 202198,
+        "pinned eligibility evidence": 4101288,
+        "original release manifest": 130135,
+        "repository license notices": 1002,
+        "declared component/build input": 191846609,
+        "pinned original documentation index": 380520,
+        "all declared local media": 32316748
+      },
+      "unique_git_blob_bytes": 129871012,
+      "duplicate_blob_bytes_across_paths": 96395490,
+      "largest_files": [
+        {
+          "path": "tools/_released/cluster-render/files/cluster-render-idrive7",
+          "bytes": 16007400,
+          "owners": [
+            "source:cluster-render@0.6.9"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "tools/_released/cluster-render/files/cluster-render-idrive8",
+          "bytes": 15060696,
+          "owners": [
+            "source:cluster-render@0.6.9"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "apps/_ports/dimonprograms-idrive8/kit/localization/diagnostic-full.ru.json",
+          "bytes": 13580391,
+          "owners": [
+            "source:dimon_track_mode@1.0.1"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "apps/_sources/c365-mgu-drive/kit/localization/diagnostic-full.ru.json",
+          "bytes": 13580391,
+          "owners": [
+            "source:c365_drive@1.9.3"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "apps/_sources/idrive7-apps/kit/localization/diagnostic-full.ru.json",
+          "bytes": 13580391,
+          "owners": [
+            "source:ambient_config@2.7.13",
+            "source:andrei_mdrive@0.4.0",
+            "source:brake_test@1.5.21",
+            "source:car_vitals@2.27.9",
+            "source:doom@1.7.22",
+            "source:draggy@2.6.0",
+            "source:dtc_scanner@2.9.8",
+            "source:dyno@1.6.3",
+            "source:edrive@2.11.0",
+            "source:gforce@1.6.22",
+            "source:km_motordaten@0.4.1",
+            "source:live_adjustments@0.9.10",
+            "source:live_data@1.0.18",
+            "source:redline@2.0.45",
+            "source:service@1.6.3",
+            "source:warmup@1.9.0",
+            "source:zf8hp@1.5.8"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "apps/_ports/dante-idrive8/kit/localization/diagnostic-full.zh-CN.json",
+          "bytes": 11844672,
+          "owners": [
+            "source:e85@1.2.2"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "apps/_ports/dimonprograms-idrive8/kit/localization/diagnostic-full.zh-CN.json",
+          "bytes": 11844672,
+          "owners": [
+            "source:dimon_track_mode@1.0.1"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "apps/_sources/c365-mgu-drive/kit/localization/diagnostic-full.zh-CN.json",
+          "bytes": 11844672,
+          "owners": [
+            "source:c365_drive@1.9.3"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "apps/_sources/idrive7-apps/kit/localization/diagnostic-full.zh-CN.json",
+          "bytes": 11844672,
+          "owners": [
+            "source:ambient_config@2.7.13",
+            "source:andrei_mdrive@0.4.0",
+            "source:brake_test@1.5.21",
+            "source:car_vitals@2.27.9",
+            "source:doom@1.7.22",
+            "source:draggy@2.6.0",
+            "source:dtc_scanner@2.9.8",
+            "source:dyno@1.6.3",
+            "source:edrive@2.11.0",
+            "source:gforce@1.6.22",
+            "source:km_motordaten@0.4.1",
+            "source:live_adjustments@0.9.10",
+            "source:live_data@1.0.18",
+            "source:redline@2.0.45",
+            "source:service@1.6.3",
+            "source:warmup@1.9.0",
+            "source:zf8hp@1.5.8"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "docs/assets/apps/redline/preview-05.webp",
+          "bytes": 5366720,
+          "owners": [
+            "redline"
+          ],
+          "reasons": [
+            "all declared local media"
+          ]
+        },
+        {
+          "path": "apps/_ports/hexlay-idrive8/apps/m_copilot/dtc_db.pack",
+          "bytes": 3453973,
+          "owners": [
+            "source:m_copilot@1.0.31"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "apps/_sources/idrive7-apps/apps/dtc_scanner/dtc_db.pack",
+          "bytes": 3453973,
+          "owners": [
+            "source:dtc_scanner@2.9.8"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "tools/_released/cluster-render/files/cluster-render",
+          "bytes": 2985936,
+          "owners": [
+            "source:cluster-render@0.6.9"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "docs/assets/apps/car_vitals/preview-04.gif",
+          "bytes": 2272372,
+          "owners": [
+            "car_vitals"
+          ],
+          "reasons": [
+            "all declared local media"
+          ]
+        },
+        {
+          "path": "apps/_sources/idrive7-apps/apps/doom/doom.wasm",
+          "bytes": 2091085,
+          "owners": [
+            "source:doom@1.7.22"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "apps/_sources/grabandrey-idrive-apps/packages/seatlights/app/src/seat_images.js",
+          "bytes": 1922779,
+          "owners": [
+            "source:ida_seatlights@1.3.2"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/fonts/chinese-tc.json",
+          "bytes": 1643212,
+          "owners": [
+            "source:robertn_store@0.9.41"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/fonts/chinese.json",
+          "bytes": 1275426,
+          "owners": [
+            "source:robertn_store@0.9.41"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "tools/_sources/collection-mgu-store-b42fdba/apps/robertn_store/robertn_store@0.9.41/fonts/japanese.json",
+          "bytes": 1062281,
+          "owners": [
+            "source:robertn_store@0.9.41"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "docs/assets/apps/e85/screen_3.gif",
+          "bytes": 982738,
+          "owners": [
+            "e85"
+          ],
+          "reasons": [
+            "all declared local media"
+          ]
+        },
+        {
+          "path": "apps/_ports/dimonprograms-idrive8/kit/localization/fonts/korean.json",
+          "bytes": 755507,
+          "owners": [
+            "source:dimon_track_mode@1.0.1"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "apps/_ports/maxxxfoka-idrive8/kit/localization/fonts/korean.json",
+          "bytes": 755507,
+          "owners": [
+            "source:parked_games@0.2.3"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "apps/_sources/c365-mgu-drive/kit/localization/fonts/korean.json",
+          "bytes": 755507,
+          "owners": [
+            "source:c365_drive@1.9.3"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "apps/_sources/giuseppe-mgu-apps-id8/vendor/idrive7-apps/kit/localization/fonts/korean.json",
+          "bytes": 755507,
+          "owners": [
+            "source:boostline_id8@1.0.0",
+            "source:dpf_id8@1.0.0",
+            "source:true_time_id8@1.0.0"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "apps/_sources/idrive7-apps/kit/localization/fonts/korean.json",
+          "bytes": 755507,
+          "owners": [
+            "source:ambient_config@2.7.13",
+            "source:andrei_mdrive@0.4.0",
+            "source:brake_test@1.5.21",
+            "source:car_vitals@2.27.9",
+            "source:doom@1.7.22",
+            "source:draggy@2.6.0",
+            "source:dtc_scanner@2.9.8",
+            "source:dyno@1.6.3",
+            "source:edrive@2.11.0",
+            "source:gforce@1.6.22",
+            "source:km_motordaten@0.4.1",
+            "source:live_adjustments@0.9.10",
+            "source:live_data@1.0.18",
+            "source:redline@2.0.45",
+            "source:service@1.6.3",
+            "source:warmup@1.9.0",
+            "source:zf8hp@1.5.8"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "apps/_sources/proven-apps/kit/localization/fonts/korean.json",
+          "bytes": 755507,
+          "owners": [
+            "source:pps_gauges@1.0.3",
+            "source:pps_warmup@1.2.1"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "docs/assets/apps/gforce/preview-02.gif",
+          "bytes": 741750,
+          "owners": [
+            "gforce"
+          ],
+          "reasons": [
+            "all declared local media"
+          ]
+        },
+        {
+          "path": "docs/assets/apps/gforce/screen_3.gif",
+          "bytes": 741750,
+          "owners": [
+            "gforce"
+          ],
+          "reasons": [
+            "all declared local media"
+          ]
+        },
+        {
+          "path": "docs/assets/apps/e85/screen_2.gif",
+          "bytes": 724255,
+          "owners": [
+            "e85"
+          ],
+          "reasons": [
+            "all declared local media"
+          ]
+        },
+        {
+          "path": "apps/_sources/c365-mgu-drive/kit/localization/fonts/diagnostic-zh-CN.json",
+          "bytes": 686955,
+          "owners": [
+            "source:c365_drive@1.9.3"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        }
+      ],
+      "families_by_bytes": {
+        "apps/_sources/idrive7-apps": {
+          "files": 238,
+          "bytes": 38261226
+        },
+        "tools/_released/cluster-render": {
+          "files": 8,
+          "bytes": 34107354
+        },
+        "docs/assets/apps": {
+          "files": 196,
+          "bytes": 32316748
+        },
+        "apps/_sources/c365-mgu-drive": {
+          "files": 76,
+          "bytes": 29220849
+        },
+        "apps/_ports/dimonprograms-idrive8": {
+          "files": 78,
+          "bytes": 28881092
+        },
+        "apps/_ports/dante-idrive8": {
+          "files": 67,
+          "bytes": 14188353
+        },
+        "apps/_sources/proven-apps": {
+          "files": 309,
+          "bytes": 7542788
+        },
+        "tools/_sources/collection-mgu-store-b42fdba": {
+          "files": 87,
+          "bytes": 7243419
+        },
+        "apps/_ports/hexlay-idrive8": {
+          "files": 78,
+          "bytes": 5807273
+        },
+        "apps/_sources/giuseppe-mgu-apps-id8": {
+          "files": 98,
+          "bytes": 4262877
+        },
+        "apps/_ports/maxxxfoka-idrive8": {
+          "files": 113,
+          "bytes": 3933593
+        },
+        "apps/_sources/grabandrey-idrive-apps": {
+          "files": 193,
+          "bytes": 3588528
+        },
+        "apps/_sources/prototype019-idrive7-motordaten": {
+          "files": 78,
+          "bytes": 2713346
+        },
+        "apps/_ports/arefahmad-idrive8": {
+          "files": 87,
+          "bytes": 2473532
+        },
+        "apps/_ports/appstudio-idrive8": {
+          "files": 77,
+          "bytes": 2264579
+        },
+        "apps/_ports/pinguinooo-idrive8": {
+          "files": 84,
+          "bytes": 2143980
+        },
+        "apps/_sources/grabandrey-m-drive-control": {
+          "files": 67,
+          "bytes": 2132627
+        },
+        "apps/_ports/bmwenthusiast-idrive8": {
+          "files": 48,
+          "bytes": 1850741
+        },
+        "apps/_sources/mazzahaker-idrive8-features": {
+          "files": 32,
+          "bytes": 815031
+        },
+        "tools/_packages/ida-vitals-cluster": {
+          "files": 13,
+          "bytes": 425536
+        },
+        "data/components.json": {
+          "files": 1,
+          "bytes": 380520
+        },
+        "tools/_sources/mgu-store": {
+          "files": 3,
+          "bytes": 337111
+        },
+        "mgu-repo.json": {
+          "files": 1,
+          "bytes": 202198
+        },
+        "apps/_prebuilt/bm3_live_id8": {
+          "files": 3,
+          "bytes": 198681
+        },
+        "tools/_packages/esagono-cluster": {
+          "files": 8,
+          "bytes": 173688
+        },
+        "tools/_packages/mgu-inputgate": {
+          "files": 16,
+          "bytes": 130765
+        },
+        "release/catalog.json": {
+          "files": 1,
+          "bytes": 130135
+        },
+        "README.md": {
+          "files": 1,
+          "bytes": 83920
+        },
+        "apps/_sources/dante-idrive-apps": {
+          "files": 3,
+          "bytes": 82432
+        },
+        "tools/_sources/cauli-inputgate-1.2.1": {
+          "files": 5,
+          "bytes": 59659
+        },
+        "apps/_sources/grabandrey-esagono-cluster": {
+          "files": 56,
+          "bytes": 59077
+        },
+        "apps/_sources/pinguinooo-idrive7-apps": {
+          "files": 6,
+          "bytes": 45358
+        },
+        "data/app-images.json": {
+          "files": 1,
+          "bytes": 45343
+        },
+        "apps/_sources/arefahmad-idrive7-apps": {
+          "files": 6,
+          "bytes": 33509
+        },
+        "data/id8-native-app-evidence.json": {
+          "files": 1,
+          "bytes": 26001
+        },
+        "apps/_prebuilt/turnkey_e_blend_id8": {
+          "files": 3,
+          "bytes": 25727
+        },
+        "apps/_sources/maxxxfoka-idrive7games": {
+          "files": 3,
+          "bytes": 21234
+        },
+        "data/extra-source-builds.json": {
+          "files": 1,
+          "bytes": 14249
+        },
+        "apps/_sources/dimonprograms-apps": {
+          "files": 4,
+          "bytes": 11180
+        },
+        "apps/_sources/bmwenthusiast-storage-monitor": {
+          "files": 3,
+          "bytes": 8840
+        },
+        "tools/build_extra_source_app.py": {
+          "files": 1,
+          "bytes": 6922
+        },
+        "apps/_sources/app-studio-custom": {
+          "files": 2,
+          "bytes": 6797
+        },
+        "data/hmi-install-profiles.json": {
+          "files": 1,
+          "bytes": 3953
+        },
+        "data/external-store-components.json": {
+          "files": 1,
+          "bytes": 3508
+        },
+        "LICENSES/README.md": {
+          "files": 1,
+          "bytes": 1002
+        },
+        "data/store-sources.json": {
+          "files": 1,
+          "bytes": 472
+        },
+        "apps/README.md": {
+          "files": 1,
+          "bytes": 376
+        },
+        "tools/README.md": {
+          "files": 1,
+          "bytes": 285
+        },
+        "tools/prebuilt.js": {
+          "files": 1,
+          "bytes": 88
+        }
+      },
+      "elapsed_seconds": 2.65
+    },
+    "games": {
+      "selected_variants": 40,
+      "external_dependencies": 0,
+      "input_files": 777,
+      "input_bytes": 91693078,
+      "generated_files": 7,
+      "generated_bytes": 2610453,
+      "generated_by_path": {
+        "mgu-repo.json": 9986,
+        "release/catalog.json": 59331,
+        "data/app-images.json": 4679,
+        ".distribution/external-dependencies.json": 3,
+        ".distribution/eligibility-evidence.json": 2490651,
+        "data/store-sources.json": 474,
+        "README.md": 45329
+      },
+      "planned_total_bytes": 94303531,
+      "plan_json_bytes": 3457629,
+      "receipt_json_bytes": 400598,
+      "actual_export_bytes_if_materialized": 98161758,
+      "actual_export_file_count_if_materialized": 786,
+      "exclusive_input_groups": {
+        "additional_documentation_and_licenses": {
+          "files": 36,
+          "bytes": 1025148
+        },
+        "other_manifests_and_configuration": {
+          "files": 2,
+          "bytes": 45815
+        },
+        "additional_eligibility_evidence": {
+          "files": 8,
+          "bytes": 717531
+        },
+        "source_build_inputs": {
+          "files": 676,
+          "bytes": 81542676
+        },
+        "additional_declared_media": {
+          "files": 55,
+          "bytes": 8361908
+        }
+      },
+      "overlapping_reason_bytes": {
+        "ancestor documentation/license": 805615,
+        "original README/install documentation": 279104,
+        "original media metadata": 45343,
+        "original Store source configuration": 472,
+        "original source manifest": 202198,
+        "pinned eligibility evidence": 1321300,
+        "original release manifest": 130135,
+        "repository license notices": 1002,
+        "declared component/build input": 81542676,
+        "pinned original documentation index": 380520,
+        "all declared local media": 8361908
+      },
+      "unique_git_blob_bytes": 86015337,
+      "duplicate_blob_bytes_across_paths": 5677741,
+      "largest_files": [
+        {
+          "path": "tools/_released/cluster-render/files/cluster-render-idrive7",
+          "bytes": 16007400,
+          "owners": [
+            "source:cluster-render@0.6.9"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "tools/_released/cluster-render/files/cluster-render-idrive8",
+          "bytes": 15060696,
+          "owners": [
+            "source:cluster-render@0.6.9"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "apps/_sources/idrive7-apps/kit/localization/diagnostic-full.ru.json",
+          "bytes": 13580391,
+          "owners": [
+            "source:doom@1.7.22",
+            "source:mx_road_hopper@0.1.1"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "apps/_sources/idrive7-apps/kit/localization/diagnostic-full.zh-CN.json",
+          "bytes": 11844672,
+          "owners": [
+            "source:doom@1.7.22",
+            "source:mx_road_hopper@0.1.1"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "tools/_released/cluster-render/files/cluster-render",
+          "bytes": 2985936,
+          "owners": [
+            "source:cluster-render@0.6.9"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "apps/_sources/idrive7-apps/apps/doom/doom.wasm",
+          "bytes": 2091085,
+          "owners": [
+            "source:doom@1.7.22"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "tools/_released/vizualyse-moonlight/files/moonlight-core",
+          "bytes": 1965816,
+          "owners": [
+            "source:vizualyse-moonlight@0.3.1"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "apps/_ports/maxxxfoka-idrive8/kit/localization/fonts/korean.json",
+          "bytes": 755507,
+          "owners": [
+            "source:parked_games@0.2.3"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "apps/_sources/idrive7-apps/kit/localization/fonts/korean.json",
+          "bytes": 755507,
+          "owners": [
+            "source:doom@1.7.22",
+            "source:mx_road_hopper@0.1.1"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "apps/_sources/idrive7-apps/kit/localization/fonts/diagnostic-zh-CN.json",
+          "bytes": 686955,
+          "owners": [
+            "source:doom@1.7.22",
+            "source:mx_road_hopper@0.1.1"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "apps/_ports/maxxxfoka-idrive8/kit/localization/fonts/diagnostic-zh-CN.json",
+          "bytes": 686320,
+          "owners": [
+            "source:parked_games@0.2.3"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "apps/_sources/idrive7-apps/kit/runtime/fonts/cjk.json",
+          "bytes": 499001,
+          "owners": [
+            "source:doom@1.7.22"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "apps/_ports/maxxxfoka-idrive8/kit/runtime/fonts/cjk.json",
+          "bytes": 496128,
+          "owners": [
+            "source:parked_games@0.2.3"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "apps/_ports/appstudio-idrive8/kit/runtime/fonts/cjk.json",
+          "bytes": 470342,
+          "owners": [
+            "source:bimmer_blocks@1.1.1"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "apps/_sources/cruzen991-cluster/kit/runtime/fonts/cjk.json",
+          "bytes": 470342,
+          "owners": [
+            "source:mx_road_hopper@0.1.1"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "docs/assets/apps/aurelm_lucky_sevens/screen_3.png",
+          "bytes": 465125,
+          "owners": [
+            "aurelm_lucky_sevens"
+          ],
+          "reasons": [
+            "all declared local media"
+          ]
+        },
+        {
+          "path": "apps/_sources/iabadia-idrive-games/apps/iabadia_m_arcade/preview/carousel.gif",
+          "bytes": 456725,
+          "owners": [
+            "source:iabadia_m_arcade@0.1.3"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "docs/assets/apps/iabadia_m_arcade/screen_1.gif",
+          "bytes": 456725,
+          "owners": [
+            "iabadia_m_arcade"
+          ],
+          "reasons": [
+            "all declared local media"
+          ]
+        },
+        {
+          "path": "docs/assets/apps/aurelm_pinball/screen_2.png",
+          "bytes": 426410,
+          "owners": [
+            "aurelm_pinball"
+          ],
+          "reasons": [
+            "all declared local media"
+          ]
+        },
+        {
+          "path": "apps/_sources/namels-mgu-apps-full/apps/mgu_gamestation/gb_vendor.js",
+          "bytes": 425205,
+          "owners": [
+            "source:mgu_gamestation@0.3.0"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "docs/assets/apps/aurelm_pinball/screen_1.png",
+          "bytes": 422633,
+          "owners": [
+            "aurelm_pinball"
+          ],
+          "reasons": [
+            "all declared local media"
+          ]
+        },
+        {
+          "path": "docs/assets/apps/doom/preview-01.png",
+          "bytes": 421938,
+          "owners": [
+            "doom"
+          ],
+          "reasons": [
+            "all declared local media"
+          ]
+        },
+        {
+          "path": "docs/assets/apps/doom/screen_2.png",
+          "bytes": 421938,
+          "owners": [
+            "doom"
+          ],
+          "reasons": [
+            "all declared local media"
+          ]
+        },
+        {
+          "path": "docs/assets/apps/aurelm_lap_record/screen_1.png",
+          "bytes": 419021,
+          "owners": [
+            "aurelm_lap_record"
+          ],
+          "reasons": [
+            "all declared local media"
+          ]
+        },
+        {
+          "path": "docs/assets/apps/aurelm_lucky_sevens/screen_1.png",
+          "bytes": 402279,
+          "owners": [
+            "aurelm_lucky_sevens"
+          ],
+          "reasons": [
+            "all declared local media"
+          ]
+        },
+        {
+          "path": "docs/assets/apps/aurelm_lucky_sevens/screen_2.png",
+          "bytes": 391787,
+          "owners": [
+            "aurelm_lucky_sevens"
+          ],
+          "reasons": [
+            "all declared local media"
+          ]
+        },
+        {
+          "path": "data/components.json",
+          "bytes": 380520,
+          "owners": [
+            "distribution"
+          ],
+          "reasons": [
+            "pinned original documentation index"
+          ]
+        },
+        {
+          "path": "tools/_released/vizualyse-moonlight/files/hint.rgba",
+          "bytes": 360012,
+          "owners": [
+            "source:vizualyse-moonlight@0.3.1"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "apps/_sources/namels-mgu-apps-full/apps/mgu_gamestation/snes_vendor.js",
+          "bytes": 316046,
+          "owners": [
+            "source:mgu_gamestation@0.3.0"
+          ],
+          "reasons": [
+            "declared component/build input"
+          ]
+        },
+        {
+          "path": "docs/assets/apps/aurelm_lap_record/screen_2.png",
+          "bytes": 312342,
+          "owners": [
+            "aurelm_lap_record"
+          ],
+          "reasons": [
+            "all declared local media"
+          ]
+        }
+      ],
+      "families_by_bytes": {
+        "tools/_released/cluster-render": {
+          "files": 8,
+          "bytes": 34107354
+        },
+        "apps/_sources/idrive7-apps": {
+          "files": 111,
+          "bytes": 32534200
+        },
+        "docs/assets/apps": {
+          "files": 55,
+          "bytes": 8361908
+        },
+        "apps/_ports/maxxxfoka-idrive8": {
+          "files": 113,
+          "bytes": 3933593
+        },
+        "tools/_released/vizualyse-moonlight": {
+          "files": 29,
+          "bytes": 2709718
+        },
+        "apps/_ports/appstudio-idrive8": {
+          "files": 68,
+          "bytes": 2078538
+        },
+        "apps/_sources/cruzen991-cluster": {
+          "files": 58,
+          "bytes": 2001804
+        },
+        "apps/_sources/namels-mgu-apps-full": {
+          "files": 76,
+          "bytes": 1976793
+        },
+        "apps/_sources/iabadia-idrive-games": {
+          "files": 129,
+          "bytes": 1959635
+        },
+        "data/components.json": {
+          "files": 1,
+          "bytes": 380520
+        },
+        "tools/_sources/mgu-store": {
+          "files": 3,
+          "bytes": 337111
+        },
+        "tools/_released/vizualyse-bus": {
+          "files": 9,
+          "bytes": 267485
+        },
+        "mgu-repo.json": {
+          "files": 1,
+          "bytes": 202198
+        },
+        "apps/_published/vizualyse_moonlight": {
+          "files": 20,
+          "bytes": 188853
+        },
+        "tools/_packages/mgu-inputgate": {
+          "files": 16,
+          "bytes": 130765
+        },
+        "release/catalog.json": {
+          "files": 1,
+          "bytes": 130135
+        },
+        "apps/_sources/mistergahan-mgu-backgammon": {
+          "files": 60,
+          "bytes": 125293
+        },
+        "README.md": {
+          "files": 1,
+          "bytes": 83920
+        },
+        "tools/_sources/cauli-inputgate-1.2.1": {
+          "files": 5,
+          "bytes": 59659
+        },
+        "data/app-images.json": {
+          "files": 1,
+          "bytes": 45343
+        },
+        "data/id8-native-app-evidence.json": {
+          "files": 1,
+          "bytes": 26001
+        },
+        "apps/_sources/maxxxfoka-idrive7games": {
+          "files": 3,
+          "bytes": 21234
+        },
+        "data/vizualyse-frontend-inspection-20261120.json": {
+          "files": 1,
+          "bytes": 18133
+        },
+        "apps/_sources/app-studio-custom": {
+          "files": 2,
+          "bytes": 6797
+        },
+        "data/hmi-install-profiles.json": {
+          "files": 1,
+          "bytes": 3953
+        },
+        "LICENSES/README.md": {
+          "files": 1,
+          "bytes": 1002
+        },
+        "data/store-sources.json": {
+          "files": 1,
+          "bytes": 472
+        },
+        "apps/README.md": {
+          "files": 1,
+          "bytes": 376
+        },
+        "tools/README.md": {
+          "files": 1,
+          "bytes": 285
+        }
+      },
+      "elapsed_seconds": 0.902
+    }
+  },
+  "validated_blob_reads": 1592,
+  "raw_blob_cache_limit_bytes": 134217728
+}

@@ -94,7 +94,9 @@ CATEGORIES = [
 ]
 
 
-def classify_app(cid: str) -> str:
+def classify_app(cid: str, category=None) -> str:
+    if category == "game":
+        return "Games"
     low = cid.lower()
     for cat, kws in CATEGORIES:
         if any(k in low for k in kws):
@@ -113,7 +115,7 @@ def rebuild_readme():
 
     by_cat = {cat: [] for cat, _ in CATEGORIES}
     for a in sorted(apps, key=lambda x: (x.get("title") or x["id"]).lower()):
-        by_cat[classify_app(a["id"])].append(a)
+        by_cat[classify_app(a["id"], a.get("category"))].append(a)
 
     # Update app-images-summary.json
     with_imgs = sum(1 for a in apps if (app_imgs.get(a["id"], {}).get("images") or []))
