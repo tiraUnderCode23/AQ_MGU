@@ -1,0 +1,471 @@
+{
+  "schema": "aq-mgu.local-app-artifacts/1",
+  "reviewed_at": "2026-11-20",
+  "canonical_source_commit": "16b44f49f3451ff9f92ab326acedbf9f3a8d9303",
+  "type": "metadata-only-local-artifact-inventory",
+  "is_store_catalog": false,
+  "scope": "Preserve known local application identities and coverage without copying packages, SDK files, donor material, or full application source into this repository.",
+  "local_location": {
+    "root_hint": "mgu_aq_apk/sources/app_review_20261117",
+    "resolution": "Relative to a user-selected workspace parent; a portable hint only, not a public URL or a guarantee that the file exists on another machine."
+  },
+  "report": "docs/BCS_AND_LOCAL_APP_COVERAGE_20261120_AR.md",
+  "artifacts": [
+    {
+      "id": "aq_lights",
+      "kind": "app",
+      "delivery": "local_reference_only",
+      "local_only": true,
+      "offered": false,
+      "public_download_url": null,
+      "mguHmi": [
+        "ID7"
+      ],
+      "observed_install": "NOT_OBSERVED",
+      "observed_runtime": "NOT_OBSERVED",
+      "installation_eligibility": "NOT_ESTABLISHED",
+      "verification_scope": "Opaque local archive size/SHA256 plus associated local metadata only; no archive extraction, code execution, SDK inspection, build, or unit installation in this review.",
+      "helper_minimums": {
+        "status": "UNDECLARED",
+        "manifest_requires": "NOT_DECLARED",
+        "manifest_mguRequires": "NOT_DECLARED",
+        "numeric_renderer_minimum": "UNDECLARED",
+        "numeric_inputgate_minimum": "UNDECLARED",
+        "runtime_engine": {
+          "name": "node",
+          "declared_range": ">=8.7.0"
+        },
+        "documented_protocol": "mgu-render/1",
+        "protocol_is_a_semver_minimum": false,
+        "note": "Renderer protocol and negotiated touch/foreground capabilities do not establish a numeric package-version floor. Absence of requires does not establish that no helpers are needed."
+      },
+      "redistribution": {
+        "author_metadata": "custom",
+        "license_metadata": "UNLICENSED",
+        "full_application_redistribution_grant": "NOT_ESTABLISHED",
+        "standalone_sdk_redistribution_grant": "NOT_ESTABLISHED",
+        "generic_unlicensed_marker_is_conclusive": false,
+        "scoped_license_review": "No independent full-application redistribution grant found in the reviewed local non-SDK metadata, documentation, or license filenames.",
+        "sdk_directory_presence_observed": true,
+        "sdk_contents_inspected": false,
+        "package_or_sdk_copied_to_canonical_repository": false
+      },
+      "version": "4.6.1",
+      "artifact": {
+        "name": "aq_lights@4.6.1.mgu",
+        "format": "mgu",
+        "bytes": 678709,
+        "sha256": "0f3eff39eb694b57bc1c50625220359242b16b5aee9db3e90e8dc3a8aee76cf9",
+        "checksumOrigin": "calculated",
+        "integrity_observation": "SHA256_RECOMPUTED_FROM_OPAQUE_LOCAL_FILE",
+        "local_path_hint": "bundled_artifacts/aq_lights@4.6.1.mgu"
+      },
+      "platform_evidence": {
+        "level": "LOCAL_METADATA_ID7_ONLY",
+        "id8_supported": false,
+        "paths": [
+          "aq_lights_unpacked/source/rhmiData/application.json",
+          "aq_lights_unpacked/rhmiData/application.json"
+        ],
+        "note": "Observed RHMI selectors and source UI directory are ID7 only; this is not target-runtime evidence."
+      },
+      "version_metadata": {
+        "package": "4.6.1",
+        "meta": "4.6.1",
+        "source_rhmi": "3.1.0",
+        "generated_rhmi": "4.6.0",
+        "status": "MISMATCH_OBSERVED",
+        "applies_to": "The associated unpacked 4.6.1 metadata, not the repaired 4.6.2 artifact."
+      },
+      "local_metadata_paths": [
+        "aq_lights_unpacked/meta.json",
+        "aq_lights_unpacked/source/package.json",
+        "aq_lights_unpacked/source/rhmiData/application.json",
+        "aq_lights_unpacked/rhmiData/application.json"
+      ],
+      "sdk_presence_path_hint": "aq_lights_unpacked/source/node_modules/oap-sdk"
+    },
+    {
+      "id": "aq_lights",
+      "kind": "app",
+      "delivery": "local_reference_only",
+      "local_only": true,
+      "offered": false,
+      "public_download_url": null,
+      "mguHmi": [
+        "ID7"
+      ],
+      "observed_install": "NOT_OBSERVED",
+      "observed_runtime": "NOT_OBSERVED",
+      "installation_eligibility": "NOT_ESTABLISHED",
+      "verification_scope": "Opaque local archive size/SHA256 plus associated local metadata only; no archive extraction, code execution, SDK inspection, build, or unit installation in this review.",
+      "helper_minimums": {
+        "status": "UNDECLARED",
+        "manifest_requires": "NOT_DECLARED",
+        "manifest_mguRequires": "NOT_DECLARED",
+        "numeric_renderer_minimum": "UNDECLARED",
+        "numeric_inputgate_minimum": "UNDECLARED",
+        "runtime_engine": {
+          "name": "node",
+          "declared_range": ">=8.7.0"
+        },
+        "documented_protocol": "mgu-render/1",
+        "protocol_is_a_semver_minimum": false,
+        "note": "Renderer protocol and negotiated touch/foreground capabilities do not establish a numeric package-version floor. Absence of requires does not establish that no helpers are needed."
+      },
+      "redistribution": {
+        "author_metadata": "custom",
+        "license_metadata": "UNLICENSED",
+        "full_application_redistribution_grant": "NOT_ESTABLISHED",
+        "standalone_sdk_redistribution_grant": "NOT_ESTABLISHED",
+        "generic_unlicensed_marker_is_conclusive": false,
+        "scoped_license_review": "No independent full-application redistribution grant found in the reviewed local non-SDK metadata, documentation, or license filenames.",
+        "sdk_directory_presence_observed": true,
+        "sdk_contents_inspected": false,
+        "package_or_sdk_copied_to_canonical_repository": false
+      },
+      "version": "4.6.2",
+      "artifact": {
+        "name": "aq_lights@4.6.2.mgu",
+        "format": "mgu",
+        "bytes": 675321,
+        "sha256": "412de34972617dd4b64d2bdfc682a6edccb2b745e15532f9685e646d682a63f8",
+        "checksumOrigin": "calculated",
+        "integrity_observation": "SHA256_RECOMPUTED_FROM_OPAQUE_LOCAL_FILE",
+        "local_path_hint": "local_build/aq_lights@4.6.2.mgu"
+      },
+      "platform_evidence": {
+        "level": "DECLARED_AND_LOCAL_METADATA_ID7_ONLY",
+        "id8_supported": false,
+        "paths": [
+          "aq_lights_original_staged/meta.json",
+          "aq_lights_original_staged/source/rhmiData/application.json",
+          "aq_lights_original_staged/rhmiData/application.json"
+        ],
+        "note": "meta.mguHmi is ID7; observed source/generated RHMI selectors and source UI directory are ID7 only. No target runtime was observed."
+      },
+      "version_metadata": {
+        "package": "4.6.2",
+        "meta": "4.6.2",
+        "app_spec": "4.6.2",
+        "source_rhmi": "4.6.2",
+        "generated_rhmi": "4.6.2",
+        "status": "CONSISTENT_IN_REVIEWED_LOCAL_METADATA",
+        "previous_mismatch_corrected": true,
+        "note": "The historical version mismatch is not a valid remaining objection to this repaired 4.6.2 variant."
+      },
+      "local_metadata_paths": [
+        "local_build/aq_lights@4.6.2.json",
+        "local_build/repair_patch_manifest.json",
+        "aq_lights_original_staged/meta.json",
+        "aq_lights_original_staged/source/package.json",
+        "aq_lights_original_staged/source/javascript/kit/app-spec.json",
+        "aq_lights_original_staged/source/rhmiData/application.json",
+        "aq_lights_original_staged/rhmiData/application.json"
+      ],
+      "sdk_presence_path_hint": "aq_lights_original_staged/source/node_modules/oap-sdk",
+      "historical_validation": {
+        "report_path_hint": "AQ_LIGHTS_MAIN_MERGE_REPORT_20261117_AR.md",
+        "report_date": "2026-11-17",
+        "reported_offline_node_checks": {
+          "passed": 28,
+          "total": 28
+        },
+        "reported_mgu_package_prepare": "ACCEPTED",
+        "rerun_in_this_review": false,
+        "reported_artifact_status": "OFFLINE_REVIEW_ONLY_NOT_VEHICLE_VERIFIED",
+        "historical_publish_value": false,
+        "historical_publish_evidence_path_hint": "local_build/repair_patch_manifest.json",
+        "publish_value_interpretation": "Historical provenance, not a new authorization policy or proof of third-party redistribution rights."
+      }
+    }
+  ],
+  "metadata_receipts": [
+    {
+      "local_path_hint": "local_build/aq_lights@4.6.2.json",
+      "bytes": 12318,
+      "sha256": "50df4671fef031cf461ba49247642f0adf8286e6e069a27c77f305102656f5cf"
+    },
+    {
+      "local_path_hint": "local_build/repair_patch_manifest.json",
+      "bytes": 5961,
+      "sha256": "7a787145a27b746ccb60ec7153038c68ec8e54b8a9ed329f350208e1ec7dd2c9"
+    },
+    {
+      "local_path_hint": "aq_lights_unpacked/meta.json",
+      "bytes": 4270,
+      "sha256": "b5ba9e72cb6b476e47d2c6e279b0d151e9ee8729b5c9386967babcf87ae56179"
+    },
+    {
+      "local_path_hint": "aq_lights_original_staged/meta.json",
+      "bytes": 4300,
+      "sha256": "e2973f60353ef5be0d4b4dfb5aff67514537d5df0521bcbeffde9ddf0e117fd5"
+    },
+    {
+      "local_path_hint": "aq_lights_unpacked/source/package.json",
+      "bytes": 633,
+      "sha256": "585aba6b0f226374c4387aa2431612670687b22c14e1ea4b14376634e2412e19"
+    },
+    {
+      "local_path_hint": "aq_lights_original_staged/source/package.json",
+      "bytes": 597,
+      "sha256": "93b7900c2a09064d14b1a19478af5fae2851e878ae94178c8f7032e292123af5"
+    },
+    {
+      "local_path_hint": "aq_lights_original_staged/source/rhmiData/application.json",
+      "bytes": 1785,
+      "sha256": "9efc3862a8e4ef84fd4ebc13405a062069ae66340e460b46eb70d07572af84b1"
+    }
+  ],
+  "historical_observation": {
+    "version": "4.6.0",
+    "date": "2026-11-19",
+    "source_record": "data/aq-app-coverage.json",
+    "reviewed_exception": "data/aq-app-coverage-exceptions.json",
+    "observation_sha256": "2b9d3ff08a447f2c9493bf5daec9ff3f1ef36b4dbcc20a4ef703390b9b2f5fa5",
+    "package_issue": "Historical package 4.6.0 versus RHMI 3.1.0; observed RHMI/variantGroups ID7 only.",
+    "does_not_describe_repaired_4_6_2": true,
+    "archive_digest_rechecked_in_this_review": false
+  },
+  "independently_authored_ui_component": {
+    "path": "contrib/aq-lights-ui",
+    "version": "4.6.2",
+    "files": [
+      "contrib/aq-lights-ui/README.md",
+      "contrib/aq-lights-ui/package.json",
+      "contrib/aq-lights-ui/javascript/ui_interaction.js",
+      "contrib/aq-lights-ui/test/ui_interaction.test.js"
+    ],
+    "declared_node_engine": ">=18",
+    "installable_application": false,
+    "full_app_redistribution_grant": "NOT_ESTABLISHED",
+    "note": "Existing independently authored UI helper; its presence is not evidence that the full packaged application or SDK may be redistributed."
+  },
+  "coverage": {
+    "comparison_target": {
+      "repository": "AQ_MGU_WORK",
+      "commit": "16b44f49f3451ff9f92ab326acedbf9f3a8d9303"
+    },
+    "historical_main": {
+      "commit": "6650ed577b48b80caeb7b708f60ca615f5a8aaa7",
+      "feed_rows": 288,
+      "unique_ids": 288,
+      "present_current_ids": 288,
+      "missing_ids": [],
+      "changed_versions": [],
+      "compared_files": [
+        "mgu-repo.json",
+        "release/catalog.json"
+      ],
+      "assurance": "Exact ID/version coverage; does not claim identical full source payloads or target runtime."
+    },
+    "historical_games": {
+      "commit": "1965ef4a7736d664681542436cc7c0e8c45d316c",
+      "channel_rows": 44,
+      "unique_ids": 39,
+      "present_current_ids": 39,
+      "missing_ids": [],
+      "changed_versions": [],
+      "compared_files": [
+        "mgu-repo.json",
+        "release/catalog.json"
+      ],
+      "assurance": "All historical IDs and versions are present; duplicate source/release channel rows are not additional applications.",
+      "preservation_receipt": "data/games-source-preservation-20261120.json"
+    },
+    "nov17_review_checkout": {
+      "local_path_hint": "AQ_MGU",
+      "observed_head": "6a80f3cb1eda9ff1fcd6dce828ecf2f3d36a5e3e",
+      "source_rows": 40,
+      "release_rows": 21,
+      "unique_ids": 61,
+      "present_current_ids": 61,
+      "missing_ids": [],
+      "saved_audit_path_hint": "repository_install_audit_20261117/all_61_component_install_audit.json",
+      "saved_audit_ids": 61,
+      "saved_audit_missing_current_ids": [],
+      "version_upgrades": [
+        {
+          "id": "ambient_config",
+          "previous": "2.6.2",
+          "current": "2.7.13"
+        },
+        {
+          "id": "car_vitals",
+          "previous": "2.27.6",
+          "current": "2.27.9"
+        },
+        {
+          "id": "edrive",
+          "previous": "2.10.1",
+          "current": "2.11.0"
+        },
+        {
+          "id": "idv7lol",
+          "previous": "0.2.14",
+          "current": "0.2.15"
+        },
+        {
+          "id": "live_adjustments",
+          "previous": "0.9.8",
+          "current": "0.9.10"
+        },
+        {
+          "id": "live_data",
+          "previous": "1.0.16",
+          "current": "1.0.18"
+        },
+        {
+          "id": "redline",
+          "previous": "2.0.44",
+          "current": "2.0.45"
+        },
+        {
+          "id": "robertn_store",
+          "previous": "0.9.40",
+          "current": "0.9.41"
+        },
+        {
+          "id": "service",
+          "previous": "1.6.2",
+          "current": "1.6.3"
+        },
+        {
+          "id": "zf8hp",
+          "previous": "1.5.7",
+          "current": "1.5.8"
+        }
+      ],
+      "delivery_changes": [
+        {
+          "id": "vizualyse_cast",
+          "version": "0.4.1",
+          "previous": "source",
+          "current": "release"
+        },
+        {
+          "id": "vizualyse_chromium",
+          "version": "0.3.1",
+          "previous": "source",
+          "current": "release"
+        },
+        {
+          "id": "vizualyse_steam",
+          "version": "0.2.1",
+          "previous": "source",
+          "current": "release"
+        },
+        {
+          "id": "apm_airplay",
+          "version": "1.0.6",
+          "previous": "release",
+          "current": "source"
+        },
+        {
+          "id": "wzc_wazecards",
+          "version": "1.0.1",
+          "previous": "release",
+          "current": "source"
+        }
+      ],
+      "note": "The directory date is not its current Git commit; the recorded HEAD is the actual read-only observation."
+    },
+    "bundled_artifacts": {
+      "local_path_hint": "bundled_artifacts",
+      "files": 29,
+      "unique_ids": 27,
+      "present_current_feed_ids": 26,
+      "local_only_missing_feed_ids": [
+        "aq_lights"
+      ],
+      "extra_files_reason": "robertn_store and robertn_waze_cluster each have both .mgu and .tgz artifacts.",
+      "bcs_named_package_observed": false
+    },
+    "limits": [
+      "Coverage is bounded to the reviewed local feeds, pinned histories, metadata, documentation, and artifact filenames.",
+      "No assertion that all BCS products available elsewhere have been discovered.",
+      "Presence in an inventory, a downloadable artifact, preparation success, installation, and observed runtime are separate states."
+    ]
+  },
+  "bcs_provider_review": {
+    "id": "bcs_store",
+    "version": "3.4.5",
+    "kind": "app",
+    "title": "Store",
+    "build": "unit",
+    "mguHmi": [
+      "ID7",
+      "ID8"
+    ],
+    "upstream_repository": "bcs-asia/app-store",
+    "upstream_commit": "87b8d423854a39089809f360072057903a8ea3b5",
+    "readme_url": "https://github.com/bcs-asia/app-store/blob/87b8d423854a39089809f360072057903a8ea3b5/README.md",
+    "declared_license": "GPL-3.0",
+    "artifact": {
+      "name": "bcs_store@3.4.5.tgz",
+      "bytes": 4729989,
+      "sha256": "656f3bd8cee577d531680cc399d13e4218a4e0e0eec3ac3d876dc265a4374dc8",
+      "url": "https://github.com/bcs-asia/app-store/releases/download/catalog/bcs_store@3.4.5.tgz",
+      "checksumOrigin": "publisher",
+      "rehashed_in_this_review": false
+    },
+    "requires": {
+      "mgu-deploy": "0.8.12",
+      "mgu-updater": "0.8.28",
+      "mgu-render": "0.3.1"
+    },
+    "selected_providers": {
+      "mgu-deploy": "0.8.27",
+      "mgu-updater": "0.8.51",
+      "mgu-render": "0.6.25"
+    },
+    "transitive_requirements": [
+      {
+        "from": "mgu-updater",
+        "id": "mgu-deploy",
+        "minimum": "0.8.4",
+        "selected": "0.8.27"
+      },
+      {
+        "from": "mgu-updater",
+        "id": "mgu-python",
+        "minimum": "1.0.2",
+        "selected": "1.0.3"
+      },
+      {
+        "from": "mgu-render",
+        "id": "mgu-deploy",
+        "minimum": "0.6.9",
+        "selected": "0.8.27"
+      }
+    ],
+    "history": {
+      "main_C": "PRESENT",
+      "historical_main_6650": "PRESENT_SAME_VERSION_AND_ARTIFACT",
+      "observed_old_id8_ref": "c1124f97c3598b70b4e1d377e8a78689a8ae4ccb",
+      "observed_old_id8": "ABSENT",
+      "planned_id8_75": "SELECTED",
+      "observed_old_games_ref": "e10090293bb8f5350f5b9c8c46947670486f503a",
+      "observed_old_games": "ABSENT",
+      "planned_games_40": "NOT_SELECTED_GAME_SCOPE"
+    },
+    "catalog_provenance": {
+      "path": "data/catalog-provenance.json",
+      "original_catalog_url": "https://github.com/bcs-asia/app-store/releases/download/catalog/catalog.json",
+      "original_catalog_sha256": "afaa9de53f761ce1ff8c12de184a3d08ad15619037e797cc680357fe175d2599"
+    },
+    "other_bcs_providers_in_reviewed_scope": [],
+    "status": "eligible_static",
+    "preparation_requirement": "Unit/source package; target SDK preparation is still required.",
+    "observed_install": "NOT_OBSERVED",
+    "observed_runtime": "NOT_OBSERVED",
+    "evidence": [
+      "release/catalog.json",
+      "data/components.json",
+      "data/catalog-provenance.json",
+      "data/catalog-restoration-20261120.json",
+      "data/id8-eligibility-20261120.json",
+      "docs/COMPONENT_README_INSTALL_MATRIX.md"
+    ]
+  }
+}

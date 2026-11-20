@@ -148,8 +148,18 @@ sources.repoCatalog(readFile).then(async (source) => {
             }
         }
     }
+    // An installed older Python must not bypass the native Python recipe floor.
+    // These are pure resolver calls; no constructor, install or transport runs.
+    const aqFlap = rows.get('aq_flap');
+    const aqFlapPythonChecks = aqFlap ? ['1.0.0', '1.0.1', '1.0.2'].map((version) => {
+        const planner = makePlanner('ID7', [{ id: 'mgu-python', kind: 'tool', version }]);
+        const minimum = aqFlap.entry.requires['mgu-python'];
+        return { installed: version, minimum,
+            met: planner.requirementMet('mgu-python', minimum),
+            steps: planner.installPlan(aqFlap, []).map((step) => step.id) };
+    }) : [];
     console.log(JSON.stringify({ source, releases, plans, unitSources, substitution, inputPaths,
-        external, externalEnabled, externalReadPaths, missingExternalPlans,
+        external, externalEnabled, externalReadPaths, missingExternalPlans, aqFlapPythonChecks,
         externalVerification: 'metadata-observations-only' }));
 }).catch((error) => {
     console.error(error.stack);
@@ -243,6 +253,21 @@ class OriginalStoreContractTests(unittest.TestCase):
                 if build.get("sdk"):
                     self.assertIn("mgu-deploy", actual)
                     self.assertIn("mgu-deploy", self.all_entries)
+
+    def test_aq_flap_python_floor_rejects_older_installed_tools(self):
+        self.assertEqual(self.source["aq_flap"]["requires"]["mgu-python"], "1.0.2")
+        checks = {row["installed"]: row for row in self.actual["aqFlapPythonChecks"]}
+        self.assertEqual(set(checks), {"1.0.0", "1.0.1", "1.0.2"})
+        for version in ("1.0.0", "1.0.1"):
+            with self.subTest(installed=version):
+                check = checks[version]
+                self.assertEqual(check["minimum"], "1.0.2")
+                self.assertFalse(check["met"])
+                self.assertIn("mgu-python", check["steps"])
+                self.assertLess(check["steps"].index("mgu-python"), check["steps"].index("aq_flap"))
+        self.assertTrue(checks["1.0.2"]["met"])
+        self.assertNotIn("mgu-python", checks["1.0.2"]["steps"])
+        self.assertEqual(checks["1.0.2"]["steps"][-1], "aq_flap")
 
     def test_dependency_plan_is_resolvable_for_each_offered_hmi(self):
         for plan in self.actual["plans"]:

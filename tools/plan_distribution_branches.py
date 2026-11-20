@@ -71,7 +71,7 @@ AQ_SOURCE_ID = "aq-mgu-apps"
 AQ_CATALOG_ID = "aq-mgu-catalog"
 RESERVED_OUTPUTS = {
     "mgu-repo.json", "release/catalog.json", "README.md",
-    "data/app-images.json", "data/store-sources.json",
+    "data/app-images.json", "data/store-sources.json", "data/components.json",
 }
 
 
@@ -326,6 +326,7 @@ class PlanBuilder:
         self.target_inputs = []
         self.external_media = []
         self.warnings = []
+        self.documentation_header = {}
 
     def add_path(self, relative: str, owner: str, reason: str):
         relative = checked_path(relative)
@@ -574,6 +575,9 @@ class PlanBuilder:
         document = parse_json(self.snapshot.read(path), path)
         if not isinstance(document, dict) or not isinstance(document.get("components"), list):
             raise PlanningError("Documentation component metadata must contain a components list")
+        if "as_of" in document:
+            self.documentation_header["as_of"] = document["as_of"]
+        self.add_path(path, "distribution", "pinned original documentation index")
         selected = {}
         for key in self.order:
             channel, component, record = self.checked_records[key]
@@ -591,9 +595,52 @@ class PlanBuilder:
                 raise PlanningError(f"Ambiguous documentation metadata for {key}")
             if candidates:
                 selected[key] = candidates[0]
-        if selected:
-            self.add_path(path, "distribution", "pinned original documentation index")
         return selected
+
+    def selected_documentation_index(self, metadata: dict, images: dict):
+        """Publish the selected identities, with details from their exact inputs."""
+        rows = []
+        for key in sorted(self.order, key=lambda value: self.checked_records[value][2]["id"]):
+            channel, component, record = self.checked_records[key]
+            actual = component or record
+            row = dict(metadata.get(key, {}))
+            row.update({
+                "variant_key": key, "channel": channel,
+                "id": record["id"], "kind": record["kind"], "version": record["version"],
+                "title": actual.get("title") or row.get("title") or record["id"],
+                "supported_hmi": list(record["hmi"]),
+                "requires": requirement_map(record.get("requires"), key),
+                "build_requires": requirement_map(record.get("build_requires"), key + " build_requires"),
+                "source_path": component["path"] if channel == "source" else None,
+                "artifact": dict(component["artifact"]) if channel == "release" else {},
+                "delivery": {
+                    "source": "branch source", "release": "original publisher artifact",
+                    "external": "external original source",
+                }[channel],
+            })
+            if actual.get("description") is not None:
+                row["description"] = actual["description"]
+            if "mguHmi" in row:
+                row["mguHmi"] = list(record["hmi"])
+            row.setdefault("category", record["kind"])
+            row.setdefault("live_install_status", "NOT OBSERVED")
+            if channel == "external":
+                row.update({
+                    "source_repository": record["repository"],
+                    "upstream_commit": record["upstream_commit"],
+                    "upstream_channel": record["upstream_channel"],
+                })
+            gallery = images.get(record["id"], {})
+            row["icon"] = gallery.get("icon")
+            row["images"] = list(gallery.get("images", []))
+            row["image_count"] = len(row["images"])
+            original_readme = row.get("upstream_readme")
+            if isinstance(original_readme, str) and original_readme.partition("#")[0] in RESERVED_OUTPUTS:
+                row["upstream_readme"] = ".distribution/original/" + original_readme
+            rows.append(row)
+        # Global counts/summaries from the full catalog are deliberately not
+        # copied; every active row is bound to this distribution's selection.
+        return {**self.documentation_header, "components": rows}
 
     def reference_url(self, value: str, owner: str, *, document: bool = False, component_path: str | None = None):
         if not isinstance(value, str) or not value or "\\" in value or any(ord(char) < 32 for char in value):
@@ -1018,6 +1065,9 @@ class PlanBuilder:
         if store_config is not None:
             generated["data/store-sources.json"] = json_bytes(store_config).decode("utf-8")
         generated["README.md"] = self.render_readme(images, metadata, external_records, store_config)
+        generated["data/components.json"] = json_bytes(
+            self.selected_documentation_index(metadata, images)
+        ).decode("utf-8")
         files = []
         for path in sorted(self.files):
             item = self.files[path]

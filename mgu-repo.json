@@ -566,7 +566,7 @@
         "ID7"
       ],
       "requires": {
-        "mgu-python": "1.0.0",
+        "mgu-python": "1.0.2",
         "mgu-deploy": "0.3.2",
         "idrive7-renderd": "2.1.18",
         "mgu-inputgate": "1.1.0"

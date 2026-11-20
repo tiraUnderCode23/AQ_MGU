@@ -622,7 +622,8 @@ class DistributionReadmeTests(unittest.TestCase):
         self.assertIn("[Source directory](family/apps/demo)", readme)
         inputs = {row["path"]: row for row in plan["files"]}
         self.assertEqual(inputs[path]["sha256"], planner.sha256(raw))
-        self.assertIn("data/components.json", inputs)
+        self.assertIn(".distribution/original/data/components.json", inputs)
+        self.assertIn("data/components.json", plan["generated_files"])
 
     def test_stale_version_or_other_source_metadata_cannot_supply_readme_details(self):
         for field, value in (("version", "2.0.0"), ("source_path", "foreign/apps/demo")):
@@ -639,6 +640,12 @@ class DistributionReadmeTests(unittest.TestCase):
                 readme = plan["generated_files"]["README.md"]
                 self.assertNotIn("Wrong provider details", readme)
                 self.assertNotIn("javascript:invalid", readme)
+                active = json.loads(plan["generated_files"]["data/components.json"])
+                demo = next(item for item in active["components"] if item["id"] == "demo")
+                self.assertEqual(demo["version"], "1.0.0")
+                self.assertEqual(demo["source_path"], "family/apps/demo")
+                self.assertNotIn("description", demo)
+                self.assertNotIn("upstream_readme", demo)
 
     def test_component_manifest_media_work_without_a_gallery_index(self):
         app = source_component("demo")
@@ -703,7 +710,8 @@ class DistributionReadmeTests(unittest.TestCase):
         record = evidence["variants"]["source:demo@1.0.0"]
         record["build_requires"] = {"mgu-python": "1.0.2"}
         record["dependencies"] = {"external-helper": external_key, "mgu-python": "release:mgu-python@1.0.3"}
-        readme = planner.plan_distribution(snapshot, evidence, "id8")["generated_files"]["README.md"]
+        plan = planner.plan_distribution(snapshot, evidence, "id8")
+        readme = plan["generated_files"]["README.md"]
         self.assertIn("| release | 0 | 1 |", readme)
         self.assertIn("| external | 0 | 1 |", readme)
         self.assertIn("Build prerequisites: [mgu-python &gt;=1.0.2", readme)
@@ -711,6 +719,10 @@ class DistributionReadmeTests(unittest.TestCase):
         self.assertIn("https://github.com/Publisher/tools/tree/" + UPSTREAM, readme)
         self.assertIn("branch:main", readme)
         self.assertIn("[Original publisher artifact](https://publisher.example/releases/mgu-python.tgz)", readme)
+        active = {row["id"]: row for row in json.loads(plan["generated_files"]["data/components.json"])["components"]}
+        self.assertEqual(set(active), {"demo", "mgu-python", "external-helper"})
+        self.assertEqual(active["demo"]["build_requires"], {"mgu-python": "1.0.2"})
+        self.assertEqual(active["mgu-python"]["version"], "1.0.3")
 
     def test_gallery_plan_and_export_receipts_are_deterministic(self):
         snapshot, evidence = fixture(images=True)
@@ -727,6 +739,172 @@ class DistributionReadmeTests(unittest.TestCase):
                 (outputs[0] / ".distribution/receipt.json").read_bytes(),
                 (outputs[1] / ".distribution/receipt.json").read_bytes(),
             )
+
+
+class DistributionDocumentationIndexTests(unittest.TestCase):
+    @staticmethod
+    def mixed_fixture():
+        app = source_component("demo", requires={"released-helper": "1.0.0", "external-helper": "1.0.0"})
+        released = released_component("released-helper", version="2.0.0")
+        snapshot, evidence = fixture([app], [released])
+        external_key = "external:Publisher/tools:external-helper@1.2.0"
+        external = copy.deepcopy(evidence["variants"]["source:demo@1.0.0"])
+        external.update({
+            "id": "external-helper", "kind": "tool", "version": "1.2.0", "channel": "external",
+            "repository": "Publisher/tools", "upstream_commit": UPSTREAM,
+            "upstream_channel": "branch:main", "requires": {}, "dependencies": {},
+        })
+        evidence["external_variants"][external_key] = external
+        evidence["variants"]["source:demo@1.0.0"]["dependencies"]["external-helper"] = external_key
+        return snapshot, evidence, released, external_key
+
+    def test_active_index_contains_only_selected_apps_and_all_required_helpers(self):
+        for name in ("id8", "games"):
+            app = source_component("demo", requires={"helper": "1.0.0"})
+            helper = source_component("helper", "tool", "1.2.0")
+            excluded = source_component("unselected-id7-app", hmi=["ID7"])
+            snapshot, evidence = fixture([app, helper, excluded], name=name, images=True)
+            configuration = evidence["distributions"][name]
+            configuration["seeds"] = ["source:demo@1.0.0"]
+            if name == "games":
+                historical, _ = fixture([app, helper])
+                historical.commit = HISTORICAL
+                snapshot.history[HISTORICAL] = historical
+                configuration.update(target_hmi=None, eligibility_policy="preservation", preserve_from=HISTORICAL)
+            metadata = {
+                "as_of": "2026-11-20", "counts": {"apps": 294}, "total": 294,
+                "components": [
+                    {
+                        "id": "demo", "kind": "app", "version": "1.0.0", "source_path": app["path"],
+                        "description": "Exact selected documentation.", "license": "Fixture license",
+                        "source_review_notes": "Preserve this selected-row limitation.",
+                        "supported_hmi": ["ID7"], "mguHmi": ["ID7"],
+                        "requires": {"unselected-id7-app": "99.0.0"}, "image_count": 999,
+                    },
+                    {"id": "helper", "kind": "tool", "version": "1.2.0", "source_path": helper["path"]},
+                    {"id": excluded["id"], "kind": "app", "version": "1.0.0", "source_path": excluded["path"]},
+                ],
+            }
+            original = planner.json_bytes(metadata)
+            snapshot.data["data/components.json"] = original
+            snapshot.refresh()
+            with self.subTest(distribution=name):
+                plan = planner.plan_distribution(snapshot, evidence, name)
+                active = json.loads(plan["generated_files"]["data/components.json"])
+                self.assertEqual(active["as_of"], metadata["as_of"])
+                self.assertNotIn("counts", active)
+                self.assertNotIn("total", active)
+                rows = {row["id"]: row for row in active["components"]}
+                self.assertEqual(set(rows), {"demo", "helper"})
+                self.assertEqual({row["variant_key"] for row in rows.values()}, set(plan["selected_variants"]))
+                self.assertEqual(rows["demo"]["supported_hmi"], ["ID8"])
+                self.assertEqual(rows["demo"]["mguHmi"], ["ID8"])
+                self.assertEqual(rows["demo"]["requires"], {"helper": "1.0.0"})
+                self.assertEqual(rows["demo"]["image_count"], 4)
+                self.assertEqual(rows["demo"]["license"], "Fixture license")
+                self.assertEqual(rows["demo"]["source_review_notes"], "Preserve this selected-row limitation.")
+                self.assertEqual(plan["generated_files"]["README.md"].count('height="180"'), 4)
+                originals = {row["path"]: row for row in plan["files"]}
+                self.assertNotIn("data/components.json", originals)
+                self.assertEqual(
+                    originals[".distribution/original/data/components.json"]["sha256"],
+                    planner.sha256(original),
+                )
+
+    def test_selected_release_and_external_details_keep_exact_provider_identity(self):
+        snapshot, evidence, released, external_key = self.mixed_fixture()
+        snapshot.data["data/components.json"] = planner.json_bytes({"as_of": "2026-11-20", "components": [
+            {
+                "id": "released-helper", "kind": "tool", "version": "2.0.0",
+                "description": "Matching release documentation.", "license": "Release notice",
+                "artifact": {**released["artifact"], "name": "stale-name.tgz", "size": 1},
+                "supported_hmi": ["ID7"], "requires": {"obsolete": "1.0.0"},
+            },
+            {
+                "id": "external-helper", "kind": "tool", "version": "1.2.0",
+                "source_repository": "Publisher/tools", "upstream_commit": "e" * 40,
+                "upstream_channel": "branch:old", "license": "Original companion notice",
+                "description": "Matching external documentation.", "source_path": "not-bundled",
+            },
+        ]})
+        snapshot.refresh()
+        plan = planner.plan_distribution(snapshot, evidence, "id8")
+        rows = {row["id"]: row for row in json.loads(plan["generated_files"]["data/components.json"])["components"]}
+        self.assertEqual(set(rows), {"demo", "released-helper", "external-helper"})
+        self.assertEqual(rows["released-helper"]["artifact"], released["artifact"])
+        self.assertEqual(rows["released-helper"]["supported_hmi"], ["ID8"])
+        self.assertEqual(rows["released-helper"]["requires"], {})
+        self.assertEqual(rows["released-helper"]["description"], "Matching release documentation.")
+        self.assertEqual(rows["released-helper"]["delivery"], "original publisher artifact")
+        external = rows["external-helper"]
+        self.assertEqual(external["variant_key"], external_key)
+        self.assertEqual(external["source_repository"], "Publisher/tools")
+        self.assertEqual(external["upstream_commit"], UPSTREAM)
+        self.assertEqual(external["upstream_channel"], "branch:main")
+        self.assertEqual(external["artifact"], {})
+        self.assertIsNone(external["source_path"])
+        self.assertEqual(external["license"], "Original companion notice")
+        self.assertEqual(external["delivery"], "external original source")
+
+    def test_other_release_payload_and_external_publisher_cannot_supply_details(self):
+        snapshot, evidence, released, _ = self.mixed_fixture()
+        snapshot.data["data/components.json"] = planner.json_bytes({"components": [
+            {
+                "id": "released-helper", "kind": "tool", "version": "2.0.0",
+                "artifact": {**released["artifact"], "sha256": "f" * 64},
+                "description": "Foreign release payload details", "license": "Wrong notice",
+            },
+            {
+                "id": "external-helper", "kind": "tool", "version": "1.2.0",
+                "source_repository": "OtherPublisher/tools", "description": "Foreign origin details",
+                "license": "Wrong notice",
+            },
+        ]})
+        snapshot.refresh()
+        plan = planner.plan_distribution(snapshot, evidence, "id8")
+        rows = {row["id"]: row for row in json.loads(plan["generated_files"]["data/components.json"])["components"]}
+        for identifier in ("released-helper", "external-helper"):
+            self.assertNotIn("description", rows[identifier])
+            self.assertNotIn("license", rows[identifier])
+        self.assertEqual(rows["released-helper"]["artifact"], released["artifact"])
+        self.assertEqual(rows["external-helper"]["source_repository"], "Publisher/tools")
+
+    def test_missing_documentation_index_produces_minimal_exact_selected_rows(self):
+        snapshot, evidence, released, _ = self.mixed_fixture()
+        plan = planner.plan_distribution(snapshot, evidence, "id8")
+        active = json.loads(plan["generated_files"]["data/components.json"])
+        self.assertNotIn("as_of", active)
+        self.assertEqual(len(active["components"]), len(plan["selected_variants"]))
+        self.assertEqual({row["variant_key"] for row in active["components"]}, set(plan["selected_variants"]))
+        self.assertFalse(any(row["source_path"] == "data/components.json" for row in plan["files"]))
+        rows = {row["id"]: row for row in active["components"]}
+        self.assertEqual(rows["demo"]["source_path"], "family/apps/demo")
+        self.assertEqual(rows["demo"]["requires"], {"released-helper": "1.0.0", "external-helper": "1.0.0"})
+        self.assertEqual(rows["released-helper"]["artifact"], released["artifact"])
+        self.assertEqual(rows["external-helper"]["upstream_commit"], UPSTREAM)
+
+    def test_original_full_index_and_filtered_active_index_have_separate_receipts(self):
+        snapshot, evidence = fixture()
+        original = planner.json_bytes({"as_of": "2026-11-20", "components": [
+            {"id": "demo", "kind": "app", "version": "1.0.0", "source_path": "family/apps/demo",
+             "upstream_readme": "README.md#original"},
+            {"id": "unselected", "kind": "app", "version": "9.0.0", "source_path": "other/app"},
+        ]})
+        snapshot.data["data/components.json"] = original
+        snapshot.refresh()
+        plan = planner.plan_distribution(snapshot, evidence, "id8")
+        with tempfile.TemporaryDirectory() as directory:
+            output = planner.materialize_distribution(snapshot, plan, Path(directory) / "selected", plan["plan_sha256"])
+            self.assertEqual((output / ".distribution/original/data/components.json").read_bytes(), original)
+            active = (output / "data/components.json").read_bytes()
+            self.assertEqual({row["id"] for row in json.loads(active)["components"]}, {"demo", "helper"})
+            demo = next(row for row in json.loads(active)["components"] if row["id"] == "demo")
+            self.assertEqual(demo["upstream_readme"], ".distribution/original/README.md#original")
+            receipt = json.loads((output / ".distribution/receipt.json").read_bytes())
+            hashes = {row["path"]: row["sha256"] for row in receipt["files"]}
+            self.assertEqual(hashes[".distribution/original/data/components.json"], planner.sha256(original))
+            self.assertEqual(hashes["data/components.json"], planner.sha256(active))
+            self.assertNotEqual(hashes["data/components.json"], hashes[".distribution/original/data/components.json"])
 
 
 class DistributionStoreConfigurationTests(unittest.TestCase):

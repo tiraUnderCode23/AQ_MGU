@@ -26,7 +26,7 @@ Reference matrix linking every component in `mgu-repo.json`, `release/catalog.js
 | `apex_dash@1.2.0` | app / branch source (scripted build) | ID7 | cluster-render>=0.5.0 | [README](../apps/_sources/markoni-e39-m5-cluster/README.md) | NOT OBSERVED |
 | `apm_airplay@1.0.6` | app / branch source (scripted build) | ID7 | airplay-rx>=1.0.0; mgu-deploy>=0.7.0 | [README](https://github.com/noth4m4d/mgu-hamadstools/blob/e327b30e48019eab79ace5fb7d610610d0e96d92/README.md) | NOT OBSERVED |
 | `app-privacy@1.7.2` | tool / original publisher artifact (19,586 compressed bytes) | ID7/ID8 | mgu-deploy>=0.6.3 | [README](https://github.com/robertnisipeanu/mgu-store/blob/3ecfafd4b6b2492c1776f53e3b74add5653c5c61/README.md) | NOT OBSERVED |
-| `aq_flap@2.6.1` | app / branch source (scripted build) | ID7 | idrive7-renderd>=2.1.18; mgu-deploy>=0.3.2; mgu-inputgate>=1.1.0; mgu-python>=1.0.0 | [README](../apps/README.md) | NOT OBSERVED |
+| `aq_flap@2.6.1` | app / branch source (scripted build) | ID7 | idrive7-renderd>=2.1.18; mgu-deploy>=0.3.2; mgu-inputgate>=1.1.0; mgu-python>=1.0.2 | [README](../apps/README.md) | NOT OBSERVED |
 | `aref_carcare@0.2.4` | app / branch source (scripted build) | ID7/ID8 | mgu-render>=0.6.24 | [README](../apps/_sources/arefahmad-idrive7-apps/apps/aref_carcare/README.md) | NOT OBSERVED |
 | `aref_carlyrics@0.3.10` | app / branch source (scripted build) | ID7/ID8 | mgu-render>=0.6.24 | [README](../apps/_sources/arefahmad-idrive7-apps/apps/aref_carlyrics/README.md) | NOT OBSERVED |
 | `aref_carwatch@0.1.3` | app / branch source (scripted build) | ID7 | None declared | [README](../apps/_sources/arefahmad-idrive7-apps/apps/aref_carwatch/README.md) | NOT OBSERVED |
