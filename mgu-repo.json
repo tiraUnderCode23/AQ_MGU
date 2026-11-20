@@ -2,21 +2,6 @@
   "schema": 1,
   "components": [
     {
-      "id": "app-privacy",
-      "kind": "tool",
-      "version": "1.7.2",
-      "title": "App privacy",
-      "description": "Keeps our apps out of the head unit's backend app reporting and restarts them after a crash",
-      "path": "tools/_released/app-privacy",
-      "mguHmi": [
-        "ID7",
-        "ID8"
-      ],
-      "requires": {
-        "mgu-deploy": "0.6.3"
-      }
-    },
-    {
       "id": "bimmer_blocks",
       "title": "Bimmer Blocks",
       "version": "1.1.1",
@@ -154,19 +139,6 @@
       "provides": "renderer"
     },
     {
-      "id": "mgu-deploy",
-      "kind": "tool",
-      "version": "0.8.27",
-      "title": "Deploy tool",
-      "description": "Installs, updates, rolls back and removes our tools and apps on the head unit, with a snapshot before every change",
-      "path": "tools/_released/mgu-deploy",
-      "mguHmi": [
-        "ID7",
-        "ID8"
-      ],
-      "requires": {}
-    },
-    {
       "id": "mgu-game-net",
       "kind": "tool",
       "version": "0.1.0",
@@ -194,68 +166,6 @@
       }
     },
     {
-      "id": "mgu-python",
-      "kind": "tool",
-      "version": "1.0.3",
-      "title": "Python",
-      "description": "Python 3.12 for apps that build on the head unit with Python",
-      "path": "tools/_released/mgu-python",
-      "mguHmi": [
-        "ID7",
-        "ID8"
-      ],
-      "requires": {}
-    },
-    {
-      "id": "mgu-render",
-      "kind": "tool",
-      "version": "0.6.25",
-      "title": "Renderer",
-      "description": "Draws apps' screens on the GPU, over the HMI or inside the app's page",
-      "path": "tools/_released/mgu-render",
-      "mguHmi": [
-        "ID7",
-        "ID8"
-      ],
-      "requires": {
-        "mgu-deploy": "0.6.9"
-      },
-      "provides": "renderer",
-      "optional": true
-    },
-    {
-      "id": "mgu-updater",
-      "kind": "tool",
-      "version": "0.8.51",
-      "title": "Updater",
-      "description": "Installs, updates and removes apps and head-unit tools from its sources",
-      "path": "tools/_released/mgu-updater",
-      "mguHmi": [
-        "ID7",
-        "ID8"
-      ],
-      "requires": {
-        "mgu-deploy": "0.8.4",
-        "mgu-python": "1.0.2"
-      }
-    },
-    {
-      "id": "mgu-uplink",
-      "kind": "tool",
-      "version": "0.7.13",
-      "title": "Internet uplink",
-      "description": "Internet for selected apps through a USB network adapter, an LTE stick, a USB-tethered phone or Wi-Fi",
-      "path": "tools/_released/mgu-uplink",
-      "mguHmi": [
-        "ID7",
-        "ID8"
-      ],
-      "requires": {
-        "mgu-updater": "0.7.2"
-      },
-      "optional": true
-    },
-    {
       "id": "mgu_gamestation",
       "kind": "app",
       "version": "0.3.0",
@@ -277,7 +187,11 @@
           "{id}"
         ],
         "sdk": "apps/_sources/namels-mgu-apps-full/oap-sdk",
-        "output": "apps/_sources/namels-mgu-apps-full/dist/{id}@{version}.tgz"
+        "output": "apps/_sources/namels-mgu-apps-full/dist/{id}@{version}.tgz",
+        "shared": [
+          "apps/_sources/namels-mgu-apps-full/kit",
+          "apps/_sources/namels-mgu-apps-full/tools"
+        ]
       },
       "icon": "icon.png"
     },
@@ -303,7 +217,8 @@
         "sdk": "apps/_sources/cruzen991-cluster/oap-sdk",
         "output": "apps/_sources/cruzen991-cluster/dist/{id}@{version}.tgz",
         "shared": [
-          "apps/_sources/cruzen991-cluster/kit"
+          "apps/_sources/cruzen991-cluster/kit",
+          "apps/_sources/idrive7-apps/kit/localization"
         ]
       }
     },
@@ -341,40 +256,6 @@
       "mguNeeds": [
         "renderer"
       ]
-    },
-    {
-      "id": "vizualyse-moonlight",
-      "kind": "tool",
-      "version": "0.3.1",
-      "title": "Moonlight",
-      "description": "EXPERIMENTAL. Streams games from a PC running Sunshine (GameStream) to the central screen (or the cluster or the HUD) while parked, decoded on the car's GPU, with the sound through the speakers and game controllers (a wired Xbox 360-style USB pad, or the phone as a pad; no Bluetooth pads). Pair the PC and pick a game on the phone page: scan the QR code on the iDrive Moonlight page.",
-      "path": "tools/_released/vizualyse-moonlight",
-      "mguHmi": [
-        "ID7"
-      ],
-      "requires": {
-        "mgu-deploy": "0.7.0",
-        "cluster-render": "0.4.2",
-        "mgu-python": "1.0.0",
-        "mgu-render": "0.6.11"
-      },
-      "uninstallable": true
-    },
-    {
-      "id": "vizualyse_moonlight",
-      "kind": "app",
-      "title": "Moonlight",
-      "description": "Moonlight: shows the phone link and QR code for the Moonlight game streaming service, its status, and stops, quits or resumes the game streamed from a PC running Sunshine",
-      "version": "0.3.1",
-      "requires": {
-        "vizualyse-moonlight": "0.3.0"
-      },
-      "mguHmi": [
-        "ID7"
-      ],
-      "uninstallable": true,
-      "path": "apps/_published/vizualyse_moonlight",
-      "build": "unit"
     }
   ]
 }
