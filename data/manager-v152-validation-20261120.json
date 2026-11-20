@@ -1,0 +1,121 @@
+{
+  "schema": 1,
+  "recordedAtUtc": "2026-11-20T14:41:53.102897+00:00",
+  "managerVersion": "1.5.2+14",
+  "sourceCommit": "ae9b5ea4fee5d52ddbea57af0f52dfc06835e90a",
+  "previousSourceCommit": "0fa02953b189796ad5a8fedd84c4f165e8c02e7d",
+  "sourceRepositoryRemotes": [],
+  "analyzer": "No issues found",
+  "fullTests": {
+    "passed": 1097,
+    "failed": 0,
+    "skipped": 1,
+    "skippedReason": "Opt-in dashboard visual capture; passed separately at four viewport/text-scale configurations."
+  },
+  "focusedUiTests": {
+    "passed": 34,
+    "failed": 0
+  },
+  "focusedCredentialTests": {
+    "passed": 33,
+    "failed": 0
+  },
+  "visualCapture": {
+    "passed": 1,
+    "failed": 0,
+    "viewports": [
+      "390x844@1",
+      "411x960@1",
+      "320x640@2",
+      "720x820@1"
+    ],
+    "fixtures": "synthetic; no vehicle transport or credentials",
+    "review": {
+      "schema": 1,
+      "reviewedAtUtc": "2026-11-20T14:37:12.773662+00:00",
+      "source": "production widgets with synthetic fixtures and no unit transport",
+      "captures": {
+        "phone": "045a08f3611f45ec493d495b303d2aae10a4c91b2453ae6950c34ebc3e50082a",
+        "phone_tall": "e37f8006787e3ff69194bb34ce6ae7402ff0d291244280445e798c45ebab9239",
+        "narrow_large_text": "c215788a54cf860f9c5657e524f8d5f02ef52974ce03df3384706690bc9559b8",
+        "wide": "e57ab86e3cc1efac307ba59e42446e90ae9efb5fc1d0282f842e4092d1c73126",
+        "phone_console": "02433969c3571729633d9a44e4eef3c1b4ca3255f3389c54fb6ccbdf664f8fd4"
+      },
+      "findings": {
+        "standardPhoneHeaderTwoLines": true,
+        "firstGridRowInstallControlVisibleAtNormalScale": true,
+        "wideGridFourColumns": true,
+        "narrowDoubleTextUsesScrollableContent": true,
+        "consoleSheetControlsAndCopyVisible": true,
+        "overflowErrorsObserved": false,
+        "physicalPhoneScreenshotsIncluded": false
+      }
+    }
+  },
+  "pageStorageRegression": {
+    "sameObservedErrorReproducedBeforeFix": true,
+    "redTests": 2,
+    "separateVerticalHorizontalAndExpansionState": true
+  },
+  "optionalGithubCredentials": {
+    "userActionRequired": true,
+    "androidStorage": "AES/GCM + Android Keystore + app-private noBackupFilesDir AtomicFile",
+    "plaintextFallback": false,
+    "unsupportedPlatform": "session-only with explicit UI status",
+    "scope": "original HTTPS api.github.com:443 GET/HEAD only",
+    "authenticationRedirects": "not followed",
+    "valueShownInSettings": false,
+    "saveAutomaticallyRefreshesOrValidates": false,
+    "realTokenReadOrNetworkValidationPerformed": false
+  },
+  "logSha256": {
+    "final_analyze.log": "371694ca02158f4581d832245db806dc84894dbeac414621b418112d7c1608d3",
+    "full_flutter_tests.log": "327f1240db6b0f8f3f66bbd0499be1c69fc0ea78eb577356cab939d92b5dfaf2",
+    "focused_ui_tests.log": "97f4e450c8e2e3c995ee1346435fe60abbebde5cf9a6463dee7c7773112caf9a",
+    "credential_tests.log": "ba524717ead92cf69fbd4143bff25f16488a09c80365be16b4d8e4186f5b899d",
+    "visual_capture.log": "8504d3a97db5120ad0eec3f2e9686187b7503d04c1dc91890768cddc1e5bbc15",
+    "page_storage_red.log": "c9ee216ec2c428a5bdc965d493051cab77370d53ce918e72d6fd4ad4eaac57bf"
+  },
+  "preservedCatalog": {
+    "payloadCodePin": "714b2edb37f1bac811444ead348509b2b2836745",
+    "main": {
+      "applicationsAndFrontends": 214,
+      "tools": 80,
+      "components": 294,
+      "nativeSourceEntries": 198,
+      "releaseEntries": 90,
+      "externalTools": 6
+    },
+    "id8": {
+      "applicationsAndFrontends": 58,
+      "tools": 17,
+      "components": 75,
+      "nativeSourceEntries": 50,
+      "releaseEntries": 19,
+      "externalTools": 6
+    },
+    "games": {
+      "applicationsAndFrontends": 23,
+      "tools": 17,
+      "components": 40,
+      "nativeSourceEntries": 15,
+      "releaseEntries": 25
+    },
+    "channelCountsOverlap": true
+  },
+  "unchangedQuotaRecoveryEvidence": {
+    "validation": "data/manager-v151-validation-20261120.json",
+    "sourceCommit": "0fa02953b189796ad5a8fedd84c4f165e8c02e7d",
+    "publicCatalogBranchCount": 4,
+    "originalExternalToolCount": 6,
+    "focusedTestsPassed": 68
+  },
+  "limits": {
+    "unitActionsObserved": false,
+    "uncachedSourcePreparationStillRequiresVerifiedGithubTree": true,
+    "restOnlyReleaseEnumerationRemainsUnavailableDuringQuota": true,
+    "wildcardOnlyRowsNotInventedDuringQuota": true,
+    "originalUnitStoreChannelContractUnchanged": true,
+    "livePhoneV152VerificationPending": true
+  }
+}
