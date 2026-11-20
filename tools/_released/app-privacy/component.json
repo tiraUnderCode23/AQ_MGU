@@ -1,0 +1,35 @@
+{
+  "id": "app-privacy",
+  "kind": "tool",
+  "version": "1.7.2",
+  "title": "App privacy",
+  "description": "Keeps our apps out of the head unit's backend app reporting and restarts them after a crash",
+  "files": [
+    {
+      "path": "patch_mainapp.js",
+      "mode": "0755",
+      "sha256": "471110746c1d32cb024b60ede2c025652811d77824343e836ba6b6292fb90288",
+      "from": "files/patch_mainapp.js"
+    }
+  ],
+  "units": [
+    {
+      "name": "app-privacy.service",
+      "from": "units/app-privacy.service"
+    }
+  ],
+  "enable": [
+    {
+      "unit": "app-privacy.service",
+      "target": "multi-user.target"
+    }
+  ],
+  "recmgr": [
+    "app-privacy"
+  ],
+  "restart": [],
+  "mguHmi": [
+    "ID7",
+    "ID8"
+  ]
+}

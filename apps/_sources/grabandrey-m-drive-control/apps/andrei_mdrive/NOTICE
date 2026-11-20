@@ -1,4 +1,0 @@
-M Drive uses the MIT-licensed MGU App Kit by cauliflowermossgrape and contributors.
-Diagnostic transport and MHD protocol references: apps/live_adjustments (upstream).
-GPU renderer and emulator engine: GPL-3.0-or-later, see kit/renderd/LICENSE.
-Not affiliated with BMW or MHD.
