@@ -93,6 +93,9 @@ def retained_package(archive, recipe, source):
                     info.mode = 0o644
                     info.mtime = 0
                     output.addfile(info, io.BytesIO(data))
+            # Windows cannot replace an archive while its input handle is open.
+            # All payload reads are complete before the atomic replacement.
+            original.close()
             os.replace(temporary, archive)
         finally:
             if os.path.exists(temporary):

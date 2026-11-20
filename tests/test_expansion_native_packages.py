@@ -19,6 +19,40 @@ ROOT = Path(__file__).resolve().parents[1]
 UNIT_APPS = ('ida_vitals', 'ida_lightlog', 'ida_seatlights', 'esagono_settings')
 TOOLS = ('ida-vitals-cluster', 'esagono-cluster', 'mgu-inputgate')
 INPUTGATE_SHA256 = '56cd02ab5bd6e827ff151f2d24669e089dffad03ab663585c9da59d6d9c750eb'
+# This immutable pre-curation AQ tree contains the upstream source snapshots
+# referenced by data/extra-tool-packaging.json. Only historical comparison
+# bytes may come from it; current provider payloads must exist in the worktree.
+PACKAGING_RECEIPT_COMMIT = '6650ed577b48b80caeb7b708f60ca615f5a8aaa7'
+
+
+def current_providers():
+    providers = {}
+    for channel, path in (('source', 'mgu-repo.json'), ('release', 'release/catalog.json')):
+        document = json.loads((ROOT / path).read_text(encoding='utf-8'))
+        for component in document['components']:
+            if component['id'] in providers:
+                raise AssertionError('Ambiguous current provider: ' + component['id'])
+            providers[component['id']] = (channel, component)
+    return providers
+
+
+def historical_original_bytes(relative):
+    original = ROOT / relative
+    if original.is_file():
+        return original.read_bytes()
+    # No checkout or restoration: retain the exact historical comparison even
+    # when a source-only reference tree was removed during distribution curation.
+    return subprocess.check_output([
+        'git', '--no-optional-locks', '-C', str(ROOT), '-c', 'protocol.allow=never', 'show',
+        PACKAGING_RECEIPT_COMMIT + ':' + Path(relative).as_posix(),
+    ])
+
+
+def current_source_folder(identifier):
+    channel, component = current_providers()[identifier]
+    if channel != 'source' or not component.get('path'):
+        raise AssertionError('Native source provider required for ' + identifier)
+    return ROOT / component['path']
 
 
 class ExpansionNativePackageTests(unittest.TestCase):
@@ -79,7 +113,7 @@ sources.repoCatalog(read).then(c => {
                                 self.assertEqual(checked['package_hmi'], ['ID7', 'ID8'])
                                 self.assertEqual(checked['package_requires'], {'mgu-deploy': '0.3.2'})
                                 original = ROOT / 'tools/_sources/cauli-inputgate-1.2.1/kit/renderd/inputgate/tool'
-                                source = ROOT / 'tools/_packages/mgu-inputgate'
+                                source = current_source_folder('mgu-inputgate')
                                 manifest = json.loads(package.extractfile('component.json').read())
                                 self.assertEqual(manifest['version'], '1.2.2')
                                 self.assertNotIn('build', manifest)
@@ -104,24 +138,46 @@ sources.repoCatalog(read).then(c => {
                                 self.assertEqual(hashlib.sha256(library).hexdigest(), INPUTGATE_SHA256)
 
     def test_helper_runtime_and_service_bytes_remain_original(self):
-        document = json.loads((ROOT / 'data/extra-tool-packaging.json').read_text())
+        document = json.loads((ROOT / 'data/extra-tool-packaging.json').read_text(encoding='utf-8'))
+        providers = current_providers()
         self.assertEqual({c['id'] for c in document['components']}, set(TOOLS))
         for component in document['components']:
-            original = ROOT / component['original_path']
-            packaged = ROOT / component['path']
-            old = json.loads((original / 'component.json').read_text())
+            channel, provider = providers[component['id']]
+            self.assertEqual(channel, 'source')
+            self.assertEqual((provider['kind'], provider['version']),
+                             ('tool', component['version']))
+            self.assertEqual(provider['requires'], component['requires'])
+            packaged = ROOT / provider['path']
+            current = json.loads((packaged / 'component.json').read_text(encoding='utf-8'))
+            self.assertEqual((current['id'], current['version']),
+                             (component['id'], component['version']))
+            self.assertEqual(current['mguHmi'], provider['mguHmi'])
+            old = json.loads(historical_original_bytes(component['original_path'] + '/component.json'))
+            self.assertEqual((old['id'], old['version']),
+                             (component['id'], component['upstream_version']))
             for category, fallback in [('files', 'path'), ('units', 'name'), ('dropins', 'name')]:
+                def logical_key(record):
+                    return ((record.get('unit'), record[fallback])
+                            if category == 'dropins' else record[fallback])
+                current_records = {logical_key(record): record for record in current.get(category, [])}
                 for record in old.get(category, []):
-                    relative = record.get('from') or record[fallback]
-                    self.assertEqual((original / relative).read_bytes(), (packaged / relative).read_bytes())
+                    original_relative = record.get('from') or record[fallback]
+                    self.assertIn(logical_key(record), current_records)
+                    current_record = current_records[logical_key(record)]
+                    packaged_relative = current_record.get('from') or current_record[fallback]
+                    self.assertEqual(
+                        historical_original_bytes(component['original_path'] + '/' + original_relative),
+                        (packaged / packaged_relative).read_bytes(),
+                    )
             for record in component['files']:
-                data = (ROOT / record['path']).read_bytes()
+                relative = Path(record['path']).relative_to(component['path'])
+                data = (packaged / relative).read_bytes()
                 self.assertEqual(len(data), record['bytes'])
                 self.assertEqual(hashlib.sha256(data).hexdigest(), record['sha256'])
 
     def test_inputgate_snapshot_matches_all_33_original_git_blobs(self):
         source = ROOT / 'tools/_sources/cauli-inputgate-1.2.1'
-        proof = json.loads((ROOT / 'tools/_packages/mgu-inputgate/SOURCE-PROVENANCE.json').read_text())
+        proof = json.loads((current_source_folder('mgu-inputgate') / 'SOURCE-PROVENANCE.json').read_text())
         self.assertEqual(proof['commit'], '5555ef3bd2195aae15a8cec6803beeb40ca16456')
         self.assertEqual(proof['source_file_count'], 33)
         self.assertEqual(proof['source_bytes'], 188617)
@@ -141,7 +197,7 @@ sources.repoCatalog(read).then(c => {
 
     def test_inputgate_only_changes_packaging_and_declares_original_dropin_requirement(self):
         frozen = ROOT / 'tools/_sources/cauli-inputgate-1.2.1'
-        source = ROOT / 'tools/_packages/mgu-inputgate'
+        source = current_source_folder('mgu-inputgate')
         old = json.loads((frozen / 'kit/renderd/inputgate/tool/component.json').read_text())
         new = json.loads((source / 'component.json').read_text())
         self.assertEqual(old['version'], '1.2.1')
@@ -188,16 +244,71 @@ sources.repoCatalog(read).then(c => {
         self.assertEqual(packaging['actualTargetExecution'], 'NOT OBSERVED')
 
     def test_catalog_hmi_uses_archive_ui_when_publisher_claim_conflicts(self):
-        feed = {c['id']: c for c in json.loads((ROOT / 'release/catalog.json').read_text())['components']}
-        evidence = {c['id']: c for c in json.loads((ROOT / 'data/artifact-verification-20261119.json').read_text())['artifacts']}
-        self.assertEqual(feed['sideways']['mguHmi'], ['ID7'])
+        providers = current_providers()
+        evidence = {c['id']: c for c in json.loads(
+            (ROOT / 'data/artifact-verification-20261119.json').read_text(encoding='utf-8')
+        )['artifacts']}
+        current_evidence = json.loads(
+            (ROOT / 'data/id8-eligibility-20261120.json').read_text(encoding='utf-8')
+        )['variants']
+        sideways_channel, sideways = providers['sideways']
+        self.assertEqual(sideways_channel, 'release')
+        self.assertEqual(sideways['mguHmi'], ['ID7'])
+        self.assertEqual(sideways['version'], evidence['sideways']['package_version'])
+        self.assertEqual(sideways['artifact']['size'], evidence['sideways']['received_bytes'])
+        self.assertEqual(sideways['artifact']['sha256'], evidence['sideways']['sha256'])
         self.assertEqual(evidence['sideways']['package_hmi'], ['ID7', 'ID8'])
         self.assertEqual(evidence['sideways']['ui_hmi'], ['ID7'])
-        self.assertEqual(feed['turnkey_e_blend_id8']['mguHmi'], ['ID8'])
+        self.assertEqual(providers['turnkey_e_blend_id8'][1]['mguHmi'], ['ID8'])
         self.assertEqual(evidence['turnkey_e_blend_id8']['ui_hmi'], ['ID8'])
-        for component in feed.values():
+        for channel, component in providers.values():
             if component['kind'] == 'app' and 'ID8' in component.get('mguHmi', []):
-                self.assertIn('ID8', evidence[component['id']]['ui_hmi'])
+                build = component.get('build')
+                is_prebuilt_source = (channel == 'source' and isinstance(build, dict)
+                                      and build.get('node') == 'tools/prebuilt.js')
+                if channel == 'release':
+                    # Current releases must match current archive observations;
+                    # an older receipt for the same ID is not version evidence.
+                    key = 'release:' + component['id'] + '@' + component['version']
+                    proof = current_evidence[key]['artifact_inspection']
+                    artifact = component['artifact']
+                    with self.subTest(component=key):
+                        self.assertEqual(proof['status'], 'PASS')
+                        self.assertEqual((proof['id'], proof['version']),
+                                         (component['id'], component['version']))
+                        self.assertEqual(proof['url'], artifact['url'])
+                        self.assertEqual(proof['expected_bytes'], artifact['size'])
+                        self.assertEqual(proof['received_bytes'], artifact['size'])
+                        self.assertEqual(proof['expected_sha256'], artifact['sha256'])
+                        self.assertEqual(proof['sha256'], artifact['sha256'])
+                        self.assertTrue(any(
+                            ((item['metadata'].get('id') or item['metadata'].get('name')),
+                             item['metadata'].get('version'))
+                            == (component['id'], component['version'])
+                            for item in proof['manifests']
+                        ))
+                        self.assertIn('ID8', proof['ui_hmi'])
+                elif is_prebuilt_source:
+                    # The transport wrapper is a source entry, while these
+                    # bytes are still the exact reviewed publisher archive.
+                    proof = evidence[component['id']]
+                    self.assertEqual((proof['package_id'], proof['package_version']),
+                                     (component['id'], component['version']))
+                    self.assertEqual(proof['received_bytes'], proof['expected_bytes'])
+                    self.assertEqual(proof['sha256'], proof['expected_sha256'])
+                    archive = (ROOT / component['path']
+                               / (component['id'] + '@' + component['version'] + '.tgz'))
+                    raw = archive.read_bytes()
+                    self.assertEqual(len(raw), proof['expected_bytes'])
+                    self.assertEqual(hashlib.sha256(raw).hexdigest(), proof['expected_sha256'])
+                    inspection_entry = dict(component)
+                    if proof['source_build']:
+                        inspection_entry['build'] = 'unit'
+                    checked = inspect_archive(archive, inspection_entry)
+                    self.assertEqual(checked['source_build'], proof['source_build'])
+                    self.assertFalse(checked['contains_donor_sdk'])
+                    self.assertEqual(checked['ui_hmi'], proof['ui_hmi'])
+                    self.assertIn('ID8', checked['ui_hmi'])
 
 
 if __name__ == '__main__':

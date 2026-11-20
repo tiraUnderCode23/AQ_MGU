@@ -209,7 +209,8 @@ class ArefId8PortTests(unittest.TestCase):
                 self.builder.build(APP)
             for warning in observed:
                 self.assertTrue(issubclass(warning.category, ResourceWarning), str(warning.message))
-                self.assertTrue(warning.filename.endswith("kit/tools/build.py"), warning.filename)
+                self.assertEqual(Path(warning.filename).resolve(),
+                                 (PORT / "kit/tools/build.py").resolve())
             with tarfile.open(dist / (APP + "@" + self.spec["version"] + ".tgz"), "r:gz") as archive:
                 def read(relative):
                     with archive.extractfile("package/" + relative) as stream:

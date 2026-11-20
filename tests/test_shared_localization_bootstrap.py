@@ -4,6 +4,8 @@ Only the selected assignment expression is evaluated in a constrained namespace
 with a simulated directory map. No source build, install or external I/O runs.
 """
 import ast
+import hashlib
+import json
 import os
 from pathlib import Path
 from types import SimpleNamespace
@@ -12,15 +14,17 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 BUILDERS = (
-    "apps/_sources/c365-mgu-drive/kit/tools/build.py",
     "apps/_sources/markoni-homeassistant/kit/tools/build.py",
     "apps/_sources/tjmodsss-tjm-apps/kit/tools/build.py",
     "apps/_sources/grabandrey-m-drive-control/kit/tools/build.py",
     "apps/_sources/benspa900-mon-vitals/kit/tools/build.py",
     "apps/_sources/cruzen991-cluster/kit/tools/build.py",
-    "apps/_sources/dimonprograms-apps/kit/tools/build.py",
     "apps/_sources/dinerboy-ahg-mgu/kit/tools/build.py",
     "apps/_sources/prototype019-idrive7-motordaten/kit/tools/build.py",
+)
+ORIGINAL_BUILDERS = (
+    "apps/_sources/c365-mgu-drive/kit/tools/build.py",
+    "apps/_sources/dimonprograms-apps/kit/tools/build.py",
     "apps/_ports/dimonprograms-idrive8/kit/tools/build.py",
     "apps/_ports/dante-idrive8/kit/tools/build.py",
 )
@@ -81,6 +85,22 @@ def select_root(expression, kit, existing_directories):
 
 
 class SharedLocalizationBootstrapTests(unittest.TestCase):
+    def test_restored_original_builders_retain_their_pinned_bytes_and_localization(self):
+        receipt = json.loads((ROOT / "data/source-input-recovery-20261120.json").read_text(encoding="utf-8"))
+        rows = {row["path"]: row for row in receipt["files"]}
+        for relative in ORIGINAL_BUILDERS:
+            with self.subTest(builder=relative):
+                raw = (ROOT / relative).read_bytes()
+                self.assertEqual(hashlib.sha256(raw).hexdigest(), rows[relative]["sha256"])
+                self.assertNotIn(b"_AQ_LOC_ROOT", raw)
+                kit = (ROOT / relative).parents[1]
+                self.assertTrue((kit / "localization").is_dir())
+                expected = [row for row in receipt["files"]
+                            if row["path"].startswith(kit.relative_to(ROOT).as_posix() + "/localization/")]
+                self.assertTrue(expected)
+                for row in expected:
+                    self.assertEqual(hashlib.sha256((ROOT / row["path"]).read_bytes()).hexdigest(), row["sha256"])
+
     @classmethod
     def setUpClass(cls):
         cls.expressions = {

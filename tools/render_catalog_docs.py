@@ -21,16 +21,16 @@ def rebuild_matrix():
     ext = load_json("data/external-store-components.json")["components"]
     inv = {c["id"]: c for c in load_json("data/components.json")["components"]}
 
-    # Preserve existing live HU status column if present
+    # Keep a live observation only for the same exact component version.
     doc_path = ROOT / "docs/COMPONENT_README_INSTALL_MATRIX.md"
     old_status = {}
     if doc_path.is_file():
         for line in doc_path.read_text(encoding="utf-8").splitlines():
-            m = re.match(r"^\| `([^@`]+)@[^`]+` \|", line)
+            m = re.match(r"^\| `([^@`]+)@([^`]+)` \|", line)
             if m:
                 cells = [c.strip() for c in line.split("|")[1:-1]]
                 if len(cells) >= 6:
-                    old_status[m.group(1)] = cells[5]
+                    old_status[m.groups()] = cells[5]
 
     rows = []
     for src_type, lst in (("source", mgu), ("release", rel), ("external", ext)):
@@ -65,7 +65,7 @@ def rebuild_matrix():
                 readme_link = f"[README](../{ur})"
             else:
                 raise ValueError(f"Original README reference missing for {cid}")
-            status = old_status.get(cid) or meta.get("live_install_status") or "NOT OBSERVED"
+            status = old_status.get((cid, ver)) or meta.get("live_install_status") or "NOT OBSERVED"
             rows.append((cid, f"| `{cid}@{ver}` | {delivery} | {hmi} | {reqs} | {readme_link} | {status} |"))
 
     rows.sort(key=lambda x: x[0])

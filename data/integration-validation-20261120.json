@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "as_of": "2026-11-20",
+  "basis_commit": "044e4139b67683de4c64acd0644e20ac75599cb6",
+  "validation_scope": "current reviewed working-tree recovery; original source, no vehicle operation",
+  "offline_tests": {
+    "source_commit": "044e4139b67683de4c64acd0644e20ac75599cb6",
+    "working_tree_validation": true,
+    "modules": [
+      "test_*.py"
+    ],
+    "tests": 282,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "elapsed_seconds": 111.523,
+    "successful": true,
+    "runtime_on_hu": "NOT_OBSERVED"
+  },
+  "original_recovery_files_sha256_verified": 389,
+  "canonical_aliases_sha256_verified": 264,
+  "active_source_paths": "all declared component, Python, Node and shared paths exist",
+  "reviewed_files_sha256": {
+    "README.md": "cfea8d482f1c2435959ec3a05458bc7b209aed0db51ae64cdcb8864c9033e56e",
+    "mgu-repo.json": "f694cc9326e67a9a23f442f8d0558f4348e91c925cb85004c3faed52c44dcc8f",
+    "release/catalog.json": "780b75dc5e55839103f8fe6a10319e5395e9cd6669aab29f28ed7c297bf4fe22",
+    "data/components.json": "efb1351309f0d9a92f8cb75609a17f3500af722a0996db0088400cc7490682bd",
+    "data/extra-source-builds.json": "ec296f29e6a08dce4244367df2d5d54097a5708703d2c08b12261c6686436105",
+    "data/source-input-recovery-20261120.json": "96a66ba74207dc614c1efdf8744a809f8c8fa61d69114cf6e0f4955a2c7846b6",
+    "data/source-preservation-aliases-20261120.json": "c59e6080eae9695c1eae7dd8c8999126ac333be40b679f4dd24d4b42298a4099",
+    "data/vizualyse-frontend-inspection-20261120.json": "2d2d07dfd2ae6a2272b817ff0326391ec16257977f36cd7cbb479cc9bb1b17a0",
+    "docs/COMPONENT_README_INSTALL_MATRIX.md": "eb39d1e1656384472fe6a26d1d4b7cc44b3104f9773fa2adaa1d68577476fcf3",
+    "docs/SOURCE_PRESERVATION_20261120_AR.md": "d3050a732b82741e48c2e7d2a3ecc0a4b6a5f5e3a7cd33a920dba09e7a515884",
+    "tools/build_extra_source_app.py": "d452b46415d17d532e2e017b53a2a3fa3623d96d160d113dddc8912151bb80fe",
+    "tools/goal_checkpoint.py": "fe00f68a92bcdc729884778ce23eb7a5697c4eee7437fd6764b0455fbb728548",
+    "tools/render_catalog_docs.py": "95b10dbe17a8d73078fc81f65bc9fc1481b6d59aa33ada3b8b02a87bf5753b5e",
+    "tools/plan_distribution_branches.py": "7839a881ff8b33c6a1bd425b26750c65e053549deb5821f4a5b9a16760d39529",
+    "tools/run_offline_tests.py": "b8740d11e72983a44b38b898953e404b5cfebe4a008e551bacee0cbf36a9ed55",
+    "tests/test_distribution_branch_plan.py": "3302db1ba99e1d08341aca2280afff77cfb6133189a2a830f3f886ec29633e8d",
+    "tests/test_goal_checkpoint.py": "66068fa2c698cb1b0b15a860f1edad82b6e1169664a11628a2c21279e2781a57",
+    "tests/test_expansion_native_packages.py": "6211d359558ce0a1c435603b816924203ded41c76fa2ad7d968b2303a2f4e009",
+    "tests/test_external_store_dependencies.py": "f64043e865b0d2c30af4f9fa408e24f15dccec1c59c55fe5b24e6e30beb7dee1",
+    "tests/test_extra_source_apps.py": "ace01c7025196dbccde3bd9604bf34e86822e2d6e2dc05c66eeba4c55fcf8a8b",
+    "tests/test_shared_localization_bootstrap.py": "f5612ccf5379758cdad30584cab853c05d40db1d899eac1c09cbe541347154e2",
+    "tests/test_vizualyse_source_module_copies.py": "4ec973a4017cd2ad4ceab4127852a2b0e01ac015158282649fa3c9e72808a357",
+    "tests/test_id8_aref_port.py": "26a80b8ea672977c9a711101db9ce7f4ba1f0faee0c6963d2ccc9cf85ba817b7",
+    "tests/fixtures/tests_id8_aref.js": "9ae60e2a518446cba1ddf31ee63756c9ccbc285994d37818b032c4be2aa2d2af",
+    "tests/test_id8_derived_catalog.py": "6a32559ff4e91ced362fd4c737f3da4523cb3c5e0ccf4c2b1d6bd2560b30da7c"
+  },
+  "original_source_recovery_receipt": "data/source-input-recovery-20261120.json",
+  "additional_preservation_receipt": "data/source-preservation-aliases-20261120.json",
+  "publisher_frontend_receipt": "data/vizualyse-frontend-inspection-20261120.json",
+  "feed_audit": {
+    "status": "PASS",
+    "source": 198,
+    "release": 90,
+    "external": 6,
+    "metadata": 294
+  },
+  "known_limits": [
+    "Physical installation and runtime are NOT_OBSERVED.",
+    "Packaging fixtures use inert synthetic SDK-shaped inputs, not an actual target SDK.",
+    "The vizualyse-steam helper is 531211774 compressed bytes and exceeds the separate Manager 200 MiB limit."
+  ]
+}

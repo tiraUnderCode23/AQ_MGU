@@ -14,8 +14,14 @@ def utcnow():
     return dt.datetime.now(dt.timezone.utc)
 
 def state_dir():
-    value = subprocess.check_output(["git", "rev-parse", "--git-common-dir"], text=True).strip()
-    root = Path(value).resolve() / "aq_mgu_goal"
+    repository = Path(__file__).resolve().parents[1]
+    value = subprocess.check_output(
+        ["git", "-C", str(repository), "rev-parse", "--git-common-dir"], text=True
+    ).strip()
+    common_dir = Path(value)
+    if not common_dir.is_absolute():
+        common_dir = repository / common_dir
+    root = common_dir.resolve() / "aq_mgu_goal"
     root.mkdir(parents=True, exist_ok=True)
     return root
 
@@ -112,7 +118,7 @@ def main():
                 state["lease"] = None
                 state["status"] = args.status
             save_state(root, state)
-        print(json.dumps({"state_path": str(root / "state.json"), "lease_active": active if args.action == "status" else bool(state.get("lease")), "state": state}, ensure_ascii=False))
+        print(json.dumps({"state_path": str(root / "state.json"), "lease_active": active if args.action == "status" else bool(state.get("lease")), "state": state}, ensure_ascii=True))
         return code
 
 if __name__ == "__main__":

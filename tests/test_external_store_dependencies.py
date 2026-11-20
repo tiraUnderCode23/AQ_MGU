@@ -99,8 +99,31 @@ class ExternalDependencyTests(unittest.TestCase):
             "https://release-assets.githubusercontent.com/tokenized-url?sig=secret",
             "noth4m4d/mgu-hamadstools"))
 
+    def recorded_airplay_https_fixture(self):
+        # This is the reviewed HTTPS artifact, not a claim about its current
+        # feed route. airplay-rx is now distributed as a native source tool.
+        proof = next(record for record in
+                     read_json("data/artifact-verification-20261119.json")["artifacts"]
+                     if (record["id"], record["version"]) == ("airplay-rx", "1.0.0"))
+        self.assertEqual((proof["package_id"], proof["package_version"]),
+                         ("airplay-rx", "1.0.0"))
+        self.assertEqual(proof["download"], "PASS")
+        self.assertEqual(proof["archive"], "PASS")
+        self.assertEqual(proof["received_bytes"], proof["expected_bytes"])
+        self.assertEqual(proof["sha256"], proof["expected_sha256"])
+        self.assertEqual(proof["manifest"], "component.json")
+        return {
+            "id": proof["id"], "kind": "tool", "version": proof["version"],
+            "mguHmi": proof["package_hmi"], "requires": proof["package_requires"],
+            "artifact": {
+                "name": proof["id"] + "@" + proof["version"] + ".tgz",
+                "url": proof["artifact_url"], "size": proof["expected_bytes"],
+                "sha256": proof["expected_sha256"],
+            },
+        }
+
     def test_https_catalog_rejects_api_asset_that_needs_accept_header(self):
-        entry = copy.deepcopy(next(e for e in self.release["components"] if e["id"] == "airplay-rx"))
+        entry = self.recorded_airplay_https_fixture()
         entry["artifact"]["url"] = (
             "https://api.github.com/repos/noth4m4d/mgu-hamadstools/releases/assets/711907509")
         audit = validator.Audit()
@@ -109,7 +132,7 @@ class ExternalDependencyTests(unittest.TestCase):
                             for error in audit.errors))
 
     def test_https_catalog_accepts_original_browser_download_url(self):
-        entry = copy.deepcopy(next(e for e in self.release["components"] if e["id"] == "airplay-rx"))
+        entry = self.recorded_airplay_https_fixture()
         entry["artifact"]["url"] = (
             "https://github.com/noth4m4d/mgu-hamadstools/releases/download/catalog/airplay-rx%401.0.0.tgz")
         audit = validator.Audit()

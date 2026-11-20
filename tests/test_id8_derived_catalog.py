@@ -3,6 +3,7 @@ import importlib.util
 import hashlib
 import json
 from pathlib import Path
+import subprocess
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -21,6 +22,11 @@ EXPECTED = {
     'ab_storage': ('bmwenthusiast-idrive8', '1.2.4'),
     'bimmer_blocks': ('appstudio-idrive8', '1.1.1'),
     'vehicle_pass': ('appstudio-idrive8', '1.1.1'),
+}
+MIGRATED_FRONTENDS = {
+    'vizualyse_cast': '0.4.1',
+    'vizualyse_chromium': '0.3.1',
+    'vizualyse_steam': '0.2.1',
 }
 
 
@@ -74,14 +80,55 @@ class DerivedId8CatalogTests(unittest.TestCase):
 
     def test_remaining_source_blockers_and_readiness_cover_actual_hmi(self):
         feed = json.loads((ROOT / 'mgu-repo.json').read_text())['components']
+        release = json.loads((ROOT / 'release/catalog.json').read_text())['components']
         blockers = json.loads((ROOT / 'data/id8-source-blockers-20261119.json').read_text())['components']
         expected = {r['id'] for r in feed if r['kind'] == 'app' and 'ID8' not in (r.get('mguHmi') or [])}
-        self.assertEqual({r['id'] for r in blockers}, expected)
+        # The historical blockers retain the three published source frontends.
+        # Their current delivery channel changed; their ID7 platform did not.
+        self.assertEqual({r['id'] for r in blockers}, expected | set(MIGRATED_FRONTENDS))
+        providers = {r['id']: r for r in feed + release}
+        self.assertEqual(len(providers), len(feed) + len(release))
+        self.assertFalse(set(MIGRATED_FRONTENDS) & {r['id'] for r in feed})
+        for blocker in blockers:
+            with self.subTest(blocker=blocker['id']):
+                current = providers[blocker['id']]
+                self.assertEqual(current['kind'], 'app')
+                self.assertNotIn('ID8', current.get('mguHmi') or [])
         self.assertTrue(all(row['blocker'] and row['evidence'] for row in blockers))
         self.assertFalse(set(EXPECTED) & {row['id'] for row in blockers})
-        ready = {r['id']: r for r in json.loads((ROOT / 'data/install-readiness-20261119.json').read_text())['components']}
-        for row in feed:
-            self.assertEqual(ready[row['id']]['mguHmi'], row.get('mguHmi'))
+        readiness = json.loads((ROOT / 'data/install-readiness-20261119.json').read_text())
+        ready = {r['id']: r for r in readiness['components']}
+        baseline = 'c70001e921b30c8b6c6db6acb45ac2d906c0d750'
+        self.assertEqual(readiness['baseline_commit'], baseline)
+        baseline_bytes = subprocess.check_output(
+            ['git', 'show', baseline + ':mgu-repo.json'], cwd=ROOT)
+        self.assertEqual(hashlib.sha256(baseline_bytes).hexdigest(),
+                         'a6b12b4f4bca0d0717a1286f9f43bac9b90af57fbd9a0e8d510cd5a98f2d9473')
+        historical = {r['id']: r for r in json.loads(baseline_bytes)['components']}
+        for channel, rows in (('source', feed), ('release', release)):
+            for row in rows:
+                with self.subTest(channel=channel, app=row['id']):
+                    observation = ready[row['id']]
+                    if row['id'] == 'mgu-fscpatch':
+                        # Preserve the actual historical root-feed omission.
+                        # The canonical declaration is now sourced from the
+                        # original component; an unknown observation stays null.
+                        old = historical[row['id']]
+                        self.assertEqual(channel, 'source')
+                        for field in ('id', 'version', 'requires'):
+                            self.assertEqual(observation[field], old[field])
+                            self.assertEqual(row[field], old[field])
+                        self.assertEqual(observation['source_path'], old['path'])
+                        self.assertEqual(row['path'], old['path'])
+                        self.assertIsNone(old.get('mguHmi'))
+                        self.assertIsNone(observation['mguHmi'])
+                        component = json.loads((ROOT / row['path'] / 'component.json').read_text())
+                        self.assertEqual(component['id'], row['id'])
+                        self.assertEqual(component['version'], row['version'])
+                        self.assertEqual(component['mguHmi'], ['ID7'])
+                        self.assertEqual(row['mguHmi'], component['mguHmi'])
+                    else:
+                        self.assertEqual(observation['mguHmi'], row.get('mguHmi'))
         self.assertEqual(ready['adam_mtrack']['live_install_result'], 'USER_REPORTED_INSTALLED')
         # A prior version's transport incident cannot become a live result for
         # the newly derived version, even though the component ID is the same.
@@ -92,6 +139,45 @@ class DerivedId8CatalogTests(unittest.TestCase):
         self.assertEqual(shift['prior_install_observation']['live_install_result'],
                          'UNCONFIRMED_TRANSPORT_RESET')
         self.assertFalse(shift['prior_install_observation']['current_version_observed'])
+
+    def test_migrated_frontends_keep_exact_release_platform_evidence(self):
+        release = {r['id']: r for r in json.loads((ROOT / 'release/catalog.json').read_text())['components']}
+        blockers = {r['id']: r for r in json.loads((ROOT / 'data/id8-source-blockers-20261119.json').read_text())['components']}
+        receipt = json.loads((ROOT / 'data/vizualyse-frontend-inspection-20261120.json').read_text())
+        inspected = {r['id']: r for r in receipt['artifacts']}
+        self.assertEqual(set(inspected), set(MIGRATED_FRONTENDS))
+        self.assertEqual(len(inspected), len(receipt['artifacts']))
+        self.assertEqual(receipt['archive_execution'], 'NOT_EXECUTED')
+        self.assertEqual(receipt['runtime'], 'NOT_OBSERVED')
+        for cid, version in MIGRATED_FRONTENDS.items():
+            with self.subTest(app=cid):
+                row, proof = release[cid], inspected[cid]
+                self.assertEqual(row['version'], version)
+                self.assertEqual(blockers[cid]['version'], version)
+                self.assertEqual(blockers[cid]['declared_hmi'], ['ID7'])
+                self.assertEqual(row['kind'], 'app')
+                self.assertEqual(row['build'], 'unit')
+                self.assertEqual(row['mguHmi'], ['ID7'])
+                self.assertEqual(proof['version'], version)
+                self.assertEqual(proof['status'], 'PASS')
+                for field in ('url', 'size', 'sha256'):
+                    self.assertEqual(proof[field], row['artifact'][field])
+                self.assertRegex(proof['sha256'], r'^[0-9a-f]{64}$')
+                self.assertEqual(proof['received_bytes'], proof['size'])
+                self.assertEqual(proof['ui_hmi'], ['ID7'])
+                self.assertEqual(proof['archive_execution'], 'NOT_EXECUTED')
+                self.assertEqual(proof['runtime'], 'NOT_OBSERVED')
+                manifests = [m for m in proof['manifests'] if m['path'] == 'mgu-app.json']
+                self.assertEqual(len(manifests), 1)
+                app = manifests[0]['metadata']
+                self.assertEqual(app['id'], cid)
+                self.assertEqual(app['version'], version)
+                files = {entry['path']: entry for entry in proof['files']}
+                self.assertEqual(manifests[0]['sha256'], files['mgu-app.json']['sha256'])
+                ui = app['tree'] + '/rhmiData/uiDescriptions/'
+                self.assertIn(ui + 'ID7/application.xml', files)
+                self.assertIn(ui + 'ID7/uiDescription.json', files)
+                self.assertFalse(any(path.startswith(ui + 'ID8/') for path in files))
 
 
 def load_tests(loader, standard_tests, pattern):

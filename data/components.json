@@ -2748,7 +2748,8 @@
       ],
       "requires": {
         "idrive7-renderd": "2.1.19",
-        "mgu-inputgate": "1.2.1"
+        "mgu-inputgate": "1.2.1",
+        "mgu-deploy": "0.8.23"
       },
       "license": "MIT; bundled third-party and native-component notices retained",
       "upstream_readme": "https://github.com/dzooky/bmrmodz/blob/f141b7fb7476383ca081fd1196a6beb3a0566761/README.md",
@@ -6598,7 +6599,8 @@
       ],
       "requires": {
         "idrive7-renderd": "2.1.19",
-        "mgu-inputgate": "1.2.1"
+        "mgu-inputgate": "1.2.1",
+        "mgu-deploy": "0.8.23"
       },
       "license": "MIT; bundled third-party and native-component notices retained",
       "upstream_readme": "https://github.com/dzooky/bmrmodz/blob/f141b7fb7476383ca081fd1196a6beb3a0566761/README.md",
@@ -7367,7 +7369,8 @@
       ],
       "requires": {
         "idrive7-renderd": "2.1.19",
-        "mgu-inputgate": "1.2.1"
+        "mgu-inputgate": "1.2.1",
+        "mgu-deploy": "0.8.23"
       },
       "license": "MIT; bundled third-party and native-component notices retained",
       "upstream_readme": "https://github.com/dzooky/bmrmodz/blob/f141b7fb7476383ca081fd1196a6beb3a0566761/README.md",

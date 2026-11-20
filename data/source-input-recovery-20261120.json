@@ -1,0 +1,3491 @@
+{
+  "schema": 1,
+  "historical_commit": "6650ed577b48b80caeb7b708f60ca615f5a8aaa7",
+  "before_commit": "044e4139b67683de4c64acd0644e20ac75599cb6",
+  "reason": "Restore exact pinned original and derived inputs removed or modified by prior localization/source pruning; no upstream checksum was rewritten.",
+  "files": [
+    {
+      "path": "apps/_ports/arefahmad-idrive8/kit/tools/bake_arabic.py",
+      "sha256": "194b78f205d5edb3def14735df2da5f1b225f22185aa1dcc66e3aafa01e3069c",
+      "bytes": 2815,
+      "git_blob": "61731d1610606035d3a41de2a2e526a1bae19895",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_ports/dante-idrive8/kit/localization/credit.zh-CN.json",
+      "sha256": "c15e741d089c95575f0e8c4833489d6530980ced429672c9248ea8b6bc8fbd59",
+      "bytes": 576,
+      "git_blob": "ad372c34113e0b1ca8dc6339d7f81101cd0d476b",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_ports/dante-idrive8/kit/localization/diagnostic-full-manifest.json",
+      "sha256": "0a59838fbcb318324925285784d9e8a559136a37694db6725d71f860c474dad8",
+      "bytes": 656,
+      "git_blob": "844e766740551a3f181be949f07056144cc74c6d",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_ports/dante-idrive8/kit/localization/diagnostic-full-terms.tsv",
+      "sha256": "03bd61e16b7adc99ccaf9c1b9594eeb9c795b3ec2c5f7fe717ea4f50cd1a5fdb",
+      "bytes": 25028,
+      "git_blob": "277e3af450ff2ef07cb7f3101b97264adb0ff713",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_ports/dante-idrive8/kit/localization/diagnostic-full.zh-CN.json",
+      "sha256": "f1217e13b23b0a10db3a23a8b4d11f5e603b34fcafaf11cdd6544420a9101e9a",
+      "bytes": 11844672,
+      "git_blob": "a7aed0e8954c908ab4a99eaba9e88ecad763befc",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_ports/dante-idrive8/kit/localization/diagnostic-overrides.zh-CN.json",
+      "sha256": "bce13aa67f5ae78caf65e5741c7f92ee6d4591aad1fb7874bdea78f97ff7a8a5",
+      "bytes": 2568,
+      "git_blob": "22f3c62b301c51b19fe7c78519258b1bd81abe58",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_ports/dante-idrive8/kit/localization/diagnostic-terms.tsv",
+      "sha256": "856300a191ad8da43aeb4c532baf0a7a42736be8825eeecb0cf6ac9490e6b9b8",
+      "bytes": 19262,
+      "git_blob": "4472ba75fd53dd6e0c5e07703c92fd10736bc493",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_ports/dante-idrive8/kit/localization/fonts/diagnostic-zh-CN.json",
+      "sha256": "82e0ded0741e4fe402ef3fa7569d9c5a53f7684e4bc71f9d5ead36cfe280c8bd",
+      "bytes": 679189,
+      "git_blob": "3f8ad73b75265fb0e328dcb0ff08a284d835e286",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_ports/dante-idrive8/kit/tools/build.py",
+      "sha256": "75d85e3508e83ab97fb6436c61fd2834a4c5466e9094e215d34299b09b6f4cc3",
+      "bytes": 40250,
+      "git_blob": "2c7b8263962b324fce5606184c674b4bd4cc8571",
+      "mode": "100644",
+      "prior_sha256": "7526e611d3469323e5d6eaae7d97aad123ee9c08fadb7bbcf5482386b5a6a595",
+      "recovery": "mismatch"
+    },
+    {
+      "path": "apps/_ports/dimonprograms-idrive8/kit/localization/credit.ru.json",
+      "sha256": "656d45a268efe4ae518b331a15b31a7194264b027466b416a77cfbf412fb86b2",
+      "bytes": 448,
+      "git_blob": "2d57545279ab9c24f98bd624aadcaa448f307293",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_ports/dimonprograms-idrive8/kit/localization/credit.zh-CN.json",
+      "sha256": "c15e741d089c95575f0e8c4833489d6530980ced429672c9248ea8b6bc8fbd59",
+      "bytes": 576,
+      "git_blob": "ad372c34113e0b1ca8dc6339d7f81101cd0d476b",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_ports/dimonprograms-idrive8/kit/localization/diagnostic-full-manifest.json",
+      "sha256": "0a59838fbcb318324925285784d9e8a559136a37694db6725d71f860c474dad8",
+      "bytes": 656,
+      "git_blob": "844e766740551a3f181be949f07056144cc74c6d",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_ports/dimonprograms-idrive8/kit/localization/diagnostic-full-manifest.ru.json",
+      "sha256": "7c01c38093ead7e2a5c0964c52b68c4c4e4f329f0b35356388fdb454fe6a9af1",
+      "bytes": 733,
+      "git_blob": "18eb531112e865f7b96628581d72a8542339c06e",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_ports/dimonprograms-idrive8/kit/localization/diagnostic-full-terms.tsv",
+      "sha256": "03bd61e16b7adc99ccaf9c1b9594eeb9c795b3ec2c5f7fe717ea4f50cd1a5fdb",
+      "bytes": 25028,
+      "git_blob": "277e3af450ff2ef07cb7f3101b97264adb0ff713",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_ports/dimonprograms-idrive8/kit/localization/diagnostic-full.ru.json",
+      "sha256": "8a0bdd031c635d7e0929d0d913caafbd9d174afde2d6de7e8b55c4255028eae5",
+      "bytes": 13580391,
+      "git_blob": "96cd0760f4f2ee5b910812ca782208ef7101e330",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_ports/dimonprograms-idrive8/kit/localization/diagnostic-full.zh-CN.json",
+      "sha256": "f1217e13b23b0a10db3a23a8b4d11f5e603b34fcafaf11cdd6544420a9101e9a",
+      "bytes": 11844672,
+      "git_blob": "a7aed0e8954c908ab4a99eaba9e88ecad763befc",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_ports/dimonprograms-idrive8/kit/localization/diagnostic-overrides.ru.json",
+      "sha256": "2d9674d9658df2b6e2c64a30f48eba3f5e6283d0eb9692285147f717280afbe7",
+      "bytes": 1017,
+      "git_blob": "2791ab897ab4833fe6cc75b77636ae0b60c09485",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_ports/dimonprograms-idrive8/kit/localization/diagnostic-overrides.zh-CN.json",
+      "sha256": "bce13aa67f5ae78caf65e5741c7f92ee6d4591aad1fb7874bdea78f97ff7a8a5",
+      "bytes": 2568,
+      "git_blob": "22f3c62b301c51b19fe7c78519258b1bd81abe58",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_ports/dimonprograms-idrive8/kit/localization/diagnostic-terms.tsv",
+      "sha256": "856300a191ad8da43aeb4c532baf0a7a42736be8825eeecb0cf6ac9490e6b9b8",
+      "bytes": 19262,
+      "git_blob": "4472ba75fd53dd6e0c5e07703c92fd10736bc493",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_ports/dimonprograms-idrive8/kit/localization/fonts/OFL-NotoSansKR.txt",
+      "sha256": "77fe79c891328aee1528d3efa06f344798c180d0d4df0ea02efe243f63c865fe",
+      "bytes": 4236,
+      "git_blob": "193a91dadeab384806258f277e166e101eb57fe7",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_ports/dimonprograms-idrive8/kit/localization/fonts/cyrillic-ru.json",
+      "sha256": "c847f70baaa6b2f12df1e5acebab0227d97f46c76a09248e66b57ae5686d5758",
+      "bytes": 53292,
+      "git_blob": "928b72ba6faae3c64e8509ebe13ddc41d735dded",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_ports/dimonprograms-idrive8/kit/localization/fonts/diagnostic-zh-CN.json",
+      "sha256": "82e0ded0741e4fe402ef3fa7569d9c5a53f7684e4bc71f9d5ead36cfe280c8bd",
+      "bytes": 679189,
+      "git_blob": "3f8ad73b75265fb0e328dcb0ff08a284d835e286",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_ports/dimonprograms-idrive8/kit/localization/fonts/korean.json",
+      "sha256": "ae4c3c2728fd414d5b001d3c413cbfc3c4cc0588f983bc82d6d038b574273dc9",
+      "bytes": 755507,
+      "git_blob": "377fd27591bed0ec6b4e8d4ffd74201e87feb78c",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_ports/dimonprograms-idrive8/kit/tools/build.py",
+      "sha256": "769f4ab012e95280029f76eea6834412f55290a4b96f2ff32743fb62e28dbe4d",
+      "bytes": 45024,
+      "git_blob": "a87aca772d7f1672e59a550e35088a15de5ebc3d",
+      "mode": "100644",
+      "prior_sha256": "3f298166036a1117ec7454b9cdeaf4e38ac38576cc79ff25bf14015c84113775",
+      "recovery": "mismatch"
+    },
+    {
+      "path": "apps/_ports/hexlay-idrive8/tests/runtime_contract.js",
+      "sha256": "374504458f053f774e1c987a57efe3a8970704220686d2a1b4ab2db993ee128e",
+      "bytes": 20353,
+      "git_blob": "b1689aa783c34dbb024f5b69242411d4f8aa4c5c",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_ports/hexlay-idrive8/tests/test_port.py",
+      "sha256": "274b5f3883a3b2bc2c4d9a659debe6ea80b5f787a8c0cf3df8f2692ae531e1be",
+      "bytes": 8615,
+      "git_blob": "cfcc9d3fd2d5d82ea6875e4b5b963ae0fd17f783",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_ports/pinguinooo-idrive8/kit/icons/adam_mtrack.svg",
+      "sha256": "9071443cf4a4c9121fded9159ad2ed914d21f198feb93805038e244e7c4e2d28",
+      "bytes": 1901,
+      "git_blob": "ec9d7c1f045d00f9b026ffb7ce949f9f622d55e9",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_ports/pinguinooo-idrive8/kit/icons/adam_shiftlights.svg",
+      "sha256": "bcc459725ade1ec1f0e55cbfa5285d27f7f48cacc3fd20977f2ed221ef41fb98",
+      "bytes": 1963,
+      "git_blob": "298f228024fb24082c24bf6c788c7957d8c33408",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_ports/pinguinooo-idrive8/kit/icons/adam_vitals.svg",
+      "sha256": "e30e4344dc2dfdebc044cffd9b033127d561bf0d7f2548f2c1d3f7d7e4eb8a05",
+      "bytes": 3020,
+      "git_blob": "c127aa07c8b7e9f43fb2978b705f3716988a72f6",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_ports/pinguinooo-idrive8/kit/tools/render_icons.py",
+      "sha256": "d99fb83c5a25f5b011c698c917b94dc19f91ba2ecfa4bbbd1d102a535c1e1bc1",
+      "bytes": 6476,
+      "git_blob": "43b51dab267e3099c1aa97009547dc9279f96aad",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_explorer/app.json",
+      "sha256": "6961a5a182a3202bde9f5c7ed158aeb3b9eef520b583cee8ca348dd716d8cfc6",
+      "bytes": 1399,
+      "git_blob": "913d96a2c5551bef134d0dc83d7e9f7e74757445",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_explorer/explore/catalog.js",
+      "sha256": "d106def09b3d8f492a420238b9198be8bc8890007cb13c5057fe1d29a8b97006",
+      "bytes": 6806,
+      "git_blob": "37c95880f017ca0a239ed8d1a1261384a76d2525",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_explorer/icon.png",
+      "sha256": "d11046b1300c438c040fa052b54c9cb4d9997086f3f9d1346ee31c080ea9edb3",
+      "bytes": 6647,
+      "git_blob": "19d6c9f07b0e8670cf6a5d3023bdc3b0ca603c93",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_explorer/main.js",
+      "sha256": "998a13fd3fb74881660db031a635fc723f8566e78f68915799830d3a2acff2df",
+      "bytes": 7932,
+      "git_blob": "3f79b655f0e0f051dda05afd30a4b92cbfe5fc92",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/arefahmad-idrive7-apps/kit/tools/bake_arabic.py",
+      "sha256": "194b78f205d5edb3def14735df2da5f1b225f22185aa1dcc66e3aafa01e3069c",
+      "bytes": 2815,
+      "git_blob": "61731d1610606035d3a41de2a2e526a1bae19895",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/bmwenthusiast-storage-monitor/kit/LICENSE",
+      "sha256": "7c813412dcaf1b9d18c28ca6b6199c4349e15e35beca44ab6cab8e4413fe0aa6",
+      "bytes": 1151,
+      "git_blob": "e9b4f0ac353e8c9d8537426f7bcaf03e3201224a",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/bmwenthusiast-storage-monitor/kit/platform/permissions.json",
+      "sha256": "a03a2d7be452e89f9ce5361820361dded34ef36aa1e4a5afda95a4a1b1e26b01",
+      "bytes": 9142,
+      "git_blob": "2366a03ba84260a515583a7aa1acd3085de06ebd",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/bmwenthusiast-storage-monitor/kit/runtime/canvas.js",
+      "sha256": "a1647cf52bcb874c11abf6c25638d67fe33db485271b74c37db8c1cda7a38273",
+      "bytes": 24387,
+      "git_blob": "24856d953ce5a54503fc29e4498e2c0e62db6b83",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/bmwenthusiast-storage-monitor/kit/runtime/car.js",
+      "sha256": "a2f9cc653518c2c1340c3be894b847bbb091e5eee4a182ea1d136bc770c8c791",
+      "bytes": 11706,
+      "git_blob": "a6fef4578aea1a47050d2576ef98efd9b38bebb6",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/bmwenthusiast-storage-monitor/kit/runtime/credits.js",
+      "sha256": "6074066bc6ae85794db9b844322264ad8aa73b89c850f6b03a3ee57c57d95084",
+      "bytes": 529,
+      "git_blob": "fcd5ae8fda783f396ced830905b1babe864e184c",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/bmwenthusiast-storage-monitor/kit/runtime/display.js",
+      "sha256": "1c3a2e831426d332a41789ce3bff324c3e429c94815c4a4b8e4840d32116953c",
+      "bytes": 57838,
+      "git_blob": "259563b1051df4df3fa8804213e465d7a47fc03c",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/bmwenthusiast-storage-monitor/kit/runtime/fonts.js",
+      "sha256": "2dab7d5709ffbe5ee8f6a14ff0c5da5b0efe1d95c33c5bc64ba20031971b4f9f",
+      "bytes": 1760,
+      "git_blob": "939852d0d977e8decc92a5674abc8f1233db7942",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/bmwenthusiast-storage-monitor/kit/runtime/fonts/OFL-NotoSansSC.txt",
+      "sha256": "babcfe66c8a098b2fa279bc724a3a342f8124f77ce18941fbcc1bbb39823cded",
+      "bytes": 4387,
+      "git_blob": "79a917be1f4b42e688a75c35f372b83a0f4ba11c",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/bmwenthusiast-storage-monitor/kit/runtime/fonts/UFL-Ubuntu.txt",
+      "sha256": "2f0015108d68627bd788d313f529c21ff4da2c2c42a5e1f3883acc83480f9002",
+      "bytes": 4673,
+      "git_blob": "ae78a8f94eae372cb1ca4e14b67244342fce604e",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/bmwenthusiast-storage-monitor/kit/runtime/fonts/bold.json",
+      "sha256": "314c39b854eac90150a60b024b7eaebad04dcac182e4d8ef5da0b6316f8fb50c",
+      "bytes": 315450,
+      "git_blob": "f2716c866a96fc61c20fb67ccfffd55da527cde6",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/bmwenthusiast-storage-monitor/kit/runtime/fonts/cjk.json",
+      "sha256": "c2eb9fad6fa946810f1d5993ed1654fd44b76366d20a4b4cb2fcad7e365ae37f",
+      "bytes": 470342,
+      "git_blob": "9d282dda640553986e0bfea365c1aea01adfc916",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/bmwenthusiast-storage-monitor/kit/runtime/fonts/gear.json",
+      "sha256": "5d10ff9e51f0742904bc3e557118b4fd291684152541b4b14bd344414692d790",
+      "bytes": 66631,
+      "git_blob": "a8756254f9ffddc052eef5be8a4b849da2ee67ad",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/bmwenthusiast-storage-monitor/kit/runtime/fonts/label.json",
+      "sha256": "b782989508d440270aec9852fea1d9bd67d36a3c394b4404d3d2012b989a70ce",
+      "bytes": 218988,
+      "git_blob": "929298f737921916f409c7cad69044758fffcc95",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/bmwenthusiast-storage-monitor/kit/runtime/fonts/light.json",
+      "sha256": "c1a1e9e60062a86759ea9898afaccb993605dd89ee265dd625a9f39867f73569",
+      "bytes": 211897,
+      "git_blob": "dbc166d1fd9d350ab6f5bbe5586c61e115b6e966",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/bmwenthusiast-storage-monitor/kit/runtime/fonts/num.json",
+      "sha256": "ed3482df56998de38bd6a6d541bf4a401256548a91f1219cfa035f38609425a0",
+      "bytes": 160971,
+      "git_blob": "f4fbe95571e40dc1b205d02f569e103c410d0972",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/bmwenthusiast-storage-monitor/kit/runtime/gauges.js",
+      "sha256": "3eb52e936767eae6b881e8a4342e74a09dfb1d5414a31f3bd6a9106dc0556af0",
+      "bytes": 50921,
+      "git_blob": "6524c1410c9aabac46302152fe098e5cdfcb2e66",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/bmwenthusiast-storage-monitor/kit/runtime/hmi-text.js",
+      "sha256": "74d96fd26ec53f4dc55fd36e079901ed03994794c8b31ae37e93e095092814e0",
+      "bytes": 1163,
+      "git_blob": "b9749cf0e65bff9401896fd2697ae0a585412ec0",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/bmwenthusiast-storage-monitor/kit/runtime/i18n.js",
+      "sha256": "daf40d71e774d722af5c1cb1007b5bc6cf496aeeadf35a110bc3b0fca1091fdb",
+      "bytes": 3543,
+      "git_blob": "3285711caa77da2588bf8b6f9aecd9cefb780468",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/bmwenthusiast-storage-monitor/kit/runtime/life.js",
+      "sha256": "ebcf99fcf3b840455923831cb93ec4620281d3e4eba15f83e0a97f9975afc7c6",
+      "bytes": 2578,
+      "git_blob": "2aaacea203c929aac5499d29ae7be697a605e342",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/bmwenthusiast-storage-monitor/kit/runtime/locale.json",
+      "sha256": "c37863ed4336c34a3868d150767644841256ee3ad6fc3dad6e223bcb5913f7e7",
+      "bytes": 31,
+      "git_blob": "8a931d7bff57874e400f1da635d6d647cd13dbb2",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/bmwenthusiast-storage-monitor/kit/runtime/mgu.js",
+      "sha256": "495c4d588f618acc6f5efe58873737eaf981224915015914c70bacdce3a39ae1",
+      "bytes": 44141,
+      "git_blob": "d53a766123796c36173e9665213d19940605ca98",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/bmwenthusiast-storage-monitor/kit/runtime/record.js",
+      "sha256": "691529b0f7f6db198af1b72b079f28802d24b0160549ddca6ea58803f43728be",
+      "bytes": 19870,
+      "git_blob": "847eb3b128625f0dd6a29dc6e2fe9c6f43a8b8c4",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/bmwenthusiast-storage-monitor/kit/runtime/renderd.js",
+      "sha256": "952a598fa2aa51450e008845ac7a6c6c58d706b2fe6c9117236d1097664ed392",
+      "bytes": 17593,
+      "git_blob": "25124df77521824feabaf0c4b8cd1b8260f40b03",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/bmwenthusiast-storage-monitor/kit/runtime/sheet.js",
+      "sha256": "a35a4f01779d7910e0fc76661e839229214eb16d7b82d69fca8f6652ab137fec",
+      "bytes": 12906,
+      "git_blob": "f21ffb04c62fcb8dfa2e2c9ea14bf3c2e07edfa4",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/bmwenthusiast-storage-monitor/kit/runtime/signals.js",
+      "sha256": "92e3e397aef9cd44fcef989c3802af7980b7f3340028dba3fd4a1741bc940e23",
+      "bytes": 5721,
+      "git_blob": "2a6830c503c5a04396b52d9c3311e79bfae7dd72",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/bmwenthusiast-storage-monitor/kit/runtime/sim.js",
+      "sha256": "b7d1ee492c017223e1f0726a69af0d8cff1aa44ae10557e2effae1e3249fa2d9",
+      "bytes": 3920,
+      "git_blob": "00cd1f8b887cf9dd3fb36676a81fd714941fa061",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/bmwenthusiast-storage-monitor/kit/runtime/themes.js",
+      "sha256": "c24c641a0e82c4b9bc1ba91ebc2916044de9e160e40d0cf888943fc12d80fa58",
+      "bytes": 3158,
+      "git_blob": "f9ea5b3d2323319f469bc715647a54e3621e2f5e",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/bmwenthusiast-storage-monitor/kit/tools/build.py",
+      "sha256": "07f1547bc6b20c5eb63ce9bcbc3a772cec3e1c6d6415f8709282a5fb1aac5e6c",
+      "bytes": 35314,
+      "git_blob": "6da7f5e0a2ee4961b8e61ac4579b3bf466c6ac96",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/bmwenthusiast-storage-monitor/kit/tools/localize.py",
+      "sha256": "58da3722bf589b3d3d26cb28413253fd6ef321ff9da9a50f3b2592289c5fdf12",
+      "bytes": 3680,
+      "git_blob": "6b1aa213999a72dbb5a1f0d14410a65d73f00679",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/bmwenthusiast-storage-monitor/kit/tools/make_icon.js",
+      "sha256": "8fe3c6dfbb267ebd688355ce315e6a1cfecc81e8e4f94d1a6186ea8a3bce484e",
+      "bytes": 5323,
+      "git_blob": "2542387ff2747a31b0b406033017ceafbc34868f",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/bmwenthusiast-storage-monitor/kit/tools/pack_data.py",
+      "sha256": "f0795f6170588a11efb2db504bd6cee6fb58a5aefd689d05d926583eff05e0ce",
+      "bytes": 3280,
+      "git_blob": "b38beb442eb4c5d558d57466ebcd4af2227c7d6c",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/c365-mgu-drive/kit/localization/credit.ru.json",
+      "sha256": "656d45a268efe4ae518b331a15b31a7194264b027466b416a77cfbf412fb86b2",
+      "bytes": 448,
+      "git_blob": "2d57545279ab9c24f98bd624aadcaa448f307293",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/c365-mgu-drive/kit/localization/credit.zh-CN.json",
+      "sha256": "c15e741d089c95575f0e8c4833489d6530980ced429672c9248ea8b6bc8fbd59",
+      "bytes": 576,
+      "git_blob": "ad372c34113e0b1ca8dc6339d7f81101cd0d476b",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/c365-mgu-drive/kit/localization/diagnostic-full-manifest.json",
+      "sha256": "0a59838fbcb318324925285784d9e8a559136a37694db6725d71f860c474dad8",
+      "bytes": 656,
+      "git_blob": "844e766740551a3f181be949f07056144cc74c6d",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/c365-mgu-drive/kit/localization/diagnostic-full-manifest.ru.json",
+      "sha256": "7c01c38093ead7e2a5c0964c52b68c4c4e4f329f0b35356388fdb454fe6a9af1",
+      "bytes": 733,
+      "git_blob": "18eb531112e865f7b96628581d72a8542339c06e",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/c365-mgu-drive/kit/localization/diagnostic-full-terms.tsv",
+      "sha256": "03bd61e16b7adc99ccaf9c1b9594eeb9c795b3ec2c5f7fe717ea4f50cd1a5fdb",
+      "bytes": 25028,
+      "git_blob": "277e3af450ff2ef07cb7f3101b97264adb0ff713",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/c365-mgu-drive/kit/localization/diagnostic-full.ru.json",
+      "sha256": "8a0bdd031c635d7e0929d0d913caafbd9d174afde2d6de7e8b55c4255028eae5",
+      "bytes": 13580391,
+      "git_blob": "96cd0760f4f2ee5b910812ca782208ef7101e330",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/c365-mgu-drive/kit/localization/diagnostic-full.zh-CN.json",
+      "sha256": "f1217e13b23b0a10db3a23a8b4d11f5e603b34fcafaf11cdd6544420a9101e9a",
+      "bytes": 11844672,
+      "git_blob": "a7aed0e8954c908ab4a99eaba9e88ecad763befc",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/c365-mgu-drive/kit/localization/diagnostic-overrides.ru.json",
+      "sha256": "2d9674d9658df2b6e2c64a30f48eba3f5e6283d0eb9692285147f717280afbe7",
+      "bytes": 1017,
+      "git_blob": "2791ab897ab4833fe6cc75b77636ae0b60c09485",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/c365-mgu-drive/kit/localization/diagnostic-overrides.zh-CN.json",
+      "sha256": "bce13aa67f5ae78caf65e5741c7f92ee6d4591aad1fb7874bdea78f97ff7a8a5",
+      "bytes": 2568,
+      "git_blob": "22f3c62b301c51b19fe7c78519258b1bd81abe58",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/c365-mgu-drive/kit/localization/diagnostic-terms.tsv",
+      "sha256": "856300a191ad8da43aeb4c532baf0a7a42736be8825eeecb0cf6ac9490e6b9b8",
+      "bytes": 19262,
+      "git_blob": "4472ba75fd53dd6e0c5e07703c92fd10736bc493",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/c365-mgu-drive/kit/localization/fonts/OFL-NotoSansKR.txt",
+      "sha256": "77fe79c891328aee1528d3efa06f344798c180d0d4df0ea02efe243f63c865fe",
+      "bytes": 4236,
+      "git_blob": "193a91dadeab384806258f277e166e101eb57fe7",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/c365-mgu-drive/kit/localization/fonts/cyrillic-ru.json",
+      "sha256": "c847f70baaa6b2f12df1e5acebab0227d97f46c76a09248e66b57ae5686d5758",
+      "bytes": 53292,
+      "git_blob": "928b72ba6faae3c64e8509ebe13ddc41d735dded",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/c365-mgu-drive/kit/localization/fonts/diagnostic-zh-CN.json",
+      "sha256": "8f7d1314a570cd15317c4591fcbe5f9409c8b379bfc64616cda81b95e3dc2ff5",
+      "bytes": 686955,
+      "git_blob": "8d38d1e2883076dc27686c9e5136558e002b4ee6",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/c365-mgu-drive/kit/localization/fonts/korean.json",
+      "sha256": "ae4c3c2728fd414d5b001d3c413cbfc3c4cc0588f983bc82d6d038b574273dc9",
+      "bytes": 755507,
+      "git_blob": "377fd27591bed0ec6b4e8d4ffd74201e87feb78c",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/c365-mgu-drive/kit/tools/build.py",
+      "sha256": "f02c7b95f5b57670dfb16c34f5a9a63ab8fad4da37a7af95fd10f720dea05d11",
+      "bytes": 48621,
+      "git_blob": "710fd3f2fdecbf25b8d0fb61bf19c7467d117f65",
+      "mode": "100644",
+      "prior_sha256": "abdd814214ec8a7cfceda1eebece2a8610137e144e1eed2aa182115f4c7e3390",
+      "recovery": "mismatch"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/localization/credit.zh-CN.json",
+      "sha256": "c15e741d089c95575f0e8c4833489d6530980ced429672c9248ea8b6bc8fbd59",
+      "bytes": 576,
+      "git_blob": "ad372c34113e0b1ca8dc6339d7f81101cd0d476b",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/localization/diagnostic-full-manifest.json",
+      "sha256": "0a59838fbcb318324925285784d9e8a559136a37694db6725d71f860c474dad8",
+      "bytes": 656,
+      "git_blob": "844e766740551a3f181be949f07056144cc74c6d",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/localization/diagnostic-full-terms.tsv",
+      "sha256": "03bd61e16b7adc99ccaf9c1b9594eeb9c795b3ec2c5f7fe717ea4f50cd1a5fdb",
+      "bytes": 25028,
+      "git_blob": "277e3af450ff2ef07cb7f3101b97264adb0ff713",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/localization/diagnostic-full.zh-CN.json",
+      "sha256": "f1217e13b23b0a10db3a23a8b4d11f5e603b34fcafaf11cdd6544420a9101e9a",
+      "bytes": 11844672,
+      "git_blob": "a7aed0e8954c908ab4a99eaba9e88ecad763befc",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/localization/diagnostic-overrides.zh-CN.json",
+      "sha256": "bce13aa67f5ae78caf65e5741c7f92ee6d4591aad1fb7874bdea78f97ff7a8a5",
+      "bytes": 2568,
+      "git_blob": "22f3c62b301c51b19fe7c78519258b1bd81abe58",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/localization/diagnostic-terms.tsv",
+      "sha256": "856300a191ad8da43aeb4c532baf0a7a42736be8825eeecb0cf6ac9490e6b9b8",
+      "bytes": 19262,
+      "git_blob": "4472ba75fd53dd6e0c5e07703c92fd10736bc493",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/localization/fonts/diagnostic-zh-CN.json",
+      "sha256": "82e0ded0741e4fe402ef3fa7569d9c5a53f7684e4bc71f9d5ead36cfe280c8bd",
+      "bytes": 679189,
+      "git_blob": "3f8ad73b75265fb0e328dcb0ff08a284d835e286",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/platform/permissions.json",
+      "sha256": "a03a2d7be452e89f9ce5361820361dded34ef36aa1e4a5afda95a4a1b1e26b01",
+      "bytes": 9142,
+      "git_blob": "2366a03ba84260a515583a7aa1acd3085de06ebd",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/runtime/canvas.js",
+      "sha256": "9d9deed0097832ae333a7df5e96f7b91398cc91b5f5135e689b7162c7bb35d30",
+      "bytes": 24352,
+      "git_blob": "1ef6d15ce5e60e5911a0c8770f184c7c9b3411f5",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/runtime/car.js",
+      "sha256": "df174967837fd1779b3a4c01c44c330e019c0df153ea9f5498176794016ad4aa",
+      "bytes": 11094,
+      "git_blob": "543eb4b3adc13b94e84c0fb68af3065a51c588a6",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/runtime/cluster_render.js",
+      "sha256": "c5bc07f7aa10fbe0667d498b6331dffe68cd1ef5fa51b23b97a1bdce936e136e",
+      "bytes": 8390,
+      "git_blob": "81b37addb4d29bbc9749e53457333c185a8c5aed",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/runtime/credits.js",
+      "sha256": "74cb6154b98a5476d3147c5083642eac033cfbdf797a7a3f70ed7d7ce0b00e6b",
+      "bytes": 579,
+      "git_blob": "ccfe49b1932b8ada4ec0677f6b616998402f14fc",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/runtime/diag.js",
+      "sha256": "337bec1fed75f5216de2a3ef1fbe5cbb1e183b152a8071142a1009441bcd7cba",
+      "bytes": 10668,
+      "git_blob": "a28e1bfe8f3d11ecec2190ffc4394b833a75aa28",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/runtime/dids.js",
+      "sha256": "790e1b96b2aa7edb546c562964f4fd45dc9f4d70183ebdab7a6cc202008306a3",
+      "bytes": 6852,
+      "git_blob": "3803b90d0819354b196e5e055af4ed66db73080e",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/runtime/display.js",
+      "sha256": "f586fecc2501080c3e40a1225349f9c1997449c642ab2e50e0f2a61c188195bd",
+      "bytes": 52218,
+      "git_blob": "3158f88bc9972e65461889675059170a46e09321",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/runtime/ecus.js",
+      "sha256": "f5ec3dbdece067f7eaa0080479dfde0d25b8a882f657df8b6f58f46f8622e149",
+      "bytes": 1257,
+      "git_blob": "2c8a55c93f8b9d8bf8d84555e63e68467d75f901",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/runtime/fonts.js",
+      "sha256": "a35c6b556887be863d9731a6031332a05ec64a6a858fe62119d8ab53f56ff3b1",
+      "bytes": 1675,
+      "git_blob": "c2cddd88477c8e3294abd16aa5beb8fcb8698bfb",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/runtime/fonts/OFL-NotoSansSC.txt",
+      "sha256": "babcfe66c8a098b2fa279bc724a3a342f8124f77ce18941fbcc1bbb39823cded",
+      "bytes": 4387,
+      "git_blob": "79a917be1f4b42e688a75c35f372b83a0f4ba11c",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/runtime/fonts/bold.json",
+      "sha256": "c8185d6874a4ca1f79ffc2b73434d40426381b4bbf395f6f49733bd7020d7e76",
+      "bytes": 101476,
+      "git_blob": "1e51dccb6bd42d9b644a1c6a6c7407b76a95c3c2",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/runtime/fonts/cjk.json",
+      "sha256": "c2eb9fad6fa946810f1d5993ed1654fd44b76366d20a4b4cb2fcad7e365ae37f",
+      "bytes": 470342,
+      "git_blob": "9d282dda640553986e0bfea365c1aea01adfc916",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/runtime/fonts/gear.json",
+      "sha256": "d449f2afa02529e244a2499d294beb6ce20c887a56cb7ce8c9cf296413c6f592",
+      "bytes": 65999,
+      "git_blob": "8d5065dd63d1a521800ab65e414cfd1f43f39e88",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/runtime/fonts/label.json",
+      "sha256": "4dd985232ef36675f30ec855e8c4d5e6db5d44c8a0e04d82d50adc56c9eaf4cf",
+      "bytes": 72561,
+      "git_blob": "9d54f1c5d90cfe92510b83800a8d818173c05cfa",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/runtime/fonts/light.json",
+      "sha256": "961ac19e874ed013c4cdfaaf009e85977e47889cbf3d470901f3d33b4bf4e0df",
+      "bytes": 91880,
+      "git_blob": "064074b56160e8d4ebc1b9a48eff4aad7b08405b",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/runtime/fonts/num.json",
+      "sha256": "02a02e0c8e8da9c7bed35d66fce8c993998adf93080050e47511b602dbbcf9fc",
+      "bytes": 110925,
+      "git_blob": "f0717c5762c5cbeeffba231fe80af8cef008e231",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/runtime/gauges.js",
+      "sha256": "792627d531b5cbf189aa43591e3c15daed8c5bc248b9a69488dead44b58772cc",
+      "bytes": 50636,
+      "git_blob": "2f4094507708e0cea38de8b20f924baa6e09f13f",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/runtime/hmi-text.js",
+      "sha256": "74d96fd26ec53f4dc55fd36e079901ed03994794c8b31ae37e93e095092814e0",
+      "bytes": 1163,
+      "git_blob": "b9749cf0e65bff9401896fd2697ae0a585412ec0",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/runtime/i18n.js",
+      "sha256": "0d6cb10328ed455b6635c09517093f6c42a2c2f57dd2ca71f3be9fc1c9095be2",
+      "bytes": 2067,
+      "git_blob": "27f1b7cfac28e407227da2998bd3f680cc449a6c",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/runtime/locale.json",
+      "sha256": "c37863ed4336c34a3868d150767644841256ee3ad6fc3dad6e223bcb5913f7e7",
+      "bytes": 31,
+      "git_blob": "8a931d7bff57874e400f1da635d6d647cd13dbb2",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/runtime/locales/zh-CN.json",
+      "sha256": "62527bc2b4dd364c65f850e9f4673467bd99bc8d3240c790d66dfc3e9dd4b66c",
+      "bytes": 59040,
+      "git_blob": "0b7afd9919417a24582c3fd77d1d740597cb17fb",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/runtime/locales/zh-CN.tsv",
+      "sha256": "90beeec02a7bc17aadcd2fd2b1b4e93f1b0843e6323c277bbd36d7afae2b452d",
+      "bytes": 49946,
+      "git_blob": "7d784d22c59ade43717a5c58252f46ef85c77875",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/runtime/mgu.js",
+      "sha256": "100d20a71b13a0a1f464b2b9bad1f58efe94dc613c77994c1531e456a6c8f06e",
+      "bytes": 41306,
+      "git_blob": "dc7d784161548a2562671a4a17a493982da4d5ed",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/runtime/pack.js",
+      "sha256": "25e8270eb6b67045d8d9bbc225f6877dc54f9078036742e5adca687e1cf040c2",
+      "bytes": 3758,
+      "git_blob": "05d7947b7096b70f5cbec827e9a67ac791c328be",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/runtime/parked.js",
+      "sha256": "43f5517ad9badb0d23a11bb59a9c4501482891a23443861e3f5bdd10d1dcab57",
+      "bytes": 1571,
+      "git_blob": "d7788c1b8d7b6a2face040db09a2964c42c06501",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/runtime/png.js",
+      "sha256": "963698654fbfda8c86500d4dfeb2fd7a69b9d1c5ed7e8708db65a57d9927d2cd",
+      "bytes": 4796,
+      "git_blob": "45cf046ef87dc7d1d87daca62ae54fa311e05621",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/runtime/readonly-diag.js",
+      "sha256": "e46d9e54020b7111d38447f8b58dd8af51777f04524d0051893e7e5aa658f733",
+      "bytes": 9183,
+      "git_blob": "de29f24a949b089ab426fe2e5e5ae4ad634b198f",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/runtime/record.js",
+      "sha256": "c0764f55676a99e33a614780ffb972c37371331b69e17e9200e6df627d107b31",
+      "bytes": 18706,
+      "git_blob": "48c832f87aa900bfe24110b795e46ea4d46ace27",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/runtime/renderd.js",
+      "sha256": "3eaeb815b8edcf91756077fd654a996d3b7c522b0242bc9f4fae8464f67ca538",
+      "bytes": 16736,
+      "git_blob": "35f0d54b573947b0075af255551fe02aab4e7820",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/runtime/sgbd.js",
+      "sha256": "799b35e09d558be20fa4fd6bacab0b6fd102fe49aaf34ae81dbadd7fcabfa37e",
+      "bytes": 5451,
+      "git_blob": "c70a3e19c3336a72bfc1999e3875378593880410",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/runtime/sheet.js",
+      "sha256": "25dfce178bc5da48880bf79688ea52d5bc5db9a9f71eb0e8f354d1079a0015ec",
+      "bytes": 12851,
+      "git_blob": "7a2bc1e191907915cb1d045a790385d6361a40aa",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/runtime/signals.js",
+      "sha256": "92e3e397aef9cd44fcef989c3802af7980b7f3340028dba3fd4a1741bc940e23",
+      "bytes": 5721,
+      "git_blob": "2a6830c503c5a04396b52d9c3311e79bfae7dd72",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/runtime/sim.js",
+      "sha256": "73a7f95d0e380fa1c7eff003b4ff5a7f107cd4e5e6f54ffde7b5e075d5caee3d",
+      "bytes": 4004,
+      "git_blob": "67edd831d847d9c6bc57fd55f2a5c8d1ac8ba7f9",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/runtime/text-layout.js",
+      "sha256": "0a36ff6e5b4d882a28d0689e0c110f007a53babc1fe9198be822823423d534d6",
+      "bytes": 545,
+      "git_blob": "6d57a2b95b18b6a10b5e1e59236b2057f2a65f17",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/runtime/themes.js",
+      "sha256": "c24c641a0e82c4b9bc1ba91ebc2916044de9e160e40d0cf888943fc12d80fa58",
+      "bytes": 3158,
+      "git_blob": "f9ea5b3d2323319f469bc715647a54e3621e2f5e",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/tools/build.py",
+      "sha256": "fdd11bacbbf4e0bb9059cc7e60622f9c5941860b46a52f64953132fb4affe920",
+      "bytes": 31670,
+      "git_blob": "db846cf5c29fb03b8529dd5fcd1c4ed151f39c82",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/tools/localize.py",
+      "sha256": "6910c7da719f06acddd311ddffdf7fa8dc985bf4e0e4968447778a0da43e66a5",
+      "bytes": 3216,
+      "git_blob": "6799aec9698ddbec9484c1b3337c5571353f110d",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/tools/make_icon.js",
+      "sha256": "8fe3c6dfbb267ebd688355ce315e6a1cfecc81e8e4f94d1a6186ea8a3bce484e",
+      "bytes": 5323,
+      "git_blob": "2542387ff2747a31b0b406033017ceafbc34868f",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dante-idrive-apps/kit/tools/pack_data.py",
+      "sha256": "f0795f6170588a11efb2db504bd6cee6fb58a5aefd689d05d926583eff05e0ce",
+      "bytes": 3280,
+      "git_blob": "b38beb442eb4c5d558d57466ebcd4af2227c7d6c",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dimonprograms-apps/kit/localization/credit.ru.json",
+      "sha256": "656d45a268efe4ae518b331a15b31a7194264b027466b416a77cfbf412fb86b2",
+      "bytes": 448,
+      "git_blob": "2d57545279ab9c24f98bd624aadcaa448f307293",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dimonprograms-apps/kit/localization/credit.zh-CN.json",
+      "sha256": "c15e741d089c95575f0e8c4833489d6530980ced429672c9248ea8b6bc8fbd59",
+      "bytes": 576,
+      "git_blob": "ad372c34113e0b1ca8dc6339d7f81101cd0d476b",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dimonprograms-apps/kit/localization/diagnostic-full-manifest.json",
+      "sha256": "0a59838fbcb318324925285784d9e8a559136a37694db6725d71f860c474dad8",
+      "bytes": 656,
+      "git_blob": "844e766740551a3f181be949f07056144cc74c6d",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dimonprograms-apps/kit/localization/diagnostic-full-manifest.ru.json",
+      "sha256": "7c01c38093ead7e2a5c0964c52b68c4c4e4f329f0b35356388fdb454fe6a9af1",
+      "bytes": 733,
+      "git_blob": "18eb531112e865f7b96628581d72a8542339c06e",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dimonprograms-apps/kit/localization/diagnostic-full-terms.tsv",
+      "sha256": "03bd61e16b7adc99ccaf9c1b9594eeb9c795b3ec2c5f7fe717ea4f50cd1a5fdb",
+      "bytes": 25028,
+      "git_blob": "277e3af450ff2ef07cb7f3101b97264adb0ff713",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dimonprograms-apps/kit/localization/diagnostic-full.ru.json",
+      "sha256": "8a0bdd031c635d7e0929d0d913caafbd9d174afde2d6de7e8b55c4255028eae5",
+      "bytes": 13580391,
+      "git_blob": "96cd0760f4f2ee5b910812ca782208ef7101e330",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dimonprograms-apps/kit/localization/diagnostic-full.zh-CN.json",
+      "sha256": "f1217e13b23b0a10db3a23a8b4d11f5e603b34fcafaf11cdd6544420a9101e9a",
+      "bytes": 11844672,
+      "git_blob": "a7aed0e8954c908ab4a99eaba9e88ecad763befc",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dimonprograms-apps/kit/localization/diagnostic-overrides.ru.json",
+      "sha256": "2d9674d9658df2b6e2c64a30f48eba3f5e6283d0eb9692285147f717280afbe7",
+      "bytes": 1017,
+      "git_blob": "2791ab897ab4833fe6cc75b77636ae0b60c09485",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dimonprograms-apps/kit/localization/diagnostic-overrides.zh-CN.json",
+      "sha256": "bce13aa67f5ae78caf65e5741c7f92ee6d4591aad1fb7874bdea78f97ff7a8a5",
+      "bytes": 2568,
+      "git_blob": "22f3c62b301c51b19fe7c78519258b1bd81abe58",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dimonprograms-apps/kit/localization/diagnostic-terms.tsv",
+      "sha256": "856300a191ad8da43aeb4c532baf0a7a42736be8825eeecb0cf6ac9490e6b9b8",
+      "bytes": 19262,
+      "git_blob": "4472ba75fd53dd6e0c5e07703c92fd10736bc493",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dimonprograms-apps/kit/localization/fonts/OFL-NotoSansKR.txt",
+      "sha256": "77fe79c891328aee1528d3efa06f344798c180d0d4df0ea02efe243f63c865fe",
+      "bytes": 4236,
+      "git_blob": "193a91dadeab384806258f277e166e101eb57fe7",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dimonprograms-apps/kit/localization/fonts/cyrillic-ru.json",
+      "sha256": "c847f70baaa6b2f12df1e5acebab0227d97f46c76a09248e66b57ae5686d5758",
+      "bytes": 53292,
+      "git_blob": "928b72ba6faae3c64e8509ebe13ddc41d735dded",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dimonprograms-apps/kit/localization/fonts/diagnostic-zh-CN.json",
+      "sha256": "82e0ded0741e4fe402ef3fa7569d9c5a53f7684e4bc71f9d5ead36cfe280c8bd",
+      "bytes": 679189,
+      "git_blob": "3f8ad73b75265fb0e328dcb0ff08a284d835e286",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dimonprograms-apps/kit/localization/fonts/korean.json",
+      "sha256": "ae4c3c2728fd414d5b001d3c413cbfc3c4cc0588f983bc82d6d038b574273dc9",
+      "bytes": 755507,
+      "git_blob": "377fd27591bed0ec6b4e8d4ffd74201e87feb78c",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dimonprograms-apps/kit/tools/build.py",
+      "sha256": "e3525d43fc795b408110f517d4c29d52cb6301087e3794543f1a499d81703fd8",
+      "bytes": 36715,
+      "git_blob": "4fcb4643dfeb5bfa74c0e26a00566b8b1a0041df",
+      "mode": "100644",
+      "prior_sha256": "0c8871c42485e4cfa7113b5b571994ea85e15c6dcb4dbbaaeb05ae0c141af373",
+      "recovery": "mismatch"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/LICENSE",
+      "sha256": "7c813412dcaf1b9d18c28ca6b6199c4349e15e35beca44ab6cab8e4413fe0aa6",
+      "bytes": 1151,
+      "git_blob": "e9b4f0ac353e8c9d8537426f7bcaf03e3201224a",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/README.md",
+      "sha256": "c81a44e20aec90dffd11a61f4a4e88d353d7495a5b9d976e8ec4f57123b285fb",
+      "bytes": 3319,
+      "git_blob": "97a1afa450f2c1d575f8623872db6f5f19dd4df4",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/dpf/DDE_DID_RESEARCH.md",
+      "sha256": "7664fdd1fc6aaa5eb925cd9943bc9085cffd2874884c4e0de221076669a89256",
+      "bytes": 2537,
+      "git_blob": "adf60b0cdab8c88d2d527f9bdac395eec06b3c72",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/dpf/app.json",
+      "sha256": "e2fbf27d056438297d2c2365c85addc53ce09d6936263de5b37c36f6b96654df",
+      "bytes": 2786,
+      "git_blob": "234eb7d69ae7e0d7e515295f5b0915b314b5d7ca",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/dpf/brmodz_logo.png",
+      "sha256": "4649798fa5c0fc2d87cf6b32f65baf30fff07c067cff04d746b85c3742b7c3f4",
+      "bytes": 26789,
+      "git_blob": "a4309b45317f1d08d673257efa1ec1731b025b8d",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/dpf/icon.png",
+      "sha256": "53dee72e738103245d989bc3e100d80113d0234c8c3eef4d81ab55b18be168e9",
+      "bytes": 20480,
+      "git_blob": "16185cd51ee18e63acfb6d70d9213c60e6cbc977",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/dpf/idrive-language.js",
+      "sha256": "bb58dac8833032fd17fe921c0937fccd268069fd04d6381ce3702eebdb7072d2",
+      "bytes": 1216,
+      "git_blob": "8ce07f82ca61ba57b483e6c5a8655dd187663695",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/dpf/main.js",
+      "sha256": "202f9de6a7019bcfabc9f87bbc896c217cb9df1bed290934c848af81fbed45c6",
+      "bytes": 25854,
+      "git_blob": "ae2cb381f48d24d3005fda0bbe2937f83bae58c3",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/dpf/png.js",
+      "sha256": "554da825575a0069e1939146c4f5010759315f210ee84b6e47201f6e09db1967",
+      "bytes": 3448,
+      "git_blob": "a9a9d6e73c821786d962d68232e296c3493393fd",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/dpf/qr_facebook.png",
+      "sha256": "611aee2d6cff2a2f302038c34db1ef6c687c4a0c0deb1e843a9a1e0405a6040a",
+      "bytes": 10098,
+      "git_blob": "fbc80bc69506132d46099e4c6a5472865aeda852",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/dpf/qr_instagram.png",
+      "sha256": "88b480b38f3fb75efda5e1d2e6125db85edbc2a58894db722b179cc8d37294d3",
+      "bytes": 6970,
+      "git_blob": "cf295ec81c374f6b7f1b6143233e652574f5d886",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/dpf/qr_report_bug.png",
+      "sha256": "3723c9c1ff12a43ce04f039898b3286b6c8c00ab72355300d04dda6668229cce",
+      "bytes": 612,
+      "git_blob": "6102c0b868951326496bf064f3a22e352c217488",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/dpf/qr_request_feature.png",
+      "sha256": "5b16d16591e4603ffc14ff145feb7ef8c49f71532367c1f27871d77407549ba2",
+      "bytes": 610,
+      "git_blob": "7de1b5eb10c157913e47c37d69db113e4fc8e79d",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/dpf/regen-message.js",
+      "sha256": "821ccd78af53570bc168f8140b905d677a74e024cb951b757ec6abc838ee610d",
+      "bytes": 3188,
+      "git_blob": "d48bc620962591d4c8f4ea9123789cf46abc1425",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/dpf/translations.js",
+      "sha256": "d1fb2c01141afe58b1daa3278a64dd01790149a283c69ed8102b33361278d40a",
+      "bytes": 74648,
+      "git_blob": "dda7c962c3310295b44b3c843c172a99e3653d5b",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/osa/app.json",
+      "sha256": "0ff8e01a0a8a07d2a9e10d311575d8506d1446443c28ecf656605594488f4aec",
+      "bytes": 5263,
+      "git_blob": "b3c58a6e5f117c4db2f46d4bd726953b3d353300",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/osa/brmodz_logo.png",
+      "sha256": "4649798fa5c0fc2d87cf6b32f65baf30fff07c067cff04d746b85c3742b7c3f4",
+      "bytes": 26789,
+      "git_blob": "a4309b45317f1d08d673257efa1ec1731b025b8d",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/osa/cluster-locales.js",
+      "sha256": "84b6a4bcbb411587bbc9b2bd0b95a6382774d13f6267b1f33a7d953bbf524a2c",
+      "bytes": 895,
+      "git_blob": "6d8b55f0f6d61adf26e59eebffd2507b84aabd7e",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/osa/icon.png",
+      "sha256": "61dab93c58e77b324413175baf311ff4d173ca78779b02a4ba977329f8606be8",
+      "bytes": 8585,
+      "git_blob": "ad58e9821d57be2920d0cc11f0af31da52f91a5d",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/osa/language.js",
+      "sha256": "240f069782453bc049c0c305a281dec59a3bfb2fa4efb9f38cb1db3289d40f99",
+      "bytes": 2277,
+      "git_blob": "3aa7bf0e054e696cb09b2a65a42fa208a0269b6e",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/osa/locales.js",
+      "sha256": "c445395f8496c13e0f5c5171598f1cb92e4118deeb47e70a3cdca57540f15129",
+      "bytes": 189330,
+      "git_blob": "7c08c69b89d1a58881cd40198ee2845107f17ece",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/osa/main.js",
+      "sha256": "699b5adb531df733b371faaf1fc2f8f145a506ec0fcb8f68ef2f3b8545e8d4c0",
+      "bytes": 38205,
+      "git_blob": "79974a0c0470fcbcbb32eb4fd616c34b64f1ca95",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/osa/osa_about_overlay_128.png",
+      "sha256": "bd433cc00ed01943b5d237b49b8cd1406d9bc146932879a3716657bd98dc2a36",
+      "bytes": 25151,
+      "git_blob": "4de2f009eb200ecfe41e813bf1e529fc80842c0c",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/osa/png.js",
+      "sha256": "554da825575a0069e1939146c4f5010759315f210ee84b6e47201f6e09db1967",
+      "bytes": 3448,
+      "git_blob": "a9a9d6e73c821786d962d68232e296c3493393fd",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/osa/qr_facebook.png",
+      "sha256": "611aee2d6cff2a2f302038c34db1ef6c687c4a0c0deb1e843a9a1e0405a6040a",
+      "bytes": 10098,
+      "git_blob": "fbc80bc69506132d46099e4c6a5472865aeda852",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/osa/qr_instagram.png",
+      "sha256": "88b480b38f3fb75efda5e1d2e6125db85edbc2a58894db722b179cc8d37294d3",
+      "bytes": 6970,
+      "git_blob": "cf295ec81c374f6b7f1b6143233e652574f5d886",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/osa/qr_report_bug.png",
+      "sha256": "63885f13f52d731c528e097ea3edbf551e4d373bc6e15f587471744b7d92184c",
+      "bytes": 598,
+      "git_blob": "661e2c5ec0108443f28c93edab2b933d4a28a49e",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/osa/qr_request_feature.png",
+      "sha256": "14d6bf7a165798466c3b438b1572c82d211db5b6dda80326b008a5c51a71acc0",
+      "bytes": 603,
+      "git_blob": "a55cd8a6e67f0573aa8ef0970018f8feee87d16c",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/osa/transmission.js",
+      "sha256": "6564419e8dfd4b605cee90634f820078b5795d6f5c9b82148be3d18ac67a8ee5",
+      "bytes": 4784,
+      "git_blob": "a21263dce650075764225b958039f88e067740dc",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/osa/turbo-icon-preview.js",
+      "sha256": "3fed9e513236f1cd9ed1391f943747465b7893c4ca35741c7ef21c9b5edd5266",
+      "bytes": 7497,
+      "git_blob": "e84fd30be6cadd3352519c8e3458b04d8791dce4",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/spritmonitor/NOTICE",
+      "sha256": "df312e1d268380ee7770b1b3f28cf50dafe92aa642ac3d539d137354eaaeb506",
+      "bytes": 542,
+      "git_blob": "8ed9999169623ca525a2259fc6fb81d5228bbc5c",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/spritmonitor/additional-locales.js",
+      "sha256": "a256358119ef6725579780a53675f9b0bce7b91ac83cfe7513b4a43c1d969ee7",
+      "bytes": 56871,
+      "git_blob": "c5f72ac601b96dbccef6094c383ef0a89b56e856",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/spritmonitor/app.json",
+      "sha256": "4b14c90a28800137f1a698705abad39e954715766abcbbbd442e0d3465a55913",
+      "bytes": 5514,
+      "git_blob": "2608308ec1ed497041d7167e66257b70c15ed918",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/spritmonitor/brmodz_logo.png",
+      "sha256": "4649798fa5c0fc2d87cf6b32f65baf30fff07c067cff04d746b85c3742b7c3f4",
+      "bytes": 26789,
+      "git_blob": "a4309b45317f1d08d673257efa1ec1731b025b8d",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/spritmonitor/de.js",
+      "sha256": "103b3e9ca238f46e8cb51a1642e214528e2101f8e8e7d9819209e1d773c565b9",
+      "bytes": 8927,
+      "git_blob": "3de7a76ebe13dd5b88c8b533a1c22373f1d746d8",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/spritmonitor/fr-es.js",
+      "sha256": "a0c4e4967e5ee809a508b86219a65a2ad1abb216347626762ff365290ecb1359",
+      "bytes": 14203,
+      "git_blob": "7846e4017e92858e411931c9c9b70b9ba5a0ee28",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/spritmonitor/fuelling-chart.js",
+      "sha256": "76dfc0602aac4024184bbf30068235bd1c572ae198e9fe43c8f692b5c8cc9c05",
+      "bytes": 4079,
+      "git_blob": "b174b38f0f133cc756bb8e1804f533feefa222db",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/spritmonitor/icon.png",
+      "sha256": "354429fcd0a7ace65ef40aa38adcad66bfa8a3e4df02f91be55099acb59423df",
+      "bytes": 7802,
+      "git_blob": "43cc98357b7e5217d9b7a0891f3b786c34f69a6d",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/spritmonitor/idrive-language.js",
+      "sha256": "bb58dac8833032fd17fe921c0937fccd268069fd04d6381ce3702eebdb7072d2",
+      "bytes": 1216,
+      "git_blob": "8ce07f82ca61ba57b483e6c5a8655dd187663695",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/spritmonitor/main.js",
+      "sha256": "740057b3414ebc8ce7bd6ac423234a0d35ede9675cdf7fba82f63cfc7b246b1e",
+      "bytes": 59420,
+      "git_blob": "de8f780a6c404bc2666925fedf809168708b2c3f",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/spritmonitor/more-locales.js",
+      "sha256": "e1b8f2c72fb35eaf0fb156bc4ed5e10c5d9d7e64cb9fd7380e8b76624706c173",
+      "bytes": 30081,
+      "git_blob": "c60d0525055474eb94e1ab8ef7938cdb2080a6d4",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/spritmonitor/offline-fuellings.js",
+      "sha256": "25704970b97b2c780c4525a1bac11a90220530034b5759e73c34b888ae255b10",
+      "bytes": 9012,
+      "git_blob": "c568a911cd925781fc342e40316b518d1769e489",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/spritmonitor/phone-pairing.js",
+      "sha256": "aa109c1eb521970f33ac83632a05dabc8265df441486314fd5b4356b1d3dbb68",
+      "bytes": 3276,
+      "git_blob": "7ef30b81715cc2c296e2f27d6ff96d52f6c1919f",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/spritmonitor/png.js",
+      "sha256": "554da825575a0069e1939146c4f5010759315f210ee84b6e47201f6e09db1967",
+      "bytes": 3448,
+      "git_blob": "a9a9d6e73c821786d962d68232e296c3493393fd",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/spritmonitor/qr_facebook.png",
+      "sha256": "611aee2d6cff2a2f302038c34db1ef6c687c4a0c0deb1e843a9a1e0405a6040a",
+      "bytes": 10098,
+      "git_blob": "fbc80bc69506132d46099e4c6a5472865aeda852",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/spritmonitor/qr_instagram.png",
+      "sha256": "88b480b38f3fb75efda5e1d2e6125db85edbc2a58894db722b179cc8d37294d3",
+      "bytes": 6970,
+      "git_blob": "cf295ec81c374f6b7f1b6143233e652574f5d886",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/spritmonitor/qr_pairing_preview.png",
+      "sha256": "52fa1aa2d2141a555c1471f68c3f61a6bf571270d87b715e7947c379fe94a4c4",
+      "bytes": 888,
+      "git_blob": "1568c4dfcddb61df8f74504379740191cd3c4fa8",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/spritmonitor/qr_report_bug.png",
+      "sha256": "e8ab822721e998b3f70145b1687455e7cdadaf7c26cacfcd83046c31bdcc1c25",
+      "bytes": 605,
+      "git_blob": "cf665039a401faf6a18e13817fc2e4c878da3343",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/spritmonitor/qr_request_feature.png",
+      "sha256": "b629aa183d103ad0cd2cb90bd79d941b9adab5240e51264d053f9afe5f26d342",
+      "bytes": 596,
+      "git_blob": "b875b4506b997b98b3d3ba7a4a3ab2bcdf1d90e8",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/spritmonitor/qrcode.js",
+      "sha256": "18ae399f81182bc9de916e9c77b195df20cc58d6f2d55a62b085a299f1bf1780",
+      "bytes": 56694,
+      "git_blob": "76889b589ec831dd9b791601f6592793356ce9cd",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/spritmonitor/sp-api.js",
+      "sha256": "ab46df9ec5b1d25efb6ac94f12e43bfa2da91f8c8bb999318b628aa41c01abfa",
+      "bytes": 9788,
+      "git_blob": "dfec14f784f4b0bca844c87196c1cc0357c98b63",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/spritmonitor/station-gps.js",
+      "sha256": "8a13c2874fed7562404f9d28494b305b3fd54ffb99686af6e6846f847ae9ae73",
+      "bytes": 1911,
+      "git_blob": "9dabe0bbaefb1022628cd7c77046bb6271b2fefc",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/spritmonitor/station-location.js",
+      "sha256": "cc60975cc79f0d3d868818c1648dbed6403099b96ca735c406a18aeebd087a09",
+      "bytes": 5992,
+      "git_blob": "14846645119ac97f2b20d3f3046429705ec351d9",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/apps/spritmonitor/station-towns.pack",
+      "sha256": "a7c7d8c5b6a2613029d55ae9d4405aaa45d6241f6780d32b8883430e7e7a0467",
+      "bytes": 1291897,
+      "git_blob": "4b0fad458d0f53c0ce11e7d9b9524ba595977d34",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/localization/diagnostic-full-manifest.json",
+      "sha256": "0a59838fbcb318324925285784d9e8a559136a37694db6725d71f860c474dad8",
+      "bytes": 656,
+      "git_blob": "844e766740551a3f181be949f07056144cc74c6d",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/localization/diagnostic-full-terms.tsv",
+      "sha256": "03bd61e16b7adc99ccaf9c1b9594eeb9c795b3ec2c5f7fe717ea4f50cd1a5fdb",
+      "bytes": 25028,
+      "git_blob": "277e3af450ff2ef07cb7f3101b97264adb0ff713",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/localization/diagnostic-terms.tsv",
+      "sha256": "856300a191ad8da43aeb4c532baf0a7a42736be8825eeecb0cf6ac9490e6b9b8",
+      "bytes": 19262,
+      "git_blob": "4472ba75fd53dd6e0c5e07703c92fd10736bc493",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/localization/fonts/OFL-NotoSansKR.txt",
+      "sha256": "77fe79c891328aee1528d3efa06f344798c180d0d4df0ea02efe243f63c865fe",
+      "bytes": 4236,
+      "git_blob": "193a91dadeab384806258f277e166e101eb57fe7",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/localization/fonts/OFL-NotoSansSC.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "bytes": 4388,
+      "git_blob": "1c9f43281b8f216c5461fe9ac729afbade7724e4",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/localization/fonts/cyrillic-ru.json",
+      "sha256": "afe85451a5a8550f9199560b747c28468004a7f8b28351dea936cfa98afd7374",
+      "bytes": 55415,
+      "git_blob": "214d967db51e458ab786d9b068fd0152aebc31c8",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/localization/fonts/diagnostic-zh-CN.json",
+      "sha256": "82e0ded0741e4fe402ef3fa7569d9c5a53f7684e4bc71f9d5ead36cfe280c8bd",
+      "bytes": 679189,
+      "git_blob": "3f8ad73b75265fb0e328dcb0ff08a284d835e286",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/localization/fonts/dpf-cjk.json",
+      "sha256": "43e4514849b74b02d1a309175fe91cb6a4f8cc6c78ec9305c6572ce7baac290d",
+      "bytes": 486215,
+      "git_blob": "82e445868cfcce0b5b1ab43cb1b27b6524283ade",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/localization/fonts/korean.json",
+      "sha256": "ae4c3c2728fd414d5b001d3c413cbfc3c4cc0588f983bc82d6d038b574273dc9",
+      "bytes": 755507,
+      "git_blob": "377fd27591bed0ec6b4e8d4ffd74201e87feb78c",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/localization/fonts/osa-cjk.json",
+      "sha256": "ec90411f29d46e353fca36b3bae9b30ae5adaa1f0b2028c3fbd63048cdd171c9",
+      "bytes": 139766,
+      "git_blob": "94c27ec20f25b4e66667d30daeee45c8412b2ad6",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/localization/fonts/spritmonitor-cjk.json",
+      "sha256": "b1616d92d1e5e6a3894029d0e6008191dea9912686234c10dbf21cf02f7bf365",
+      "bytes": 506282,
+      "git_blob": "6202588c1b3fe78413fb620c9cb4b253b8ed06a6",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/platform/permissions.json",
+      "sha256": "a03a2d7be452e89f9ce5361820361dded34ef36aa1e4a5afda95a4a1b1e26b01",
+      "bytes": 9142,
+      "git_blob": "2366a03ba84260a515583a7aa1acd3085de06ebd",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/runtime/canvas.js",
+      "sha256": "9d9deed0097832ae333a7df5e96f7b91398cc91b5f5135e689b7162c7bb35d30",
+      "bytes": 24352,
+      "git_blob": "1ef6d15ce5e60e5911a0c8770f184c7c9b3411f5",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/runtime/car.js",
+      "sha256": "a2f9cc653518c2c1340c3be894b847bbb091e5eee4a182ea1d136bc770c8c791",
+      "bytes": 11706,
+      "git_blob": "a6fef4578aea1a47050d2576ef98efd9b38bebb6",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/runtime/cluster-icon.js",
+      "sha256": "64d4a082a59ab996327c20c35a557cee09ceaf4a5117e91622ea01a035a2b5fb",
+      "bytes": 3070,
+      "git_blob": "2d5d2be4a0c90e562da18c7ea43c849fa6d191ba",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/runtime/credits.js",
+      "sha256": "6074066bc6ae85794db9b844322264ad8aa73b89c850f6b03a3ee57c57d95084",
+      "bytes": 529,
+      "git_blob": "fcd5ae8fda783f396ced830905b1babe864e184c",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/runtime/diag.js",
+      "sha256": "14feb875928cb6dbe165464b7fa3d88ecc4ad21796aef93acd0ce29c7b89cf37",
+      "bytes": 10796,
+      "git_blob": "43ac7ade5b6c0925e923f1a60c35199660fda037",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/runtime/dids.js",
+      "sha256": "cf6ae106099e64863a7806ad1db36cdd24f161c03a4d97fba1aa2d5b630c73f4",
+      "bytes": 7048,
+      "git_blob": "43509608eaf654be64179cf21e2e3a33af15e2ad",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/runtime/display.js",
+      "sha256": "dd683983128f70f64cfdb6130f1960cce36080452812bb3c95bb9b04e8574209",
+      "bytes": 57885,
+      "git_blob": "564f369139cd365fad07b865d5fa4aea34a1b6db",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/runtime/ecus.js",
+      "sha256": "f5ec3dbdece067f7eaa0080479dfde0d25b8a882f657df8b6f58f46f8622e149",
+      "bytes": 1257,
+      "git_blob": "2c8a55c93f8b9d8bf8d84555e63e68467d75f901",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/runtime/engine.js",
+      "sha256": "58745a5ed7f39204b295e1f7b83b3c42592adb215d29fbfb185e9694ceb6de90",
+      "bytes": 4263,
+      "git_blob": "007ff61cfa68686e03612349268cc5b3a0ac3d8b",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/runtime/fonts.js",
+      "sha256": "32b44c27f72741fba695d9814b8026644b8e2eb00afe5da5989e7de67aeedc82",
+      "bytes": 1848,
+      "git_blob": "6c55182825f47c92bb97b98d0decfd29effa0bea",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/runtime/fonts/LICENCE-UbuntuSans.txt",
+      "sha256": "2f0015108d68627bd788d313f529c21ff4da2c2c42a5e1f3883acc83480f9002",
+      "bytes": 4673,
+      "git_blob": "ae78a8f94eae372cb1ca4e14b67244342fce604e",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/runtime/fonts/OFL-NotoSansSC.txt",
+      "sha256": "babcfe66c8a098b2fa279bc724a3a342f8124f77ce18941fbcc1bbb39823cded",
+      "bytes": 4387,
+      "git_blob": "79a917be1f4b42e688a75c35f372b83a0f4ba11c",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/runtime/fonts/bold.json",
+      "sha256": "4d79d517f99a6295238cebc238f99764b8be34476c8fc04a435c4aee5d85eff7",
+      "bytes": 381160,
+      "git_blob": "91a12b7c746faf48d8f15694f86751ddb8743317",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/runtime/fonts/cjk.json",
+      "sha256": "c2eb9fad6fa946810f1d5993ed1654fd44b76366d20a4b4cb2fcad7e365ae37f",
+      "bytes": 470342,
+      "git_blob": "9d282dda640553986e0bfea365c1aea01adfc916",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/runtime/fonts/gear.json",
+      "sha256": "d449f2afa02529e244a2499d294beb6ce20c887a56cb7ce8c9cf296413c6f592",
+      "bytes": 65999,
+      "git_blob": "8d5065dd63d1a521800ab65e414cfd1f43f39e88",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/runtime/fonts/label.json",
+      "sha256": "5decbecf5de39b5681e89c13e35c26463c12e5d203861ba2116098a2fd72229c",
+      "bytes": 266952,
+      "git_blob": "2fa7727ba5081c3c94e3f01f812bd56fd04172fa",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/runtime/fonts/light.json",
+      "sha256": "0a9e36aca8a1a49c111dd69f90d517388a62edefdbe7a717a0d2ab0868d4aa9c",
+      "bytes": 251673,
+      "git_blob": "2a1eb7c181bac18acfde911963715849591b1809",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/runtime/fonts/num.json",
+      "sha256": "1121146c05a559b12ef7ca2c06319f106b4732f9d9aaf332ba1c0ff4d975951d",
+      "bytes": 239577,
+      "git_blob": "bccf20b54fd4759a25effbc10041215796bacce5",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/runtime/gauges.js",
+      "sha256": "4d6a34de9d4b88bf3df4c519a35c07f3acba7d35712df30714476ad2b66e20d5",
+      "bytes": 51472,
+      "git_blob": "def98f1f68fc4e2197a411626e60275a151d16b9",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/runtime/hmi-text.js",
+      "sha256": "74d96fd26ec53f4dc55fd36e079901ed03994794c8b31ae37e93e095092814e0",
+      "bytes": 1163,
+      "git_blob": "b9749cf0e65bff9401896fd2697ae0a585412ec0",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/runtime/i18n.js",
+      "sha256": "7e7702bda77c471f9b9c860f688eb3adf06f2ec401e35ff6833e0c9dbd4ff801",
+      "bytes": 4164,
+      "git_blob": "9f168889dca42032920f4d60753e5600875ecb29",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/runtime/idrive-language.js",
+      "sha256": "bb58dac8833032fd17fe921c0937fccd268069fd04d6381ce3702eebdb7072d2",
+      "bytes": 1216,
+      "git_blob": "8ce07f82ca61ba57b483e6c5a8655dd187663695",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/runtime/locale.json",
+      "sha256": "c37863ed4336c34a3868d150767644841256ee3ad6fc3dad6e223bcb5913f7e7",
+      "bytes": 31,
+      "git_blob": "8a931d7bff57874e400f1da635d6d647cd13dbb2",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/runtime/mgu.js",
+      "sha256": "6796e804277749966f22cbde1efbae4059628a98092200eac99d9a752b7f1757",
+      "bytes": 44605,
+      "git_blob": "dca61a5066bb11d461e81dc6cf624e4104efe64f",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/runtime/notifications.js",
+      "sha256": "9844c0b0b7f4f9377a870ff1e82855abfeb81153a37c65aaa65cc812a267e9a2",
+      "bytes": 1721,
+      "git_blob": "ef673fa70058e4bf9de70391f3b513f78da394c3",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/runtime/pack.js",
+      "sha256": "25e8270eb6b67045d8d9bbc225f6877dc54f9078036742e5adca687e1cf040c2",
+      "bytes": 3758,
+      "git_blob": "05d7947b7096b70f5cbec827e9a67ac791c328be",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/runtime/parked.js",
+      "sha256": "43f5517ad9badb0d23a11bb59a9c4501482891a23443861e3f5bdd10d1dcab57",
+      "bytes": 1571,
+      "git_blob": "d7788c1b8d7b6a2face040db09a2964c42c06501",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/runtime/readonly-diag.js",
+      "sha256": "6bdd2654442945483674e927861265f177cf0b67e444ae64580fe21e1261b4ea",
+      "bytes": 10156,
+      "git_blob": "bf90bdf99e25218e38284258895114fa3a1e575f",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/runtime/record.js",
+      "sha256": "fc7c601c3db3f305aa7254f68fdccb905c40ac9b2a12ade772aa34af2fc47a4e",
+      "bytes": 19114,
+      "git_blob": "0e57bc45ff84385290d0540605978e4eb96e1a42",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/runtime/renderd.js",
+      "sha256": "7b2048e2f22bea36c827d8d647f634b0db00849eb2df66a6afe61d5a13452be3",
+      "bytes": 18036,
+      "git_blob": "2d3fa9a9e0f15fb290944edd536a4cdc57274529",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/runtime/sgbd.js",
+      "sha256": "799b35e09d558be20fa4fd6bacab0b6fd102fe49aaf34ae81dbadd7fcabfa37e",
+      "bytes": 5451,
+      "git_blob": "c70a3e19c3336a72bfc1999e3875378593880410",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/runtime/sheet.js",
+      "sha256": "7551019b5586de7e5a84f92bb113fae741d0ab376a5d6da1a2923f8177dcd9e5",
+      "bytes": 14393,
+      "git_blob": "60d0bd984d107fc1616f6ec7aa9075c0ff40b3b6",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/runtime/signals.js",
+      "sha256": "92e3e397aef9cd44fcef989c3802af7980b7f3340028dba3fd4a1741bc940e23",
+      "bytes": 5721,
+      "git_blob": "2a6830c503c5a04396b52d9c3311e79bfae7dd72",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/runtime/sim.js",
+      "sha256": "b7d1ee492c017223e1f0726a69af0d8cff1aa44ae10557e2effae1e3249fa2d9",
+      "bytes": 3920,
+      "git_blob": "00cd1f8b887cf9dd3fb36676a81fd714941fa061",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/runtime/text-layout.js",
+      "sha256": "0a36ff6e5b4d882a28d0689e0c110f007a53babc1fe9198be822823423d534d6",
+      "bytes": 545,
+      "git_blob": "6d57a2b95b18b6a10b5e1e59236b2057f2a65f17",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/runtime/themes.js",
+      "sha256": "c24c641a0e82c4b9bc1ba91ebc2916044de9e160e40d0cf888943fc12d80fa58",
+      "bytes": 3158,
+      "git_blob": "f9ea5b3d2323319f469bc715647a54e3621e2f5e",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/tools/build.py",
+      "sha256": "4e8c7757a4dc0f24cdfcb87af8f7955bc8d9361face1844707c9c1cc48b67a8a",
+      "bytes": 41123,
+      "git_blob": "369ef7970f364a8535dc07baac4ac5004eb2ad96",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/tools/locale-revisions.json",
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "bytes": 3,
+      "git_blob": "0967ef424bce6791893e9a57bb952f80fd536e93",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/tools/localize.py",
+      "sha256": "3da5941a9b05f0f0318bdd48c7595dcac5b8145c24c3afc73a0a828d30910d34",
+      "bytes": 3933,
+      "git_blob": "f231ff7d4b2f9fd6c765a953f8bdce28f697f975",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/tools/oapgen/gen.js",
+      "sha256": "03353755765fd356df9b22b5042e5cb2227e057bcc933713b2c16147684bae1a",
+      "bytes": 2966,
+      "git_blob": "4ffe301fc3480bb67eb27b3b2631e84a0dfdce16",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/kit/tools/pack_data.py",
+      "sha256": "f0795f6170588a11efb2db504bd6cee6fb58a5aefd689d05d926583eff05e0ce",
+      "bytes": 3280,
+      "git_blob": "b38beb442eb4c5d558d57466ebcd4af2227c7d6c",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/dzooky-bmrmodz/mgu-repo.json",
+      "sha256": "eedfd6db7e2d5e5f2ddff4a025bb6ca4611c828b1c8339246398a4d61025cd01",
+      "bytes": 626,
+      "git_blob": "458295e9b1ff866db2571094b116476810658188",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/giuseppe-mgu-apps-id8/mgu-repo.json",
+      "sha256": "0c78b43d89244aef9b65eca744837ee60eda2c5925860985a84691980b648f27",
+      "bytes": 3841,
+      "git_blob": "67f486ae31ffa047a42e8b517d22f25bd7e5a337",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/grabandrey-esagono-cluster/tools/esagono-cluster/cluster-render.d/esagono.conf",
+      "sha256": "bf9108f13f6dc7c2dca6d8b75963fb331b52f0b04d6c812805ae2cc13f902f25",
+      "bytes": 893,
+      "git_blob": "b0320ef6b3b4eec6bab2ffc7ad3295b2785782dd",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/grabandrey-esagono-cluster/tools/esagono-cluster/component.json",
+      "sha256": "308413e439651593366662d340afce1e30628238033a2a6c5944d0ec91da2482",
+      "bytes": 1210,
+      "git_blob": "69751c4166b5c6aed91a47b4c3d49c3f4e07c5a3",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/grabandrey-esagono-cluster/tools/esagono-cluster/esagono-cluster.service",
+      "sha256": "d79fb76b8750b92c3c32333ba22fa2c55ad232734f0ecf0465475c955317288a",
+      "bytes": 764,
+      "git_blob": "5c3cea5e6efa3fbb67bf05b2be8519811ec71062",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/grabandrey-esagono-cluster/tools/esagono-cluster/esagono.js",
+      "sha256": "2f0c1d8ae8190478c4ee95cc67d1e42183484fd83fa76344bc0a30500a22ae47",
+      "bytes": 13882,
+      "git_blob": "eb075b84923df59daa87c7da5572a5f47800e97a",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/grabandrey-esagono-cluster/tools/esagono-cluster/preview.png",
+      "sha256": "4f25e681a7483742501a800f454b389634c9aa4f3a474b082bb3b022aa26f78c",
+      "bytes": 143927,
+      "git_blob": "24c794cd577c595222ad9f07e4604c29368d34d3",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/grabandrey-esagono-cluster/tools/esagono-cluster/shader.js",
+      "sha256": "f6bf3b2921beec2020be61bb555b9b530db09831ffc6a236f820ba4e83c3c3ca",
+      "bytes": 10477,
+      "git_blob": "607cc67b3cc6e432b2788dcc9d161eacdeb8f618",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/grabandrey-idrive-apps/packages/lightlog/README.md",
+      "sha256": "464f918821de38acee04d5e37a0abb76bedea8338df93ef684d5a8bfab5a32db",
+      "bytes": 13498,
+      "git_blob": "d4c3474c7df853f45c49f889604f4b4e4c06ad2b",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/LICENSE",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "bytes": 35149,
+      "git_blob": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/LICENSE.MIT",
+      "sha256": "7c813412dcaf1b9d18c28ca6b6199c4349e15e35beca44ab6cab8e4413fe0aa6",
+      "bytes": 1151,
+      "git_blob": "e9b4f0ac353e8c9d8537426f7bcaf03e3201224a",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/README.md",
+      "sha256": "cc03227d73d787e91c0353a9c5f83ecf24b07de9688ccb64d08fda94e3c48bac",
+      "bytes": 28936,
+      "git_blob": "eedfa6d53c0bfe792625674faa2c4f7885e33529",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/apps/m_copilot/ai.js",
+      "sha256": "45e22c6946df2f0567923f3be31b4ee61a1c8a5c55e1eab2db791e5e91b0e10c",
+      "bytes": 44776,
+      "git_blob": "fa18b41c3713203cd559d6751b48e963ba1ed327",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/apps/m_copilot/app.json",
+      "sha256": "39f051a23b30998c5767f4639ff1ea56d7e93847bf0c19e300edbaeca5f3013f",
+      "bytes": 15551,
+      "git_blob": "231da1e24cee4403309ccbbce3ee3bf23aa7da02",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/apps/m_copilot/car_signals.js",
+      "sha256": "a9c025b68b1d00a2b2b836c15cbcde4775ed7476d7bd84a44648bb6667367483",
+      "bytes": 18785,
+      "git_blob": "d1a1593ff32ef39eeca1863a3168ad6e4bfeaa84",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/apps/m_copilot/cloud_pair.js",
+      "sha256": "398ce71baa15850deb30a7658dc475ff7a38348ddef0596ef32be7c213011a15",
+      "bytes": 3788,
+      "git_blob": "a7be74a1812bd2708ab5d3a5af62e073afa636e3",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/apps/m_copilot/dtc_db.pack",
+      "sha256": "206da522f83c48539eb9ac0ee02d7c859a7080b0b1c50cf76df05451a3930c55",
+      "bytes": 3453973,
+      "git_blob": "d9a55564f9dfb861cf26187119e11c9693d57f17",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/apps/m_copilot/dtc_text.js",
+      "sha256": "0a85399c157493e5f5e50542fa22cb9d8b3c58031e718ccc9af0bf205d87a1b3",
+      "bytes": 3772,
+      "git_blob": "ff3d21b0e1fd59be90ec365981c75454fbc9922e",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/apps/m_copilot/engine_snapshot.js",
+      "sha256": "c337b3640c5507a4ba44fda96e7f257b1865f0b8e89ab5a760bc5400db9ef238",
+      "bytes": 16559,
+      "git_blob": "dcf57b2ae435635b5ccedba9c77818bd9beb1c40",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/apps/m_copilot/icon.png",
+      "sha256": "886356a7110724cae40039e51226177f53c1c37b76bab92e86ac1305db09aa9e",
+      "bytes": 3823,
+      "git_blob": "b8f9c3c3b8bd3d75cb998c9f98ea8807169687e9",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/apps/m_copilot/known_texts.js",
+      "sha256": "c7df2d1905a2b83ca4a98dcc580afd175d515afee08b1e538af53eae5f59e11d",
+      "bytes": 747,
+      "git_blob": "a771687c36534450c0c8967c095ce7128ec57da2",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/apps/m_copilot/main.js",
+      "sha256": "3d537dba433da5d75b17e0a4d1f3af9bec4da606d70225722e4960a9f8c3fa0c",
+      "bytes": 94969,
+      "git_blob": "acc5779a32eb98f6d5dd61655077dd4ffc107f56",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/apps/m_copilot/vehicle.js",
+      "sha256": "5e954104cd4ca2287fc2137b0c555dc7673265b783b8e6b7e67b5543430f8cc1",
+      "bytes": 18755,
+      "git_blob": "ff2e816d26751b550c6087ccc1804421f67f4cac",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/apps/spotify/api.js",
+      "sha256": "f53c75cb6670af3db2d555002efafb81280a1dc484911a18c30b49de5768b695",
+      "bytes": 67917,
+      "git_blob": "fb083f695c1341cd6528b307a0b0bc2b846a3887",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/apps/spotify/app.json",
+      "sha256": "466bb88d151e225ef7248ef20488dbfbf9d6db413b2af7e47af205aef2db9c8d",
+      "bytes": 1602,
+      "git_blob": "c27867db01b1b73b1d1cc0a00bb71b45947bb085",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/apps/spotify/art.js",
+      "sha256": "3e2061572b064215caf6163ab2c20049ac2ac601466bdbdbbef3b1ac546f9043",
+      "bytes": 6675,
+      "git_blob": "68e9ee6f20180b815a63fb09c3757b34b1e866b6",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/apps/spotify/cloud_pair.js",
+      "sha256": "cd21f5ba6abeaaeb2a5c89cf97743785a06cc33adc74c880dd2bd4edf2a6c633",
+      "bytes": 2899,
+      "git_blob": "699727aa4dfd18171dccf54f24c4c05aae7dcbc9",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/apps/spotify/icon.png",
+      "sha256": "7e7e06848570f5ae181d497ee276a92e636ec4c7129228b52525503a6a2869c9",
+      "bytes": 2255,
+      "git_blob": "6ab740e03db84cd32a62ba250a49069450d0b787",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/apps/spotify/jpeg.js",
+      "sha256": "a3f175fd6f62d142aad94d3bd90f3a30be4e076baf9b6a6fa31c8e84d9d4aa9f",
+      "bytes": 40593,
+      "git_blob": "1982481806e5fe29bd38cb008297f35731ade20b",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/apps/spotify/main.js",
+      "sha256": "251aa3cb98e51ce01af43afbdcd818735fe397d5914441cc765e20f6ac56ed59",
+      "bytes": 75711,
+      "git_blob": "2be8bf4b98325141828309beb74a00516b6f4fe5",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/apps/sys_monitor/app.json",
+      "sha256": "fa35e19d79ae0050b3d08a93c857ee8a107928368c2be2673cff7fa92db14895",
+      "bytes": 1066,
+      "git_blob": "01cb45d928008a28890e89814b4035591ab726dd",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/apps/sys_monitor/main.js",
+      "sha256": "074ae059188fa4b12f69f26edeaf5b036a9ae117517f44e93fdbc39265c93ab6",
+      "bytes": 30660,
+      "git_blob": "a1fdbe044eb396dd048dee85a268480c1005952b",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/apps/sys_monitor/procs.js",
+      "sha256": "6f8891741dec2e46a00ffaa809293baec3e3d5cb46abd4cfc10a971fecf06d04",
+      "bytes": 27209,
+      "git_blob": "ec5af56b3ecfff53a1b5a866bd43f9e01c28d315",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/apps/sys_monitor/sample.js",
+      "sha256": "cd587abfe68a97016fd1096130c863451e09c0cc98027eca3afca54303b686f6",
+      "bytes": 5207,
+      "git_blob": "bf5084ddf392404d727a35976391b825284db7fb",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/localization/credit.zh-CN.json",
+      "sha256": "c15e741d089c95575f0e8c4833489d6530980ced429672c9248ea8b6bc8fbd59",
+      "bytes": 576,
+      "git_blob": "ad372c34113e0b1ca8dc6339d7f81101cd0d476b",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/platform/permissions.json",
+      "sha256": "a03a2d7be452e89f9ce5361820361dded34ef36aa1e4a5afda95a4a1b1e26b01",
+      "bytes": 9142,
+      "git_blob": "2366a03ba84260a515583a7aa1acd3085de06ebd",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/canvas.js",
+      "sha256": "efa4d890e8f883e092f82907f27913b8ca405a3614f376db26956c2ed00a88e5",
+      "bytes": 30181,
+      "git_blob": "ba1fb825746e6d4c9f48ebf2262b4bde5f07d2f2",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/car.js",
+      "sha256": "e0d0d582eb2c35c2af7f22d0e79aaae4aa67f85e1ba80a88f8951dbd2e81f31b",
+      "bytes": 13045,
+      "git_blob": "e2a99890c6a8eacc070732c2b516fd428eef8ac8",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/certs.js",
+      "sha256": "c0c8fb43653fadcf21d4ce9bbd5c09d4271b069ce60f4776f98feaf5090c0f41",
+      "bytes": 12888,
+      "git_blob": "8054db4770365405c017d18cef9a22e5cfa363a1",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/cloud_pair.js",
+      "sha256": "e77fb7d38ebc7a1579d0da803be2cf9d99da1ddddc3de490c61acf5cfc59c881",
+      "bytes": 7695,
+      "git_blob": "453bd884b0fd00e0cb3e48da721fdda8a7621560",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/credits.js",
+      "sha256": "74cb6154b98a5476d3147c5083642eac033cfbdf797a7a3f70ed7d7ce0b00e6b",
+      "bytes": 579,
+      "git_blob": "ccfe49b1932b8ada4ec0677f6b616998402f14fc",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/diag.js",
+      "sha256": "e703ae550dd8e9588f51d55ffb0c958c7e396db25abc41066bc5ca64c2c1ab18",
+      "bytes": 11487,
+      "git_blob": "cb325af8e1bb17cf577cb4759c6591def474e7df",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/dids.js",
+      "sha256": "cf6ae106099e64863a7806ad1db36cdd24f161c03a4d97fba1aa2d5b630c73f4",
+      "bytes": 7048,
+      "git_blob": "43509608eaf654be64179cf21e2e3a33af15e2ad",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/display.js",
+      "sha256": "bc48cc25151dbb2711878fe7c978ca1f14fbf00927d8d980827a8a967a1312af",
+      "bytes": 59963,
+      "git_blob": "c72102c1afcf0b8ffd2b1cffc27c4607a18fc393",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/ecus.js",
+      "sha256": "f5ec3dbdece067f7eaa0080479dfde0d25b8a882f657df8b6f58f46f8622e149",
+      "bytes": 1257,
+      "git_blob": "2c8a55c93f8b9d8bf8d84555e63e68467d75f901",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/fonts.js",
+      "sha256": "4d6f26794d7d0659e86705253e2776b35b111ebe0b245ff594848e3405e94cbe",
+      "bytes": 2059,
+      "git_blob": "f5e1290045cd49ac555f4e2e35dfee111243137a",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/fonts/OFL-NotoSansGeorgian.txt",
+      "sha256": "8c02263c5d73d40544f9ed91e30c4e947407057a3cc430d7b786189aeceff6df",
+      "bytes": 4384,
+      "git_blob": "437070a9ee723a4018777b51bd7e4a6830b36502",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/fonts/OFL-NotoSansSC.txt",
+      "sha256": "babcfe66c8a098b2fa279bc724a3a342f8124f77ce18941fbcc1bbb39823cded",
+      "bytes": 4387,
+      "git_blob": "79a917be1f4b42e688a75c35f372b83a0f4ba11c",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/fonts/bold-ka.json",
+      "sha256": "be2d9faa76007be8f3482fd24aa3055e3ed480e8fc2202a3c8ebb336837461d9",
+      "bytes": 143707,
+      "git_blob": "a374c0d9db0f6e755cd4352dbbca5a5ffc9c99e8",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/fonts/bold.json",
+      "sha256": "c8185d6874a4ca1f79ffc2b73434d40426381b4bbf395f6f49733bd7020d7e76",
+      "bytes": 101476,
+      "git_blob": "1e51dccb6bd42d9b644a1c6a6c7407b76a95c3c2",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/fonts/cjk.json",
+      "sha256": "c2eb9fad6fa946810f1d5993ed1654fd44b76366d20a4b4cb2fcad7e365ae37f",
+      "bytes": 470342,
+      "git_blob": "9d282dda640553986e0bfea365c1aea01adfc916",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/fonts/gear.json",
+      "sha256": "d449f2afa02529e244a2499d294beb6ce20c887a56cb7ce8c9cf296413c6f592",
+      "bytes": 65999,
+      "git_blob": "8d5065dd63d1a521800ab65e414cfd1f43f39e88",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/fonts/label-ka.json",
+      "sha256": "f9c0d65cf9cfff0be0a0b35ef905305082986c5111b336cbcd3cfd5272f09f94",
+      "bytes": 170300,
+      "git_blob": "cfca94e1752e7c9c791c53c276bb68a70f6c0d2f",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/fonts/label.json",
+      "sha256": "4dd985232ef36675f30ec855e8c4d5e6db5d44c8a0e04d82d50adc56c9eaf4cf",
+      "bytes": 72561,
+      "git_blob": "9d54f1c5d90cfe92510b83800a8d818173c05cfa",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/fonts/light.json",
+      "sha256": "961ac19e874ed013c4cdfaaf009e85977e47889cbf3d470901f3d33b4bf4e0df",
+      "bytes": 91880,
+      "git_blob": "064074b56160e8d4ebc1b9a48eff4aad7b08405b",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/fonts/num.json",
+      "sha256": "02a02e0c8e8da9c7bed35d66fce8c993998adf93080050e47511b602dbbcf9fc",
+      "bytes": 110925,
+      "git_blob": "f0717c5762c5cbeeffba231fe80af8cef008e231",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/gauges.js",
+      "sha256": "707b5edb2310d7c0693d6d502463f1fc2d17585bcaca2ba70473b3aae0a28678",
+      "bytes": 52992,
+      "git_blob": "eecf29b9661cb2c04dac687f8605a86c6f5ceba2",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/hmi-text.js",
+      "sha256": "74d96fd26ec53f4dc55fd36e079901ed03994794c8b31ae37e93e095092814e0",
+      "bytes": 1163,
+      "git_blob": "b9749cf0e65bff9401896fd2697ae0a585412ec0",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/i18n.js",
+      "sha256": "0d6cb10328ed455b6635c09517093f6c42a2c2f57dd2ca71f3be9fc1c9095be2",
+      "bytes": 2067,
+      "git_blob": "27f1b7cfac28e407227da2998bd3f680cc449a6c",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/link_crypto.js",
+      "sha256": "888ca72b0c28fec97ffbfd62274f4676814ca3aa9844f2336e228266244d780b",
+      "bytes": 4765,
+      "git_blob": "f705c6350c76baaf489c88661a360ac3606d68fc",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/locale.json",
+      "sha256": "c37863ed4336c34a3868d150767644841256ee3ad6fc3dad6e223bcb5913f7e7",
+      "bytes": 31,
+      "git_blob": "8a931d7bff57874e400f1da635d6d647cd13dbb2",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/locales/zh-CN.json",
+      "sha256": "62527bc2b4dd364c65f850e9f4673467bd99bc8d3240c790d66dfc3e9dd4b66c",
+      "bytes": 59040,
+      "git_blob": "0b7afd9919417a24582c3fd77d1d740597cb17fb",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/locales/zh-CN.tsv",
+      "sha256": "90beeec02a7bc17aadcd2fd2b1b4e93f1b0843e6323c277bbd36d7afae2b452d",
+      "bytes": 49946,
+      "git_blob": "7d784d22c59ade43717a5c58252f46ef85c77875",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/mgu.js",
+      "sha256": "91b3ee08456107d755aaf005d91d2b86d3acaad27ef933861fb53804acac8036",
+      "bytes": 45885,
+      "git_blob": "379313f59c6ab036ac2746ce35c0cf0779c255cf",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/pack.js",
+      "sha256": "25e8270eb6b67045d8d9bbc225f6877dc54f9078036742e5adca687e1cf040c2",
+      "bytes": 3758,
+      "git_blob": "05d7947b7096b70f5cbec827e9a67ac791c328be",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/panel.js",
+      "sha256": "e8470ce765f53b9f1d0c8e50cafb021a2786353ef76ea8e57c64c25b9e133a1f",
+      "bytes": 5009,
+      "git_blob": "80fcb1075e2f891b2c56182fa6eb90a8b1f101ea",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/qrcodegen.js",
+      "sha256": "68a09ec3aeee8d7115d0cdc615f2006b4fd8636e28442f316ea89b6e626f3916",
+      "bytes": 42504,
+      "git_blob": "16de9b8ac0be1cb4a96be6cefdd0e7e2ccac88f0",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/record.js",
+      "sha256": "a278a94188ba8a2bab947335610467a40e2b34c776b98164389adcd5009f84d0",
+      "bytes": 19164,
+      "git_blob": "33f9ddc9bec3556332d5eec433941b098551f229",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/relay_stream.js",
+      "sha256": "ccd2ac4e010fafd4de637b84ef70e4902fa90975755bebab04842332016b7c1f",
+      "bytes": 6023,
+      "git_blob": "264159a8e93c7c17128d9fbd97f22a4a997b4543",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/renderd.js",
+      "sha256": "d70bc205f6bb169478ac95ae44e958d743b52ee4838a1e263cb37941da7052b6",
+      "bytes": 17700,
+      "git_blob": "7a486fd55c6108466ffe5582eade5fa734bd9835",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/sheet.js",
+      "sha256": "39d297a72852df84f8e7f8ba76506f81ba43bb6c000c0938110c069872e01d34",
+      "bytes": 12958,
+      "git_blob": "3b656d02f41eac91bf4d18b0fed953bbc11f761b",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/signals.js",
+      "sha256": "8e67117ae7c5994e3650a867fe6829bb2c0f32492eab80815f621e502464a2e6",
+      "bytes": 6078,
+      "git_blob": "468ba5db8dd1b572d320e0a7a3b230acbb74490b",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/sim.js",
+      "sha256": "b7d1ee492c017223e1f0726a69af0d8cff1aa44ae10557e2effae1e3249fa2d9",
+      "bytes": 3920,
+      "git_blob": "00cd1f8b887cf9dd3fb36676a81fd714941fa061",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/themes.js",
+      "sha256": "c24c641a0e82c4b9bc1ba91ebc2916044de9e160e40d0cf888943fc12d80fa58",
+      "bytes": 3158,
+      "git_blob": "f9ea5b3d2323319f469bc715647a54e3621e2f5e",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/tls_dates.js",
+      "sha256": "cc806e4715faefa825e5ce255750c50e64f4989d3c51e89b75d622b2a9c471e9",
+      "bytes": 7085,
+      "git_blob": "23d657ea9e9c3bad2c7fde32d1b96de302d7e20b",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/uplink.js",
+      "sha256": "830d1eabac5d074a6dbf57a2e97644101b6e6dfa400a21bf2d7375a7961ecde0",
+      "bytes": 8800,
+      "git_blob": "430839ea62c67192f095bd42de63701876175b13",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/runtime/write_whole.js",
+      "sha256": "839b2314745a826f11969b4dbf4baadbbac8c2096c447b3943c50472bf4fe15f",
+      "bytes": 853,
+      "git_blob": "33bd456d9154f71e3ace39b6304a80d33ea90a42",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/tools/build.py",
+      "sha256": "89d39a6f90102c66fdfc7bbf0389962a83e8b79ffb557469cb90eb61a2620fec",
+      "bytes": 36982,
+      "git_blob": "943db86ef0c85127c115ad99a69d4c4866044734",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/tools/locale-revisions.json",
+      "sha256": "20ebbfca338321cf3d35877d32ae7fca392cfc6d9d7fea79a04b8403e3381112",
+      "bytes": 13,
+      "git_blob": "423887efb7777e9613677be388c1a394d8960137",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/tools/localize.py",
+      "sha256": "de9c88378ad782d4cffd33206ef448de05876ceb56400b1fb1b86db1d8c4d148",
+      "bytes": 3443,
+      "git_blob": "ad45873339ad9f4c712ec8a347f75024deb5fe52",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/tools/make_icon.js",
+      "sha256": "052861654276d2fad155f84c1557370e73cad83a0e064ccfc2f4f0f9a461c4ea",
+      "bytes": 6951,
+      "git_blob": "8ed90d447d2f69bf3fce07f487119548c538d300",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/tools/oapgen/gen.js",
+      "sha256": "03353755765fd356df9b22b5042e5cb2227e057bcc933713b2c16147684bae1a",
+      "bytes": 2966,
+      "git_blob": "4ffe301fc3480bb67eb27b3b2631e84a0dfdce16",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/hexlay-idrive7-apps/kit/tools/pack_data.py",
+      "sha256": "f0795f6170588a11efb2db504bd6cee6fb58a5aefd689d05d926583eff05e0ce",
+      "bytes": 3280,
+      "git_blob": "b38beb442eb4c5d558d57466ebcd4af2227c7d6c",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/localization/credit.ru.json",
+      "sha256": "656d45a268efe4ae518b331a15b31a7194264b027466b416a77cfbf412fb86b2",
+      "bytes": 448,
+      "git_blob": "2d57545279ab9c24f98bd624aadcaa448f307293",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/localization/credit.zh-CN.json",
+      "sha256": "c15e741d089c95575f0e8c4833489d6530980ced429672c9248ea8b6bc8fbd59",
+      "bytes": 576,
+      "git_blob": "ad372c34113e0b1ca8dc6339d7f81101cd0d476b",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/localization/fonts/OFL-NotoSansKR.txt",
+      "sha256": "77fe79c891328aee1528d3efa06f344798c180d0d4df0ea02efe243f63c865fe",
+      "bytes": 4236,
+      "git_blob": "193a91dadeab384806258f277e166e101eb57fe7",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/localization/fonts/cyrillic-ru.json",
+      "sha256": "c847f70baaa6b2f12df1e5acebab0227d97f46c76a09248e66b57ae5686d5758",
+      "bytes": 53292,
+      "git_blob": "928b72ba6faae3c64e8509ebe13ddc41d735dded",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/localization/fonts/diagnostic-zh-CN.json",
+      "sha256": "105f651f6a155d466ee02e461ba06398603b09b9a94fdad3233f80a3c517cdaa",
+      "bytes": 686320,
+      "git_blob": "88453aba273ae47641a8490dd1d5571d2b29e87b",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/localization/fonts/korean.json",
+      "sha256": "ae4c3c2728fd414d5b001d3c413cbfc3c4cc0588f983bc82d6d038b574273dc9",
+      "bytes": 755507,
+      "git_blob": "377fd27591bed0ec6b4e8d4ffd74201e87feb78c",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/platform/permissions.json",
+      "sha256": "a03a2d7be452e89f9ce5361820361dded34ef36aa1e4a5afda95a4a1b1e26b01",
+      "bytes": 9142,
+      "git_blob": "2366a03ba84260a515583a7aa1acd3085de06ebd",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/runtime/canvas.js",
+      "sha256": "5ba26f725e46ef5bf4b47308f40365791d44b59e7d8424b43e1024514f0dfcc8",
+      "bytes": 27276,
+      "git_blob": "74e6a45f937542848c287d9ac4d57ee21919ac51",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/runtime/car.js",
+      "sha256": "a056c5b5af6b5e401ea1efcd0521e891936e6b89d234a3151719c3f91a430b39",
+      "bytes": 12021,
+      "git_blob": "413a15156909960a54167be055870369f546482f",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/runtime/credits.js",
+      "sha256": "6074066bc6ae85794db9b844322264ad8aa73b89c850f6b03a3ee57c57d95084",
+      "bytes": 529,
+      "git_blob": "fcd5ae8fda783f396ced830905b1babe864e184c",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/runtime/diag.js",
+      "sha256": "337bec1fed75f5216de2a3ef1fbe5cbb1e183b152a8071142a1009441bcd7cba",
+      "bytes": 10668,
+      "git_blob": "a28e1bfe8f3d11ecec2190ffc4394b833a75aa28",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/runtime/dids.js",
+      "sha256": "cf6ae106099e64863a7806ad1db36cdd24f161c03a4d97fba1aa2d5b630c73f4",
+      "bytes": 7048,
+      "git_blob": "43509608eaf654be64179cf21e2e3a33af15e2ad",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/runtime/display.js",
+      "sha256": "a6bf01a03ccf5604ba06a7e8cd40f98ae0c64fccd5a93ca76944ca6899400286",
+      "bytes": 53462,
+      "git_blob": "28af8e5fdf7ec4d496eb023c03724ed25b366107",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/runtime/ecus.js",
+      "sha256": "f5ec3dbdece067f7eaa0080479dfde0d25b8a882f657df8b6f58f46f8622e149",
+      "bytes": 1257,
+      "git_blob": "2c8a55c93f8b9d8bf8d84555e63e68467d75f901",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/runtime/engine.js",
+      "sha256": "58745a5ed7f39204b295e1f7b83b3c42592adb215d29fbfb185e9694ceb6de90",
+      "bytes": 4263,
+      "git_blob": "007ff61cfa68686e03612349268cc5b3a0ac3d8b",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/runtime/fonts.js",
+      "sha256": "32b44c27f72741fba695d9814b8026644b8e2eb00afe5da5989e7de67aeedc82",
+      "bytes": 1848,
+      "git_blob": "6c55182825f47c92bb97b98d0decfd29effa0bea",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/runtime/fonts/OFL-NotoSansSC.txt",
+      "sha256": "babcfe66c8a098b2fa279bc724a3a342f8124f77ce18941fbcc1bbb39823cded",
+      "bytes": 4387,
+      "git_blob": "79a917be1f4b42e688a75c35f372b83a0f4ba11c",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/runtime/fonts/UFL-Ubuntu.txt",
+      "sha256": "2f0015108d68627bd788d313f529c21ff4da2c2c42a5e1f3883acc83480f9002",
+      "bytes": 4673,
+      "git_blob": "ae78a8f94eae372cb1ca4e14b67244342fce604e",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/runtime/fonts/bold.json",
+      "sha256": "c8185d6874a4ca1f79ffc2b73434d40426381b4bbf395f6f49733bd7020d7e76",
+      "bytes": 101476,
+      "git_blob": "1e51dccb6bd42d9b644a1c6a6c7407b76a95c3c2",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/runtime/fonts/cjk.json",
+      "sha256": "880236399aebe49f0d2f17d2857eb8c40328c154d3f92a3cc95bdde2491f8d23",
+      "bytes": 496128,
+      "git_blob": "bb1e1a8c7163f33627039ca8c65b7dbcd1707bcf",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/runtime/fonts/gear.json",
+      "sha256": "d449f2afa02529e244a2499d294beb6ce20c887a56cb7ce8c9cf296413c6f592",
+      "bytes": 65999,
+      "git_blob": "8d5065dd63d1a521800ab65e414cfd1f43f39e88",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/runtime/fonts/label.json",
+      "sha256": "4dd985232ef36675f30ec855e8c4d5e6db5d44c8a0e04d82d50adc56c9eaf4cf",
+      "bytes": 72561,
+      "git_blob": "9d54f1c5d90cfe92510b83800a8d818173c05cfa",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/runtime/fonts/light.json",
+      "sha256": "961ac19e874ed013c4cdfaaf009e85977e47889cbf3d470901f3d33b4bf4e0df",
+      "bytes": 91880,
+      "git_blob": "064074b56160e8d4ebc1b9a48eff4aad7b08405b",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/runtime/fonts/num.json",
+      "sha256": "02a02e0c8e8da9c7bed35d66fce8c993998adf93080050e47511b602dbbcf9fc",
+      "bytes": 110925,
+      "git_blob": "f0717c5762c5cbeeffba231fe80af8cef008e231",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/runtime/gauges.js",
+      "sha256": "3eb52e936767eae6b881e8a4342e74a09dfb1d5414a31f3bd6a9106dc0556af0",
+      "bytes": 50921,
+      "git_blob": "6524c1410c9aabac46302152fe098e5cdfcb2e66",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/runtime/hmi-text.js",
+      "sha256": "74d96fd26ec53f4dc55fd36e079901ed03994794c8b31ae37e93e095092814e0",
+      "bytes": 1163,
+      "git_blob": "b9749cf0e65bff9401896fd2697ae0a585412ec0",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/runtime/i18n.js",
+      "sha256": "0600bbd7946fc5cda8155702c63d0a2c9c4422541daca4d353b52fe95a0b7768",
+      "bytes": 3756,
+      "git_blob": "40d518587d03f534ac72a1e1bccec219bc04c4ff",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/runtime/locale.json",
+      "sha256": "c37863ed4336c34a3868d150767644841256ee3ad6fc3dad6e223bcb5913f7e7",
+      "bytes": 31,
+      "git_blob": "8a931d7bff57874e400f1da635d6d647cd13dbb2",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/runtime/locales/ko.json",
+      "sha256": "b7d9c8346a1539c027855a9251941c252439c9ecb28a3b54b19817e9cefb260c",
+      "bytes": 92274,
+      "git_blob": "531bcb61296e83b6d5d5cd5e98a0282ea0fd29f9",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/runtime/locales/ko.tsv",
+      "sha256": "44dd42f427c37af0135bcfec4ad001c3d8b0575efc650af728d13b7c2fae5514",
+      "bytes": 77669,
+      "git_blob": "c1a12a58b81890a08307e8689ed45d3b72a34858",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/runtime/locales/ru.json",
+      "sha256": "bcb7867b74f805358c71c8df0cf9db6f93193aec5357f47958460bdbcca88316",
+      "bytes": 132431,
+      "git_blob": "ad94fd044514a14fdedcd58aa9a20a7863d5ecd7",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/runtime/locales/ru.tsv",
+      "sha256": "4821c0673373549c5965522f0ca2bb28cf7773c311086835ca0fdbda8b18db15",
+      "bytes": 118922,
+      "git_blob": "8b92a5bb06ecc4fdab34833aeea588f659e0175d",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/runtime/locales/zh-CN.json",
+      "sha256": "6b6e92dbea5a77f0264f02892abb02dd48d66481aedd1886680d2e6d564e3dd3",
+      "bytes": 83935,
+      "git_blob": "df23d257a2783858371a8cd1c6cd62a4dccc2488",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/runtime/locales/zh-CN.tsv",
+      "sha256": "4b4a49b3e1c6f72eed5eb96259c81c457a6b0671511222a7a8967611cb685e05",
+      "bytes": 71376,
+      "git_blob": "f67f1982394ba1bc2ec4e5fb9d7b940632ab0836",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/runtime/mgu.js",
+      "sha256": "cbc90d1e611199083ad1692d415ba1a3d9e04d64052187aeb613008a2c8e0853",
+      "bytes": 43013,
+      "git_blob": "c70461e27c636e13ca52931c2e557d2d185e9e93",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/runtime/pack.js",
+      "sha256": "25e8270eb6b67045d8d9bbc225f6877dc54f9078036742e5adca687e1cf040c2",
+      "bytes": 3758,
+      "git_blob": "05d7947b7096b70f5cbec827e9a67ac791c328be",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/runtime/parked.js",
+      "sha256": "43f5517ad9badb0d23a11bb59a9c4501482891a23443861e3f5bdd10d1dcab57",
+      "bytes": 1571,
+      "git_blob": "d7788c1b8d7b6a2face040db09a2964c42c06501",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/runtime/readonly-diag.js",
+      "sha256": "e46d9e54020b7111d38447f8b58dd8af51777f04524d0051893e7e5aa658f733",
+      "bytes": 9183,
+      "git_blob": "de29f24a949b089ab426fe2e5e5ae4ad634b198f",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/runtime/record.js",
+      "sha256": "c0764f55676a99e33a614780ffb972c37371331b69e17e9200e6df627d107b31",
+      "bytes": 18706,
+      "git_blob": "48c832f87aa900bfe24110b795e46ea4d46ace27",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/runtime/renderd.js",
+      "sha256": "4bad1bb4e73c0b7719ed97125fd48db7779287d87f12f102343641854d8b10ef",
+      "bytes": 17565,
+      "git_blob": "e9872fd3cfb97fb955d237c382070246f3eebc1c",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/runtime/sgbd.js",
+      "sha256": "799b35e09d558be20fa4fd6bacab0b6fd102fe49aaf34ae81dbadd7fcabfa37e",
+      "bytes": 5451,
+      "git_blob": "c70a3e19c3336a72bfc1999e3875378593880410",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/runtime/sheet.js",
+      "sha256": "27492de538f1ae034f572a6f8362599ddc4d318a02505ceed16fe2530ff58f05",
+      "bytes": 14369,
+      "git_blob": "8a0c95c583fc390e467758c69ba910a8978f3bba",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/runtime/signals.js",
+      "sha256": "92e3e397aef9cd44fcef989c3802af7980b7f3340028dba3fd4a1741bc940e23",
+      "bytes": 5721,
+      "git_blob": "2a6830c503c5a04396b52d9c3311e79bfae7dd72",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/runtime/sim.js",
+      "sha256": "b7d1ee492c017223e1f0726a69af0d8cff1aa44ae10557e2effae1e3249fa2d9",
+      "bytes": 3920,
+      "git_blob": "00cd1f8b887cf9dd3fb36676a81fd714941fa061",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/runtime/text-layout.js",
+      "sha256": "0a36ff6e5b4d882a28d0689e0c110f007a53babc1fe9198be822823423d534d6",
+      "bytes": 545,
+      "git_blob": "6d57a2b95b18b6a10b5e1e59236b2057f2a65f17",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/runtime/themes.js",
+      "sha256": "c24c641a0e82c4b9bc1ba91ebc2916044de9e160e40d0cf888943fc12d80fa58",
+      "bytes": 3158,
+      "git_blob": "f9ea5b3d2323319f469bc715647a54e3621e2f5e",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/tools/build.py",
+      "sha256": "6110e757f7d9aedfdf2cf9e9f53d7e8305baa4ecf24dbf94d35fb9257c59bc6b",
+      "bytes": 37053,
+      "git_blob": "4cdf6547590627730ba056cb82d3a9ea4f35ad81",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/tools/localize.py",
+      "sha256": "3da5941a9b05f0f0318bdd48c7595dcac5b8145c24c3afc73a0a828d30910d34",
+      "bytes": 3933,
+      "git_blob": "f231ff7d4b2f9fd6c765a953f8bdce28f697f975",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/tools/make_icon.js",
+      "sha256": "8fe3c6dfbb267ebd688355ce315e6a1cfecc81e8e4f94d1a6186ea8a3bce484e",
+      "bytes": 5323,
+      "git_blob": "2542387ff2747a31b0b406033017ceafbc34868f",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/maxxxfoka-idrive7games/kit/tools/pack_data.py",
+      "sha256": "f0795f6170588a11efb2db504bd6cee6fb58a5aefd689d05d926583eff05e0ce",
+      "bytes": 3280,
+      "git_blob": "b38beb442eb4c5d558d57466ebcd4af2227c7d6c",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/pinguinooo-idrive7-apps/kit/icons/adam_mtrack.svg",
+      "sha256": "9071443cf4a4c9121fded9159ad2ed914d21f198feb93805038e244e7c4e2d28",
+      "bytes": 1901,
+      "git_blob": "ec9d7c1f045d00f9b026ffb7ce949f9f622d55e9",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/pinguinooo-idrive7-apps/kit/icons/adam_shiftlights.svg",
+      "sha256": "bcc459725ade1ec1f0e55cbfa5285d27f7f48cacc3fd20977f2ed221ef41fb98",
+      "bytes": 1963,
+      "git_blob": "298f228024fb24082c24bf6c788c7957d8c33408",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/pinguinooo-idrive7-apps/kit/icons/adam_vitals.svg",
+      "sha256": "e30e4344dc2dfdebc044cffd9b033127d561bf0d7f2548f2c1d3f7d7e4eb8a05",
+      "bytes": 3020,
+      "git_blob": "c127aa07c8b7e9f43fb2978b705f3716988a72f6",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    },
+    {
+      "path": "apps/_sources/pinguinooo-idrive7-apps/kit/tools/render_icons.py",
+      "sha256": "d99fb83c5a25f5b011c698c917b94dc19f91ba2ecfa4bbbd1d102a535c1e1bc1",
+      "bytes": 6476,
+      "git_blob": "43b51dab267e3099c1aa97009547dc9279f96aad",
+      "mode": "100644",
+      "prior_sha256": null,
+      "recovery": "missing"
+    }
+  ]
+}

@@ -24,7 +24,8 @@ class ExtraSourceAppsTests(unittest.TestCase):
         for source in inventory['sources']:
             base = ROOT / source['path']
             expected = {row['path'] for row in source['files']}
-            actual = {p.relative_to(base).as_posix() for p in base.rglob('*') if p.is_file()}
+            actual = {p.relative_to(base).as_posix() for p in base.rglob('*')
+                      if p.is_file() and '__pycache__' not in p.parts}
             self.assertEqual(actual, expected)
             for row in source['files']:
                 with self.subTest(source=source['repository'], path=row['path']):
@@ -100,6 +101,16 @@ sources.repoCatalog(read).then(c => {
                         else:
                             self.assertFalse(any('oap-sdk' in Path(n).parts for n in archive.getnames()))
                             self.assertFalse((source / 'oap-sdk').exists())
+
+    def test_archived_recipes_keep_their_original_source_version(self):
+        config = json.loads((ROOT / 'data/extra-source-builds.json').read_text(encoding='utf-8'))
+        current = {row['id']: row for row in config['recipes']}
+        for recipe in config.get('archived_recipes', []):
+            with self.subTest(app=recipe['id'], version=recipe['version']):
+                manifest = json.loads((ROOT / recipe['source_root'] / recipe['app_path'] / 'app.json').read_text(encoding='utf-8'))
+                self.assertEqual((manifest['id'], manifest['version']), (recipe['id'], recipe['version']))
+                self.assertNotEqual(recipe['version'], current[recipe['id']]['version'])
+                self.assertRegex(recipe['commit'], r'^[0-9a-f]{40}$')
 
     def test_wrapper_rejects_wrong_package_identity_and_hmi(self):
         with tempfile.TemporaryDirectory(prefix='aq-package-rejection-') as directory:

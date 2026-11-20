@@ -280,6 +280,88 @@
     },
     {
       "id": "dpf",
+      "version": "0.1.33",
+      "repository": "dzooky/bmrmodz",
+      "commit": "f141b7fb7476383ca081fd1196a6beb3a0566761",
+      "source_root": "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476",
+      "app_path": "apps/dpf",
+      "source_license": "MIT project grant; original kit and font notices retained",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.19",
+        "mgu-inputgate": "1.2.1",
+        "mgu-deploy": "0.8.23"
+      },
+      "notices": [
+        "LICENSE",
+        "kit/localization/fonts/OFL-NotoSansKR.txt",
+        "kit/localization/fonts/OFL-NotoSansSC.txt",
+        "kit/runtime/fonts/LICENCE-UbuntuSans.txt",
+        "kit/runtime/fonts/OFL-NotoSansSC.txt"
+      ],
+      "builder_store_mode": true,
+      "requires_sdk": false
+    },
+    {
+      "id": "osa",
+      "version": "0.2.51",
+      "repository": "dzooky/bmrmodz",
+      "commit": "f141b7fb7476383ca081fd1196a6beb3a0566761",
+      "source_root": "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476",
+      "app_path": "apps/osa",
+      "source_license": "MIT project grant; original kit and font notices retained",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.19",
+        "mgu-inputgate": "1.2.1",
+        "mgu-deploy": "0.8.23"
+      },
+      "notices": [
+        "LICENSE",
+        "kit/localization/fonts/OFL-NotoSansKR.txt",
+        "kit/localization/fonts/OFL-NotoSansSC.txt",
+        "kit/runtime/fonts/LICENCE-UbuntuSans.txt",
+        "kit/runtime/fonts/OFL-NotoSansSC.txt"
+      ],
+      "builder_store_mode": true,
+      "requires_sdk": false
+    },
+    {
+      "id": "spritmonitor",
+      "version": "0.1.45",
+      "repository": "dzooky/bmrmodz",
+      "commit": "f141b7fb7476383ca081fd1196a6beb3a0566761",
+      "source_root": "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476",
+      "app_path": "apps/spritmonitor",
+      "source_license": "MIT project grant; original kit and font notices retained",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.19",
+        "mgu-inputgate": "1.2.1",
+        "mgu-deploy": "0.8.23"
+      },
+      "notices": [
+        "LICENSE",
+        "apps/spritmonitor/NOTICE",
+        "kit/localization/fonts/OFL-NotoSansKR.txt",
+        "kit/localization/fonts/OFL-NotoSansSC.txt",
+        "kit/runtime/fonts/LICENCE-UbuntuSans.txt",
+        "kit/runtime/fonts/OFL-NotoSansSC.txt"
+      ],
+      "builder_store_mode": true,
+      "requires_sdk": false,
+      "mguInternet": true
+    }
+  ],
+  "archived_recipes": [
+    {
+      "id": "dpf",
       "version": "0.1.32",
       "repository": "dzooky/bmrmodz",
       "commit": "e5de0de8ca958027bd91a6bfe508b3e360a13310",

@@ -1518,7 +1518,7 @@
         "shared": [
           "apps/_sources/dimonprograms-apps/kit/runtime",
           "apps/_sources/dimonprograms-apps/kit/platform",
-          "apps/_sources/idrive7-apps/kit/localization",
+          "apps/_sources/dimonprograms-apps/kit/localization",
           "apps/_sources/dimonprograms-apps/kit/tools/build.py",
           "apps/_sources/dimonprograms-apps/kit/tools/pack_data.py",
           "apps/_sources/dimonprograms-apps/kit/tools/localize.py",
@@ -1560,8 +1560,7 @@
           "apps/_ports/dimonprograms-idrive8/LICENSE",
           "apps/_ports/dimonprograms-idrive8/NOTICE.zh-CN.md",
           "apps/_ports/dimonprograms-idrive8/PORT.json",
-          "apps/_ports/dimonprograms-idrive8/PROVENANCE.json",
-          "apps/_sources/idrive7-apps/kit/localization"
+          "apps/_ports/dimonprograms-idrive8/PROVENANCE.json"
         ]
       },
       "mguNeeds": [
@@ -1674,14 +1673,14 @@
       ],
       "requires": {
         "idrive7-renderd": "2.1.19",
-        "mgu-inputgate": "1.2.1"
+        "mgu-inputgate": "1.2.1",
+        "mgu-deploy": "0.8.23"
       },
       "build": {
-        "python": "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/build.py",
+        "python": "tools/build_extra_source_app.py",
         "args": [
           "{id}"
         ],
-        "sdk": "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/oap-sdk",
         "shared": [
           "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/runtime",
           "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/platform",
@@ -1691,8 +1690,11 @@
           "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/localize.py",
           "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/locale-revisions.json",
           "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/oapgen",
-          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/LICENSE"
-        ]
+          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/LICENSE",
+          "tools/build_extra_source_app.py",
+          "data/extra-source-builds.json"
+        ],
+        "output": "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/dist/{id}@{version}.tgz"
       },
       "icon": "icon.png"
     },
@@ -2068,8 +2070,7 @@
           "apps/_ports/dante-idrive8/LICENSE",
           "apps/_ports/dante-idrive8/NOTICE.zh-CN.md",
           "apps/_ports/dante-idrive8/PORT.json",
-          "apps/_ports/dante-idrive8/PROVENANCE.json",
-          "apps/_sources/idrive7-apps/kit/localization"
+          "apps/_ports/dante-idrive8/PROVENANCE.json"
         ]
       },
       "mguNeeds": [
@@ -3633,14 +3634,14 @@
       ],
       "requires": {
         "idrive7-renderd": "2.1.19",
-        "mgu-inputgate": "1.2.1"
+        "mgu-inputgate": "1.2.1",
+        "mgu-deploy": "0.8.23"
       },
       "build": {
-        "python": "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/build.py",
+        "python": "tools/build_extra_source_app.py",
         "args": [
           "{id}"
         ],
-        "sdk": "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/oap-sdk",
         "shared": [
           "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/runtime",
           "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/platform",
@@ -3650,8 +3651,11 @@
           "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/localize.py",
           "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/locale-revisions.json",
           "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/oapgen",
-          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/LICENSE"
-        ]
+          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/LICENSE",
+          "tools/build_extra_source_app.py",
+          "data/extra-source-builds.json"
+        ],
+        "output": "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/dist/{id}@{version}.tgz"
       },
       "icon": "icon.png"
     },
@@ -4159,14 +4163,14 @@
       ],
       "requires": {
         "idrive7-renderd": "2.1.19",
-        "mgu-inputgate": "1.2.1"
+        "mgu-inputgate": "1.2.1",
+        "mgu-deploy": "0.8.23"
       },
       "build": {
-        "python": "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/build.py",
+        "python": "tools/build_extra_source_app.py",
         "args": [
           "{id}"
         ],
-        "sdk": "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/oap-sdk",
         "shared": [
           "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/runtime",
           "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/platform",
@@ -4176,8 +4180,11 @@
           "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/localize.py",
           "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/locale-revisions.json",
           "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/kit/tools/oapgen",
-          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/LICENSE"
-        ]
+          "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/LICENSE",
+          "tools/build_extra_source_app.py",
+          "data/extra-source-builds.json"
+        ],
+        "output": "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/dist/{id}@{version}.tgz"
       },
       "icon": "icon.png"
     },

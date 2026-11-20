@@ -2710,6 +2710,7 @@
     {
       "id": "vizualyse_cast",
       "kind": "app",
+      "build": "unit",
       "version": "0.4.1",
       "title": "Cast",
       "description": "Cast to cluster: shows the phone link and QR code for the cast service, its status, and replays the last stream on the cluster, the HUD or the media console",
@@ -2730,6 +2731,7 @@
     {
       "id": "vizualyse_chromium",
       "kind": "app",
+      "build": "unit",
       "version": "0.3.1",
       "title": "Browser",
       "description": "Browser: shows the phone link and QR code for the vizualyse-chromium web browser, what its GPU offers (WebGPU, WebGL 2, JSPI), and shows or hides the browser on the central screen",
@@ -2750,6 +2752,7 @@
     {
       "id": "vizualyse_steam",
       "kind": "app",
+      "build": "unit",
       "version": "0.2.1",
       "title": "Steam",
       "description": "Steam: plays Windows games from your Steam library on the car (the vizualyse-steam tool), shows the phone link and QR code for signing in and installing, and shows or hides the game on the central screen",

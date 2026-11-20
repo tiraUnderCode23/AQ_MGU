@@ -6,6 +6,9 @@
 const assert = require('assert');
 const fs = require('fs');
 const path = require('path');
+// The in-memory head-unit filesystem is POSIX on every test host. Keep native
+// path handling above for reading the real fixture and source module files.
+const unitPath = path.posix;
 const vm = require('vm');
 const { EventEmitter } = require('events');
 
@@ -115,7 +118,7 @@ async function startRuntime(hmi, options) {
             throw Object.assign(new Error('No synthetic file'), { code: 'ENOENT' });
         },
         existsSync: () => false, readdirSync: () => [], appendFileSync() {},
-        writeFileSync(file, value) { trace.push(['file', path.basename(file), value]); },
+        writeFileSync(file, value) { trace.push(['file', unitPath.basename(file), value]); },
         statSync() { throw new Error('No synthetic file'); },
     };
     class Display {
@@ -133,7 +136,7 @@ async function startRuntime(hmi, options) {
     }
     const life = load(path.join(port, 'kit/runtime/id8_lifecycle.js'), {}, { clock: timers });
     const runtime = load(path.join(port, 'kit/runtime/mgu.js'), {
-        fs: syntheticFs, path,
+        fs: syntheticFs, path: unitPath,
         'oap-sdk': { OnlineApp, logging: { getSDKLogger: () => logger } },
         'oap-sdk/package.json': { version: hmi === 'ID8' ? '50.0.0-SYNTHETIC' : '20.0.0-SYNTHETIC' },
         './themes': { theme: () => ({}) }, './display': { Display }, './hmi-text': { HmiText },
@@ -336,7 +339,7 @@ async function displayScenario() {
 function pathsScenario() {
     const reads = [];
     const { mainAppRoot } = load(path.join(port, 'kit/runtime/platform_paths.js'), {
-        path, fs: { statSync() { throw new Error('Use the explicit synthetic filesystem'); } },
+        path: unitPath, fs: { statSync() { throw new Error('Use the explicit synthetic filesystem'); } },
     });
     const mock = (present) => ({ statSync(p) { reads.push(p); return { isDirectory: () => present.includes(p) }; } });
     const id7 = '/synthetic/usr/lib/oap-mainapp', id8 = '/synthetic/usr/lib/oap-mainapp21';
@@ -366,11 +369,11 @@ async function explorerPathsScenario() {
                 readdirSync(file) { directories.push(file); return ['synthetic-interface.json', 'not-a-json.txt']; },
                 writeFileSync(file, data) { written.push([file, data]); },
             };
-            const helper = load(path.join(port, 'kit/runtime/platform_paths.js'), { path, fs: mockFs });
+            const helper = load(path.join(port, 'kit/runtime/platform_paths.js'), { path: unitPath, fs: mockFs });
             const catalog = load(path.join(port, 'apps/aref_explorer/explore/catalog.js'), {});
             let implementation;
             load(path.join(port, 'apps/aref_explorer/main.js'), {
-                fs: mockFs, path, './kit/mgu': { run(value) { implementation = value; } },
+                fs: mockFs, path: unitPath, './kit/mgu': { run(value) { implementation = value; } },
                 './catalog': catalog, './kit/platform_paths': helper,
             }, { process: { env: { MGU_EXPLORER_ROOT: '/synthetic' } } });
             assert(implementation && typeof implementation.start === 'function');
