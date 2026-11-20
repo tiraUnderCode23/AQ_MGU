@@ -1,0 +1,360 @@
+{
+  "schema": 1,
+  "components": [
+    {
+      "id": "dpf_monitor",
+      "kind": "app",
+      "title": "DPF Monitor",
+      "version": "0.2.8",
+      "path": "apps/dpf_monitor",
+      "icon": "icon.png",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.6",
+        "mgu-inputgate": "1.0.0"
+      },
+      "build": {
+        "python": "tools/build_store_app.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "oap-sdk",
+        "output": "dist/{id}@{version}.tgz"
+      }
+    },
+    {
+      "id": "g21_ambient",
+      "kind": "app",
+      "title": "G21 Ambient",
+      "version": "0.4.0",
+      "path": "apps/g21_ambient",
+      "icon": "icon.png",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.6",
+        "mgu-inputgate": "1.0.0"
+      },
+      "build": {
+        "python": "tools/build_store_app.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "oap-sdk",
+        "output": "dist/{id}@{version}.tgz"
+      }
+    },
+    {
+      "id": "g21_wheelheat",
+      "kind": "app",
+      "title": "G21 Heating Comfort",
+      "version": "0.5.2",
+      "path": "apps/g21_wheelheat",
+      "icon": "icon.png",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.6",
+        "mgu-inputgate": "1.0.0"
+      },
+      "build": {
+        "python": "tools/build_store_app.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "oap-sdk",
+        "output": "dist/{id}@{version}.tgz"
+      }
+    },
+    {
+      "id": "mgu_gamestation",
+      "kind": "app",
+      "title": "MGU GameStation",
+      "version": "0.3.0",
+      "path": "apps/mgu_gamestation",
+      "icon": "icon.png",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.6",
+        "mgu-inputgate": "1.0.0",
+        "mgu-game-net": "0.1.0"
+      },
+      "build": {
+        "python": "tools/build_store_app.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "oap-sdk",
+        "output": "dist/{id}@{version}.tgz"
+      }
+    },
+    {
+      "id": "mgu_video_hub",
+      "kind": "app",
+      "title": "MGU Video Hub",
+      "version": "0.2.0",
+      "path": "apps/mgu_video_hub",
+      "icon": "icon.png",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.6",
+        "mgu-inputgate": "1.0.0",
+        "mgu-equalizer-dsp": "0.2.1",
+        "mgu-video-net": "0.1.0"
+      },
+      "build": {
+        "python": "tools/build_store_app.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "oap-sdk",
+        "output": "dist/{id}@{version}.tgz"
+      }
+    },
+    {
+      "id": "mgu-video-net",
+      "kind": "tool",
+      "title": "Video Hub Network Bridge",
+      "version": "0.1.0",
+      "path": "native/video-net",
+      "mguHmi": [
+        "ID7"
+      ],
+      "uninstallable": true
+    },
+    {
+      "id": "mgu-cluster-net",
+      "kind": "tool",
+      "title": "Custom Cluster Phone Port",
+      "version": "0.1.0",
+      "path": "native/cluster-net",
+      "mguHmi": [
+        "ID7"
+      ],
+      "uninstallable": true
+    },
+    {
+      "id": "mgu-game-net",
+      "kind": "tool",
+      "title": "GameStation Phone Port",
+      "version": "0.1.0",
+      "path": "native/game-net",
+      "mguHmi": [
+        "ID7"
+      ],
+      "uninstallable": true
+    },
+    {
+      "id": "gif_home",
+      "kind": "app",
+      "title": "GIF Home",
+      "version": "0.3.1",
+      "path": "apps/gif_home",
+      "mguHmi": [
+        "ID7"
+      ],
+      "build": {
+        "python": "tools/build_gif_home.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "oap-sdk",
+        "output": "dist/{id}@{version}.tgz"
+      }
+    },
+    {
+      "id": "custom_cluster",
+      "kind": "app",
+      "title": "Custom Cluster",
+      "version": "0.6.10",
+      "path": "apps/custom_cluster",
+      "icon": "icon.png",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "cluster-render": "0.4.0",
+        "mgu-cluster-net": "0.1.0"
+      },
+      "build": {
+        "python": "tools/build_store_app.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "oap-sdk",
+        "output": "dist/{id}@{version}.tgz"
+      }
+    },
+    {
+      "id": "cluster_lyrics",
+      "kind": "app",
+      "title": "Cluster Lyrics",
+      "version": "0.1.1",
+      "path": "apps/cluster_lyrics",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "cluster-render": "0.4.0"
+      },
+      "build": {
+        "python": "tools/build_store_app.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "oap-sdk",
+        "output": "dist/{id}@{version}.tgz"
+      }
+    },
+    {
+      "id": "mgu_phone_terminal",
+      "kind": "app",
+      "title": "Phone Terminal",
+      "version": "0.1.7",
+      "path": "apps/mgu_phone_terminal",
+      "icon": "icon.png",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-phone-bridge": "0.1.6"
+      },
+      "build": {
+        "python": "tools/build_store_app.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "oap-sdk",
+        "output": "dist/{id}@{version}.tgz"
+      }
+    },
+    {
+      "id": "mgu-phone-bridge",
+      "kind": "tool",
+      "title": "Phone Terminal Bridge",
+      "version": "0.1.6",
+      "path": "native/phone-bridge",
+      "mguHmi": [
+        "ID7"
+      ],
+      "uninstallable": true
+    },
+    {
+      "id": "light_show",
+      "kind": "app",
+      "title": "Light Show",
+      "version": "0.4.5",
+      "path": "apps/light_show",
+      "icon": "icon.png",
+      "mguHmi": [
+        "ID7"
+      ],
+      "build": {
+        "python": "tools/build_store_app.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "oap-sdk",
+        "output": "dist/{id}@{version}.tgz"
+      },
+      "requires": {
+        "mgu-light-net": "0.1.0"
+      }
+    },
+    {
+      "id": "mgu-light-net",
+      "kind": "tool",
+      "title": "Light Show Phone Port",
+      "version": "0.1.0",
+      "path": "native/light-net",
+      "mguHmi": [
+        "ID7"
+      ],
+      "uninstallable": true
+    },
+    {
+      "id": "light_flasher",
+      "kind": "app",
+      "title": "Light Flasher",
+      "version": "0.1.15",
+      "path": "apps/light_flasher",
+      "mguHmi": [
+        "ID7"
+      ],
+      "build": {
+        "python": "tools/build_store_app.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "oap-sdk",
+        "output": "dist/{id}@{version}.tgz"
+      }
+    },
+    {
+      "id": "equalizer",
+      "kind": "app",
+      "title": "Equalizer DSP (experimental)",
+      "version": "0.2.4",
+      "path": "apps/equalizer",
+      "icon": "icon.png",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.6",
+        "mgu-inputgate": "1.0.0",
+        "mgu-equalizer-dsp": "0.2.1"
+      },
+      "build": {
+        "python": "tools/build_store_app.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "oap-sdk",
+        "output": "dist/{id}@{version}.tgz"
+      }
+    },
+    {
+      "id": "mgu-equalizer-dsp",
+      "kind": "tool",
+      "title": "Equalizer PCM DSP",
+      "version": "0.2.1",
+      "path": "native/equalizer-dsp",
+      "mguHmi": [
+        "ID7"
+      ],
+      "uninstallable": true
+    },
+    {
+      "id": "mgu_audio_diagnostics",
+      "kind": "app",
+      "title": "MGU Audio Diagnostics (read-only)",
+      "version": "0.1.2",
+      "path": "apps/mgu_audio_diagnostics",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "idrive7-renderd": "2.1.6",
+        "mgu-inputgate": "1.0.0",
+        "mgu-equalizer-dsp": "0.2.1"
+      },
+      "build": {
+        "python": "tools/build_store_app.py",
+        "args": [
+          "{id}"
+        ],
+        "sdk": "oap-sdk",
+        "output": "dist/{id}@{version}.tgz"
+      }
+    }
+  ]
+}

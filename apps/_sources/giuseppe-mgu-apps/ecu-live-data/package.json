@@ -1,0 +1,19 @@
+{
+  "name": "ecu-live-data",
+  "version": "1.0.1",
+  "description": "ECU Live Data: Boostline's ECU logger for the BMW iDrive 7 (MGU) head unit, diesel (DDE) and petrol (DME): read-only engine logging over the head unit's own diagnostic link",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "setup": "node tools/setup.js",
+    "bundle": "node tools/bundle.js",
+    "emu": "node tools/emu.js",
+    "emu:diesel": "node tools/emu.js --diesel",
+    "test": "node tools/bundle.js && node test/run.js",
+    "test:node8": "node tools/bundle.js && node tools/node8.js test/run.js",
+    "build:car": "node tools/build-car.js"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.10"
+  }
+}

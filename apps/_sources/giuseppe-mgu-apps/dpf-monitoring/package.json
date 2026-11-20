@@ -1,0 +1,12 @@
+{
+  "name": "dpf-monitoring",
+  "version": "1.1.1",
+  "description": "DPF Monitoring: the diesel particulate filter in the iDrive 7 look, on the BMW iDrive 7 (MGU) head unit, read-only",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "setup": "node tools/setup.js",
+    "emu": "node tools/emu.js",
+    "build:car": "node tools/build-car.js"
+  }
+}

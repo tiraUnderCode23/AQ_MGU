@@ -384,6 +384,19 @@ def check_source_inputs(audit, components, files, read_manifest):
         roots = [folder, script] + selected_shared
         for module in shared:
             shared_modules += 1
+            if isinstance(module, str) and module.endswith("/"):
+                folder_name = module[:-1]
+                if not safe_path(folder_name) or "/" in folder_name:
+                    audit.fail(where, "invalid app.json shared module " + repr(module))
+                    continue
+                original = family + "/shared/" + folder_name
+                if not exists_in_tree(original, files):
+                    audit.fail(where, "missing original shared folder " + original)
+                elif selected_shared and not any(
+                        original == root or original.startswith(root.rstrip("/") + "/")
+                        for root in roots):
+                    audit.fail(where, "build.shared omits required folder " + original)
+                continue
             if not safe_path(module) or "/" in module or not module.endswith(".js"):
                 audit.fail(where, "invalid app.json shared module " + repr(module))
                 continue

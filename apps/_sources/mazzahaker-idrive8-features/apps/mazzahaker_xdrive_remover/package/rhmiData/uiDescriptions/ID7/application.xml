@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+    <container id="1" type="state" widget="LT_State_Wide">
+        <layoutGroup id="110" name="Titlebar">
+            <component id="10" type="title">
+                <property id="2" value="1" />
+            </component>
+        </layoutGroup>
+        <layoutGroup id="111" name="List">
+            <property id="3" value="1" />
+            <component id="46" type="button" widget="LT_Button_1Row">
+                <property id="2" value="1" />
+                <property id="3" value="3" />
+            </component>
+            <component id="31" type="button" widget="LT_Button_1Row">
+                <property id="2" value="1" />
+                <property id="3" value="3" />
+            </component>
+            <component id="32" type="label" widget="LT_Label_1Row">
+                <property id="2" value="1" />
+                <property id="3" value="0" />
+            </component>
+            <component id="30" type="button" widget="LT_Button_1Row">
+                <property id="2" value="1" />
+                <property id="3" value="3" />
+            </component>
+            <component id="21" type="label" widget="LT_Label_1Row">
+                <property id="2" value="1" />
+                <property id="3" value="0" />
+            </component>
+            <component id="22" type="label" widget="LT_Label_1Row">
+                <property id="2" value="1" />
+                <property id="3" value="0" />
+            </component>
+            <component id="23" type="label" widget="LT_Label_1Row">
+                <property id="2" value="1" />
+                <property id="3" value="0" />
+            </component>
+            <component id="24" type="label" widget="LT_Label_1Row">
+                <property id="2" value="1" />
+                <property id="3" value="0" />
+            </component>
+            <component id="47" type="label" widget="LT_Label_1Row">
+                <property id="2" value="0" />
+                <property id="3" value="0" />
+            </component>
+            <component id="41" type="label" widget="LT_Label_1Row">
+                <property id="2" value="0" />
+                <property id="3" value="0" />
+            </component>
+            <component id="42" type="label" widget="LT_Label_1Row">
+                <property id="2" value="0" />
+                <property id="3" value="0" />
+            </component>
+            <component id="43" type="label" widget="LT_Label_1Row">
+                <property id="2" value="0" />
+                <property id="3" value="0" />
+            </component>
+            <component id="44" type="label" widget="LT_Label_1Row">
+                <property id="2" value="0" />
+                <property id="3" value="0" />
+            </component>
+            <component id="62" type="label" widget="LT_Label_1Row">
+                <property id="2" value="0" />
+                <property id="3" value="0" />
+            </component>
+            <component id="63" type="label" widget="LT_Label_1Row">
+                <property id="2" value="0" />
+                <property id="3" value="0" />
+            </component>
+            <component id="64" type="label" widget="LT_Label_1Row">
+                <property id="2" value="0" />
+                <property id="3" value="0" />
+            </component>
+            <component id="65" type="label" widget="LT_Label_1Row">
+                <property id="2" value="0" />
+                <property id="3" value="0" />
+            </component>
+            <component id="68" type="label" widget="LT_Label_1Row">
+                <property id="2" value="0" />
+                <property id="3" value="0" />
+            </component>
+            <component id="67" type="label" widget="LT_Label_1Row">
+                <property id="2" value="0" />
+                <property id="3" value="0" />
+            </component>
+            <component id="20" type="button" widget="LT_Button_1Row_2Col7030_2Text">
+                <property id="2" value="1" />
+                <property id="3" value="0" />
+            </component>
+        </layoutGroup>
+    </container>
+</application>

@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "components": [
+    {
+      "id": "mazzahaker_xdrive_remover",
+      "kind": "app",
+      "path": "apps/mazzahaker_xdrive_remover",
+      "build": "unit",
+      "mguHmi": ["ID7", "ID8"]
+    }
+  ]
+}

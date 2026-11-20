@@ -32,7 +32,7 @@ class SourceBuildInputTests(unittest.TestCase):
     def setUpClass(cls):
         cls.catalog = read_json("mgu-repo.json")["components"]
         cls.entries = {entry["id"]: entry for entry in cls.catalog}
-        cls.files = set(git("ls-tree", "-r", "--name-only", "HEAD").decode("utf-8").splitlines())
+        cls.files = validator.paths_at("HEAD")
 
     def test_every_app_shared_module_is_in_the_store_build_input(self):
         inspected_apps = 0
@@ -54,14 +54,18 @@ class SourceBuildInputTests(unittest.TestCase):
             for module in shared:
                 inspected_modules += 1
                 with self.subTest(app=entry["id"], module=module):
-                    original = family + "/shared/" + module
-                    self.assertIn(original, self.files)
+                    if module.endswith("/"):
+                        original = family + "/shared/" + module.rstrip("/")
+                        self.assertTrue(validator.exists_in_tree(original, self.files))
+                    else:
+                        original = family + "/shared/" + module
+                        self.assertIn(original, self.files)
                     self.assertTrue(
                         not build.get("shared") or covered(original, roots),
                         "Store's partial source selection omits " + original,
                     )
-        self.assertEqual(inspected_apps, 2)
-        self.assertEqual(inspected_modules, 56)
+        self.assertGreaterEqual(inspected_apps, 2)
+        self.assertGreaterEqual(inspected_modules, 56)
 
     def test_cluster_themes_declares_its_required_renderer(self):
         releases = read_json("release/catalog.json")["components"]

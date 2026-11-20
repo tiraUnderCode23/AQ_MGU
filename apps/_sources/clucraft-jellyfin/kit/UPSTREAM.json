@@ -1,0 +1,16 @@
+{
+  "repository": "https://github.com/M850i-amn/idrive7-apps",
+  "commit": "0dfa583151e0c59ba8d2a8d9272a1d8685b66d2a",
+  "why": "this copy of the MGU App Kit draws pictures and video on mgu-render's own dialect (posters, the film) and runs a full-screen touch page (kit/runtime/fullscreen.js); the cauliflowermossgrape kit this one comes from does neither yet",
+  "paths": [
+    "kit/runtime",
+    "kit/platform",
+    "kit/tools/build.py",
+    "kit/tools/pack_data.py",
+    "kit/tools/localize.py",
+    "kit/tools/locale-revisions.json",
+    "kit/tools/oapgen",
+    "kit/LICENSE.idrive7-apps",
+    "kit/LICENSE.nickgcode"
+  ]
+}

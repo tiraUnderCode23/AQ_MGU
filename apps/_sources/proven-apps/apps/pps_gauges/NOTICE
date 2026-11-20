@@ -1,0 +1,44 @@
+Proven Gauges (pps_gauges)
+Copyright (c) 2026 Proven Performance Solutions
+
+The Proven Performance Solutions name and logo (logo-data.js, icon.png) belong to
+Proven Performance Solutions and are not covered by the licence below.
+
+Proven's own code in this app, and the tools in proven/, are published so that the MGU Store
+can install the app. You may download, build, install and run the app on your own car, and
+on a PC to look at it. No other rights in Proven's own code are granted, and the MIT licence
+below does not apply to it. Proven's own code is provided as is, without warranty of any
+kind: you install and use it at your own risk. Nothing in this notice limits what the MIT
+licence below allows for the parts that come from the idrive7-apps kit.
+
+This app runs on, and parts of it are adapted from, the idrive7-apps kit
+(https://github.com/cauliflowermossgrape/idrive7-apps): the app runtime in kit/, and the
+signal handling, scaling, plausibility rules and tyre card of its M Vitals app
+(apps/car_vitals), which vitals.js, main.js and app.json follow. That work is under the
+MIT License:
+
+MIT License
+
+Copyright (c) 2026 cauliflowermossgrape
+Copyright (c) 2026 小白151 (GitHub: JackieZ123430), Chinese translation
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Not affiliated with, endorsed by or supported by BMW AG. BMW and iDrive are trademarks of
+BMW AG, named here only to say what the software works with.

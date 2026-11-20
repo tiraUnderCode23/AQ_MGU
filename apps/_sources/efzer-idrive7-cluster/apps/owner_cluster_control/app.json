@@ -1,0 +1,28 @@
+{
+  "id": "owner_cluster_control",
+  "title": "Cluster",
+  "description": "Кастомная приборка: центральная область с виджетами (шины, двигатель, 0–100, музыка, карта) и редактором композиции",
+  "version": "0.4.1",
+  "vendor": "owner",
+  "loggingId": "OCLP",
+  "mguHmi": ["ID7"],
+  "screens": [{ "name": "MAIN", "kind": "canvas", "title": "Cluster", "buttons": [["BTN_SETTINGS", "Settings"]] }],
+  "signals": {
+    "de.bmw.infotainment.vehicle.CDS": { "statusEngineSpeed2": "rs", "statusEngineStatus": "rs", "statusEngineTemperature": "rs", "statusHandBrake": "rs", "statusBattery2": "rs" },
+    "de.bmw.infotainment.vehicle.CDS2": { "statusPushButtonMSA2": "rs", "statusLongitudinalAccelerationMassCenter": "rs", "statusLateralAccelerationMassCenter": "rs", "statusYawVelocityVehicle": "rs", "statusInjectionVolume": "rs" },
+    "de.bmw.infotainment.vehicle.Vehicle2": { "statusCarSpeed2": "rs", "statusOilDipstick2": "rs" },
+    "de.bmw.infotainment.vehicle.TPMS": { "statusTyrePressure": "rs", "statusTyreTemperature": "rs", "statusTargetTyrePressure": "rs" },
+    "de.bmw.infotainment.drivingexcitement.FES": { "statusActualValueTorque2": "rs", "statusSwitchDriveDynamicSport2": "rs", "statusVehicleDynamicEngine": "rs", "statusFESVehicleDynamicSwitchHMI": "rs" },
+    "de.bmw.infotainment.KombiIF": { "statusRangeTankStatus": "rs", "statusBordcomputerTravelData": "rs", "statusBordcomputerAverage": "rs" },
+    "de.bmw.infrastructure.VehicleInformation": { "DataPowerTrain2": "rs" },
+    "de.bmw.infrastructure.EnvironmentalInformation": { "ExteriorTemperature": "rs" },
+    "de.bmw.powertrain.AcceleratorPedal": { "AngleAcceleratorPedal": "rs" },
+    "de.bmw.chassis.SteeringAngle": { "ActualSteeringAngleDriver": "rs" },
+    "de.bmw.chassis.VehicleModel": { "LaneSlope": "rs" },
+    "de.bmw.chassis.VehicleStabilizationManagement": { "StabilizationManagement": "rs" }
+  },
+  "settings": [
+    { "key": "centre", "label": "Центральная область", "type": "choice", "default": "tyres", "options": [["tyres", "Шины"], ["engine", "Двигатель"], ["acceleration", "0–100"], ["music", "Сейчас играет"], ["map", "Карта CarPlay"]] },
+    { "key": "demo", "label": "Демо-данные", "type": "choice", "default": "auto", "options": [["auto", "Авто"], ["on", "Включены"], ["off", "Выключены"]] }
+  ]
+}

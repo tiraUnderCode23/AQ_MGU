@@ -1,0 +1,572 @@
+'use strict';
+/**
+ * HUD - a menu on the head-up display worked from the steering wheel, a rev bar across the top of the
+ * display, and the song CarPlay is playing as one line above it.
+ *
+ * MENU   The wheel's menu button opens it and the right roller moves through it: a roller of five rows with the
+ *        chosen one large (menu.js). The menu button again acts on the chosen row and the menu STAYS OPEN: a
+ *        switch flips, a choice steps to its next option, an action runs, and a line says what happened.
+ *        It closes after 10 s without a touch or from its Close row. Two levels: the top one is short, Highlight
+ *        this clip, then one row per group (this app, the quick actions, every other running app), then Close;
+ *        a press on a group opens its rows, and its Back row returns. An app's rows are its switches and
+ *        choices (kit/hudlink.js; settings only, the app that owns one applies it). The car opens its own
+ *        list with the same button whatever an app does, so the roller's press is left alone: it would
+ *        pick in the car's list. WITH THE WHEEL GATE on the car and its setting on, the car sees neither, and
+ *        the wheel works the natural way: the roller's press selects, the menu button goes back, then closes.
+ * REVS   With the engine running: a row of segments that fills with the revs, white, then yellow, then red,
+ *        and blinks from the shift rpm, with the numbers 1 to 7 over it. It is redrawn only when its filled length changes; the blink
+ *        only toggles the layer's visibility, so no pixels go up for it. Setting "Shift display": the older
+ *        coloured frame round the Waze map is still there as a choice.
+ * SONG   What CarPlay is playing (song.js) as a card at the bottom right, opposite the car's speed: the album
+ *        cover, the title over the artist, the time left and a line that fills as it plays. Setting "Song
+ *        look": the older single line at the top. No CarPlay, nothing shown.
+ *
+ * Read-only on the car: signals in, pixels out, two small files in /dev/shm/woody for the other Woody apps.
+ */
+const mgu = require('./kit/mgu');
+const G = require('./kit/gauges');
+const Car = require('./kit/car');
+const { Canvas, withAlpha } = require('./kit/canvas');
+const { Wheel } = require('./wheel');
+const { Waze } = require('./waze');
+const { Song } = require('./song');
+const { MARKS, MARK_LABEL, MARKBAR, markAt, markStep, drawMark, GEAR, gearText, drawGear, coldZones, drawBar, barFill, drawSong, drawCard, CARD, PLACES } = require('./strip');
+const shared = require('./shared');
+const fs = require('fs');
+const path = require('path');
+const hudlink = require('./kit/hudlink');
+const menu = require('./menu');
+
+let ClusterRender = null;
+try { ClusterRender = require('./cluster_render_client').ClusterRender; } catch (e) { /* reported at start */ }
+
+const W = 1600, H = 520;
+const APP_ID = 'woodr_hud';
+const IDLE_MS = 10000;                 /* the menu closes this long after the last button or roll */
+const SLOT = { x: 220, y: 185, w: 470, h: 133 };            /* clear of BMW's HUD content in every view (Screen Lab) */
+const MENU = menu.MENU;
+const COLOURS = { green: '#2fd27a', yellow: '#ffd34d', red: '#ff2a2a' };
+const FRAME = 7, PAD = 6;
+/* widths that stay inside the HUD's visible 570 px (Screen Lab): 280 / 400 / 544 px */
+const SIZES = [['small', 35], ['medium', 50], ['large', 68]];
+
+function drawFrame(cv, w, h, colour) {
+    cv.fillRect(0, 0, w, FRAME, colour);
+    cv.fillRect(0, h - FRAME, w, FRAME, colour);
+    cv.fillRect(0, 0, FRAME, h, colour);
+    cv.fillRect(w - FRAME, 0, FRAME, h, colour);
+}
+
+async function background(bg) {
+    const { log, settings } = bg;
+    const car = new Car(bg, ['rpm', 'gear']);
+    const waze = new Waze(log);
+    const st = { menuOpen: false, at: 0, group: null, sels: {}, gateOffUntil: 0, say: '', sayUntil: 0, pending: null, openedAt: 0, warmup: 'auto', shiftOn: settings.get('shift') !== false, stage: '', box: null, lastPick: '' };
+    const cr = ClusterRender ? new ClusterRender(APP_ID) : null;
+    if (cr) {
+        cr.on('layer', (ref, s, why) => log.info('hud layer ' + ref + ': ' + s + (why ? ' (' + why + ')' : '')));
+        cr.connect();
+    } else log.warn('cluster_render_client missing');
+    let menuLayer = 0, frameLayer = 0, frameKey = '', frameVisible = false;
+    let barLayer = 0, barGeom = '', barKey = '', barVisible = false, songLayer = 0, songKey = '', songGeom = '';
+    /* a cover is decoded only while the engine is off or near idle: the decode holds this app up for about a second */
+    const song = new Song(bg, () => { songKey = ''; }, { quiet: () => { const d = car.data ? car.data() : car.live; return !(d && typeof d.rpm === 'number' && d.rpm > 1500); } });
+    song.start().catch((e) => log.info('song: ' + e));
+
+    shared.write('hud.json', { warmup: 'auto' });
+
+    /* ---------- marking (the bar itself is further down) ---------- */
+    const MARK_ARM_MS = 500;
+    const mk = { key: '', since: 0, at: 0, live: false, n: 0, sent: '', note: '', noteUntil: 0, undoUntil: 0, key2: '' };
+    let markLayer = 0;
+    function sendMark(as) {
+        if (!mk.key || MARKS.indexOf(as) < 0) { say('Nothing to mark right now'); return; }
+        mk.n++; mk.sent = process.pid + '-' + mk.n;
+        if (!shared.write('hud.scoutmark.json', { n: mk.sent, key: mk.key, as: as })) { say('Mark: could not be sent'); mk.sent = ''; return; }
+        mk.note = MARK_LABEL[as]; mk.noteUntil = Date.now() + 2500; mk.undoUntil = Date.now() + 60000; mk.key2 = '';
+        say('Marked: ' + MARK_LABEL[as].toLowerCase());
+        log.info('mark: ' + as);
+    }
+    /* ---------- the menu ---------- */
+    let sizeIx = 1;
+    const syncSize = () => { const pct = waze.st && waze.st.hud_width_pct; const i = SIZES.findIndex((z) => z[1] === pct); if (i >= 0) sizeIx = i; };
+    const sizeAt = () => sizeIx;
+    const idOf = (it) => (it.app || '') + '|' + it.key;
+
+    /** every setting and action there is, each with its group: this app's, the quick actions, every other running app's */
+    function all() {
+        const list = [];
+        const row = (g, app) => (x) => list.push({ g: g, app: app, key: x.key, label: x.label, kind: x.type, value: x.value, options: x.options });
+        hudlink.offered(bg.spec && bg.spec.settings, settings).forEach(row('HUD', null));
+        list.push({ g: 'Quick actions', app: null, key: 'warmup', kind: 'action', label: 'Warm-Up', value: st.warmup === 'hide' ? 'Hidden' : 'Shown' });
+        list.push({ g: 'Quick actions', app: null, key: 'waze', kind: 'action', label: 'Waze map', value: SIZES[sizeAt()][0] });
+        list.push({ g: 'Quick actions', app: null, key: 'ambient', kind: 'action', label: 'Ambient colour', value: 'Next' });
+        list.push({ g: 'Quick actions', app: null, key: 'test', kind: 'action', label: 'Test the rev bar', value: 'Run' });
+        /* marking what a Scout card really was: a row for each choice while a card can be marked, and the way back for a minute */
+        if (mk.live) MARKS.forEach((m) => list.push({ g: 'Mark what you see', app: null, key: 'mark:' + m, kind: 'action', label: MARK_LABEL[m].charAt(0) + MARK_LABEL[m].slice(1).toLowerCase(), value: 'Mark' }));
+        if (Date.now() < mk.undoUntil) list.push({ g: 'Quick actions', app: null, key: 'unmark', kind: 'action', label: 'Undo last mark', value: 'Undo' });
+        /* Launch, while it runs: arm its tree (or cancel it) from here, whatever the centre screen shows */
+        const launch = shared.read('launch.state.json', 5000);
+        if (launch) list.push({ g: 'Quick actions', app: null, key: 'launch', kind: 'action', label: 'Launch', value: launch.state === 'armed' ? 'Cancel' : launch.state === 'run' ? 'Running' : 'Arm the tree' });
+        /* with the wheel gate the menu button no longer opens the car's own list: this row lets one press through */
+        if (gateWanted()) list.push({ g: 'Quick actions', app: null, key: 'carlist', kind: 'action', label: 'Car\'s audio list', value: 'Open' });
+        try { hudlink.apps(APP_ID).forEach((a) => a.items.forEach(row(a.title, a.id))); } catch (e) { log.warn('menu: apps: ' + e); }
+        /* a change asked of another app shows at once, until that app has had time to answer with its own value */
+        const p = st.pending;
+        if (p && Date.now() < p.until) list.forEach((it) => { if (idOf(it) === p.id) it.value = p.value; });
+        return list;
+    }
+
+    /**
+     * The rows on the display now. Top level: Highlight, one row per group (an app, or the quick actions) and
+     * Close. Inside a group: its rows and Back. Each level remembers its own chosen row while the menu is open.
+     */
+    function items() {
+        const every = all(), groups = [];
+        every.forEach((it) => { if (groups.indexOf(it.g) < 0) groups.push(it.g); });
+        if (st.group && groups.indexOf(st.group) < 0) st.group = null;      /* its app stopped while we were in it */
+        let list;
+        if (!st.group) {
+            list = [{ g: 'Menu', app: null, key: 'highlight', kind: 'action', label: 'Highlight this clip', value: 'Mark' }]
+                .concat(groups.map((g) => ({ g: 'Menu', app: null, key: 'group ' + g, kind: 'group', label: g, group: g, value: every.filter((it) => it.g === g).length })))
+                .concat([{ g: 'Menu', app: null, key: 'close', kind: 'close', label: 'Close', value: '' }]);
+        } else {
+            list = every.filter((it) => it.g === st.group).concat([{ g: st.group, app: null, key: 'back', kind: 'back', label: 'Back', value: '' }]);
+        }
+        const level = st.group || '', sel = st.sels[level];
+        const at = sel ? list.findIndex((it) => idOf(it) === sel) : -1;
+        st.at = at >= 0 ? at : 0;
+        st.sels[level] = idOf(list[st.at]);
+        return list;
+    }
+
+    let menuKey = '';
+    function showMenu(force) {
+        if (!cr) return;
+        const list = items();
+        const idle = Math.max(0, 1 - (Date.now() - (st.touched || 0)) / IDLE_MS);
+        const say = Date.now() < st.sayUntil ? st.say : '';
+        /* redrawn only when something on it changed; the idle bar moves in ten steps */
+        const key = (st.group || '') + '|' + st.at + '|' + say + '|' + Math.ceil(idle * 10) + '|' + list.map((it) => it.label + '=' + it.value).join(';');
+        if (!menuLayer) {
+            /* yield 0: the menu stays on the HUD when BMW's own list pop-up opens with the same button (cluster-render
+             * then leaves the HUD to us and BMW's list shows on the cluster instead; seen on the car 2026-11-11:
+             * without it the layer went "waiting: a stock pop-up shows in its place") */
+            menuLayer = cr.image({ target: 'hud', klass: 'alert', z: 9, yield: 0, x: MENU.x, y: MENU.y, w: MENU.w, h: MENU.h, iw: MENU.w, ih: MENU.h, fps: 4, sampling: 'bilinear' });
+            if (!menuLayer) { log.warn('menu layer refused'); return; }
+            menuKey = '';
+        }
+        if (!force && key === menuKey) return;
+        menuKey = key;
+        const cv = new Canvas(MENU.w, MENU.h);
+        menu.draw(cv, list, st.at, say, idle);
+        cr.pixels(menuLayer, null, Buffer.from(cv.d.buffer || cv.d));
+    }
+    function closeMenu() { st.menuOpen = false; st.pending = null; if (menuLayer && cr) { cr.drop(menuLayer); menuLayer = 0; } }
+    const say = (text) => { st.say = String(text); st.sayUntil = Date.now() + 3500; };
+
+    /**
+     * Ask Dashcam to mark the clip it is storing now (its contract: touch dashcam.highlight.json; it answers in
+     * dashcam.highlighted.json { count, at } within about half a second). No answer in 2 s: it is not running.
+     */
+    function highlight() {
+        const before = shared.read('dashcam.highlighted.json');
+        const was = before && before.at;
+        if (!shared.write('dashcam.highlight.json', { from: 'hud' })) { say('Highlight: could not be sent'); return; }
+        say('Highlight: asking Dashcam');
+        let done = false;
+        const check = (last) => () => {
+            try {
+                if (done) return;
+                const now = shared.read('dashcam.highlighted.json');
+                if (now && now.at && now.at !== was) { done = true; say(now.ok === false ? 'Highlight: ' + String(now.note || 'not recording').slice(0, 60) : 'Highlight marked' + (typeof now.count === 'number' && now.count > 0 ? ' (' + now.count + ' this drive)' : '')); log.info('menu: highlight marked'); }
+                else if (last) { done = true; say('Dashcam is not running'); log.info('menu: highlight not answered'); }
+                else return;
+                if (st.menuOpen) showMenu(true);
+            } catch (e) { log.warn('highlight: ' + e); }
+        };
+        [700, 1300].forEach((ms) => setTimeout(check(false), ms));
+        setTimeout(check(true), 2000);
+    }
+
+    function pick(key) {
+        st.lastPick = key;
+        log.info('menu: ' + key);
+        if (key.indexOf('mark:') === 0) { sendMark(key.slice(5)); return; }
+        if (key === 'unmark') { mk.n++; shared.write('hud.scoutmark.json', { n: process.pid + '-' + mk.n, undo: true }); mk.undoUntil = 0; say('Mark taken back'); log.info('mark: undo asked'); return; }
+        if (key === 'highlight') { highlight(); return; }
+        if (key === 'warmup') { st.warmup = st.warmup === 'hide' ? 'show' : 'hide'; shared.write('hud.json', { warmup: st.warmup }); say('Warm-Up: ' + (st.warmup === 'hide' ? 'hidden for this drive' : 'shown')); }
+        else if (key === 'shift') { st.shiftOn = !st.shiftOn; settings.set('shift', st.shiftOn); }
+        else if (key === 'waze') { sizeIx = (sizeIx + 1) % SIZES.length; waze.setSize(SIZES[sizeIx][1]).catch(() => {}); say('Waze map: ' + SIZES[sizeIx][0]); }
+        else if (key === 'test') { st.testUntil = Date.now() + 6500; say('Rev bar test running'); }
+        else if (key === 'launch') {
+            const was = shared.read('launch.state.json', 5000);
+            if (!was) { say('Launch is not running: open it once'); return; }
+            if (was.state === 'run') { say('Launch: a run is being timed'); return; }
+            if (!shared.write('launch.arm.json', { from: 'hud' })) { say('Launch: could not be asked'); return; }
+            /* the tree shows where this menu is: out of its way, and say why if Launch would not arm */
+            closeMenu();
+            setTimeout(() => {
+                try { const now = shared.read('launch.state.json', 5000); if (now && now.state === 'idle' && now.hint) log.info('menu: launch: ' + now.hint); }
+                catch (e) { log.warn('menu: launch: ' + e); }
+            }, 1500);
+            return;
+        }
+        else if (key === 'carlist') {
+            /* first press: the next menu-button press also goes to the car. That press lands here again: close ours. */
+            if (Date.now() < st.gateOffUntil) { closeMenu(); log.info('menu: closed (the car\'s list)'); return; }
+            st.gateOffUntil = Date.now() + 6000;
+            say(gateWanted() ? 'Press the menu button for the car\'s list' : 'Press again for the car\'s list');
+        }
+        else if (key === 'ambient') { const a = shared.read('ambient.json') || {}; shared.write('ambient.json', { cmd: 'next', n: (a.n || 0) + 1 }); say('Ambient: next colour'); }
+    }
+
+    /** One press on a row. The menu stays open (only Close closes it). */
+    function act(it) {
+        if (!it) return;
+        if (it.kind === 'close') { closeMenu(); log.info('menu: closed (Close)'); return; }
+        if (it.kind === 'group') { st.group = it.group; st.say = ''; log.info('menu: into ' + it.group); return; }
+        if (it.kind === 'back') { st.group = null; st.say = ''; log.info('menu: back'); return; }
+        if (it.kind === 'action') { pick(it.key); return; }
+        /* a row calls its type `kind`; the link's next() wants `type` (without it a switch never flipped: 0.4.0 to 0.7.2) */
+        const to = hudlink.next({ type: it.kind, value: it.value, options: it.options });
+        st.lastPick = (it.app ? it.app + ' ' : '') + it.key;
+        log.info('menu: ' + st.lastPick + ' -> ' + to);
+        if (it.app) {
+            /* another app's setting: asked for, and that app applies it; shown at once, then as the app reports it */
+            if (!hudlink.request(it.app, it.key, to)) { say(it.label + ': could not be sent'); return; }
+            st.pending = { id: idOf(it), value: to, until: Date.now() + 1500 };
+        } else {
+            settings.set(it.key, to);
+            st.shiftOn = settings.get('shift') !== false;
+        }
+        say(it.label + ': ' + menu.valueText(it, to));
+    }
+
+    /* the wheel: the menu button opens the menu and then acts on the chosen row; the right roller moves through it.
+     * The roller's press is not used: the car's own list is open under ours and that press would pick in it. */
+    const wheel = new Wheel(bg, {
+        onMenu: () => {
+            if (settings.get('menu') === false) return;
+            st.touched = Date.now();
+            /* always opens at the top level on its first row, Highlight: open and press is all a highlight takes */
+            if (!st.menuOpen) { st.menuOpen = true; st.say = ''; st.group = null; st.sels = {}; showMenu(true); log.info('menu: open'); return; }
+            if (gateWanted()) {
+                /* with the wheel gate the roller's press selects, so this button only leaves: out of a group, then out
+                 * of the menu. While a press is being let through to the car (its own list was asked for), it closes ours. */
+                if (Date.now() < st.gateOffUntil || !st.group) { closeMenu(); log.info('menu: closed (button)'); return; }
+                st.group = null; st.say = ''; log.info('menu: back (button)');
+                showMenu(true);
+                return;
+            }
+            act(items()[st.at]);
+            if (st.menuOpen) showMenu(true);
+        },
+        /* The roller's press selects the chosen row, only with the wheel gate: without it the car's own list is open
+         * under our menu and the same press would pick in that. */
+        onPress: () => {
+            /* menu closed and a card can be marked: this press is the mark (only with the wheel gate, which keeps the
+             * press from the car's own lists, and not in the bar's first half second: that press was meant for something else) */
+            if (!st.menuOpen && mk.live && gateWanted() && Date.now() - mk.since >= MARK_ARM_MS) { sendMark(MARKS[mk.at]); return; }
+            if (!st.menuOpen || !gateWanted()) return;
+            st.touched = Date.now();
+            act(items()[st.at]);
+            if (st.menuOpen) showMenu(true);
+        },
+        onRoll: (d) => {
+            if (!st.menuOpen && mk.live && gateWanted()) { mk.at = markStep(mk.at, d < 0); mk.key2 = ''; return; }
+            if (!st.menuOpen) return;
+            const list = items(), n = list.length;
+            /* on the car rolling the roller DOWN reports 127 - n (d < 0), and down must go to the next item */
+            st.at = ((st.at + (d < 0 ? 1 : -1)) % n + n) % n;
+            st.sels[st.group || ''] = idOf(list[st.at]);
+            st.touched = Date.now();
+            showMenu(true);
+        },
+    });
+    await wheel.start();
+    /* ---------- the wheel gate ----------
+     * With the BimmerApps build of mgu-inputgate.so loaded in the car's interface program, the car does not see
+     * the wheel's menu button while wheelgate.menu is fresh, nor the roller while wheelgate.roll is fresh, so its
+     * own list neither opens nor is scrolled or picked in under our menu. The files are touched here a few
+     * times a second: the menu button whenever this menu is switched on, the roller only while it is open. Not
+     * touched (this app stopped, or the switch off): the car has its buttons back within 0.7 s. Without that
+     * build on the car the files do nothing at all. */
+    /* a declaration, not a const: the menu's rows ask it and may be built before this line has run */
+    function gateWanted() { return settings.get('menu') !== false && settings.get('gate') === true; }
+    let gateWarned = false;
+    function touchGate(name) {
+        const file = path.join(shared.DIR, name), now = new Date();
+        try { fs.utimesSync(file, now, now); }
+        catch (e) {
+            try { if (e.code !== 'ENOENT') throw e; shared.write('hud.json', { warmup: st.warmup }); fs.writeFileSync(file, '', { mode: 0o644 }); }
+            catch (e2) { if (!gateWarned) { gateWarned = true; log.warn('wheel gate: ' + name + ': ' + (e2.code || e2)); } }
+        }
+    }
+    const gateTimer = setInterval(() => {
+        try {
+            if (!gateWanted() || Date.now() < st.gateOffUntil) return;
+            touchGate('wheelgate.menu');
+            if (st.menuOpen || mk.live) touchGate('wheelgate.roll');      /* the roller is ours while the menu or the mark bar is up */
+        } catch (e) { log.warn('wheel gate: ' + e); }
+    }, 200);
+    if (gateTimer.unref) gateTimer.unref();
+
+    /* ---------- the quick-mark bar (see strip.js): Scout says which card can be marked in scout.mark.json ---------- */
+    const markTimer = setInterval(() => {
+        try {
+            const now = Date.now();
+            const m = settings.get('markBar') !== false ? shared.read('scout.mark.json', 2500) : null;
+            const key = m && typeof m.key === 'string' && /^[A-Za-z0-9_-]{1,40}$/.test(m.key) ? m.key : '';
+            if (key && key !== mk.key) { mk.key = key; mk.since = now; mk.at = markAt(m.guess); mk.key2 = ''; log.info('mark: a card can be marked'); }
+            if (!key) mk.key = '';
+            mk.live = !!key;
+            /* what came of the last mark, said once */
+            const r = mk.sent ? shared.read('scout.marked.json', 6000) : null;
+            if (r && r.n === mk.sent) { mk.sent = ''; mk.note = r.ok ? (r.as === 'undo' ? 'TAKEN BACK' : 'MARKED') : 'NOT SENT'; mk.noteUntil = now + 2500; mk.key2 = ''; if (!r.ok) { mk.undoUntil = 0; log.info('mark: not sent (' + String(r.why || '').slice(0, 60) + ')'); } }
+            const note = now < mk.noteUntil ? mk.note : '';
+            if (!cr || st.menuOpen || (!mk.live && !note)) { if (markLayer && cr) { cr.drop(markLayer); } markLayer = 0; mk.key2 = ''; return; }
+            if (!markLayer) {
+                markLayer = cr.image({ target: 'hud', klass: 'overlay', z: 8, x: MARKBAR.x, y: MARKBAR.y, w: MARKBAR.w, h: MARKBAR.h, iw: MARKBAR.w, ih: MARKBAR.h, fps: 6, sampling: 'nearest' });
+                if (!markLayer) { log.warn('mark layer refused'); return; }
+                mk.key2 = '';
+            }
+            const k2 = note || String(mk.at);
+            if (k2 === mk.key2) return;
+            mk.key2 = k2;
+            const cv = new Canvas(MARKBAR.w, MARKBAR.h);
+            drawMark(cv, MARKBAR.w, MARKBAR.h, mk.at, note);
+            cr.pixels(markLayer, null, Buffer.from(cv.d.buffer || cv.d));
+        } catch (e) { log.warn('mark: ' + e); }
+    }, 200);
+    if (markTimer.unref) markTimer.unref();
+
+    const menuTimer = setInterval(() => {
+        try {
+            if (!st.menuOpen) return;
+            if (Date.now() - (st.touched || 0) > IDLE_MS) { closeMenu(); log.info('menu: closed (idle)'); return; }
+            showMenu(false);      /* the idle bar, the say line running out, another app's new value */
+        } catch (e) { log.warn('menu: ' + e); }
+    }, 400);
+
+    /* ---------- shift lights ---------- */
+    /* the zones now: as set, or lower while Warm-Up HUD says the oil is cold (its warmup.json, a few seconds old at most) */
+    let zoneNote = '';
+    function zones() {
+        const set = { green: settings.get('greenRpm'), yellow: settings.get('yellowRpm'), red: settings.get('redRpm'), shift: settings.get('shiftRpm') };
+        const z = coldZones(set, settings.get('coldBar') !== false ? shared.read('warmup.json', 5000) : null);
+        const note = z.cold ? 'cold, red from ' + z.red : 'as set';
+        if (note !== zoneNote) { zoneNote = note; log.info('rev bar: ' + note); }
+        return z;
+    }
+    function stageOf(rpm) {
+        const z = zones(), g = z.green, y = z.yellow, r = z.red, s = z.shift;
+        if (rpm >= s) return 'flash';
+        if (rpm >= r) return 'red';
+        if (rpm >= y) return 'yellow';
+        if (rpm >= g) return 'green';
+        return '';
+    }
+
+    function placeFrame(box, colour) {
+        /* round the Waze map when it is on the HUD, else a slim bar along the top of the clear slot */
+        const r = box ? { x: box.x - PAD - FRAME, y: box.y - PAD - FRAME, w: box.w + 2 * (PAD + FRAME), h: box.h + 2 * (PAD + FRAME) }
+            : { x: SLOT.x, y: SLOT.y - 14, w: SLOT.w, h: 12 };
+        const key = JSON.stringify(r) + colour;
+        if (key === frameKey && frameLayer) return;
+        if (frameLayer && cr) { cr.drop(frameLayer); frameLayer = 0; }
+        const iw = Math.max(2 * FRAME + 2, Math.round(r.w / 2)), ih = Math.max(2 * FRAME + 2, Math.round(r.h / 2));
+        frameLayer = cr.image({ target: 'hud', klass: 'overlay', z: 7, x: r.x, y: r.y, w: r.w, h: r.h, iw: iw, ih: ih, fps: 2, sampling: 'bilinear' });
+        if (!frameLayer) { log.warn('frame layer refused'); return; }
+        const cv = new Canvas(iw, ih);
+        if (box) drawFrame(cv, iw, ih, colour); else cv.roundRect(0, 0, iw, ih, 3, colour);
+        cr.pixels(frameLayer, null, Buffer.from(cv.d.buffer || cv.d));
+        frameKey = key; frameVisible = true;
+    }
+    function hideFrame() { if (frameLayer && cr) { cr.drop(frameLayer); frameLayer = 0; frameKey = ''; } }
+
+    /* ---------- rev bar and song line ---------- */
+    const place = () => PLACES[settings.get('place') === 'slot' ? 'slot' : 'top'];
+    function hideBar() { if (barLayer && cr) { cr.drop(barLayer); } barLayer = 0; barKey = ''; barGeom = ''; barVisible = false; }
+    function showBar(rpm, blink) {
+        /* the band with its numbers; where the song is shown as a line in the row above it, the band alone */
+        const p = place(), g = p.barSlim && settings.get('song') !== false && settings.get('songLook') === 'line' ? p.barSlim : p.bar, geom = JSON.stringify(g);
+        if (geom !== barGeom) { hideBar(); barGeom = geom; }
+        if (!barLayer) {
+            barLayer = cr.image({ target: 'hud', klass: 'overlay', z: 7, x: g.x, y: g.y, w: g.w, h: g.h, iw: g.w, ih: g.h, fps: 8, sampling: 'nearest' });
+            if (!barLayer) { log.warn('rev bar layer refused'); barGeom = ''; return; }
+            barVisible = true;
+        }
+        const filled = barFill(g.w, g.h, rpm);
+        const z = zones(), key = filled + '|' + z.yellow + '|' + z.red;
+        if (key !== barKey) {
+            const cv = new Canvas(g.w, g.h);
+            drawBar(cv, g.w, g.h, filled, { yellow: z.yellow, red: z.red });
+            cr.pixels(barLayer, null, Buffer.from(cv.d.buffer || cv.d));
+            barKey = key;
+        }
+        const want = blink ? !barVisible : true;
+        if (want !== barVisible) { cr.set(barLayer, { visible: want }); barVisible = want; }
+    }
+    function hideSong() { if (songLayer && cr) { cr.drop(songLayer); } songLayer = 0; songKey = ''; }
+    function showSong() {
+        const now = settings.get('song') !== false ? song.now : null;
+        if (!now) { hideSong(); return; }
+        const p = song.progress();
+        /* as a card at the bottom right (the default), or the older single line at the top */
+        const card = settings.get('songLook') !== 'line';
+        const g = card ? CARD : place().song;
+        const key = JSON.stringify(g) + now.title + '|' + now.artist + '|' + (p ? Math.ceil(p.left) : '') + '|' + (card ? song.coverId : '');
+        if (key === songKey && songLayer) return;
+        const geom = JSON.stringify(g);
+        if (songLayer && geom !== songGeom) hideSong();      /* moved: a new layer; otherwise the same one is drawn on again */
+        if (!songLayer) {
+            songLayer = cr.image({ target: 'hud', klass: 'overlay', z: 6, x: g.x, y: g.y, w: g.w, h: g.h, iw: g.w, ih: g.h, fps: 2, sampling: 'nearest' });
+            if (!songLayer) { log.warn('song layer refused'); return; }
+            songGeom = geom;
+        }
+        const cv = new Canvas(g.w, g.h);
+        (card ? drawCard : drawSong)(cv, g.w, g.h, { title: now.title, artist: now.artist, left: p ? p.left : null, frac: p ? p.frac : null, cover: song.cover });
+        cr.pixels(songLayer, null, Buffer.from(cv.d.buffer || cv.d));
+        songKey = key;
+    }
+
+    /* The same card on the instrument cluster, over whatever is between the dials: the Waze map when that tool shows
+     * one there, the car's own picture otherwise. It is a small layer on the cluster's 'panel' target (1920 x 720),
+     * kept inside the part of the glass that the dials leave free (measured on this car: x 700 to 1360, y 150 to
+     * 600), drawn at the card's own size and shown one and a half times larger, because the cluster is further away
+     * than the HUD's picture. Small on purpose: a layer the size of the whole panel replaces the car's cluster
+     * scene, a small one sits on top of it. It shares the cluster's upload budget with the map, which already uses
+     * most of it, so this one carries no clock: it is drawn again only when the track, the cover or the progress
+     * bar's length changes (about every five seconds). Off unless switched on. */
+    const STAGE = { x: 700, y: 150, w: 660, h: 450 }, CLUSTER_SCALE = 1.5, CLUSTER_PAD = 12;
+    let clusterLayer = 0, clusterKey = '', clusterGeom = '';
+    /* ---------- the gear, between the car's own speed and the song card ---------- */
+    let gearLayer = 0, gearKey = '';
+    function hideGear() { if (gearLayer && cr) { cr.drop(gearLayer); } gearLayer = 0; gearKey = ''; }
+    function showGear(d, running, stage) {
+        const t = settings.get('gear') !== false && running ? gearText(d) : null;
+        if (!t) { hideGear(); return; }
+        const hot = stage === 'red' || stage === 'flash', key = t.big + '|' + t.small + '|' + (hot ? 1 : 0);
+        if (!gearLayer) {
+            gearLayer = cr.image({ target: 'hud', klass: 'overlay', z: 7, x: GEAR.x, y: GEAR.y, w: GEAR.w, h: GEAR.h, iw: GEAR.w, ih: GEAR.h, fps: 6, sampling: 'nearest' });
+            if (!gearLayer) { log.warn('gear layer refused'); return; }
+            gearKey = '';
+        }
+        if (key === gearKey) return;
+        const cv = new Canvas(GEAR.w, GEAR.h);
+        drawGear(cv, GEAR.w, GEAR.h, t, hot);
+        cr.pixels(gearLayer, null, Buffer.from(cv.d.buffer || cv.d));
+        if (!gearKey) log.info('gear: shown (' + t.big + (t.small ? ' ' + t.small : '') + ')');
+        gearKey = key;
+    }
+    function clusterBox() {
+        const at = settings.get('songClusterAt'), w = Math.round(CARD.w * CLUSTER_SCALE), h = Math.round(CARD.h * CLUSTER_SCALE);
+        const x = at === 'left' ? STAGE.x + CLUSTER_PAD : at === 'middle' ? STAGE.x + Math.round((STAGE.w - w) / 2) : STAGE.x + STAGE.w - w - CLUSTER_PAD;
+        return { x: x, y: STAGE.y + STAGE.h - h - CLUSTER_PAD, w: w, h: h };
+    }
+    function hideClusterSong() { if (clusterLayer && cr) { cr.drop(clusterLayer); } clusterLayer = 0; clusterKey = ''; }
+    function showClusterSong() {
+        const now = settings.get('song') !== false && settings.get('songCluster') === true ? song.now : null;
+        if (!now) { hideClusterSong(); return; }
+        const p = song.progress(), g = clusterBox(), geom = JSON.stringify(g);
+        const key = geom + now.title + '|' + now.artist + '|' + (p && typeof p.frac === 'number' ? Math.floor(p.frac * 40) : '') + '|' + song.coverId;
+        if (key === clusterKey && clusterLayer) return;
+        if (clusterLayer && geom !== clusterGeom) hideClusterSong();
+        if (!clusterLayer) {
+            clusterLayer = cr.image({ target: 'panel', klass: 'overlay', z: 8, x: g.x, y: g.y, w: g.w, h: g.h, iw: CARD.w, ih: CARD.h, fps: 1, sampling: 'bilinear' });
+            if (!clusterLayer) { log.warn('cluster song layer refused'); return; }
+            clusterGeom = geom;
+            log.info('song: on the cluster at ' + g.x + ',' + g.y + ' ' + g.w + 'x' + g.h);
+        }
+        const cv = new Canvas(CARD.w, CARD.h);
+        drawCard(cv, CARD.w, CARD.h, { title: now.title, artist: now.artist, left: null, frac: p ? p.frac : null, cover: song.cover });
+        cr.pixels(clusterLayer, null, Buffer.from(cv.d.buffer || cv.d));
+        clusterKey = key;
+    }
+
+    let flashOn = false;
+    const shiftTimer = setInterval(() => {
+        try {
+            if (!cr) return;
+            const d = car.data ? car.data() : car.live;
+            st.shiftOn = settings.get('shift') !== false;      /* also when another screen or the menu changed it */
+            const rpm = d && typeof d.rpm === 'number' ? d.rpm : null;
+            /* the test: green, yellow, red, flash, 1.5 s each, engine or not */
+            const testLeft = (st.testUntil || 0) - Date.now();
+            const stage = testLeft > 0 ? ['flash', 'red', 'yellow', 'green', 'green'][Math.floor(testLeft / 1500)] || 'green'
+                : st.shiftOn && rpm !== null && rpm > 400 ? stageOf(rpm) : '';
+            if (stage !== st.stage) log.info('shift: ' + (stage || 'off') + (rpm !== null ? ' at ' + Math.round(rpm) + ' rpm' : '') + (testLeft > 0 ? ' (test)' : ''));
+            st.stage = stage;
+            const running = testLeft > 0 || (rpm !== null && rpm > 400);
+            showClusterSong();
+            showSong();              /* the song line is up whenever CarPlay names a track, engine or not (its switch is in the settings) */
+            showGear(d, running && testLeft <= 0, stage);
+            if (settings.get('style') !== 'frame') {
+                /* the rev bar: shown whenever the engine runs, whatever the stage; the old frame stays away */
+                hideFrame();
+                if (!running || (!st.shiftOn && testLeft <= 0)) { hideBar(); return; }
+                const shown = testLeft > 0 ? [7000, 6500, 5800, 4500, 3000][Math.floor(testLeft / 1500)] || 3000 : rpm;
+                showBar(shown, stage === 'flash');
+                return;
+            }
+            hideBar();
+            if (!stage) { hideFrame(); return; }
+            placeFrame(st.box, COLOURS[stage === 'flash' ? 'red' : stage]);
+            if (stage === 'flash') { flashOn = !flashOn; cr.set(frameLayer, { visible: flashOn }); frameVisible = flashOn; }
+            else if (!frameVisible) { cr.set(frameLayer, { visible: true }); frameVisible = true; }
+        } catch (e) { log.warn('shift: ' + e); }
+    }, 120);
+
+    const wazeTimer = setInterval(() => { waze.poll().then(() => { st.box = waze.hudBox(); syncSize(); }).catch(() => {}); }, 15000);
+    waze.poll().then(() => { st.box = waze.hudBox(); }).catch(() => {});
+
+    process.on('exit', () => { [menuTimer, gateTimer, shiftTimer, wazeTimer, markTimer].forEach(clearInterval); if (markLayer && cr) { try { cr.drop(markLayer); } catch (e) { /* going */ } } closeMenu(); hideFrame(); hideBar(); hideSong(); hideGear(); hideClusterSong(); if (cr) { try { cr.close(); } catch (e) { /* going */ } } });
+    return { st: st, items: items, waze: waze, pick: pick, act: act, song: song };
+}
+
+mgu.run({
+    background,
+    async start(ctx) {
+        const { ui, settings } = ctx;
+        const bgm = ctx.background || await background(ctx);
+        async function render() {
+            const t = ctx.theme();
+            const cv = ctx.canvas(W, H).clear(t.bg);
+            G.panel(cv, t, 24, 44, 760, 468, 'HUD menu');
+            (settings.get('menu') !== false && settings.get('gate') === true
+                ? ['Press the menu button on the wheel (three lines, right side) to open the menu.',
+                    'Roll the right roller to move and press the roller to select: the menu stays open.',
+                    'The menu button goes back a level, then closes. It also closes after 10 s.', '', 'The first rows (tap one to change it here):']
+                : ['Press the menu button on the wheel (three lines, right side) to open the menu.',
+                    'Roll the right roller to move. Press the menu button again to change the chosen row:',
+                    'the menu stays open. Pick Close, or wait 10 s, to leave.', '', 'The first rows (tap one to change it here):'])
+                .forEach((l, i) => cv.text(l, 48, 112 + i * 32, 20, i < 3 ? t.text : t.dim));
+            bgm.items().slice(0, 5).forEach((it, i) => {
+                const y = 300 + i * 40;
+                cv.roundRect(48, y - 28, 700, 34, 8, withAlpha(t.text, 0.08));
+                cv.text(it.g + ': ' + it.label, 64, y - 4, 20, t.text);
+                cv.text(menu.valueText(it), 732, y - 4, 20, t.dim, { align: 'right' });
+                if (cv.own) cv.target(48, y - 28, 700, 34, () => { bgm.act(it); return render(); }, 'i' + i, 8);
+            });
+            G.panel(cv, t, 804, 44, 772, 468, 'Revs and song');
+            const box = bgm.waze.hudBox();
+            const line = (k, v, y, c) => { cv.text(k, 828, y, 20, t.dim); cv.text(v, 1552, y, 20, c || t.text, { align: 'right' }); };
+            line('Revs on the display', bgm.st.shiftOn ? 'on' : 'off', 112, bgm.st.shiftOn ? '#2fd27a' : t.dim);
+            line('Shown as', settings.get('style') === 'frame' ? (box ? 'frame round the Waze map' : 'slim bar (Waze map not on the HUD)') : 'rev bar, ' + (settings.get('place') === 'slot' ? 'in the clear slot' : 'top of the display'), 146);
+            line('Green / yellow / red', (settings.get('greenRpm') || 4000) + ' / ' + (settings.get('yellowRpm') || 5500) + ' / ' + (settings.get('redRpm') || 6300) + ' rpm', 180);
+            line('Flash from', (settings.get('shiftRpm') || 6800) + ' rpm', 214);
+            line('Now', bgm.st.stage || 'idle', 248, bgm.st.stage ? COLOURS[bgm.st.stage === 'flash' ? 'red' : bgm.st.stage] : t.dim);
+            line('Warm-Up HUD', bgm.st.warmup, 282);
+            line('Last pick', bgm.st.lastPick || '-', 316);
+            const sn = bgm.song.now;
+            line('Song', settings.get('song') === false ? 'off' : sn ? (sn.title + (sn.artist ? ', ' + sn.artist : '')).slice(0, 44) : bgm.song.error ? 'not available' : 'nothing playing', 350);
+            G.frame(cv, t, ['HUD'], 0, []);
+            await ui.image('MAIN_GFX', cv);
+        }
+        ui.onClick('BTN_ACTION', () => { bgm.pick('shift'); return render(); });
+        settings.onChange(() => render().catch(() => {}));
+        ctx.loop('MAIN', 2, render);
+        render().catch((e) => ctx.log.warn('first render: ' + e));
+    },
+});

@@ -573,6 +573,36 @@
       ]
     },
     {
+      "id": "advokat_live_adjustments",
+      "kind": "app",
+      "version": "10.17.1",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "ahg_control_center",
+      "kind": "app",
+      "version": "1.4.2",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "ahg_digital_garage",
+      "kind": "app",
+      "version": "0.1.1",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
       "id": "airplay-rx",
       "version": "1.0.0",
       "kind": "tool",
@@ -823,6 +853,77 @@
           "incompatible": "Ambient Studio is for iDrive 7; this head unit is iDrive 8"
         }
       ]
+    },
+    {
+      "id": "amn-iptv",
+      "kind": "tool",
+      "version": "0.3.7",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "amn-sideview-cam",
+      "kind": "tool",
+      "version": "0.2.0",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "amn_hudlyrics",
+      "kind": "app",
+      "version": "0.7.2",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "amn_iptv",
+      "kind": "app",
+      "version": "0.4.2",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "amn_sideview",
+      "kind": "app",
+      "version": "0.5.4",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "andrei_mdrive",
+      "kind": "app",
+      "version": "0.4.0",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "apex_dash",
+      "kind": "app",
+      "version": "1.2.0",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
     },
     {
       "id": "apm_airplay",
@@ -1393,7 +1494,7 @@
     },
     {
       "id": "aref_eta",
-      "version": "1.15.1",
+      "version": "1.20.1",
       "kind": "app",
       "category": "app",
       "upstream_repository": "arefahmad/idrive7-apps",
@@ -2212,6 +2313,16 @@
       ]
     },
     {
+      "id": "aurelm_emby",
+      "kind": "app",
+      "version": "0.3.14",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "original publisher artifact",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
       "id": "aurelm_engine_care",
       "version": "1.5.2",
       "kind": "app",
@@ -2398,6 +2509,26 @@
           "incompatible": "Lucky Sevens is for iDrive 7; this head unit is iDrive 8"
         }
       ]
+    },
+    {
+      "id": "aurelm_mediaprobe",
+      "kind": "app",
+      "version": "0.1.3",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "original publisher artifact",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "aurelm_music",
+      "kind": "app",
+      "version": "0.1.17",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "original publisher artifact",
+      "live_install_result": "NOT OBSERVED"
     },
     {
       "id": "aurelm_myairplay",
@@ -3069,6 +3200,16 @@
       ]
     },
     {
+      "id": "benspa_vitals",
+      "kind": "app",
+      "version": "0.9.6",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
       "id": "bimmer_blocks",
       "version": "1.1.1",
       "kind": "app",
@@ -3175,6 +3316,26 @@
       ]
     },
     {
+      "id": "bimmervision",
+      "kind": "app",
+      "version": "0.2.78",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "original publisher artifact",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "bimmervision-recorder",
+      "kind": "tool",
+      "version": "0.2.78",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "original publisher artifact",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
       "id": "bm3_live_id8",
       "version": "0.1.1",
       "kind": "app",
@@ -3228,6 +3389,16 @@
           ]
         }
       ]
+    },
+    {
+      "id": "boostline",
+      "kind": "app",
+      "version": "1.0.1",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
     },
     {
       "id": "boostline_id8",
@@ -3874,6 +4045,46 @@
       ]
     },
     {
+      "id": "clucraft-jellyfin",
+      "kind": "tool",
+      "version": "0.1.0",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "clucraft-plex",
+      "kind": "tool",
+      "version": "0.1.0",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "clucraft_jellyfin",
+      "kind": "app",
+      "version": "0.1.0",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "clucraft_plex",
+      "kind": "app",
+      "version": "0.1.0",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
       "id": "cluster-render",
       "version": "0.6.9",
       "kind": "tool",
@@ -4069,6 +4280,16 @@
       ]
     },
     {
+      "id": "cluster_nav_card",
+      "kind": "app",
+      "version": "0.9.2",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
       "id": "cluster_themes",
       "version": "0.19.0",
       "kind": "app",
@@ -4146,6 +4367,26 @@
           "incompatible": "Cluster Themes is for iDrive 7; this head unit is iDrive 8"
         }
       ]
+    },
+    {
+      "id": "custom_cluster",
+      "kind": "app",
+      "version": "0.6.10",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "custom_hud",
+      "kind": "app",
+      "version": "0.1.58",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
     },
     {
       "id": "dimon_battery",
@@ -4817,6 +5058,16 @@
       ]
     },
     {
+      "id": "dpf_id7",
+      "kind": "app",
+      "version": "1.1.1",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
       "id": "dpf_id8",
       "version": "1.0.0",
       "kind": "app",
@@ -5412,6 +5663,16 @@
       ]
     },
     {
+      "id": "driver_profiles",
+      "kind": "app",
+      "version": "0.2.2",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
       "id": "dtc_scanner",
       "version": "2.9.8",
       "kind": "app",
@@ -5908,6 +6169,16 @@
       ]
     },
     {
+      "id": "equalizer",
+      "kind": "app",
+      "version": "0.2.4",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
       "id": "esagono-cluster",
       "version": "0.2.1",
       "kind": "tool",
@@ -6108,6 +6379,46 @@
       ]
     },
     {
+      "id": "eva_hud",
+      "kind": "app",
+      "version": "0.5.3",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "f30_cluster",
+      "kind": "app",
+      "version": "0.7.22",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "f44-hud-bridge",
+      "kind": "tool",
+      "version": "0.12.0",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "f44_traffic_diag",
+      "kind": "app",
+      "version": "0.1.0",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
       "id": "front-camera-cluster-helper",
       "version": "0.2.1",
       "kind": "tool",
@@ -6251,6 +6562,26 @@
           "incompatible": "Night Vision Cluster is for iDrive 7; this head unit is iDrive 8"
         }
       ]
+    },
+    {
+      "id": "g21_ambient",
+      "kind": "app",
+      "version": "0.4.0",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "g21_wheelheat",
+      "kind": "app",
+      "version": "0.5.2",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
     },
     {
       "id": "gforce",
@@ -6519,6 +6850,16 @@
           "incompatible": "Green Light Alert is for iDrive 7; this head unit is iDrive 8"
         }
       ]
+    },
+    {
+      "id": "gs_ambient",
+      "kind": "app",
+      "version": "0.1.10",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
     },
     {
       "id": "hook111",
@@ -7078,6 +7419,16 @@
       ]
     },
     {
+      "id": "idrive7_dpf_app",
+      "kind": "app",
+      "version": "0.1.6",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
       "id": "idrive_hud_widgets",
       "version": "0.15.0",
       "kind": "app",
@@ -7158,7 +7509,7 @@
     },
     {
       "id": "idv7lol",
-      "version": "0.2.14",
+      "version": "0.2.15",
       "kind": "app",
       "category": "app",
       "upstream_repository": "ALMSTRA/idv7lol",
@@ -7237,7 +7588,7 @@
     },
     {
       "id": "iteriodev-comfort",
-      "version": "0.6.1",
+      "version": "0.6.3",
       "kind": "tool",
       "category": "tool",
       "upstream_repository": "IterioDev/car-apps",
@@ -7398,7 +7749,7 @@
     },
     {
       "id": "iteriodev-screencast",
-      "version": "1.0.8",
+      "version": "1.0.9",
       "kind": "tool",
       "category": "tool",
       "upstream_repository": "IterioDev/car-apps",
@@ -7524,7 +7875,7 @@
     },
     {
       "id": "iteriodev-turnview",
-      "version": "0.8.0",
+      "version": "0.9.1",
       "kind": "tool",
       "category": "tool",
       "upstream_repository": "IterioDev/car-apps",
@@ -7584,7 +7935,7 @@
     },
     {
       "id": "iteriodev_ambient",
-      "version": "1.4.2",
+      "version": "1.4.3",
       "kind": "app",
       "category": "app",
       "upstream_repository": "IterioDev/car-apps",
@@ -8072,7 +8423,7 @@
     },
     {
       "id": "iteriodev_tailscale",
-      "version": "1.1.1",
+      "version": "1.2.0",
       "kind": "app",
       "category": "app",
       "upstream_repository": "IterioDev/car-apps",
@@ -8138,7 +8489,7 @@
     },
     {
       "id": "iteriodev_turnview",
-      "version": "1.5.1",
+      "version": "1.6.0",
       "kind": "app",
       "category": "app",
       "upstream_repository": "IterioDev/car-apps",
@@ -8318,7 +8669,7 @@
         }
       },
       "id": "jap-ridetube-d",
-      "version": "0.4.1",
+      "version": "0.4.2",
       "kind": "tool",
       "category": "tool",
       "upstream_repository": "JustAnotherPU/ridetube",
@@ -8609,7 +8960,7 @@
         }
       },
       "id": "jap_ridetube",
-      "version": "0.4.4",
+      "version": "0.4.5",
       "kind": "app",
       "category": "app",
       "upstream_repository": "JustAnotherPU/ridetube",
@@ -8845,6 +9196,17 @@
       ]
     },
     {
+      "id": "km_motordaten",
+      "kind": "app",
+      "version": "0.4.1",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
       "id": "kombikraft",
       "version": "0.1.0",
       "kind": "app",
@@ -8895,6 +9257,16 @@
           "incompatible": "KombiKraft Lab · Offline prototype is for iDrive 7; this head unit is iDrive 8"
         }
       ]
+    },
+    {
+      "id": "kombikraft_test",
+      "kind": "app",
+      "version": "0.1.28",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "original publisher artifact",
+      "live_install_result": "NOT OBSERVED"
     },
     {
       "id": "kxrxh_doodle_jump",
@@ -8954,6 +9326,46 @@
           "incompatible": "Doodle Jump is for iDrive 7; this head unit is iDrive 8"
         }
       ]
+    },
+    {
+      "id": "lfb-enginesound",
+      "kind": "tool",
+      "version": "1.2.2",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "lfb_enginesound",
+      "kind": "app",
+      "version": "1.2.2",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "light_flasher",
+      "kind": "app",
+      "version": "0.1.15",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "light_show",
+      "kind": "app",
+      "version": "0.4.5",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
     },
     {
       "prior_version_evidence": {
@@ -9293,6 +9705,16 @@
           ]
         }
       ]
+    },
+    {
+      "id": "manuk_retro_cluster",
+      "kind": "app",
+      "version": "0.3.4",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
     },
     {
       "id": "marku-home-bridge",
@@ -9811,6 +10233,67 @@
       ]
     },
     {
+      "id": "mazzahaker_xdrive_remover",
+      "kind": "app",
+      "version": "0.1.26",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "mdev_homeassistant",
+      "kind": "app",
+      "version": "0.1.0",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "mdq-aapd-log",
+      "kind": "tool",
+      "version": "0.1.1",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "original publisher artifact",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "mdq-ridetube-d",
+      "kind": "tool",
+      "version": "0.4.2",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "original publisher artifact",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "mdq_carlink",
+      "kind": "app",
+      "version": "0.1.4",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "original publisher artifact",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "mdq_ridetube",
+      "kind": "app",
+      "version": "0.4.0",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "original publisher artifact",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
       "id": "mgu-browser",
       "version": "0.16.1",
       "kind": "tool",
@@ -9923,6 +10406,16 @@
       ]
     },
     {
+      "id": "mgu-cluster-net",
+      "kind": "tool",
+      "version": "0.1.0",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
       "prior_version_evidence": {
         "version": "0.8.23",
         "source_path": null,
@@ -9984,13 +10477,23 @@
       ]
     },
     {
+      "id": "mgu-equalizer-dsp",
+      "kind": "tool",
+      "version": "0.2.1",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
       "id": "mgu-fscpatch",
       "version": "1.0.0",
       "kind": "tool",
       "category": "tool",
       "upstream_repository": "Noahbg/mgu-apps",
       "delivery": "branch source",
-      "mguHmi": [],
+      "mguHmi": null,
       "requires": {
         "mgu-deploy": "0.3.2"
       },
@@ -10038,6 +10541,16 @@
           "incompatible": "FSC patch service is for iDrive 7; this head unit is iDrive 8"
         }
       ]
+    },
+    {
+      "id": "mgu-game-net",
+      "kind": "tool",
+      "version": "0.1.0",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
     },
     {
       "id": "mgu-inputgate",
@@ -10103,6 +10616,16 @@
       ]
     },
     {
+      "id": "mgu-light-net",
+      "kind": "tool",
+      "version": "0.1.0",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
       "id": "mgu-obd-adapter",
       "version": "1.0.0",
       "kind": "tool",
@@ -10161,6 +10684,16 @@
       ]
     },
     {
+      "id": "mgu-phone-bridge",
+      "kind": "tool",
+      "version": "0.1.6",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
       "id": "mgu-python",
       "version": "1.0.3",
       "kind": "tool",
@@ -10212,7 +10745,7 @@
     },
     {
       "id": "mgu-render",
-      "version": "0.6.24",
+      "version": "0.6.25",
       "kind": "tool",
       "category": "tool",
       "upstream_repository": "robertnisipeanu/mgu-store",
@@ -10461,6 +10994,26 @@
       ]
     },
     {
+      "id": "mgu-video-net",
+      "kind": "tool",
+      "version": "0.1.0",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "mgu_audio_diagnostics",
+      "kind": "app",
+      "version": "0.1.2",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
       "id": "mgu_browser",
       "version": "0.16.1",
       "kind": "app",
@@ -10527,6 +11080,46 @@
       ]
     },
     {
+      "id": "mgu_gamestation",
+      "kind": "app",
+      "version": "0.3.0",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "mgu_phone_terminal",
+      "kind": "app",
+      "version": "0.1.7",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "mgu_unified",
+      "kind": "app",
+      "version": "0.1.11",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "mgu_video_hub",
+      "kind": "app",
+      "version": "0.2.0",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
       "id": "mlurker-hud-signals",
       "version": "0.5.0",
       "kind": "tool",
@@ -10580,6 +11173,26 @@
           "incompatible": "HUD signals is for iDrive 7; this head unit is iDrive 8"
         }
       ]
+    },
+    {
+      "id": "mx_classic_cluster",
+      "kind": "app",
+      "version": "0.14.2",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "mx_road_hopper",
+      "kind": "app",
+      "version": "0.1.1",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
     },
     {
       "id": "noahg_fscpatcher",
@@ -10889,6 +11502,36 @@
       ]
     },
     {
+      "id": "oussem-browser",
+      "kind": "tool",
+      "version": "0.1.2",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "original publisher artifact",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "oussem_youtube",
+      "kind": "app",
+      "version": "0.2.2",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "original publisher artifact",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "owner_cluster_control",
+      "kind": "app",
+      "version": "0.4.1",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
       "id": "parked_games",
       "version": "0.2.3",
       "kind": "app",
@@ -11080,6 +11723,16 @@
       ]
     },
     {
+      "id": "perea_cluster_themes",
+      "kind": "app",
+      "version": "0.19.1",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
       "id": "perea_mhd_flex",
       "version": "1.6.0",
       "kind": "app",
@@ -11087,8 +11740,7 @@
       "upstream_repository": "alexpereap/pereaperformance-idrive7-apps",
       "delivery": "branch source",
       "mguHmi": [
-        "ID7",
-        "ID8"
+        "ID7"
       ],
       "requires": {
         "mgu-python": "1.0.2",
@@ -11269,6 +11921,38 @@
           "incompatible": "PllanaCast for BMW is for iDrive 7; this head unit is iDrive 8"
         }
       ]
+    },
+    {
+      "id": "pps_gauges",
+      "kind": "app",
+      "version": "1.0.3",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "pps_warmup",
+      "kind": "app",
+      "version": "1.2.1",
+      "mguHmi": [
+        "ID7",
+        "ID8"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "rear_comfort",
+      "kind": "app",
+      "version": "0.5.6",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "original publisher artifact",
+      "live_install_result": "NOT OBSERVED"
     },
     {
       "prior_version_evidence": {
@@ -11766,6 +12450,16 @@
       ]
     },
     {
+      "id": "rubenrios_gearhud",
+      "kind": "app",
+      "version": "1.0.0",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
       "prior_version_evidence": {
         "version": "1.6.2",
         "source_path": "apps/_sources/idrive7-apps/apps/service",
@@ -11927,6 +12621,16 @@
           "incompatible": "Sideways is for iDrive 7; this head unit is iDrive 8"
         }
       ]
+    },
+    {
+      "id": "signal_probe",
+      "kind": "app",
+      "version": "0.4.0",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
     },
     {
       "id": "spotify",
@@ -12426,6 +13130,16 @@
       ]
     },
     {
+      "id": "true_time",
+      "kind": "app",
+      "version": "1.0.0",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
       "id": "true_time_id8",
       "version": "1.0.0",
       "kind": "app",
@@ -12565,6 +13279,16 @@
           ]
         }
       ]
+    },
+    {
+      "id": "twin_dial",
+      "kind": "app",
+      "version": "0.1.5",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
     },
     {
       "id": "vehicle-network-observer",
@@ -14155,6 +14879,146 @@
       ]
     },
     {
+      "id": "woodr-dashkeep",
+      "kind": "tool",
+      "version": "0.2.0",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "woodr-link",
+      "kind": "tool",
+      "version": "0.1.0",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "woodr_ambient",
+      "kind": "app",
+      "version": "0.1.7",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "woodr_dashcam",
+      "kind": "app",
+      "version": "0.4.4",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "woodr_devhud",
+      "kind": "app",
+      "version": "0.1.4",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "woodr_diag",
+      "kind": "app",
+      "version": "0.2.2",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "woodr_drivelog",
+      "kind": "app",
+      "version": "0.1.1",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "woodr_hass",
+      "kind": "app",
+      "version": "0.8.2",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "woodr_hud",
+      "kind": "app",
+      "version": "0.9.5",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "woodr_inputlab",
+      "kind": "app",
+      "version": "0.1.3",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "woodr_launch",
+      "kind": "app",
+      "version": "0.7.1",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "woodr_link",
+      "kind": "app",
+      "version": "0.1.1",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "woodr_screenlab",
+      "kind": "app",
+      "version": "0.2.3",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "woodr_warmhud",
+      "kind": "app",
+      "version": "0.7.0",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
       "id": "wzc_wazecards",
       "version": "1.0.1",
       "kind": "app",
@@ -14209,6 +15073,16 @@
           "incompatible": "Waze Cards is for iDrive 7; this head unit is iDrive 8"
         }
       ]
+    },
+    {
+      "id": "xdrive_offroad_pro",
+      "kind": "app",
+      "version": "0.1.3",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "original publisher artifact",
+      "live_install_result": "NOT OBSERVED"
     },
     {
       "id": "xdrive_studio",
@@ -14295,6 +15169,46 @@
           "incompatible": "xDrive Studio is for iDrive 7; this head unit is iDrive 8"
         }
       ]
+    },
+    {
+      "id": "xop-camera-bridge",
+      "kind": "tool",
+      "version": "0.1.3",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "original publisher artifact",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "xop-camrx",
+      "kind": "tool",
+      "version": "0.1.3",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "original publisher artifact",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "xtraboost_guard",
+      "kind": "app",
+      "version": "1.3.0",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
+    },
+    {
+      "id": "zekai_cluster_themes",
+      "kind": "app",
+      "version": "0.8.7",
+      "mguHmi": [
+        "ID7"
+      ],
+      "delivery": "branch source",
+      "live_install_result": "NOT OBSERVED"
     },
     {
       "prior_version_evidence": {

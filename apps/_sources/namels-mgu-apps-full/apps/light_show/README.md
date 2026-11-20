@@ -1,0 +1,125 @@
+# Light Show 0.4.5
+
+Exterior light shows for BMW G-series cars with the iDrive 7 head unit (MGU), in the spirit of
+Bimmerlight: pick lights, pick an effect, start, from the BMW screen or from your phone.
+Unofficial, not from BMW. Use only parked in P, standing still, on private ground, with nobody
+in front of the car. Don't look into the headlights.
+
+## What's new compared to 0.3.4 (mgu-apps)
+
+| | 0.3.4 | 0.4.0 beta |
+|---|---|---|
+| Lights | Headlamp LED channels (FLM02) | Headlamp LED channels (FLM02, FLM02X, FLM2_1), all exterior BDC light functions, every BDC exterior output, rear light modules (RLM2 functions, RLM_1 channels) |
+| Which car | Fixed addresses and FLM02 only | **Vehicle scan** reads the identity of every control unit and offers only what this car has |
+| Effects | 6 patterns | 9 effects: Wig-Wag, Dual Flash, Chase, Knight Rider, Front-to-Rear Wave, All Flash, Alternating, Heartbeat, Sparkle |
+| Screen | Text menus | Canvas UI with tabs, rotating 3D car whose lamps light up during the show |
+| Phone | - | **Phone remote**: QR code on the BMW screen opens a web page with the same functions and a 3D car you can turn |
+
+Names and test results from 0.3.x are taken over (same app id, same data folder).
+
+## Pages on the BMW screen
+
+- **Show** - 3D car, effect library, step time, pause, repeats, headlamp LED brightness, Start / Stop.
+- **Lights** - every light the scan found. Select one, press **Test**, then say what you saw:
+  *Lit, quiet* / *Nothing* / *Noise*. Only lights confirmed "lit, quiet" (and whose release was
+  acknowledged) can be added to a show. *Rename* cycles through preset names; any name can be
+  typed on the phone.
+- **Vehicle** - the scan (read-only, `22 F1 50` to all control units), the support level of the
+  body controller and both headlamp modules, the list of all units, the switch for experimental
+  headlamp modules, and the manual "lights checked" confirmation if a recovery file is unreadable.
+- **Phone** - QR code, status of the firewall helper, the server and the phone connection.
+
+## Vehicle scan (modelled on BimmerLight)
+
+The scan runs **by itself on the first start** as soon as the car is parked in P and standing
+still (and no show or release is pending): up to 3 tries per app run, a minute apart. The
+result is saved; after that the app scans again only when you press *Scan again* on *Vehicle*
+(e.g. after a control unit was replaced).
+
+1. One functional `22 F1 50` to all control units.
+2. Every light address that did not answer is asked once more on its own: gateway 0x10,
+   rear light modules 0x17 / 0x1A / 0x1C / 0x1E, body 0x40, headlamps 0x43 / 0x44, 0x72.
+3. The vehicle order (`22 3F 06`) is read from the gateway; option codes such as 5AZ (Laserlight)
+   or 552 (Adaptive LED) are shown as a hint.
+
+At the gateway only identity and the vehicle order are read. Rear light modules get control
+telegrams only after they identified as one of the RLM variants below.
+
+## Supported control units
+
+Support levels: **tested** = driven in a car (G21); **from BMW data** = telegram taken from the BMW
+PRG of that control unit, not yet driven in a car. Test every light once while you watch.
+
+| Unit | Identity | Lights | Status |
+|---|---|---|---|
+| Body controller 0x40 | `BDC_G05` (`0F2680`) | 19 light functions `2E D5 42` (side lights, low/high beam, DRL, indicators L/R, hazard, front/rear fog, cornering L/R, brake, reversing, parking L/R, locator, manoeuvring, welcome, goodbye) + single outputs `2F E3 B5` | High beam tested; other functions from BMW data; single outputs experimental (no visible effect on the G21) |
+| Body controller 0x40 | `BDC_G11` (`0F2050`), `BDC` (`0F19C0`) | Same light functions (ids from `TAB_LAMPEN_FUNKTION`), BDC_G11 also the illuminated kidney grille | From BMW data |
+| Headlamp 0x43 / 0x44 | `FLM02_L/R` (`0F26C0/D0`) | `FLM_KANAL 31 01 A5 4B`, channels 1-15 and 0 = all LEDs | Channels tested (G21, basic LED) |
+| Headlamp 0x43 / 0x44 | `FLM02X_L/R` (`0F26C8/D8`), `FLM2_1_L/R` (`0F26CC/DC`) | Same routine, channels 1-17 and 0 = all LEDs | From BMW data (adaptive LED / laser) |
+| Rear light modules 0x17 / 0x1A / 0x1C / 0x1E | `RLM2_1L/1R/2L/2R` (`0F2C10..40`) | `RLM_LICHTFUNKTIONEN 2E A8 3B <fn> <s>`: tail, rear fog, brake, indicator, reversing, side marker, side light, parking, plate; and `RLM_KANAL 31 01 A5 56 <group 0x60-0x6F / 0x70 all> <PWM> 00 64 <s>`: 16 segment groups at 100 mA, stop `31 02 A5 56` | From BMW data |
+| Rear light modules | `RLM_1L/1R/2L/2R` (`0F23C0..F0`) | `RLM_KANAL 2E D6 DA <1-8> <s> <PWM>` | From BMW data |
+| Headlamp | `FLM01`, `FLM03`, `LHM2`, `FLE` | - | Recognised, not supported |
+| Gateway 0x10 | `ZGW_01`, `ZGW_SP18`, `BCP_SP21` | Identity and vehicle order only | - |
+
+Every light has a finite time in the control unit (D542: 10 ms steps, RLM: seconds, FLM: seconds,
+never "permanent") and is switched off explicitly after each step. One FLM and one RLM2 module
+run one channel routine at a time; effects split steps accordingly.
+
+Cross-checked with BimmerLight's module mapping (supplied by the user, not included here):
+it drives headlamps with the same `FLM_KANAL` routine (incl. channel 0 = all), RLM2 tail lights
+with `RLM_KANAL` segment groups at 100 mA, and BDC lights with `LICHT_AUSGANG_DIGITAL_STEUERN`
+(E3B5, the single outputs here). On LED cars the low and high beam LEDs sit in the headlamp
+modules, so the BDC low-beam output stays dark there - that is what the G21 test showed.
+
+## Test option: silence the headlamp modules
+
+Settings (app settings, or the switch on *Vehicle* / the phone's *Car* tab): **"Test: headlamp
+modules ignore bus messages during shows"**, off by default. As BimmerLight does it, each
+headlamp module used by a show gets, after its extended session:
+
+- `28 02 01` CommunicationControl disableRxAndEnableTx, normal messages - the module stops
+  following the car's own light requests (DRL, low beam), so only the show's channels light up;
+- at the end, before the default session: `28 00 03` enableRxAndTx, normal + network management.
+
+The recovery file records the silenced modules; STOP and the next app start send `28 00 03`
+again. Returning to the default session (or its timeout) restores normal communication as
+well (ISO 14229), so a refused `28 00 03` only blocks when the default session was not
+confirmed either. Only the headlamp modules 0x43 / 0x44 accept these two telegrams; the
+option cannot be changed while a show runs. Test results remember whether it was on.
+
+Not used on purpose: single RLM2 LED channels (only the groups), laser function test, special
+flashing modes and check-control messages in the instrument cluster.
+
+Whether the laser element of laser headlights sits on any FLM channel is unknown (the PRGs list a
+separate laser function test). If a channel turns on something unexpected, like a very bright
+spot or the headlight adjusting itself, press STOP and leave that channel out.
+
+## Phone remote
+
+1. Install **Light Show Phone Port** (`mgu-light-net`) from this source as well: it opens TCP
+   18880 on the car Wi-Fi only while Light Show answers its health probe.
+2. Connect the phone to the car's Wi-Fi hotspot, open *Phone* on the BMW screen and scan the code.
+3. The link holds a random token that changes with every start of the app.
+
+The page polls the app; every action goes through the same checks as the BMW screen (P,
+standstill, identities, tested lights). No Internet is needed.
+
+## Safety
+
+- Before every request: P and a current speed signal of 0 km/h. Losing either stops the show.
+- Before anything is switched: BDC_G05 and every used headlamp module are identified.
+- A recovery file is written before the first session or lamp request. It is removed only after
+  every touched unit acknowledged its STOP / OFF and the default session; otherwise STOP (or the
+  next app start) releases them again.
+- Every lamp has a finite time in the control unit (FLM seconds, D542 duration) and an explicit OFF.
+- One FLM module plays one LED channel at a time; effects split steps accordingly.
+- Requests go one by one through BMW's diagnostic transport (about 100-500 ms each in the car),
+  so shows are slower and less exact than with an OBD adapter.
+
+Acknowledgements are protocol answers, not light measurements.
+
+## Tests
+
+```sh
+node tests/light_show.test.js
+```

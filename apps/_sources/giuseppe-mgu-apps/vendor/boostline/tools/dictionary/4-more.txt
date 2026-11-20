@@ -1,0 +1,629 @@
+erstem	first
+bremskraftverstaerker	brake booster
+bremskraftverstaerkerunterdruck	brake booster vacuum
+bremskraftverstaerkerdruck	brake booster pressure
+komponententreibes	component driver
+kleinster	smallest
+lenkung	steering
+losrei	break-free
+ersuche	attempts
+poppetventil	poppet valve
+lambdareglerverstellung	lambda controller adjustment
+ausgewaehlter	selected
+ausgewaehlten	selected
+kodiert	coded
+sicht	view
+selektiver	selective
+oft	often
+regeneriert	regenerated
+batterei	battery
+bauteiltemperatur	component temperature
+bauteil	component
+abwuergen	stalling
+abgewuergt	stalled
+ausgefallen	failed
+sicherheitskraftstoffabschaltung	safety fuel cut-off
+stoert	disturbs
+katschaedigender	catalyst-damaging
+gedrosselt	throttled
+unzulaessig	inadmissible
+unzuloessig	inadmissible
+unzuloessig	inadmissible
+momentenreduzierung	torque reduction
+rauchbegrenzung	smoke limitation
+kraftstoffmengenbilanz	fuel quantity balance
+beheizter	heated
+zeitstempel	timestamp
+abgespeicherte	stored
+abgespeicherten	stored
+gefiltete	filtered
+einschliesslich	including
+achtung	attention
+betriebstundenzaehler	operating hours counter
+betribsstundenzaehler	operating hours counter
+bild	image
+oelstandsanzeige	oil level display
+oelstand	oil level
+bisheriger	previous
+verifizierter	verified
+entprellstatus	debounce status
+prozessor	processor
+art	type
+schalterstati	switch states
+sammelbyte	collective byte
+wertreihe	value series
+staat	state
+partieklfilterregeneration	particulate filter regeneration
+notluftposition	emergency air position
+losnummer	lot number
+frequenz	frequency
+grobleck	coarse leak
+quadratmillimeter	square millimetres
+pruefbedingungen	test conditions
+gepruefte	checked
+geprueften	checked
+uebergebenen	transferred
+umfang	scope
+motorstopp	engine stop
+zw	between
+bilanziertem	balanced
+oellampensteller	oil lamp actuator
+fehlerspecherfehlbedatung	fault memory misconfiguration
+verkokung	coking
+asymmetrischer	asymmetric
+anlagenmodell	plant model
+dynamofeld	dynamo field
+leseversuches	read attempt
+schreibversuches	write attempt
+drehzahlfuehrung	engine speed control
+eingefrorener	frozen
+lern	learning
+eingelesenes	read-in
+endgueltiger	final
+endwert	end value
+katkonvertierungspotenzial	catalyst conversion potential
+energiestatus	energy status
+enthalpie	enthalpy
+erhoehtem	increased
+sporadische	sporadic
+irregulaere	irregular
+ladeluftemperatursensor	charge air temperature sensor
+ladeluftemperatur	charge air temperature
+gut	good
+erhoehender	increasing
+stabilitaetseingriff	stability intervention
+bordnetzinstabilitaet	electrical system instability
+restkilometer	remaining kilometres
+restzeit	remaining time
+wiederbefuellung	refilling
+leckagegroesse	leakage size
+ratiowert	ratio value
+excenterwellenadaption	eccentric shaft adaptation
+excenterwellenadaptionswert	eccentric shaft adaptation value
+limitierung	limitation
+umsetzung	implementation
+massetastung	ground switching
+uebertragenen	transmitted
+leerlauftestimpuls	idle test pulse
+leerlauftestimpulsverfahren	idle test pulse method
+fahrtrichtungswunsch	requested direction
+vorder	front
+globale	global
+globaler	global
+massnahmen	measures
+vorentflammung	pre-ignition
+gluehzuendung	glow ignition
+fahrstufe	gear position
+antriebstrang	drivetrain
+verrussung	sooting
+ueberblenden	cross-fade
+kondensatrisiko	condensation risk
+kondensat	condensate
+drehzahueberwachung	engine speed monitoring
+freischaltcode	activation code
+fehlerhafte	faulty
+fehlerhaften	faulty
+einfachfehler	single fault
+maschiene	machine
+ueberwachten	monitored
+ueberwachtem	monitored
+periodischen	periodic
+zylinderabschaltungsmuster	cylinder deactivation pattern
+zylinderabschaltung	cylinder deactivation
+foerderdauer	delivery time
+umpumpfunktion	pump-over function
+bitweise	bitwise
+anschleppen	tow start
+fremdbestromung	external power
+fremdladen	external charging
+motormanager	engine manager
+gasmaasenstrom	gas mass flow
+lernfortschritt	learning progress
+gluehleistung	glow power
+gemessenener	measured
+ableitung	derivative
+genereller	general
+lastanhebeung	load increase
+ausgaenge	outputs
+schwefelmasse	sulphur mass
+gesamtfahrleistung	total mileage
+gesamtlaufzeit	total running time
+ggf	if applicable
+gesamtreflexstartzahl	total reflex start count
+letzen	last
+gesamtstartzahl	total start count
+volumetrischer	volumetric
+waermemenge	heat quantity
+gesundheitszustand	state of health
+modeliert	modelled
+modeliertem	modelled
+gluehtemperatur	glow temperature
+gibt	gives
+gluehlampenansteuerung	glow lamp control
+gluehzustand	glow state
+aschezuwachs	ash increase
+bremsung	braking
+emaschine	electric motor
+konvertierungsrate	conversion rate
+systembefuellung	system filling
+hochaufgeloestes	high-resolution
+hochaufgeloest	high-resolution
+hochrechnung	extrapolation
+huechstgeschwindigkeitsbegrenzung	top speed limitation
+hoechstgeschwindigkeit	top speed
+haeufigkeitszaehler	frequency counter
+implementierung	implementation
+watchdogabschaltung	watchdog shut-off
+verzoegerungszeit	delay time
+sensorunterbrechung	sensor open circuit
+inkrement	increment
+innenwiederstand	internal resistance
+intelligente	intelligent
+interpolierter	interpolated
+waermemanagementkoordinator	heat management coordinator
+welle	shaft
+antiruckel	anti-jerk
+nennleistung	rated power
+additiv	additive
+kalibrierte	calibrated
+katschaedigungsfaktor	catalyst damage factor
+gealtert	aged
+kennzahl	index
+bestimmenden	determining
+einbau	installation
+verbautes	installed
+kodierparameter	coding parameter
+gelegt	placed
+kopierter	copied
+fester	fixed
+kundenspezifischer	customer-specific
+kurbelgehause	crankcase
+leckagefehler	leakage fault
+basierend	based
+startbefehl	start command
+kurzschlu	short circuit
+rkennung	detection
+ladefehler	charging fault
+entprellt	debounced
+ladezeitsollwert	charging time target
+gleitender	moving
+ladungsbilanz	charge balance
+lambasignal	lambda signal
+katueberhitzungsschutz	catalyst overheating protection
+bankselektiv	per bank
+motoraustritt	engine outlet
+lambdwert	lambda value
+lamdaadaption	lambda adaptation
+lamdaintegrator	lambda integrator
+lamdaregelung	lambda control
+lamdaregler	lambda controller
+lamdaregelfaktor	lambda control factor
+lampenstatus	lamp status
+parkbremse	parking brake
+langzeitumpumpmenge	long-term pump-over quantity
+kuehlmitteltemperaturmodel	coolant temperature model
+filtriert	filtered
+oeffnungswunsch	opening request
+lenkradwinkel	steering wheel angle
+umdrehungsgeschwindigkeit	rotational speed
+berichteter	reported
+zeichen	character
+kanalweise	per channel
+leitungsunterbrechungsdiagnose	open circuit diagnosis
+sensorsignalverzoegerungsdiagnoseendwert	sensor signal delay diagnosis end value
+desymmetrierungsgrad	desymmetrization level
+oeffnungsgrund	opening reason
+symmetrierung	balancing
+einzelzellenstatus	single cell status
+loadresponsevorgabe	load response setpoint
+loadresponsewert	load response value
+hardwarereferenznummer	hardware reference number
+nennspannung	rated voltage
+produkfamilie	product family
+produktionswerk	production plant
+seriennummer	serial number
+softwarereferenznummer	software reference number
+luftdurchsatz	air throughput
+varianteninfo	variant info
+inversen	inverse
+eintrittstemperatur	inlet temperature
+anderen	other
+fehlerloeschungsfeedback	fault clearing feedback
+relevant	relevant
+tabellenversion	table version
+maskierte	masked
+ggue	compared to
+peakstart	peak start
+peakphase	peak phase
+generatorisch	generator mode
+motorisch	motor mode
+erlaubte	permitted
+erlaubter	permitted
+moegliches	possible
+moeglich	possible
+anzeigendes	displaying
+inklusive	including
+bezueglich	regarding
+reserve	reserve
+schreiben	write
+feuchtigkeitsmenge	moisture quantity
+feuchtigkeit	humidity
+ablagern	deposit
+einstellen	set
+darf	may
+verzoegerungsfaktor	delay factor
+verzoegerung	delay
+stationaerer	steady-state
+stationaerem	steady-state
+inidiziertes	indicated
+maxwert	maximum value
+minwert	minimum value
+betaetigt	pressed
+angezeites	displayed
+kraftsoffpumpe	fuel pump
+kraftstoffpumpe	fuel pump
+fehlerschranken	fault limits
+mindestens	at least
+einmal	once
+momentenwirksamen	torque-effective
+spaetverstellungen	retardations
+spaetverstellung	retardation
+halbierter	halved
+quantisierung	quantization
+quantisiert	quantized
+mehrere	several
+ablaeufe	sequences
+mittlwert	mean value
+entnahme	withdrawal
+turoblader	turbocharger
+modeltemperatur	model temperature
+momentenanfordernde	torque-requesting
+momentenbildende	torque-forming
+momentenforderung	torque demand
+momentenreserve	torque reserve
+automatik	automatic
+motorabstellposition	engine stop position
+motorabstellwinkel	engine stop angle
+ordnung	order
+motoroelbefuellung	engine oil filling
+generiert	generated
+applikationsereignis	calibration event
+adaptiver	adaptive
+nominale	nominal
+nominalspannung	nominal voltage
+leckageluftmassenstrom	leakage air mass flow
+ausgelegt	designed
+grenzaenderungshaeufigkeit	limit change frequency
+zulassung	homologation
+schreibzyklen	write cycles
+etwas	somewhat
+laengeren	longer
+stellwertbegrenzung	control value limitation
+oeffnungsanforderung	opening request
+oeffnungszustand	opening state
+oellaufzeit	oil running time
+flashresistent	flash-resistant
+gangschaltung	gearshift
+orientierungsmittelwert	orientation mean value
+orientierungswert	orientation value
+ort	location
+nullgangsensorsognals	neutral gear sensor signal
+permitivitaet	permittivity
+permittivitaet	permittivity
+energieabgleich	energy balance
+pruefende	to be checked
+weg	travel
+prozent	percent
+prozentuales	percentage
+prozessstatus	process status
+segmentadaptation	segment adaptation
+waehl	selector
+schaltwinkel	switching angle
+nachlaufverzoegerung	after-run delay
+ueberwachungskriteriums	monitoring criterion
+ratiometriekorrekturfaktor	ratiometric correction factor
+realdifferenzzeit	real difference time
+reale	real
+reales	real
+einkuppeln	engaging the clutch
+umpumpeinheit	pump-over unit
+umpumpen	pump-over
+umpumpmenge	pump-over quantity
+umpumpmengen	pump-over quantities
+umpumppumpe	pump-over pump
+pruefbereich	test range
+regenerationsdringlichkeit	regeneration urgency
+rekuperierte	recuperated
+energiemenge	energy quantity
+bezug	reference
+hintegrundinformationen	background information
+kombiinstrument	instrument cluster
+bevor	before
+abschaltszenario	shut-off scenario
+anfaengt	starts
+resttankmenge	remaining fuel
+restweg	remaining travel
+abgeleitet	derived
+raildruch	rail pressure
+oilniveau	oil level
+vorfoerderdrucksensor	pre-supply pressure sensor
+vorfoerderdruck	pre-supply pressure
+vorfoerdermenge	pre-supply quantity
+rotorposition	rotor position
+rotorwinkel	rotor angle
+rudimentaer	rudimentary
+abgeschaetze	estimated
+zuendkerzentemperatur	spark plug temperature
+zuendkerzenverrussung	spark plug sooting
+zuendkerze	spark plug
+rueckgerechneter	back-calculated
+rueckgerechnetes	back-calculated
+rueckmeldestatus	feedback status
+rueckgelesener	read-back
+decodierte	decoded
+fehlerlampenstatus	fault lamp status
+saison	season
+saisontemperatur	seasonal temperature
+sammel	collective
+sammelbitleiste	collective bit field
+saugrohdruck	intake manifold pressure
+saugrohrdruck	intake manifold pressure
+koppelwert	coupling value
+laendervariante	country variant
+schaltposition	switch position
+schittstellenbotschaft	interface message
+haengerstatus	trailer status
+kuehmitteltemperatur	coolant temperature
+resultierende	resulting
+resultierendes	resulting
+resultierend	resulting
+therm	thermal
+schliesszeitausgabe	closing time output
+rueckstellfeder	return spring
+segelstatus	coasting status
+wechelgradient	change gradient
+servicezaehlerstand	service counter
+situative	situational
+ueberschreibt	overwrites
+regelwerk	rule set
+verzoegerungsdiagnose	delay diagnosis
+softwareversion	software version
+bordnetzspg	on-board voltage
+entlastanforderung	relief request
+bestromung	energizing
+bettriebsart	operating mode
+solladedruck	target boost pressure
+lagerstuhlkuehlung	bearing block cooling
+solldrehzal	target engine speed
+momentenmanager	torque manager
+trimmregler	trim controller
+drehmomentmanagement	torque management
+sportschalter	sport switch
+kraftstofftemperaturfuehler	fuel temperature sensor
+standardisierter	standardized
+unentprellt	undebounced
+redundanter	redundant
+redundanten	redundant
+flexraydiagnose	FlexRay diagnosis
+permanent	permanent
+unterbrochen	interrupted
+motorstartproblemen	engine start problems
+regenerationssperre	regeneration lock
+regenerationsunterbrechung	regeneration interruption
+gefroren	frozen
+zwangsrueckschaltung	forced downshift
+abschaltbedingengungen	shut-off conditions
+abschaltbedingungen	shut-off conditions
+anhaenger	trailer
+beendigung	termination
+notnachladen	emergency recharging
+bremslichtschalter	brake light switch
+dualvergleich	dual comparison
+energiesparmode	energy saving mode
+fehlerspeichersperre	fault memory lock
+erweitert	extended
+kickdown	kickdown
+klima	air conditioning
+absperr	shut-off
+belueftungs	ventilation
+belueftungsdruck	ventilation pressure
+optionale	optional
+dreht	turns
+lernverfahren	learning method
+fahrbetrieb	driving operation
+motorhaube	bonnet
+zentralventil	central valve
+versendung	sending
+ernehmen	take over
+uebernehmen	take over
+uebernommen	taken over
+taste	button
+trennkupplung	separating clutch
+aktiviert	activated
+verringerung	reduction
+gluehaktivitaeten	glow activities
+widerstandslernvorgang	resistance learning process
+zustandautomat	state machine
+auftaupruefung	thaw check
+auftauen	thawing
+massetaktungsdiagnose	ground pulse diagnosis
+nachladeanforderung	recharge request
+temporaeren	temporary
+fuehrungssignal	reference signal
+statusautomaten	state machine
+umschaltung	switchover
+waermespeicherung	heat storage
+irrev	irreversible
+kompressorbypassventil	compressor bypass valve
+sicherheitskonzept	safety concept
+sendsignale	transmit signals
+plausibel	plausible
+beschreibung	description
+ueberwacht	monitored
+statusinfo	status info
+statustraeger	status carrier
+synchronisierung	synchronization
+markierung	marking
+wirksamen	effective
+niedrigsten	lowest
+regressionsgerade	regression line
+steuertastverhaeltnis	control duty cycle
+sonderverbraucher	special consumers
+steuerwert	control value
+summenmomentenauftrag	total torque request
+lambdasondenheitzung	lambda sensor heater
+lamdasondenheitzung	lambda sensor heater
+wastegateanstuerung	wastegate control
+wastgateansteuerung	wastegate control
+wagen	vehicle
+getriebedeckel	transmission cover
+getriebeoeltemperaturmodel	transmission oil temperature model
+rueckgefuehrten	recirculated
+moeglicherweise	possibly
+vereisten	iced
+korrelation	correlation
+tiefpa	low-pass
+tiefpassgefilterter	low-pass filtered
+herabsetzen	reduce
+oelverduennungserkennung	oil dilution detection
+oelverduennung	oil dilution
+translatorische	translational
+triebstranguebersetzungsverhaeltnis	drivetrain ratio
+triebstranguebersetzung	drivetrain ratio
+typpruefnummer	type approval number
+umschalten	switch over
+darstellung	representation
+unbekannt	unknown
+unplausibilitaet	implausibility
+untermodi	sub-modes
+lernfehler	learning error
+systemkoordination	system coordination
+urlernvorgang	initial learning process
+schaltet	switches
+verbot	prohibition
+filterreinigung	filter cleaning
+laeuft	running
+verfuegbarkeit	availability
+verlustmoment	loss torque
+verlustmomentabweichung	loss torque deviation
+verschobener	shifted
+verursacher	cause
+verweilzeit	dwell time
+verwendete	used
+verwendetes	used
+regelprinzip	control principle
+einzustellender	to be set
+zerstoerten	destroyed
+vorhergehender	previous
+vorhergehendem	previous
+vorsteuerspannung	pilot control voltage
+gluehregelkreis	glow control loop
+vortriebssollmoment	propulsion target torque
+koordination	coordination
+leistungsreduziert	power-reduced
+weckgrund	wake-up reason
+genau	exact
+kontrolle	check
+hochzaehlens	counting up
+kraftstoffmassenfluss	fuel mass flow
+winkeluhrstand	angle clock
+fahrerassistezsystem	driver assistance system
+fahrerassistenzsysteme	driver assistance systems
+gluehsystem	glow system
+ladeztustandsbestimmung	state of charge determination
+freibrennvorgaenge	burn-off processes
+ruecksetzbar	resettable
+dieselfilter	diesel filter
+grenzueberschreitung	limit exceeded
+zaehlen	count
+schleppstarts	tow starts
+eingelegtem	engaged
+eingelegter	engaged
+wiederstarts	restarts
+beschaedigten	damaged
+schaedigung	damage
+inducment	inducement
+anliegende	applied
+stopp	stop
+zeitpunt	point in time
+betaetigung	actuation
+ersatzdosierstrategie	substitute dosing strategy
+oeniveaufunktion	oil level function
+zylinderkopftemperatur	cylinder head temperature
+zylinderkopftemperatursensor	cylinder head temperature sensor
+zylinderkopf	cylinder head
+drehzahlerhoehungen	engine speed increases
+strasse	road
+masseinheit	unit
+erzwungenen	forced
+auslas	exhaust
+abstellpfade	shut-off paths
+abstellpfaden	shut-off paths
+irreversiblen	irreversible
+fehlerspeicherverwaltung	fault memory management
+bereitgestellt	provided
+einspritzzaehlerstand	injection counter
+urstart	initial start
+foerdermodulheizung	delivery module heater
+stoechiometrisches	stoichiometric
+zudosierter	dosed
+reibmoment	friction torque
+eingespritze	injected
+entprellter	debounced
+erwartete	expected
+freies	free
+gewaehlter	selected
+erzeugt	generated
+stand	state
+konfigurierte	configured
+korrigerte	corrected
+verfuegung	disposal
+stehende	available
+nennkapazitaet	rated capacity
+abzueglich	minus
+programmiervorgaengen	programming operations
+stromerwartungswert	expected current value
+automatikgetriebe	automatic transmission
+prognostizierte	predicted
+rueckgemeldete	reported back
+oberflaechentemperatur	surface temperature
+tatsaechliches	actual
+ursaechlicher	causal
+vorgezogener	advanced
+zugeteilte	allocated
+bonuskraftstoffmenge	bonus fuel quantity
+peilstab	dipstick
+umgebungstemp	ambient temperature
+gluehkerzentemperatur	glow plug temperature
+heizbetriebes	heating mode
+startabbrueche	start aborts
+schluesselstart	key start
+fahrgeschwindigkeit	vehicle speed
+fahr	driving
+stromaufwaerts	upstream
+stromabwaerts	downstream
+notlaeuf	limp mode
+aeusserern	outer
+baldungsphasen	loading phases
+beladungsphasen	loading phases
+abgesch	switched off

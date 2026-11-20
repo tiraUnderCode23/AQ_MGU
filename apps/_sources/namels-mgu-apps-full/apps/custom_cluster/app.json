@@ -1,0 +1,410 @@
+{
+  "id": "custom_cluster",
+  "title": "Custom Cluster",
+  "description": "KOMBI-only selected-layout parked tests and reliable text diagnostics.",
+  "version": "0.6.10",
+  "vendor": "custom",
+  "loggingId": "OAQ7",
+  "iconGlyph": "CC",
+  "signals": {
+    "de.bmw.infotainment.vehicle.CDS": {
+      "statusEngineSpeed2": "rs",
+      "statusEngineTemperature": "rs"
+    },
+    "de.bmw.infotainment.vehicle.Vehicle2": {
+      "statusCarSpeed2": "rs"
+    },
+    "de.bmw.infrastructure.VehicleInformation": {
+      "statusGearboxDrive": "s",
+      "DataPowerTrain2": "s"
+    }
+  },
+  "screens": [
+    {
+      "name": "MAIN",
+      "kind": "canvas",
+      "title": "Custom Cluster",
+      "buttons": [
+        [
+          "BTN_TEST",
+          "Test KOMBI"
+        ],
+        [
+          "BTN_DIAG",
+          "Diagnostics"
+        ],
+        [
+          "BTN_QR",
+          "QR logs"
+        ],
+        [
+          "BTN_LOG",
+          "Live Logs"
+        ],
+        [
+          "BTN_SETTINGS",
+          "Settings"
+        ]
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "key": "layout",
+      "label": "Cluster layout",
+      "type": "choice",
+      "default": "stock",
+      "options": [
+        [
+          "stock",
+          "BMW original (unchanged)"
+        ],
+        [
+          "sixwb",
+          "BMW 6WB digital"
+        ],
+        [
+          "oem",
+          "G21 OEM-style recreation"
+        ],
+        [
+          "g80",
+          "G80-inspired design"
+        ],
+        [
+          "sport",
+          "M Sport"
+        ],
+        [
+          "classic",
+          "Classic dials"
+        ],
+        [
+          "minimal",
+          "Minimal digital"
+        ]
+      ]
+    },
+    {
+      "key": "wazeMap",
+      "label": "Waze map in cluster",
+      "type": "choice",
+      "default": "auto",
+      "options": [
+        [
+          "auto",
+          "Keep Waze's own setting"
+        ],
+        [
+          "on",
+          "Show Waze map"
+        ],
+        [
+          "off",
+          "Hide Waze map"
+        ]
+      ]
+    },
+    {
+      "key": "gearDisplay",
+      "label": "Selector text: D or gear (D1, D2 ...)",
+      "type": "choice",
+      "default": "gear",
+      "options": [
+        [
+          "selector",
+          "D only (drive mode)"
+        ],
+        [
+          "gear",
+          "D1, D2 ... when the car reports the gear"
+        ],
+        [
+          "gear_estimate",
+          "D1, D2 ... also estimated from RPM and speed"
+        ]
+      ]
+    },
+    {
+      "key": "kombiAuto",
+      "label": "Show layout in KOMBI automatically",
+      "type": "choice",
+      "default": "off",
+      "options": [
+        [
+          "off",
+          "Off (only manual Test KOMBI)"
+        ],
+        [
+          "parked",
+          "Automatically while parked in P (no menu needed)"
+        ]
+      ]
+    },
+    {
+      "key": "enablePanelTests",
+      "label": "Allow experimental KOMBI tests",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "key": "coverOriginal",
+      "label": "Cover original dials during KOMBI test",
+      "type": "bool",
+      "default": true
+    },
+    {
+      "key": "sixwbTheme",
+      "label": "6WB driving display",
+      "group": "6WB",
+      "type": "choice",
+      "default": "comfort",
+      "when": {
+        "layout": "sixwb"
+      },
+      "options": [
+        [
+          "comfort",
+          "Comfort (white)"
+        ],
+        [
+          "sport",
+          "Sport (red)"
+        ],
+        [
+          "eco",
+          "ECO PRO (blue)"
+        ]
+      ]
+    },
+    {
+      "key": "sixwbColorSource",
+      "label": "6WB instrument colors",
+      "group": "6WB",
+      "type": "choice",
+      "default": "original",
+      "when": {
+        "layout": "sixwb"
+      },
+      "options": [
+        [
+          "original",
+          "Original 6WB theme colors"
+        ],
+        [
+          "studio",
+          "Use Cluster colors below"
+        ]
+      ]
+    },
+    {
+      "key": "colorMode",
+      "label": "Color source",
+      "group": "Cluster colors",
+      "type": "choice",
+      "default": "palette",
+      "options": [
+        [
+          "palette",
+          "Color palette"
+        ],
+        [
+          "rgb",
+          "Custom RGB"
+        ],
+        [
+          "cycle",
+          "Automatic color cycle"
+        ]
+      ]
+    },
+    {
+      "key": "accent",
+      "label": "Instrument accent",
+      "group": "Cluster colors",
+      "type": "choice",
+      "default": "m",
+      "when": {
+        "colorMode": "palette"
+      },
+      "options": [
+        [
+          "m",
+          "M blue"
+        ],
+        [
+          "cyan",
+          "Turquoise"
+        ],
+        [
+          "green",
+          "Neon green"
+        ],
+        [
+          "purple",
+          "Purple"
+        ],
+        [
+          "pink",
+          "Pink"
+        ],
+        [
+          "red",
+          "M red"
+        ],
+        [
+          "orange",
+          "Fire orange"
+        ],
+        [
+          "amber",
+          "Amber"
+        ],
+        [
+          "ice",
+          "Ice white"
+        ],
+        [
+          "white",
+          "Pure white"
+        ]
+      ]
+    },
+    {
+      "key": "rgbRed",
+      "label": "Custom red",
+      "group": "Cluster colors",
+      "type": "number",
+      "default": 32,
+      "steps": [
+        0,
+        16,
+        32,
+        48,
+        64,
+        80,
+        96,
+        112,
+        128,
+        144,
+        160,
+        176,
+        192,
+        208,
+        224,
+        240,
+        255
+      ],
+      "when": {
+        "colorMode": "rgb"
+      }
+    },
+    {
+      "key": "rgbGreen",
+      "label": "Custom green",
+      "group": "Cluster colors",
+      "type": "number",
+      "default": 176,
+      "steps": [
+        0,
+        16,
+        32,
+        48,
+        64,
+        80,
+        96,
+        112,
+        128,
+        144,
+        160,
+        176,
+        192,
+        208,
+        224,
+        240,
+        255
+      ],
+      "when": {
+        "colorMode": "rgb"
+      }
+    },
+    {
+      "key": "rgbBlue",
+      "label": "Custom blue",
+      "group": "Cluster colors",
+      "type": "number",
+      "default": 255,
+      "steps": [
+        0,
+        16,
+        32,
+        48,
+        64,
+        80,
+        96,
+        112,
+        128,
+        144,
+        160,
+        176,
+        192,
+        208,
+        224,
+        240,
+        255
+      ],
+      "when": {
+        "colorMode": "rgb"
+      }
+    },
+    {
+      "key": "cycleSeconds",
+      "label": "Full rainbow cycle",
+      "group": "Cluster colors",
+      "type": "number",
+      "unit": "s",
+      "default": 20,
+      "steps": [
+        5,
+        10,
+        15,
+        20,
+        30,
+        60,
+        120
+      ],
+      "when": {
+        "colorMode": "cycle"
+      }
+    },
+    {
+      "key": "colorBrightness",
+      "label": "Color brightness",
+      "group": "Cluster colors",
+      "type": "number",
+      "unit": "%",
+      "default": 100,
+      "steps": [
+        25,
+        40,
+        55,
+        70,
+        85,
+        100
+      ]
+    },
+    {
+      "key": "phoneBridge",
+      "label": "iPhone Shortcuts bridge (works without the menu)",
+      "type": "bool",
+      "default": false
+    },
+    {
+      "key": "phoneBadge",
+      "label": "Phone status line (green = opened, red = closed; works without the menu)",
+      "type": "bool",
+      "default": false
+    }
+  ],
+  "mguAppStartType": "autostart"
+}

@@ -1,0 +1,35 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+[Unit]
+Description=amn-sideview-cam: Side View's camera (the camera unit's H.264 on the media bus), decoded for the cluster renderer
+RequiresMountsFor=/var/opt
+Requires=amn-sideview-cam.socket
+Wants=cluster-render.socket
+After=local-fs.target amn-sideview-cam.socket cluster-render.socket
+# as waze-on-cluster: the media bus (ufipc_daemon) and the AVB streams (avbstreamhandler) up first; ordering only
+After=ufipc_daemon.service avbstreamhandler.service
+StartLimitIntervalSec=600
+StartLimitBurst=10
+
+[Service]
+# as waze-on-cluster.service (VERIFIED there on the car): hmi_5000 opens /dev/dri/renderD128 (video group); mgu_ufipc
+# lets it join the media bus; tm_oap_app opens the cluster renderer's socket. Nothing of it runs as root but the mkdir.
+User=hmi_5000
+Group=hmi_5000
+SupplementaryGroups=mgu_ufipc tm_oap_app
+RuntimeDirectory=amn-sideview-cam
+RuntimeDirectoryMode=0755
+ExecStartPre=-+/bin/sh -c 'mkdir -p /var/opt/amn-sideview-cam/log /var/opt/amn-sideview-cam/state && chown hmi_5000:hmi_5000 /var/opt/amn-sideview-cam/log /var/opt/amn-sideview-cam/state'
+ExecStart=/var/opt/amn-sideview-cam/current/amn-sideview-cam -c /var/opt/amn-sideview-cam/current/amn-sideview-cam.conf
+Restart=on-failure
+RestartSec=5
+Nice=5
+CPUQuota=100%
+MemoryLimit=192M
+TasksMax=32
+# no core dump to the crash handler (it restarts the head unit for programs it does not list)
+LimitCORE=1
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

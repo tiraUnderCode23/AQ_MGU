@@ -1,0 +1,13 @@
+{
+  "name": "true-time",
+  "version": "1.0.0",
+  "description": "True Time: acceleration and braking times on the BMW iDrive 7 (MGU) head unit, measured and corrected for the road's slope",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "setup": "node tools/setup.js",
+    "emu": "node tools/emu.js",
+    "test": "node test/run.js",
+    "build:car": "node tools/build-car.js"
+  }
+}

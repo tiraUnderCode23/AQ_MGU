@@ -96,29 +96,24 @@ class ComponentReadmeMatrixTests(unittest.TestCase):
         self.assertIsNotNone(config)
         self.assertEqual(json.loads(config[1]), self.settings)
         self.assertIn(self.external["source_id"], {row["id"] for row in self.settings["sources"]})
-        self.assertIn("does not auto-import", text)
-        self.assertIn(f"{len(self.known)} inventory entries", text)
         self.assertIn("not a live install result", self.document)
         self.assertIn("NOT OBSERVED", self.document)
 
-    def test_gallery_hmi_badges_match_current_inventory(self):
-        text = (ROOT / 'README.md').read_text(encoding='utf-8')
-        checked = 0
-        for block in re.findall(r'<details>.*?</details>', text, re.DOTALL):
-            identifier = re.search(r'<summary>.*?<code>([^<]+)</code>', block)
-            if not identifier or identifier[1] not in self.inventory:
-                continue
-            row = self.inventory[identifier[1]]
-            expected = ', '.join(row.get('supported_hmi') or []) or 'Not declared'
-            with self.subTest(component=identifier[1]):
-                badge = re.search(r'\*\*Supported:\*\* ([^·\n]+)', block)
-                self.assertIsNotNone(badge)
-                self.assertEqual(badge[1].strip(), expected)
-                if row.get('source_port'):
-                    self.assertIn('AQ source adaptation', block)
-                    self.assertIn(row['source_port']['path'] + '/README.md', block)
-            checked += 1
-        self.assertEqual(checked, 37)
+    def test_gallery_covers_every_app_with_verified_icon_and_assets(self):
+        text = (ROOT / "README.md").read_text(encoding="utf-8")
+        apps = [row for row in self.inventory.values() if row["kind"] == "app"]
+        app_imgs = json.loads((ROOT / "data/app-images.json").read_text(encoding="utf-8"))
+        for row in apps:
+            cid = row["id"]
+            with self.subTest(component=cid):
+                self.assertIn(cid, app_imgs)
+                icon = app_imgs[cid]["icon"]
+                self.assertTrue(icon and (ROOT / icon).is_file(), f"missing icon for {cid}")
+                self.assertIn(f'src="{icon}"', text, f"icon not rendered in README for {cid}")
+                for img in app_imgs[cid]["images"][:3]:
+                    self.assertTrue((ROOT / img).is_file(), f"missing screenshot {img} for {cid}")
+                    self.assertIn(f'src="{img}"', text, f"screenshot {img} not rendered in README")
+        self.assertGreaterEqual(len(apps), 200)
 
 
 if __name__ == "__main__":

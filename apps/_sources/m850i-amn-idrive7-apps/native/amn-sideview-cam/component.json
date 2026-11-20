@@ -1,0 +1,67 @@
+{
+  "id": "amn-sideview-cam",
+  "kind": "tool",
+  "version": "0.2.0",
+  "license": "GPL-3.0-or-later",
+  "title": "Side View camera",
+  "description": "For the app Side View: the left or right camera in the instrument cluster while you signal. Receives the camera unit's video (the stream Drive Recorder and the parking cameras use), decodes it on the GPU and draws it in the cluster's centre through Cluster renderer; nothing shows unless Side View asks the camera for a side. The program is Robert Nisipeanu's waze-on-cluster (GPL-3.0-or-later), with Side View's settings and one addition: a night look (black and white, bright highlights) the app switches on and off.",
+  "requires": {
+    "mgu-deploy": "0.7.0",
+    "cluster-render": "0.5.3"
+  },
+  "uninstallable": true,
+  "mguHmi": [
+    "ID7"
+  ],
+  "files": [
+    {
+      "path": "amn-sideview-cam",
+      "from": "amn-sideview-cam",
+      "mode": "0755"
+    },
+    {
+      "path": "amn-sideview-cam.conf",
+      "from": "amn-sideview-cam.conf",
+      "mode": "0644"
+    },
+    {
+      "path": "LICENSE",
+      "from": "vendor/woc/LICENSE",
+      "mode": "0644"
+    },
+    {
+      "path": "README.md",
+      "from": "README.md",
+      "mode": "0644"
+    }
+  ],
+  "crashNames": [
+    "amn-sideview-cam"
+  ],
+  "units": [
+    {
+      "name": "amn-sideview-cam.socket",
+      "from": "systemd/amn-sideview-cam.socket"
+    },
+    {
+      "name": "amn-sideview-cam.service",
+      "from": "systemd/amn-sideview-cam.service"
+    }
+  ],
+  "enable": [
+    {
+      "unit": "amn-sideview-cam.socket",
+      "target": "sockets.target"
+    },
+    {
+      "unit": "amn-sideview-cam.service",
+      "target": "multi-user.target"
+    }
+  ],
+  "restart": [
+    "amn-sideview-cam.service"
+  ],
+  "recmgr": [
+    "amn-sideview-cam"
+  ]
+}

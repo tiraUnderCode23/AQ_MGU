@@ -24,7 +24,7 @@ import warnings
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "apps/_sources/idrive7-apps"
 EVIDENCE = ROOT / "data/id8-native-app-evidence.json"
-COMMIT = "422957a85461826c1e8654d37c8ec66a94849f9c"
+COMMIT = "35bca28bc82b30482d73782877ebaf92c69dcb8c"
 APP_IDS = {
     "ambient_config", "brake_test", "car_vitals", "doom", "draggy",
     "dtc_scanner", "dyno", "edrive", "gforce", "live_adjustments",
@@ -280,7 +280,7 @@ const wireSettings = new Function('listSheet', 'SPEC', 'settingsRows', wire + '\
             # evidence; do not change upstream source or bury other warnings.
             for warning in observed_warnings:
                 self.assertTrue(issubclass(warning.category, ResourceWarning), str(warning.message))
-                self.assertTrue(warning.filename.endswith("kit/tools/build.py"), warning.filename)
+                self.assertTrue(warning.filename.replace("\\", "/").endswith("kit/tools/build.py"), warning.filename)
             type(self).synthetic_packaging_resource_warnings = len(observed_warnings)
             with tarfile.open(dist / ("brake_test@" + spec["version"] + ".tgz"), "r:gz") as archive:
                 def read(name):

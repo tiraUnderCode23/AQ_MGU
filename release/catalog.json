@@ -337,6 +337,28 @@
       "uninstallable": true
     },
     {
+      "id": "aurelm_emby",
+      "kind": "app",
+      "version": "0.3.14",
+      "title": "Emby",
+      "description": "The head unit as a cast target for the Emby phone app: sign in once from the phone (QR code), then choose \"BMW iDrive\" in Emby's cast menu. The film plays on the centre screen while parked, its sound on the car's speakers; pause, seek and stop from the phone. Needs the Emby cast service.",
+      "mguHmi": [
+        "ID7"
+      ],
+      "artifact": {
+        "name": "aurelm_emby@0.3.14.tgz",
+        "size": 598309,
+        "sha256": "37e12d2394ad250ebf166d4016d18637834d6a73a2555225ba072d67c9da4fa3",
+        "url": "https://github.com/aurelmarius/bmw-test-apps/releases/download/catalog/aurelm_emby@0.3.14.tgz"
+      },
+      "uninstallable": true,
+      "icon": "aurelm_emby.png",
+      "iconSha256": "9682cbd70243b5b0193c54d589a11a38ee4b81eaec07326a666eed140ce39918",
+      "requires": {
+        "aurelm-emby": "0.3.13"
+      }
+    },
+    {
       "id": "aurelm_engine_care",
       "kind": "app",
       "version": "1.5.2",
@@ -407,6 +429,50 @@
         "url": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/packages/aurelm_lucky_sevens@1.1.0.tgz"
       },
       "uninstallable": true
+    },
+    {
+      "id": "aurelm_mediaprobe",
+      "kind": "app",
+      "version": "0.1.3",
+      "title": "Media Probe",
+      "description": "What the car offers a music player (the first step of a Music Assistant client): the steering wheel's buttons, the source the HMI takes as playing, CarLife's bridge to BMW's media, button forwarding, and the BMW MediaPlayer's source for apps with files, a growing file, a pipe and http:// streams. Each test shows what the car answered; Report copies the log to a USB stick. Needs the Media Probe service.",
+      "mguHmi": [
+        "ID7"
+      ],
+      "artifact": {
+        "name": "aurelm_mediaprobe@0.1.3.tgz",
+        "size": 557548,
+        "sha256": "8b648e708ee074a4b995a211889f683ad061763cb814b4db9120e5392f097966",
+        "url": "https://github.com/aurelmarius/bmw-test-apps/releases/download/catalog/aurelm_mediaprobe@0.1.3.tgz"
+      },
+      "uninstallable": true,
+      "icon": "aurelm_mediaprobe.png",
+      "iconSha256": "25e7bde367376b5b51a704026c90ade7ca40800aad0c041d1074a74f45b39412",
+      "requires": {
+        "aurelm-mediaprobe": "0.1.3"
+      }
+    },
+    {
+      "id": "aurelm_music",
+      "kind": "app",
+      "version": "0.1.17",
+      "title": "Music Assistant",
+      "description": "Your Music Assistant server in the car: the home page's recommendations with their covers, the library (playlists, albums, artists, radio, tracks), search, and what plays with its cover, its progress and what comes next. The music comes over Sendspin and plays on the car's speakers; skip on the steering wheel goes to the next or the previous track; the track shows on the instrument cluster. Sign in once from the phone (QR code). Needs the Music Assistant service.",
+      "mguHmi": [
+        "ID7"
+      ],
+      "artifact": {
+        "name": "aurelm_music@0.1.17.tgz",
+        "size": 597652,
+        "sha256": "2a888a2e354c68adf0c55caeb73f95f0483a6f7390b5d493efba5c7af82e96f3",
+        "url": "https://github.com/aurelmarius/bmw-test-apps/releases/download/catalog/aurelm_music@0.1.17.tgz"
+      },
+      "uninstallable": true,
+      "icon": "aurelm_music.png",
+      "iconSha256": "89e420b4540245f1f70a78f46443e755c85af4070e52ee0e5cdd5fab697a1227",
+      "requires": {
+        "aurelm-music": "0.1.9"
+      }
     },
     {
       "id": "aurelm_myairplay",
@@ -660,6 +726,50 @@
       ],
       "icon": "https://github.com/bcs-asia/app-store/releases/download/catalog/bcs_store.png",
       "iconSha256": "fde27bf6c3ccc15aaa779fa3726ab981bd50b781a9cc0f0d00cf2f5fabca611a"
+    },
+    {
+      "id": "bimmervision",
+      "kind": "app",
+      "title": "BimmerVision",
+      "version": "0.2.78",
+      "description": "Continuous four-camera USB recording for iDrive 7 MGU with Surround View. Includes Google Drive Remote Backup over Wi-Fi, horn-triggered clip protection, and phone/computer playback with recorded telemetry. Back up selected recordings using your phone’s internet and view your saved BimmerVision backups at bimmervision.app. Direct capture performs no BMW Drive Recorder subscription check; a car without an entitlement has not yet been physically tested.",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "bimmervision-recorder": "0.2.78"
+      },
+      "artifact": {
+        "name": "bimmervision@0.2.78.tgz",
+        "size": 77544,
+        "sha256": "5bbe9f64203438249f850ec57556cf854b78eb3ecbe6e2a36d2c9db5b2bd175d",
+        "url": "https://github.com/Hexphase/BimmerVision/releases/download/v0.2.78/bimmervision@0.2.78.tgz"
+      },
+      "icon": "https://github.com/Hexphase/BimmerVision/releases/download/v0.2.78/store-icon.png",
+      "iconSha256": "2699dd3db86fef702d0889c7c6bd7b231bb62490898a257dc41113a48a158836"
+    },
+    {
+      "id": "bimmervision-recorder",
+      "kind": "tool",
+      "title": "BimmerVision Recorder",
+      "version": "0.2.78",
+      "description": "Required recorder service for BimmerVision. Sets up this car automatically; never includes another car’s credentials.",
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {
+        "mgu-deploy": "0.8.18",
+        "mgu-updater": "0.8.45",
+        "mgu-uplink": "0.7.12"
+      },
+      "optional": true,
+      "uninstallable": true,
+      "artifact": {
+        "name": "bimmervision-recorder@0.2.78.tgz",
+        "size": 3390563,
+        "sha256": "9aaa401a86ac55aa9959e6870ca65c3ddc89aaf1d3508f9c895422995cc72657",
+        "url": "https://github.com/Hexphase/BimmerVision/releases/download/v0.2.78/bimmervision-recorder@0.2.78.tgz"
+      }
     },
     {
       "id": "bm3_live_id8",
@@ -1250,29 +1360,54 @@
       }
     },
     {
+      "id": "idv7lol",
+      "kind": "app",
+      "title": "idv7lol",
+      "description": "Your own layout on the whole instrument cluster: themes made with idv7lol Studio, drawn by the cluster itself",
+      "author": "ALMSTRA",
+      "version": "0.2.15",
+      "artifact": {
+        "name": "idv7lol@0.2.15.tgz",
+        "size": 2150623,
+        "sha256": "42cdc300ba0fd785b2493d2e677b8ffaf21c3400b039f14ad52277bc89a61c68",
+        "url": "https://github.com/ALMSTRA/idv7lol/releases/download/catalog/idv7lol%400.2.15.tgz"
+      },
+      "icon": "idv7lol.png",
+      "iconSha256": "bd5998c4316a0de0488888fcf66b0cfda5e08adf180c3394d033e0151309c7e6",
+      "requires": {
+        "cluster-render": "0.6.9",
+        "mgu-deploy": "0.8.27"
+      },
+      "uninstallable": true,
+      "mguHmi": [
+        "ID7"
+      ]
+    },
+    {
       "id": "iteriodev_ambient",
       "kind": "app",
       "title": "Ambient Light",
-      "version": "1.4.2",
+      "version": "1.4.3",
       "mguHmi": [
         "ID7",
         "ID8"
       ],
       "requires": {
-        "iteriodev-comfort": "0.6.1",
+        "iteriodev-comfort": "0.6.3",
         "mgu-deploy": "0.7.5"
       },
       "build": "unit",
       "uninstallable": true,
       "artifact": {
-        "name": "iteriodev_ambient@1.4.2.tgz",
-        "size": 744198,
-        "sha256": "509c535ce7cc31fb7bdd2fa9ce893a08bccad23fb7d71ba92259e5003e69f110",
-        "url": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/apps/iteriodev_ambient/iteriodev_ambient@1.4.2.tgz"
+        "name": "iteriodev_ambient@1.4.3.tgz",
+        "url": "https://raw.githubusercontent.com/IterioDev/car-apps/f9ca32bd3cebd163fa16fbe17cc3473623be2c81/apps/iteriodev_ambient/iteriodev_ambient@1.4.3.tgz",
+        "size": 744650,
+        "sha256": "ba1f7a12d46cd611bd7c3d868fafe195bfdfca6d3a490fcc39c2a01a360c5519"
       },
       "mguNeeds": [
         "renderer"
-      ]
+      ],
+      "description": "Any color on the interior ambient light. Your car's zones in a list (the ones your car has): give each the main color, its own or the car's, or pick All zones. Color bars for any shade, brightness (or follow the car's), the car's nine colors, and six presets that keep the whole look. Drive modes: a color for each drive mode (Sport, Comfort, Eco Pro, their Plus and Individual, Adaptive) that the light switches to with the mode, on or off. Works while the car's own ambient light is on. Needs the Comfort tool from the same source. Works with the touchscreen or the iDrive controller. iDrive 7 and "
     },
     {
       "id": "iteriodev_cardash",
@@ -1465,7 +1600,7 @@
       "id": "iteriodev_tailscale",
       "kind": "app",
       "title": "Tailscale",
-      "version": "1.1.1",
+      "version": "1.2.0",
       "mguHmi": [
         "ID7",
         "ID8"
@@ -1477,39 +1612,41 @@
       "build": "unit",
       "uninstallable": true,
       "artifact": {
-        "name": "iteriodev_tailscale@1.1.1.tgz",
-        "size": 728987,
-        "sha256": "92174a42f6a96fd9993b50b655990f8b838e15af5ca6395ed1ed2fdbb2e7535f",
-        "url": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/apps/iteriodev_tailscale/iteriodev_tailscale@1.1.1.tgz"
+        "name": "iteriodev_tailscale@1.2.0.tgz",
+        "url": "https://raw.githubusercontent.com/IterioDev/car-apps/f9ca32bd3cebd163fa16fbe17cc3473623be2c81/apps/iteriodev_tailscale/iteriodev_tailscale@1.2.0.tgz",
+        "size": 747267,
+        "sha256": "0e4a0deef88e2254cff3d25fb0962c67d38fc86533c3e27df14c107fa5cca838"
       },
       "mguNeeds": [
         "renderer"
-      ]
+      ],
+      "description": "Log the head unit in to your tailnet without a computer: shows Tailscale's state, the login link as a QR code to scan with your phone, the head unit's tailnet name and address, Rename (default mgu), Disconnect / Connect (switched off, still logged in) and Log out. Works with the iDrive controller too. Needs the Tailscale tool from the same source."
     },
     {
       "id": "iteriodev_turnview",
       "kind": "app",
       "title": "Turn View",
-      "version": "1.5.1",
+      "version": "1.6.0",
       "mguHmi": [
         "ID7",
         "ID8"
       ],
       "requires": {
-        "iteriodev-turnview": "0.8.0",
+        "iteriodev-turnview": "0.9.0",
         "mgu-deploy": "0.7.5"
       },
       "build": "unit",
       "uninstallable": true,
       "artifact": {
-        "name": "iteriodev_turnview@1.5.1.tgz",
-        "size": 729787,
-        "sha256": "4eb363f13c884cfc047fde86cb9793ef308cbe9d21bf57a1841176f204ae650f",
-        "url": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/apps/iteriodev_turnview/iteriodev_turnview@1.5.1.tgz"
+        "name": "iteriodev_turnview@1.6.0.tgz",
+        "url": "https://raw.githubusercontent.com/IterioDev/car-apps/f9ca32bd3cebd163fa16fbe17cc3473623be2c81/apps/iteriodev_turnview/iteriodev_turnview@1.6.0.tgz",
+        "size": 735720,
+        "sha256": "ae2e8fbfdfd57878669cfaaf787f6af9908f05fbd67479b7399ff9498d079351"
       },
       "mguNeeds": [
         "renderer"
-      ]
+      ],
+      "description": "The front camera in the instrument cluster with a turn card and, near each turn, a blue turn sign (three chevrons pointing the way), from BMW Maps, Apple CarPlay or Android Auto; the camera shows with or without a route. Or on the head unit instead: the Camera button opens the camera's whole picture with the same card and sign, at any speed (Picture on: Head unit), for kerbs and tight gaps. iDrive 8: pick \"Turn View AR\" in the cluster's widget menu (from the car's next start after installing). iDrive 7: off at every start of the car; switch it on in this app and set Instrument cluster > Centra"
     },
     {
       "id": "jap-moonride",
@@ -1560,12 +1697,12 @@
       "kind": "tool",
       "title": "RideTube service",
       "description": "The car side of RideTube, an unofficial client for YouTube: yt-dlp (from its official release, run in mgu-python) fetches as the daemon's own internet uid; search, feeds and thumbnails on the car (jap-node22); audio through the BMW MediaPlayer, video decoded by ytdec into the mgu-render video layer; TV device sign-in; controlled by the RideTube app over /run/jap-ridetube-d/ctl.sock",
-      "version": "0.4.1",
+      "version": "0.4.2",
       "artifact": {
-        "name": "jap-ridetube-d@0.4.1.tgz",
-        "size": 8825424,
-        "sha256": "6f2c074f6e516d1c94c301665cdb7c6eda89d5aa178393bdb548bccb173020d3",
-        "url": "https://github.com/JustAnotherPU/ridetube/releases/download/catalog/jap-ridetube-d@0.4.1.tgz"
+        "name": "jap-ridetube-d@0.4.2.tgz",
+        "size": 8830027,
+        "sha256": "e538a99b7fb54109bd24b2d9e2df38f71408372c31ae8a37fb14404ab2d4c43d",
+        "url": "https://github.com/JustAnotherPU/ridetube/releases/download/catalog/jap-ridetube-d@0.4.2.tgz"
       },
       "requires": {
         "mgu-deploy": "0.7.0",
@@ -1672,15 +1809,15 @@
       "kind": "app",
       "title": "RideTube",
       "description": "Video in the car: an unofficial client for YouTube. Your Home, Subscriptions, Watch later, History and playlists (signed in on the car), search, channels and chapters; the sound through the car's media player, the picture only while parked (a podcast view while driving). Needs the jap-ridetube-d tool.",
-      "version": "0.4.4",
+      "version": "0.4.5",
       "artifact": {
-        "name": "jap_ridetube@0.4.4.tgz",
-        "size": 3122448,
-        "sha256": "642f5020631fd1ae47b65b064ef003c54767e49c809686c923615c54386ad8a5",
-        "url": "https://github.com/JustAnotherPU/ridetube/releases/download/catalog/jap_ridetube@0.4.4.tgz"
+        "name": "jap_ridetube@0.4.5.tgz",
+        "size": 3123947,
+        "sha256": "c30112cce785c5a0ce0ef9451499c11ab32fec3e190c66eda89233632ba551ac",
+        "url": "https://github.com/JustAnotherPU/ridetube/releases/download/catalog/jap_ridetube@0.4.5.tgz"
       },
       "requires": {
-        "jap-ridetube-d": "0.4.1",
+        "jap-ridetube-d": "0.4.2",
         "mgu-render": "0.6.11",
         "mgu-inputgate": "1.0.0"
       },
@@ -1688,7 +1825,7 @@
       "mguHmi": [
         "ID7"
       ],
-      "icon": "https://github.com/JustAnotherPU/ridetube/releases/download/catalog/jap_ridetube.png",
+      "icon": "jap_ridetube.png",
       "iconSha256": "afbf63c28de964d4f249f062bdbddf853fe1e676cc8d62f59028ea0f1c6a9876"
     },
     {
@@ -1753,6 +1890,27 @@
       },
       "requires": {
         "mgu-deploy": "0.2.0"
+      },
+      "uninstallable": true,
+      "mguHmi": [
+        "ID7"
+      ]
+    },
+    {
+      "id": "kombikraft_test",
+      "kind": "app",
+      "title": "KombiKraft Themes",
+      "description": "F40 M Round test theme with mirrored main dials, BMW mini-gauge numerals, and shaded segmented rings. This build masks the factory model badge behind the M Round badge. Select while parked. Badge coverage awaiting on-car validation.",
+      "version": "0.1.28",
+      "artifact": {
+        "name": "kombikraft_test@0.1.28.tgz",
+        "size": 618105,
+        "sha256": "c378155ebb6cbc44712598905ca988598b3eef2a69377d389e35c1cd6a9e2750",
+        "url": "https://github.com/callan280/kombikraft/releases/download/catalog/kombikraft_test%400.1.28.tgz"
+      },
+      "requires": {
+        "mgu-deploy": "0.4.0",
+        "cluster-render": "0.6.9"
       },
       "uninstallable": true,
       "mguHmi": [
@@ -1980,6 +2138,97 @@
         "sha256": "c7677bc4708aabc181b97448431d37e608489fac0da660d5a89f6054bca19710",
         "url": "https://github.com/istt1899/x3/releases/download/marku_x3_warm@0.2.0/marku_x3_warm@0.2.0.tgz"
       }
+    },
+    {
+      "id": "mdq-aapd-log",
+      "kind": "tool",
+      "title": "Android Auto log (for CarLink)",
+      "description": "Experimental. Copies the car's Android Auto daemon's log (journalctl -u aapd, the last 2000 lines) and a snapshot of its state (systemctl status, waze-on-cluster's aapd patch, /etc/aapd.conf against its backup, and the network: addresses, routes and the firewall rules) to /run/mdq-aapd-log, where CarLink shows it on the phone (Car log, Debug on). Runs as root but only reads; writes only that folder, which goes when it stops. Starts at the next head-unit start after its install.",
+      "author": "7amoody1985",
+      "version": "0.1.1",
+      "artifact": {
+        "name": "mdq-aapd-log@0.1.1.tgz",
+        "size": 4312,
+        "sha256": "486d898b32cf5a65c40c29115d960dd5b1d4aaa19c8e279c551486ddb5939510",
+        "url": "https://github.com/7amoody1985/mgu-apps-lab/releases/download/catalog/mdq-aapd-log@0.1.1.tgz"
+      },
+      "uninstallable": true,
+      "mguHmi": [
+        "ID7"
+      ],
+      "requires": {}
+    },
+    {
+      "id": "mdq-ridetube-d",
+      "kind": "tool",
+      "title": "RideTube service (fork by 7amoody1985)",
+      "description": "The car side of the RideTube fork (JustAnotherPU's RideTube, modified, with its own ids): yt-dlp fetches on the car, the sound through the BMW MediaPlayer, the picture decoded by ytdec. The playing video streams in RAM (a 256 MB tmpfs) instead of being written whole to the head unit's flash; a debug report in /run/mdq-ridetube-d/status.json and log/sessions.jsonl. Needs Node.js 22 from the JustAnotherPU/mgu-apps source. Source: github.com/7amoody1985/ridetube",
+      "author": "JustAnotherPU, modified by 7amoody1985",
+      "version": "0.4.2",
+      "artifact": {
+        "name": "mdq-ridetube-d@0.4.2.tgz",
+        "size": 8785229,
+        "sha256": "b27100a3de2c8d86dcc9fa89a3feaac29f8ade71d2ec92f4f9b4b82d8949b06f",
+        "url": "https://github.com/7amoody1985/mgu-apps-lab/releases/download/catalog/mdq-ridetube-d@0.4.2.tgz"
+      },
+      "requires": {
+        "mgu-deploy": "0.7.0",
+        "mgu-python": "1.0.2",
+        "jap-node22": "22.23.4",
+        "mgu-render": "0.6.11"
+      },
+      "uninstallable": true,
+      "mguHmi": [
+        "ID7"
+      ]
+    },
+    {
+      "id": "mdq_carlink",
+      "kind": "app",
+      "title": "CarLink (experimental)",
+      "description": "Experimental. The next turn from HudHud or Google Maps on your phone, in the middle of the instrument cluster and as a home-screen widget, sent by the CarLink phone app. With the car on the phone's hotspot (the Store's Wi-Fi uplink), the car calls the phone; on the car's Wi-Fi or USB tethering, the phone calls the car. Demo shows it without the phone. Needs cluster-render from the robertnisipeanu/idrive-apps source.",
+      "author": "7amoody1985",
+      "version": "0.1.4",
+      "artifact": {
+        "name": "mdq_carlink@0.1.4.tgz",
+        "size": 900818,
+        "sha256": "c2e65a2f6ba71643e9f4e3b670462ab2a3f72b9f4e31ae35d8c50996e4d268ad",
+        "url": "https://github.com/7amoody1985/mgu-apps-lab/releases/download/catalog/mdq_carlink@0.1.4.tgz"
+      },
+      "requires": {
+        "cluster-render": "0.4.0"
+      },
+      "uninstallable": true,
+      "mguHmi": [
+        "ID7"
+      ],
+      "icon": "mdq_carlink.png",
+      "iconSha256": "c588cb54d16397e778750c3e3c268b508cb2aef59a417c6d114fc02d3f33bf69"
+    },
+    {
+      "id": "mdq_ridetube",
+      "kind": "app",
+      "title": "RideTube (fork by 7amoody1985)",
+      "description": "A modified build of JustAnotherPU's RideTube (github.com/JustAnotherPU/ridetube), not endorsed by its developer, with its own ids: it installs beside the original and never over it (only one of them plays at a time). Fixes the Search menu (and the settings in it) closing right after it opens; its service streams the video in RAM instead of writing it to the head unit's flash. Source: github.com/7amoody1985/ridetube",
+      "author": "JustAnotherPU, modified by 7amoody1985",
+      "version": "0.4.0",
+      "artifact": {
+        "name": "mdq_ridetube@0.4.0.tgz",
+        "size": 1177863,
+        "sha256": "16c371e05d2470d26be9552395457133b51b1d3d94ad9f0b7ea49540baa99c5b",
+        "url": "https://github.com/7amoody1985/mgu-apps-lab/releases/download/catalog/mdq_ridetube@0.4.0.tgz"
+      },
+      "requires": {
+        "mdq-ridetube-d": "0.4.2",
+        "mgu-render": "0.6.11",
+        "mgu-inputgate": "1.0.0"
+      },
+      "uninstallable": true,
+      "mguHmi": [
+        "ID7"
+      ],
+      "icon": "mdq_ridetube.png",
+      "iconSha256": "afbf63c28de964d4f249f062bdbddf853fe1e676cc8d62f59028ea0f1c6a9876"
     },
     {
       "id": "mgu-browser",
@@ -2319,12 +2568,12 @@
       "kind": "tool",
       "title": "Renderer",
       "description": "Draws apps' screens on the GPU, over the HMI or inside the app's page",
-      "version": "0.6.24",
+      "version": "0.6.25",
       "artifact": {
-        "name": "mgu-render@0.6.24.tgz",
-        "size": 103417,
-        "sha256": "558b44da060175274f6ed7c3c2c02d77905c23df157af253b3d32bfc8c7a8468",
-        "url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-render%400.6.24/mgu-render%400.6.24.tgz"
+        "name": "mgu-render@0.6.25.tgz",
+        "size": 103355,
+        "sha256": "73b5444307aaf7a3a1b519cb14032869f18930749284aef557a2e0bd58d3fd61",
+        "url": "https://github.com/robertnisipeanu/mgu-store/releases/download/mgu-render%400.6.25/mgu-render%400.6.25.tgz"
       },
       "requires": {
         "mgu-deploy": "0.6.9"
@@ -2859,6 +3108,48 @@
       ]
     },
     {
+      "id": "oussem-browser",
+      "version": "0.1.2",
+      "kind": "tool",
+      "title": "YouTube browser companion (experimental)",
+      "description": "Chromium companion and private display for idrive-apps. Hardware validation required.",
+      "mguHmi": [
+        "ID7"
+      ],
+      "uninstallable": true,
+      "optional": true,
+      "requires": {
+        "mgu-deploy": "0.6.9"
+      },
+      "artifact": {
+        "name": "oussem-browser@0.1.2.tgz",
+        "size": 144532349,
+        "sha256": "82bd6c801bd035c8e3d09f75de72540bd2677523ccb85388711ca4e9b2ac9860",
+        "url": "https://github.com/Oussemf/idrive-apps/releases/download/browser-0.1.2/oussem-browser@0.1.2.tgz"
+      }
+    },
+    {
+      "id": "oussem_youtube",
+      "version": "0.2.2",
+      "kind": "app",
+      "title": "YouTube (experimental)",
+      "description": "YouTube client with automatically detected browser companion (experimental).",
+      "mguHmi": [
+        "ID7"
+      ],
+      "uninstallable": true,
+      "requires": {
+        "oussem-browser": "0.1.2",
+        "mgu-render": "0.6.19"
+      },
+      "artifact": {
+        "name": "oussem_youtube@0.2.2.tgz",
+        "size": 945264,
+        "sha256": "17113ee2f534542c647ff9e33e6d8d2fab052126fa5ae6234d3c43e6f8e8d622",
+        "url": "https://github.com/Oussemf/idrive-apps/releases/download/browser-0.1.2/oussem_youtube@0.2.2.tgz"
+      }
+    },
+    {
       "id": "pllana-airplay-receiver",
       "kind": "tool",
       "title": "PllanaCast for BMW Empfänger",
@@ -2902,6 +3193,30 @@
       "mguHmi": [
         "ID7"
       ]
+    },
+    {
+      "id": "rear_comfort",
+      "kind": "app",
+      "version": "0.5.6",
+      "title": "Rear Comfort",
+      "description": "G12 Executive Lounge control for rear climate, comfort seats, massage, shades and entertainment",
+      "mguHmi": [
+        "ID7"
+      ],
+      "artifact": {
+        "name": "rear_comfort@0.5.6.tgz",
+        "size": 5364694,
+        "sha256": "bf0b26e94063d453076638507089990021094c87211aec195c78904792f1254d",
+        "url": "https://github.com/alexp50/bmw-apps/releases/download/rear_comfort@0.5.6/rear_comfort@0.5.6.tgz"
+      },
+      "uninstallable": true,
+      "requires": {
+        "idrive7-renderd": "2.1.7",
+        "mgu-inputgate": "1.0.0"
+      },
+      "author": "alexp50",
+      "icon": "rear_comfort.png",
+      "iconSha256": "1e4729deebc48e40735de3ed7ae9c6eea046f1f93a4fc6df1931889c2a2ac1af"
     },
     {
       "id": "remote-telemetry-bridge",
@@ -3341,6 +3656,71 @@
       ],
       "icon": "wzc_wazecards.png",
       "iconSha256": "c588cb54d16397e778750c3e3c268b508cb2aef59a417c6d114fc02d3f33bf69"
+    },
+    {
+      "id": "xdrive_offroad_pro",
+      "kind": "app",
+      "title": "Terrain Monitor",
+      "description": "xDrive Offroad Pro — офроуд-монитор: рельеф, сцепление, подвеска, системы, камеры. Только чтение данных автомобиля; неподтверждённые сигналы — «нет данных».",
+      "version": "0.1.3",
+      "artifact": {
+        "name": "xdrive_offroad_pro@0.1.3.tgz",
+        "size": 3941906,
+        "sha256": "f8f5d068b32b4b43cc8b83de134aa3147fc69ed8f803c169cd415e32f1f0aadd",
+        "url": "https://github.com/usbkrapal/xdrive-offroad-pro/releases/download/v0.1.3/xdrive_offroad_pro@0.1.3.tgz"
+      },
+      "requires": {
+        "mgu-render": "0.6.21",
+        "mgu-deploy": "0.8.19",
+        "xop-camera-bridge": "0.1.3"
+      },
+      "uninstallable": true,
+      "mguHmi": [
+        "ID7"
+      ],
+      "icon": "https://github.com/usbkrapal/xdrive-offroad-pro/releases/download/v0.1.3/icon.png",
+      "iconSha256": "9b3e186947227df14746680a628082b3499b30d4bf6dbe6ca156eaa627050ac9"
+    },
+    {
+      "id": "xop-camera-bridge",
+      "kind": "tool",
+      "title": "Terrain Monitor: камеры",
+      "description": "Мост камер Terrain Monitor: по запросу страницы «Камеры» запускает приёмник xop-camrx (передняя, левая, правая) и останавливает его. Только чтение видеопотока.",
+      "version": "0.1.3",
+      "artifact": {
+        "name": "xop-camera-bridge@0.1.3.tgz",
+        "size": 12295,
+        "sha256": "57df2988604618f1f7c39f8689615df85b1c5f5d0883f46923aa31c4837f6562",
+        "url": "https://github.com/usbkrapal/xdrive-offroad-pro/releases/download/v0.1.3/xop-camera-bridge@0.1.3.tgz"
+      },
+      "requires": {
+        "mgu-deploy": "0.8.19",
+        "xop-camrx": "0.1.3"
+      },
+      "uninstallable": true,
+      "mguHmi": [
+        "ID7"
+      ]
+    },
+    {
+      "id": "xop-camrx",
+      "kind": "tool",
+      "title": "Terrain Monitor: приёмник камер",
+      "description": "Приёмник камер для Terrain Monitor (GPL-3.0-or-later): принимает поток камер как ещё один получатель и отдаёт переднюю, левую и правую в рендерер. Запускается мостом xop-camera-bridge.",
+      "version": "0.1.3",
+      "artifact": {
+        "name": "xop-camrx@0.1.3.tgz",
+        "size": 264748,
+        "sha256": "7af9f7140cef78c0dfd1ec7760afe8f8a78cc1f1e0c3c3629bc2dfe9b7903080",
+        "url": "https://github.com/usbkrapal/xdrive-offroad-pro/releases/download/v0.1.3/xop-camrx@0.1.3.tgz"
+      },
+      "requires": {
+        "mgu-deploy": "0.8.19"
+      },
+      "uninstallable": true,
+      "mguHmi": [
+        "ID7"
+      ]
     }
   ]
 }

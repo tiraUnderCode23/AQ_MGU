@@ -5,7 +5,7 @@
       "repository": "cauliflowermossgrape/idrive7-apps",
       "url": "https://github.com/cauliflowermossgrape/idrive7-apps",
       "snapshot_path": "apps/_sources/idrive7-apps",
-      "commit": "422957a85461826c1e8654d37c8ec66a94849f9c",
+      "commit": "35bca28bc82b30482d73782877ebaf92c69dcb8c",
       "license": "MIT; retain per-component and third-party notices",
       "included_for": "in-car apps and renderer",
       "checked_at": "2026-11-17"
@@ -465,7 +465,7 @@
       "repository": "cauliflowermossgrape/idrive7-apps",
       "url": "https://github.com/cauliflowermossgrape/idrive7-apps",
       "snapshot_path": "tools/_sources/cauli-inputgate-1.2.1",
-      "commit": "5555ef3bd2195aae15a8cec6803beeb40ca16456",
+      "commit": "35bca28bc82b30482d73782877ebaf92c69dcb8c",
       "license": "Original MIT and GPL notices retained; vsomeip interface headers retain MPL-2.0 notices; see frozen source and packaged notices.",
       "included_for": "Original controller input gate 1.2.1 source, publisher-built library and guard/service metadata; AQ notice-only component 1.2.2.",
       "checked_at": "2026-11-19"
@@ -492,7 +492,7 @@
       "repository": "cauliflowermossgrape/idrive7-apps",
       "url": "https://github.com/cauliflowermossgrape/idrive7-apps",
       "snapshot_path": "apps/_sources/collection-cauliflowermossgrape-idrive7-apps-8d4aa0ef8ef7",
-      "commit": "8d4aa0ef8ef7ae2a007a24acdbda095f219fc7b4",
+      "commit": "35bca28bc82b30482d73782877ebaf92c69dcb8c",
       "license": "MIT; bundled third-party and native-component notices retained",
       "included_for": "ambient_config, car_vitals, edrive, live_adjustments, live_data, redline, service, zf8hp",
       "checked_at": "2026-11-19"

@@ -1,0 +1,59 @@
+{
+  "id": "light_show",
+  "title": "Light Show",
+  "description": "Exterior light shows for BMW G-series: vehicle scan, headlamp LEDs and body-controller lights, effect library, 3D car and phone remote via QR code. Parked in P only.",
+  "version": "0.4.5",
+  "vendor": "custom",
+  "loggingId": "OAL9",
+  "iconGlyph": "LS",
+  "cpuLimit": 60,
+  "signals": {
+    "com.harman.infotainment.systemfunctions.tasu.tasu.InternalTasu": {
+      "_instances": "SystemFunctionsInternalTasuInst1",
+      "_methods": [
+        "sendTasuRequest"
+      ],
+      "_broadcasts": [
+        "sendTasuResponse"
+      ]
+    },
+    "de.bmw.infotainment.vehicle.Vehicle2": {
+      "statusCarSpeed2": "rs",
+      "statusLightStatus": "rs"
+    },
+    "de.bmw.infrastructure.VehicleInformation": {
+      "statusGearboxDrive": "s",
+      "DataPowerTrain2": "s"
+    }
+  },
+  "screens": [
+    {
+      "name": "MAIN",
+      "kind": "canvas",
+      "title": "Light Show",
+      "buttons": [
+        [
+          "BTN_START",
+          "Start show"
+        ],
+        [
+          "BTN_STOP",
+          "Stop"
+        ],
+        [
+          "BTN_PAGE",
+          "Next page"
+        ]
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "key": "flmCommOff",
+      "label": "Test: headlamp modules ignore bus messages during shows (28 02 01)",
+      "type": "bool",
+      "default": false
+    }
+  ],
+  "showRepoCredits": false
+}

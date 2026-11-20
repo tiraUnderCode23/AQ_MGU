@@ -1,0 +1,25 @@
+# SPDX-License-Identifier: MIT
+[Unit]
+Description=lfb-enginesound: engine sound synthesizer service (ctl socket for the Engine Sound app, es-synth into SmartX)
+RequiresMountsFor=/var/opt
+After=local-fs.target
+
+[Service]
+# nobody: no root needed. mgu_alsa = SmartX's shared memory (the ALSA endpoints), tm_oap_app = the apps' group, so the
+# app can reach ctl.sock (0660, group tm_oap_app), as jap-moonride does.
+User=nobody
+Group=tm_oap_app
+SupplementaryGroups=mgu_alsa
+ExecStart=/usr/bin/node /var/opt/lfb-enginesound/current/esd.js
+Environment=ES_ALSA_US=64000
+RuntimeDirectory=lfb-enginesound
+RuntimeDirectoryMode=0755
+# starts idle (no device until the app says OUT), so the deploy health check sees it active
+Restart=on-failure
+RestartSec=3
+TimeoutStopSec=5
+LimitCORE=1
+Nice=-5
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,1325 @@
+"use strict";
+/**
+ * The car's data: the kit's Car plus the app's extra SOME/IP signals, the engine unit reads over
+ * read-only UDS, BMW's guidance and media.
+ * Methods of HudApp (engine/app.js adds them to its prototype).
+ */
+const fs = require("fs");
+const path = require("path");
+const Car = require("../kit/car");
+const ShiftScore = require("../shift_score");
+const {
+  AHEAD2_MEASURED,
+  AUTO_H,
+  BOOST_SCALE,
+  BRAKE_LIGHT,
+  CONS_UNIT,
+  FRESH_MS,
+  GUIDANCE,
+  HAND_BRAKE,
+  INDICATE,
+  MEDIA,
+  MEDIA_ITEM,
+  MODE_NAME,
+  PARK_BRAKE,
+  PEDAL_MS,
+  PEDAL_OK,
+  DIST_UNITS,
+  FUEL_UNITS,
+  HYBRID_ENGINE,
+  MODEL_WIRE,
+  TANK_BY_MODEL,
+  PRESS_UNITS,
+  PROGRAMS,
+  TEMP_UNITS,
+  TYRE_CORNERS,
+  VOLT_MS,
+  driveModeOf,
+  driveVariantOf,
+  enumNum,
+  unitName,
+} = require("./consts");
+const { isNum, pad2 } = require("../engine/util");
+
+const BYTE_NONE = 255; // a byte signal's "none" (fuel, outside temperature, battery condition)
+const SLOPE_LEVEL = 1280; // LaneSlope: the gradient count when level (car/signals.js _onSlope)
+const SLOPE_PCT = 0.1; // and its grade a count, %
+const SLOPE_VALID_WIRE = 2; // its qualifier's "valid" as a wire number (the binding may hand enums over as numbers)
+const RANGE_NONE = 4095; // KombiIF range: none
+const HV_SOC_MAX = 100; // a hybrid's battery %: past this, none (255)
+const HV_ENERGY_NONE = 511; // lastStateCallCharging's energy fields: none
+const ROUTE_NOW_NONE = 16777215, // Charging infoChargingERoute5's energy now: none
+  ROUTE_MAX_NONE = 65535; // and at full: none
+// a plug-in hybrid's battery sources, in the order tried (the first with a value is shown): the HMI's
+// (Efficiencytainment2), the charging data sink's (LSCDataSink displayConditionHybrid), the last-charge message's % and
+// energy ratio from Vehicle, LSCDataSink and Charging, the last drive segment's end (BcPersonal), the route planner's
+// energy ratio (Charging infoChargingERoute5)
+const HV_SOURCES = ["eff", "lsc", "charging", "energy", "lscLast", "lscLastEnergy", "chgLast", "chgLastEnergy", "segment", "route"];
+/** @type {(v: *) => ?number} a battery % as sent, null when none (255) */
+const pct100 = (v) => (isNum(v) && v >= 0 && v <= HV_SOC_MAX ? v : null);
+const MILEAGE_NONE = 0xffffff; // a 24-bit mileage: none
+const CONS_NONE = 65535; // a consumption raw: none
+const CONS_MAX_DIGITS = 3; // averageConsumption's decimal digits at most
+const TPMS_POLL_MS = 10000; // the tyres are polled this often
+const AMBIENT_SCALE = 0.5,
+  AMBIENT_OFFSET_C = 40; // outside temperature: raw * 0.5 - 40
+const AHEAD_NONE_MIN = 4093; // DataFrontVehicle: 4093..4095 are "no object / not available"
+const AHEAD_ID_NONE_MIN = 253; // DataFrontVehicle object id: 253..255 are "no object"
+const GAP2_NONE_MIN = 253; // GapVehicleDrivingAhead's gap: 253 and up, nothing measured
+const PEDAL_LOG_MS = 200; // pedal readings: logged at most 5 times a second
+const SPORT_PCT_MAX = 150; // the sport display's power / torque %: over this is none
+const STD_BARO_KPA = 101.3; // outside air pressure until the engine unit has given one
+const DME_ECU = 18; // config.dme.ecu when unset: the engine unit's address (0x12)
+const BOOST_ASK_MS = 400; // the engine unit's boost: asked at most this often
+const BARO_ASK_MS = 60000; // the engine unit's outside air pressure: asked at most this often
+const DME_TICK_MS = 100; // the engine unit's question timer
+const FONT_LOAD_MS = 2000; // the car's font: loaded this long after the media signals start
+const TZ_STEP_MIN = 15; // time zones are whole quarter hours
+const TZ_MIN_H = -12,
+  TZ_MAX_H = 14; // the time zones there are, UTC-12..UTC+14
+
+/** @typedef {import("./consts").Signals} Signals */
+
+/**
+ * HmiMediaState as last sent (_startMedia).
+ * @typedef {object} MediaState
+ * @property {?import("./someip").Fields["de.bmw.infotainment.hmi.hmimediastate.HmiMediaState"]["playerMetadata"]} pm
+ * @property {?import("./someip").Fields["de.bmw.infotainment.hmi.hmimediastate.HmiMediaState"]["mainMenuMetadata"]} mm
+ * @property {?import("./someip").Fields["de.bmw.infotainment.hmi.hmimediastate.HmiMediaState"]["tracks"]} tracks
+ * @property {?import("./someip").Fields["de.bmw.infotainment.hmi.hmimediastate.HmiMediaState"]["trackSelection"]} sel
+ */
+/** @typedef {import("./consts").Ahead} Ahead */
+/** @typedef {import("./consts").Ahead2} Ahead2 */
+/**
+ * The car's values on the app (App, through app_type.d.ts): set by _initCar (empty until the car sends them) and by the
+ * signal handlers below.
+ * @typedef {object} CarState
+ * @property {?number} boostFes bar, from the sport display signal
+ * @property {number} boostFesAt
+ * @property {?number} boostDme bar, from the engine unit (fallback)
+ * @property {number} boostDmeAt
+ * @property {boolean} needsBoost a shown widget uses boost (the engine unit is only asked then)
+ * @property {?string} driveMode 'comfort' | 'sport' | 'eco', once the car has said
+ * @property {?string} driveVariant 'plus' (Sport+ / Comfort+ / Eco Pro+), 'individual', or null
+ * @property {boolean} navActive BMW's route guidance is on (the HUD shows its own guidance then)
+ * @property {?number} slopePitch the road's gradient front to back, deg (nose up +; LaneSlope), null without one
+ * @property {?number} slopeRoll and side to side, deg (the left side lower +)
+ * @property {number} slopeAt when LaneSlope last came (ms)
+ * @property {?number} heading deg clockwise from north (navigation's position), null without one
+ * @property {number} headingAt when it last came (ms)
+ * @property {unknown} navRaw the last guidanceState as the car sent it, for the log
+ * @property {boolean} assistActive BMW's HUD shows its driver assistance block (ACC, DCC, STA)
+ * @property {string | undefined} assistRaw the last summary of it, for the log
+ * @property {?Ahead} ahead the car ahead, raw (DataFrontVehicle)
+ * @property {?Ahead2} ahead2 GapVehicleDrivingAhead
+ * @property {?{ v: ?number, gapM: number, at: number }} relFromGap km/h, the gap's smoothed rate of change
+ * @property {?{ raw: number, at: number }} pedal the accelerator pedal as sent, while valid
+ * @property {string} [pedalLine] its last logged message
+ * @property {?boolean} brakeOn the brake lights, null until the car says
+ * @property {?string} turn the indicators: 'L', 'R', 'LR' (hazards) or '' (body.Light StatusFunctionsIndicators)
+ * @property {number} [turnAt] when they last changed
+ * @property {boolean} accOn BMW's HUD has the ACC car or distance bars up (the Grand National CRUISE lamp)
+ * @property {?number} mileage the odometer as sent (MileageSupreme, taken as km)
+ * @property {?boolean} parkBrake the parking brake set, null until the car says
+ * @property {?boolean} parkBrakeCds the same from CDS statusHandBrake (a fallback)
+ * @property {?boolean} [parkBrakeVsm] the same from VehicleStabilizationManagement
+ * @property {?string} autoHold Auto Hold: 'hold' (holding the car), 'armed', 'off', null until the car says
+ * @property {?boolean} wheelHeat the heated steering wheel on, null until the car says
+ * @property {?number} hvSoc a plug-in hybrid's battery, % (config.hybrid), null without one
+ * @property {?number} eRangeRaw its electric range as sent: in the car's distance unit (carUnits.dist), null without one
+ * @property {?Record<string, ?boolean>} doors open by fl fr rl rr hood trunk (config.lamps), null until the car says
+ * @property {string} doorsLine the last doors logged
+ * @property {?number} volt12 V, the 12 V system from the engine unit
+ * @property {number} volt12At
+ * @property {boolean} needsVolt a shown widget uses volt12 (the engine unit is only asked then)
+ * @property {number} pedalLogged
+ * @property {?number} pedalObd %, the pedal from the engine unit (OBD PID 0x49)
+ * @property {number} pedalObdAt
+ * @property {?number} pedalObdLogged
+ * @property {boolean} needsPedal a shown widget uses the throttle (the engine unit is only asked then)
+ * @property {?number} decelF g, the smoothed deceleration for the brake bar
+ * @property {number} decelAt
+ * @property {?number} carOffsetMin the car's time zone, minutes from UTC, from the time the cluster shows
+ * @property {?number} battRaw the 12 V battery's charge condition as sent
+ * @property {number} battAt
+ * @property {Record<string, string>} aheadLogged the car-ahead messages last logged, by kind
+ * @property {?number} accSetRaw cruiseCtrlSpeedHUD as sent
+ * @property {Record<string, number>} aheadLogAt
+ * @property {{ press: ?string, temp: ?string, psiSeen: boolean }} carUnits the car's display units, for the TPMS values
+ * @property {?string} program 'S' / 'M' from the MDrive gearbox display, else null (D)
+ * @property {?number} fuelL KombiIF tank, litres
+ * @property {?number} rangeKm KombiIF range
+ * @property {?number} ambient outside temperature, C
+ * @property {?number} odoKm KombiIF odometer (whole km)
+ * @property {number} odoAcc the distance since its last km
+ * @property {number} odoAt
+ * @property {{ p: Record<string, ?number>, t: Record<string, ?number> }} tyres TPMS pressure (bar) and temperature (C) per corner FL FR RL RR
+ * @property {?number} [consAvg] ResetLogic's average consumption, scaled
+ * @property {?number} [consUnit] its unit (CONS_UNIT)
+ * @property {number} [consAt]
+ * @property {unknown} [consPeriod] the trip computer period picked on the center screen
+ * @property {?number} [consBc] the on-board computer's average
+ * @property {?number} [consUnitBc]
+ * @property {number} [consBcAt]
+ * @property {?number} [sportPower] the sport display's power, %
+ * @property {?number} [sportTorque] its torque, %
+ * @property {number} [sportAt]
+ * @property {import("../shift_score").Car} car the kit's Car with the extra signals (its data() a snapshot per tick)
+ * @property {import("../shift_score")} score the shift scorer
+ * @property {() => void} _freshData takes a new snapshot of the car's data (once a tick)
+ * @property {ReturnType<typeof setInterval>} [dmeTimer] the engine unit reads
+ * @property {MediaState} [media]
+ * @property {string} [mediaRaw]
+ * @property {import("../engine/app").Subscription} [mediaSub]
+ * @property {import("../engine/app").Subscription} [navSub]
+ * @property {string} [musicTitle]
+ * @property {ReturnType<typeof setTimeout>} [fontT]
+ */
+
+module.exports = /** @satisfies {ThisType<import("../engine/app").App>} */ ({
+  /**
+   * The car's values, empty until the car sends them.
+   * @returns {void}
+   */
+  _initCar() {
+    this.boostFes = null;
+    this.boostFesAt = 0; // bar, from the sport display signal
+    this.boostDme = null;
+    this.boostDmeAt = 0; // bar, from the engine unit (fallback)
+    this.needsBoost = false; // a shown widget uses boost (the engine unit is only asked then)
+    this.driveMode = null; // 'comfort' | 'sport' | 'eco', once the car has said
+    this.driveVariant = null; // 'plus' (Sport+ / Comfort+ / Eco Pro+), 'individual', or null
+    this.navActive = false; // BMW's route guidance is on (the HUD shows its own guidance then)
+    this.slopePitch = null; // the road's gradient (LaneSlope), deg, nose up +
+    this.slopeRoll = null; // and side to side, deg, the left side lower +
+    this.slopeAt = 0;
+    this.heading = null; // deg from north (navigation's position)
+    this.headingAt = 0;
+    this.navRaw = undefined; // the last guidanceState as the car sent it, for the log
+    this.assistActive = false; // BMW's HUD shows its driver assistance block (ACC, DCC, STA)
+    this.assistRaw = undefined; // the last summary of it, for the log
+    this.ahead = null; // the car ahead, raw: { gapX, gapY, speedX, speedY, q, at } (DataFrontVehicle)
+    this.ahead2 = null; // { gap, q, measured, at } (GapVehicleDrivingAhead)
+    this.relFromGap = null; // km/h, the gap's smoothed rate of change ({ v, gapM, at })
+    this.pedal = null; // { raw, at }: the accelerator pedal as sent, while valid
+    this.brakeOn = null; // the brake lights (true / false), null until the car says
+    this.turn = null; // the indicators: 'L', 'R', 'LR' (hazards) or '' (body.Light StatusFunctionsIndicators)
+    this.accOn = false; // BMW's HUD has the ACC car or distance bars up (the Grand National CRUISE lamp)
+    this.mileage = null; // the odometer as sent (MileageSupreme, taken as km)
+    this.parkBrake = null; // the parking brake set (true / false), null until the car says
+    this.parkBrakeCds = null; // the same from CDS statusHandBrake (a fallback)
+    this.autoHold = null; // Auto Hold: 'hold' (holding the car), 'armed', 'off', null until the car says
+    this.wheelHeat = null; // the heated steering wheel on (true / false), null until the car says
+    this.hvSoc = null; // a plug-in hybrid's battery, % (config.hybrid), null without one: the first of hvSocSrc (_hvSocPick)
+    /** @type {Record<string, ?number>} the battery by source, %, in the order tried */
+    this.hvSocSrc = {};
+    HV_SOURCES.forEach((k) => (this.hvSocSrc[k] = null));
+    /** @type {Record<string, boolean>} the sources that have given a value, each logged the first time */
+    this.hvSocSeen = {};
+    this.hvSocFrom = null; // the source hvSoc came from, logged when it changes
+    /** @type {Record<string, string>} each battery message as last logged */
+    this.hvRawLogged = {};
+    this.eRangeRaw = null; // and its electric range, in the car's distance unit (carUnits.dist)
+    /** @type {?Record<string, ?boolean>} */
+    this.doors = null; // open (true / false / null unknown) by fl fr rl rr hood trunk, null until the car says
+    this.doorsLine = "";
+    this.volt12 = null;
+    this.volt12At = 0; // V, the 12 V system from the engine unit
+    this.needsVolt = false; // a shown widget uses volt12 (the engine unit is only asked then)
+    this.pedalLogged = 0;
+    this.pedalObd = null;
+    this.pedalObdAt = 0;
+    this.pedalObdLogged = null; // %, the pedal from the engine unit (OBD PID 0x49)
+    this.needsPedal = false; // a shown widget uses the throttle (the engine unit is only asked then)
+    this.decelF = null;
+    this.decelAt = 0; // g, the smoothed deceleration for the brake bar
+    this.carOffsetMin = null; // the car's time zone, minutes from UTC, from the time the cluster shows
+    this.battRaw = null;
+    this.battAt = 0; // the 12 V battery's charge condition as sent
+    this.aheadLogged = {};
+    this.accSetRaw = null; // cruiseCtrlSpeedHUD as sent
+    this.aheadLogAt = {};
+    // the car's display units (TPMS, eDrive range, the "auto" unit settings)
+    this.carUnits = { press: null, temp: null, dist: null, fuel: null, psiSeen: false };
+    this.tankDetected = this._loadTank(); // L, by the car's model (Vehicle2 statusVehiclePartType), null unknown
+    this.partTypeLine = ""; // the model and engine type as last logged
+    /** @type {string | undefined} the units and tank the last rebuild painted its labels in (values.js _unitsSig) */
+    this.unitsSig = undefined;
+    this.program = null; // 'S' / 'M' from the MDrive gearbox display, else null (D)
+    this.fuelL = null;
+    this.rangeKm = null;
+    this.ambient = null; // KombiIF tank / range, outside temperature
+    this.odoKm = null;
+    this.odoAcc = 0;
+    this.odoAt = 0; // KombiIF odometer (whole km) and the distance since its last km
+    this.tyres = { p: {}, t: {} }; // TPMS pressure (bar) and temperature (C) per corner FL FR RL RR
+  },
+
+  /**
+   * The kit Car with hud's extra signals (by app.json config), and the
+   * shift scorer.
+   * @returns {void}
+   */
+  _setupVehicleData() {
+    /** @type {Signals} */
+    const extra = {
+      // fuel and range (cauliflowermossgrape's live_data, MIT): litres (255 = none) and km (4095 = none)
+      "de.bmw.infotainment.KombiIF": {
+        // the local time the cluster shows: its offset from UTC is the car's time zone (the app's own clock is UTC
+        // on the car, so new Date() read 5 h ahead in Toronto, Nov 2026); follows summer time and the car's setting
+        statusShowTimeDate: (msg) => this._onCarClock(msg),
+        statusRangeTankStatus: (msg) => {
+          const fuel = msg && msg.fluidLevelFuelTank,
+            range = msg && msg.range;
+          this.fuelL = isNum(fuel) && fuel >= 0 && fuel < BYTE_NONE ? fuel : null;
+          this.rangeKm =
+            isNum(range) && range >= 0 && range < RANGE_NONE ? range : null;
+          // the odometer, whole km (cauliflowermossgrape's Live Data reads it here; MileageSupreme never came)
+          const mileage = msg && msg.mileageKilometre;
+          const km =
+            isNum(mileage) && mileage > 0 && mileage < MILEAGE_NONE
+              ? mileage
+              : null;
+          if (km !== this.odoKm) {
+            this.odoKm = km;
+            this.odoAcc = 0;
+          }
+        },
+        // a plug-in hybrid's electric range (app.json config.hybrid), taken as km (4095 = none, as the fuel range;
+        // unconfirmed on a car: the raw values are logged on change)
+        displayRangeElectricVehicle: (msg) => {
+          const raw = msg && msg.displayRangeElectricVehicle;
+          const v = isNum(raw) && raw >= 0 && raw < RANGE_NONE ? raw : null;
+          if (v !== this.eRangeRaw) this.log.info("eDrive range raw " + JSON.stringify(msg));
+          this.eRangeRaw = v;
+        },
+      },
+      // a plug-in hybrid's battery as the HMI shows it (config.hybrid), taken as % (255 = none; a US plug-in hybrid
+      // showed none, Nov 18 2026: the fallbacks in _hvSocPick)
+      "de.bmw.infotainment.drivingexcitement.Efficiencytainment2": {
+        statusChargeOfBatteryHybrid: (msg) => {
+          this._hvRaw("Efficiencytainment2 statusChargeOfBatteryHybrid", msg);
+          this.hvSocSrc.eff = pct100(msg && msg.displayChargingConditionHighVoltageStorage);
+          this._hvSocPick();
+        },
+      },
+      // the same field from the charging service (config.hybrid; notify only, so "s"; unconfirmed on a car)
+      "de.bmw.infotainment.lsc.LSCDataSink": {
+        displayConditionHybrid: (msg) => {
+          this._hvRaw("LSCDataSink displayConditionHybrid", msg);
+          this.hvSocSrc.lsc = pct100(msg && msg.displayChargingconditionHighvoltageStorage);
+          this._hvSocPick();
+        },
+        // the last-charge message again, from the charging data sink
+        lastStateCallCharging: (msg) => this._hvLastState("LSCDataSink lastStateCallCharging", "lscLast", "lscLastEnergy", msg),
+      },
+      // the charging service (config.hybrid; all notify only, "s"; unconfirmed on a car): the last-charge message, the
+      // energy left now over at full (infoChargingERoute5, for route planning: its two fields' units may differ, so a
+      // ratio over 100 % is none), and the cell state of charge (infoChargingERoute3, scale unknown: logged only)
+      "de.bmw.infotainment.vehicle.Charging": {
+        lastStateCallCharging: (msg) => this._hvLastState("Charging lastStateCallCharging", "chgLast", "chgLastEnergy", msg),
+        infoChargingERoute5: (msg) => {
+          this._hvRaw("Charging infoChargingERoute5", msg);
+          const now = msg && msg.EnergyDischargeHighVoltageStoragePresentStandard,
+            full = msg && msg.EnergyDischargeHighVoltageStorageMaximalStandard;
+          this.hvSocSrc.route = isNum(now) && isNum(full) && full > 0 && full < ROUTE_MAX_NONE &&
+              now >= 0 && now < ROUTE_NOW_NONE && now <= full
+            ? Math.round((now / full) * HV_SOC_MAX)
+            : null;
+          this._hvSocPick();
+        },
+        infoChargingERoute3: (msg) => this._hvRaw("Charging infoChargingERoute3", msg),
+      },
+      // the trip computer's drive segments (config.hybrid; "rs"; unconfirmed on a car): the battery % at the segment's end
+      "de.bmw.infotainment.telematic.journeyhistory.BcPersonal": {
+        driveSegment: (msg) => {
+          this._hvRaw("BcPersonal driveSegment", msg && { bcBeHvSocStart: msg.bcBeHvSocStart, bcBeHvSocEnd: msg.bcBeHvSocEnd, bcBeSegmentId: msg.bcBeSegmentId });
+          this.hvSocSrc.segment = pct100(msg && msg.bcBeHvSocEnd);
+          this._hvSocPick();
+        },
+      },
+      // the trip computer for the period picked on the center screen (this trip, since refuelling, individual, long term):
+      // average consumption (app.json config.consumption); raw values logged on change to check the scaling
+      "de.bmw.infotainment.resetlogic.ResetLogic": {
+        averageConsumption: (msg) => {
+          if (!msg) return;
+          const scaled = msg.consumptionCombustionCurrentScale,
+            decimals = msg.consumptionCombustionCurrentDigit;
+          this.consAvg =
+            isNum(scaled) &&
+            scaled < CONS_NONE &&
+            isNum(decimals) &&
+            decimals >= 0 &&
+            decimals <= CONS_MAX_DIGITS
+              ? scaled / Math.pow(10, decimals)
+              : null;
+          this.consUnit = enumNum(msg.combustionUnit, CONS_UNIT);
+          this.consAt = Date.now();
+          this._logCons("average", msg);
+        },
+        bcDataAll: (msg) => {
+          if (!msg) return;
+          const bc = msg.bcData || {};
+          this.consPeriod =
+            bc.resetOption !== undefined
+              ? bc.resetOption
+              : msg.activeResetLogic;
+          this.consBc =
+            isNum(bc.consumptionAverage) && bc.consumptionAverage < CONS_NONE
+              ? bc.consumptionAverage
+              : null;
+          if (msg.bcUnits && msg.bcUnits.consumption !== undefined)
+            this.consUnitBc = enumNum(msg.bcUnits.consumption, CONS_UNIT);
+          this.consBcAt = Date.now();
+          this._logCons("bc", {
+            period: this.consPeriod,
+            active: msg.activeResetLogic,
+            avg: bc.consumptionAverage,
+            now: bc.currentConsumption,
+            speed: bc.speedAverage,
+            units: msg.bcUnits,
+          });
+        },
+      },
+      // tyre pressure and temperature per corner, in the car's own display units (_tyreBar / _tyreC).
+      // The car never notifies these (BMW's own x_call only ever reads them), so they are polled.
+      "de.bmw.infotainment.vehicle.TPMS": {
+        $pollMs: TPMS_POLL_MS,
+        statusTyrePressure: (msg) =>
+          TYRE_CORNERS.forEach((k) => {
+            this.tyres.p[k] = this._tyreBar(
+              msg && msg["actualValuePressureTyre" + k + "H"],
+            );
+          }),
+        statusTyreTemperature: (msg) =>
+          TYRE_CORNERS.forEach((k) => {
+            this.tyres.t[k] = this._tyreC(
+              msg && msg["actualValueTemperatureTyre" + k + "H"],
+            );
+          }),
+      },
+      // the car's display units: the TPMS reports pressure as 0.1 x raw in the car's pressure unit and temperature
+      // as the car's degrees + 40 (car_vitals, MIT; a car set to psi / F showed 32 psi as 464 psi until this was read)
+      "de.bmw.infotainment.vehicle.Vehicle": {
+        statusNewCurrentUnitsStatusExt: (msg) => {
+          const press = unitName(
+              PRESS_UNITS,
+              msg && msg.unitOfMeasurementAirPressure,
+            ),
+            temp = unitName(
+              TEMP_UNITS,
+              msg && msg.unitOfMeasurementTemperature,
+            );
+          const dist = unitName(DIST_UNITS, msg && msg.unitOfMeasurementSpeedometerDigital),
+            fuel = unitName(FUEL_UNITS, msg && msg.unitOfMeasurementFuel);
+          const u = this.carUnits;
+          if (press === u.press && temp === u.temp && dist === u.dist && fuel === u.fuel) return;
+          u.press = press;
+          u.temp = temp;
+          u.dist = dist;
+          u.fuel = fuel;
+          this.log.info(
+            "car units: pressure " + (press || "?") + ", temperature " + (temp || "?") + ", distance " +
+              (dist || "?") + ", fuel " + (fuel || "?"),
+          );
+          // the "auto" unit settings follow these: a label painted once (mph, the scales) needs a rebuild
+          this._unitsMaybeChanged();
+        },
+        // a plug-in hybrid's battery as the car last reported it for charging (config.hybrid): the % BMW's app
+        // shows (displayActValueSoc, else hvbActValueSoc; 255 none), else the energy in it over its full energy
+        // (energyContentActValueHvb / energyContentMaxHvb, 511 none); unconfirmed on a car
+        lastStateCallCharging: (msg) => this._hvLastState("Vehicle lastStateCallCharging", "charging", "energy", msg),
+      },
+      // S / M next to the gear: the gearbox status carries no programme on some cars, the M drive display does
+      "de.bmw.infotainment.misc.MDrive": {
+        dataDisplayGearbox: (msg) => {
+          this.program = PROGRAMS[msg && msg.displayProgramGearbox] || null;
+        },
+      },
+      // outside temperature: raw * 0.5 - 40 deg C, 255 = none (car_vitals, MIT)
+      "de.bmw.infrastructure.EnvironmentalInformation": {
+        ExteriorTemperature: (msg) => {
+          const raw = msg && msg.temperatureExterior;
+          this.ambient = isNum(raw) && raw !== BYTE_NONE
+              ? raw * AMBIENT_SCALE - AMBIENT_OFFSET_C
+              : null;
+        },
+      },
+      // what BMW's HUD draws for ACC / DCC / STA ("cruise" mode); only HUD apps with makeRoom list it in app.json
+      "de.bmw.infotainment.displaydataserver.DisplayDataServer": {
+        functionalLibraryData: (msg) => this._onAssist(msg),
+      },
+      // the car ahead (gap, its speed): notify only, so "s" in app.json; raw until calibrated (config.acc)
+      "de.bmw.dass.GapVehicleAhead": {
+        DataFrontVehicle: (msg) => {
+          if (!msg) return;
+          // 4093..4095 are "no object / not available" codes (with no car ahead an X3 sends 4093 in every field and
+          // object id 253, Nov 8 2026), as 253..255 are for the object id
+          /** @type {(value: *) => ?number} */
+          const num = (value) => (isNum(value) && value < AHEAD_NONE_MIN ? value : null);
+          const id = msg.frontVehicleObjectID,
+            none = !isNum(id) || id >= AHEAD_ID_NONE_MIN;
+          this.ahead = {
+            gapX: none ? null : num(msg.frontVehicleGapX),
+            gapY: none ? null : num(msg.frontVehicleGapY),
+            speedX: none ? null : num(msg.frontVehicleSpeedX),
+            speedY: none ? null : num(msg.frontVehicleSpeedY),
+            q: msg.qualifierEventDataFunctionFrontVehicle,
+            at: Date.now(),
+          };
+          this._logAhead("front", msg);
+        },
+        GapVehicleDrivingAhead: (msg) => {
+          if (!msg) return;
+          const gap = msg.gapVehicleDrivingAhead,
+            measurement = enumNum(
+              msg.statusMeasurementVehicleDrivingAhead,
+              AHEAD2_MEASURED,
+            );
+          this.ahead2 = {
+            gap: isNum(gap) && gap < GAP2_NONE_MIN ? gap : null,
+            raw: isNum(gap) ? gap : null,
+            q: msg.qualifierFunctionVehicleDrivingAhead,
+            measured:
+              measurement >= AHEAD2_MEASURED.NEUES_ELEMENT__GEMESSEN &&
+              measurement <= AHEAD2_MEASURED.ELEMENT_PRAEDIZIERT,
+            at: Date.now(),
+          };
+          this._gapRate();
+          this._logAhead("gap", msg);
+        },
+      },
+      // the accelerator pedal and the brake lights (config.pedals); notify only, so "s" in app.json
+      "de.bmw.powertrain.AcceleratorPedal": {
+        AngleAcceleratorPedal: (msg) => {
+          const raw = msg && msg.actualValueAngleAcceleratorPedal;
+          const valid =
+            enumNum(
+              msg && msg.qualifierActualValueAngleAcceleratorPedal,
+              PEDAL_OK,
+            ) ===
+            PEDAL_OK.SIGNALWERT_IST_GUELTIG_UND_ABGESICHERT_UND_PLAUSIBILISIERT;
+          this.pedal = valid && isNum(raw) ? { raw, at: Date.now() } : null;
+          // for working out config.pedal: every change, at most 5 a second, with the pedal message's other values (a
+          // slow press on the car showed the bar jumping, Nov 7 2026: wrong field or scaling)
+          const line =
+            raw +
+            " virtual " +
+            (msg && msg.actualValueAngleAcceleratorPedalVirtual) +
+            " gradient " +
+            (msg && msg.gradientActualValueAngleAcceleratorPedal) +
+            " (" +
+            (msg && msg.qualifierActualValueAngleAcceleratorPedal) +
+            ")";
+          if (line !== this.pedalLine && Date.now() - this.pedalLogged > PEDAL_LOG_MS) {
+            this.pedalLogged = Date.now();
+            this.pedalLine = line;
+            this.log.info("accelerator pedal raw " + line);
+          }
+        },
+      },
+      // the 12 V battery's charge condition (config.pedals, with the 12 V voltage)
+      "de.bmw.infotainment.vehicle.CDS": {
+        // the hand brake contact (a fallback for the parking brake lamp): 2 set, 1 released
+        statusHandBrake: (msg) => {
+          const contact = enumNum(
+            msg && msg.statusContactHandBrake,
+            HAND_BRAKE,
+          );
+          this.parkBrakeCds =
+            contact === HAND_BRAKE.HANDBREMSE_ANGEZOGEN
+              ? true
+              : contact === HAND_BRAKE.HANDBREMSE_GELOEST
+                ? false
+                : null;
+        },
+        statusBattery2: (msg) => {
+          const condition = msg && msg.conditionBatteryChargingCondition;
+          const raw = isNum(condition) && condition !== BYTE_NONE ? condition : null;
+          if (raw !== this.battRaw)
+            this.log.info("12 V battery charge condition raw " + condition);
+          this.battRaw = raw;
+          this.battAt = Date.now();
+        },
+      },
+      "de.bmw.body.Light": {
+        LampExterior: (msg) => {
+          const brakeLight = enumNum(
+            msg && msg.controlFunctionBrakeLight,
+            BRAKE_LIGHT,
+          );
+          this.brakeOn =
+            brakeLight === BRAKE_LIGHT.ON_BL
+              ? true
+              : brakeLight === BRAKE_LIGHT.OFF_BL
+                ? false
+                : null;
+        },
+        // the indicators (the Grand National theme's turn lamps): controlIndicateDirection 1 / 3 left, 2 / 4 right, 8 hazards
+        StatusFunctionsIndicators: (msg) => {
+          const raw = msg && msg.controlIndicateDirection,
+            direction = enumNum(raw, INDICATE);
+          const turn =
+            direction === INDICATE.TIPP_BLINKEN_LINKS_EIN ||
+            direction === INDICATE.DAUER_BLINKEN_LINKS_EIN
+              ? "L"
+              : direction === INDICATE.TIPP_BLINKEN_RECHTS_EIN ||
+                  direction === INDICATE.DAUER_BLINKEN_RECHTS_EIN
+                ? "R"
+                : direction === INDICATE.BEIDSEITIGES_BLINKEN_EIN
+                  ? "LR"
+                  : direction === INDICATE.BLINKEN_AUS
+                    ? ""
+                    : null;
+          if (turn !== this.turn)
+            this.log.info(
+              "indicators raw " +
+                raw +
+                (msg && msg.activeFunctionIndicateDirection !== undefined
+                  ? " / " + msg.activeFunctionIndicateDirection
+                  : ""),
+            );
+          this.turn = turn;
+          this.turnAt = Date.now();
+        },
+      },
+      // the parking brake (the Grand National theme's left lamp): statusParkingBrake 1 / 4 = set or setting, 0 / 2 = released
+      "de.bmw.infotainment.vehicle.Vehicle2": {
+        // the car's model and engine type: the tank (the "tank" setting's Auto)
+        statusVehiclePartType: (msg) => this._onPartType(msg),
+        statusStandstillFunctions: (msg) => {
+          const raw = msg && msg.statusParkingBrake,
+            status = enumNum(raw, PARK_BRAKE);
+          const engaged =
+            status === PARK_BRAKE.PARKBREMSE_MECHANISCH_FESTGESTELLT ||
+            status === PARK_BRAKE.PARKBREMSE_IM_STELLVORGANG_FESTSTELLEN
+              ? true
+              : status === PARK_BRAKE.PARKBREMSE_MECHANISCH_NICHT_FESTGESTELLT ||
+                  status === PARK_BRAKE.PARKBREMSE_IM_STELLVORGANG_LOESEN
+                ? false
+                : null;
+          if (engaged !== this.parkBrake)
+            this.log.info("parking brake raw " + JSON.stringify(msg));
+          this.parkBrake = engaged;
+        },
+      },
+      // the heated steering wheel (the Grand National HEAT STR lamp), sent on change (car log, Nov 14 2026). The G20 lists
+      // ClimateMaster statusSteeringWheelHeating but never sends it, and Climate's wheel heat fields stay invalid or 0
+      "de.bmw.body.steeringwheelcomfort.SteeringWheelClimate": {
+        heatingState: (msg) => {
+          const on =
+            !msg || msg.availability === false ? null : msg.heating === true;
+          if (on !== this.wheelHeat)
+            this.log.info("wheel heat heatingState raw " + JSON.stringify(msg));
+          this.wheelHeat = on;
+        },
+      },
+      // the doors, hood and trunk (the Grand National theme's door lamps), sent on change within ~100 ms (door probe, car,
+      // Nov 16 2026: all six seen open and closed; enums arrive as their names). The car's driver side is its left.
+      "de.bmw.body.DoorsWindowsRoofMirrors": {
+        CentralLockingSystemAndPanelStatus2: (msg) => {
+          /** @type {(raw: *) => ?boolean} */
+          const open = (raw) =>
+            raw === 1 || (typeof raw === "string" && /_OFFEN$/.test(raw))
+              ? true
+              : raw === 0 || (typeof raw === "string" && /GESCHLOSSEN$/.test(raw))
+                ? false
+                : null;
+          const doors = msg
+            ? {
+                fl: open(msg.statusDoorSwitchDRD),
+                fr: open(msg.statusDoorSwitchPSD),
+                rl: open(msg.statusDoorSwitchDRDR),
+                rr: open(msg.statusDoorSwitchPSDR),
+                hood: open(msg.statusContactBonnet),
+                trunk: open(msg.statusContactBootLid),
+              }
+            : null;
+          const line = JSON.stringify(doors);
+          if (line !== this.doorsLine) this.log.info("doors " + line);
+          this.doorsLine = line;
+          this.doors = doors;
+        },
+      },
+      // Auto Hold (the same lamp, green): statusAutoH 2 = on and holding the car, 1 = on, 0 = off
+      "de.bmw.chassis.VehicleStabilizationManagement": {
+        StandStillFunction: (msg) => {
+          const raw = msg && msg.statusAutoH,
+            status = enumNum(raw, AUTO_H);
+          const autoHold =
+            status === AUTO_H.AUTOH_AKTIVIERT_UND_HAELT_FAHRZEUG
+              ? "hold"
+              : status === AUTO_H.AUTOH_AKTIVIERT_UND_HAELT_FAHRZEUG_NICHT
+                ? "armed"
+                : status === AUTO_H.AUTOH_NICHT_AKTIVIERT
+                  ? "off"
+                  : null;
+          if (autoHold !== this.autoHold)
+            this.log.info(
+              "auto hold raw " +
+                raw +
+                ", parking brake " +
+                (msg && msg.statusParkingBrake),
+            );
+          this.autoHold = autoHold;
+          // this message carries the parking brake too, when Vehicle2 has not said
+          const parkBrake = enumNum(msg && msg.statusParkingBrake, PARK_BRAKE);
+          if (
+            this.parkBrake === null &&
+            (parkBrake === PARK_BRAKE.PARKBREMSE_MECHANISCH_NICHT_FESTGESTELLT ||
+              parkBrake === PARK_BRAKE.PARKBREMSE_MECHANISCH_FESTGESTELLT ||
+              parkBrake === PARK_BRAKE.PARKBREMSE_IM_STELLVORGANG_LOESEN ||
+              parkBrake === PARK_BRAKE.PARKBREMSE_IM_STELLVORGANG_FESTSTELLEN)
+          )
+            this.parkBrakeVsm =
+              parkBrake === PARK_BRAKE.PARKBREMSE_MECHANISCH_FESTGESTELLT ||
+              parkBrake === PARK_BRAKE.PARKBREMSE_IM_STELLVORGANG_FESTSTELLEN;
+        },
+      },
+      // the odometer (the Grand National theme's VFD): MileageSupreme, unit unconfirmed (taken as km; logged raw on change)
+      "de.bmw.infrastructure.MileageSupreme": {
+        mileageSupreme: (msg) => {
+          const mileage = msg && msg.mileageSupreme;
+          const km =
+            isNum(mileage) && mileage > 0 && mileage < MILEAGE_NONE
+              ? mileage
+              : null;
+          if (km !== this.mileage)
+            this.log.info("odometer raw " + JSON.stringify(msg));
+          this.mileage = km;
+        },
+      },
+      "de.bmw.infotainment.drivingexcitement.FES": {
+        statusSwitchDriveDynamicSport2: (msg) => {
+          const raw = msg && msg.displayBoostPressure;
+          if (typeof raw !== "number" || raw === BOOST_SCALE.invalid) return;
+          this.boostFes = raw * BOOST_SCALE.factor + BOOST_SCALE.offset;
+          this.boostFesAt = Date.now();
+        },
+        // the HMI's sport display: power and torque in % of the car's maximum (car_vitals, MIT); 255 = none
+        statusVehicleDynamicEngine: (msg) => {
+          const power = msg && msg.displaySportEnginePower,
+            torque = msg && msg.displaySportEngineTorque;
+          this.sportPower =
+            isNum(power) && power >= 0 && power <= SPORT_PCT_MAX ? power : null;
+          this.sportTorque =
+            isNum(torque) && torque >= 0 && torque <= SPORT_PCT_MAX ? torque : null;
+          this.sportAt = Date.now();
+        },
+        statusFESVehicleDynamicSwitchHMI: (msg) => {
+          const raw = msg && msg.actualValueModeDrivingExperience;
+          const mode = driveModeOf(raw),
+            variant = mode ? driveVariantOf(raw) : null;
+          if (
+            !mode ||
+            (mode === this.driveMode && variant === this.driveVariant)
+          )
+            return;
+          this.log.info(
+            "drive mode " +
+              MODE_NAME[mode] +
+              (variant ? " " + variant : "") +
+              " (" +
+              raw +
+              ")",
+          );
+          this.driveMode = mode;
+          this.driveVariant = variant;
+          if (this._layoutName() !== this.activeName) this._rebuild();
+          else this._status();
+        },
+      },
+    };
+    // the HUD modes' signal only with them; the car ahead with them or app.json config.carAhead (the cluster's Sport)
+    // (the runtime spec has no "signals": the interface must also be in app.json "signals")
+    // a plug-in hybrid's battery and electric range: config.hybrid (the app lists both in its "signals")
+    if (this.config.hybrid !== true) {
+      delete extra["de.bmw.infotainment.drivingexcitement.Efficiencytainment2"];
+      delete extra["de.bmw.infotainment.lsc.LSCDataSink"];
+      delete extra["de.bmw.infotainment.vehicle.Charging"];
+      delete extra["de.bmw.infotainment.telematic.journeyhistory.BcPersonal"];
+      delete extra["de.bmw.infotainment.KombiIF"].displayRangeElectricVehicle;
+      delete extra["de.bmw.infotainment.vehicle.Vehicle"].lastStateCallCharging;
+    }
+    if (!this._modesOn() && this.config.lamps !== true)
+      delete extra["de.bmw.infotainment.displaydataserver.DisplayDataServer"];
+    if (this.config.lamps !== true) {
+      delete extra["de.bmw.infrastructure.MileageSupreme"];
+      delete extra["de.bmw.infotainment.vehicle.Vehicle2"];
+      delete extra["de.bmw.chassis.VehicleStabilizationManagement"];
+      delete extra["de.bmw.body.steeringwheelcomfort.SteeringWheelClimate"];
+      delete extra["de.bmw.body.DoorsWindowsRoofMirrors"];
+      if (extra["de.bmw.infotainment.vehicle.CDS"])
+        delete extra["de.bmw.infotainment.vehicle.CDS"].statusHandBrake;
+    }
+    if (!this._modesOn() && this.config.carAhead !== true)
+      delete extra["de.bmw.dass.GapVehicleAhead"];
+    if (!this.config.consumption)
+      delete extra["de.bmw.infotainment.resetlogic.ResetLogic"];
+    if (this.config.pedals !== true) {
+      delete extra["de.bmw.powertrain.AcceleratorPedal"];
+      if (this.config.lamps === true)
+        delete extra["de.bmw.infotainment.vehicle.CDS"].statusBattery2;
+      else delete extra["de.bmw.infotainment.vehicle.CDS"];
+    }
+    if (this.config.pedals !== true && this.config.lamps !== true) {
+      // the indicators alone (config.indicators: the Miku character points that way)
+      if (this.config.indicators === true)
+        delete extra["de.bmw.body.Light"].LampExterior;
+      else delete extra["de.bmw.body.Light"];
+    }
+    this.car = new Car(
+      this.ctx,
+      ["rpm", "speed", "temps", "accel", "gear", "torque"],
+      extra,
+    );
+    // one copy of the car's values per tick: data() copies them every call, and a tick asks 20 to 40 times
+    // (_freshData() at the start of each tick and of the Miku character's timer; up to one tick old in between)
+    const carData = this.car.data.bind(this.car);
+    /** @type {?import("../shift_score").CarData} */
+    let snapshot = null;
+    this.car.data = () => snapshot || (snapshot = carData());
+    this._freshData = () => {
+      snapshot = null;
+    };
+    this.car.setRedline(this.setting("redline"));
+    this.score = new ShiftScore(
+      this.car,
+      () => ({
+        redline: this.setting("redline"),
+        shiftBefore: this.setting("shiftBefore"),
+        coldGuard: this.setting("coldGuard"),
+      }),
+      this.log,
+    );
+  },
+
+  /**
+   * A plug-in hybrid battery message, logged whenever it changes (empty ones too, so a car's log shows which it sends).
+   * @param {string} name
+   * @param {*} msg
+   * @returns {void}
+   */
+  _hvRaw(name, msg) {
+    const line = JSON.stringify(msg);
+    if (this.hvRawLogged[name] === line) return;
+    this.hvRawLogged[name] = line;
+    this.log.info("hybrid battery raw: " + name + " " + line);
+  },
+
+  /**
+   * A lastStateCallCharging message (Vehicle, LSCDataSink or Charging): its % (displayActValueSoc, else hvbActValueSoc;
+   * 255 none) into source pctKey, its energy now over full (energyContentActValueHvb / energyContentMaxHvb; 511 none)
+   * into energyKey.
+   * @param {string} name
+   * @param {string} pctKey
+   * @param {string} energyKey
+   * @param {*} msg
+   * @returns {void}
+   */
+  _hvLastState(name, pctKey, energyKey, msg) {
+    const m = msg || {};
+    this._hvRaw(name, {
+      displayActValueSoc: m.displayActValueSoc,
+      hvbActValueSoc: m.hvbActValueSoc,
+      energyContentActValueHvb: m.energyContentActValueHvb,
+      energyContentMaxHvb: m.energyContentMaxHvb,
+    });
+    const shown = pct100(m.displayActValueSoc);
+    this.hvSocSrc[pctKey] = shown !== null ? shown : pct100(m.hvbActValueSoc);
+    const now = m.energyContentActValueHvb,
+      full = m.energyContentMaxHvb;
+    this.hvSocSrc[energyKey] =
+      isNum(now) && isNum(full) && full > 0 && full < HV_ENERGY_NONE && now >= 0 && now <= full
+        ? Math.round((now / full) * HV_SOC_MAX)
+        : null;
+    this._hvSocPick();
+  },
+
+  /**
+   * hvSoc: the first source with a value, in HV_SOURCES' order; each source's first value is logged.
+   * @returns {void}
+   */
+  _hvSocPick() {
+    const src = this.hvSocSrc;
+    HV_SOURCES.forEach((k) => {
+      if (src[k] === null || this.hvSocSeen[k]) return;
+      this.hvSocSeen[k] = true;
+      this.log.info("hybrid battery source " + k + " gives a value: " + src[k] + " %");
+    });
+    const from = HV_SOURCES.filter((k) => src[k] !== null)[0] || null;
+    this.hvSoc = from ? src[from] : null;
+    if (from !== this.hvSocFrom) this.log.info("hybrid battery from " + (from || "none") + ": " + JSON.stringify(src));
+    this.hvSocFrom = from;
+  },
+
+  /**
+   * The tank last detected (data/vehicle.json), so a start draws the right marks before the car says.
+   * @returns {?number}
+   */
+  _loadTank() {
+    try {
+      const litres = JSON.parse(fs.readFileSync(path.join(this.ctx.dataDir || ".", "vehicle.json"), "utf8")).tankLitres;
+      return isNum(litres) && litres > 0 ? litres : null;
+    } catch (err) {
+      return null;
+    }
+  },
+
+  /**
+   * Vehicle2 statusVehiclePartType: the model (G20 ...) and engine type give the tank (TANK_BY_MODEL), kept in
+   * data/vehicle.json. A model not in the table, or no value, leaves it as it was.
+   * @param {*} msg
+   * @returns {void}
+   */
+  _onPartType(msg) {
+    const rawModel = msg && msg.typeVehicle,
+      rawEngine = msg && msg.typeEngine;
+    const model = typeof rawModel === "string" ? rawModel : MODEL_WIRE[rawModel] || null,
+      hybrid = rawEngine === HYBRID_ENGINE.name || rawEngine === HYBRID_ENGINE.wire;
+    const tanks = model ? TANK_BY_MODEL[model] : null,
+      litres = tanks ? tanks[hybrid ? 1 : 0] : null;
+    const line = JSON.stringify({ typeVehicle: rawModel, typeEngine: rawEngine }) + " -> " + (litres || "?") + " L";
+    if (line !== this.partTypeLine) this.log.info("vehicle type: " + line);
+    this.partTypeLine = line;
+    if (!litres || litres === this.tankDetected) return;
+    this.tankDetected = litres;
+    try {
+      fs.writeFileSync(path.join(this.ctx.dataDir || ".", "vehicle.json"), JSON.stringify({ model, hybrid, tankLitres: litres }));
+    } catch (err) {
+      this.log.warn("vehicle.json: " + (err instanceof Error ? err.message : err));
+    }
+    this._unitsMaybeChanged();
+  },
+
+  /**
+   * Rebuilds when the units or the tank the labels were painted in changed (the car's units or model came in).
+   * @returns {void}
+   */
+  _unitsMaybeChanged() {
+    if (this.unitsSig !== undefined && this._unitsSig() !== this.unitsSig) this._rebuild();
+  },
+
+  /**
+   * Boost from the engine unit when the sport display's value isn't there (config.dme, read-only UDS).
+   * @returns {void}
+   */
+  _startDme() {
+    const dme = this.config.dme;
+    if (
+      !dme ||
+      !["boost", "volt", "pedal"].some(
+        (k) => Array.isArray(dme[k]) && dme[k].length,
+      )
+    )
+      return;
+    let reader = null,
+      busy = false,
+      baro = STD_BARO_KPA,
+      baroAt = 0,
+      boostAskAt = 0;
+    try {
+      const { Diag } = require("../kit/diag");
+      const { DidReader } = require("../kit/dids");
+      const link = new Diag(this.ctx.signals, this.log);
+      link.quiet = true;
+      Promise.resolve()
+        .then(() => link.init())
+        .catch((err) =>
+          this.log.info(
+            "engine unit link not available: " + ((err && err.message) || err),
+          ),
+        );
+      reader = new DidReader(link, { ecu: dme.ecu || DME_ECU });
+    } catch (err) {
+      this.log.info("engine unit boost off: " + ((err && err.message) || err));
+      return;
+    }
+    this.dmeTimer = setInterval(
+      () =>
+        this._guard("engine unit boost", () => {
+          const now = Date.now();
+          if (busy || this._offScreen()) return;
+          // one question per tick, the pedal first (it moves the most), each only while a shown widget uses it
+          const wantPedal =
+            this.needsPedal &&
+            Array.isArray(dme.pedal) &&
+            now - this.pedalObdAt >= PEDAL_MS;
+          const wantVolt =
+            !wantPedal &&
+            this.needsVolt &&
+            Array.isArray(dme.volt) &&
+            now - this.volt12At > VOLT_MS;
+          const wantBoost =
+            !wantPedal &&
+            !wantVolt &&
+            this.needsBoost &&
+            Array.isArray(dme.boost) &&
+            now - this.boostFesAt >= FRESH_MS &&
+            now - boostAskAt >= BOOST_ASK_MS;
+          if (!wantPedal && !wantVolt && !wantBoost) return;
+          if (this.car.data().demo) return;
+          busy = true;
+          (async () => {
+            if (wantPedal) {
+              const pedal = await reader.value("pedal", dme.pedal);
+              this.pedalObdAt = Date.now();
+              this.pedalObd = isNum(pedal) ? pedal : null;
+              if (
+                isNum(pedal) &&
+                Math.round(pedal) !== this.pedalObdLogged &&
+                now - this.pedalLogged > PEDAL_LOG_MS
+              ) {
+                // for config.pedal.obdRange
+                this.pedalObdLogged = Math.round(pedal);
+                this.pedalLogged = now;
+                this.log.info(
+                  "accelerator pedal (OBD) " + pedal.toFixed(1) + " %",
+                );
+              }
+              return;
+            }
+            if (wantVolt) {
+              const volt = await reader.value("volt", dme.volt);
+              this.volt12At = Date.now();
+              this.volt12 = isNum(volt) ? volt : null;
+              return;
+            }
+            boostAskAt = now;
+            if (now - baroAt > BARO_ASK_MS && Array.isArray(dme.baro)) {
+              baroAt = now;
+              const baroNow = await reader.value("baro", dme.baro);
+              if (isNum(baroNow)) baro = baroNow;
+            }
+            const manifold = await reader.value("boost", dme.boost);
+            if (isNum(manifold)) {
+              this.boostDme = (manifold - baro) / 100;
+              this.boostDmeAt = Date.now();
+            }
+          })()
+            .catch((err) =>
+              this.log.info(
+                "engine unit boost: " + ((err && err.message) || err),
+              ),
+            )
+            .then(() => {
+              busy = false;
+            });
+        }),
+      DME_TICK_MS,
+    );
+  },
+
+  /**
+   * BMW's route guidance on / off, for the HUD modes.
+   * @returns {void}
+   */
+  _startNav() {
+    if (!this._modesOn() && !this.ctx.settings.item("navLayout")) return;
+    /** @type {import("./someip").HandlersOf<"de.bmw.infotainment.navigation.guiding.Guidance">} */
+    const handlers = {
+      guidanceState: (msg) =>
+        this._guard("guidance", () => this._onGuidance(msg)),
+    };
+    if (this.ctx.settings.item("navLayout")) {
+      // the route's progress (Sport's route bar): distance and time left to the final destination, distance travelled
+      handlers.finalDestinationInfo = (msg) =>
+        this._guard("route", () => this._onRouteInfo(msg));
+      handlers.travelledDistance = (msg) =>
+        this._guard("route", () => this._onTravelled(msg));
+    }
+    Promise.resolve()
+      .then(() =>
+        this.ctx.signals.watch(
+          GUIDANCE.iface,
+          GUIDANCE.instance,
+          handlers,
+          this.log,
+        ),
+      )
+      .then((sub) => {
+        this.navSub = sub;
+        this.log.info(
+          "signal Guidance " +
+            (sub && sub.error ? "error: " + sub.error : "subscribed"),
+        );
+      })
+      .catch((err) =>
+        this.log.info(
+          "route guidance not available: " + ((err && err.message) || err),
+        ),
+      );
+  },
+
+  /**
+   * The car's attitude for the F-16 layout, with app.json config.attitude (and both interfaces in its "signals"): the road's gradient front to back and
+   * side to side (chassis.VehicleModel LaneSlope) and the heading (navigation.positioning.Positioning
+   * currentLocation, Main_Instance). Found with the attitude probe, Nov 14 2026 (the car offers no body pitch, roll or
+   * yaw rate interface to the head unit).
+   * @returns {void}
+   */
+  _startAttitude() {
+    // app.json config.attitude: the app lists both interfaces in its "signals" (the runtime spec doesn't carry that list)
+    if (!this.config.attitude) return;
+    /** @type {(iface: string, instance: string, handlers: Record<string, (msg: *) => void>, what: string) => void} */
+    const watch = (iface, instance, handlers, what) => {
+      Promise.resolve()
+        .then(() => this.ctx.signals.watch(iface, instance, handlers, this.log))
+        .then((/** @type {*} */ sub) =>
+          this.log.info("signal " + what + " " + (sub && sub.error ? "error: " + sub.error : "subscribed")),
+        )
+        .catch((/** @type {*} */ err) => this.log.info(what + " not available: " + ((err && err.message) || err)));
+    };
+    watch(
+      "de.bmw.chassis.VehicleModel",
+      "1",
+      { LaneSlope: (msg) => this._guard("slope", () => this._onSlope(msg)) },
+      "LaneSlope",
+    );
+    watch(
+      "de.bmw.infotainment.navigation.positioning.Positioning",
+      "Main_Instance",
+      { currentLocation: (msg) => this._guard("heading", () => this._onHeading(msg)) },
+      "heading",
+    );
+  },
+
+  /**
+   * LaneSlope: the gradient, front to back and side to side, in degrees. Each is a 12-bit count the binding hands
+   * over with its nibbles out of order (its low byte holds the count's upper 8 bits, its high nibble the lower 4:
+   * raw steps of 256 were single counts); then 1280 is level and a count 0.1 % of grade (parked on two slopes, the
+   * count against the accelerometer's g, Nov 14 2026). Signs as the accelerometer's at rest: nose up as gLong +
+   * (count under 1280), the left side lower as gLat - (count under 1280).
+   * @param {*} msg
+   * @returns {void}
+   */
+  _onSlope(msg) {
+    /** @type {(raw: *) => ?number} */
+    const count = (raw) => (isNum(raw) ? ((raw & 255) << 4) | ((raw >> 8) & 15) : null);
+    const ok = (/** @type {*} */ q) => q === "SIGNALWERT_IST_GUELTIG" || q === SLOPE_VALID_WIRE;
+    const lon = count(msg && msg.actualValueLongitudinalGradientRoadway),
+      tr = count(msg && msg.actualValueTransverseGradientRoadway);
+    /** @type {(c: number) => number} */
+    const deg = (c) => (Math.atan(((c - SLOPE_LEVEL) * SLOPE_PCT) / 100) * 180) / Math.PI;
+    this.slopePitch = lon !== null && ok(msg.qualifierActualValueLongitudinalGradientRoadway) ? -deg(lon) : null;
+    // bank: the left side lower is +, as the F-16's bank (a left turn's lateral g banks it left)
+    this.slopeRoll = tr !== null && ok(msg.qualifierActualValueTransverseGradientRoadway) ? -deg(tr) : null;
+    this.slopeAt = Date.now();
+  },
+
+  /**
+   * The heading from navigation's position: degrees clockwise from north, every ~0.3 s.
+   * @param {*} msg
+   * @returns {void}
+   */
+  _onHeading(msg) {
+    const heading = msg && msg.heading;
+    this.heading = isNum(heading) && msg.coordinatesValid !== false ? ((heading % 360) + 360) % 360 : null;
+    this.headingAt = Date.now();
+  },
+
+  /**
+   * The song title BMW's player shows (app.json config.music), for {{musicTitle}}.
+   * @returns {void}
+   */
+  _startMedia() {
+    if (!this.config.music) return;
+    /** @type {MediaState} */
+    this.media = { pm: null, mm: null, tracks: null, sel: null };
+    /** @type {(k: keyof MediaState) => (msg: MediaState[keyof MediaState]) => void} */
+    const handler = (k) => (msg) =>
+      this._guard("media", () => {
+        this.media[k] = msg && typeof msg === "object" ? msg : null;
+        this._pickTitle(k);
+      });
+    Promise.resolve()
+      .then(() =>
+        this.ctx.signals.watch(
+          MEDIA.iface,
+          MEDIA.instance,
+          {
+            playerMetadata: handler("pm"),
+            mainMenuMetadata: handler("mm"),
+            tracks: handler("tracks"),
+            trackSelection: handler("sel"),
+          },
+          this.log,
+        ),
+      )
+      .then((sub) => {
+        this.mediaSub = sub;
+        this.log.info(
+          "signal HmiMediaState " +
+            (sub && sub.error ? "error: " + sub.error : "subscribed"),
+        );
+      })
+      .catch((err) =>
+        this.log.info(
+          "media metadata not available: " + ((err && err.message) || err),
+        ),
+      );
+    // load the font now, not on the first title's paint (the search walks folders once)
+    this.fontT = setTimeout(
+      () => this._guard("font", () => this._sysFont()),
+      FONT_LOAD_MS,
+    );
+  },
+
+  /** The title, from HmiMediaState: playerMetadata's line typed TITLE; else (the car's player sends only ARTIST and
+   *  ALBUM there, "Aimer" / "Sleepless Nights", Nov 9 2026) the playing track's entry in the track list (by trackId,
+   *  its first line), or mainMenuMetadata's first line that isn't the artist or album; else an untyped playerMetadata
+   *  line (the second first); else the artist. Each source's raw text is logged when it changes, to confirm on the car.
+   * @param {string} changed the source that changed: pm, mm, tracks, sel
+   * @returns {void}
+   */
+  _pickTitle(changed) {
+    const media = this.media,
+      player = media.pm || {};
+    /** @type {(text: unknown) => string} */
+    const clean = (text) =>
+      String(text || "")
+        .replace(/\s+/g, " ")
+        .trim();
+    /** @type {(type: unknown) => number} a MEDIA_ITEM */
+    const kind = (type) => {
+      const item = enumNum(type, MEDIA_ITEM);
+      if (item >= 0 && item !== null) return item;
+      const name = String(type || "").toUpperCase();
+      return /TITLE/.test(name)
+        ? MEDIA_ITEM.TITLE
+        : /ARTIST/.test(name)
+          ? MEDIA_ITEM.ARTIST
+          : /ALBUM/.test(name)
+            ? MEDIA_ITEM.ALBUM
+            : MEDIA_ITEM.UNDEFINED;
+    };
+    /** @type {Array<[string, number]>} [text, MEDIA_ITEM] */
+    const lines = [
+      [clean(player.firstLineText), kind(player.firstLineType)],
+      [clean(player.secondLineText), kind(player.secondLineType)],
+    ];
+    const other = lines
+      .filter(
+        (line) =>
+          line[0] &&
+          (line[1] === MEDIA_ITEM.ARTIST || line[1] === MEDIA_ITEM.ALBUM),
+      )
+      .map((line) => line[0]);
+    /** @type {(text: string) => boolean | string} */
+    const fresh = (text) => text && other.indexOf(text) < 0;
+    // the raw sources, logged once per change
+    const trackId =
+      media.sel && media.sel.selectedTrackId !== undefined
+        ? media.sel.selectedTrackId
+        : player.trackId;
+    const list =
+      media.tracks && Array.isArray(media.tracks.tracks)
+        ? media.tracks.tracks
+        : [];
+    const track =
+      trackId !== undefined
+        ? list.find(
+            (entry) => entry && String(entry.trackId) === String(trackId),
+          )
+        : null;
+    const menu = media.mm
+      ? [
+          clean(media.mm.firstLineText),
+          clean(media.mm.secondLineText),
+          clean(media.mm.thirdLineText),
+        ]
+      : null;
+    const raw = JSON.stringify({
+      track: track ? [clean(track.firstLine), clean(track.secondLine)] : null,
+      id: trackId,
+      of: list.length,
+      menu: menu,
+    });
+    if (raw !== this.mediaRaw) {
+      this.mediaRaw = raw;
+      this.log.info("media sources (" + changed + "): " + raw);
+    }
+    let title = "",
+      from = "";
+    const typed = lines.find((line) => line[0] && line[1] === MEDIA_ITEM.TITLE);
+    if (typed) {
+      title = typed[0];
+      from = "player TITLE";
+    }
+    if (!title && track) {
+      const found = [clean(track.firstLine), clean(track.secondLine)].find(
+        fresh,
+      );
+      if (found) {
+        title = found;
+        from = "track list";
+      }
+    }
+    if (!title && menu) {
+      const found = menu.find(fresh);
+      if (found) {
+        title = found;
+        from = "main menu";
+      }
+    }
+    if (!title) {
+      const untyped = [lines[1], lines[0]].find(
+        (line) =>
+          line[0] &&
+          line[1] !== MEDIA_ITEM.ARTIST &&
+          line[1] !== MEDIA_ITEM.ALBUM,
+      );
+      if (untyped) {
+        title = untyped[0];
+        from = "player line";
+      }
+    }
+    if (!title) {
+      title = lines[0][0];
+      from = title ? "artist (no title anywhere)" : "nothing";
+    }
+    if (title !== this.musicTitle)
+      this.log.info(
+        "now playing " +
+          JSON.stringify(title) +
+          " from " +
+          from +
+          " (player lines " +
+          JSON.stringify(lines) +
+          ", uiType " +
+          JSON.stringify(player.uiType) +
+          ")",
+      );
+    this.musicTitle = title;
+  },
+
+  /** KombiIF statusShowTimeDate: the cluster's displayed local time against UTC now, to the nearest 15 min within
+   *  -12..+14 h, is the car's time zone. 255 = not sent.
+   * @param {import("./someip").Fields["de.bmw.infotainment.KombiIF"]["statusShowTimeDate"]} msg
+   * @returns {void}
+   */
+  _onCarClock(msg) {
+    const hour = msg && msg.displayHour,
+      minute = msg && msg.displayMinute;
+    if (!isNum(hour) || !isNum(minute) || hour > 23 || minute > 59) return;
+    const now = new Date();
+    let off =
+      hour * 60 + minute - (now.getUTCHours() * 60 + now.getUTCMinutes());
+    off = Math.round(off / TZ_STEP_MIN) * TZ_STEP_MIN;
+    while (off < TZ_MIN_H * 60) off += 1440;
+    while (off > TZ_MAX_H * 60) off -= 1440;
+    if (off === this.carOffsetMin) return;
+    this.carOffsetMin = off;
+    this.log.info(
+      "car clock " +
+        hour +
+        ":" +
+        pad2(minute) +
+        ": time zone UTC" +
+        (off < 0 ? "-" : "+") +
+        pad2(Math.floor(Math.abs(off) / 60)) +
+        ":" +
+        pad2(Math.abs(off) % 60),
+    );
+  },
+});

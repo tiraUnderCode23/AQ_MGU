@@ -1,0 +1,10 @@
+Drivefin (clucraft_jellyfin): an unofficial Jellyfin client for the BMW iDrive 7 head unit. MIT (LICENSE).
+Not affiliated with or endorsed by the Jellyfin project or BMW AG.
+
+In this app, each under its own licence:
+  svc.js, caraudio.js, fullview.js   from M850i-amn/idrive7-apps, apps/amn_iptv/lib. MIT, Copyright (c) 2026 M850i-amn.
+  keyboard.js                        from leschi/mgu-media-client. MIT, Copyright (c) 2026 Leopold Pöchinger / IbexData GmbH.
+  qrcodegen.js                       Project Nayuki's QR Code generator library. MIT (the notice in the file).
+  fonts (cl_bold, cl_med)            Inter, SIL Open Font License 1.1 (LICENSE-Inter.txt in the fonts pack).
+  kit/                               the MGU App Kit: MIT, cauliflowermossgrape, 小白151, Nick G.
+The licences' texts are in LICENSE.

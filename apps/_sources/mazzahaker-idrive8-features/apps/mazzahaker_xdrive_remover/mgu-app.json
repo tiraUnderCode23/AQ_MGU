@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "id": "mazzahaker_xdrive_remover",
+  "version": "0.1.26",
+  "tree": "package",
+  "modules": [
+    "src/main.js",
+    "src/controller.js",
+    "src/tasu.js",
+    "src/vehicle.js",
+    "src/drawn.js",
+    "src/kit_record.js",
+    "src/kit_canvas.js",
+    "src/kit_fonts.js",
+    "src/font_regular.js",
+    "src/font_semibold.js",
+    "src/i18n.js",
+    "src/locales.js",
+    "src/mgu_render_client.js"
+  ],
+  "sdk": [
+    "oap-sdk/src/core/OnlineApp.js",
+    "oap-sdk/src/logging/logging"
+  ],
+  "mguHmi": [
+    "ID7",
+    "ID8"
+  ]
+}

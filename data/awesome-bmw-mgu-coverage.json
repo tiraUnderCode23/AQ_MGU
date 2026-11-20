@@ -10560,7 +10560,7 @@
       "note_ar": "تطبيقات أو أدوات MGU؛ أهلية كل مكون تستند إلى بيان إصداره وHMI ومتطلباته.",
       "upstream": {
         "default_branch": "main",
-        "head_commit": "22a141241d6d329ea671426749a8a029ac22258e",
+        "head_commit": "f9ca32bd3cebd163fa16fbe17cc3473623be2c81",
         "anonymous_head_observed": true,
         "readme_url": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/README.md",
         "readme_http_status": 200,
@@ -11580,10 +11580,10 @@
         {
           "id": "iteriodev-comfort",
           "kind": "tool",
-          "version": "0.6.1",
+          "version": "0.6.3",
           "title": "Comfort",
           "manifest_path": "tools/iteriodev-comfort/component.json",
-          "manifest_url": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/tools/iteriodev-comfort/component.json",
+          "manifest_url": "https://raw.githubusercontent.com/IterioDev/car-apps/f9ca32bd3cebd163fa16fbe17cc3473623be2c81/tools/iteriodev-comfort/component.json",
           "mguHmi": [
             "ID7",
             "ID8"
@@ -11614,7 +11614,7 @@
           "version": "1.2.6",
           "title": "Drive Recorder player",
           "manifest_path": "tools/iteriodev-drplay/component.json",
-          "manifest_url": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/tools/iteriodev-drplay/component.json",
+          "manifest_url": "https://raw.githubusercontent.com/IterioDev/car-apps/f9ca32bd3cebd163fa16fbe17cc3473623be2c81/tools/iteriodev-drplay/component.json",
           "mguHmi": [
             "ID7",
             "ID8"
@@ -11641,7 +11641,7 @@
           "version": "0.5.0",
           "title": "Overlays",
           "manifest_path": "tools/iteriodev-overlays/component.json",
-          "manifest_url": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/tools/iteriodev-overlays/component.json",
+          "manifest_url": "https://raw.githubusercontent.com/IterioDev/car-apps/f9ca32bd3cebd163fa16fbe17cc3473623be2c81/tools/iteriodev-overlays/component.json",
           "mguHmi": [
             "ID8"
           ],
@@ -11669,10 +11669,10 @@
         {
           "id": "iteriodev-screencast",
           "kind": "tool",
-          "version": "1.0.8",
+          "version": "1.0.9",
           "title": "Screen share",
           "manifest_path": "tools/iteriodev-screencast/component.json",
-          "manifest_url": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/tools/iteriodev-screencast/component.json",
+          "manifest_url": "https://raw.githubusercontent.com/IterioDev/car-apps/f9ca32bd3cebd163fa16fbe17cc3473623be2c81/tools/iteriodev-screencast/component.json",
           "mguHmi": [
             "ID7",
             "ID8"
@@ -11703,7 +11703,7 @@
           "version": "1.104.6",
           "title": "Tailscale",
           "manifest_path": "tools/iteriodev-tailscale/component.json",
-          "manifest_url": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/tools/iteriodev-tailscale/component.json",
+          "manifest_url": "https://raw.githubusercontent.com/IterioDev/car-apps/f9ca32bd3cebd163fa16fbe17cc3473623be2c81/tools/iteriodev-tailscale/component.json",
           "mguHmi": [
             "ID7",
             "ID8"
@@ -11731,10 +11731,10 @@
         {
           "id": "iteriodev-turnview",
           "kind": "tool",
-          "version": "0.8.0",
+          "version": "0.9.1",
           "title": "Turn View",
           "manifest_path": "tools/iteriodev-turnview/component.json",
-          "manifest_url": "https://raw.githubusercontent.com/IterioDev/car-apps/22a141241d6d329ea671426749a8a029ac22258e/tools/iteriodev-turnview/component.json",
+          "manifest_url": "https://raw.githubusercontent.com/IterioDev/car-apps/f9ca32bd3cebd163fa16fbe17cc3473623be2c81/tools/iteriodev-turnview/component.json",
           "mguHmi": [
             "ID7",
             "ID8"

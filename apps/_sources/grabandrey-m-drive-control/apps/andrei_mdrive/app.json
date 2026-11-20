@@ -1,0 +1,204 @@
+{
+  "id": "andrei_mdrive",
+  "title": "M Drive",
+  "description": "Motorsport RPM strip, MHD controls, four temperature gauges and turbo pressure in bar.",
+  "version": "0.4.0",
+  "vendor": "Andrei",
+  "loggingId": "OAB7",
+  "iconGlyph": "rpm",
+  "mguHmi": [
+    "ID7",
+    "ID8"
+  ],
+  "requires": {
+    "idrive7-renderd": "2.1.18",
+    "mgu-inputgate": "1.1.0"
+  },
+  "signals": {
+    "com.harman.infotainment.systemfunctions.tasu.tasu.InternalTasu": {
+      "_instances": "SystemFunctionsInternalTasuInst1",
+      "_methods": [
+        "sendTasuRequest"
+      ],
+      "_broadcasts": [
+        "sendTasuResponse"
+      ]
+    },
+    "de.bmw.infotainment.vehicle.CDS": {
+      "statusEngineSpeed2": "rs",
+      "statusEngineTemperature": "rs"
+    },
+    "de.bmw.infotainment.vehicle.Vehicle2": {
+      "statusCarSpeed2": "rs"
+    },
+    "de.bmw.infrastructure.VehicleInformation": {
+      "statusGearboxDrive": "s",
+      "DataPowerTrain2": "s"
+    },
+    "de.bmw.infotainment.drivingexcitement.FES": {
+      "statusSwitchDriveDynamicSport2": "rs"
+    },
+    "de.bmw.infotainment.vehicle.Vehicle": {
+      "statusNewCurrentUnitsStatusExt": "rs"
+    }
+  },
+  "screens": [
+    {
+      "name": "MAIN",
+      "kind": "canvas",
+      "title": "M Drive",
+      "buttons": [
+        [
+          "BTN_PAGE",
+          "Next page"
+        ],
+        [
+          "BTN_1",
+          "Map 1"
+        ],
+        [
+          "BTN_2",
+          "Map 2"
+        ],
+        [
+          "BTN_3",
+          "Map 3"
+        ],
+        [
+          "BTN_4",
+          "Map 4"
+        ],
+        [
+          "BTN_SETTINGS",
+          "Settings"
+        ]
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "key": "skin",
+      "label": "Instrument design",
+      "type": "choice",
+      "default": "id8",
+      "options": [
+        [
+          "id8",
+          "iDrive 8 - G87"
+        ],
+        [
+          "id7",
+          "iDrive 7 - G80"
+        ]
+      ]
+    },
+    {
+      "key": "control",
+      "label": "Vehicle controls",
+      "type": "choice",
+      "default": "off",
+      "options": [
+        [
+          "off",
+          "Disabled"
+        ],
+        [
+          "mhd",
+          "MHD+ DME"
+        ]
+      ]
+    },
+    {
+      "key": "demo",
+      "label": "Demo drive",
+      "type": "choice",
+      "default": "off",
+      "options": [
+        [
+          "off",
+          "Live vehicle"
+        ],
+        [
+          "on",
+          "Demo - no vehicle commands"
+        ]
+      ]
+    },
+    {
+      "key": "redline",
+      "label": "Tachometer scale",
+      "type": "choice",
+      "default": "8000",
+      "options": [
+        [
+          "7000",
+          "7,000 rpm"
+        ],
+        [
+          "8000",
+          "8,000 rpm"
+        ]
+      ]
+    },
+    {
+      "key": "units",
+      "label": "Temperature units",
+      "type": "choice",
+      "default": "c",
+      "options": [
+        [
+          "c",
+          "Celsius"
+        ],
+        [
+          "f",
+          "Fahrenheit"
+        ]
+      ]
+    },
+    {
+      "key": "layout",
+      "label": "Screen layout",
+      "type": "choice",
+      "default": "full",
+      "options": [
+        [
+          "full",
+          "Full screen"
+        ],
+        [
+          "standard",
+          "Standard"
+        ]
+      ]
+    },
+    {
+      "key": "renderer",
+      "label": "Renderer",
+      "type": "choice",
+      "default": "auto",
+      "options": [
+        [
+          "auto",
+          "GPU - target 60 fps"
+        ],
+        [
+          "software",
+          "Software fallback"
+        ]
+      ]
+    },
+    {
+      "key": "theme",
+      "label": "Colour theme",
+      "type": "choice",
+      "default": "m_tricolour",
+      "options": [
+        [
+          "m_tricolour",
+          "M Tricolour"
+        ]
+      ]
+    }
+  ]
+}

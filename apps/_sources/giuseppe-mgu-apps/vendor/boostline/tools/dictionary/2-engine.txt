@@ -1,0 +1,556 @@
+zylinder	cylinder
+status	status
+bank	bank
+signal	signal
+botschaft	message
+bitmaske	bit mask
+zaehler	counter
+sensor	sensor
+ansteuerung	control
+ansteuer	control
+ansteuern	control
+steuerung	control
+wert	value
+werte	values
+spannung	voltage
+hochdruck	high pressure
+niederdruck	low pressure
+temperatur	temperature
+grad	degrees
+diagnose	diagnosis
+kennfeld	map
+kennfeldwert	map value
+kennfeldwerte	map values
+mengenstuetzstelle	quantity breakpoint
+stuetzstelle	breakpoint
+zeile	row
+spalte	column
+korrektur	correction
+korrekturkennfeld	correction map
+slave	slave
+master	master
+sollwert	target value
+soll	target
+anzahl	number
+ansteuerdauer	activation time
+dauer	duration
+auslesen	read
+lesen	read
+turbinensteller	turbine actuator
+turbine	turbine
+steller	actuator
+tester	tester
+position	position
+tastverhaeltnis	duty cycle
+rohwert	raw value
+roh	raw
+reset	reset
+raildruck	rail pressure
+rail	rail
+druck	pressure
+fehler	fault
+katalysator	catalyst
+kat	catalyst
+anteil	proportion
+anteile	proportions
+wasserpumpe	water pump
+wasser	water
+pumpe	pump
+kuehler	cooler
+istwert	actual value
+fehlerzuordnung	fault assignment
+zuordnung	assignment
+drosselklappe	throttle valve
+drossel	throttle
+klappe	flap
+abgasrueckfuehrsteller	EGR actuator
+abgasrueckfuehrung	exhaust gas recirculation
+abgasrueckfuehr	EGR
+rueckfuehrung	recirculation
+abgas	exhaust gas
+feld	field
+endstufe	output stage
+ringspeicher	ring buffer
+speicher	memory
+kennlinie	characteristic curve
+grundadaption	basic adaptation
+adaption	adaptation
+adaptionswert	adaptation value
+adaptionswerte	adaptation values
+ventilschliessdauer	valve closing time
+ventilschliessdauerwerte	valve closing time values
+ventil	valve
+schliessdauer	closing time
+druckstufe	pressure stage
+stufe	stage
+drehzahl	engine speed
+mittelwert	mean value
+ausgangsstellgroesse	output control variable
+stellgroesse	control variable
+ausgang	output
+eingang	input
+zeit	time
+luefter	fan
+lambda	lambda
+kalibrierpunkt	calibration point
+kalibrierung	calibration
+kalibrier	calibration
+lambdasonde	lambda sensor
+sonde	sensor
+regler	controller
+ansteuerwert	control value
+abweichung	deviation
+byte	byte
+laufunruhe	rough running
+istposition	actual position
+statuswort	status word
+zuendung	ignition
+zuend	ignition
+codierparameter	coding parameter
+codierung	coding
+parameter	parameter
+offset	offset
+motor	engine
+fehlerzaehler	fault counter
+anforderung	request
+generator	alternator
+zustand	state
+ergebnis	result
+information	information
+array	array
+funktionsueberwachung	function monitoring
+funktion	function
+ueberwachung	monitoring
+kilometerstand	mileage
+kilometer	kilometre
+system	system
+korrekturfaktor	correction factor
+faktor	factor
+fehlerspeicher	fault memory
+fehlerpruefung	fault check
+fehlerpruefungen	fault checks
+pruefung	check
+partikelfilter	particulate filter
+partikel	particle
+filter	filter
+nachlauf	after-run
+nachlaufverlaengerer	after-run extension
+verlaengerer	extender
+freigabe	enable
+funkenbrenndauer	spark burn time
+funken	spark
+brenndauer	burn time
+namen	name
+name	name
+eingetragenen	entered
+relais	relay
+bit	bit
+aussetzerkennung	misfire detection
+aussetzererkennung	misfire detection
+aussetzer	misfire
+kuehlmittel	coolant
+kuehlmitteltemperatur	coolant temperature
+moment	torque
+massenstrom	mass flow
+nockenwelle	camshaft
+zuendwinkel	ignition angle
+berechnung	calculation
+statusbyte	status byte
+sollposition	target position
+systemueberwachung	system monitoring
+start	start
+fahrzyklus	driving cycle
+fahrzyklen	driving cycles
+zyklus	cycle
+zyklen	cycles
+raster	grid
+ausgangstastverhaeltnis	output duty cycle
+absolutdruck	absolute pressure
+regeneration	regeneration
+modell	model
+drallklappe	swirl flap
+drall	swirl
+verhaeltnis	ratio
+bedingung	condition
+zeitzaehler	time counter
+abgastemperatur	exhaust gas temperature
+klopfregelung	knock control
+klopf	knock
+klopfen	knock
+umgebungstemperatur	ambient temperature
+umgebung	ambient
+index	index
+ueberwachungsmodul	monitoring module
+modul	module
+motortemperatur	engine temperature
+strom	current
+maschine	machine
+injektor	injector
+einspritzmodus	injection mode
+einspritzung	injection
+einspritz	injection
+modus	mode
+kuehlung	cooling
+solldrehzahl	target engine speed
+zuendfunken	ignition spark
+quotient	quotient
+referenzpegel	reference level
+referenz	reference
+pegel	level
+oelniveau	oil level
+oel	oil
+niveau	level
+einlass	intake
+auslass	exhaust
+fehlerspeichereintrag	fault memory entry
+eintrag	entry
+eintraege	entries
+mengenregelventil	quantity control valve
+menge	quantity
+mengen	quantity
+regelventil	control valve
+luftklappe	air flap
+luft	air
+begrenzung	limitation
+ladedruck	boost pressure
+voreinspritzung	pilot injection
+nacheinspritzung	post injection
+haupteinspritzung	main injection
+hochdrucktest	high-pressure test
+test	test
+regelabweichung	control deviation
+regel	control
+solltastverhaeltnis	target duty cycle
+qualifier	qualifier
+korrekturmenge	correction quantity
+fehlermeldung	fault message
+meldung	message
+steigung	slope
+hilfshub	auxiliary lift
+hub	lift
+richtung	direction
+kraftstoffmasse	fuel mass
+kraftstoff	fuel
+masse	mass
+zuendfolge	firing order
+zuendreihenfolge	firing order
+reihenfolge	order
+zyl	cyl
+lowlevel	low-level
+vorverarbeitet	pre-processed
+stackverbrauch	stack usage
+adaptionsgerade	adaptation line
+gerade	line
+referenzposition	reference position
+recovery	recovery
+messgroesse	measured variable
+groesse	variable
+typ	type
+motordrehzahl	engine speed
+wastegate	wastegate
+oeldruck	oil pressure
+luftmasse	air mass
+getriebe	transmission
+getriebeoeltemperatur	transmission oil temperature
+differenzdruck	differential pressure
+differenz	difference
+batteriespannung	battery voltage
+batterie	battery
+rad	wheel
+flanke	edge
+heizung	heater
+schritt	step
+versorgungsspannung	supply voltage
+versorgung	supply
+ebene	level
+klopfwert	knock value
+oeltemperatur	oil temperature
+umgebungsdruck	ambient pressure
+ansaugluft	intake air
+ansaug	intake
+summe	sum
+eigendiagnose	self-diagnosis
+eigendiagnosewert	self-diagnosis value
+manipulation	tampering
+wahrscheinlichkeit	probability
+grenz	limit
+grenze	limit
+wirkungsgrad	efficiency
+istwirkungsgrad	actual efficiency
+motoroel	engine oil
+abgasklappe	exhaust flap
+ansteuerstrom	control current
+erkennung	detection
+luftmassenstrom	air mass flow
+motormoment	engine torque
+lambdawert	lambda value
+ereignis	event
+ereignisse	events
+ereigniszaehler	event counter
+lastbereich	load range
+last	load
+bereich	range
+konzentration	concentration
+wunschmenge	requested quantity
+wunsch	requested
+volumenstrom	volume flow
+abgleich	trimming
+winkel	angle
+druckaufbauphase	pressure build-up phase
+aufbau	build-up
+phase	phase
+response	response
+fzg	vehicle
+fahrzeug	vehicle
+getriebetemperatur	transmission temperature
+winkelversatz	angle offset
+versatz	offset
+einspritzausblendung	injection cut-off
+ausblendung	cut-off
+drehzahlbereich	engine speed range
+gradient	gradient
+fehlerstatus	fault status
+drucksensor	pressure sensor
+lithiumionen	lithium-ion
+starterbatterie	starter battery
+starter	starter
+statusinformation	status information
+lambdaabweichung	lambda deviation
+komponente	component
+komponenten	component
+anschlag	stop
+bordnetz	vehicle electrical system
+drift	drift
+offsetdrift	offset drift
+vorsteuerung	pilot control
+fuellungsgrad	filling level
+fuellung	charge
+spannungsanforderung	voltage request
+aktivierung	activation
+ladedrucksteller	boost pressure actuator
+wandler	converter
+kommunikation	communication
+effizienz	efficiency
+komponentengruppe	component group
+gruppe	group
+idle	idle
+register	register
+aenderung	change
+regenerationszaehler	regeneration counter
+radmoment	wheel torque
+ladeluftkuehler	intercooler
+ladeluft	charge air
+kopie	copy
+basis	base
+eingriff	intervention
+datensegment	data segment
+daten	data
+segment	segment
+oelpumpe	oil pump
+einspritzmenge	injection quantity
+geschwindigkeit	speed
+layer	layer
+innenwiderstand	internal resistance
+widerstand	resistance
+temperatursensor	temperature sensor
+raildruckregelventil	rail pressure control valve
+schleppzeiger	peak value
+selbsterkennung	self-detection
+monitoring	monitoring
+stellglied	actuator
+stellgliedposition	actuator position
+abgasstauklappe	exhaust back-pressure flap
+stau	back-pressure
+leistung	power
+betriebsart	operating mode
+betrieb	operation
+zusatz	additional
+druckabbauzeit	pressure release time
+abbau	release
+ladezustand	state of charge
+ladung	charge
+klemme	terminal
+russmasse	soot mass
+russ	soot
+lufttemperatur	air temperature
+fuellstand	fill level
+inducementsystem	inducement system
+adaptionsfaktor	adaptation factor
+lastanhebung	load increase
+anhebung	increase
+verdichter	compressor
+verdichterbypass	compressor bypass
+bypass	bypass
+mode	mode
+cannox	CAN NOx
+beladung	loading
+beladungszyklus	loading cycle
+mittel	mean
+minimum	minimum
+maximum	maximum
+messpunkt	measuring point
+mess	measuring
+messung	measurement
+punkt	point
+zeitdauer	duration
+plausibilisierung	plausibility check
+plausibilitaetspruefung	plausibility check
+plausi	plausibility
+clients	clients
+ursache	cause
+sensorwert	sensor value
+pumpenstrom	pump current
+kuehlerbypass	cooler bypass
+positionssensor	position sensor
+gemischadaption	mixture adaptation
+gemisch	mixture
+aktor	actuator
+aktorspannung	actuator voltage
+saugrohr	intake manifold
+diagnoseevent	diagnosis event
+laenderfaktor	country factor
+ruhestrom	quiescent current
+sollspannung	target voltage
+geberrad	sensor wheel
+zahnteilungsfehler	tooth pitch error
+zahn	tooth
+koppelgroesse	coupling variable
+lifecylce	life cycle
+lifecycle	life cycle
+zylinderdruck	cylinder pressure
+lernen	learning
+intervall	interval
+referenzsteigung	reference slope
+ringpuffer	ring buffer
+puffer	buffer
+sammelfehler	collective fault
+diagnoseregister	diagnosis register
+sauerstoff	oxygen
+sollmenge	target quantity
+timer	timer
+timerwert	timer value
+umweltbedingung	environmental condition
+vektor	vector
+element	element
+durchschnitt	average
+durchschnittswert	average value
+regelbetrieb	closed-loop operation
+winkelbeschleunigung	angular acceleration
+beschleunigung	acceleration
+ausgleichsmenge	balancing quantity
+ausgleich	balancing
+sollkraftstoffmasse	target fuel mass
+auslassnockenwelle	exhaust camshaft
+einlassnockenwelle	intake camshaft
+bordnetzspannung	on-board voltage
+sollwertzaehler	target value counter
+ladedruckregelung	boost pressure control
+regelung	control
+istdrehzahl	actual engine speed
+check	check
+engine	engine
+fuel	fuel
+leerlauf	idle
+resetursache	reset cause
+abschaltpfad	shut-off path
+abschalt	shut-off
+abschaltung	shut-off
+saugstrahlpumpe	suction jet pump
+fahrzeuggeschwindigkeit	vehicle speed
+temperaturbereich	temperature range
+exzenterwinkel	eccentric shaft angle
+exzenter	eccentric shaft
+klasse	class
+nernstzelle	Nernst cell
+zelle	cell
+zeitpunkt	point in time
+zeitpunk	point in time
+nachricht	message
+antrieb	drive
+luefterantrieb	fan drive
+positionsrueckmeldung	position feedback
+rueckmeldung	feedback
+abschaltfall	shut-off case
+niederdruckstufe	low-pressure stage
+nullgangsensor	neutral gear sensor
+nullgang	neutral gear
+abstellzeit	engine-off time
+abstellen	switch-off
+aufloesung	resolution
+trennelement	separating element
+bus	bus
+bypassventil	bypass valve
+schalter	switch
+schalterdiagnose	switch diagnosis
+zustandsbyte	state byte
+kraftstoffmenge	fuel quantity
+ausgabe	output
+auslastung	utilization
+variable	variable
+kurbelwelle	crankshaft
+betriebspunkt	operating point
+freigabebedingung	enable condition
+kennung	identifier
+hoehe	altitude
+instanz	instance
+stoerung	malfunction
+stoerungen	malfunctions
+kompensation	compensation
+driftkompensation	drift compensation
+teillast	part load
+teillastadaption	part-load adaptation
+vollast	full load
+volllast	full load
+standardabweichung	standard deviation
+leckdiagnose	leak diagnosis
+leck	leak
+druckabfall	pressure drop
+abfall	drop
+messwerteblock	measured value block
+messwert	measured value
+messwerte	measured values
+schnittstelle	interface
+effektivstrom	RMS current
+offsetlernen	offset learning
+reibung	friction
+reibungskompensation	friction compensation
+drehmoment	torque
+tankentlueftung	tank venting
+tank	tank
+entlueftung	venting
+luftfuellung	air charge
+kupplung	clutch
+ueberrollung	rollover
+gang	gear
+partikelsensor	particle sensor
+initialisierung	initialization
+regel	control
+antwort	answer
+frage	question
+batteriestrom	battery current
+begrenzungsmoment	limiting torque
+chip	chip
+chiptemperatur	chip temperature
+diagnosestatus	diagnosis status
+ende	end
+druckgradient	pressure gradient
+strecke	distance
+vorgabe	setpoint
+spreizung	spread
+einlassspreizung	intake spread
+synchronisation	synchronization
+stromaufnahme	current consumption
+aufnahme	consumption
+amplitude	amplitude
+signalamplitude	signal amplitude
+regeldifferenz	control difference
+maximalwert	maximum value
+minimalwert	minimum value
+radar	radar
+pedalwertgeber	pedal sensor
+pedal	pedal
+fahrpedal	accelerator pedal
+fahrpedalwinkel	accelerator pedal angle
+einlasskruemmer	intake manifold
+kruemmer	manifold
+abgaskruemmer	exhaust manifold

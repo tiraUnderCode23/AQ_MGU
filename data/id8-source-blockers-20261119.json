@@ -85,6 +85,96 @@
       "scope_note": "This describes missing ID8 work, not an ID7 installation failure."
     },
     {
+      "id": "adas_feature_probe",
+      "version": "0.1.0",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/adas_feature_probe/app.json"
+    },
+    {
+      "id": "advokat_live_adjustments",
+      "version": "10.17.1",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/mlurker-advokat/apps/advokat_live_adjustments/app.json"
+    },
+    {
+      "id": "ahg_control_center",
+      "version": "1.4.2",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/dinerboy-ahg-mgu/apps/ahg_control_center/app.json"
+    },
+    {
+      "id": "ahg_digital_garage",
+      "version": "0.1.1",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/dinerboy-ahg-mgu/apps/ahg_digital_garage/app.json"
+    },
+    {
+      "id": "ambient_studio_full",
+      "version": "0.1.5",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/ambient_studio_full/app.json"
+    },
+    {
+      "id": "amn_hudlyrics",
+      "version": "0.7.2",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/m850i-amn-idrive7-apps/apps/amn_hudlyrics/app.json"
+    },
+    {
+      "id": "amn_iptv",
+      "version": "0.4.2",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/m850i-amn-idrive7-apps/apps/amn_iptv/app.json"
+    },
+    {
+      "id": "amn_sideview",
+      "version": "0.5.4",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/m850i-amn-idrive7-apps/apps/amn_sideview/app.json"
+    },
+    {
+      "id": "apex_dash",
+      "version": "1.2.0",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/markoni-e39-m5-cluster/apps/apex_dash/app.json"
+    },
+    {
+      "id": "aq_flap",
+      "version": "2.6.1",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/aq-flap-2.6.1/package.json"
+    },
+    {
       "id": "aref_carwatch",
       "version": "0.1.3",
       "kind": "app",
@@ -224,7 +314,7 @@
     },
     {
       "id": "aref_eta",
-      "version": "1.15.1",
+      "version": "1.20.1",
       "kind": "app",
       "source_path": "apps/_sources/arefahmad-idrive7-apps/apps/aref_eta",
       "declared_hmi": [
@@ -501,6 +591,24 @@
       "scope_note": "This describes missing ID8 work, not an ID7 installation failure."
     },
     {
+      "id": "benspa_vitals",
+      "version": "0.9.6",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/benspa900-mon-vitals/apps/benspa_vitals/app.json"
+    },
+    {
+      "id": "boostline",
+      "version": "1.0.1",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/giuseppe-mgu-apps/ecu-live-data/app/app.json"
+    },
+    {
       "id": "carplay_map_toggle",
       "version": "0.1.0",
       "kind": "app",
@@ -541,6 +649,33 @@
       "scope_note": "This describes missing ID8 work, not an ID7 installation failure."
     },
     {
+      "id": "climate-comfort",
+      "version": "0.1.60",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/collection-dzooky-bmrmodz-f141b7fb7476/apps/climate-comfort/app.json"
+    },
+    {
+      "id": "clucraft_jellyfin",
+      "version": "0.1.0",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/clucraft-jellyfin/apps/clucraft_jellyfin/app.json"
+    },
+    {
+      "id": "clucraft_plex",
+      "version": "0.1.0",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/clucraft-plex/apps/clucraft_plex/app.json"
+    },
+    {
       "id": "cluster_lyrics",
       "status": "ID8_PORT_NOT_IMPLEMENTED",
       "categories": [
@@ -567,6 +702,15 @@
         "ID7"
       ],
       "source_repository": "NamelsMissing/mgu-apps"
+    },
+    {
+      "id": "cluster_nav_card",
+      "version": "0.9.2",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/tjmodsss-tjm-apps/apps/cluster_nav_card/app.json"
     },
     {
       "id": "cluster_themes",
@@ -614,6 +758,24 @@
       "source_commit": "ab81cee4d77859b531b21a118772c6b031455b78",
       "id8_unit_validation": "NOT_OBSERVED",
       "scope_note": "This describes missing ID8 work, not an ID7 installation failure."
+    },
+    {
+      "id": "custom_cluster",
+      "version": "0.6.10",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/namels-mgu-apps-full/apps/custom_cluster/app.json"
+    },
+    {
+      "id": "custom_hud",
+      "version": "0.1.58",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/james10424-idrive7-custom/apps/custom_hud/app.json"
     },
     {
       "id": "dimon_battery",
@@ -741,13 +903,22 @@
       "upstream_status": "No qualified ID8 implementation in selected source",
       "id8_unit_validation": "NOT_OBSERVED",
       "scope_note": "An ID8 compatibility blocker does not prove an ID7 installation failure.",
-      "version": "0.1.32",
+      "version": "0.1.33",
       "kind": "app",
       "source_path": "apps/_sources/dzooky-bmrmodz/apps/dpf",
       "declared_hmi": [
         "ID7"
       ],
       "source_repository": "dzooky/bmrmodz"
+    },
+    {
+      "id": "dpf_id7",
+      "version": "1.1.1",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/giuseppe-mgu-apps/dpf-monitoring/app/app.json"
     },
     {
       "id": "dpf_monitor",
@@ -778,6 +949,24 @@
       "source_repository": "NamelsMissing/mgu-apps"
     },
     {
+      "id": "drive_hud_full",
+      "version": "0.1.6",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/drive_hud_full/app.json"
+    },
+    {
+      "id": "driver_profiles",
+      "version": "0.2.2",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/sergey-olefir-f30-cluster/apps/driver_profiles/app.json"
+    },
+    {
       "id": "eldrive",
       "status": "ID8_PORT_NOT_IMPLEMENTED",
       "categories": [
@@ -805,6 +994,15 @@
         "ID7"
       ],
       "source_repository": "beele/eldrive"
+    },
+    {
+      "id": "equalizer",
+      "version": "0.2.4",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/namels-mgu-apps-full/apps/equalizer/app.json"
     },
     {
       "id": "ethanol_mix",
@@ -846,6 +1044,60 @@
       "scope_note": "This describes missing ID8 work, not an ID7 installation failure."
     },
     {
+      "id": "eva_hud",
+      "version": "0.5.3",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/penguinduke-eva-hud/apps/eva_hud/app.json"
+    },
+    {
+      "id": "f30_cluster",
+      "version": "0.7.22",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/sergey-olefir-f30-cluster/apps/f30_cluster/app.json"
+    },
+    {
+      "id": "f44_traffic_diag",
+      "version": "0.1.0",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/benspa900-mon-vitals/apps/f44_traffic_diag/app.json"
+    },
+    {
+      "id": "front_camera_cluster",
+      "version": "0.2.1",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/front_camera_cluster/app.json"
+    },
+    {
+      "id": "g21_ambient",
+      "version": "0.4.0",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/namels-mgu-apps-full/apps/g21_ambient/app.json"
+    },
+    {
+      "id": "g21_wheelheat",
+      "version": "0.5.2",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/namels-mgu-apps-full/apps/g21_wheelheat/app.json"
+    },
+    {
       "id": "gif_home",
       "status": "ID8_PORT_NOT_IMPLEMENTED",
       "categories": [
@@ -872,6 +1124,33 @@
         "ID7"
       ],
       "source_repository": "NamelsMissing/mgu-apps"
+    },
+    {
+      "id": "green_light_alert",
+      "version": "0.2.5",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/green_light_alert/app.json"
+    },
+    {
+      "id": "gs_ambient",
+      "version": "0.1.10",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/tjmodsss-tjm-apps/apps/gs_ambient/app.json"
+    },
+    {
+      "id": "hotspot_studio",
+      "version": "0.1.5",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/hotspot_studio/app.json"
     },
     {
       "id": "iabadia_m_arcade",
@@ -918,6 +1197,15 @@
       "source_commit": "247324d718be76d5380ce148561676d495c61d26",
       "id8_unit_validation": "NOT_OBSERVED",
       "scope_note": "This describes missing ID8 work, not an ID7 installation failure."
+    },
+    {
+      "id": "idrive7_dpf_app",
+      "version": "0.1.6",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/sas46-dpf-app/apps/idrive7_dpf_app/app.json"
     },
     {
       "id": "idrive_hud_widgets",
@@ -967,53 +1255,6 @@
       "scope_note": "This describes missing ID8 work, not an ID7 installation failure."
     },
     {
-      "id": "idv7lol",
-      "version": "0.2.14",
-      "kind": "app",
-      "source_path": "apps/_sources/idv7lol/apps/idv7lol",
-      "declared_hmi": [
-        "ID7"
-      ],
-      "status": "ID8_PORT_NOT_IMPLEMENTED",
-      "categories": [
-        "cluster_hud_geometry_unsupported",
-        "id7_rhmi_only_and_input_bridge"
-      ],
-      "blocker": "The application and theme engine target a whole ID7 instrument cluster; its original builder and widgets declare only ID7.",
-      "required_unimplemented_parts": [
-        "Port the centre UI and its lifecycle.",
-        "Adapt/test cluster geometry, theme clipping, strip preservation and stale-data teardown before declaring the cluster output compatible."
-      ],
-      "evidence": [
-        {
-          "path": "apps/_sources/idv7lol/apps/idv7lol/main.js",
-          "line_start": 3,
-          "line_end": 3,
-          "fact": "The app is explicitly an ID7 instrument-cluster renderer.",
-          "excerpt": "* idv7lol - your own layout on the whole instrument cluster of a BMW iDrive 7 (MGU) car."
-        },
-        {
-          "path": "apps/_sources/idv7lol/kit/tools/build.py",
-          "line_start": 660,
-          "line_end": 660,
-          "fact": "The source builder emits ID7-only main resources.",
-          "excerpt": "os.makedirs(os.path.join(pr, 'uiDescriptions', 'ID7'))"
-        },
-        {
-          "path": "apps/_sources/idv7lol/apps/idv7lol/engine.js",
-          "line_start": 43,
-          "line_end": 43,
-          "fact": "The engine preserves a geometry-specific factory bottom strip.",
-          "excerpt": "// Where the cluster's own bottom strip starts (gear, drive mode, ranges, time, outside"
-        }
-      ],
-      "upstream_status": "ID8 implementation not present in the selected AQ source recipe",
-      "source_repository": "ALMSTRA/idv7lol",
-      "source_commit": "ff54c2cabd465eea1521770573701f26c36f880b",
-      "id8_unit_validation": "NOT_OBSERVED",
-      "scope_note": "This describes missing ID8 work, not an ID7 installation failure."
-    },
-    {
       "id": "jap_waze_cluster",
       "version": "1.0.2",
       "kind": "app",
@@ -1052,6 +1293,114 @@
       "source_commit": "6e9046f7f3de493f826896a0a6c17f1d335ca472",
       "id8_unit_validation": "NOT_OBSERVED",
       "scope_note": "This describes missing ID8 work, not an ID7 installation failure."
+    },
+    {
+      "id": "lfb_enginesound",
+      "version": "1.2.2",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/loenne007-enginesound/apps/lfb_enginesound/app.json"
+    },
+    {
+      "id": "light_flasher",
+      "version": "0.1.15",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/namels-mgu-apps-full/apps/light_flasher/app.json"
+    },
+    {
+      "id": "light_show",
+      "version": "0.4.5",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/namels-mgu-apps-full/apps/light_show/app.json"
+    },
+    {
+      "id": "manuk_retro_cluster",
+      "version": "0.3.4",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/tjmodsss-tjm-apps/apps/manuk_retro_cluster/app.json"
+    },
+    {
+      "id": "mdev_homeassistant",
+      "version": "0.1.0",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/markoni-homeassistant/apps/mdev_homeassistant/app.json"
+    },
+    {
+      "id": "mgu_audio_diagnostics",
+      "version": "0.1.2",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/namels-mgu-apps-full/apps/mgu_audio_diagnostics/app.json"
+    },
+    {
+      "id": "mgu_gamestation",
+      "version": "0.3.0",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/namels-mgu-apps-full/apps/mgu_gamestation/app.json"
+    },
+    {
+      "id": "mgu_phone_terminal",
+      "version": "0.1.7",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/namels-mgu-apps-full/apps/mgu_phone_terminal/app.json"
+    },
+    {
+      "id": "mgu_unified",
+      "version": "0.1.11",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/darkmuse-idrive7-apps-ru/apps/mgu_unified/app.json"
+    },
+    {
+      "id": "mgu_video_hub",
+      "version": "0.2.0",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/namels-mgu-apps-full/apps/mgu_video_hub/app.json"
+    },
+    {
+      "id": "mx_classic_cluster",
+      "version": "0.14.2",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/cruzen991-cluster/apps/mx_classic_cluster/app.json"
+    },
+    {
+      "id": "mx_road_hopper",
+      "version": "0.1.1",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/cruzen991-cluster/apps/mx_road_hopper/app.json"
     },
     {
       "id": "noahg_fscpatcher",
@@ -1144,13 +1493,67 @@
       "upstream_status": "No qualified ID8 implementation in selected source",
       "id8_unit_validation": "NOT_OBSERVED",
       "scope_note": "An ID8 compatibility blocker does not prove an ID7 installation failure.",
-      "version": "0.2.50",
+      "version": "0.2.51",
       "kind": "app",
       "source_path": "apps/_sources/dzooky-bmrmodz/apps/osa",
       "declared_hmi": [
         "ID7"
       ],
       "source_repository": "dzooky/bmrmodz"
+    },
+    {
+      "id": "owner_cluster_control",
+      "version": "0.4.1",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/efzer-idrive7-cluster/apps/owner_cluster_control/app.json"
+    },
+    {
+      "id": "parking_clearance",
+      "version": "0.1.8",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/parking_clearance/app.json"
+    },
+    {
+      "id": "perea_cluster_themes",
+      "version": "0.19.1",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/alexpereap-idrive7-apps/apps/perea_cluster_themes/app.json"
+    },
+    {
+      "id": "perea_mhd_flex",
+      "version": "1.6.0",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/alexpereap-idrive7-apps/apps/perea_mhd_flex/app.json"
+    },
+    {
+      "id": "ride_height",
+      "version": "0.6.0",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/ride_height/app.json"
+    },
+    {
+      "id": "road_trip_computer",
+      "version": "1.0.0",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/road_trip_computer/app.json"
     },
     {
       "id": "robertn_waze_cluster",
@@ -1193,6 +1596,24 @@
       "scope_note": "This describes missing ID8 work, not an ID7 installation failure."
     },
     {
+      "id": "rubenrios_gearhud",
+      "version": "1.0.0",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/rubenrios-gearhud/apps/rubenrios_gearhud/app.json"
+    },
+    {
+      "id": "signal_probe",
+      "version": "0.4.0",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/sergey-olefir-f30-cluster/apps/signal_probe/app.json"
+    },
+    {
       "id": "spritmonitor",
       "status": "ID8_PORT_NOT_IMPLEMENTED",
       "categories": [
@@ -1212,13 +1633,67 @@
       "upstream_status": "No qualified ID8 implementation in selected source",
       "id8_unit_validation": "NOT_OBSERVED",
       "scope_note": "An ID8 compatibility blocker does not prove an ID7 installation failure.",
-      "version": "0.1.44",
+      "version": "0.1.45",
       "kind": "app",
       "source_path": "apps/_sources/dzooky-bmrmodz/apps/spritmonitor",
       "declared_hmi": [
         "ID7"
       ],
       "source_repository": "dzooky/bmrmodz"
+    },
+    {
+      "id": "start_stop_insight",
+      "version": "0.1.3",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/start_stop_insight/app.json"
+    },
+    {
+      "id": "telemetry_studio",
+      "version": "0.2.0",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/telemetry_studio/app.json"
+    },
+    {
+      "id": "true_time",
+      "version": "1.0.0",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/giuseppe-mgu-apps/true-time/app/app.json"
+    },
+    {
+      "id": "twin_dial",
+      "version": "0.1.5",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/sergey-olefir-f30-cluster/apps/twin_dial/app.json"
+    },
+    {
+      "id": "vehicle_health",
+      "version": "0.1.9",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/vehicle_health/app.json"
+    },
+    {
+      "id": "vehicle_network",
+      "version": "0.1.3",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/vehicle_network/app.json"
     },
     {
       "id": "vizualyse_cast",
@@ -1494,6 +1969,150 @@
       "source_commit": "c3e18eb45969122a377ec93e728d6a1d11eeaa7b",
       "id8_unit_validation": "NOT_OBSERVED",
       "scope_note": "This describes missing ID8 work, not an ID7 installation failure."
+    },
+    {
+      "id": "waze_hud",
+      "version": "0.3.0",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/waze_hud/app.json"
+    },
+    {
+      "id": "woodr_ambient",
+      "version": "0.1.7",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/woody-apps/apps/woodr_ambient/app.json"
+    },
+    {
+      "id": "woodr_dashcam",
+      "version": "0.4.4",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/woody-apps/apps/woodr_dashcam/app.json"
+    },
+    {
+      "id": "woodr_devhud",
+      "version": "0.1.4",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/woody-apps/apps/woodr_devhud/app.json"
+    },
+    {
+      "id": "woodr_diag",
+      "version": "0.2.2",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/woody-apps/apps/woodr_diag/app.json"
+    },
+    {
+      "id": "woodr_drivelog",
+      "version": "0.1.1",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/woody-apps/apps/woodr_drivelog/app.json"
+    },
+    {
+      "id": "woodr_hass",
+      "version": "0.8.2",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/woody-apps/apps/woodr_hass/app.json"
+    },
+    {
+      "id": "woodr_hud",
+      "version": "0.9.5",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/woody-apps/apps/woodr_hud/app.json"
+    },
+    {
+      "id": "woodr_inputlab",
+      "version": "0.1.3",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/woody-apps/apps/woodr_inputlab/app.json"
+    },
+    {
+      "id": "woodr_launch",
+      "version": "0.7.1",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/woody-apps/apps/woodr_launch/app.json"
+    },
+    {
+      "id": "woodr_link",
+      "version": "0.1.1",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/woody-apps/apps/woodr_link/app.json"
+    },
+    {
+      "id": "woodr_screenlab",
+      "version": "0.2.3",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/woody-apps/apps/woodr_screenlab/app.json"
+    },
+    {
+      "id": "woodr_warmhud",
+      "version": "0.7.0",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/woody-apps/apps/woodr_warmhud/app.json"
+    },
+    {
+      "id": "xdrive_studio",
+      "version": "0.1.5",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/collection-alexp50-bmw-apps-4fb5a5dba1ec/apps/xdrive_studio/app.json"
+    },
+    {
+      "id": "xtraboost_guard",
+      "version": "1.3.0",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/tjmodsss-tjm-apps/apps/xtraboost_guard/app.json"
+    },
+    {
+      "id": "zekai_cluster_themes",
+      "version": "0.8.7",
+      "declared_hmi": [
+        "ID7"
+      ],
+      "blocker": "Upstream source declares ID7 only; ID8 RHMI/MainApp-21 adaptation not yet implemented",
+      "evidence": "apps/_sources/tjmodsss-tjm-apps/apps/zekai_cluster_themes/app.json"
     }
   ]
 }

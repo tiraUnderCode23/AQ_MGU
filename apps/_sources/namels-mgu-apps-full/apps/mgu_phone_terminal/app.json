@@ -1,0 +1,21 @@
+{
+  "id": "mgu_phone_terminal",
+  "title": "Phone Terminal",
+  "description": "Temporary phone-browser terminal with QR pairing, command output, and file downloads.",
+  "version": "0.1.7",
+  "vendor": "Jürgen",
+  "loggingId": "OTRM",
+  "iconGlyph": ">_",
+  "screens": [
+    {
+      "name": "MAIN",
+      "kind": "canvas",
+      "title": "Phone Terminal",
+      "buttons": [
+        ["BTN_START", "New session"],
+        ["BTN_STOP", "Revoke access"],
+        ["BTN_ADDRESS", "Next address"]
+      ]
+    }
+  ]
+}

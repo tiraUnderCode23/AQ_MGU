@@ -3,15 +3,15 @@
   "as_of": "2026-11-19",
   "scope": "Native ID8 support already implemented by the pinned original cauli source; correct only AQ catalog HMI overrides for these 15 unchanged app identities. No new port is claimed.",
   "source_repository": "cauliflowermossgrape/idrive7-apps",
-  "source_commit": "422957a85461826c1e8654d37c8ec66a94849f9c",
+  "source_commit": "35bca28bc82b30482d73782877ebaf92c69dcb8c",
   "source_root": "apps/_sources/idrive7-apps",
   "latest_reviewed_commit": "5555ef3bd2195aae15a8cec6803beeb40ca16456",
   "latest_imported": false,
   "latest_review_note": "Latest builder and ID8 tests match the pinned source byte-for-byte; unrelated app behavior and helper updates were not imported.",
   "source_sha256": {
-    "kit/tools/build.py": "f02c7b95f5b57670dfb16c34f5a9a63ab8fad4da37a7af95fd10f720dea05d11",
-    "kit/tools/localize.py": "12a82009668bb8ae3116acd9a175c60bce916320375d4ea7cfd51b43c3d9b2db",
-    "kit/runtime/mgu.js": "c34e81aa7c6d33e08edc78ab275c7672038b9ac37f0fd5366773188cd07f834e",
+    "kit/tools/build.py": "c1d9a2c11501ef5ff8a1bb56dd9f955b72738deb3f0c1896b51d6ab65f96ad42",
+    "kit/tools/localize.py": "75b3b3e8d288ba0693e6331e313e5113d63ee9a434c1dfd826f9270bd03ef484",
+    "kit/runtime/mgu.js": "526baa3df2dbc422682c05a5f4ae595091185e123e5eae7a5d57e3a509292bcd",
     "kit/platform/permissions.json": "a03a2d7be452e89f9ce5361820361dded34ef36aa1e4a5afda95a4a1b1e26b01",
     "kit/tools/test_id8_ui.py": "8b5f46f48833fe85d6f55d90378b6b42bfbee96ea6553df69609be3815c1d019",
     "kit/tools/test_fit_to_unit.py": "1979cdedb85f8a21230587b36818b4d95ac20c9a11a667808229c54065b4866a",
@@ -81,9 +81,9 @@
   "apps": [
     {
       "id": "ambient_config",
-      "version": "2.6.2",
+      "version": "2.7.13",
       "manifest": "apps/_sources/idrive7-apps/apps/ambient_config/app.json",
-      "manifest_sha256": "2ea36750b7a4cacaf19ef9876e94c6f1c4e288adc7fd815fba39d5ab47aa42bc",
+      "manifest_sha256": "d284bd9889d5525e451ad10176884935adaac8025922e660abbe88719200939f",
       "upstream_hmi": [
         "ID7",
         "ID8"
@@ -101,18 +101,18 @@
       },
       "generated_resources": {
         "ID7": {
-          "application_xml_sha256": "2774322508242c1a1b679af80b9710a4dfe492f41e95f9e45a4d5c592d5d0dce",
-          "ui_description_sha256": "c1c565d0c070d367cef88c789214eaeee2f255ad675365cf431c040245821cdc",
-          "strings_sha256": "6ef049ba29913f7a7f7362d16d4bd10c9233cc8454224b6afe74cfcaf7242fb7",
+          "application_xml_sha256": "07ca201a521c6c70fc287f3f36650aa0e7673a176c82ea865d39f27632977f6a",
+          "ui_description_sha256": "11c41c099d67bc6e33168a6b4cd996dc518edcaa3d64bb608170fc40fcfc6072",
+          "strings_sha256": "5405d54e69724a21c506b310de387ddb484d6f2a0d2daaba48dacef2e4c6bd31",
           "states": {
             "MAIN": 1,
             "SETTINGS": 8
           }
         },
         "ID8": {
-          "application_xml_sha256": "649c68192509be3803e50333741f741dde77d4a3025173214fb713ec120ae587",
-          "ui_description_sha256": "bc5bd75e04b3a669a846a3b353bfc0c80101cd3a8caf03ffd0a44f28ec9a5ccc",
-          "strings_sha256": "5c6b5043c5b020657d2c914dea0d01f9d2e17255cbacf787d40153fb309a4ab8",
+          "application_xml_sha256": "681aa0e606972c88ccf7a8f4d1b8ae58d9e388fe81316480607ec7eb548f9d87",
+          "ui_description_sha256": "cab09cdf4ee20da31aeae2235998f309e1be93ce484055a438a677f04e9948c3",
+          "strings_sha256": "fc1b0d0b9a82b4aa0183704ceb56914ea3a7249b24119af217b8a11910aebf91",
           "states": {
             "MAIN": 1,
             "SETTINGS": 8
@@ -167,9 +167,9 @@
     },
     {
       "id": "car_vitals",
-      "version": "2.27.6",
+      "version": "2.27.9",
       "manifest": "apps/_sources/idrive7-apps/apps/car_vitals/app.json",
-      "manifest_sha256": "3f2f05459ca0583cc62a771e7e641436c72f3c668b123890b1b5ff62a224039e",
+      "manifest_sha256": "4ed58b23b4a1a63df7375a51d121cd9beb6ba6d7441b8a6387b12caa3ad44cb6",
       "upstream_hmi": [
         "ID7",
         "ID8"
@@ -187,18 +187,18 @@
       },
       "generated_resources": {
         "ID7": {
-          "application_xml_sha256": "8cb1b2a06bd63b2e17490f8b57755363f87dea8a3c950959a0d65efd09392152",
-          "ui_description_sha256": "0d90387aea930fadd9657577f94cbb3ed24cd7aef3e22a56073c408054104da3",
-          "strings_sha256": "3015a230b4ab002984a2b7b48ef22f02f5a8c6100046d41bb66176f492a12168",
+          "application_xml_sha256": "8d76be0e03d67aad41b5d432b0a52b9864d8b28acffce73f9f7944a0ce84a9ac",
+          "ui_description_sha256": "c04c40e6406c327c23c3386237ae0c3250bd07d3d00aab84acee60a4d56de97f",
+          "strings_sha256": "0384898c3b0af1e4333366a5f463e1049902a2c60b791cc5670089a146f306db",
           "states": {
             "MAIN": 1,
             "SETTINGS": 10
           }
         },
         "ID8": {
-          "application_xml_sha256": "98b479595abe2fe9df12d4d1ce1a8f969af371e660264459ae7ef6be220e55c7",
-          "ui_description_sha256": "3147944c9981564356f3ca3a7aa70d49111fb8771ce33c97804d872e21c90c40",
-          "strings_sha256": "93a2e7670ad9dd19c82200c46790b992ab759a334c89bffc295a29218faab86e",
+          "application_xml_sha256": "90d0a1c2fab84ea3afa8ddd58a2eba4a5c5ea7af8be23fc5cb71ee2288256c3d",
+          "ui_description_sha256": "af8e48f104c62b7eff3459d6e8545bab3e87b41b45351f38058988356af063b6",
+          "strings_sha256": "f8e908ab0fbb68e8406f83f9e4060a3a0bba425d9f544cd8332d23b944c7e121",
           "states": {
             "MAIN": 1,
             "SETTINGS": 10
@@ -381,9 +381,9 @@
     },
     {
       "id": "edrive",
-      "version": "2.10.1",
+      "version": "2.11.0",
       "manifest": "apps/_sources/idrive7-apps/apps/edrive/app.json",
-      "manifest_sha256": "92f5739d8a436e4611089c5b18ce56d56894ea0deb7aa02cc2e06d947e44ed74",
+      "manifest_sha256": "59c8b450009481e377f8e0682b5d3e66f0ba8279004f9734b094e98723d74e6f",
       "upstream_hmi": [
         "ID7",
         "ID8"
@@ -465,9 +465,9 @@
     },
     {
       "id": "live_adjustments",
-      "version": "0.9.8",
+      "version": "0.9.10",
       "manifest": "apps/_sources/idrive7-apps/apps/live_adjustments/app.json",
-      "manifest_sha256": "b5bd147c5b07e1cd14d24217763490018d39ca7c2ca256244d4b4bace9f491ce",
+      "manifest_sha256": "2917ea84f6414deba9d6aa19fed9a27606118e80d42048bd3e1f38ac39926e4d",
       "upstream_hmi": [
         "ID7",
         "ID8"
@@ -508,9 +508,9 @@
     },
     {
       "id": "live_data",
-      "version": "1.0.16",
+      "version": "1.0.18",
       "manifest": "apps/_sources/idrive7-apps/apps/live_data/app.json",
-      "manifest_sha256": "eefa00e8e6e12a4c72cc18eb5fa62279cedc345cafdb37d60858bb5917b7288e",
+      "manifest_sha256": "7d9f58367e80351335b524c6fd3710a543a924d15cdcbeeaceb25146cd66914e",
       "upstream_hmi": [
         "ID7",
         "ID8"
@@ -529,8 +529,8 @@
       "generated_resources": {
         "ID7": {
           "application_xml_sha256": "3c7c7d5e5b7922f6b20613145aff8eed02b97eda67d469ea5e9a3d46cbdf8c07",
-          "ui_description_sha256": "a1225d44ac1e751a0db78a9315305f506ef2c4b9b8a4c90e61e2fb96ee838ad5",
-          "strings_sha256": "7e3d872b18214a0ca737bc7bffec5401e6a100b4c5b66ace9d1c71c74cc2d718",
+          "ui_description_sha256": "fa03840542881449772903b89cc81e3d7492e2a2cab367ed6e5ffafc3ed073b4",
+          "strings_sha256": "38bb3ff2f85e742cce2d3ab9908691df932f2548c3846996bbb683ad980eb8af",
           "states": {
             "MAIN": 1,
             "SETTINGS": 11
@@ -551,9 +551,9 @@
     },
     {
       "id": "redline",
-      "version": "2.0.44",
+      "version": "2.0.45",
       "manifest": "apps/_sources/idrive7-apps/apps/redline/app.json",
-      "manifest_sha256": "a2bc80efbc5f37640964e50cf6140edf4a0a58643e79e8897603df15535a1d1c",
+      "manifest_sha256": "e4d1b83f3fff23828463167fd32bc1eb224cfe90afb0a6f54dbcc86394feb5f2",
       "upstream_hmi": [
         "ID7",
         "ID8"
@@ -593,9 +593,9 @@
     },
     {
       "id": "service",
-      "version": "1.6.2",
+      "version": "1.6.3",
       "manifest": "apps/_sources/idrive7-apps/apps/service/app.json",
-      "manifest_sha256": "c733630af6c8cf24ab3b777bbcefd48007fc8dd8fb43c0fc2b363c56fad0d693",
+      "manifest_sha256": "1b08b0d2bb1cfc5c614f9103e2b093fe91be66517efb845cd50cc69edffe27f0",
       "upstream_hmi": [
         "ID7",
         "ID8"
@@ -677,9 +677,9 @@
     },
     {
       "id": "zf8hp",
-      "version": "1.5.7",
+      "version": "1.5.8",
       "manifest": "apps/_sources/idrive7-apps/apps/zf8hp/app.json",
-      "manifest_sha256": "c83d64c1a601eb18747ae8423b81cea27ee027a43b364e87af3576f3521a719c",
+      "manifest_sha256": "24c3a7c1a613cfa7a62bb7df5a8d848e6d8ce233f48e8421682ad900e72a24c5",
       "upstream_hmi": [
         "ID7",
         "ID8"

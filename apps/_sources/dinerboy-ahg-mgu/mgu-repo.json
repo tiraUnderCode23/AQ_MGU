@@ -1,0 +1,1 @@
+{"schema":1,"apps":{"path":"apps/*","manifest":"app.json","icon":"icon.png","mguHmi":["ID7"],"build":{"python":"kit/tools/build.py","args":["--store-package","{id}"],"output":"dist/{id}@{version}.tgz","shared":["kit/runtime","kit/platform","kit/tools","kit/localization"]}}}

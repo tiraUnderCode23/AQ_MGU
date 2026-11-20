@@ -20,21 +20,6 @@
       "review_evidence": "docs/APP_EXPANSION_20261119_AR.md"
     },
     {
-      "id": "aq_flap",
-      "classification": "real_application_permission_unestablished_and_donor_bundled",
-      "reason": "No independent application-code redistribution grant was established in the observed source; the existing archive contains donor SDK. The generic builder UNLICENSED marker alone is not conclusive license evidence.",
-      "evidence_keys": [
-        "aq_flap_license",
-        "aq_packages"
-      ],
-      "observations_sha256": "e88c6b685f1ea6936205a95470ae233c81bc34bfdeba838ccf384b9ea3425a93",
-      "observed_versions": [
-        "2.6.1"
-      ],
-      "offered": false,
-      "review_evidence": "docs/AQ_APPS_COVERAGE_20261119_AR.md"
-    },
-    {
       "id": "aq_lights",
       "classification": "real_application_permission_unestablished_and_donor_bundled",
       "reason": "No independent application-code redistribution grant was established in the observed source; the existing archive contains donor SDK. The generic builder UNLICENSED marker alone is not conclusive license evidence.",

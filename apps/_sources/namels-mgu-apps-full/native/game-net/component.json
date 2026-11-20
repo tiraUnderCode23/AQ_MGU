@@ -1,0 +1,17 @@
+{
+  "id": "mgu-game-net",
+  "kind": "tool",
+  "version": "0.1.0",
+  "title": "GameStation Phone Port",
+  "description": "Opens TCP 18878 on wlan_bridge for the GameStation phone controllers, only while GameStation listens",
+  "mguHmi": ["ID7"],
+  "files": [
+    {"path": "mgu-game-net", "mode": "0755"},
+    {"path": "firewall.js", "mode": "0644"},
+    {"path": "server.js", "mode": "0644"}
+  ],
+  "units": [{"name": "mgu-game-net.service", "from": "mgu-game-net.service"}],
+  "enable": [{"unit": "mgu-game-net.service", "target": "multi-user.target"}],
+  "recmgr": ["mgu-game-net"],
+  "restart": ["mgu-game-net.service"]
+}

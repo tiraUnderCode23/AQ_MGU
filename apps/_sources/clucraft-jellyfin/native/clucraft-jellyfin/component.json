@@ -1,0 +1,49 @@
+{
+  "id": "clucraft-jellyfin",
+  "kind": "tool",
+  "version": "0.1.0",
+  "license": "GPL-3.0-or-later",
+  "title": "Drivefin service",
+  "description": "For the app Drivefin: the films and series of your own Jellyfin server on the head unit. The server's stream (H.264 with AAC, as HLS) is decoded on the GPU into mgu-render's frame file (the app shows it) and played into SmartXbar's CarLife input. Sign in with Jellyfin's Quick Connect (a code you enter in a Jellyfin you are already signed in to): no password is typed in the car, and this car's token is kept on this head unit only (root's, 0600), never in the app or its repository. Its internet goes through mgu-uplink, as uid 13272 only; the player runs as nobody. Built on amn-iptv's service and tvh-player (GPL-3.0-or-later).",
+  "requires": {
+    "mgu-deploy": "0.7.0",
+    "mgu-uplink": "0.7.0"
+  },
+  "uninstallable": true,
+  "mguHmi": ["ID7"],
+  "internet": true,
+  "uids": [13272],
+  "files": [
+    { "path": "service.js", "from": "service.js", "mode": "0644" },
+    { "path": "client.js", "from": "client.js", "mode": "0644" },
+    { "path": "jellyfin.js", "from": "jellyfin.js", "mode": "0644" },
+    { "path": "session.js", "from": "session.js", "mode": "0644" },
+    { "path": "hls.js", "from": "hls.js", "mode": "0644" },
+    { "path": "art.js", "from": "art.js", "mode": "0644" },
+    { "path": "jpeg_decoder.js", "from": "jpeg_decoder.js", "mode": "0644" },
+    { "path": "netx.js", "from": "netx.js", "mode": "0644" },
+    { "path": "player.js", "from": "player.js", "mode": "0644" },
+    { "path": "sockgroup.js", "from": "sockgroup.js", "mode": "0644" },
+    { "path": "check.js", "from": "check.js", "mode": "0644" },
+    { "path": "cleanup.js", "from": "cleanup.js", "mode": "0644" },
+    { "path": "cacert.pem", "from": "cacert.pem", "mode": "0644" },
+    { "path": "tvh-player", "from": "tvh-player", "mode": "0755" },
+    { "path": "FFMPEG-LICENSE", "from": "FFMPEG-LICENSE", "mode": "0644" },
+    { "path": "LICENSE", "from": "LICENSE", "mode": "0644" },
+    { "path": "LICENSE.jpeg-js", "from": "LICENSE.jpeg-js", "mode": "0644" },
+    { "path": "README.md", "from": "README.md", "mode": "0644" }
+  ],
+  "check": ["check.js"],
+  "deactivate": ["node", "cleanup.js"],
+  "crashNames": ["tvh-player"],
+  "units": [
+    { "name": "clucraft-jellyfin.socket", "from": "systemd/clucraft-jellyfin.socket" },
+    { "name": "clucraft-jellyfin.service", "from": "systemd/clucraft-jellyfin.service" }
+  ],
+  "enable": [
+    { "unit": "clucraft-jellyfin.socket", "target": "sockets.target" }
+  ],
+  "recmgr": ["clucraft-jellyfin"],
+  "restart": ["clucraft-jellyfin.service"],
+  "versionFiles": ["service.js"]
+}

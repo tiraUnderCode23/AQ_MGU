@@ -1,0 +1,22 @@
+{
+  "SID_XD_TITLE": "xDriveRemover",
+  "SID_XD_TAB_DRIVE": "Selected tab: Drive",
+  "SID_XD_AUTHOR": "Created by mazzahaker",
+  "SID_XD_MODE": "Drive mode: Unknown",
+  "SID_XD_TORQUE": "Front axle torque: Unavailable",
+  "SID_XD_STATUS": "Waiting for diagnostics",
+  "SID_XD_UPDATED": "Last successful read: —",
+  "SID_XD_REFRESH": "Refresh Data",
+  "SID_XD_DIAGNOSTICS": "Diagnostics",
+  "SID_XD_IDENTITY": "DSC: —   LMV: —",
+  "SID_XD_FUNCTION": "DSC DBE1: —",
+  "SID_XD_QUALIFIERS": "LMV DB32 qualifiers: —",
+  "SID_XD_RAW": "LMV DB32 response: —",
+  "SID_XD_DRIVE": "Drive",
+  "SID_XD_SIGNAL_HINT": "Vehicle Signals · Read only · Age since received",
+  "SID_XD_SIGNAL_IGNITION": "Ignition: Waiting for data",
+  "SID_XD_SIGNAL_RPM": "Engine: Waiting for data",
+  "SID_XD_SIGNAL_SPEED": "Speed: Waiting for data",
+  "SID_XD_SIGNAL_GEAR_DIAGNOSTIC": "Selector PT2: Waiting for data",
+  "SID_XD_SIGNAL_BRAKE": "Parking brake: Waiting for data"
+}

@@ -1,0 +1,35 @@
+drehzahl	rpm
+solldrehzahl	target rpm
+istdrehzahl	actual rpm
+drehzahlschwelle	rpm threshold
+drezahlschwelle	rpm threshold
+drehzahlbereich	rpm range
+motordrehzahl	engine speed
+zieldrehzahl	target rpm
+solldrehzal	target rpm
+ueberdruck	overpressure
+ueberhitzung	overheating
+uebertemperatur	overtemperature
+ueberspannung	overvoltage
+ueberstrom	overcurrent
+ueberlast	overload
+ueberschreitung	exceedance
+unterspannung	undervoltage
+unterschreitung	undershoot
+betriebszeit	operating time
+generatormoment	alternator torque
+generatorregler	alternator regulator
+generatorstrom	alternator current
+sauerstoffkonzentration	oxygen concentration
+sauerstoffsignal	oxygen signal
+aktivierungen	activations
+anforderungen	requests
+momentenanforderungen	torque requests
+momentenanforderung	torque request
+fehlerfall	fault case
+gesamtzeit	total time
+diagnoseinformation	diagnosis information
+differenzdrucksensor	differential pressure sensor
+differenzdrucksensors	differential pressure sensor
+ruecknahme	reduction
+klopfruecknahme	knock retard

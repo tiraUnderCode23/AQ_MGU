@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "apps": {
+    "path": "apps/*",
+    "manifest": "app.json",
+    "icon": "icon.png",
+    "exclude": [
+      "_template",
+      "wip"
+    ],
+    "mguHmi": [
+      "ID7"
+    ],
+    "build": {
+      "python": "kit/tools/build.py",
+      "args": [
+        "{id}"
+      ],
+      "sdk": "oap-sdk",
+      "output": "dist/{id}@{version}.tgz"
+    }
+  },
+  "components": [
+    {
+      "id": "amn-iptv",
+      "kind": "tool",
+      "path": "native/amn-iptv"
+    },
+    {
+      "id": "amn-sideview-cam",
+      "kind": "tool",
+      "path": "native/amn-sideview-cam"
+    }
+  ]
+}
