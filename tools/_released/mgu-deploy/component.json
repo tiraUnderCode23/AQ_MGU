@@ -1,0 +1,91 @@
+{
+  "id": "mgu-deploy",
+  "kind": "tool",
+  "version": "0.8.27",
+  "title": "Deploy tool",
+  "description": "Installs, updates, rolls back and removes our tools and apps on the head unit, with a snapshot before every change",
+  "files": [
+    {
+      "path": "mgu-deploy.js",
+      "mode": "0644",
+      "sha256": "e385cf88c4e41aa120b5b4ea99a90958a5c19523ef4f203d8ebeeee8e7db0e7a",
+      "from": "files/mgu-deploy.js"
+    },
+    {
+      "path": "mgu-deploy.sh",
+      "mode": "0755",
+      "sha256": "30bf1d3394eaea34628a3ec19732890a1ee2e12c6a79e400a2ca75a67f486b2b",
+      "from": "files/mgu-deploy.sh"
+    },
+    {
+      "path": "fallback_build.js",
+      "mode": "0644",
+      "sha256": "154ef599c3ecdf730432531189921fb07358d0c373f271133ae9f7ac707b2f9a",
+      "from": "files/fallback_build.js"
+    },
+    {
+      "path": "mgu-app-fallback.service",
+      "mode": "0644",
+      "sha256": "6b6022dd843229efc29d46443d2685e2660e6846eecea942b95c4874b05808fb",
+      "from": "files/mgu-app-fallback.service"
+    },
+    {
+      "path": "mgu-deploy-apply.service",
+      "mode": "0644",
+      "sha256": "179dc4f84db31e92a628a2fc38b8c2a43c385e42ee16efe87fb2970be43996da",
+      "from": "files/mgu-deploy-apply.service"
+    },
+    {
+      "path": "mgu-deploy-verify.service",
+      "mode": "0644",
+      "sha256": "072a7f59125f1ab041454201b72d20cc0f4be5d2ef08aefe4de5a0b5115551b3",
+      "from": "files/mgu-deploy-verify.service"
+    },
+    {
+      "path": "mgu-deploy-cleanup.service",
+      "mode": "0644",
+      "sha256": "65d2cdd689b8d65aa9fd5c784125696b5bf348959b0c3fdc3750fdbf6cecded4",
+      "from": "files/mgu-deploy-cleanup.service"
+    },
+    {
+      "path": "mgu-app-fallback-id8.service",
+      "mode": "0644",
+      "sha256": "f34b1ccdbc3fcc4e12cb6742edf79509ce584eb4d8a904f60f1f272ff1272c81",
+      "from": "files/mgu-app-fallback-id8.service"
+    },
+    {
+      "path": "safe_mode.sh",
+      "mode": "0755",
+      "sha256": "87ab10c1aa46eac0e5f6f44d43fec49c87b2b14072e545e5ac32c6acf1c58d2b",
+      "from": "files/safe_mode.sh"
+    },
+    {
+      "path": "mgu-deploy-safe-mode.service",
+      "mode": "0644",
+      "sha256": "2f7fa023a294e025b6fcd7e02d6b06d5a1aa74b76e2f99668caaf0f8398e0df9",
+      "from": "files/mgu-deploy-safe-mode.service"
+    },
+    {
+      "path": "var-opt-ro-safe-mode.conf",
+      "mode": "0644",
+      "sha256": "0c638dc4295af4064aeb3230b3ef0630a0228ac16abdc05f1da5cbf53a9f9f11",
+      "from": "files/var-opt-ro-safe-mode.conf"
+    },
+    {
+      "path": "oap_link.js",
+      "mode": "0644",
+      "sha256": "774c0faed1eeac1820eef868d37c63a34404488ea076c94aecaa819eaa9091af",
+      "from": "files/oap_link.js"
+    },
+    {
+      "path": "oap_pack.js",
+      "mode": "0644",
+      "sha256": "d285c7e5b94a57d19f8730590d943cc480f98572d025079d7d12f66e2530347d",
+      "from": "files/oap_pack.js"
+    }
+  ],
+  "units": [],
+  "enable": [],
+  "recmgr": [],
+  "restart": []
+}

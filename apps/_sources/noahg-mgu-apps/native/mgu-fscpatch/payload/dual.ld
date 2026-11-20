@@ -1,1 +1,0 @@
-cal_check = 0x1fb790; oem_key = 0x536df0; SECTIONS { . = 0xbc5000; .text : { *(.text.entry) *(.text*) } .rodata : { *(.rodata*) } /DISCARD/ : { *(.comment*) *(.eh_frame*) *(.note*) } }

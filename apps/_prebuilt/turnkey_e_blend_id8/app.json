@@ -1,0 +1,12 @@
+{
+  "id": "turnkey_e_blend_id8",
+  "version": "0.5.0",
+  "title": "TurnKey E Blend",
+  "description": "Plan a petrol and E85 blend, read the remaining fuel from the car, or estimate tank ethanol.",
+  "mguHmi": [
+    "ID8"
+  ],
+  "requires": {
+    "mgu-deploy": "0.7.0"
+  }
+}

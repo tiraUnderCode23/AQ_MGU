@@ -1,0 +1,13 @@
+{
+  "id": "bm3_live_id8",
+  "version": "0.1.1",
+  "title": "MGU Bm3 Live Adjustments for IDrive 8",
+  "description": "Map switching, burble adjustments and vehicle data for supported BM3 CustomROM vehicles with iDrive 8.",
+  "mguHmi": [
+    "ID8"
+  ],
+  "requires": {
+    "mgu-deploy": "0.6.9",
+    "mgu-render": "0.6.12"
+  }
+}
