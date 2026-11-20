@@ -1319,5 +1319,108 @@
       "docs/assets/apps/zf8hp/preview-03.png"
     ],
     "image_count": 3
+  },
+  "boostline_id8": {
+    "icon": "docs/assets/apps/boostline_id8/icon.png",
+    "images": [],
+    "image_count": 0
+  },
+  "dpf_id8": {
+    "icon": "docs/assets/apps/dpf_id8/icon.png",
+    "images": [],
+    "image_count": 0
+  },
+  "true_time_id8": {
+    "icon": "docs/assets/apps/true_time_id8/icon.png",
+    "images": [],
+    "image_count": 0
+  },
+  "pps_gauges": {
+    "icon": "docs/assets/apps/pps_gauges/icon.png",
+    "images": [],
+    "image_count": 0
+  },
+  "pps_warmup": {
+    "icon": "docs/assets/apps/pps_warmup/icon.png",
+    "images": [],
+    "image_count": 0
+  },
+  "climate-comfort": {
+    "icon": "docs/assets/apps/climate-comfort/icon.png",
+    "images": [
+      "docs/assets/apps/climate-comfort/screen_1.png",
+      "docs/assets/apps/climate-comfort/screen_2.png"
+    ],
+    "image_count": 2
+  },
+  "custom_cluster": {
+    "icon": "docs/assets/apps/custom_cluster/icon.png",
+    "images": [],
+    "image_count": 0
+  },
+  "kombikraft_test": {
+    "icon": "docs/assets/apps/kombikraft_test/icon.png",
+    "images": [],
+    "image_count": 0
+  },
+  "mgu_unified": {
+    "icon": "docs/assets/apps/mgu_unified/icon.png",
+    "images": [],
+    "image_count": 0
+  },
+  "adas_feature_probe": {
+    "icon": "docs/assets/apps/adas_feature_probe/icon.png",
+    "images": [],
+    "image_count": 0
+  },
+  "aref_explorer": {
+    "icon": "docs/assets/apps/aref_explorer/icon.png",
+    "images": [],
+    "image_count": 0
+  },
+  "aurelm_mediaprobe": {
+    "icon": "docs/assets/apps/aurelm_mediaprobe/icon.png",
+    "images": [],
+    "image_count": 0
+  },
+  "drake1804_checks": {
+    "icon": "docs/assets/apps/drake1804_checks/icon.png",
+    "images": [],
+    "image_count": 0
+  },
+  "f44_traffic_diag": {
+    "icon": "docs/assets/apps/f44_traffic_diag/icon.png",
+    "images": [],
+    "image_count": 0
+  },
+  "ida_lightlog": {
+    "icon": "docs/assets/apps/ida_lightlog/icon.png",
+    "images": [],
+    "image_count": 0
+  },
+  "mgu_audio_diagnostics": {
+    "icon": "docs/assets/apps/mgu_audio_diagnostics/icon.png",
+    "images": [],
+    "image_count": 0
+  },
+  "signal_probe": {
+    "icon": "docs/assets/apps/signal_probe/icon.png",
+    "images": [],
+    "image_count": 0
+  },
+  "woodr_devhud": {
+    "icon": "docs/assets/apps/woodr_devhud/icon.png",
+    "images": [],
+    "image_count": 0
+  },
+  "woodr_inputlab": {
+    "icon": "docs/assets/apps/woodr_inputlab/icon.png",
+    "images": [],
+    "image_count": 0
+  },
+  "woodr_screenlab": {
+    "icon": "docs/assets/apps/woodr_screenlab/icon.png",
+    "images": [],
+    "image_count": 0
   }
 }

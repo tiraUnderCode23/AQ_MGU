@@ -1,0 +1,405 @@
+{
+ "id": "pps_warmup",
+ "title": "Proven Warm-Up",
+ "description": "BETA, not yet tested on a car. Shows when engine oil, gearbox oil and coolant reach the warm-up temperatures set by Proven Performance Solutions. A guide only: it does not replace the car's own warnings",
+ "version": "1.2.1",
+ "vendor": "Proven Performance Solutions",
+ "loggingId": "PPW1",
+ "iconGlyph": "temp",
+ "autostart": true,
+ "mguHmi": [
+  "ID7",
+  "ID8"
+ ],
+ "requires": {
+  "idrive7-renderd": "2.1.15"
+ },
+ "signals": {
+  "de.bmw.infotainment.vehicle.CDS": {
+   "statusEngineSpeed2": "rs",
+   "statusEngineTemperature": "rs"
+  },
+  "de.bmw.infotainment.vehicle.Vehicle2": {
+   "statusCarSpeed2": "rs"
+  },
+  "de.bmw.infrastructure.analytics.BasicDataSet": {
+   "_optional": "gearbox oil temperature (when the gearbox unit has none)",
+   "basicDataSet": "s"
+  },
+  "com.harman.infotainment.systemfunctions.tasu.tasu.InternalTasu": {
+   "_instances": "SystemFunctionsInternalTasuInst1",
+   "_methods": [
+    "sendTasuRequest"
+   ],
+   "_broadcasts": [
+    "sendTasuResponse"
+   ]
+  }
+ },
+ "screens": [
+  {
+   "name": "MAIN",
+   "kind": "canvas",
+   "title": "Proven Warm-Up",
+   "buttons": [
+    [
+     "BTN_SETTINGS",
+     "Settings"
+    ]
+   ]
+  }
+ ],
+ "startWidget": {
+  "name": "Proven Warm-Up",
+  "layout": "LT_Table_OnlineApps_DriveRecorderWidget",
+  "image": "BackgroundImage1",
+  "scale": 2,
+  "size": [
+   384,
+   256
+  ],
+  "safe": [
+   0.09,
+   0.17
+  ],
+  "cells": {
+   "ErrorInfo": [
+    false,
+    "Bool"
+   ],
+   "background": [
+    true,
+    "Bool"
+   ],
+   "ProgressbarVisible": [
+    false,
+    "Bool"
+   ],
+   "TextRecordings": [
+    "",
+    "Text"
+   ]
+  }
+ },
+ "settings": [
+  {
+   "key": "gaugeStyle",
+   "label": "Gauge style",
+   "type": "choice",
+   "default": "bars",
+   "options": [
+    [
+     "bars",
+     "Horizontal bars"
+    ],
+    [
+     "dials",
+     "Round dials"
+    ]
+   ]
+  },
+  {
+   "key": "tempUnit",
+   "label": "Temperature unit",
+   "type": "choice",
+   "default": "c",
+   "options": [
+    [
+     "c",
+     "Celsius"
+    ],
+    [
+     "f",
+     "Fahrenheit"
+    ]
+   ]
+  },
+  {
+   "key": "announce",
+   "label": "Announce when up to temperature",
+   "type": "bool",
+   "default": true
+  },
+  {
+   "key": "branding",
+   "label": "Proven logo",
+   "type": "bool",
+   "default": true
+  },
+  {
+   "key": "workshop",
+   "label": "Workshop settings",
+   "type": "bool",
+   "default": false
+  },
+  {
+   "key": "readyOil",
+   "label": "Engine oil: safe from",
+   "type": "number",
+   "unit": "°C",
+   "default": 80,
+   "reset": 1,
+   "steps": [
+    60,
+    65,
+    70,
+    75,
+    80,
+    85,
+    90,
+    95,
+    100,
+    105,
+    110
+   ],
+   "when": {
+    "workshop": true
+   }
+  },
+  {
+   "key": "hotOil",
+   "label": "Engine oil: too hot above",
+   "type": "number",
+   "unit": "°C",
+   "default": 115,
+   "reset": 1,
+   "steps": [
+    110,
+    115,
+    120,
+    125,
+    130,
+    135,
+    140,
+    145,
+    150
+   ],
+   "when": {
+    "workshop": true
+   }
+  },
+  {
+   "key": "gearboxSource",
+   "label": "Gearbox oil temperature",
+   "type": "choice",
+   "default": "auto",
+   "when": {
+    "workshop": true
+   },
+   "options": [
+    [
+     "auto",
+     "Auto (gearbox unit, else car signal)"
+    ],
+    [
+     "signal",
+     "Car signal only"
+    ],
+    [
+     "none",
+     "Not monitored (no sensor)"
+    ]
+   ]
+  },
+  {
+   "key": "readyGearbox",
+   "label": "Gearbox oil: safe from",
+   "type": "number",
+   "unit": "°C",
+   "default": 60,
+   "reset": 1,
+   "steps": [
+    40,
+    45,
+    50,
+    55,
+    60,
+    65,
+    70,
+    75,
+    80,
+    85,
+    90
+   ],
+   "when": {
+    "workshop": true
+   }
+  },
+  {
+   "key": "hotGearbox",
+   "label": "Gearbox oil: too hot above",
+   "type": "number",
+   "unit": "°C",
+   "default": 100,
+   "reset": 1,
+   "steps": [
+    100,
+    105,
+    110,
+    115,
+    120,
+    125,
+    130,
+    135,
+    140
+   ],
+   "when": {
+    "workshop": true
+   }
+  },
+  {
+   "key": "readyCoolant",
+   "label": "Coolant: safe from",
+   "type": "number",
+   "unit": "°C",
+   "default": 80,
+   "reset": 1,
+   "steps": [
+    60,
+    65,
+    70,
+    75,
+    80,
+    85,
+    90,
+    95,
+    100
+   ],
+   "when": {
+    "workshop": true
+   }
+  },
+  {
+   "key": "hotCoolant",
+   "label": "Coolant: too hot above",
+   "type": "number",
+   "unit": "°C",
+   "default": 115,
+   "reset": 1,
+   "steps": [
+    100,
+    105,
+    110,
+    115,
+    120,
+    125
+   ],
+   "when": {
+    "workshop": true
+   }
+  },
+  {
+   "key": "coldLimit",
+   "label": "Rev limit until warm",
+   "type": "number",
+   "unit": "rpm",
+   "default": 4000,
+   "reset": 1,
+   "labels": {
+    "0": "None"
+   },
+   "steps": [
+    0,
+    2000,
+    2500,
+    3000,
+    3500,
+    4000,
+    4500,
+    5000,
+    5500
+   ],
+   "when": {
+    "workshop": true
+   }
+  },
+  {
+   "key": "theme",
+   "label": "Colour theme",
+   "type": "choice",
+   "default": "proven",
+   "options": [
+    [
+     "proven",
+     "Proven"
+    ],
+    [
+     "proven_red",
+     "Proven Red"
+    ],
+    [
+     "proven_blue",
+     "Proven Blue"
+    ],
+    [
+     "m_tricolour",
+     "M Tricolour"
+    ],
+    [
+     "m_red",
+     "M Red"
+    ],
+    [
+     "ice",
+     "Ice White"
+    ],
+    [
+     "amber",
+     "Night Amber"
+    ]
+   ]
+  },
+  {
+   "key": "layout",
+   "label": "Screen layout",
+   "type": "choice",
+   "default": "full",
+   "options": [
+    [
+     "full",
+     "Full screen"
+    ],
+    [
+     "standard",
+     "Standard"
+    ]
+   ]
+  },
+  {
+   "key": "renderer",
+   "label": "Renderer",
+   "type": "choice",
+   "default": "auto",
+   "options": [
+    [
+     "auto",
+     "GPU 60 fps (default)"
+    ],
+    [
+     "software",
+     "Software"
+    ]
+   ]
+  },
+  {
+   "key": "demo",
+   "label": "Demo data",
+   "type": "choice",
+   "default": "off",
+   "options": [
+    [
+     "auto",
+     "Auto"
+    ],
+    [
+     "on",
+     "Always"
+    ],
+    [
+     "off",
+     "Never"
+    ]
+   ]
+  }
+ ]
+}

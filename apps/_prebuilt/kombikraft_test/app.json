@@ -1,0 +1,13 @@
+{
+  "id": "kombikraft_test",
+  "version": "0.1.28",
+  "title": "KombiKraft Themes",
+  "description": "F40 M Round test theme with mirrored main dials, BMW mini-gauge numerals, and shaded segmented rings. This build masks the factory model badge behind the M Round badge. Select while parked. Badge coverage awaiting on-car validation.",
+  "mguHmi": [
+    "ID7"
+  ],
+  "requires": {
+    "mgu-deploy": "0.4.0",
+    "cluster-render": "0.6.9"
+  }
+}

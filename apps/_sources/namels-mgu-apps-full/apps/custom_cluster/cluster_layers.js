@@ -1,0 +1,669 @@
+'use strict';
+// One client in the existing shared cluster-render service. No binary patch,
+// no second RAMSES participant and no reconfiguration of Waze on cluster.
+const { ClusterRender } = require('./cluster_render_client.js');
+const probeShader = require('./panel_probe_shader.js');
+const { PALETTE, resolveColor, resolve6WBColor, colorHex } = require('./cluster_colors.js');
+const COLORS = Object.keys(PALETTE).reduce((m, k) => { m[k] = PALETTE[k].concat([1]); return m; }, {});
+const StatusLine = require('./status_line.js');
+const { gearText } = require('./layout_panels.js');
+// Independent tiny effects: inspired by the architecture (not the code) of
+// Cluster Layouts and Cluster Themes. No full-screen fragment shader here.
+const PIECE_FS = `#version 100
+precision mediump float;
+varying vec2 v_uv;
+uniform vec4 u_color;
+uniform float u_kind;
+void main() {
+    vec2 p = v_uv - vec2(0.5);
+    float a = step(abs(p.x),0.46)*step(abs(p.y),0.39);
+    if (u_kind > 0.5) a = 1.0-smoothstep(0.035,0.055,abs(length(p)-0.34));
+    gl_FragColor = vec4(u_color.rgb, a*u_color.a);
+}`;
+const MODES = { stock: 0, sport: 1, classic: 2, minimal: 3, g80: 4, oem: 5, sixwb: 6 };
+const finite = (x) => typeof x === 'number' && Number.isFinite(x);
+const PANEL_TEST_MS = 12000;
+const SIGNAL_MAX_AGE_MS = 15000;
+const PANEL_TARGETS = { panel: true, panel201: true, panel202: true };
+const PANEL_SLOTS = { panel: '203', panel201: '201', panel202: '202' };
+
+// Both the current renderer ("target panel: slot ...") and older test
+// fixtures ("target panel slot ...") are supported. Match the *released*
+// target, not another target which happens to be idle.
+function panelReleaseStatus(text, target) {
+    const slot = PANEL_SLOTS[target];
+    if (!slot) return null;
+    const lines = String(text || '').split('\n');
+    const pattern = new RegExp('^\\s*target\\s+' + target +
+        '\\s*:?\\s+slot\\s+0x0*' + slot + '\\b', 'i');
+    const line = lines.find(v => pattern.test(v));
+    if (!line) return null;
+    // The state follows the dimensions, e.g. "1920x720: idle; scene published".
+    const state = /\b\d+x\d+\s*:\s*([a-z_-]+)/i.exec(line);
+    if (!state) return null;
+    const row = lines.find(v => new RegExp('^\\s*slot\\s+0x0*'+slot+'\\s+status\\b','i').test(v));
+    const scene = /\bscene\s+(0x[0-9a-f]+)/i.exec(line);
+    const mapped = !!(row && scene && row.split(',').some(part => {
+        const m = /(0x[0-9a-f]+)\s+class\s+\d+\s+map\s+(\d+)/i.exec(part);
+        return m && parseInt(m[1],16) === parseInt(scene[1],16) && Number(m[2]) !== 0;
+    }));
+    return { line, state: state[1].toLowerCase(), mapped,
+        idle: state[1].toLowerCase() === 'idle' && !mapped };
+}
+
+class ClusterLayers {
+    constructor(log, socket, client) {
+        this.log = log;
+        this.cr = client || new ClusterRender('custom_cluster', socket);
+        this.effectRef = 0;
+        this.panelRef = 0;
+        this.panelRefs = [];
+        this.dialNeedles = [];
+        this.layoutParts = [];
+        this.layoutAccent = null;
+        this.badgeRef = 0;
+        this.badgeTarget = null;
+        this.badgeState = '';
+        this.ready = false;
+        this.layerState = 'inactive';
+        this.targetState = 'unknown';
+        this.panelLayerState = 'inactive';
+        this.panelLayerReason = '';
+        this.panelTargetState = 'unknown';
+        this.panelTargetReason = '';
+        this.lastRefusal = '';
+        this.rendererStatusText = '';
+        this.rendererStatusAt = 0;
+        this.lastStatusRequestAt = 0;
+        this.activePanelTarget = 'panel';
+        this.activeTestMode = '';
+        this.lastSample = 0;
+        this.data = {};
+        this.latestSignalTimes = {};
+        this.lastIncompleteTraceAt = 0;
+        this.panelEvents = [];
+        this.traceSink = null;
+        this.suspended = false;
+        this.recoveryState = 'not requested';
+        this.recoveryRequestedAt = 0;
+        this.recoveryStatusAt = 0;
+        this.recoveryTarget = null;
+        this.releaseConfirmed = false;
+        this.lastRecoveryReport = '';
+        this.lastTestStatusReport = '';
+        this.options = { layout: 'stock', accent: 'm', phoneBadge: false, wazeMap: 'auto',
+            sixwbTheme: 'comfort', sixwbColorSource: 'original',
+            colorMode: 'palette', colorBrightness: 100,
+            panelTestMode: 'probe', panelTarget: 'panel', coverOriginal: true };
+        this.phoneState = 'unknown';
+        // Automatic KOMBI display (setting kombiAuto): only while parked, never after a failure.
+        this.autoRun = false;
+        this.autoSuppressed = false;
+        this.parkedSince = 0;
+        this.lastAutoTry = 0;
+        this.autoReason = 'off';
+        this.lastSent = 0;
+        this.armedUntil = 0;
+        this.disarmReason = 'Off by default';
+        this.cr.on('ready', () => {
+            this.ready = true;
+            this.tracePanel('renderer ready: ' + (this.cr.backend || 'unknown') + ', targets ' + (this.cr.targets || '-'));
+            this.lastStatusRequestAt = 0;
+            this.apply();
+            this.pollStatus(true);
+            this.log.info('cluster renderer connected backend=' + this.cr.backend + ' targets=' + this.cr.targets);
+        });
+        this.cr.on('disconnected', () => {
+            this.tracePanel('renderer disconnected');
+            this.ready = false;
+            this.layerState = 'disconnected';
+            this.panelLayerState = 'disconnected';
+            // Do not replay an experimental parked panel after a socket loss.
+            if (this.panelRefs.length || this.armedUntil) {
+                this.armedUntil = 0;
+                this.suspended = true;
+                const owned = this.panelRefs.slice();
+                this.panelRefs = []; this.panelRef = 0; this.dialNeedles = [];
+                this.layoutParts = []; this.layoutAccent = null;
+                this.activeTestMode = '';
+                owned.forEach(ref => this.cr.drop(ref));
+                this.recoveryRequestedAt = Date.now();
+                this.recoveryTarget = this.activePanelTarget;
+                this.recoveryStatusAt = 0;
+                this.releaseConfirmed = false;
+                this.lastRecoveryReport = '';
+                this.recoveryState = 'connection lost; release pending';
+                this.disarmReason = 'Renderer connection lost; parked test stopped';
+                this.tracePanel('test ended: renderer disconnected; own refs dropped; no replay');
+            }
+        });
+        this.cr.on('layer', (ref, state, reason) => {
+            if (this.panelRefs.indexOf(ref) >= 0 || ref === this.panelRef && ref !== 0) {
+                this.tracePanel('panel layer ref=' + ref + ' ' + state + (reason ? ': ' + reason : ''));
+                this.panelLayerState = state;
+                this.panelLayerReason = reason || '';
+                this.log.info('panel layer ' + state + (reason ? ': ' + reason : ''));
+                if (state === 'error' && this.armedUntil) {
+                    this.disarm('Panel layer error: ' + (reason || 'unknown'));
+                    return;
+                }
+            } else if (ref === this.effectRef || ref === this.badgeRef) {
+                this.layerState = state;
+            }
+            if (state === 'error') this.log.warn('cluster layer: ' + reason);
+        });
+        this.cr.on('target', (target, state, holder, reason) => {
+            if (target === 'map') this.targetState = target + ': ' + state;
+            if (target === this.activePanelTarget) {
+                this.tracePanel('target ' + target + ': ' + state + (holder ? ' (' + holder + ')' : '') +
+                    (reason ? ' - ' + reason : ''));
+                this.panelTargetState = state + (holder ? ' (' + holder + ')' : '');
+                this.panelTargetReason = reason || '';
+                this.log.info('panel target ' + target + ': ' + this.panelTargetState +
+                    (reason ? ' ' + reason : ''));
+                // An idle event is a prompt to request fresh renderer status,
+                // not proof of restored factory graphics by itself.
+                if (target === this.recoveryTarget && this.recoveryRequestedAt &&
+                    !this.panelRef && !this.armedUntil && state === 'idle')
+                    this.pollStatus(true);
+            }
+        });
+        this.cr.on('status', (value) => {
+            this.rendererStatusText = String(value || '').slice(0, 24000);
+            if (this.recoveryRequestedAt && !this.panelRef && !this.armedUntil) {
+                const report = panelReleaseStatus(this.rendererStatusText, this.recoveryTarget);
+                const before = this.releaseConfirmed;
+                this.releaseConfirmed = !!(report && report.idle);
+                this.recoveryStatusAt = report ? Date.now() : 0;
+                this.recoveryState = this.releaseConfirmed ? 'panel idle (BMW media NOT verified)' :
+                    report ? 'panel ' + report.state + (report.mapped ? ' (scene still mapped)' : '') +
+                        ' (release pending)' : 'release pending: no matching target status';
+                const summary = this.recoveryState + (report ? ' | ' + report.line.slice(0,170) : '');
+                if (summary !== this.lastRecoveryReport || before !== this.releaseConfirmed) {
+                    this.lastRecoveryReport = summary;
+                    this.tracePanel('post-release: ' + summary);
+                }
+            }
+            this.rendererStatusAt = Date.now();
+            if (this.armedUntil) {
+                // Preserve the renderer's *during-test* state; a QR export
+                // made after 12 seconds otherwise sees only the idle slot.
+                const lines = this.rendererStatusText.split('\n')
+                    .filter((line) => /^(target (panel|map)|slot 0x(100|200|203)|renderer:)/i.test(line)).slice(0, 6);
+                const summary = lines.join(' | ');
+                if (summary && summary !== this.lastTestStatusReport) {
+                    this.lastTestStatusReport = summary;
+                    // Separate changes into readable single lines, not a
+                    // repeating six-line paragraph every 1.5 seconds.
+                    lines.forEach(line => this.tracePanel('during test: ' + line));
+                }
+            }
+        });
+        this.cr.on('refused', (op, ref, reason) => {
+            this.tracePanel('renderer refused ' + op + ' ref=' + ref + ': ' + reason);
+            this.lastRefusal = op + ' ref=' + ref + ': ' + reason;
+            this.log.warn('cluster ' + this.lastRefusal);
+            if (this.armedUntil && this.panelRefs.indexOf(ref) >= 0)
+                this.disarm('Renderer refused owned layer: ' + this.lastRefusal);
+        });
+        this.cr.connect();
+    }
+
+    tracePanel(event) {
+        const line = new Date().toISOString() + ' ' + String(event).replace(/\s+/g, ' ').slice(0, 600);
+        this.panelEvents.push(line);
+        if (this.panelEvents.length > 80) this.panelEvents.shift();
+        // Preserve transitions immediately on disk, not only when QR is opened.
+        if (this.traceSink) {
+            try { this.traceSink(line); } catch (_) { /* logging must not stop rendering */ }
+        }
+    }
+    setTraceSink(fn) {
+        this.traceSink = typeof fn === 'function' ? fn : null;
+        if (this.traceSink) this.tracePanel('automatic session logging enabled');
+    }
+    history() { return this.panelEvents.join('\n') || '(no panel events yet)'; }
+    // This only releases OUR client layers; it cannot command the BMW HMI to
+    // re-open its music widget. Never claim OEM graphics have been restored.
+    restoreOriginal() {
+        this.armedUntil = 0;
+        this.activeTestMode = '';
+        this.suspended = true;
+        const owned = this.panelRefs.length ? this.panelRefs.slice() :
+            (this.panelRef ? [this.panelRef] : []);
+        this.panelRefs = [];
+        this.panelRef = 0;
+        this.dialNeedles = [];
+        this.layoutParts = []; this.layoutAccent = null;
+        owned.forEach(ref => this.cr.drop(ref));
+        if (this.effectRef) { this.cr.drop(this.effectRef); this.effectRef = 0; }
+        this.dropStatusLine();
+        this.recoveryRequestedAt = Date.now();
+        this.recoveryStatusAt = 0;
+        this.recoveryTarget = this.activePanelTarget;
+        this.releaseConfirmed = false;
+        this.lastRecoveryReport = '';
+        this.recoveryState = 'release requested; BMW music unverified';
+        this.disarmReason = 'All Custom Cluster graphics released (BMW media unverified)';
+        this.tracePanel('restore requested: drop own layers, disconnect renderer client');
+        this.ready = false;
+        // A socket disconnect also releases the renderer-side ownership if a
+        // previous drop got lost. Never restart the shared renderer/Waze tool.
+        try {
+            this.cr.close();
+            this.cr.connect();
+        } catch (e) {
+            this.recoveryState = 'renderer reconnect failed: ' + String(e.message || e);
+            this.tracePanel(this.recoveryState);
+        }
+        return this.recoveryState;
+    }
+    clearHistory() { this.panelEvents.length = 0; }
+
+    settings(options) {
+        const previous = this.options;
+        this.options = options;
+        if (previous.layout !== options.layout && options.layout === 'stock') {
+            this.suspended = true; // stock never requests a custom display
+        }
+        if (previous.layout !== options.layout || previous.panelTarget !== options.panelTarget ||
+            previous.panelTestMode !== options.panelTestMode ||
+            (options.enablePanelTests === false && !this.autoRun) ||
+            (['sixwb_dials','selected_layout'].indexOf(this.activeTestMode) >= 0 &&
+                (previous.sixwbTheme !== options.sixwbTheme ||
+                 previous.sixwbColorSource !== options.sixwbColorSource ||
+                 previous.colorMode !== options.colorMode ||
+                 previous.accent !== options.accent ||
+                 previous.rgbRed !== options.rgbRed ||
+                 previous.rgbGreen !== options.rgbGreen ||
+                 previous.rgbBlue !== options.rgbBlue ||
+                 previous.colorBrightness !== options.colorBrightness ||
+                 previous.cycleSeconds !== options.cycleSeconds ||
+                 previous.coverOriginal !== options.coverOriginal)))
+            this.disarm('Panel settings changed');
+        // A changed setting is a new decision: an automatic display may try again.
+        this.autoSuppressed = false;
+        this.apply();
+    }
+    sample(d) {
+        if (!d || d.demo || !finite(d.speed) || !finite(d.rpm) || d.speed < 0 || d.speed > 350 || d.rpm < 0 || d.rpm > 8000) {
+            if (this.armedUntil) this.disarm('Invalid or unavailable live vehicle signal');
+            return;
+        }
+        if (this.armedUntil && (d.speed >= 0.5 || d.stage !== 'P')) {
+            this.disarm('Vehicle moved or selector left P');
+            return;
+        }
+        if (d.receivedAt) {
+            this.latestSignalTimes = d.receivedAt;
+            const now = Date.now(), speedAt = d.receivedAt.speed, rpmAt = d.receivedAt.rpm;
+            if (!finite(speedAt) || !finite(rpmAt) || now - speedAt > SIGNAL_MAX_AGE_MS ||
+                now - rpmAt > SIGNAL_MAX_AGE_MS || speedAt > now + 1000 || rpmAt > now + 1000) {
+                if (now - this.lastIncompleteTraceAt > 15000) {
+                    this.lastIncompleteTraceAt = now;
+                    this.tracePanel('read-only getter samples incomplete: speedAge=' +
+                        (finite(speedAt) ? Math.round((now - speedAt) / 1000) : '?') +
+                        's rpmAge=' + (finite(rpmAt) ? Math.round((now - rpmAt) / 1000) : '?') + 's');
+                }
+                if (this.armedUntil) this.disarm('Independent speed/RPM sample stale');
+                return; // never accept a fresh RPM paired with a stale speed
+            }
+        }
+        this.data = d;
+        this.lastSample = Date.now();
+        this.apply();
+    }
+    // Gear selection can change without an rpm/speed notification. Observe it
+    // separately, without falsely refreshing the last real telemetry sample.
+    observeVehicle(d) {
+        if (!d || d.demo) {
+            if (this.armedUntil) { this.disarm('Non-live vehicle data'); this.apply(); }
+            return;
+        }
+        if (this.armedUntil && (d.stage !== 'P' || !finite(d.speed) || d.speed >= 0.5)) {
+            this.data.stage = d.stage;
+            this.disarm('Vehicle moved, speed unavailable, or selector left P');
+            return;
+        }
+        if (this.data.stage !== d.stage || this.data.gear !== d.gear || this.data.gearGuessed !== d.gearGuessed) {
+            this.data.stage = d.stage; this.data.gear = d.gear; this.data.gearGuessed = d.gearGuessed;
+            this.apply();
+        }
+    }
+    /** Live data plus the display choice for the selector/gear text (setting gearDisplay). */
+    viewData() { return Object.assign({}, this.data, { gearMode: this.options.gearDisplay }); }
+    /** Text for the selector position: P R N D, or D1..D8 depending on the setting. */
+    gearLabel() { return gearText(this.viewData()); }
+    /** Last event of the phone link: 'opened', 'closed' or 'unknown'. */
+    phone(state) {
+        state = StatusLine.valid(state) ? state : 'unknown';
+        if (state === this.phoneState) return;
+        this.phoneState = state;
+        this.apply();
+    }
+    dropStatusLine() {
+        if (this.badgeRef) this.cr.drop(this.badgeRef);
+        this.badgeRef = 0; this.badgeTarget = null; this.badgeState = '';
+    }
+    live() {
+        if (!this.lastSample || Date.now()-this.lastSample>=30000) return false;
+        const t=this.latestSignalTimes;
+        if (Object.keys(t).length) {
+            const now=Date.now();
+            return finite(t.speed) && finite(t.rpm) && now-t.speed<=SIGNAL_MAX_AGE_MS &&
+                now-t.rpm<=SIGNAL_MAX_AGE_MS && t.speed<=now+1000 && t.rpm<=now+1000;
+        }
+        return true;
+    }
+    parked() { return this.live() && this.data.stage === 'P' && this.data.speed >= 0 && this.data.speed < 0.5; }
+    testGuard() {
+        if (!this.lastSample) return 'Waiting for real speed + RPM (no complete sample yet)';
+        if (!this.live()) return 'Speed/RPM stale (' + Math.round((Date.now() - this.lastSample) / 1000) + 's)';
+        if (this.data.stage !== 'P') return 'Selector ' + (this.data.stage || 'unknown') + ' - P required';
+        if (this.data.speed >= 0.5) return 'Vehicle moving (' + this.data.speed.toFixed(1) + ' km/h)';
+        return 'Ready: real speed/RPM, stopped, selector P';
+    }
+    pollStatus(force) {
+        if (!this.ready) return;
+        const now = Date.now();
+        const recovering = this.recoveryRequestedAt && !this.releaseConfirmed;
+        const wait = recovering ? 1000 : this.panelRef ? 1500 : 8000;
+        if (force || now - this.lastStatusRequestAt >= wait) {
+            this.lastStatusRequestAt = now;
+            this.cr.status();
+        }
+    }
+    panelTarget() {
+        const target = this.options.panelTarget;
+        return PANEL_TARGETS[target] ? target : 'panel';
+    }
+    armPanel(auto) {
+        if (this.armedUntil) { this.tracePanel('test ended: Stopped by user'); this.restoreOriginal(); return false; }
+        if (!(MODES[this.options.layout] > 0)) {
+            this.disarmReason = 'Choose a custom instrument design first';
+            this.tracePanel('test refused: ' + this.disarmReason);
+            return false;
+        }
+        if ((this.options.enablePanelTests === false && !auto) || this.options.panelTestMode === 'preview') {
+            this.disarmReason = 'Experimental KOMBI test not enabled';
+            return false;
+        }
+        if (this.options.panelTestMode === 'selected_layout' && this.panelTarget() !== 'panel') {
+            this.disarmReason = 'Selected layout needs standard panel';
+            this.tracePanel('test refused: ' + this.disarmReason);
+            return false;
+        }
+        if (this.options.panelTestMode === 'sixwb_dials' &&
+            (this.options.layout !== 'sixwb' || this.panelTarget() !== 'panel')) {
+            this.disarmReason = '6WB dials need BMW 6WB layout and standard panel';
+            this.tracePanel('test refused: ' + this.disarmReason);
+            return false;
+        }
+        if (!this.parked()) { this.disarmReason = this.testGuard(); this.tracePanel('test refused: ' + this.disarmReason); return false; }
+        // Do not stack requests on top of a release with unconfirmed slot state.
+        if (this.recoveryRequestedAt && (!this.releaseConfirmed || !this.recoveryStatusAt ||
+            Date.now() - this.recoveryStatusAt > 10000)) {
+            this.disarmReason = 'Previous panel release awaiting fresh idle status; check BMW media and retry';
+            this.tracePanel('test waiting: ' + this.disarmReason);
+            this.pollStatus(true);
+            return false;
+        }
+        if (!this.ready) { this.disarmReason = 'Renderer not connected'; this.tracePanel('test refused: ' + this.disarmReason); return false; }
+        const target = this.panelTarget();
+        if (target !== 'panel' && !String(this.cr.targets || '').split(',').some((t) => t.trim().indexOf(target + ':') === 0)) {
+            this.disarmReason = target + ' not advertised by installed renderer';
+            this.tracePanel('test refused: ' + this.disarmReason);
+            return false;
+        }
+        this.recoveryRequestedAt = 0;
+        this.recoveryStatusAt = 0;
+        this.recoveryTarget = null;
+        this.releaseConfirmed = false;
+        this.lastRecoveryReport = '';
+        this.lastTestStatusReport = '';
+        this.recoveryState = 'not requested';
+        this.suspended = false;
+        this.activePanelTarget = target;
+        // Saved 'design' settings are migrated to the bounded layer probe.
+        this.activeTestMode = this.options.panelTestMode === 'sixwb_dials' ||
+            (this.options.panelTestMode === 'selected_layout' && this.options.layout === 'sixwb') ? 'sixwb_dials' :
+            this.options.panelTestMode === 'selected_layout' ? 'selected_layout' :
+            ['pieces','design'].indexOf(this.options.panelTestMode) >= 0 ? 'pieces' : 'probe';
+        this.panelTargetState = 'requesting';
+        this.panelTargetReason = '';
+        this.panelLayerState = 'requesting';
+        this.panelLayerReason = '';
+        this.lastRefusal = '';
+        this.rendererStatusText = '';
+        this.armedUntil = Date.now() + PANEL_TEST_MS;
+        this.tracePanel('test armed: ' + this.options.layout + '/' + this.activeTestMode +
+            ' target=' + target + ' speed=' + this.data.speed + ' rpm=' + this.data.rpm);
+        this.disarmReason = auto ? 'automatic KOMBI display: only while parked in P' :
+            this.activeTestMode + ' test: 12 seconds maximum';
+        this.apply();
+        this.pollStatus(true);
+        return !!this.panelRef && !!this.armedUntil;
+    }
+    /**
+     * Called every 250 ms, with or without the app window. With kombiAuto the selected
+     * layout is requested by itself once the car has been parked (P, standing, fresh
+     * speed + RPM) for 3 s, and kept (the 12 s test window is renewed) while that holds.
+     * Leaving P / moving releases it through the normal path. Any other end (renderer
+     * refusal, release, button) pauses the automatic display until the next time parked,
+     * so a failure can never turn into a request loop.
+     */
+    autoTick() {
+        const now = Date.now();
+        const wanted = this.options.kombiAuto === 'parked' && MODES[this.options.layout] > 0;
+        if (!wanted) {
+            if (this.autoRun && this.armedUntil) this.disarm('Automatic KOMBI switched off');
+            this.autoRun = false; this.parkedSince = 0; this.autoSuppressed = false;
+            this.autoReason = this.options.kombiAuto === 'parked' ? 'layout is BMW original' : 'off';
+            return;
+        }
+        if (!this.ready) { this.autoReason = 'renderer not connected'; return; }
+        if (!this.parked()) {
+            this.parkedSince = 0; this.autoSuppressed = false;
+            if (!this.armedUntil) this.autoRun = false;
+            this.autoReason = 'waiting: ' + this.testGuard();
+            return;
+        }
+        if (!this.parkedSince) this.parkedSince = now;
+        if (this.armedUntil) {
+            if (this.autoRun) { this.armedUntil = now + PANEL_TEST_MS; this.autoReason = 'showing (parked)'; }
+            else this.autoReason = 'manual test running';
+            return;
+        }
+        if (this.autoRun) { // it ended without leaving P: stop trying until the next parking
+            this.autoRun = false; this.autoSuppressed = true;
+            this.tracePanel('automatic KOMBI paused until next parking: ' + (this.disarmReason || 'ended'));
+        }
+        if (this.autoSuppressed) { this.autoReason = 'paused until next parking'; return; }
+        if (now - this.parkedSince < 3000) { this.autoReason = 'parked, starting in ' + Math.ceil((3000 - (now - this.parkedSince)) / 1000) + ' s'; return; }
+        if (this.recoveryRequestedAt && (!this.releaseConfirmed || !this.recoveryStatusAt ||
+            now - this.recoveryStatusAt > 10000)) {
+            this.autoReason = 'waiting for BMW release confirmation';
+            this.pollStatus(false);
+            return;
+        }
+        if (now - this.lastAutoTry < 2000) return;
+        this.lastAutoTry = now;
+        this.autoRun = this.armPanel(true);
+        if (this.autoRun) { this.autoReason = 'requested'; return; }
+        this.autoSuppressed = true;
+        this.autoReason = 'refused: ' + String(this.disarmReason || '-').slice(0, 60) + ' (paused until next parking)';
+    }
+    disarm(reason) {
+        const hadPanel = !!this.panelRef;
+        if (this.armedUntil || hadPanel) this.tracePanel('test ended: ' + (reason || 'unknown'));
+        this.armedUntil = 0;
+        if (reason) this.disarmReason = reason;
+        if (hadPanel) this.restoreOriginal();
+        else this.activeTestMode = '';
+    }
+    apply() {
+        if (this.suspended) return; // never recreate a layer during OEM recovery
+        const mode = MODES[this.options.layout] || 0;
+        if (this.armedUntil && (!this.parked() || Date.now() >= this.armedUntil)) {
+            this.disarm(this.parked() ? 'Test timeout — release requested' : this.testGuard());
+            return;
+        }
+        const panelActive = mode > 0 && this.armedUntil > Date.now() && this.parked();
+        if (panelActive && !this.panelRef && this.activeTestMode === 'selected_layout') {
+            try {
+                const { buildLayout } = require('./layout_panels.js');
+                // Keep static artwork and live indicators the same colour
+                // throughout this short stationary test.
+                this.layoutAccent = resolveColor(this.options, Date.now());
+                this.layoutParts = buildLayout(this.cr, this.activePanelTarget, this.viewData(),
+                    this.options, this.layoutAccent, colorHex(this.layoutAccent), ref => {
+                        this.panelRefs.push(ref);
+                        if (!this.panelRef) this.panelRef = ref;
+                    });
+                this.panelRefs.forEach(ref => this.cr.set(ref, {visible:true}));
+                this.lastSent = Date.now();
+                this.tracePanel('selected artwork ' + this.options.layout +
+                    ': ' + this.panelRefs.length + ' side layers' +
+                    (this.options.coverOriginal !== false ? ' incl. 2 cover plates' : ', no cover plates') +
+                    '; visibility requested; map not drawn over');
+            } catch(e) {
+                this.tracePanel('selected layout creation failed: ' + String(e.message || e));
+                this.restoreOriginal();
+                return;
+            }
+        }
+        if (panelActive && this.panelRef && this.activeTestMode === 'selected_layout' &&
+            Date.now() - this.lastSent >= 250) {
+            try {
+                require('./layout_panels.js').updateLayout(this.cr,this.layoutParts,this.viewData(),
+                    this.layoutAccent,colorHex(this.layoutAccent));
+                this.lastSent = Date.now();
+            } catch(e) {
+                this.disarm('Selected layout update failed: ' + String(e.message || e));
+                return;
+            }
+        }
+        if (panelActive && !this.panelRef && this.activeTestMode === 'sixwb_dials') {
+            try {
+                const { buildDials } = require('./sixwb_dials.js');
+                const accent = resolve6WBColor(this.options, Date.now());
+                this.dialNeedles = buildDials(this.cr, this.activePanelTarget, this.data,
+                    this.options, accent, colorHex(accent), ref => {
+                        this.panelRefs.push(ref);
+                        if (!this.panelRef) this.panelRef = ref;
+                    });
+                this.panelRefs.forEach(ref => this.cr.set(ref, { visible: true }));
+                this.lastSent = Date.now();
+                this.tracePanel('6WB side dials: two faces + two real-value needles; visibility requested; refs=' +
+                    this.panelRefs.join(',') + '; map window untouched; OEM media unverified');
+            } catch (e) {
+                this.tracePanel('6WB dial creation failed: ' + String(e.message || e));
+                this.restoreOriginal();
+                return;
+            }
+        }
+        if (panelActive && this.panelRef && this.activeTestMode === 'sixwb_dials' &&
+            Date.now() - this.lastSent >= 150) {
+            try {
+                require('./sixwb_dials.js').updateDials(this.cr, this.dialNeedles, this.data);
+                this.lastSent = Date.now();
+            } catch (e) {
+                this.disarm('6WB update failed: ' + String(e.message || e));
+                return;
+            }
+        }
+        if (panelActive && !this.panelRef) {
+            const multiple = this.activeTestMode === 'pieces';
+            const specs = multiple ? [
+                { x: 95, y: 300, w: 100, h: 100, color: [0.1, 0.9, 0.9, 1], kind: 1 },
+                { x: 205, y: 300, w: 100, h: 100, color: [0.9, 0.45, 0.12, 1], kind: 0 },
+                { x: 95, y: 412, w: 210, h: 36, color: [0.3, 0.85, 0.3, 1], kind: 0 },
+            ] : [{ x: 86, y: 300, w: 260, h: 110 }];
+            try {
+                // Build hidden; initialize every shader before the first
+                // visible request. All pieces stay outside the map window.
+                specs.forEach((p, i) => {
+                    const ref = this.cr.effect({ target: this.activePanelTarget,
+                        klass: 'overlay', z: i, contend: false, guide_hold: false,
+                        visible: false, x: p.x, y: p.y, w: p.w, h: p.h,
+                        fs: multiple ? PIECE_FS : probeShader });
+                    if (!ref) throw Error('piece ' + i + ' refused');
+                    this.panelRefs.push(ref);
+                    if (!this.panelRef) this.panelRef = ref;
+                    if (multiple) {
+                        this.cr.uniform(ref, 'u_color', p.color);
+                        this.cr.uniform(ref, 'u_kind', [p.kind]);
+                    } else {
+                        this.cr.uniform(ref, 'u_accent', resolveColor(this.options, Date.now()));
+                    }
+                });
+                this.panelRefs.forEach(ref => this.cr.set(ref, { visible: true }));
+                this.tracePanel('small non-contending layers initialized; visibility requested: ' +
+                    this.panelRefs.join(',') + '; OEM media unverified');
+            } catch (e) {
+                this.tracePanel('piece creation failed: ' + String(e.message || e));
+                this.restoreOriginal();
+                return;
+            }
+        }
+        if (!panelActive && this.panelRef) { this.disarm('Panel release requested'); return; }
+        // All six layouts now use explicit parked panel tests. Do not
+        // automatically inject sport/classic/minimal artwork into the map
+        // target when selected in settings. Keep independent Waze control.
+        if(this.effectRef) { this.cr.drop(this.effectRef); this.effectRef=0; }
+        // Phone status line. During a parked panel test it belongs to the
+        // tested layout; otherwise it sits in the map window. Never both.
+        const state = this.options.phoneBadge ? this.phoneState : 'unknown';
+        const where = !StatusLine.valid(state) ? null :
+            panelActive ? (this.panelRef ? this.activePanelTarget : null) : 'map';
+        if (this.badgeRef && where !== this.badgeTarget) this.dropStatusLine();
+        if (where && !this.badgeRef) {
+            const r = where === 'map' ? StatusLine.MAP_RECT : StatusLine.panelRect(this.options.layout);
+            // No contend: the centre slot is never taken from BMW. guide_hold 0:
+            // BMW's turn box stays visible. Where Waze has the map window, the
+            // line floats over its bottom edge (same compositor).
+            this.badgeRef = this.cr.effect({ target: where, klass: 'overlay', z: StatusLine.Z,
+                contend: false, guide_hold: false, x: r.x, y: r.y, w: r.w, h: r.h, fs: StatusLine.LINE_FS });
+            this.badgeTarget = this.badgeRef ? where : null;
+            this.badgeState = '';
+        }
+        if (this.badgeRef && this.badgeState !== state) {
+            this.cr.uniform(this.badgeRef, 'u_color', StatusLine.color(state));
+            this.badgeState = state;
+        }
+    }
+    status() {
+        // The last *reported* selector position is independent from the
+        // stricter parked-test guard. A stationary BMW can stop publishing
+        // speed/RPM changes, making telemetry stale even when P is selected.
+        return { ready: this.ready, layer: this.layerState, target: this.targetState,
+            live: this.live(), layout: this.options.layout, parked: this.parked(),
+            gearPosition: this.data.stage || null, gearLabel: this.data.stage ? this.gearLabel() : null, gearP: this.data.stage === 'P',
+            speedKmh: finite(this.data.speed) ? this.data.speed : null,
+            engineRpm: finite(this.data.rpm) ? this.data.rpm : null,
+            sampleAgeSeconds: this.lastSample ? Math.max(0, Math.floor((Date.now() - this.lastSample) / 1000)) : null,
+            speedAgeSeconds: finite(this.latestSignalTimes.speed) ? Math.max(0, Math.floor((Date.now() - this.latestSignalTimes.speed) / 1000)) : null,
+            rpmAgeSeconds: finite(this.latestSignalTimes.rpm) ? Math.max(0, Math.floor((Date.now() - this.latestSignalTimes.rpm) / 1000)) : null,
+            panelActive: !!this.panelRef, panelRefs: this.panelRefs.slice(), panelLayer: this.panelLayerState,
+            panelLayerReason: this.panelLayerReason,
+            panelTarget: this.activePanelTarget, panelTargetState: this.panelTargetState,
+            panelTargetReason: this.panelTargetReason, activeTestMode: this.activeTestMode,
+            rendererBackend: this.cr.backend || 'unknown', rendererTargets: this.cr.targets || '',
+            rendererStatusAt: this.rendererStatusAt,
+            lastRefusal: this.lastRefusal, disarmReason: this.disarmReason,
+            recoveryState: this.recoveryState, recoveryRequestedAt: this.recoveryRequestedAt,
+            recoveryTarget: this.recoveryTarget, releaseConfirmed: this.releaseConfirmed,
+            suspended: this.suspended,
+            autoMode: this.options.kombiAuto === 'parked' ? 'parked' : 'off', autoRun: this.autoRun, autoReason: this.autoReason,
+            testGuard: this.testGuard(),
+            secondsLeft: this.panelRef ? Math.max(0, Math.ceil((this.armedUntil - Date.now()) / 1000)) : 0,
+            color: colorHex(this.options.layout === 'sixwb' ? resolve6WBColor(this.options, Date.now())
+                : resolveColor(this.options, Date.now())) };
+    }
+    rendererStatus() { return this.rendererStatusText; }
+    close() {
+        this.restoreOriginal();
+        this.cr.close();
+    }
+}
+module.exports = { ClusterLayers, MODES, COLORS, PANEL_TEST_MS, panelReleaseStatus };

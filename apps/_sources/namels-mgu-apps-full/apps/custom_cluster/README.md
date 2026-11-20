@@ -1,0 +1,350 @@
+# Custom Cluster 0.6.10 — BMW G21 / MGU iDrive 7
+
+
+## 0.6.10 — selector text: D or gear (D1, D2 ...)
+
+New setting **Selector text: D or gear** (`gearDisplay`). It decides what stands where the selector position is shown (P, R, N, D):
+
+| Choice | Shows in drive |
+| --- | --- |
+| D only (drive mode) | `D` |
+| D1, D2 ... when the car reports the gear (default, same as before) | `D3` if the car sends the engaged gear, otherwise `D` |
+| D1, D2 ... also estimated from RPM and speed | `D3` also when the number is only estimated from the RPM/speed ratio learned while driving; `D` as long as nothing is learned |
+
+P, R and N never change. The text is used in the layout readouts under the speed value and in the selector line of this app's pages. A gear change is picked up even without a new RPM/speed sample.
+
+**Where you will see it:** the KOMBI layouts are released as soon as the car leaves P (parked-only rule, unchanged). In the cluster the setting therefore only matters if that rule is ever relaxed; while driving it already shows on the app's own screen (selector line on the main page). The estimate is a guess and can be wrong right after a gear change or in a gear the app has not learned yet.
+
+## 0.6.9 — starts with the car, works without the app window
+
+The app now carries `mguAppStartType: autostart`: its process starts with the head unit. Everything below is controlled by settings and is **off by default**; installing the update changes nothing visible.
+
+| Feature | Setting | Works without the window? |
+| --- | --- | --- |
+| Layout in the KOMBI | **Cluster layout** (not BMW original) + **Show layout in KOMBI automatically** = "Automatically while parked in P" | Yes, new in 0.6.9 |
+| Manual KOMBI test | **Allow experimental KOMBI tests** + button | No, needs the window |
+| Phone status line (green/red) | **iPhone Shortcuts bridge** + **Phone status line** | Yes (the link and the line run on a timer) |
+| Waze map on/off | **Waze map in cluster** | Yes |
+
+**Automatic KOMBI display.** With the setting on, the selected layout is requested by itself after the car has been in **P, standing (< 0.5 km/h), with fresh speed and RPM, for 3 s**, and is kept while that holds (the 12 s test window is renewed every 250 ms). Selecting any other gear, moving, or stale data releases it through the same guard as before. It also needs BMW's confirmation that the previous release is finished, so a request never stacks on an unconfirmed release. If the renderer refuses, or you stop it with the *Test KOMBI* button, the automatic display pauses until the next parking (no request loops). It is never used for BMW original and never while driving. The main page shows its state ("Automatic KOMBI (no menu needed): ...").
+
+**Check it over SSH:** `custom-cluster-background.json` in the app data directory: `startReason`, `windowOpenedYet`, selector, speed, automatic KOMBI state, whether the phone link listens and the last reported phone state.
+
+**Not verified on a vehicle:** that the autostart process runs without the window, and the GLSL output of the layouts on the real cluster (unchanged from before). A display that looks normal at a standstill is still not an approval to rely on it while driving; it is released as soon as the car moves.
+
+## 0.6.8 — phone status line (green = opened, red = closed)
+
+The iPhone Shortcuts link is reduced to one fact: **the Blitzer app on the phone was opened or closed** (as iOS reports it). The old dot is replaced by one thin, soft-ended line (160 x 4 px, 90 % opacity). It is off by default (setting **Phone status line**, plus **iPhone Shortcuts bridge**).
+
+| Where | Position | Why there |
+| --- | --- | --- |
+| Map window (normal driving, e.g. over the Waze map) | x 464, y 469 of 1088 x 480, bottom centre | Below the lyrics bands of Cluster Lyrics (they end at y 384), above nothing |
+| Parked KOMBI test, OEM / G80 / Classic / 6WB | x 168, y 540, centred under the speed instrument (left cover plate) | Lowest lit pixel of the dial faces is y 505; cover plate ends at y 596 |
+| Parked KOMBI test, Sport / Minimal | x 123, y 540, aligned with the left end of their own rule | same free area |
+
+Never in the top telltale row, never over the bottom strip, never in both places at once. It does not take the centre slot (`contend` off) and keeps BMW's turn box (`guide_hold` off). No event, or an event older than 6 hours: no line. `tests/custom_cluster_phone.test.js` checks these rectangles against the lit parts of every layout.
+
+**New root tool `mgu-cluster-net`** (installed as a requirement): BMW's firewall drops inbound connections on the car Wi-Fi, so the phone could never reach the app. The tool opens exactly one rule (`tcp 18977` on `wlan_bridge`, own tag, other tools' rules are never touched) and only while the app's loopback health endpoint reports that the link is listening. If the app stops, the rule is removed. The app also retries every 5 s when the CarPlay Wi-Fi address appears later, and rebinds when it changes. The phone page (`Phone link` button on the QR page) shows the five steps (setting, address, listening, firewall, last event), the two automations to create, and QR codes for the "opened" and "closed" links.
+
+**Limits (unchanged, honest):** iOS fires "closed" when the app leaves the foreground, also when it keeps running in the background, so the line is **not** proof that Blitzer is active, and no warning data is read or shown. Not verified on a real car: CarPlay Wi-Fi reachability of the head unit, the firewall tool on a real MGU, GLSL output of the line, and its visibility over the Waze map.
+
+## 0.6.7 — cover plates, lit scales, gear and temperatures
+
+- **Cover original dials (new setting, default On):** during the parked KOMBI test each side gets one opaque, rounded plate (x 8..412 and 1508..1912, y 48..596) beneath our artwork, so the BMW dial graphics in that area should no longer show through. The edge towards the map fades out. The nominal centre map aperture (x 416..1504), the top row (y < 48) and the bottom strip (y >= 600) stay free; parts of the original dials outside these rectangles may still be visible. Applies to all six layouts including 6WB. **Settings → Cover original dials during KOMBI test** turns it off. According to the upstream `cluster-render` mapping the panel layer sits below the BMW telltales, but real telltale visibility above the plate is **not verified** on this car.
+- **Lit scale instead of a moving dot:** G21, G80, M Sport and Classic now light their scale in the accent colour from 0 up to the live value with a short white head (one small GLSL effect per side, updated by a single uniform). The face track is drawn unlit. All shader maths uses normalised coordinates, because KOMBI GPUs may implement `mediump` as fp16. Minimal keeps its bar in the readout.
+- **More live values:** the speed side shows the selector/gear (P, R, N, D or D1–D9 when the gearbox reports it), the rev-counter side shows oil and coolant temperature from the already subscribed `statusEngineTemperature`. Missing values show `--`. The readout has a transparent background and sits inside the scale contour. Changed values upload only the small readout texture.
+- **G21/G80 look:** fine graduation between the labelled values, labels and ticks oriented towards the dial centre (they no longer sit on the scale), and an approximate red zone on the rev counter from 4500 rpm. Still an original approximation from the tester's photo, not BMW artwork; a new clean photo of the original cluster would allow a closer match.
+- Layer count per test: up to 8 (6 for Minimal; 6WB: 6), all initialised hidden and released together exactly as before. 12-second limit, P/fresh-signal guard, opt-in and release acknowledgement are unchanged.
+- Verified on PC only: unit tests and an emulated 1920×720 composition of all five shared layouts. GLSL compilation on the real KOMBI GPU, the plate's effect on the OEM display, telltale visibility and recovery still need a parked test on the car.
+
+
+## 0.6.6 — one KOMBI test, no legacy test selector
+
+- Removed Test content, Panel target and simulated preview data from the user settings. The single Test KOMBI action always sends the selected layout to the standard physical panel, retaining the explicit opt-in, P/fresh-signal guard, 12-second timeout and release acknowledgement. A saved 0.6.4 6WB-only or marker choice is ignored; it cannot block G80 or trigger markers. No iDrive-only fallback.
+- The centre screen is now a lightweight text control/status page rather than a second instrument preview. Diagnostics, QR/TXT and scrollable Live Logs remain. Display exceptions are logged and an error screen is attempted instead of leaving an old page on screen; an active own panel is released if a display exception occurs.
+- The reported 0.6.5 video confirms the old saved 6WB setting conflicted with G80. It does not establish why the old HMI canvas remained on screen, so the preview rendering dependency was removed rather than assuming a specific Canvas failure.
+- No full-screen black masking or change to Waze integration: the exact OEM warning regions and native layer ordering are not verified. The current side artwork remains experimental, original instruments may remain visible, and exact G21 recolouring is unresolved. Do not use these tests while driving.
+
+## 0.6.5 — one test mode for the selected layout
+
+- **Test content → Selected layout (parked prototype)** uses the chosen layout, not a fixed set of diagnostic blocks. G21 OEM-style recreation, G80-inspired, M Sport, Classic and Minimal use the shared side-artwork engine; 6WB uses its existing two faces/two needle effects. BMW original is unchanged. Existing diagnostic and preview settings remain valid; a saved marker choice is not silently converted on upgrade. Experimental tests remain opt-in and limited to 12 s in verified P with fresh measured values.
+- The shared engine uses four or six hidden-initialized layers, bounded to the left/right nominal side areas, with two 256×256 faces, two small 128×56 numeric readouts and (except Minimal) separate moving markers. Only changed values are sent to small dynamic textures and marker positions. The G21 art recreates the angular contour and visible labels from the tester's photo, with a piecewise approximate scale; it is **not the actual BMW artwork**, a pixel-exact clone, or a native RGB palette change. G80 is also an independent approximation, not a factory M skin.
+- The five shared layouts now show their own corresponding side artwork on the iDrive preview. Palette/custom RGB and brightness apply to the artwork; automatic colour cycling is sampled at test start for the short KOMBI test to keep face and markers consistent. 6WB continues to offer Comfort/Sport/ECO palettes.
+- The previous automatic Sport/Classic/Minimal map overlays have been retired so selecting a design alone never adds those gauges to the map. Existing independent Waze control remains unchanged. No layer covers the nominal centre rectangle or bottom strip, but actual OEM warning indicators, music, and map composition are not yet verified on the car. Original instruments may remain visible around the small side graphics. Stop testing if stock displays or faults do not return to normal.
+- Review of the cluster-render protocol and other community apps did not establish a method to recolour the existing BMW KOMBI scene in place. No firmware/coding writes or upstream-source copying are included. Exact 1:1 OEM recolouring remains unresolved.
+- Targeted simulations exercised every layout, repeatability, measured-value updates, renderer refusal recovery, opt-out and side-region bounds. Rendering with the actual KOMBI GPU, transfer of textures, exact fit, OEM recovery and a complete MGU build have not been validated.
+
+## 0.6.4 — 6WB round-dial parked prototype
+
+The tester confirmed two successive 0.6.3 probes work. The three coloured shapes were intentionally independent of the preview design. A new explicit test option now sends 6WB-inspired instrument artwork to the physical panel instead of those marker shapes.
+
+- Select BMW 6WB under Cluster layout, Standard panel, and **6WB round dials (parked prototype)** under Test content. Leave experimental tests off until the car is safely parked, all original indicators have recovered and no relevant faults/warnings remain. Start the test manually. The older saved design option stays a three-marker diagnostic; upgrades do not silently select the larger drawing.
+- Two 256x256 RGBA dial-face textures are drawn using the kit Canvas and sent once each. Two tiny GLSL effects draw the real-value pointers. All four 320x320 layers are initially hidden and initialized before visibility; the speed/RPM scalars come from real samples. Comfort, Sport and ECO accents are supported; the chosen face colour is fixed for the short test. The artwork is original, not a factory 6WB skin.
+- Side regions x=88..408 and x=1512..1832 leave the nominal centre map aperture (x=416..1504) and bottom strip untouched by our drawing. The native slot composition may still hide OEM media, and original dial segments may remain visible outside the round faces. No guarantee of preserved OEM indicators or simultaneous Waze display until verified on the specific vehicle.
+- Existing 12-second test limit, fresh release acknowledgement, parked guard and non-contending renderer requests stay in effect. Release every owned layer on timeout, leaving P, invalid/stale signals, opt-out or owned renderer error. No layer replay after disconnect. One-/three-marker diagnostics remain available. G80 and other full layouts are still previews only.
+- Simulated checks verified the four allocations, initialization order, real RPM update, repeated release/rearm and error/disconnect cleanup. The actual image texture path, fonts, GPU rendering, and vehicle geometry still need hardware validation; the full MGU package build is not verified here.
+
+## 0.6.3 — release acknowledgement and concise logs
+
+Vehicle recording (15 Nov 2026) showed three visible probe elements, then their disappearance and return of BMW media after release, as reported by the tester. Repeated requests were blocked locally despite P, 0 km/h, 0 rpm and fresh samples. The actual renderer target status is `target panel: slot 0x203 ...`, whereas the old acknowledgement parser expected no colon.
+
+- Match the actual target/slot and idle state, accepting both renderer spellings; reject idle if the slot table still reports the renderer scene mapped or queued.
+- Poll every second while release is pending and request fresh status on idle events. No delayed automatic re-arm: another manual request is required. The stationary guard and opt-in remain in effect.
+- Preserve full test JSON on disk and show compact test summaries on the console. Log changed renderer status lines rather than repeating identical blocks.
+- Three repeated release/arm cycles passed with a simulated renderer, including the observed colon syntax, lingering state, and release of all owned layers. No claim is made that BMW media or all OEM warnings have been verified by software.
+- The same one/three-layer probes remain. Full G80 and 6WB designs are still previews only. Further hardware tests must be parked; map compatibility and full layout are not established.
+
+## 0.6.2: Live Logs and staged small-layer renderer investigation
+
+- **Live Logs** is available directly from the main app page. Older / Newer move 12 lines; Latest resumes following the newest events. Touch scrolling is also supported by the existing kit touch hook. The page retains its position when new messages arrive, so it can be recorded with a phone. It uses the same native MAIN screen as the diagnostics to avoid earlier RHMI navigation problems.
+- The last 1200 wrapped text lines of the current process are retained in memory, including HMI, vehicle, renderer and error events. The console is independent of disk I/O. A new process starts a fresh log. Opening another app page does not erase the active test history.
+- Automatic `cluster-session-*.txt` files are rotated on a successful new session; only regular files belonging to this session naming scheme are removed. Existing explicit TXT/QR snapshots and USB copies remain available. `Save TXT` and `Delete logs` are retained. Directory creation now also works with the older Node mkdir API.
+- The rendering architecture was compared with [Cluster Layouts](https://github.com/eroobeeroo/idrive7-cluster-info/blob/main/apps/cluster_layouts/engine.js), [Cluster Centre](https://github.com/eroobeeroo/idrive7-cluster-info/tree/main/apps/cluster_centre), and [bimmer-lab Cluster Themes](https://github.com/bimmer-lab/apps/tree/main/apps/cluster_themes). Those projects divide gauges, text and graphics into separate shader/image layers. No upstream source code has been copied.
+- The old full-screen shader is **not sent to the KOMBI** in this release. The existing saved `design` test choice becomes **Three-layer KOMBI probe**, featuring two small coloured shapes and a bar, outside the central map region. The layers start hidden, their uniforms are initialized before visibility, and each is traced by reference ID. The one-layer probe is also staged. Both use non-contending overlay requests. All owned probe layers are dropped on release; other applications' layers are not dropped.
+- This is a diagnostic step, **not a working G80/6WB full-cluster replacement**. The stock media widget and real combined map display have not been verified. Non-contending requests may remain waiting instead of drawing. Do not assume a small overlay preserves every OEM display. Leave experimental tests disabled unless the original BMW display is intact, and perform any further probe only while safely parked. The iDrive previews and existing Waze controls are unchanged.
+
+## 0.6.1: Fix stationary samples, add Restore BMW and Save TXT
+
+- **Vehicle data:** Custom Cluster now requests read-only `getValue` refreshes every 5 seconds for speed and engine RPM through the existing SOME/IP signal interface. A stationary BMW may send change notifications only, so a 180-second "last sample" does not by itself mean a failed connection. The refresh works only if the vehicle provider and getter are available. Both fields have independent receive timestamps: a fresh RPM paired with a stale speed must never pass the parked test.
+- **Diagnosis screen:** `Restore BMW` (first bottom action) drops only Custom Cluster's rendering layers and reconnects its client to the shared renderer without restarting Waze or modifying the CarPlay patch. It does **not** guarantee the BMW right-hand music widget will return; the UI reports when the panel slot is idle but explicitly treats OEM music as unverified. If stock displays do not recover, stop testing until the HU has returned to normal after a safe restart.
+- **Diagnosis screen:** `Save TXT` (third bottom action) immediately creates a readable diagnostic text file in the app's private `exports` directory, and attempts a copy to a writable mounted USB directory. Its destination or error is shown on Diagnostics. **QR Logs remains optional.**
+- **Automatic files:** A text snapshot is also written after a panel-layer release. The existing `cluster-session-*.txt` file starts at app launch, records UI, renderer and state events, and exposes storage errors in Diagnostics. No debug log or file is published to GitHub.
+- **Default on upgrades:** A new **Allow experimental KOMBI tests** toggle defaults to **Off**. Even an installation that retained the old `probe` or `design` choice cannot take the panel until explicitly enabled again in Settings. The test button shows only the iDrive preview otherwise.
+- **Repeatability:** If a panel test cannot start because read-only updates are missing, the iDrive-only 30-second preview is used instead. It can be repeated and never takes over the real gauges. The full-panel test remains restricted to a verified selector P, stopped speed, and actual fresh speed+RPM samples; there is no synthetic bypass.
+- **Render limitation:** Slot `panel` (0x203) can obscure BMW's right-side music widget. A `drop` or client disconnect only releases our layers; it does not prove the BMW HMI reopens the widget. G80, G21 and 6WB full panels are still experimental and **must not be used while driving**.
+
+### Suggested test on the parked vehicle
+
+1. Update Custom Cluster, open **Diagnostics**, and press **Save TXT**. Check for a path or a precise I/O error. A USB stick is optional; when present it can receive a copy.
+2. Watch speed age and RPM age separately for at least 15 seconds. **Do not enable experimental KOMBI tests while the original music panel is missing.** With getter support both should refresh every few seconds despite 0 km/h.
+3. Press **Restore BMW**. Look for the original music pane and check the logged `recoveryState`; `panel idle` only confirms our slot is idle, not restored OEM media.
+4. If music is still absent, do not initiate another real `panel` test. Return the head unit to normal while safely parked before any new attempt.
+5. After a short parked test, use **Save TXT** again and export both the session and snapshot files; the test also saves an automatic snapshot on release.
+
+## 0.6.0: Persistent logs, static engine-off preview, explicit KOMBI safety boundary
+
+- A `cluster-session-<timestamp>-<random>.txt` diagnostic file is created in the app's private `dataDir/exports/` **as soon as the app opens**, without pressing QR Logs. UI actions, panel requests, renderer responses and a vehicle/slot summary every 15 seconds are appended. The maximum size is 1 MiB per session.
+- **QR Logs** still creates a separate `cluster-diagnostics-*.txt` snapshot and tries to copy it to writable USB mounts. Both formats can be deleted via Delete logs / Confirm delete; USB copies remain untouched. The QR screen displays the actual auto-log path when storage is available.
+- New safe default **Test content → Static iDrive preview** shows a 30-second G80/6WB example with 0 km/h and 0 rpm. It needs no engine, RPM notifications or selector P because it **never touches the KOMBI slot**.
+- Existing installs may retain the earlier saved `probe` setting. For engine-off testing select **Static iDrive preview** explicitly.
+- The real **KOMBI marker** and **Full KOMBI design** modes still require recent real speed/RPM, selector P, and 0 km/h. Old samples (e.g. 180 s) cannot prove the vehicle is stopped; an engine-off indication by itself cannot replace an independent current stationary check.
+- When target `panel` (slot 0x203) is mapped with `content` and `contend: true`, it may displace original right-hand media widgets. A working layered music-preserving full cluster has **not** been established. The real panel and Waze overlay are still experimental; no driving use of custom full gauges.
+
+### Reading the automatic file
+The physical path varies by MGU installer and app sandbox. The **QR Logs** screen shows the actual path as `Auto log: ...` when writable. Retrieve that file with your Phone Terminal SSH/SFTP workflow, or use QR Logs to obtain a numbered offline QR snapshot. No private log files are committed to GitHub.
+
+## 0.5.9: Single native page and trace of the parked panel test
+
+- The old Diagnostics and QR RHMI states are removed from the installed UI.
+  Their content remains available through the **Diagnostics** and **QR logs**
+  buttons on the one native **Custom Cluster** page. The previous duplicate
+  navigation tabs could select MAIN while the old in-page Diagnostics view
+  kept drawing. Selecting the app again after Home or Settings resets to its
+  design preview. **Back to cluster** returns within the same HMI page.
+- Each armed 12-second parked panel test now retains a capped, timestamped
+  history of renderer layer events, slot transitions, refusal reasons and
+  selected renderer status lines **while the test is running**. The QR export
+  includes this history even after the panel is automatically restored.
+  **Delete logs** also clears these in-memory event entries.
+- A panel slot shown as **idle** after a 12-second test is insufficient to
+  diagnose why the image failed to appear; its during-test events are needed.
+  Neither the full rendering behaviour nor replacement warning display is
+  verified on the real vehicle. The parked-only safety guard is unchanged.
+
+## 0.5.8: Clear local diagnostic logs from QR view
+
+- Open **QR logs**; the second bottom-bar button becomes **Delete logs**.
+- A first press requests confirmation; press **Confirm delete** within eight
+  seconds to remove only Custom Cluster's dated diagnostic `.txt` exports from
+  the app's own `data/exports` folder. The current QR report and in-memory HMI
+  event history are cleared too.
+- Files from other apps, renderer/system journals, and copies already exported
+  to a USB drive are **not** deleted. A new QR report can be generated with
+  **Next QR page** after deletion, or by re-entering QR logs.
+
+## 0.5.7: Diagnostics and QR use the main HMI page
+
+- Diagnostics and the QR log now draw inside the existing MAIN page. This avoids
+  unreliable second RHMI canvas state transitions seen on the installed MGU.
+- Press **Diagnostics** to enter/leave Diagnostics; **QR logs** opens the
+  export and advances through QR pages; **Back to cluster** returns to the
+  design preview. The Settings button is unchanged.
+- A white spot in the parked Kombi test is the small `probe` marker selected
+  by default, not a failed full-cluster graphic. Full designs require choosing
+  `Selected full cluster design (experimental)` in Settings and still use the
+  parked-only, 12-second safety guard.
+- Repeating the test remains blocked while the real vehicle speed/RPM signals
+  are stale, even if the last received selector position was P.
+
+## 0.5.6: Separate selector indication from telemetry freshness
+
+- On the main screen, `Selector: P/N/...` is the last received selector value.
+  `Live speed/RPM` and `Test safe` are displayed independently; `P` alone is
+  never sufficient to arm a full-panel test.
+- Diagnostics and the offline QR report now include speed, RPM, selector and
+  sample age, to distinguish a missing gear event from stationary/stale data.
+- The strict parked-only safety guard is unchanged.
+
+**Experimental. Not validated on a real car. No authorization for driving with a replaced speedometer.**
+
+## 0.5.5: Correct icon dimensions
+
+The previous 0.5.4 icon was a 256×256 PNG. The ID7 installed-app tiles use 140×140 PNGs
+in the other apps, and the 256px image was drawn too large on the MGU, overlapping the
+"Custom Cluster" text and hiding the focus frame. Both the SVG source and PNG export
+are now exactly **140×140**, with a small margin inside the image. The package and Store
+versions were advanced so the corrected icon is included in a fresh installation.
+
+## 0.5.4: HMI navigation and parking-test diagnostics
+
+The former diagnostics and QR report were persistent drawing modes of the **MAIN** canvas.
+Re-entering the app could therefore show the previous QR or diagnostic page rather than the
+cluster preview. They are now three separate RHMI states: **MAIN** (design preview),
+**DIAGNOSTICS** (renderer/guard status), and **QR_REPORT** (offline QR export).
+
+* **Diagnostics** opens its own page with **Refresh**, **QR report**, and **Back to cluster**.
+* **QR logs** opens a new snapshot on its own page with **Next QR page** (wraps after the
+  final page), **New report** (fresh renderer snapshot), and **Back to cluster**.
+* Returning to MAIN always shows the selected design preview, even if an old report exists.
+  The App entry point still maps to MAIN as before. The diagnostic export includes recent
+  iDrive navigation events, so another failure can be correlated with button presses.
+* The app-list icon now has a transparent margin to make the selection frame distinguishable.
+  The actual focus highlight is drawn by BMW HMI, not the app; verify on the head unit.
+* A rejected panel test now says whether no complete speed/RPM sample was received, the
+  sample is older than 30 seconds, the selector is not **P**, or the car is moving. The
+  safety guard is unchanged: no real sample means no KOMBI panel takeover.
+
+**Observed test:** the previous small white marker was expected when the diagnostic probe
+was selected, and it proves only that a panel-layer graphic reached the cluster. The native
+right-side music panel disappeared while the map persisted. The occupied `0x203` panel
+slot may compete with OEM widgets; its exact render and compositor behavior are not yet
+validated. Do **not** interpret this as a working replacement for the full OEM gauges.
+
+**Parked retest:** select 6WB, G80 or G21 OEM-style → set **Parked test content** to
+**Small diagnostic marker** → verify live speed/RPM and selector **P** → activate the 12 s
+test. While it is armed, open QR logs, scan/photograph each page, then return via **Back
+to cluster**. Retest full design only after reviewing marker/slot behavior. Do not drive
+with an experimental instrument panel.
+
+## 0.5.1: Small shader probe and offline diagnostics
+
+Following the architecture documented by
+[eroobeeroo/idrive7-cluster-info](https://github.com/eroobeeroo/idrive7-cluster-info/tree/main/apps/cluster_layouts),
+the test now **defaults to a tiny GLSL ES 1.00 marker**, rather than the
+previous 1920x720 single-shader dashboard. The white/accent test rectangle
+is requested at x=86, y=300, w=260, h=110, left of the native map
+(x=416..1504, y=120..600). It does not validate a full instrument display.
+
+**Settings → Parked test content**:
+* **Small diagnostic marker** (default): isolate renderer/slot failures from a complex shader failure.
+* **Selected full cluster design**: the previous G80/G21/6WB single-shader implementation, explicitly opt-in and still unverified. Those large shaders have **not yet** been split into smaller layers.
+
+**Settings → Panel target / slot** defaults to `panel` (DCSM slot `0x203`).
+Experimental `panel201` and `panel202` are selectable only if the current
+renderer advertises them. A firmware/renderer replacement is not required
+for the default test and should not be performed without compatibility checks.
+
+The app now distinguishes `Panel: REQUESTED` from the renderer's own
+`Layer` and `Slot` events, including refusals. A created layer reference,
+or even a `shown` status, **does not prove a visible image on the cluster**.
+Press **Diagnostics** for the renderer backend, advertised targets, current
+panel status, refusal reason and slot status excerpts.
+
+Press **QR logs** to capture full renderer status and current app diagnostics.
+Photograph each numbered QR code; use **Next QR page** to advance and **Back to cluster**
+to return (since 0.5.4). No phone-MGU network or internet is needed.
+Codes contain compressed text under a `CCLOG1` identifier. Put the scanned
+QR text into `scanned-pages.txt` and run
+`python3 tools/decode_custom_cluster_logs.py scanned-pages.txt`.
+Full text also saves to the app's `exports/` folder and writable USB mounts.
+
+Still to verify on this car: small-layer GPU rendering, target/scene ownership,
+stock warning and gear displays, BMW/Waze map coexistence, and restoration
+under each failure condition.
+
+G80-inspired, G21 OEM-style and classic **BMW 6WB-inspired** reconstructed instrument **panels** (1920 × 720), three optional centre-map overlays, unchanged stock mode, a shared colour studio and switchable Waze map. Developed for a 2021 BMW G21 318d with iDrive 7 MGU and KOMBSP18; the appearances are original interpretations, not copies of BMW's instrument resources. The 318d engine scale remains 0–5000 rpm (not the M3's redline).
+
+## Modes
+
+| Layout | KOMBI output | Waze |
+| --- | --- | --- |
+| **BMW stock** (default) | No custom gauge layer | Normal Waze on Cluster, or the Waze preference selected here |
+| **BMW 6WB digital** (new in 0.5.0) | Recreated F-series 6WB-style digital round instruments in three manual variants: Comfort (white), Sport (red), ECO PRO (blue). Color Studio can override the 6WB colours. **Only manually armed in P for 12 s**. | The 6WB graphic's central opening is transparent in every driving-display theme; live BMW map + Waze coexistence remains CAR-ONLY |
+| **G21 OEM-style recolor** (new in 0.4.0) | Factory-inspired, entirely redrawn dial graphics taking their colour from Color Studio. **Only manually armed in P for 12 s**. Not BMW's original pixels and not yet pixel-accurate. | Permanently transparent centre map window; BMW/Waze coexistence unverified |
+| **G80 full cluster** | Entire `panel` slot, **only when manually armed at standstill with the selector at P**, max. 12 seconds | Centre map window **always transparent**, both with Waze and with BMW's own map selected; panel+map combination needs a real-car test |
+| M Sport / Classic / Minimal | Coloured overlay in `map` slot, beneath original BMW dials | Native 504×368 map guidance-safe region is transparent; does **not** take over the BMW stock map slot |
+
+None of the full-panel modes immediately replaces the OEM cluster upon selection. They always open with the original BMW display. The iDrive main screen shows a design preview; it is not cluster output. To test the real `panel`, select 6WB, G80 or OEM-style, have genuine SOME/IP speed and engine rpm data, be in **P** with speed under 0.5 km/h, and press **Parked panel test**. In 0.5.1 this initially shows only a small marker unless you explicitly select the full-design test. Press the button again to stop. The layer is also dropped on departure from P, speed movement, missing data, layout change, app exit or after 12 seconds. Demo values cannot activate a panel. No persistent armed flag, no autostart of the full panel.
+
+## 6WB variations (new in 0.5.0)
+
+In **Settings → Cluster layout → BMW 6WB digital** choose **Settings → 6WB → 6WB driving display**:
+
+* **Comfort:** fine white dial illumination and a subdued dark background.
+* **Sport:** red high-contrast accents, heavier digital dial progress.
+* **ECO PRO:** blue illumination with the same verified engine RPM scale (a real OEM 6WB replaces the right gauge with an efficiency meter, but we cannot calculate that safely from the current live signals).
+
+**6WB instrument colors** allows either period-inspired preset colours, or the common Color Studio settings (including RGB and colour animation). These choices are **manual 6WB style presets**; automatic switching based on an unverified drive-mode signal is intentionally not implemented. The map window stays transparent for all three subthemes, including Waze off.
+
+The panel is layered **above the BMW gauge graphics and below the BMW telltales** according to `cluster-render`'s upstream mapping. **This layering does not establish functional safety**: warning visibility, render order, startup/shutdown, faults, renderer loss, map coexistence and speedometer readability need car-specific validation. Do not use the experimental G80 full panel while driving. The system may additionally hold the panel scene for up to 3 seconds after a drop (`panel_linger_ms`).
+
+## Color Studio (expanded in 0.4.0)
+
+Open **Settings → Cluster colors** in the app:
+
+* **Color palette:** M blue, turquoise, neon green, purple, pink, red, orange, amber, ice white and pure white.
+* **Custom RGB:** red, green and blue separately adjustable in steps of 16 (plus 255); stored in the normal app settings.
+* **Automatic color cycle:** optional full rainbow sweep, configurable 5–120 seconds per loop. Changes are applied to the real cluster's own decorative layers and the iDrive preview when rendering is available.
+* **Color brightness:** 25–100%, affects the accent graphics, not the neutral white readouts and not the map itself.
+
+All three custom map layouts, G80 and the OEM-style reconstruction use the same colour settings. The 6WB can either adopt the original-style colour of its selected mode or use Color Studio. **BMW Stock remains exactly the factory instrument display**; the `cluster-render` overlay protocol has no verified way to sample and recolour BMW's own gauge pixels. A genuinely 1:1 replica requires clean full-resolution photographs of the original display in each view, its exact gauge/symbol layout, and verified real-time signals for all essential states and telltales. The current prototype cannot replace the original while driving.
+
+**Maps always take priority over decoration:** the G80 centre window stays transparent even when Waze is switched off, allowing the factory map to show if the BMW head unit offers it in that slot. M Sport, Classic and Minimal keep the native map's guidance-safe rectangle transparent, and request their overlays with `contend: false` so they never actively displace the BMW stock map. This also means their custom overlay may be parked/invisible when the stock map exclusively holds the slot. Actual coexistence and map behaviour remain unverified on this KOMBSP18; the app cannot force a map provider to publish a frame.
+
+## Shared renderer and Waze
+
+Custom Cluster talks to the *installed* `cluster-render` service from `robertnisipeanu/idrive-apps`. It **does not install another renderer**, modify `/usr/bin/carplay`, activate Waze patches, or flash/FDL-code KOMBSP18. Waze on Cluster remains a separate app; it can be turned off in its UI while retaining the shared service (if the Store dependency manager leaves it installed). Avoid uninstalling the service on which Custom Cluster depends.
+
+The **Waze map in cluster** setting has three choices:
+
+* **Auto (default):** leave Waze on Cluster's current map selection alone. The G80 design reserves its central opening for Waze or the BMW map.
+* **Show:** send `{"cmd":"cluster","on":"1"}` to the existing Waze render socket and `{"cmd":"cluster","on":1}` to its patch daemon socket.
+* **Hide:** send the corresponding `0` settings; HUD settings remain unchanged.
+
+Both sockets must be accessible. The app reports the **request**, not confirmation, and a different Waze app instance may later change the same preference. No Waze feed is created unless the original tool's streaming and patch prerequisites already work. `Auto` after `Hide` does **not** roll back Hide; change the setting in Waze on Cluster or choose Show.
+
+The Waze render socket is `/dev/shm/waze-on-cluster/ctl.sock`; the patch daemon socket is `/dev/shm/waze-on-cluster/patch.sock`. Those are upstream internal protocols and should be retested when updating the Waze app. The panel and HUD **reuse scene ID `0x01000400` and cannot both be requested at once**. If Waze is sending a HUD feed, disable it in the original Waze app before a parked G80 panel test; Custom Cluster does **not** change the HUD feed by itself. Rendering `panel` and `map` simultaneously is marked **CAR-ONLY / not verified** in upstream `cluster-render` documentation. The opening in the G80 shader is a transparency window, not proof that Waze will appear there.
+
+## iPhone status line
+
+See 0.6.8 above. The bridge accepts only `GET /s/<token>/on` and `/off` (random token stored in the app data dir) and answers `OK`; it never sends app data back. Warning functions of speed-camera apps are restricted for drivers in Germany under § 23(1c) StVO, and **no radar-warning data is integrated**.
+
+## Build and deployment
+
+1. Ensure your existing `cluster-render` native service is installed from the Waze on Cluster ecosystem, and check the target configuration and status before any parked test.
+2. Add `apps/custom_cluster` to the `idrive7-apps` kit repository; the compatible SDK from your MGU is required to build.
+3. Build: `python3 kit/tools/build.py custom_cluster`.
+4. Install `dist/custom_cluster@0.5.1.mgu` by your trusted MGU installer, or update the source app through [NamelsMissing/mgu-apps](https://github.com/NamelsMissing/mgu-apps) in MGU Store **after that source has been updated**.
+5. Start in **BMW stock**. Only use the full-panel **iDrive previews** until you can safely validate the renderer with the stationary car and reliable diagnostics.
+
+No `cluster-render` dependency is automatically installed by the app. Your Store manifest should explicitly keep the dependency; otherwise installation of the standalone MGU package alone will only show the iDrive preview.
+
+## Technical design
+
+* `g80_panel_shader.js`: 1920 × 720 GLSL ES 1.00, separate G80 and subdued factory-inspired variants using a common selectable accent; live speed/rpm, permanently transparent centre map window; neutral dot.
+* `sixwb_panel_shader.js`: original 6WB-inspired GLSL dial artwork, three preset styles with optional Color Studio tint; permanently transparent centre map window.
+* `cluster_shader.js`: M Sport, Classic and Minimal decorative layers with the 504×368 map-safe area always transparent.
+* `cluster_colors.js`: preset palette, RGB and colour animation shared by all custom layouts, controlled solely through MGU settings.
+* `cluster_layers.js`: one renderer client; own refs for `map`, `panel`, phone status line; strictly guarded panel test; no demo data on KOMBI.
+* `panel_probe_shader.js`: compact GLSL test, outside the map aperture.
+* `cluster_diagnostics.js`, `qr_vendor.js`: read-only renderer, QR and USB logs.
+* `waze_control.js`: optional one-shot requests to original Waze sockets; no root commands, patch install/revert, or HUD edits.
+* `g80_preview.js`: iDrive-only canvas design, synthetic graphic centre map as a **mockup** (not a live Waze map).
+* `sixwb_preview.js`: iDrive-only classic 6WB dial preview, with Comfort/Sport/ECO PRO colours and the same map mockup caveat.
+* `phone_bridge.js`: Shortcuts event bridge (retry, loopback health endpoint, expiring status).
+* `background_status.js`: JSON status file for the autostart process.
+* `status_line.js`: line shader, colours and per-layout rectangles.
+* `native/cluster-net/`: root firewall tool for TCP 18977 (own tag, only while the app listens).
+* `cluster_render_client.js`: upstream `cluster-render` client (MPL-2.0) by Robert Nisipeanu, see `NOTICE` / `LICENSE`.
+
+Validation: built against extracted OAP SDK 24.10.2 (`x_call@4.25.3` donor), JS syntax and mocked unit tests passed, HMI preview rendered on PC. **Unvalidated**: GLSL compilation and output on the real cluster GPU, concurrent panel/Waze/HUD behaviour, warnings, phone-to-MGU Wi-Fi, socket authorization and actual MGU Store install. Test with a full diagnostic log. A cluster that looks normal during a short stationary test is not sufficient to approve driving.

@@ -170,6 +170,27 @@
       "uninstallable": true
     },
     {
+      "id": "aurelm-mediaprobe",
+      "kind": "tool",
+      "version": "0.1.3",
+      "title": "Media Probe service",
+      "description": "For the app Media Probe: what the car offers a music player (the first step of a Music Assistant client). Watches the steering wheel's buttons, the source the HMI takes as playing, CarLife's bridge to BMW's media and the BMW MediaPlayer, and runs tests the app starts: source 287 with a tone, CarLife's metadata written, button forwarding, source 1046 with MP3 / M4A / AAC files, a growing file, a pipe and http:// streams on 127.0.0.1. Everything a test changes is undone when it ends. No internet. Logs to /var/opt/aurelm-mediaprobe/state/probe.log; Report copies it to a USB stick.",
+      "author": "aurelmarius",
+      "mguHmi": [
+        "ID7"
+      ],
+      "artifact": {
+        "name": "aurelm-mediaprobe@0.1.3.tgz",
+        "size": 979949,
+        "sha256": "3108e7b1bb9e9a35fd3e7c31642a7d4fdbe4627eb49ad2ccab88145251e7da9e",
+        "url": "https://github.com/aurelmarius/bmw-test-apps/releases/download/catalog/aurelm-mediaprobe@0.1.3.tgz"
+      },
+      "requires": {
+        "mgu-deploy": "0.7.0"
+      },
+      "uninstallable": true
+    },
+    {
       "id": "aurelm-music",
       "kind": "tool",
       "version": "0.1.9",
@@ -362,6 +383,28 @@
         "url": "https://raw.githubusercontent.com/aurelmarius/bmw-games/9c7125cc83ad65dca839a5f9f01c56247679da8d/packages/aurelm_lucky_sevens@1.1.0.tgz"
       },
       "uninstallable": true
+    },
+    {
+      "id": "aurelm_mediaprobe",
+      "kind": "app",
+      "version": "0.1.3",
+      "title": "Media Probe",
+      "description": "What the car offers a music player (the first step of a Music Assistant client): the steering wheel's buttons, the source the HMI takes as playing, CarLife's bridge to BMW's media, button forwarding, and the BMW MediaPlayer's source for apps with files, a growing file, a pipe and http:// streams. Each test shows what the car answered; Report copies the log to a USB stick. Needs the Media Probe service.",
+      "mguHmi": [
+        "ID7"
+      ],
+      "artifact": {
+        "name": "aurelm_mediaprobe@0.1.3.tgz",
+        "size": 557548,
+        "sha256": "8b648e708ee074a4b995a211889f683ad061763cb814b4db9120e5392f097966",
+        "url": "https://github.com/aurelmarius/bmw-test-apps/releases/download/catalog/aurelm_mediaprobe@0.1.3.tgz"
+      },
+      "uninstallable": true,
+      "icon": "aurelm_mediaprobe.png",
+      "iconSha256": "25e7bde367376b5b51a704026c90ade7ca40800aad0c041d1074a74f45b39412",
+      "requires": {
+        "aurelm-mediaprobe": "0.1.3"
+      }
     },
     {
       "id": "aurelm_music",
@@ -654,6 +697,156 @@
         "size": 3390563,
         "sha256": "9aaa401a86ac55aa9959e6870ca65c3ddc89aaf1d3508f9c895422995cc72657",
         "url": "https://github.com/Hexphase/BimmerVision/releases/download/v0.2.78/bimmervision-recorder@0.2.78.tgz"
+      }
+    },
+    {
+      "id": "camera-inspect",
+      "kind": "tool",
+      "title": "Camera inspector",
+      "description": "Reports, read only, what the head unit's camera inputs are (each capture node's driver, input, format and size, which process holds it, and the media graph), for Camera Probe and a camera app to come; it never takes a picture or changes a setting",
+      "version": "0.1.1",
+      "artifact": {
+        "name": "camera-inspect@0.1.1.tgz",
+        "size": 45556,
+        "sha256": "1f8445933e97d432101ef4b665c9c0727c18fd9ce0db79851681b43c22f0e289",
+        "url": "https://github.com/eroobeeroo/idrive-apps/releases/download/camera-inspect%400.1.1/camera-inspect%400.1.1.tgz"
+      },
+      "requires": {
+        "mgu-deploy": "0.4.0"
+      },
+      "mguHmi": [
+        "ID7"
+      ],
+      "uninstallable": true,
+      "texts": {
+        "ar": {
+          "title": "فاحص الكاميرات",
+          "description": "يعرض، للقراءة فقط، مداخل الكاميرات في وحدة الرأس لتطبيقات الكاميرا؛ لا يلتقط صورة ولا يغيّر أي إعداد"
+        },
+        "cs": {
+          "title": "Inspektor kamer",
+          "description": "Pouze pro čtení zjistí, jaké kamerové vstupy má hlavní jednotka, pro kamerové aplikace; nikdy nepořídí snímek ani nezmění nastavení"
+        },
+        "da": {
+          "title": "Kamerainspektør",
+          "description": "Viser, kun til læsning, hovedenhedens kameraindgange til kamera-apps; tager aldrig et billede og ændrer ingen indstillinger"
+        },
+        "de": {
+          "title": "Kamera-Inspektor",
+          "description": "Ermittelt nur lesend die Kameraeingänge der Head Unit für Kamera-Apps; nimmt nie ein Bild auf und ändert keine Einstellung"
+        },
+        "el": {
+          "title": "Επιθεωρητής καμερών",
+          "description": "Αναφέρει, μόνο για ανάγνωση, τις εισόδους καμερών της κεντρικής μονάδας για εφαρμογές καμερών· δεν τραβά ποτέ εικόνα ούτε αλλάζει ρυθμίσεις"
+        },
+        "es-US": {
+          "title": "Inspector de cámaras",
+          "description": "Informa, solo en lectura, de las entradas de cámara de la unidad principal para apps de cámara; nunca toma una imagen ni cambia ajustes"
+        },
+        "es": {
+          "title": "Inspector de cámaras",
+          "description": "Informa, solo en lectura, de las entradas de cámara de la unidad principal para apps de cámara; nunca toma una imagen ni cambia ajustes"
+        },
+        "fi": {
+          "title": "Kameratarkastin",
+          "description": "Raportoi vain lukien pääyksikön kameratulot kamerasovelluksille; ei koskaan ota kuvaa eikä muuta asetuksia"
+        },
+        "fr-CA": {
+          "title": "Inspecteur de caméras",
+          "description": "Indique, en lecture seule, les entrées caméra de l’unité centrale pour les applis caméra; ne prend jamais d’image et ne change aucun réglage"
+        },
+        "fr": {
+          "title": "Inspecteur de caméras",
+          "description": "Indique, en lecture seule, les entrées caméra de l’unité centrale pour les applis caméra ; ne prend jamais d’image et ne change aucun réglage"
+        },
+        "he": {
+          "title": "בודק מצלמות",
+          "description": "מדווח, לקריאה בלבד, על כניסות המצלמה של יחידת הראש עבור אפליקציות מצלמה; לעולם אינו מצלם ואינו משנה הגדרות"
+        },
+        "hu": {
+          "title": "Kameravizsgáló",
+          "description": "Csak olvasva jelenti a fejegység kamerabemeneteit kameraalkalmazásoknak; soha nem készít képet és nem módosít beállítást"
+        },
+        "id": {
+          "title": "Pemeriksa kamera",
+          "description": "Melaporkan, hanya baca, input kamera head unit untuk aplikasi kamera; tidak pernah mengambil gambar atau mengubah pengaturan"
+        },
+        "it": {
+          "title": "Ispettore telecamere",
+          "description": "Riporta, in sola lettura, gli ingressi telecamera dell’unità principale per le app telecamera; non scatta mai immagini né cambia impostazioni"
+        },
+        "ja": {
+          "title": "カメラインスペクター",
+          "description": "ヘッドユニットのカメラ入力を読み取り専用で報告します（カメラアプリ用）。撮影も設定変更も行いません"
+        },
+        "ko": {
+          "title": "카메라 검사기",
+          "description": "카메라 앱을 위해 헤드 유닛의 카메라 입력을 읽기 전용으로 보고합니다. 사진을 찍거나 설정을 바꾸지 않습니다"
+        },
+        "nb": {
+          "title": "Kamerainspektør",
+          "description": "Viser, kun lesende, hovedenhetens kamerainnganger for kameraapper; tar aldri bilde og endrer ingen innstillinger"
+        },
+        "nl": {
+          "title": "Camera-inspecteur",
+          "description": "Meldt, alleen-lezen, de camera-ingangen van de head unit voor camera-apps; maakt nooit een beeld en wijzigt geen instellingen"
+        },
+        "pl": {
+          "title": "Inspektor kamer",
+          "description": "Tylko do odczytu podaje wejścia kamer jednostki głównej dla aplikacji kamer; nigdy nie robi zdjęcia ani nie zmienia ustawień"
+        },
+        "pt-BR": {
+          "title": "Inspetor de câmeras",
+          "description": "Informa, somente leitura, as entradas de câmera da central para apps de câmera; nunca tira uma imagem nem muda configurações"
+        },
+        "pt": {
+          "title": "Inspetor de câmaras",
+          "description": "Indica, só de leitura, as entradas de câmara da unidade principal para apps de câmara; nunca capta uma imagem nem altera definições"
+        },
+        "ro": {
+          "title": "Inspector camere",
+          "description": "Raportează, doar citire, intrările de cameră ale unității principale pentru aplicații de cameră; nu face niciodată o imagine și nu schimbă setări"
+        },
+        "ru": {
+          "title": "Инспектор камер",
+          "description": "Только для чтения сообщает о входах камер головного устройства для приложений камер; никогда не снимает и не меняет настройки"
+        },
+        "sk": {
+          "title": "Inšpektor kamier",
+          "description": "Iba na čítanie zistí kamerové vstupy hlavnej jednotky pre kamerové aplikácie; nikdy nenasníma obraz ani nezmení nastavenie"
+        },
+        "sl": {
+          "title": "Pregledovalnik kamer",
+          "description": "Samo za branje poroča o vhodih kamer glavne enote za aplikacije kamer; nikoli ne posname slike in ne spremeni nastavitev"
+        },
+        "sv": {
+          "title": "Kamerainspektör",
+          "description": "Visar, endast läsning, huvudenhetens kameraingångar för kameraappar; tar aldrig en bild och ändrar inga inställningar"
+        },
+        "th": {
+          "title": "ตัวตรวจสอบกล้อง",
+          "description": "รายงานแบบอ่านอย่างเดียวว่าเฮดยูนิตมีอินพุตกล้องอะไรบ้าง สำหรับแอปกล้อง ไม่ถ่ายภาพและไม่เปลี่ยนการตั้งค่าใดๆ"
+        },
+        "tr": {
+          "title": "Kamera denetçisi",
+          "description": "Kamera uygulamaları için ana ünitenin kamera girişlerini salt okunur bildirir; asla görüntü almaz veya ayar değiştirmez"
+        },
+        "uk": {
+          "title": "Інспектор камер",
+          "description": "Лише для читання повідомляє про входи камер головного пристрою для застосунків камер; ніколи не знімає й не змінює налаштувань"
+        },
+        "vi": {
+          "title": "Trình kiểm tra camera",
+          "description": "Báo cáo, chỉ đọc, các đầu vào camera của head unit cho ứng dụng camera; không bao giờ chụp ảnh hay thay đổi cài đặt"
+        },
+        "zh-CN": {
+          "title": "摄像头检查器",
+          "description": "以只读方式报告主机的摄像头输入，供摄像头应用使用；从不拍摄画面，也不更改任何设置"
+        },
+        "zh-TW": {
+          "title": "攝影機檢查器",
+          "description": "以唯讀方式回報主機的攝影機輸入，供攝影機應用程式使用；絕不擷取畫面，也不變更任何設定"
+        }
       }
     },
     {

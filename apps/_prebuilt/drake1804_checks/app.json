@@ -1,0 +1,13 @@
+{
+  "id": "drake1804_checks",
+  "version": "0.1.0",
+  "title": "YouTube Checks",
+  "description": "Tests the YouTube app's video and sound on this car, and prints the logs on the screen to take photos of. Remove it when you are done",
+  "mguHmi": [
+    "ID7"
+  ],
+  "requires": {
+    "mgu-deploy": "0.7.0",
+    "drake1804-checks": "0.1.0"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "drake1804-checks",
+  "kind": "tool",
+  "version": "0.1.2",
+  "title": "YouTube Checks helper",
+  "description": "Reads the logs and runs the tests for the YouTube Checks app. Remove it when you are done",
+  "files": [
+    {
+      "path": "checks_helper.js",
+      "mode": "0644",
+      "sha256": "acc6dc39b9639f578de2799d9264019d0da54ad1f2e37287713058ea3e5c1b99",
+      "from": "files/checks_helper.js"
+    },
+    {
+      "path": "checks_check.js",
+      "mode": "0644",
+      "sha256": "23d9cab46989c1e914e7db90713a2a158a5e0a51fbf7e5f7d93181f2a7de3577",
+      "from": "files/checks_check.js"
+    },
+    {
+      "path": "plumbing.js",
+      "mode": "0644",
+      "sha256": "52a30cfa50dba6e30a84bbb4c2a5316e6bbe04da7f5e6626c92cedd9a5bb913b",
+      "from": "files/plumbing.js"
+    },
+    {
+      "path": "probe.sh",
+      "mode": "0755",
+      "sha256": "69bd9b96fef1c200064aea1f43377e97240424f2ee6e5b9cee1a9b38399f4f29",
+      "from": "files/probe.sh"
+    }
+  ],
+  "units": [
+    {
+      "name": "drake1804-checks.service",
+      "from": "units/drake1804-checks.service"
+    }
+  ],
+  "enable": [
+    {
+      "unit": "drake1804-checks.service",
+      "target": "multi-user.target"
+    }
+  ],
+  "recmgr": [
+    "drake1804-checks"
+  ],
+  "restart": [
+    "drake1804-checks.service"
+  ],
+  "mguHmi": [
+    "ID7"
+  ],
+  "check": [
+    "checks_check.js"
+  ]
+}

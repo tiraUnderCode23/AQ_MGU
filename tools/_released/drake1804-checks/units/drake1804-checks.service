@@ -1,0 +1,18 @@
+[Unit]
+Description=Reads the logs and runs the tests for the YouTube Checks app
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/node /var/opt/drake1804-checks/current/checks_helper.js
+RuntimeDirectory=drake1804-checks
+Nice=10
+CPUQuota=100%
+# MemoryLimit= for the cgroup v1 hierarchy, MemoryMax= for v2: this must never starve HmiMain3D
+MemoryLimit=200M
+MemoryMax=200M
+Restart=always
+RestartSec=3
+TimeoutStopSec=5
+
+[Install]
+WantedBy=multi-user.target

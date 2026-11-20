@@ -1,0 +1,1009 @@
+{
+ "id": "pps_gauges",
+ "title": "Proven Gauges",
+ "description": "BETA, not yet tested on a car. Proven Performance Solutions gauge sets: Street, Track, Boost, Thermal and Tyres. A guide only: check against a gauge you trust",
+ "version": "1.0.3",
+ "vendor": "Proven Performance Solutions",
+ "loggingId": "PPG1",
+ "iconGlyph": "gauge",
+ "mguHmi": [
+  "ID7",
+  "ID8"
+ ],
+ "requires": {
+  "idrive7-renderd": "2.1.18",
+  "mgu-inputgate": "1.1.0"
+ },
+ "signals": {
+  "de.bmw.infotainment.vehicle.CDS": {
+   "statusEngineSpeed2": "rs",
+   "statusEngineTemperature": "rs"
+  },
+  "de.bmw.infotainment.vehicle.CDS2": {
+   "statusLongitudinalAccelerationMassCenter": "rs",
+   "statusLateralAccelerationMassCenter": "rs"
+  },
+  "de.bmw.infotainment.vehicle.Vehicle": {
+   "_optional": "the car's display units; tyre pressures / temperatures are then guessed from their values",
+   "statusNewCurrentUnitsStatusExt": "rs"
+  },
+  "de.bmw.infotainment.vehicle.Vehicle2": {
+   "statusCarSpeed2": "rs",
+   "statusVehiclePartType": "rs"
+  },
+  "de.bmw.infotainment.drivingexcitement.FES": {
+   "statusSwitchDriveDynamicSport2": "rs",
+   "statusVehicleDynamicEngine": "rs",
+   "statusActualValueTorque2": "rs"
+  },
+  "de.bmw.infrastructure.analytics.BasicDataSet": {
+   "_optional": "gearbox oil temperature; the xDrive split then comes from the transfer case or the drive mode",
+   "basicDataSet": "s"
+  },
+  "de.bmw.infrastructure.EnvironmentalInformation": {
+   "ExteriorTemperature": "s",
+   "UnitBN2020": "rs"
+  },
+  "de.bmw.infotainment.vehicle.TPMS": {
+   "statusTyreTemperature": "rs",
+   "statusTyrePressure": "rs",
+   "statusTargetTyrePressure": "rs",
+   "_optional": "the Tyres gauge set"
+  },
+  "de.bmw.infotainment.misc.MDrive": {
+   "_optional": "the S / M programme letter next to the gear",
+   "dataDisplayGearbox": "s"
+  },
+  "de.bmw.infrastructure.VehicleInformation": {
+   "statusGearboxDrive": "s",
+   "DataPowerTrain2": "s"
+  },
+  "com.harman.infotainment.systemfunctions.tasu.tasu.InternalTasu": {
+   "_instances": "SystemFunctionsInternalTasuInst1",
+   "_methods": [
+    "sendTasuRequest"
+   ],
+   "_broadcasts": [
+    "sendTasuResponse"
+   ]
+  }
+ },
+ "screens": [
+  {
+   "name": "MAIN",
+   "kind": "canvas",
+   "title": "Proven Gauges",
+   "buttons": [
+    [
+     "BTN_PAGE",
+     "Next set"
+    ],
+    [
+     "BTN_PREV",
+     "Previous set"
+    ],
+    [
+     "BTN_RESET",
+     "Reset peaks"
+    ],
+    [
+     "BTN_SETTINGS",
+     "Settings"
+    ]
+   ]
+  }
+ ],
+ "settings": [
+  {
+   "key": "page",
+   "label": "Start gauge set",
+   "type": "choice",
+   "default": "street",
+   "options": [
+    [
+     "street",
+     "Street"
+    ],
+    [
+     "track",
+     "Track"
+    ],
+    [
+     "boost",
+     "Boost"
+    ],
+    [
+     "thermal",
+     "Thermal"
+    ],
+    [
+     "tyres",
+     "Tyres"
+    ]
+   ]
+  },
+  {
+   "key": "speedUnit",
+   "label": "Speed unit",
+   "type": "choice",
+   "default": "kmh",
+   "options": [
+    [
+     "kmh",
+     "km/h"
+    ],
+    [
+     "mph",
+     "mph"
+    ]
+   ]
+  },
+  {
+   "key": "tempUnit",
+   "label": "Temperature unit",
+   "type": "choice",
+   "default": "c",
+   "options": [
+    [
+     "c",
+     "Celsius"
+    ],
+    [
+     "f",
+     "Fahrenheit"
+    ]
+   ]
+  },
+  {
+   "key": "pressUnit",
+   "label": "Pressure unit",
+   "type": "choice",
+   "default": "psi",
+   "options": [
+    [
+     "psi",
+     "psi"
+    ],
+    [
+     "bar",
+     "bar"
+    ],
+    [
+     "kpa",
+     "kPa"
+    ]
+   ]
+  },
+  {
+   "key": "boostMax",
+   "label": "Boost gauge max",
+   "type": "choice",
+   "default": "2.0",
+   "options": [
+    [
+     "2.0",
+     "30 psi / 2.0 bar"
+    ],
+    [
+     "2.5",
+     "40 psi / 2.5 bar"
+    ],
+    [
+     "3.0",
+     "45 psi / 3.0 bar"
+    ],
+    [
+     "3.5",
+     "50 psi / 3.5 bar"
+    ]
+   ]
+  },
+  {
+   "key": "boostSource",
+   "label": "Boost from",
+   "type": "choice",
+   "default": "auto",
+   "options": [
+    [
+     "auto",
+     "Auto (first that works)"
+    ],
+    [
+     "fes",
+     "Sport display"
+    ],
+    [
+     "dme",
+     "Engine unit (OBD)"
+    ]
+   ]
+  },
+  {
+   "key": "powerUnit",
+   "label": "Power unit",
+   "type": "choice",
+   "default": "kw",
+   "options": [
+    [
+     "kw",
+     "kW"
+    ],
+    [
+     "hp",
+     "hp"
+    ],
+    [
+     "ps",
+     "PS"
+    ]
+   ]
+  },
+  {
+   "key": "torqueUnit",
+   "label": "Torque unit",
+   "type": "choice",
+   "default": "nm",
+   "options": [
+    [
+     "nm",
+     "Nm"
+    ],
+    [
+     "lbft",
+     "lb-ft"
+    ]
+   ]
+  },
+  {
+   "key": "maxPower",
+   "label": "Max power (100% on sport display)",
+   "type": "number",
+   "unit": "kW",
+   "default": 285,
+   "steps": [
+    100,
+    120,
+    135,
+    140,
+    150,
+    160,
+    170,
+    185,
+    190,
+    200,
+    215,
+    230,
+    240,
+    250,
+    260,
+    275,
+    285,
+    300,
+    320,
+    340,
+    353,
+    375,
+    390,
+    405,
+    420,
+    450,
+    460,
+    480,
+    500,
+    530,
+    550,
+    600
+   ]
+  },
+  {
+   "key": "maxTorque",
+   "label": "Torque gauge max",
+   "type": "number",
+   "unit": "Nm",
+   "default": 800,
+   "steps": [
+    400,
+    500,
+    600,
+    700,
+    800,
+    900,
+    1000,
+    1200
+   ]
+  },
+  {
+   "key": "powerSource",
+   "label": "Power from",
+   "type": "choice",
+   "default": "sport",
+   "options": [
+    [
+     "sport",
+     "Sport display"
+    ],
+    [
+     "calc",
+     "Torque x rpm"
+    ]
+   ]
+  },
+  {
+   "key": "engine",
+   "label": "Engine",
+   "type": "choice",
+   "default": "auto",
+   "options": [
+    [
+     "auto",
+     "Auto (from the car)"
+    ],
+    [
+     "diesel",
+     "Diesel"
+    ],
+    [
+     "petrol",
+     "Petrol"
+    ]
+   ]
+  },
+  {
+   "key": "redline",
+   "label": "Redline",
+   "type": "number",
+   "unit": "rpm",
+   "default": 0,
+   "labels": {
+    "0": "Auto"
+   },
+   "reset": 1,
+   "steps": [
+    0,
+    4000,
+    4500,
+    5000,
+    5500,
+    5800,
+    6000,
+    6200,
+    6500,
+    6800,
+    7000,
+    7200,
+    7500,
+    7800,
+    8000,
+    8500,
+    9000
+   ]
+  },
+  {
+   "key": "rpmScale",
+   "label": "Rev scale up to",
+   "type": "number",
+   "unit": "rpm",
+   "default": 0,
+   "labels": {
+    "0": "Auto"
+   },
+   "steps": [
+    0,
+    5000,
+    6000,
+    7000,
+    8000,
+    9000,
+    10000
+   ]
+  },
+  {
+   "key": "shiftAt",
+   "label": "Shift lights: shift point",
+   "type": "number",
+   "unit": "rpm",
+   "default": 0,
+   "labels": {
+    "0": "Auto (300 under redline)"
+   },
+   "steps": [
+    0,
+    4000,
+    4500,
+    5000,
+    5500,
+    6000,
+    6200,
+    6500,
+    6800,
+    7000,
+    7200,
+    7500,
+    8000
+   ]
+  },
+  {
+   "key": "shiftStyle",
+   "label": "Shift light style",
+   "type": "choice",
+   "default": "gyr",
+   "options": [
+    [
+     "gyr",
+     "Green / yellow / red"
+    ],
+    [
+     "f1",
+     "Green / red / blue"
+    ],
+    [
+     "mono",
+     "Theme colour"
+    ]
+   ]
+  },
+  {
+   "key": "oilWarn",
+   "label": "Oil temp warning",
+   "type": "number",
+   "unit": "°C",
+   "default": 125,
+   "steps": [
+    110,
+    115,
+    120,
+    125,
+    130,
+    135
+   ]
+  },
+  {
+   "key": "peaks",
+   "label": "Show peak markers",
+   "type": "bool",
+   "default": true
+  },
+  {
+   "key": "peakHold",
+   "label": "Peak hold",
+   "type": "number",
+   "unit": "s",
+   "default": 15,
+   "labels": {
+    "0": "Until reset"
+   },
+   "steps": [
+    0,
+    5,
+    10,
+    15,
+    30,
+    60
+   ]
+  },
+  {
+   "key": "flipLong",
+   "label": "G-force: brake on top",
+   "type": "bool",
+   "default": false
+  },
+  {
+   "key": "engineData",
+   "label": "Engine unit data (read only)",
+   "type": "choice",
+   "default": "auto",
+   "options": [
+    [
+     "auto",
+     "On"
+    ],
+    [
+     "off",
+     "Off"
+    ]
+   ]
+  },
+  {
+   "key": "branding",
+   "label": "Proven logo on the dials",
+   "type": "bool",
+   "default": true
+  },
+  {
+   "key": "splash",
+   "label": "Start-up logo",
+   "type": "bool",
+   "default": true
+  },
+  {
+   "key": "advanced",
+   "label": "Advanced settings",
+   "type": "bool",
+   "default": false
+  },
+  {
+   "key": "theme",
+   "label": "Colour theme",
+   "type": "choice",
+   "default": "proven",
+   "options": [
+    [
+     "proven",
+     "Proven"
+    ],
+    [
+     "proven_red",
+     "Proven Red"
+    ],
+    [
+     "proven_blue",
+     "Proven Blue"
+    ],
+    [
+     "m_tricolour",
+     "M Tricolour"
+    ],
+    [
+     "m_red",
+     "M Red"
+    ],
+    [
+     "ice",
+     "Ice White"
+    ],
+    [
+     "amber",
+     "Night Amber"
+    ]
+   ]
+  },
+  {
+   "key": "speedRate",
+   "label": "Speed display rate",
+   "type": "number",
+   "unit": "fps",
+   "default": 10,
+   "reset": 1,
+   "markDefault": true,
+   "steps": [
+    3,
+    5,
+    10,
+    15,
+    30,
+    60
+   ],
+   "when": {
+    "advanced": true
+   }
+  },
+  {
+   "key": "layout",
+   "label": "Screen layout",
+   "type": "choice",
+   "default": "full",
+   "options": [
+    [
+     "full",
+     "Full screen"
+    ],
+    [
+     "standard",
+     "Standard"
+    ]
+   ]
+  },
+  {
+   "key": "renderer",
+   "label": "Renderer",
+   "type": "choice",
+   "default": "auto",
+   "options": [
+    [
+     "auto",
+     "GPU 60 fps (default)"
+    ],
+    [
+     "software",
+     "Software"
+    ]
+   ]
+  },
+  {
+   "key": "demo",
+   "label": "Demo data",
+   "type": "choice",
+   "default": "off",
+   "options": [
+    [
+     "auto",
+     "Auto"
+    ],
+    [
+     "on",
+     "Always"
+    ],
+    [
+     "off",
+     "Never"
+    ]
+   ]
+  }
+ ],
+ "config": {
+  "comment": "raw -> value * factor + offset. Scaling and engine-unit definitions as in idrive7-apps M Vitals (car-tested there).",
+  "scaling": {
+   "rpm": {
+    "factor": 0.25,
+    "offset": 0,
+    "invalid": 65535
+   },
+   "speed": {
+    "factor": 0.015625,
+    "offset": 0,
+    "invalid": 65535
+   },
+   "accel": {
+    "factor": 0.002,
+    "offset": -65,
+    "invalid": 65535
+   },
+   "ambient": {
+    "factor": 0.5,
+    "offset": -40,
+    "invalid": 255
+   },
+   "engineTemp": {
+    "factor": 1,
+    "offset": -48,
+    "invalid": 255
+   },
+   "gearboxTemp": {
+    "factor": 1,
+    "offset": -48,
+    "invalid": 255,
+    "note": "a value that never changes is shown as no data (some cars don't fill this field); raw values go to the log ('raw gearbox oil')"
+   },
+   "boost": {
+    "factor": 0.01,
+    "offset": 0,
+    "invalid": 255,
+    "note": "sport display boost; raw values go to the log ('raw FES boost')"
+   },
+   "torque": {
+    "factor": 0.5,
+    "offset": -1023.5,
+    "invalid": 65535,
+    "invalidFrom": 4095,
+    "note": "12 bit, 0.5 Nm per bit, 0 Nm at raw 2047 (negative = engine braking), 4095 = no value. With factor 1 a running engine read as ~2047 Nm."
+   },
+   "tyreTemp": {
+    "factor": 1,
+    "offset": -40,
+    "invalid": 65535,
+    "note": "degrees + 40, in the car's temperature unit (deg F on a car set to Fahrenheit: main.js converts it): a G05 PHEV sent raw 53-57 on a ~10 deg C day (2.8.0 log), not deci-Kelvin. Values outside -40..150 deg C are shown as no data; the raw values go to the log ('raw tyre temperature')"
+   },
+   "torqueSplitRear": {
+    "factor": 0.01,
+    "offset": 0,
+    "invalid": 65535
+   },
+   "tyrePress": {
+    "factor": 0.1,
+    "offset": 0,
+    "invalidFrom": 65532,
+    "note": "0.1 per bit in the car's pressure unit (bar / kPa / psi, from Vehicle.statusNewCurrentUnitsStatusExt; main.js converts it to bar). BMW x_call: raw * 0.1, valid up to 530; a car in bar sent raw 22-25 = 2.2-2.5 bar, a car in psi about 410 = 41 psi. Read as 0.1 kPa before, every tyre came out at 0.02 bar and was hidden."
+   },
+   "sportPct": {
+    "factor": 1,
+    "offset": 0,
+    "invalid": 255,
+    "note": "sport display power / torque in % of the car maximum; calibrate if the raw value is not 0-100"
+   }
+  },
+  "dme": {
+   "comment": "Engine unit (DME, ecu 18 = 0x12) values, read only: UDS 0x22 / OBD service 01. Candidates are tried in order; the first plausible one wins. value = raw * factor + offset (bar / deg C / kPa absolute for boost). Definitions as in idrive7-apps M Vitals.",
+   "ecu": 18,
+   "iat": [
+    {
+     "did": "F40F",
+     "bytes": 1,
+     "at": 0,
+     "factor": 1,
+     "offset": -40,
+     "min": -40,
+     "max": 150
+    },
+    {
+     "did": "F477",
+     "bytes": 1,
+     "at": 1,
+     "factor": 1,
+     "offset": -40,
+     "min": -40,
+     "max": 150,
+     "note": "charge air cooler temperature, bank 1 sensor 1"
+    },
+    {
+     "obd": "0F",
+     "bytes": 1,
+     "at": 0,
+     "factor": 1,
+     "offset": -40,
+     "min": -40,
+     "max": 150,
+     "note": "the same PID with OBD service 01, for engine units that refuse F40F with NRC 31"
+    }
+   ],
+   "hpfp": [
+    {
+     "did": "F423",
+     "bytes": 2,
+     "at": 0,
+     "factor": 0.1,
+     "offset": 0,
+     "min": 0,
+     "max": 500,
+     "note": "fuel rail gauge pressure (direct injection), 10 kPa per bit"
+    },
+    {
+     "did": "F459",
+     "bytes": 2,
+     "at": 0,
+     "factor": 0.1,
+     "offset": -1,
+     "min": 0,
+     "max": 500,
+     "note": "fuel rail absolute pressure, 10 kPa per bit"
+    },
+    {
+     "obd": "23",
+     "bytes": 2,
+     "at": 0,
+     "factor": 0.1,
+     "offset": 0,
+     "min": 0,
+     "max": 500,
+     "note": "OBD service 01 PID 0x23 (same as F423)"
+    }
+   ],
+   "lpfp": [
+    {
+     "did": "F40A",
+     "bytes": 1,
+     "at": 0,
+     "factor": 0.03,
+     "offset": 0,
+     "min": 0.5,
+     "max": 8,
+     "note": "fuel pressure (gauge), 3 kPa per bit"
+    },
+    {
+     "did": "F422",
+     "bytes": 2,
+     "at": 0,
+     "factor": 0.00079,
+     "offset": 0,
+     "min": 0.5,
+     "max": 15,
+     "note": "fuel rail pressure relative to manifold, 0.079 kPa per bit"
+    },
+    {
+     "obd": "0A",
+     "bytes": 1,
+     "at": 0,
+     "factor": 0.03,
+     "offset": 0,
+     "min": 0.5,
+     "max": 8,
+     "note": "OBD service 01 PID 0x0A (same as F40A)"
+    },
+    {
+     "obd": "22",
+     "bytes": 2,
+     "at": 0,
+     "factor": 0.00079,
+     "offset": 0,
+     "min": 0.5,
+     "max": 15,
+     "note": "OBD service 01 PID 0x22 (same as F422)"
+    }
+   ],
+   "oil": [
+    {
+     "obd": "5C",
+     "bytes": 1,
+     "at": 0,
+     "factor": 1,
+     "offset": -40,
+     "min": -40,
+     "max": 170,
+     "note": "engine oil temperature, OBD service 01 PID 0x5C - only read while the car's own signal (CDS) sends none"
+    },
+    {
+     "did": "F45C",
+     "bytes": 1,
+     "at": 0,
+     "factor": 1,
+     "offset": -40,
+     "min": -40,
+     "max": 170
+    }
+   ],
+   "boost": [
+    {
+     "did": "F470",
+     "bytes": 2,
+     "at": 3,
+     "factor": 0.03125,
+     "offset": 0,
+     "min": 20,
+     "max": 600,
+     "note": "OBD PID 0x70 boost pressure control: actual boost pressure sensor A (absolute), 1/32 kPa"
+    },
+    {
+     "did": "F487",
+     "bytes": 2,
+     "at": 1,
+     "factor": 0.03125,
+     "offset": 0,
+     "min": 20,
+     "max": 600,
+     "note": "OBD PID 0x87 intake manifold absolute pressure sensor A, 1/32 kPa"
+    },
+    {
+     "did": "F40B",
+     "bytes": 1,
+     "at": 0,
+     "factor": 1,
+     "offset": 0,
+     "min": 20,
+     "max": 255,
+     "note": "OBD PID 0x0B intake manifold absolute pressure, kPa (max 255 = 1.5 bar boost)"
+    },
+    {
+     "obd": "0B",
+     "bytes": 1,
+     "at": 0,
+     "factor": 1,
+     "offset": 0,
+     "min": 20,
+     "max": 255,
+     "note": "OBD service 01 PID 0x0B (same as F40B)"
+    }
+   ],
+   "baro": [
+    {
+     "did": "F433",
+     "bytes": 1,
+     "at": 0,
+     "factor": 1,
+     "offset": 0,
+     "min": 50,
+     "max": 115,
+     "note": "OBD PID 0x33 barometric pressure, kPa (101.3 when not available)"
+    },
+    {
+     "obd": "33",
+     "bytes": 1,
+     "at": 0,
+     "factor": 1,
+     "offset": 0,
+     "min": 50,
+     "max": 115,
+     "note": "OBD service 01 PID 0x33 (same as F433)"
+    }
+   ],
+   "boostTarget": [
+    {
+     "did": "4AB0",
+     "bytes": 2,
+     "at": 0,
+     "factor": 0.00390625,
+     "offset": 0,
+     "min": 20,
+     "max": 400,
+     "note": "BMW boost pressure setpoint (absolute), hPa = raw * 10 / 256"
+    },
+    {
+     "did": "F470",
+     "bytes": 2,
+     "at": 1,
+     "factor": 0.03125,
+     "offset": 0,
+     "min": 20,
+     "max": 600,
+     "note": "OBD PID 0x70: commanded boost pressure A (absolute), 1/32 kPa"
+    },
+    {
+     "obd": "70",
+     "bytes": 2,
+     "at": 1,
+     "factor": 0.03125,
+     "offset": 0,
+     "min": 20,
+     "max": 600,
+     "note": "OBD service 01 PID 0x70 (same as F470)"
+    }
+   ],
+   "boostActual": [
+    {
+     "did": "580B",
+     "bytes": 2,
+     "at": 0,
+     "factor": 0.00390625,
+     "offset": 0,
+     "min": 20,
+     "max": 400,
+     "note": "BMW boost pressure actual (absolute), hPa = raw * 10 / 256"
+    },
+    {
+     "did": "F470",
+     "bytes": 2,
+     "at": 3,
+     "factor": 0.03125,
+     "offset": 0,
+     "min": 20,
+     "max": 600,
+     "note": "OBD PID 0x70: boost pressure sensor A (absolute), 1/32 kPa"
+    },
+    {
+     "obd": "70",
+     "bytes": 2,
+     "at": 3,
+     "factor": 0.03125,
+     "offset": 0,
+     "min": 20,
+     "max": 600,
+     "note": "OBD service 01 PID 0x70 (same as F470)"
+    }
+   ],
+   "timing": [
+    {
+     "obd": "0E",
+     "bytes": 1,
+     "at": 0,
+     "factor": 0.5,
+     "offset": -64,
+     "min": -64,
+     "max": 63.5,
+     "note": "OBD service 01 PID 0x0E timing advance, degrees before TDC (cylinder 1)"
+    },
+    {
+     "did": "F40E",
+     "bytes": 1,
+     "at": 0,
+     "factor": 0.5,
+     "offset": -64,
+     "min": -64,
+     "max": 63.5,
+     "note": "the same PID over UDS 0x22"
+    }
+   ],
+   "egs": [
+    {
+     "ecu": 24,
+     "did": "6000",
+     "bytes": 1,
+     "at": 0,
+     "factor": 1,
+     "offset": -40,
+     "min": -40,
+     "max": 160,
+     "note": "ZF 8HP (GSZFBCE) _GETRIEBEOELTEMPERATUR, deg C + 40 (idrive7-apps PR #29, read on a G22)"
+    },
+    {
+     "ecu": 24,
+     "did": "DA12",
+     "bytes": 1,
+     "at": 0,
+     "factor": 1,
+     "offset": -48,
+     "min": -40,
+     "max": 160,
+     "note": "gearbox unit (EGS, 0x18) transmission oil temperature, deg C + 48 (from a forum report, not confirmed on a car: only shown once it changes; the replies go to the log, \"raw EGS\")"
+    }
+   ]
+  }
+ }
+}
