@@ -1,0 +1,270 @@
+{
+  "schema": 1,
+  "recordedAtUtc": "2026-11-20T14:02:24.668453+00:00",
+  "managerVersion": "1.5.1+13",
+  "sourceCommit": "0fa02953b189796ad5a8fedd84c4f165e8c02e7d",
+  "previousSourceCommit": "c05938fae66b4cb3671edbc2e1d7a3efa39e021c",
+  "baseDashboardSourceCommit": "c05938fae66b4cb3671edbc2e1d7a3efa39e021c",
+  "sourceRepositoryRemotes": [],
+  "analyzer": "No issues found",
+  "fullTests": {
+    "passed": 1049,
+    "failed": 0,
+    "skipped": 1,
+    "skippedReason": "Opt-in dashboard visual capture; passed separately for unchanged UI."
+  },
+  "focusedQuotaRecoveryTests": {
+    "passed": 68,
+    "failed": 0
+  },
+  "logSha256": {
+    "final_analyze.log": "96b645a20c5a83e5430c21d1182bacf55ebf5d37dad504402e154e11207055b3",
+    "full_flutter_tests.log": "389eef3019f6ecce0bcbd58b9d57fe5f351f7924922bda8edefd67445b883d0d",
+    "quota_recovery_tests.log": "9f98a47c796668d94182f58d941c31a11e1c929f1523760b339d450b3b2b9bbc"
+  },
+  "livePublicCatalogProbe": {
+    "mode": "Live public Git/raw metadata with locally simulated REST quota",
+    "observedAtUtc": "2026-11-20T13:50:01.010657Z",
+    "defaultBranch": "main",
+    "branchListingComplete": true,
+    "simulatedRestRequests": 1,
+    "branches": [
+      {
+        "branch": "main",
+        "revision": "2384e4fb247c685a4c19afc03cd8eb349c27601d",
+        "sources": [
+          {
+            "id": "github_a7240e4183b138995e057552",
+            "channel": "source",
+            "branch": "main",
+            "entries": 198
+          },
+          {
+            "id": "github_c6385b538b23087dfd8e2809",
+            "channel": "catalog:release/catalog.json",
+            "branch": "main",
+            "entries": 90
+          }
+        ]
+      },
+      {
+        "branch": "feature/aq-lights-touch-ui-20261117",
+        "revision": "a8cfa21d4fa90230b8c5421a823d86d1e060444e",
+        "sources": [
+          {
+            "id": "github_1c9f08118f0bc4dc11ed72cd",
+            "channel": "source",
+            "branch": "feature/aq-lights-touch-ui-20261117",
+            "entries": 40
+          },
+          {
+            "id": "github_563c77ae89fd99c5871bafba",
+            "channel": "catalog:release/catalog.json",
+            "branch": "feature/aq-lights-touch-ui-20261117",
+            "entries": 21
+          }
+        ]
+      },
+      {
+        "branch": "games",
+        "revision": "e0bc0a4555ae897790c2e484c721284be18d5e7d",
+        "sources": [
+          {
+            "id": "github_9f7eeff0075ee230fe1ecca3",
+            "channel": "source",
+            "branch": "games",
+            "entries": 15
+          },
+          {
+            "id": "github_12d44ecd35e3582b5ab36b71",
+            "channel": "catalog:release/catalog.json",
+            "branch": "games",
+            "entries": 25
+          }
+        ]
+      },
+      {
+        "branch": "id8",
+        "revision": "afbce1b3934f86c4f246fedf50d7c11e29fe7c8f",
+        "sources": [
+          {
+            "id": "github_9801e7bab9fd4c2eb9615fb5",
+            "channel": "source",
+            "branch": "id8",
+            "entries": 50
+          },
+          {
+            "id": "github_6e4b7100f2c7c92962cf0455",
+            "channel": "catalog:release/catalog.json",
+            "branch": "id8",
+            "entries": 19
+          }
+        ]
+      }
+    ],
+    "initialExternalWildcardFailureFixedSeparately": true
+  },
+  "liveOriginalExternalToolsProbe": {
+    "schema": 1,
+    "observedAtUtc": "2026-11-20T13:57:16.441736Z",
+    "mode": "Live public Git/raw metadata with locally simulated REST quota",
+    "repository": "IterioDev/car-apps",
+    "branch": "main",
+    "revision": "44d5d16a4b1d4631ab8e4d97583c8436462c0053",
+    "status": "6 entries (main · Branch source); partial: Wildcard apps/* was not enumerated at 44d5d16a4b1d4631ab8e4d97583c8436462c0053; only explicit declarations were inspected: HttpException: GitHub rate limit reached; retry after the API reset. HTTP 403 from api.github.com; further REST requests paused., uri = https://api.github.com/repos/IterioDev/car-apps/commits/main; Repository tree enrichment unavailable: HttpException: GitHub rate limit reached; retry after the API reset. HTTP 403 from api.github.com; further REST requests paused., uri = https://api.github.com/repos/IterioDev/car-apps/commits/main",
+    "seconds": 2.337,
+    "simulatedRestRequests": 1,
+    "liveRequestsByHost": {
+      "github.com": 1,
+      "raw.githubusercontent.com": 7
+    },
+    "entries": [
+      {
+        "id": "iteriodev-comfort",
+        "kind": "tool",
+        "version": "0.6.3",
+        "mguHmi": [
+          "ID7",
+          "ID8"
+        ],
+        "requires": {
+          "mgu-deploy": "0.7.11"
+        },
+        "sourceOnly": true,
+        "sourcePath": "tools/iteriodev-comfort",
+        "sourceManifestPath": "tools/iteriodev-comfort/component.json",
+        "sourceRepo": "https://github.com/IterioDev/car-apps",
+        "sourceRef": "main",
+        "sourceCommit": "44d5d16a4b1d4631ab8e4d97583c8436462c0053"
+      },
+      {
+        "id": "iteriodev-drplay",
+        "kind": "tool",
+        "version": "1.2.6",
+        "mguHmi": [
+          "ID7",
+          "ID8"
+        ],
+        "requires": {},
+        "sourceOnly": true,
+        "sourcePath": "tools/iteriodev-drplay",
+        "sourceManifestPath": "tools/iteriodev-drplay/component.json",
+        "sourceRepo": "https://github.com/IterioDev/car-apps",
+        "sourceRef": "main",
+        "sourceCommit": "44d5d16a4b1d4631ab8e4d97583c8436462c0053"
+      },
+      {
+        "id": "iteriodev-overlays",
+        "kind": "tool",
+        "version": "0.6.0",
+        "mguHmi": [
+          "ID8"
+        ],
+        "requires": {
+          "mgu-render": "0.6.10",
+          "mgu-deploy": "0.7.11"
+        },
+        "sourceOnly": true,
+        "sourcePath": "tools/iteriodev-overlays",
+        "sourceManifestPath": "tools/iteriodev-overlays/component.json",
+        "sourceRepo": "https://github.com/IterioDev/car-apps",
+        "sourceRef": "main",
+        "sourceCommit": "44d5d16a4b1d4631ab8e4d97583c8436462c0053"
+      },
+      {
+        "id": "iteriodev-screencast",
+        "kind": "tool",
+        "version": "1.0.9",
+        "mguHmi": [
+          "ID7",
+          "ID8"
+        ],
+        "requires": {
+          "iteriodev-tailscale": "1.104.4"
+        },
+        "sourceOnly": true,
+        "sourcePath": "tools/iteriodev-screencast",
+        "sourceManifestPath": "tools/iteriodev-screencast/component.json",
+        "sourceRepo": "https://github.com/IterioDev/car-apps",
+        "sourceRef": "main",
+        "sourceCommit": "44d5d16a4b1d4631ab8e4d97583c8436462c0053"
+      },
+      {
+        "id": "iteriodev-tailscale",
+        "kind": "tool",
+        "version": "1.104.6",
+        "mguHmi": [
+          "ID7",
+          "ID8"
+        ],
+        "requires": {
+          "mgu-uplink": "0.4.0"
+        },
+        "sourceOnly": true,
+        "sourcePath": "tools/iteriodev-tailscale",
+        "sourceManifestPath": "tools/iteriodev-tailscale/component.json",
+        "sourceRepo": "https://github.com/IterioDev/car-apps",
+        "sourceRef": "main",
+        "sourceCommit": "44d5d16a4b1d4631ab8e4d97583c8436462c0053"
+      },
+      {
+        "id": "iteriodev-turnview",
+        "kind": "tool",
+        "version": "0.9.1",
+        "mguHmi": [
+          "ID7",
+          "ID8"
+        ],
+        "requires": {
+          "cluster-render": "0.5.10",
+          "mgu-deploy": "0.7.11"
+        },
+        "sourceOnly": true,
+        "sourcePath": "tools/iteriodev-turnview",
+        "sourceManifestPath": "tools/iteriodev-turnview/component.json",
+        "sourceRepo": "https://github.com/IterioDev/car-apps",
+        "sourceRef": "main",
+        "sourceCommit": "44d5d16a4b1d4631ab8e4d97583c8436462c0053"
+      }
+    ],
+    "unitActionsDispatched": false
+  },
+  "evidenceSha256": {
+    "live_catalog_probe.json": "7e1536450f7fd32beadc94fd8193d489a5b353f0e5e7441f4580f5e13dd168a1",
+    "live_external_probe.json": "9541e994acb3c686712c6da10167efeaf54f3e5f42be6995389e25edf6db9530"
+  },
+  "preservedCatalog": {
+    "payloadCodePin": "714b2edb37f1bac811444ead348509b2b2836745",
+    "main": {
+      "applicationsAndFrontends": 214,
+      "tools": 80,
+      "components": 294,
+      "nativeSourceEntries": 198,
+      "releaseEntries": 90,
+      "externalTools": 6
+    },
+    "id8": {
+      "applicationsAndFrontends": 58,
+      "tools": 17,
+      "components": 75,
+      "nativeSourceEntries": 50,
+      "releaseEntries": 19,
+      "externalTools": 6
+    },
+    "games": {
+      "applicationsAndFrontends": 23,
+      "tools": 17,
+      "components": 40,
+      "nativeSourceEntries": 15,
+      "releaseEntries": 25
+    },
+    "channelCountsOverlap": true
+  },
+  "limits": {
+    "unitActionsObserved": false,
+    "uncachedSourcePreparationStillRequiresVerifiedGithubTree": true,
+    "restOnlyReleaseEnumerationRemainsUnavailableDuringQuota": true,
+    "wildcardOnlyRowsNotInventedDuringQuota": true,
+    "originalUnitStoreChannelContractUnchanged": true
+  }
+}
