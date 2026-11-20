@@ -2,8 +2,18 @@
   "schema": "aq-mgu.integration-final-validation/1",
   "canonical_commit": "714b2edb37f1bac811444ead348509b2b2836745",
   "publication": {
-    "state": "LOCAL_BRANCHES_VERIFIED",
-    "remote_verification": "not_yet_performed"
+    "state": "PUBLISHED",
+    "verified_at_utc": "2026-11-20T10:43:51.024119+00:00",
+    "observed_heads": {
+      "games": "1f9afb3a4b83ab2536e196041c738385b8cbe776",
+      "id8": "6061689d85d163e679ece605c689f1a6958d9954",
+      "main": "0d72c552e37a390967f4073cbe39f8b4a9c22247"
+    },
+    "atomic": true,
+    "force": false,
+    "receipt": "data/publication-20261120.json",
+    "tree_and_feed_verification": "data/published-tree-verification-20261120.json",
+    "observation_scope": "Initial publication, before its documentation receipt commit."
   },
   "inventory": {
     "components": 294,

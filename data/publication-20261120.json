@@ -1,0 +1,26 @@
+{
+  "schema": "aq-mgu.publication/1",
+  "observed_at_utc": "2026-11-20T10:43:51.024119+00:00",
+  "repository": "tiraUnderCode23/AQ_MGU",
+  "remote_before": {
+    "games": "e10090293bb8f5350f5b9c8c46947670486f503a",
+    "id8": "4e0e5feaec2651e6c468fde4a07f68783ba90d8b",
+    "main": "d84dfa86df2052dcb5434ac18a0cf8b44f0521e8"
+  },
+  "expected_remote_after": {
+    "main": "0d72c552e37a390967f4073cbe39f8b4a9c22247",
+    "id8": "6061689d85d163e679ece605c689f1a6958d9954",
+    "games": "1f9afb3a4b83ab2536e196041c738385b8cbe776"
+  },
+  "remote_after": {
+    "games": "1f9afb3a4b83ab2536e196041c738385b8cbe776",
+    "id8": "6061689d85d163e679ece605c689f1a6958d9954",
+    "main": "0d72c552e37a390967f4073cbe39f8b4a9c22247"
+  },
+  "verified": true,
+  "atomic": true,
+  "force": false,
+  "push_stdout": "",
+  "existing_worktrees_unchanged": true,
+  "verification_stage": "initial_atomic_publication; later documentation-only commits may advance main"
+}

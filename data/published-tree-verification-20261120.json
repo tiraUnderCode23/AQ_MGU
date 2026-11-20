@@ -1,0 +1,118 @@
+{
+  "schema": "aq-mgu.published-tree-verification/1",
+  "observed_at_utc": "2026-11-20T10:46:20.785112+00:00",
+  "repository": "tiraUnderCode23/AQ_MGU",
+  "heads": {
+    "games": "1f9afb3a4b83ab2536e196041c738385b8cbe776",
+    "id8": "6061689d85d163e679ece605c689f1a6958d9954",
+    "main": "0d72c552e37a390967f4073cbe39f8b4a9c22247"
+  },
+  "branches": {
+    "main": {
+      "commit": "0d72c552e37a390967f4073cbe39f8b4a9c22247",
+      "tree": "c310565d00c482516a8935e9bc11e2b777992d3a",
+      "tree_response_bytes": 2793980,
+      "tree_response_sha256": "48551d527f3dc7015258d3efd6c0b9dfc93b8eaa811288be2828ff8ad1b054c6",
+      "truncated": false,
+      "exact_tree_match": true,
+      "blob_or_gitlink_count": 8488,
+      "source_components": 198,
+      "release_components": 90,
+      "active_index_components": 294,
+      "feeds": {
+        "mgu-repo.json": {
+          "bytes": 202198,
+          "sha256": "a6d3d8f07eb65ff17c41ed77d2a115ce853b1363883d80b55ca9849401c9ee47",
+          "exact_git_blob_match": true
+        },
+        "release/catalog.json": {
+          "bytes": 130135,
+          "sha256": "780b75dc5e55839103f8fe6a10319e5395e9cd6669aab29f28ed7c297bf4fe22",
+          "exact_git_blob_match": true
+        },
+        "data/components.json": {
+          "bytes": 380522,
+          "sha256": "49efe5ac3741333c76960c1ac10c9c7650d2f9588d18df1ad043d42bec1405c9",
+          "exact_git_blob_match": true
+        },
+        "data/store-sources.json": {
+          "bytes": 472,
+          "sha256": "688079ab48eb1b1e06dddd030ae0dfcf12abd10153efc4b16c0a99727d1746fc",
+          "exact_git_blob_match": true
+        }
+      }
+    },
+    "id8": {
+      "commit": "6061689d85d163e679ece605c689f1a6958d9954",
+      "tree": "33af7ec7fa13c41d948c9b64ba29a6335627c6b2",
+      "tree_response_bytes": 725252,
+      "tree_response_sha256": "db669d486544b4764aa6b12466f72e1049da275b6ea6b3796dacaab3bdd01b7b",
+      "truncated": false,
+      "exact_tree_match": true,
+      "blob_or_gitlink_count": 2205,
+      "source_components": 50,
+      "release_components": 19,
+      "active_index_components": 75,
+      "feeds": {
+        "mgu-repo.json": {
+          "bytes": 52044,
+          "sha256": "4f80062ea0043285df99c46dcb01d96b0827a3a9a03c0f0587f21893f1f531f8",
+          "exact_git_blob_match": true
+        },
+        "release/catalog.json": {
+          "bytes": 55083,
+          "sha256": "2516d836946fea658969bce930d5ec529b970d9030e4004dd6ad7727c072ad2d",
+          "exact_git_blob_match": true
+        },
+        "data/components.json": {
+          "bytes": 116883,
+          "sha256": "6aa267abde208f23ee5ae1270b2242fe1a1dd5bd5bff6bfe0d575f3e7615399e",
+          "exact_git_blob_match": true
+        },
+        "data/store-sources.json": {
+          "bytes": 470,
+          "sha256": "a296636434061475db91645736dc9c1f5147a6b27b5366dbef36655973e2f5d2",
+          "exact_git_blob_match": true
+        }
+      }
+    },
+    "games": {
+      "commit": "1f9afb3a4b83ab2536e196041c738385b8cbe776",
+      "tree": "7d5f5f4c73f55ea62f925acb5909eff7b7f0a5e6",
+      "tree_response_bytes": 286274,
+      "tree_response_sha256": "6eb4fdf04ffce5b7fe3906767cda15d09852f4c8de3d2db9aed79e448af8f5a8",
+      "truncated": false,
+      "exact_tree_match": true,
+      "blob_or_gitlink_count": 819,
+      "source_components": 15,
+      "release_components": 25,
+      "active_index_components": 40,
+      "feeds": {
+        "mgu-repo.json": {
+          "bytes": 9986,
+          "sha256": "e9c83bae5ba6e942c545495be125c8d5fd880849aeb403d293461ccffbda89ab",
+          "exact_git_blob_match": true
+        },
+        "release/catalog.json": {
+          "bytes": 59331,
+          "sha256": "4df9d6143f8ba009ab44b3f5716dc2747012d6088799127dfb2b31c235ac10b8",
+          "exact_git_blob_match": true
+        },
+        "data/components.json": {
+          "bytes": 56132,
+          "sha256": "efdb49a21d87223b7d3b5120f97bb00a00f55b902f38998720ee36ff5c9791f7",
+          "exact_git_blob_match": true
+        },
+        "data/store-sources.json": {
+          "bytes": 474,
+          "sha256": "a78087c1dc1247154c9f43896622c870b54fab860f0de5af13f4dfa9dc36b7f4",
+          "exact_git_blob_match": true
+        }
+      }
+    }
+  },
+  "tree_response_limit_bytes": 4194304,
+  "runtime_on_hu": "NOT_OBSERVED",
+  "status": "PASS",
+  "completed_at_utc": "2026-11-20T10:46:29.523296+00:00"
+}
